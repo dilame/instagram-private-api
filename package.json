@@ -1,8 +1,7 @@
 {
   "name": "instagram-private-api",
   "description": "Instagram private API wrapper with proxy features",
-  "version": "1.0.0",
-  "private": true,
+  "version": "0.0.1",
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha --inline-diffs --timeout 10000 tests/run.js"
