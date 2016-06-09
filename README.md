@@ -3,6 +3,14 @@ INSTAGRAM PRIVATE NODE.JS API
 ![logo](https://cloud.githubusercontent.com/assets/1809268/15931032/2792427e-2e56-11e6-831e-ffab238cc4a2.png)
 ![travis](https://travis-ci.org/huttarichard/instagram-private-api.svg)
 
+**Installation**
+
+
+You can install this by using npm:
+```
+npm install instagram-private-api
+```
+
 **What is this?** 
 
 Since I had lot of troubles with official API (sandbox etc.) I decided to make Node.JS api and provide code to others. It is OOP api, and have a coverage ... **I DO NOT USE THIS FOR SPAM**, hope you will not too. 
