@@ -1,6 +1,6 @@
 var ClientV1 = require('../../../proxy-client/v1');
 var fixtures = require('../../fixtures');
-var credentials = require('../../credentials.json');
+var credentials = require('../../support').credentials();
 var should = require('should');
 var fs = require('fs')
 var doneCallback;

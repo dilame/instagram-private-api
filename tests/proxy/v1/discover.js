@@ -1,7 +1,7 @@
 var Promise = require('bluebird');
 var should = require('should');
 var _ = require('underscore');
-var credentials = require('../../credentials.json');
+var credentials = require('../../support').credentials();
 var sinon = require('sinon');
 var fs = require('fs');
 require('should-sinon');

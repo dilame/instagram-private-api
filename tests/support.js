@@ -1,5 +1,4 @@
 var ClientV1 = require('../proxy-client/v1');
-var credentials = require('./credentials.json');
 var fixtures = require('./fixtures.json');
 var gm = require('gm').subClass({imageMagick: true});
 var Promise = require('bluebird');
@@ -7,6 +6,16 @@ var fs = require('fs');
 var path = require('path');
 var Helpers = require('../helpers');
 var request = require('request');
+var _ = require('underscore');
+
+exports.credentials = function() {
+    return _.isString(process.env.CREDENTIALS) ? 
+        JSON.parse(process.env.CREDENTIALS) :
+        require('./credentials.json');
+}
+var credentials = exports.credentials();
+
+
 
 var _session = null;
 

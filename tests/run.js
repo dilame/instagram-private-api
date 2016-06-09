@@ -2,7 +2,7 @@ var should = require('should');
 var run = require('../proxy/server');
 var fixtures = require('./fixtures.json');
 var ClientV1 = require('../proxy-client/v1');
-var credentials = require('./credentials.json');
+var credentials = require('./support').credentials();
 var path = require('path');
 
 const TRY_TO_CREATE_ACCOUNT = false
