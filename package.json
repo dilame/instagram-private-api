@@ -1,0 +1,46 @@
+{
+  "name": "instagram-private-api",
+  "description": "Instagram private API wrapper with proxy features",
+  "version": "1.0.0",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha --inline-diffs --timeout 10000 tests/run.js"
+  },
+  "dependencies": {
+    "bluebird": "^3.0.5",
+    "body-parser": "1.13.2",
+    "bufferutil": "^1.2.1",
+    "colors": "^1.1.2",
+    "crypto-js": "^3.1.6",
+    "express": "4.13.1",
+    "express-validator": "^2.18.0",
+    "gm": "^1.22.0",
+    "is-stream": "^1.1.0",
+    "js-md5": "^0.3.0",
+    "mkdirp": "^0.5.1",
+    "moment": "^2.10.6",
+    "morgan": "1.6.1",
+    "multer": "^1.1.0",
+    "nedb": "^1.5.1",
+    "node-cache": "^3.0.0",
+    "request": "^2.64.0",
+    "request-promise": "^1.0.2",
+    "socket.io": "^1.4.6",
+    "socket.io-client": "^1.4.6",
+    "tmp": "0.0.28",
+    "touch": "^1.0.0",
+    "tough-cookie-filestore": "0.0.1",
+    "underscore": "^1.8.3",
+    "underscore.string": "^3.2.2",
+    "utf-8-validate": "^1.2.1"
+  },
+  "devDependencies": {
+    "faker": "^3.1.0",
+    "mocha": "^2.4.5",
+    "node-resemble-js": "0.0.5",
+    "should": "^8.3.1",
+    "should-sinon": "0.0.5",
+    "sinon": "^1.17.3"
+  }
+}

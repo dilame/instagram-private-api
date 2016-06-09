@@ -1,0 +1,5 @@
+{
+    "server.host": "127.0.0.1",
+    "server.port": 9998,
+    "server.socket-port": 9997
+}
