@@ -278,6 +278,15 @@ Account.showProfile = function(session) {
 };
 
 
+Account.getSelfFeed = function (session) {
+    return new Request(session)
+        .setMethod('GET')
+        .setResource('selfLiked')
+        .signPayload()
+        .send();
+};
+
+
 Account.prototype.editProfile = function(settings) {   
     return Account.editProfile(this.session, settings || {});
 };
