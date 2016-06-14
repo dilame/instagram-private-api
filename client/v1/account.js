@@ -278,7 +278,7 @@ Account.showProfile = function(session) {
 };
 
 
-Account.getSelfFeed = function (session) {
+Account.getSelfLiked = function (session) {
     return new Request(session)
         .setMethod('GET')
         .setResource('selfLiked')
