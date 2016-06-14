@@ -3,13 +3,13 @@
   "description": "Instagram private API wrapper with proxy features",
   "version": "0.0.4",
   "main": "index.js",
-  "bugs": { 
-    "url" : "https://github.com/huttarichard/instagram-private-api/issues", 
+  "bugs": {
+    "url": "https://github.com/huttarichard/instagram-private-api/issues",
     "email": "huttarichard@gmail.com"
   },
-  "repository": { 
-    "type" : "git", 
-    "url" : "https://github.com/huttarichard/instagram-private-api.git"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/huttarichard/instagram-private-api.git"
   },
   "homepage": "https://github.com/huttarichard/instagram-private-api",
   "scripts": {
@@ -26,6 +26,7 @@
     "gm": "^1.22.0",
     "is-stream": "^1.1.0",
     "js-md5": "^0.3.0",
+    "json-bigint": "^0.2.0",
     "mkdirp": "^0.5.1",
     "moment": "^2.10.6",
     "morgan": "1.6.1",

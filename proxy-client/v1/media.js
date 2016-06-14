@@ -102,6 +102,19 @@ Media.forLocation = function(session, locationId, cursor) {
 }
 
 
+Media.liked = function(session, cursor) {
+    var url = routes.getUrl(session.getServer(), routes.URL.MEDIA_LIKED);
+    var opts = _.isString(cursor) ? {qs: {cursor: cursor}} : {};
+    return Request.getWithSession(session, url, opts)
+        .then(function (json) {
+            json.media = _.map(json.media, function(media) {
+                return new Media(session, media);   
+            });
+            return json;
+        })
+}
+
+
 Media.prototype.delete = function () {
     return Media.delete(this.session, this.id);
 }

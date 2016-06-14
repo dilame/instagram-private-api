@@ -18,5 +18,7 @@ Hashtag.prototype.parseParams = function (json) {
   hash.mediaCount = parseInt(json.media_count);
   hash.name = json.name;
   hash.id = json.id;
+  if(_.isObject(hash.id))
+    hash.id = hash.id.toString();
   return hash;
 };

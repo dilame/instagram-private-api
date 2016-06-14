@@ -1,6 +1,7 @@
 var _ = require("underscore");
 var Promise = require("bluebird");
 var request = require('request-promise');
+var JSONbig = require('json-bigint');
 
 function Request(session) {
     this._id = _.uniqueId();
@@ -267,7 +268,7 @@ Request.prototype._mergeOptions = function(options) {
 
 Request.prototype.parseMiddleware = function (response) {
     try {
-        response.body = JSON.parse(response.body);
+        response.body = JSONbig.parse(response.body);
         return response;
     } catch (err) {
         throw new Exceptions.ParseError(response, this);

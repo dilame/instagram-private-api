@@ -22,7 +22,7 @@ describe("hashtag", function () {
         hashtag.params.should.have.property('id');
         hashtag.params.should.have.property('name');
         hashtag.params.should.have.property('mediaCount');
-        hashtag.id.should.be.a.Number();
+        hashtag.id.should.be.a.String();
     }
     
     it("should be able to search", function(done) {

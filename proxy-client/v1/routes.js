@@ -24,6 +24,7 @@ var MAPPING = {
     RELATIONSHIPS_SHOW_MANY: 'relationships/many',
     RELATIONSHIPS: 'relationships',
     MEDIA: 'media',
+    MEDIA_LIKED: 'media/liked',
     MEDIA_FOR_USER: 'accounts/<%= id %>/media',
     MEDIA_SHOW: 'media/<%= id %>',
     MEDIA_FOR_TAG: 'hashtags/<%= tag %>/media',

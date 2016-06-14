@@ -35,5 +35,6 @@ InstagramV1.Feed.TagMedia = require('./v1/feeds/tag-media');
 InstagramV1.Feed.Thread = require('./v1/feeds/thread');
 InstagramV1.Feed.Timeline = require('./v1/feeds/timeline-feed');
 InstagramV1.Feed.UserMedia = require('./v1/feeds/user-media');
+InstagramV1.Feed.SelfLiked = require('./v1/feeds/self-liked');
 
 module.exports = InstagramV1;

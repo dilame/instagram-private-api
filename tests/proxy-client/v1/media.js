@@ -34,7 +34,8 @@ describe("media", function () {
         json.should.have.property('media')
         json.media.should.be.an.Array();
         _.each(json.media, shouldBeAMedium);
-        json.media.length.should.not.be.above(mediaNotAbove);
+        if(_.isNumber(mediaNotAbove))
+            json.media.length.should.not.be.above(mediaNotAbove);
         json.should.have.property('cursor')
         json.should.have.property('hasMoreAvailable')
     }
@@ -57,6 +58,21 @@ describe("media", function () {
             })
             .spread(function(newCursorJson, json) {
                 newCursorJson.media[0].id.should.not.be.equal(json.media[0].id);
+                done();
+            })
+    })
+    
+
+    it.only("should be able to fetch media which are self-liked", function (done) {            
+        ClientV1.Media.liked(session)
+            .then(function(json) {
+                shoudlBeACollection(json);
+                return [ClientV1.Media.liked(session, json.cursor), json];
+            })
+            .spread(function(newCursorJson, json) {
+                shoudlBeACollection(newCursorJson);
+                newCursorJson.cursor.should.be.String()
+                newCursorJson.cursor.should.not.be.equal(json.cursor);
                 done();
             })
     })

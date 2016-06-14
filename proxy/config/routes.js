@@ -80,6 +80,7 @@ module.exports = function (app) {
 
     // Media 
     app.get('/v1/accounts/:id/media', accounts.showValidation, validateKey, media.index);
+    app.get('/v1/media/liked', validateKey, media.liked);
     app.get('/v1/media/:id', media.showValidation, validateKey, media.show);
     app.get('/v1/hashtags/:tag/media', hashtags.showValidation, validateKey, media.byTag);
     app.get('/v1/locations/:id/media', locations.showValidation, validateKey, media.byLocation);
