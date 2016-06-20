@@ -90,26 +90,14 @@ const DEVICES = {
 }
 
 const PRIVATE_KEYS = [{
-    SIG_KEY: '6a5048da38cd138aacdcd6fb59fa8735f4f39a6380a8e7c10e13c075514ee027',
-    SIG_VERSION: '4',
-    APP_VERSION: '7.16.0'
-}, {
-    SIG_KEY: 'b947b25e9bf1eb581d4a3f83301cb364b1fb42ce1886aba7f53a349770dc3a07',
-    SIG_VERSION: '4',
-    APP_VERSION: '7.17.0'
-}, {
-    SIG_KEY: '9fca90d84e8e0f372a126ba03a22418d0836ef126ed7a538429025e791799e38',
-    SIG_VERSION: '4',
-    APP_VERSION: '7.19.0'
-}, {
-    SIG_KEY: '8082724c0ba508df900162dfe68ecb3c435873f595df87a8e19230f1fa4f6e13',
-    SIG_VERSION: '4',
-    APP_VERSION: '7.19.1'
-}, {
     SIG_KEY: '9b3b9e55988c954e51477da115c58ae82dcae7ac01c735b4443a3c5923cb593a',
     SIG_VERSION: '4',
     APP_VERSION: '8.0.0'
-}]
+}, {
+    SIG_KEY: '55e91155636eaa89ba5ed619eb4645a4daf1103f2161dbfe6fd94d5ea7716095',
+    SIG_VERSION: '4',
+    APP_VERSION: '8.2.0'
+}];
 
 
 const HOSTNAME = 'i.instagram.com';

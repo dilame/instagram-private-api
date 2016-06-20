@@ -21,7 +21,6 @@ var Exceptions = require('./exceptions');
 
 InstgramFileCookieStore.loadFromPath = function(cookiePath) {
     cookiePath = path.resolve(cookiePath);
-    touch(cookiePath);
     Helpers.ensureExistenceOfJSONFilePath(cookiePath);
     return new InstgramFileCookieStore(cookiePath);
 };

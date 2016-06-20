@@ -49,12 +49,12 @@ Helpers.isValidUrl = function(textval) {
 
 Helpers.ensureExistenceOfJSONFilePath = function(path) {
     try {
+        touch.sync(path);
         JSON.parse(fs.readFileSync(path));
     } catch (e) {
-        touch(path);
         fs.unlinkSync(path);
     }
-    touch(path);
+    touch.sync(path);
 }
 
 
