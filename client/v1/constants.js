@@ -56,6 +56,11 @@ const ROUTES = {
 };
 
 
+const WEB_ROUTES = {
+    integrityCheckpoint: 'integrity/checkpoint/<%= typeof redirect == "string" ? ("?next=" + encodeURIComponent(redirect)) : "" %>'
+}
+
+
 const DEVICES = {
     
     SAMSUNG_GALAXY_S2: {
@@ -101,14 +106,19 @@ const PRIVATE_KEYS = [{
 
 
 const HOSTNAME = 'i.instagram.com';
+const WEB_HOSTNAME = 'www.instagram.com';
 const HOST = 'https://' + HOSTNAME + '/';
+const WEBHOST = 'https://' + WEB_HOSTNAME + '/';
 const DEFAULT_VERSION = '7.19.0';
 
 
 module.exports = {
     ROUTES: ROUTES,
+    WEB_ROUTES: WEB_ROUTES,
     HOSTNAME: HOSTNAME,
+    WEB_HOSTNAME: WEB_HOSTNAME,
     HOST: HOST,
+    WEBHOST: WEBHOST,
     API_ENDPOINT: HOST + 'api/v1/',
     DEVICES: DEVICES,
     DEFAULT_VERSION: DEFAULT_VERSION,

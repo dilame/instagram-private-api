@@ -59,7 +59,7 @@ Object.defineProperty(Session.prototype, "CSRFToken", {
 
 Session.prototype.setCookiesStore = function (store) {
     if(!(store instanceof InstgramFileCookieStore))
-        throw new Error('`store` must be valid instance of InstgramFileCookieStore');
+        throw new Error('`store` must be valid instance of InstagramFileCookieStore');
     this._cookiesStore = store;
     this._jar = request.jar(store);
     return this;
@@ -128,6 +128,10 @@ Session.login = function(session, username, password) {
         .spread(function (session) {
             return [session, Relationship.autocompleteUserList(session)];
         })
+        .catch(Exceptions.RequestsLimitError, function() {
+            // autocompleteUserList has ability to fail often
+            return [session];
+        })
         .spread(function (session) {
             return [session, new Timeline(session).get()];
         })
@@ -142,7 +146,13 @@ Session.login = function(session, username, password) {
         })
         .spread(function(session) {
             return session;
-        });
+        })
+        .catch(Exceptions.CheckpointError, function() {
+            // This situation is not really obvious,
+            // but even if you got checkpoint error (aka captcha or phone)
+            // verification, it is still an valid session
+            return session;
+        })
         
 }
 

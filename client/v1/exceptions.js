@@ -264,3 +264,21 @@ function PlaceNotFound() {
 
 util.inherits(PlaceNotFound, APIError);
 exports.PlaceNotFound = PlaceNotFound;
+
+
+function NotPossibleToSendSMS() {
+    this.name = 'NotPossibleToSendSMS';
+    this.message = "Not possible to receive sms code (uknown reason)!";
+}
+
+util.inherits(NotPossibleToSendSMS, APIError);
+exports.NotPossibleToSendSMS = NotPossibleToSendSMS;
+
+
+function NotPossibleToVerify() {
+    this.name = 'NotPossibleToVerify';
+    this.message = "Not possible to verify trough code!";
+}
+
+util.inherits(NotPossibleToVerify, APIError);
+exports.NotPossibleToVerify = NotPossibleToVerify;

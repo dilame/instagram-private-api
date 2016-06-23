@@ -10,6 +10,7 @@ var _ = require('underscore');
 var Helpers = require('../../helpers');
 
 
+
 function InstgramFileCookieStore() {
     FileCookieStore.apply(this, arguments);
 }
@@ -18,6 +19,7 @@ util.inherits(InstgramFileCookieStore, FileCookieStore);
 module.exports = InstgramFileCookieStore;
 
 var Exceptions = require('./exceptions');
+
 
 InstgramFileCookieStore.loadFromPath = function(cookiePath) {
     cookiePath = path.resolve(cookiePath);
@@ -37,12 +39,37 @@ InstgramFileCookieStore.prototype.getCookieValue = function (name) {
     });
 };
 
+
+// You need to override this in order to copy cookies to same namespace as
+// WebRequest using with WEB_HOSTNAME
+InstgramFileCookieStore.prototype.putCookie = function (cookie, cb) {
+    var args = _.toArray(arguments);
+    var that = this;
+    FileCookieStore.prototype.putCookie.call(this, cookie, function() {
+        cookie = _.clone(cookie);
+        cookie.domain = CONSTANTS.WEB_HOSTNAME;
+    	FileCookieStore.prototype.putCookie.call(that, cookie, cb);
+    });
+};
+
+
 InstgramFileCookieStore.prototype.getCookies = function () {
     var self = this;
     return new Promise(function(resolve, reject) {
         self.findCookies(CONSTANTS.HOSTNAME, '/', function(err, cookies){
             if (err) return reject(err);
             resolve(cookies || []);
+        })
+    });
+};
+
+
+InstgramFileCookieStore.prototype.removeCheckpointStep = function () {
+    var self = this;
+    return new Promise(function(resolve, reject) {
+        self.removeCookie(CONSTANTS.WEB_HOSTNAME, '/', 'checkpoint_step', function(err){
+            if (err) return reject(err);
+            resolve();
         })
     });
 };
