@@ -126,11 +126,12 @@ Session.login = function(session, username, password) {
             return [session, QE.sync(session)];
         })
         .spread(function (session) {
-            return [session, Relationship.autocompleteUserList(session)];
-        })
-        .catch(Exceptions.RequestsLimitError, function() {
-            // autocompleteUserList has ability to fail often
-            return [session];
+            var autocomplete = Relationship.autocompleteUserList(session)
+                .catch(Exceptions.RequestsLimitError, function() {
+                    // autocompleteUserList has ability to fail often
+                    return false;
+                })
+            return [session, autocomplete];
         })
         .spread(function (session) {
             return [session, new Timeline(session).get()];

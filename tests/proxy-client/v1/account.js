@@ -60,7 +60,6 @@ describe("account", function () {
                 _.each(accounts, function(account) {
                     account.should.be.instanceOf(ClientV1.Account);
                 });
-                should(accounts.length >= account.params.followingsCount).be.ok();
                 done();
             });
     })
@@ -187,7 +186,7 @@ describe("account", function () {
             });
     });
     
-    it.only("should not be problem to show profile", function(done) {
+    it("should not be problem to show profile", function(done) {
         return ClientV1.Account.showProfile(session)
             .then(function(json) {
                 json.should.be.an.Object();

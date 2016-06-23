@@ -63,7 +63,7 @@ describe("media", function () {
     })
     
 
-    it.only("should be able to fetch media which are self-liked", function (done) {            
+    it("should be able to fetch media which are self-liked", function (done) {            
         ClientV1.Media.liked(session)
             .then(function(json) {
                 shoudlBeACollection(json);

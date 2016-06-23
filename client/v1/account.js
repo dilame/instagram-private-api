@@ -153,7 +153,12 @@ Account.create = function (session, email, username, password, name) {
             return [account, QE.sync(session)];
         })
         .spread(function (account) {
-            return [account, Relationship.autocompleteUserList(session)];
+            var autocomplete = Relationship.autocompleteUserList(session)
+                .catch(Exceptions.RequestsLimitError, function() {
+                    // autocompleteUserList has ability to fail often
+                    return false;
+                })
+            return [account, autocomplete];
         })
         .spread(function (account) {
             return [account, Thread.recentRecipients(session)];
