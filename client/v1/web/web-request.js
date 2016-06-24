@@ -10,7 +10,7 @@ var CONSTANTS = require('../constants');
 
 function WebRequest() {
     Request.apply(this, arguments);
-    this._request.headers = _.extend(this._request.headers, {
+    this._request.headers = _.extend(_.clone(this._request.headers), {
         'Host': CONSTANTS.WEB_HOSTNAME,
         'Upgrade-Insecure-Requests': '1',
         'Cache-Control': 'no-cache',
