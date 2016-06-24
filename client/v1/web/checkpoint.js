@@ -45,7 +45,7 @@ Checkpoint.phoneVerification = function(session, phone) {
                 .send()
                 .then(function(response) {
                     if(response.statusCode !== 200)
-                        throw new Exceptions.NotPossibleToSendSMS("Uknown reason!");
+                        throw new Exceptions.NotPossibleToSendSMS("Unknown reason!");  
                     if(response.body.indexOf('incorrect') !== -1)
                         throw new Exceptions.NotPossibleToSendSMS("Probably incorrect number!");
                     if(response.body.indexOf('response_code') === -1)

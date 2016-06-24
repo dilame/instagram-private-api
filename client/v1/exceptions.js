@@ -266,19 +266,19 @@ util.inherits(PlaceNotFound, APIError);
 exports.PlaceNotFound = PlaceNotFound;
 
 
-function NotPossibleToSendSMS() {
+function NotPossibleToSendSMS(reason) {
+    if(!reason) reason = 'Unknown reason';
     this.name = 'NotPossibleToSendSMS';
-    this.message = "Not possible to receive sms code (uknown reason)!";
+    this.message = "Not possible to receive sms code ("+reason+")!";
 }
 
 util.inherits(NotPossibleToSendSMS, APIError);
 exports.NotPossibleToSendSMS = NotPossibleToSendSMS;
 
 
-function NotPossibleToVerify(reason) {
-    if(!reason) reason = '';
+function NotPossibleToVerify() {
     this.name = 'NotPossibleToVerify';
-    this.message = "Not possible to verify trough code! " + reason;
+    this.message = "Not possible to verify trough code!";
 }
 
 util.inherits(NotPossibleToVerify, APIError);
