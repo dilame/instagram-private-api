@@ -217,6 +217,17 @@ describe("request", function () {
             });
     });
     
+    it("should not be problem to use local session proxy", function(done) {
+        session.setProxy('http://someproxy.com:80/')
+        var request = new Client.Request(session);
+        request._mergeOptions()
+            .then(function(opts) {
+                opts.proxy.should.be.equal('http://someproxy.com:80/');
+                session.setProxy(null)
+                done();
+            });
+    });
+    
     
 })
 

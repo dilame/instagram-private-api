@@ -28,6 +28,7 @@ var Timeline = require("./feeds/timeline-feed");
 var Inbox = require("./feeds/inbox");
 var Thread = require("./thread");
 var Relationship = require("./relationship");
+var Helpers = require("../../helpers");
 
 Object.defineProperty(Session.prototype, "jar", {
     get: function() { return this._jar },
@@ -56,6 +57,17 @@ Object.defineProperty(Session.prototype, "CSRFToken", {
     set: function(val) {}
 });
 
+Object.defineProperty(Session.prototype, "proxyUrl", {
+    get: function() { 
+        return this._proxyUrl;
+    },
+    set: function(val) {
+        if(!Helpers.isValidUrl(val) && val !== null)
+            throw new Error("`proxyUrl` argument is not an valid url") 
+        this._proxyUrl = val;
+    }
+});
+
 
 Session.prototype.setCookiesStore = function (store) {
     if(!(store instanceof InstgramFileCookieStore))
@@ -72,6 +84,12 @@ Session.prototype.getAccountId = function() {
         .then(function () {
             return that._cookiesStore.getAccountId();
         })
+}
+
+
+Session.prototype.setProxy = function(url) {
+    this.proxyUrl = url;
+    return this;
 }
 
 

@@ -201,6 +201,8 @@ Request.prototype.setSession = function(session) {
     });
     if(session.device)
         this.setDevice(session.device);
+    if(session.proxyUrl)
+        this.setOptions({proxy: session.proxyUrl});
     return this;
 };
 
