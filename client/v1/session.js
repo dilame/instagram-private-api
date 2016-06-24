@@ -175,9 +175,11 @@ Session.login = function(session, username, password) {
         
 }
 
-Session.create = function(device, cookiePath, username, password) {
+Session.create = function(device, cookiePath, username, password, proxy) {
     var that = this;
-    var session = new Session(device, cookiePath)
+    var session = new Session(device, cookiePath);
+    if(_.isString(proxy))
+        session.proxyUrl = proxy;
     return session.getAccountId()
         .then(function () {
             return session;
