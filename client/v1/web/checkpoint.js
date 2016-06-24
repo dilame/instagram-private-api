@@ -44,8 +44,12 @@ Checkpoint.phoneVerification = function(session, phone) {
                 })
                 .send()
                 .then(function(response) {
-                    if(response.statusCode !== 200 && response.body.indexOf('response_code') === -1)
-                        throw Exceptions.NotPossibleToSendSMS();
+                    if(response.statusCode !== 200)
+                        throw new Exceptions.NotPossibleToSendSMS("Uknown reason!");
+                    if(response.body.indexOf('incorrect') !== -1)
+                        throw new Exceptions.NotPossibleToSendSMS("Probably incorrect number!");
+                    if(response.body.indexOf('response_code') === -1)
+                        throw new Exceptions.NotPossibleToSendSMS();
                     return true;    
                 })
         })   
@@ -68,7 +72,7 @@ Checkpoint.phoneVerificationSMSCode = function(session, code) {
         .send({followRedirect: false})
         .then(function() {
             // Must be redirected
-            throw Exceptions.NotPossibleToVerify();
+            throw new Exceptions.NotPossibleToVerify();
         })
         .catch(errors.StatusCodeError, function(error) {
             if(error.statusCode == 302)
@@ -76,6 +80,6 @@ Checkpoint.phoneVerificationSMSCode = function(session, code) {
             throw error;    
         })
         .catch(function() {
-            throw Exceptions.NotPossibleToVerify();  
+            throw new Exceptions.NotPossibleToVerify();  
         }) 
 }

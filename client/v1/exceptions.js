@@ -275,9 +275,10 @@ util.inherits(NotPossibleToSendSMS, APIError);
 exports.NotPossibleToSendSMS = NotPossibleToSendSMS;
 
 
-function NotPossibleToVerify() {
+function NotPossibleToVerify(reason) {
+    if(!reason) reason = '';
     this.name = 'NotPossibleToVerify';
-    this.message = "Not possible to verify trough code!";
+    this.message = "Not possible to verify trough code! " + reason;
 }
 
 util.inherits(NotPossibleToVerify, APIError);
