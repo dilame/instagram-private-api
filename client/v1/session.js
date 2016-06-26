@@ -167,11 +167,18 @@ Session.login = function(session, username, password) {
         .spread(function(session) {
             return session;
         })
-        .catch(Exceptions.CheckpointError, function() {
+        .catch(Exceptions.CheckpointError, function(error) {
             // This situation is not really obvious,
             // but even if you got checkpoint error (aka captcha or phone)
-            // verification, it is still an valid session
-            return session;
+            // verification, it is still an valid session unless `sessionid` missing
+            return session.getAccountId()
+                .then(function () {
+                    // We got sessionId and accountId, we are good to go 
+                    return session; 
+                })
+                .catch(Exceptions.CookieNotValidError, function (e) {
+                    throw error;
+                })
         })
         
 }
