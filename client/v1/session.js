@@ -133,12 +133,13 @@ Session.login = function(session, username, password) {
         })
         .signPayload()
         .send()
-        .catch(function (err) {
-            if (err instanceof Exceptions.APIError) {
-                var message = "You provide wrong password or username, try again!"
-                throw new Exceptions.AuthenticationError(message);
+        .catch(function (error) {
+            if (error.name == "RequestError" && 
+                _.isObject(error.json) && 
+                error.json.invalid_credentials) {
+                    throw new Exceptions.AuthenticationError(error.message);
             }
-            throw err;
+            throw error;
         })
         .then(function () {
             return [session, QE.sync(session)];
