@@ -102,6 +102,10 @@ const PRIVATE_KEYS = [{
     SIG_KEY: '55e91155636eaa89ba5ed619eb4645a4daf1103f2161dbfe6fd94d5ea7716095',
     SIG_VERSION: '4',
     APP_VERSION: '8.2.0'
+}, {
+    SIG_KEY: '3d3d669cedc38f2ea7d198840e0648db3738224a0f661aa6a2c1e77dfa964a1e',
+    SIG_VERSION: '4',
+    APP_VERSION: '8.4.0'
 }];
 
 
