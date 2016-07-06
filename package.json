@@ -1,7 +1,7 @@
 {
   "name": "instagram-private-api",
   "description": "Instagram private API wrapper with proxy features",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "main": "index.js",
   "bugs": {
     "url": "https://github.com/huttarichard/instagram-private-api/issues",
