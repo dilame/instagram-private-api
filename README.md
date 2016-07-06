@@ -18,7 +18,7 @@ Since I had lot of troubles with official API (sandbox etc.) I decided to make N
 
 **Credit:**
 
-Who deserves most ... https://github.com/mgp25/Instagram-API & @mgp25 for decrypting private keys from c++ libraries bundled within android app.
+Who deserves most ...  @mgp25 & @markmhn for decrypting private keys from c++ libraries bundled within android app.
 
 
 **How to use this?** 
