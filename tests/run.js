@@ -13,7 +13,7 @@ run({
     host: fixtures["server.host"],
     databaseDir: './tests/tmp/databases',
     cookiesDir: './tests/tmp/cookies',
-    proxy: 'http://127.0.0.1:8888',
+    // proxy: 'http://127.0.0.1:8888',
     // interfaces: '10.0.0.2'
     suppressLog: true
 })
