@@ -106,6 +106,10 @@ const PRIVATE_KEYS = [{
     SIG_KEY: '3d3d669cedc38f2ea7d198840e0648db3738224a0f661aa6a2c1e77dfa964a1e',
     SIG_VERSION: '4',
     APP_VERSION: '8.4.0'
+}, {
+    SIG_KEY: 'b5d839444818714bdab3e288e6da9b515f85b000b6e6b452552bfd399cb56cf0',
+    SIG_VERSION: '4',
+    APP_VERSION: '8.5.1'
 }];
 
 
@@ -113,7 +117,7 @@ const HOSTNAME = 'i.instagram.com';
 const WEB_HOSTNAME = 'www.instagram.com';
 const HOST = 'https://' + HOSTNAME + '/';
 const WEBHOST = 'https://' + WEB_HOSTNAME + '/';
-const DEFAULT_VERSION = '7.19.0';
+const DEFAULT_VERSION = '8.0.0';
 
 
 module.exports = {
