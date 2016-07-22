@@ -83,7 +83,6 @@ server.run({
     cookiesDir: './cookies',
     // to use proxy with proxy heh :P
     // proxy: 'http://127.0.0.1:8888',
-    // if you want to bing this to multiple interfaces
     // interfaces: '10.0.0.2', 
     // for testing
     // suppressLog: true
