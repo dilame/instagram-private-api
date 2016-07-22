@@ -15,7 +15,7 @@ var _ = require("underscore");
 Checkpoint.isRequired = function(session) {
     return new WebRequest(session)
         .setMethod('GET')
-        .setResource('integrityCheckpoint', {redirect: '/'})
+        .setResource('integrityCheckpoint')
         .send({followRedirect: false})
         .then(function(response) {
             return true;
@@ -32,7 +32,7 @@ Checkpoint.phoneVerification = function(session, phone) {
         .then(function() {
             return new WebRequest(session)
                 .setMethod('POST')
-                .setResource('integrityCheckpoint', {redirect: '/'})
+                .setResource('integrityCheckpoint')
                 .setHeaders({
                     'Referer': routes.getWebUrl('integrityCheckpoint'),
                     'Origin': CONSTANTS.WEBHOST

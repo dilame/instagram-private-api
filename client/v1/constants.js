@@ -57,7 +57,7 @@ const ROUTES = {
 
 
 const WEB_ROUTES = {
-    integrityCheckpoint: 'integrity/checkpoint/<%= typeof redirect == "string" ? ("?next=" + encodeURIComponent(redirect)) : "" %>'
+    integrityCheckpoint: 'challenge/'
 }
 
 
