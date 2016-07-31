@@ -95,10 +95,6 @@ const DEVICES = {
 }
 
 const PRIVATE_KEYS = [{
-    SIG_KEY: '9b3b9e55988c954e51477da115c58ae82dcae7ac01c735b4443a3c5923cb593a',
-    SIG_VERSION: '4',
-    APP_VERSION: '8.0.0'
-}, {
     SIG_KEY: '55e91155636eaa89ba5ed619eb4645a4daf1103f2161dbfe6fd94d5ea7716095',
     SIG_VERSION: '4',
     APP_VERSION: '8.2.0'
@@ -110,6 +106,10 @@ const PRIVATE_KEYS = [{
     SIG_KEY: 'b5d839444818714bdab3e288e6da9b515f85b000b6e6b452552bfd399cb56cf0',
     SIG_VERSION: '4',
     APP_VERSION: '8.5.1'
+}, {
+    SIG_KEY: '3e0fbc3ab2b2a6b3dbd5f5303dc26cb8d39636291ea9da820283a275d070bd98',
+    SIG_VERSION: '4',
+    APP_VERSION: '8.5.2'
 }];
 
 
