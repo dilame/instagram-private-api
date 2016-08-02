@@ -25,11 +25,10 @@ First you need to gain session:
 ```javascript
 var Client = require('instagram-private-api').V1;
 var device = new Client.Device('SAMSUNG_GALAXY_S2', 'someuser');
-var cookiePath = __dirname + './cookies/someuser.json';
-// Either gain already gained session
-var session = new Client.Session(device, cookiePath);
-// Or go for login
-var promise = Client.Session.create(device, cookiePath, 'someuser', 'somepassword');
+var storage = new Client.CookieFileStorage(__dirname + './cookies/someuser.json');
+
+// And go for login
+var promise = Client.Session.create(device, storage, 'someuser', 'somepassword');
 
 promise.then(function(sessionInstance) {
    // Now you have session, do what ever private API allows
@@ -65,71 +64,13 @@ You can explore more by yourself, or if you are not busy, pull request (for doc 
 
 
 
-**Working with 'proxy like' server:**
+**Proxy server:**
 
-You can use bundled proxy server (for example if you want to use this as server for client).
+I create another repsitory, which implements functionality of this wrapper into very simple
+express app. It is a webserver with API, which can do many stuff as private API does, execept it 
+is probably much easier to read and manupulate with.
 
-```javascript
-var server = require('instagram-private-api').ProxyServer;
-
-server.run({
-    port: 8080,
-    socketPort: 8888,
-    host: "0.0.0.0",
-    databaseDir: './databases',
-    cookiesDir: './cookies',
-    // to use proxy with proxy heh :P
-    // proxy: 'http://127.0.0.1:8888',
-    // interfaces: '10.0.0.2', 
-    // for testing
-    // suppressLog: true
-})
-```
-
-
-This will run server and socket server on address 0.0.0.0:8080 so you can access and do the same what you can do with instagram PRIVATE API. Except it is 
-prettier :P.
-
-
-```
-GET /v1
--> {node: true, sessions: <Number>}
-
-POST /v1/sessions
-With application/json
-Data {"username": "someone", password: "somepassword"}
--> {user: {...}, key: "some-key-in-md5-format"}
-
-GET /v1/accounts/self?key=some-key-in-md5-format
--> {username: "..." ...}
-```
-
-**Proxy Client API**
-
-And finally you can use an Node.JS proxy API same way you use `Client.V1`
-
-
-```javascript
-var ClientProxy = require('instagram-private-api').ProxyClient.V1;
-var server = new ClientProxy.Server('host', 'port', 'socket port');
-var session = new ClientProxy.Session(server)
-session.create('some instagram username', 'somepass')
-	.then(function(sessionProxyInstance) {
-		// accountProxyInstance instanceof ClientProxy.Session -> true
-		// accountProxyInstance instanceof ClientProxy.Resource -> true
-		return Account.self(sessionProxyInstance);
-	})
-	.then(function(accountProxyInstance) {
-		// accountProxyInstance instanceof ClientProxy.Account -> true
-		// accountProxyInstance instanceof ClientProxy.Resource -> true
-		console.log(accountProxyInstance.params) 
-		// -> {username: "..." ...}
-	})
-```
-
-
-Thanks for any support! Pull requests are of course welcome!
-
+https://github.com/huttarichard/instagram-private-api-proxy
 
 
 
