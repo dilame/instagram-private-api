@@ -3,7 +3,6 @@ var util = require("util");
 var _ = require("underscore");
 var crypto = require('crypto');
 var pruned = require('./json-pruned');
-var moment = require('moment');
 var fs = require('fs');
 
 

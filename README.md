@@ -13,20 +13,17 @@ npm install instagram-private-api
 
 **What is this?** 
 
-Since I had lot of troubles with official API (sandbox etc.) I decided to make Node.JS api and provide code to others. It is OOP api, and have a coverage ... **I DO NOT USE THIS FOR SPAM**, hope you will not too. 
-
-
-**Credit:**
-
-Who deserves most ...  @mgp25 & @markmhn for decrypting private keys from c++ libraries bundled within android app.
+Since I had lot of troubles with official API (sandbox etc.) I decided to make Node.JS api and provide code to others. 
+It is OOP api, and have a coverage ... **I DO NOT USE THIS FOR SPAM**, hope you will not too. 
 
 
 **How to use this?** 
 
+
 First you need to gain session:
 
 ```javascript
-var Client = require('instagram-private-api').Client.V1;
+var Client = require('instagram-private-api').V1;
 var device = new Client.Device('SAMSUNG_GALAXY_S2', 'someuser');
 var cookiePath = __dirname + './cookies/someuser.json';
 // Either gain already gained session
@@ -134,3 +131,8 @@ session.create('some instagram username', 'somepass')
 Thanks for any support! Pull requests are of course welcome!
 
 
+
+
+**Credit:**
+
+Who deserves most ...  @mgp25 & @markmhn for decrypting private keys from c++ libraries bundled within android app.

@@ -1,37 +1,35 @@
 var util = require("util");
-var touch = require("touch");
+var tough = require('tough-cookie');
+var Store = tough.Store;
 var Promise = require('bluebird');
 var CONSTANTS = require("./constants");
 var FileCookieStore = require('tough-cookie-filestore');
 var fs = require('fs');
 var path = require('path');
-var touch = require('touch');
 var _ = require('underscore');
 var Helpers = require('../../helpers');
 
 
-
-function InstgramFileCookieStore() {
-    FileCookieStore.apply(this, arguments);
+function CookieStorage(cookieStorage) {
+    this.storage = cookieStorage;
 }
 
-util.inherits(InstgramFileCookieStore, FileCookieStore);
-module.exports = InstgramFileCookieStore;
+
+Object.defineProperty(CookieStorage.prototype, "store", {
+    get: function() { return this.storage },
+    set: function(val) {}
+});
+
+
 
 var Exceptions = require('./exceptions');
+module.exports = CookieStorage;
 
 
-InstgramFileCookieStore.loadFromPath = function(cookiePath) {
-    cookiePath = path.resolve(cookiePath);
-    Helpers.ensureExistenceOfJSONFilePath(cookiePath);
-    return new InstgramFileCookieStore(cookiePath);
-};
-
-
-InstgramFileCookieStore.prototype.getCookieValue = function (name) {
+CookieStorage.prototype.getCookieValue = function (name) {
     var self = this;
     return new Promise(function(resolve, reject) {
-        self.findCookie(CONSTANTS.HOSTNAME, '/', name, function(err, cookie) {
+        self.storage.findCookie(CONSTANTS.HOSTNAME, '/', name, function(err, cookie) {
             if (err) return reject(err);
             if (!_.isObject(cookie)) return reject(new Exceptions.CookieNotValidError(name));
             resolve(cookie);
@@ -40,23 +38,23 @@ InstgramFileCookieStore.prototype.getCookieValue = function (name) {
 };
 
 
-// You need to override this in order to copy cookies to same namespace as
-// WebRequest using with WEB_HOSTNAME
-InstgramFileCookieStore.prototype.putCookie = function (cookie, cb) {
+CookieStorage.prototype.putCookie = function (cookie) {
     var args = _.toArray(arguments);
-    var that = this;
-    FileCookieStore.prototype.putCookie.call(this, cookie, function() {
-        cookie = _.clone(cookie);
-        cookie.domain = CONSTANTS.WEB_HOSTNAME;
-    	FileCookieStore.prototype.putCookie.call(that, cookie, cb);
-    });
+    var self = this;
+    return new Promise(function (resolve, reject) {
+        self.storage.putCookie(cookie, function() {
+            cookie = _.clone(cookie);
+            cookie.domain = CONSTANTS.WEB_HOSTNAME;
+            self.putCookie(cookie, resolve);
+        });    
+    })
 };
 
 
-InstgramFileCookieStore.prototype.getCookies = function () {
+CookieStorage.prototype.getCookies = function () {
     var self = this;
     return new Promise(function(resolve, reject) {
-        self.findCookies(CONSTANTS.HOSTNAME, '/', function(err, cookies){
+        self.storage.findCookies(CONSTANTS.HOSTNAME, '/', function(err, cookies){
             if (err) return reject(err);
             resolve(cookies || []);
         })
@@ -64,10 +62,10 @@ InstgramFileCookieStore.prototype.getCookies = function () {
 };
 
 
-InstgramFileCookieStore.prototype.removeCheckpointStep = function () {
+CookieStorage.prototype.removeCheckpointStep = function () {
     var self = this;
     return new Promise(function(resolve, reject) {
-        self.removeCookie(CONSTANTS.WEB_HOSTNAME, '/', 'checkpoint_step', function(err){
+        self.storage.removeCookie(CONSTANTS.WEB_HOSTNAME, '/', 'checkpoint_step', function(err){
             if (err) return reject(err);
             resolve();
         })
@@ -75,7 +73,7 @@ InstgramFileCookieStore.prototype.removeCheckpointStep = function () {
 };
 
 
-InstgramFileCookieStore.prototype.getAccountId = function () {
+CookieStorage.prototype.getAccountId = function () {
     var self = this;
     return this.getCookieValue('ds_user_id')
         .then(function(cookie) {
@@ -89,7 +87,7 @@ InstgramFileCookieStore.prototype.getAccountId = function () {
 };
 
 
-InstgramFileCookieStore.prototype.getSessionId = function () {
+CookieStorage.prototype.getSessionId = function () {
     var currentTime = new Date().getTime();
     return this.getCookieValue('sessionid')
         .then(function(cookie) {
@@ -98,3 +96,8 @@ InstgramFileCookieStore.prototype.getSessionId = function () {
             throw new Exceptions.CookieNotValidError("sessionid"); 
         })
 };
+
+
+CookieStorage.prototype.destroy = function () {
+    throw new Error("Mehtod destroy is not implemented")
+}

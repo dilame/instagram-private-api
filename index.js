@@ -1,10 +1,6 @@
-var path = require('path');
-var _ = require('underscore');
+'use strict';
 var InstagramPrivateAPI = {};
-InstagramPrivateAPI.Client = {};
-InstagramPrivateAPI.Client.V1 = require('./client/v1');
-InstagramPrivateAPI.ProxyClient = {};
-InstagramPrivateAPI.ProxyClient.V1 = require('./proxy-client/v1');
-InstagramPrivateAPI.ProxyServer = {}
-InstagramPrivateAPI.ProxyServer.run = require('./proxy/server');
+
+InstagramPrivateAPI = {};
+InstagramPrivateAPI.V1 = require('./client/v1');
 module.exports = InstagramPrivateAPI;
