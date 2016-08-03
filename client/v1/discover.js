@@ -4,15 +4,14 @@ var _ = require('underscore');
 var Media = require('./media');
 var Account = require('./account');
 
-module.exports = function(session, inSingup, numMedia) {
-    numMedia = _.isNumber(numMedia) ? numMedia : 3;
+module.exports = function(session, inSingup) {
     return new Request(session)
         .setMethod('POST')
         .setResource('discoverAyml')
         .generateUUID()
         .setData({
             phone_id: Helpers.generateUUID(),
-            in_singup: !!inSingup,
+            in_singup: inSingup ? 'true' : 'false',
             module: 'ayml_recommended_users'
         })
         .send()

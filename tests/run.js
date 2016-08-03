@@ -3,6 +3,7 @@ var Client = require('../client/v1');
 var path = require('path');
 var mkdirp = require('mkdirp');
 var support = require('./support');
+var _ = require('underscore');
 var fs = require('fs');
 var dir = './cookies';
 var session;
@@ -48,5 +49,23 @@ describe("Sessions", function () {
             acc.params.should.have.property('username')
             done();
         })
+    })
+
+    it("should not be problem to search account with session", function(done) {
+        Client.Account.searchForUser(session, 'instagram')
+            .then(function(account) {
+                account.params.username.should.be.equal('instagram');
+                done();
+            }) 
+    })
+
+    it("should not be problem to show discover feed", function(done) {
+        Client.discover(session, false, 5)
+            .then(function(discover) {
+                discover.length.should.be.above(0);
+                discover[0].account.should.be.instanceOf(Client.Account)
+                discover[0].mediaIds.should.be.Array();
+                done();
+            }) 
     })
 })
