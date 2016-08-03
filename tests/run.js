@@ -15,6 +15,8 @@ mkdirp.sync(__dirname + '/tmp');
 // For self-signed certificates
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 
+// Client.Request.setProxy('http://127.0.0.1:8888')
+
 describe("Sessions", function () {
     before(function (done) {
         // Wait one hour
@@ -65,6 +67,14 @@ describe("Sessions", function () {
                 discover.length.should.be.above(0);
                 discover[0].account.should.be.instanceOf(Client.Account)
                 discover[0].mediaIds.should.be.Array();
+                done();
+            }) 
+    })
+
+    it("should not be problem to check username", function(done) {
+        Client.Account.checkUsername(Client.Device.getRandom(), 'instagram')
+            .then(function(result) {
+                result.available.should.equal(false);
                 done();
             }) 
     })
