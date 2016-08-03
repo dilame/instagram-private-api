@@ -1,9 +1,15 @@
 var should = require('should');
 var Client = require('../client/v1');
 var path = require('path');
+var mkdirp = require('mkdirp');
 var support = require('./support');
+var fs = require('fs');
+var dir = './cookies';
 var session;
 var credentails; // [username, password, proxy]
+
+mkdirp.sync(__dirname + '/cookies');
+mkdirp.sync(__dirname + '/tmp');
 
 // For self-signed certificates
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
