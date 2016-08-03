@@ -141,8 +141,8 @@ Account._create = function(session, email, username, password, name) {
         .send()
         .then(function(json) {
             if(!json.account_created)
-                throw new Exceptions.RegistrationError(json.errors);
-            return new Account(session, json.account_created);    
+                throw new Exceptions.RegistrationError(json.errors);  
+            return new Account(session, json.created_user);    
         })
 };
 
