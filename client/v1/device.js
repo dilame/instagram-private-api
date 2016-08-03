@@ -4,13 +4,13 @@ var Helpers = require('../../helpers');
 var md5 = require('js-md5');
 
 
-function Device(name, username, version) {
+function Device(name, username) {
     if(!_.isObject(CONSTANTS.DEVICES[name]))
         throw new Error("Device you pass is not available")
     if(!_.isString(username))
         throw new Error("`Device` class needs username to be able generate correlated device_id seed!");
-    this._version = version || CONSTANTS.DEFAULT_VERSION;
-    this._device = CONSTANTS.DEVICES[name];
+    this._version = CONSTANTS.PRIVATE_KEY.APP_VERSION;
+    this._device = CONSTANTS.DEVICES[name.toUpperCase()];
     this._androidVersion = Helpers.getRandomArbitrary(18, 23);
     this.name = name;
     this.username = username;

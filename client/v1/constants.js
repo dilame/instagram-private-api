@@ -94,30 +94,23 @@ const DEVICES = {
     }
 }
 
-const PRIVATE_KEYS = [{
-    SIG_KEY: '55e91155636eaa89ba5ed619eb4645a4daf1103f2161dbfe6fd94d5ea7716095',
+const PRIVATE_KEY = {
+    /*{
+        SIG_KEY: '3e0fbc3ab2b2a6b3dbd5f5303dc26cb8d39636291ea9da820283a275d070bd98',
+        SIG_VERSION: '4',
+        APP_VERSION: '8.5.2'
+    },*/
+    SIG_KEY: '5519c493fc0e2d56355621cf0d4485611869067c7e26f89e946070e3c526df7d',
     SIG_VERSION: '4',
-    APP_VERSION: '8.2.0'
-}, {
-    SIG_KEY: '3d3d669cedc38f2ea7d198840e0648db3738224a0f661aa6a2c1e77dfa964a1e',
-    SIG_VERSION: '4',
-    APP_VERSION: '8.4.0'
-}, {
-    SIG_KEY: 'b5d839444818714bdab3e288e6da9b515f85b000b6e6b452552bfd399cb56cf0',
-    SIG_VERSION: '4',
-    APP_VERSION: '8.5.1'
-}, {
-    SIG_KEY: '3e0fbc3ab2b2a6b3dbd5f5303dc26cb8d39636291ea9da820283a275d070bd98',
-    SIG_VERSION: '4',
-    APP_VERSION: '8.5.2'
-}];
+    APP_VERSION: '9.0.0'
+}
+
 
 
 const HOSTNAME = 'i.instagram.com';
 const WEB_HOSTNAME = 'www.instagram.com';
 const HOST = 'https://' + HOSTNAME + '/';
 const WEBHOST = 'https://' + WEB_HOSTNAME + '/';
-const DEFAULT_VERSION = '8.0.0';
 
 
 module.exports = {
@@ -129,8 +122,7 @@ module.exports = {
     WEBHOST: WEBHOST,
     API_ENDPOINT: HOST + 'api/v1/',
     DEVICES: DEVICES,
-    DEFAULT_VERSION: DEFAULT_VERSION,
     EXPERIMENTS: EXPERIMENTS,
-    PRIVATE_KEYS: PRIVATE_KEYS,
+    PRIVATE_KEY: PRIVATE_KEY,
     instagramAgentTemplate: _.template('Instagram <%= version %> Android (<%= agent %>)')
 }

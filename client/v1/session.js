@@ -181,7 +181,7 @@ Session.login = function(session, username, password) {
 Session.create = function(device, storage, username, password, proxy) {
     var that = this;
     var session = new Session(device, storage);
-    if(_.isString(proxy))
+    if(_.isString(proxy) && !_.isEmpty(proxy))
         session.proxyUrl = proxy;
     return session.getAccountId()
         .then(function () {

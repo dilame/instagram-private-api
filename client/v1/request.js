@@ -225,7 +225,7 @@ Request.prototype.signData = function () {
     var that = this;
     if(!_.contains(['POST', 'PUT', 'PATCH', 'DELETE'], this._request.method))
         throw new Error("Wrong request method for signing data!");
-    return signatures.sign(this._request.data, this.session)
+    return signatures.sign(this._request.data)
         .then(function (data) {
             that.setHeaders({
                 'User-Agent': that.device.userAgent(data.appVersion)

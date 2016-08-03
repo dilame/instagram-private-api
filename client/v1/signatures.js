@@ -5,24 +5,9 @@ var hmac = require('crypto-js/hmac-sha256');
 var CONSTANTS = require('./constants');
 var pruned = require('./json-pruned');
 
-var strToInt = function(str) {
-    str = str.toString().slice(0, 10)
-    var int = 0;
-    for(var i = 0; i < str.length; i++) {
-        int += str.charCodeAt(i);
-    }
-    return int;
-}
 
-exports.sign = function(payload, session) {
-    var key;
-    var Session = require('./session');
-    if(session && session instanceof Session) {
-        var keyIndex = strToInt(session.device.md5) % CONSTANTS.PRIVATE_KEYS.length;
-        key = CONSTANTS.PRIVATE_KEYS[keyIndex];
-    } else {
-        key = _.last(CONSTANTS.PRIVATE_KEYS);
-    }
+exports.sign = function(payload) {
+    var key = CONSTANTS.PRIVATE_KEY;
     var json = _.isString(payload) ? payload : pruned(payload);
     var signed = hmac(json, key.SIG_KEY);
     return new Promise(function(resolve, reject) {

@@ -5,6 +5,9 @@ var support = require('./support');
 var session;
 var credentails; // [username, password, proxy]
 
+// For self-signed certificates
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
+
 describe("Sessions", function () {
     before(function (done) {
         // Wait one hour
@@ -24,7 +27,7 @@ describe("Sessions", function () {
 
     it("should not be problem to create sessions", function (done) {
         var device = new Client.Device('SAMSUNG_GALAXY_S2', credentails[0]);
-        var storage = new Client.CookieFileStorage(__dirname + '/cookies/'+credentails[0]+'.json')
+        var storage = new Client.CookieFileStorage(__dirname + '/cookies/'+credentails[0]+'.json');
         var promise = Client.Session.create(device, storage, credentails[0], credentails[1], credentails[2]);
         promise.then(function(sessionInstance) {
             session = sessionInstance;
