@@ -16,6 +16,7 @@ function WebRequest() {
         'Cache-Control': 'no-cache',
         'Pragma': 'no-cache'
     });
+    this._jsonEndpoint = false;
     delete this._request.headers['X-IG-Connection-Type'];
     delete this._request.headers['X-IG-Capabilities'];
 }
@@ -46,20 +47,23 @@ WebRequest.prototype.setDevice = function(device) {
 };
 
 
-WebRequest.prototype.setSession = function(session) {
-    if(!(session instanceof Session))
-        throw new Error("`session` parametr must be instance of `Session`")
-    this._session = session;
-    this.setHeaders({
-        'x-csrftoken': session.CSRFToken
-    });
+WebRequest.prototype.setJSONEndpoint = function(json) {
     this.setOptions({
-        jar: session.jar
-    });
-    if(session.device)
-        this.setDevice(session.device);
+        qs: {'__a': '1'}
+    })
+    this._jsonEndpoint = true;
     return this;
 };
+
+
+
+WebRequest.prototype.setCSRFToken = function(token) {
+    this.setHeaders({
+        'x-csrftoken': token
+    });
+    return this;
+};
+
 
 
 WebRequest.prototype.send = function (options) {
@@ -77,6 +81,18 @@ WebRequest.prototype.send = function (options) {
             return [Request.requestClient(options), options]
         })
         .spread(function(response, options) {
+            if(that._jsonEndpoint) {
+                var beforeParse = _.bind(that.beforeParse, that)
+                var parseMiddleware = _.bind(that.parseMiddleware, that)
+                return new Promise(function(resolve, reject) {
+                    return resolve(beforeParse(response))
+                })
+                .then(parseMiddleware);          
+            }
+            return response;
+        })
+        .then(function(response) {
+            if(that._jsonEndpoint) return response.body;
             return response;
         })
         .catch(function(error) {

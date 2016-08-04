@@ -34,6 +34,7 @@ var routes = require('./routes');
 var Helpers = require('../../helpers');
 var JSONbig = require('json-bigint');
 var CONSTANTS = require('./constants');
+var Session = require('./session');
 
 Request.defaultHeaders = {
     'X-IG-Connection-Type': 'WIFI',
@@ -188,14 +189,19 @@ Request.prototype.setLocalAddress = function(ipAddress) {
 };
 
 
+Request.prototype.setCSRFToken = function(token) {
+    this.setData({
+        _csrftoken: token,
+    });
+    return this;
+};
+
+
 Request.prototype.setSession = function(session) {
-    var Session = require('./session');
     if(!(session instanceof Session))
         throw new Error("`session` parametr must be instance of `Session`")
     this._session = session;
-    this.setData({
-        _csrftoken: session.CSRFToken,
-    });
+    this.setCSRFToken(session.CSRFToken);
     this.setOptions({
         jar: session.jar
     });

@@ -57,7 +57,8 @@ const ROUTES = {
 
 
 const WEB_ROUTES = {
-    integrityCheckpoint: 'challenge/'
+    integrityCheckpoint: 'challenge/',
+    userInfo: '<%= id %>/'
 }
 
 

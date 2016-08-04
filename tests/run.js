@@ -78,4 +78,26 @@ describe("Sessions", function () {
                 done();
             }) 
     })
+
+    it("should be able to receive checkpoint as boolean result", function(done) {
+        Client.Web.Checkpoint.isRequired(session)
+            .then(function(result) {
+                result.should.be.Boolean();
+                done();
+            }) 
+    })
+
+    it("should be able to ask for json endpoint trough web-request", function(done) {
+        var request = new  Client.Web.Request(session)
+            .setMethod('GET')
+            .setResource('userInfo', {id: 'instagram'})
+            .setJSONEndpoint()
+            .send()
+            .then(function(result) {
+                result.user.should.be.Object();
+                result.user.username.should.be.String();
+                result.user.username.should.equal('instagram')
+                done();
+            }) 
+    })
 })
