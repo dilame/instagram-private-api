@@ -36,6 +36,28 @@ promise.then(function(sessionInstance) {
 ```
 
 
+**How to proxy every request:**
+
+
+There are 2 choices of how to proxy requests:
+
+Poroxy URL has standart format: 
+ - Unauthenticated: `http(s)://yourhost.com/`
+ - Authenticated: `http(s)://user:pass@yourhost.com/`
+ - 
+1) You can set global proxy or default proxy by calling
+`Client.Request.setProxy(proxyURL)`
+
+2) Or If you interested one proxy per session
+`session.proxyUrl = proxyURL` SAME AS `session.setProxy(proxyURL)`
+
+If you use combination of these two methods first way has lower priority, 
+meaning if you set global proxy, and then session proxy, session proxy will be prefered.
+
+Static `.create` method also accept the proxy as last (optional parametr);
+`Session.create(device, storage, username, password, proxyURL)`
+
+
 **Available APIs:**
 
 You can start by taking look on:
