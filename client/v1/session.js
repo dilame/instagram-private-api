@@ -4,6 +4,7 @@ var fs = require('fs');
 var _ = require('underscore');
 var request = require("request-promise");
 var CookieStorage = require("./cookie-storage");
+var RequestJar = require("./jar");
 
 function Session(device, storage) {
     this.setDevice(device);    
@@ -69,7 +70,7 @@ Session.prototype.setCookiesStorage = function (storage) {
     if(!(storage instanceof CookieStorage))
         throw new Error("`storage` is not an valid instance of `CookieStorage`");
     this._cookiesStore = storage;
-    this._jar = request.jar(storage.store);
+    this._jar = new RequestJar(storage.store);
     return this;
 };
 

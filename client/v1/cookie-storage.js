@@ -42,11 +42,7 @@ CookieStorage.prototype.putCookie = function (cookie) {
     var args = _.toArray(arguments);
     var self = this;
     return new Promise(function (resolve, reject) {
-        self.storage.putCookie(cookie, function() {
-            cookie = _.clone(cookie);
-            cookie.domain = CONSTANTS.WEB_HOSTNAME;
-            self.putCookie(cookie, resolve);
-        });    
+        self.storage.putCookie(cookie, resolve);    
     })
 };
 
@@ -65,7 +61,7 @@ CookieStorage.prototype.getCookies = function () {
 CookieStorage.prototype.removeCheckpointStep = function () {
     var self = this;
     return new Promise(function(resolve, reject) {
-        self.storage.removeCookie(CONSTANTS.WEB_HOSTNAME, '/', 'checkpoint_step', function(err){
+        self.storage.removeCookie(CONSTANTS.HOSTNAME, '/', 'checkpoint_step', function(err){
             if (err) return reject(err);
             resolve();
         })
