@@ -2,6 +2,7 @@ INSTAGRAM PRIVATE NODE.JS API
 ===================
 ![logo](https://cloud.githubusercontent.com/assets/1809268/15931032/2792427e-2e56-11e6-831e-ffab238cc4a2.png)
 ![travis](https://travis-ci.org/huttarichard/instagram-private-api.svg)
+[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=huttarichard%40gmail%2ecom&lc=MQ&item_name=Github%20IG%20API&no_note=0&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted)
 
 **Installation**
 
@@ -10,6 +11,13 @@ You can install this by using npm:
 ```
 npm install instagram-private-api
 ```
+----
+
+**Do you like this project:**
+
+Most of us fighting with time, plase support to give me more time to do more awesome features!
+
+----
 
 **What is this?** 
 
@@ -34,6 +42,28 @@ promise.then(function(sessionInstance) {
    // Now you have session, do what ever private API allows
 });
 ```
+
+
+**How to proxy every request:**
+
+
+There are 2 choices of how to proxy requests:
+
+Poroxy URL has standart format: 
+ - Unauthenticated: `http(s)://yourhost.com/`
+ - Authenticated: `http(s)://user:pass@yourhost.com/`
+
+1) You can set global proxy or default proxy by calling
+`Client.Request.setProxy(proxyURL)`
+
+2) Or If you interested one proxy per session
+`session.proxyUrl = proxyURL` SAME AS `session.setProxy(proxyURL)`
+
+If you use combination of these two methods first way has lower priority, 
+meaning if you set global proxy, and then session proxy, session proxy will be prefered.
+
+Static `.create` method also accept the proxy as last (optional parametr);
+`Session.create(device, storage, username, password, proxyURL)`
 
 
 **Available APIs:**
