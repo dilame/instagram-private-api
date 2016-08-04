@@ -2,6 +2,7 @@ INSTAGRAM PRIVATE NODE.JS API
 ===================
 ![logo](https://cloud.githubusercontent.com/assets/1809268/15931032/2792427e-2e56-11e6-831e-ffab238cc4a2.png)
 ![travis](https://travis-ci.org/huttarichard/instagram-private-api.svg)
+[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=huttarichard%40gmail%2ecom&lc=MQ&item_name=Github%20IG%20API&no_note=0&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted)
 
 **Installation**
 
@@ -10,6 +11,13 @@ You can install this by using npm:
 ```
 npm install instagram-private-api
 ```
+----
+
+**Do you like this project:**
+
+Most of us fighting with time, plase support to give me more time to do more awesome features!
+
+----
 
 **What is this?** 
 
