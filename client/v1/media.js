@@ -14,9 +14,9 @@ util.inherits(Media, Resource);
 
 module.exports = Media;
 var Request = require('./request');
+var Comment = require('./comment');
 var Session = require('./session');
 var Account = require('./account');
-var Comment = require('./comment');
 var Exceptions = require('./exceptions');
 
 

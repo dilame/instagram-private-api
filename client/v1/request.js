@@ -1,6 +1,7 @@
 var _ = require("underscore");
 var Promise = require("bluebird");
 var request = require('request-promise');
+var JSONbig = require('json-bigint');
 
 function Request(session) {
     this._id = _.uniqueId();
@@ -32,7 +33,6 @@ var Device = require('./device');
 var Exceptions = require('./exceptions');
 var routes = require('./routes');
 var Helpers = require('../../helpers');
-var JSONbig = require('json-bigint');
 var CONSTANTS = require('./constants');
 var Session = require('./session');
 
