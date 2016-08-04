@@ -44,7 +44,7 @@ There are 2 choices of how to proxy requests:
 Poroxy URL has standart format: 
  - Unauthenticated: `http(s)://yourhost.com/`
  - Authenticated: `http(s)://user:pass@yourhost.com/`
- - 
+
 1) You can set global proxy or default proxy by calling
 `Client.Request.setProxy(proxyURL)`
 
