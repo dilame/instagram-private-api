@@ -1,8 +1,13 @@
-INSTAGRAM PRIVATE NODE.JS API 
+Instagram Private NODE.JS API 
 ===================
 ![logo](https://cloud.githubusercontent.com/assets/1809268/15931032/2792427e-2e56-11e6-831e-ffab238cc4a2.png)
+
+
 ![travis](https://travis-ci.org/huttarichard/instagram-private-api.svg)
+![Mit License](https://camo.githubusercontent.com/089daf756ab3a48c94f6938bde7cf85125183ea3/68747470733a2f2f706f7365722e707567782e6f72672f6d677032352f696e7374616772616d2d7068702f6c6963656e7365)
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=huttarichard%40gmail%2ecom&lc=MQ&item_name=Github%20IG%20API&no_note=0&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted)
+
+----
 
 **Installation**
 
