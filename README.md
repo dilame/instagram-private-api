@@ -132,7 +132,7 @@ not required. Also avaiable on `Device.prototype` as property `id`
 `.setData(params:Object, override:boolean)`
 
 will set data you want to send to the Instagram endpoint. With request class
-you can set the format or request with method `.setBodyType(type:string)` choices
+you can set the format of request with method `.setBodyType(type:string)` choices
 used by instagram are `json`, `form`, `formData` (default).
 
 `.signPayload()`
