@@ -1,5 +1,6 @@
 var _ = require("underscore");
 var util = require("util");
+var routes = require('./routes');
 
 
 
@@ -115,10 +116,17 @@ ActionSpamError.prototype.getFeedbackMessage = function () {
 };
 
 
-function CheckpointError(json) {
+function CheckpointError(json, session) {
     this.json = json;
     this.name = "CheckpointError";
     this.message = "Instagram call checkpoint for this action!";
+    if(_.isString(json.checkpoint_url))
+        this.url = json.checkpoint_url;
+    if(!this.url && _.isObject(json.checkpoint) && _.isString(json.checkpoint.url))
+        this.url = json.checkpoint.url;
+    if(!this.url)
+        this.url = routes.getWebUrl('challange')
+    this.session = session;
 }
 util.inherits(CheckpointError, APIError);
 exports.CheckpointError = CheckpointError;
@@ -266,14 +274,26 @@ util.inherits(PlaceNotFound, APIError);
 exports.PlaceNotFound = PlaceNotFound;
 
 
-function NotPossibleToSendSMS(reason) {
-    if(!reason) reason = 'Unknown reason';
-    this.name = 'NotPossibleToSendSMS';
-    this.message = "Not possible to receive sms code ("+reason+")!";
+function NotPossibleToResolveChallange(reason, code) {
+    this.name = 'NotPossibleToResolveChallange';
+    this.reason = reason || 'Unknown reason';
+    this.code = code || NotPossibleToResolveChallange.CODE.UNKNOWN;
+    this.message = "Not possible to resolve challange ("+reason+")!";
 }
 
-util.inherits(NotPossibleToSendSMS, APIError);
-exports.NotPossibleToSendSMS = NotPossibleToSendSMS;
+util.inherits(NotPossibleToResolveChallange, APIError);
+exports.NotPossibleToResolveChallange = NotPossibleToResolveChallange;
+
+NotPossibleToResolveChallange.CODE = {
+    RESET_NOT_WORKING: "RESET_NOT_WORKING",
+    NOT_ACCEPTING_NUMBER: "NOT_ACCEPTING_NUMBER",
+    INCORRECT_NUMBER: "INCORRECT_NUMBER",
+    INCORRECT_CODE: "INCORRECT_CODE",
+    UNKNOWN: "UNKNOWN",
+    UNABLE_TO_PARSE: "UNABLE_TO_PARSE"
+};
+
+
 
 
 function NotPossibleToVerify() {
@@ -283,3 +303,12 @@ function NotPossibleToVerify() {
 
 util.inherits(NotPossibleToVerify, APIError);
 exports.NotPossibleToVerify = NotPossibleToVerify;
+
+
+function NoChallangeRequired() {
+    this.name = 'NoChallangeRequired';
+    this.message = "No challange is required to use account!";
+}
+
+util.inherits(NoChallangeRequired, APIError);
+exports.NoChallangeRequired = NoChallangeRequired;

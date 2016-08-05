@@ -11,7 +11,6 @@ var CONSTANTS = require('../constants');
 function WebRequest() {
     Request.apply(this, arguments);
     this._request.headers = _.extend(_.clone(this._request.headers), {
-        'Host': CONSTANTS.WEB_HOSTNAME,
         'Upgrade-Insecure-Requests': '1',
         'Cache-Control': 'no-cache',
         'Pragma': 'no-cache'
@@ -60,6 +59,15 @@ WebRequest.prototype.setJSONEndpoint = function(json) {
 WebRequest.prototype.setCSRFToken = function(token) {
     this.setHeaders({
         'x-csrftoken': token
+    });
+    return this;
+};
+
+
+WebRequest.prototype.setHost = function(host) {
+    if(!host) host = CONSTANTS.WEB_HOSTNAME;
+    this.setHeaders({
+        'Host': host,
     });
     return this;
 };

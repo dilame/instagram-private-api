@@ -58,17 +58,6 @@ CookieStorage.prototype.getCookies = function () {
 };
 
 
-CookieStorage.prototype.removeCheckpointStep = function () {
-    var self = this;
-    return new Promise(function(resolve, reject) {
-        self.storage.removeCookie(CONSTANTS.HOSTNAME, '/', 'checkpoint_step', function(err){
-            if (err) return reject(err);
-            resolve();
-        })
-    });
-};
-
-
 CookieStorage.prototype.getAccountId = function () {
     var self = this;
     return this.getCookieValue('ds_user_id')
@@ -92,6 +81,18 @@ CookieStorage.prototype.getSessionId = function () {
             throw new Exceptions.CookieNotValidError("sessionid"); 
         })
 };
+
+
+CookieStorage.prototype.removeCheckpointStep = function () {
+    var self = this;
+    return new Promise(function(resolve, reject) {
+        self.storage.removeCookie(CONSTANTS.HOSTNAME, '/', 'checkpoint_step', function(err){
+            if (err) return reject(err);
+            resolve();
+        })
+    });
+};
+
 
 
 CookieStorage.prototype.destroy = function () {

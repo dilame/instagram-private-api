@@ -32,7 +32,7 @@ mkdirp.sync(__dirname + '/tmp');
 // For self-signed certificates
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 
-// Client.Request.setProxy('http://127.0.0.1:8888')
+//Client.Request.setProxy('http://127.0.0.1:8888')
 
 describe("Sessions", function () {
     before(function (done) {
@@ -96,13 +96,6 @@ describe("Sessions", function () {
             }) 
     })
 
-    it("should be able to receive checkpoint as boolean result", function(done) {
-        Client.Web.Checkpoint.isRequired(session)
-            .then(function(result) {
-                result.should.be.Boolean();
-                done();
-            }) 
-    })
 
     it("should be able to ask for json endpoint trough web-request", function(done) {
         var request = new  Client.Web.Request(session)
@@ -116,5 +109,16 @@ describe("Sessions", function () {
                 result.user.username.should.equal('instagram')
                 done();
             }) 
+    })
+
+    it("should be able to resolve challange", function(done) {
+        // to simulate checkpoint
+        var checkpintError = new Client.Exceptions.CheckpointError({
+            checkpoint_url: 'https://i.instagram.com/challenge/'
+        }, session)
+        var request = new Client.Web.Challange.resolve(checkpintError)
+            .catch(Client.Exceptions.NoChallangeRequired, function(e) {
+                done();
+            })
     })
 })

@@ -168,6 +168,12 @@ Request.prototype.setHeaders = function(headers) {
 };
 
 
+Request.prototype.removeHeader = function(name) {
+    delete this._request.headers[name];
+    return this;
+};
+
+
 Request.prototype.setUrl = function(url) {
     if(!_.isString(url) || !Helpers.isValidUrl(url))
         throw new Error("The `url` parametr must be valid url string");
@@ -291,7 +297,7 @@ Request.prototype.errorMiddleware = function (response) {
     if (json.spam)
         throw new Exceptions.ActionSpamError(json);
     if (json.message == 'checkpoint_required')
-        throw new Exceptions.CheckpointError(json);
+        throw new Exceptions.CheckpointError(json, this.session);
     if (json.message == 'login_required')
         throw new Exceptions.AuthenticationError("Login required to process this request");
     if (_.isString(json.message) && json.message.toLowerCase().indexOf('too many requests') !== -1) 
