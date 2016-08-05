@@ -557,11 +557,13 @@ is probably much easier to read and manupulate with.
 
 https://github.com/huttarichard/instagram-private-api-proxy
 
+---
 
 **Simillar repository:**
 
 [https://github.com/mgp25/Instagram-API](https://github.com/mgp25/Instagram-API)
 
+---
 
 **End User License Agreement (EULA)**
 
