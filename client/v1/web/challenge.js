@@ -3,13 +3,13 @@ var errors = require('request-promise/errors');
 var Promise = require('bluebird');
 var util = require('util');
 
-var Challange = function(session, type, error, body) {
+var Challenge = function(session, type, error, body) {
     this._session = session;
     this._type = type;
     this._error = error;
 }
 
-exports.Challange = Challange;
+exports.Challenge = Challenge;
 
 
 var Exceptions = require('../exceptions');
@@ -22,39 +22,39 @@ var Exceptions = require("../exceptions");
 var ORIGIN = CONSTANTS.HOST.slice(0, -1); // Trailing / in origin
 
 
-Object.defineProperty(Challange.prototype, "type", {
+Object.defineProperty(Challenge.prototype, "type", {
     get: function() { return this._type },
     set: function(val) {}
 });
 
 
-Object.defineProperty(Challange.prototype, "session", {
+Object.defineProperty(Challenge.prototype, "session", {
     get: function() { return this._session },
     set: function(val) {}
 });
 
 
-Object.defineProperty(Challange.prototype, "error", {
+Object.defineProperty(Challenge.prototype, "error", {
     get: function() { return this._error },
     set: function(val) {}
 });
 
 
 
-var PhoneVerificationChallange = function(session, type, checkpointError, body) {
-    Challange.apply(this, arguments);
+var PhoneVerificationChallenge = function(session, type, checkpointError, body) {
+    Challenge.apply(this, arguments);
     this.phoneInserted = false;
 }
-util.inherits(PhoneVerificationChallange, Challange);
-exports.PhoneVerificationChallange = PhoneVerificationChallange;
+util.inherits(PhoneVerificationChallenge, Challenge);
+exports.PhoneVerificationChallenge = PhoneVerificationChallenge;
 
 
-PhoneVerificationChallange.prototype.phone = function(phone) {
+PhoneVerificationChallenge.prototype.phone = function(phone) {
     var that = this;
     // ask for reset first to be sure we are going to submit phone
     return new WebRequest(that.session)
         .setMethod('GET')
-        .setResource('challangeReset')
+        .setResource('challengeReset')
         .setHeaders({
             'Referer': that.error.url,
             'Origin': ORIGIN
@@ -69,11 +69,11 @@ PhoneVerificationChallange.prototype.phone = function(phone) {
         })
         .then(function(response) {
             if(response.statusCode !== 200 && response.statusCode !== 302)
-                throw new Exceptions.NotPossibleToResolveChallange(
+                throw new Exceptions.NotPossibleToResolveChallenge(
                     "Reset is not working", 
-                    Exceptions.NotPossibleToResolveChallange.CODE.RESET_NOT_WORKING
+                    Exceptions.NotPossibleToResolveChallenge.CODE.RESET_NOT_WORKING
                 );  
-            // We got clean new challange
+            // We got clean new challenge
             return new WebRequest(that.session)
                 .setMethod('POST')
                 .setUrl(that.error.url)
@@ -92,24 +92,24 @@ PhoneVerificationChallange.prototype.phone = function(phone) {
         })
         .then(function(response) {
             if(response.statusCode !== 200)
-                throw new Exceptions.NotPossibleToResolveChallange(
+                throw new Exceptions.NotPossibleToResolveChallenge(
                     "Instagram not accpetion the number",
-                    Exceptions.NotPossibleToResolveChallange.CODE.NOT_ACCEPTING_NUMBER
+                    Exceptions.NotPossibleToResolveChallenge.CODE.NOT_ACCEPTING_NUMBER
                 );  
             if(response.body.indexOf('incorrect') !== -1)
-                throw new Exceptions.NotPossibleToResolveChallange(
+                throw new Exceptions.NotPossibleToResolveChallenge(
                     "Probably incorrect number",
-                    Exceptions.NotPossibleToResolveChallange.CODE.INCORRECT_NUMBER
+                    Exceptions.NotPossibleToResolveChallenge.CODE.INCORRECT_NUMBER
                 );
             if(response.body.indexOf('response_code') === -1)
-                throw new Exceptions.NotPossibleToResolveChallange();
+                throw new Exceptions.NotPossibleToResolveChallenge();
             that.phoneInserted = true;    
             return that;    
         })
 }
 
 
-PhoneVerificationChallange.prototype.code = function(code) {
+PhoneVerificationChallenge.prototype.code = function(code) {
     var that = this;
     return new WebRequest(that.session)
         .setMethod('POST')
@@ -128,9 +128,9 @@ PhoneVerificationChallange.prototype.code = function(code) {
         .send({followRedirect: false})
         .then(function(response) {
             // Must be redirected
-            throw new Exceptions.NotPossibleToResolveChallange(
+            throw new Exceptions.NotPossibleToResolveChallenge(
                 "Probably incorrect code",
-                Exceptions.NotPossibleToResolveChallange.CODE.INCORRECT_CODE
+                Exceptions.NotPossibleToResolveChallenge.CODE.INCORRECT_CODE
             );
         })
         .catch(errors.StatusCodeError, function(error) {
@@ -141,31 +141,31 @@ PhoneVerificationChallange.prototype.code = function(code) {
 }
 
 
-var EmailVerificationChallange = function(session, type, checkpointError, body) {
-    Challange.apply(this, arguments);
+var EmailVerificationChallenge = function(session, type, checkpointError, body) {
+    Challenge.apply(this, arguments);
     this.verifyByValue = _.last(body.match(/email.*value(.*)"/gi)[0].split("value")).slice(2, -1);
 }
 
-util.inherits(EmailVerificationChallange, Challange);
-exports.EmailVerificationChallange = EmailVerificationChallange;
+util.inherits(EmailVerificationChallenge, Challenge);
+exports.EmailVerificationChallenge = EmailVerificationChallenge;
 
 
-EmailVerificationChallange.prototype.parseCode = function(email) {
+EmailVerificationChallenge.prototype.parseCode = function(email) {
     var match = email.match(/security code is (\d*)?/);
-    if(!match) throw new Exceptions.NotPossibleToResolveChallange(
+    if(!match) throw new Exceptions.NotPossibleToResolveChallenge(
         "Unable to parse code",
-        Exceptions.NotPossibleToResolveChallange.CODE.UNABLE_TO_PARSE
+        Exceptions.NotPossibleToResolveChallenge.CODE.UNABLE_TO_PARSE
     ); 
     return parseInt(match[1]);
 };
 
 
-EmailVerificationChallange.prototype.reset = function() {
+EmailVerificationChallenge.prototype.reset = function() {
     return this.session.cookieStore.removeCheckpointStep()
 };
 
 
-EmailVerificationChallange.prototype.email = function() {
+EmailVerificationChallenge.prototype.email = function() {
     var that = this;
     return new WebRequest(that.session)
         .setMethod('POST')
@@ -184,13 +184,13 @@ EmailVerificationChallange.prototype.email = function() {
         .send({followRedirect: false, qs: {next: 'instagram://checkpoint/dismiss'}})
         .then(function(response) {
             if(response.statusCode !== 200)
-                throw new Exceptions.NotPossibleToResolveChallange(); 
+                throw new Exceptions.NotPossibleToResolveChallenge(); 
             return that;    
         })
 };
 
 
-EmailVerificationChallange.prototype.code = function(code) {
+EmailVerificationChallenge.prototype.code = function(code) {
     var that = this;
     if(!_.isNumber(code))
         throw new Error("Code input should be 6-digits number"); 
@@ -211,13 +211,13 @@ EmailVerificationChallange.prototype.code = function(code) {
         .send({followRedirect: false, qs: {next: 'instagram://checkpoint/dismiss'}})
         .then(function(response) {
             if(response.statusCode !== 200 && response.body.indexOf('has been verified') === -1)
-                throw new Exceptions.NotPossibleToResolveChallange(); 
+                throw new Exceptions.NotPossibleToResolveChallenge(); 
             return that;    
         })
 };
 
 
-EmailVerificationChallange.prototype.confirmate = function(code) {
+EmailVerificationChallenge.prototype.confirmate = function(code) {
     var that = this;
     return new WebRequest(this.session)
         .setMethod('POST')
@@ -235,7 +235,7 @@ EmailVerificationChallange.prototype.confirmate = function(code) {
         })
         .send({followRedirect: false, qs: {next: 'instagram://checkpoint/dismiss'}})
         .then(function(response) {
-            throw new Exceptions.NotPossibleToResolveChallange(); 
+            throw new Exceptions.NotPossibleToResolveChallenge(); 
         })
         .catch(errors.StatusCodeError, function(error) {
             if(error.statusCode == 302)
@@ -245,24 +245,24 @@ EmailVerificationChallange.prototype.confirmate = function(code) {
 };
 
 
-var CaptchaVerificationChallange = function(session) {
-    Challange.apply(this, arguments);
+var CaptchaVerificationChallenge = function(session) {
+    Challenge.apply(this, arguments);
     throw new Error("Not implemented, due to missing account for testing, please write me on email `huttarichard@gmail.com`")
 }
-util.inherits(CaptchaVerificationChallange, Challange);
-exports.CaptchaVerificationChallange = CaptchaVerificationChallange;
+util.inherits(CaptchaVerificationChallenge, Challenge);
+exports.CaptchaVerificationChallenge = CaptchaVerificationChallenge;
 
 
 
 // Workflow for this is quite interesting,
-// if you got an challange to complete it is either:
+// if you got an challenge to complete it is either:
 // Captcha, Email verification or phone verification
 // We need to figure out how to recognize each of these
-// challanges in order to be able complete them.
+// challenges in order to be able complete them.
 
-Challange.resolve = function(checkpointError) {
+Challenge.resolve = function(checkpointError) {
     if(!(checkpointError instanceof Exceptions.CheckpointError))
-        throw new Error("`Challange.resolve` method must get exception (type of `CheckpointError`) as a first argument");
+        throw new Error("`Challenge.resolve` method must get exception (type of `CheckpointError`) as a first argument");
     var session = checkpointError.session;   
     return session.cookieStore.removeCheckpointStep()
         .then(function() {
@@ -272,21 +272,21 @@ Challange.resolve = function(checkpointError) {
                 .send({followRedirect: false})
         })
         .then(function(response) {
-            // This is obvious, email field is present it is email challange
+            // This is obvious, email field is present it is email challenge
             if(response.body.indexOf('email') !== -1)
-                return new EmailVerificationChallange(session, 'email', checkpointError, response.body);
-            // On the otherhand this is not. We can be stuck in challange
+                return new EmailVerificationChallenge(session, 'email', checkpointError, response.body);
+            // On the otherhand this is not. We can be stuck in challenge
             // so we need to detect if instagram require code he `texted` us
             // or phone_number field on first step will be present
             if(response.body.indexOf('phone_number') !== -1 || response.body.indexOf('code we texted you') !== -1)
-                return new PhoneVerificationChallange(session, 'phone', checkpointError, response.body);
+                return new PhoneVerificationChallenge(session, 'phone', checkpointError, response.body);
             // For last we now that email or phone verification
             // is not required so last one dont need check, it is captcha
-            return new CaptchaVerificationChallange(session, 'capcha', checkpointError, response.body);
+            return new CaptchaVerificationChallenge(session, 'capcha', checkpointError, response.body);
         })
         .catch(errors.StatusCodeError, function(error) {
             if(error.statusCode == 302)
-                throw new Exceptions.NoChallangeRequired;
+                throw new Exceptions.NoChallengeRequired;
             throw error;    
         })
 }

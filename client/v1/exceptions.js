@@ -125,7 +125,7 @@ function CheckpointError(json, session) {
     if(!this.url && _.isObject(json.checkpoint) && _.isString(json.checkpoint.url))
         this.url = json.checkpoint.url;
     if(!this.url)
-        this.url = routes.getWebUrl('challange')
+        this.url = routes.getWebUrl('challenge')
     this.session = session;
 }
 util.inherits(CheckpointError, APIError);
@@ -274,17 +274,17 @@ util.inherits(PlaceNotFound, APIError);
 exports.PlaceNotFound = PlaceNotFound;
 
 
-function NotPossibleToResolveChallange(reason, code) {
-    this.name = 'NotPossibleToResolveChallange';
+function NotPossibleToResolveChallenge(reason, code) {
+    this.name = 'NotPossibleToResolveChallenge';
     this.reason = reason || 'Unknown reason';
-    this.code = code || NotPossibleToResolveChallange.CODE.UNKNOWN;
-    this.message = "Not possible to resolve challange ("+reason+")!";
+    this.code = code || NotPossibleToResolveChallenge.CODE.UNKNOWN;
+    this.message = "Not possible to resolve challenge ("+reason+")!";
 }
 
-util.inherits(NotPossibleToResolveChallange, APIError);
-exports.NotPossibleToResolveChallange = NotPossibleToResolveChallange;
+util.inherits(NotPossibleToResolveChallenge, APIError);
+exports.NotPossibleToResolveChallenge = NotPossibleToResolveChallenge;
 
-NotPossibleToResolveChallange.CODE = {
+NotPossibleToResolveChallenge.CODE = {
     RESET_NOT_WORKING: "RESET_NOT_WORKING",
     NOT_ACCEPTING_NUMBER: "NOT_ACCEPTING_NUMBER",
     INCORRECT_NUMBER: "INCORRECT_NUMBER",
@@ -305,10 +305,10 @@ util.inherits(NotPossibleToVerify, APIError);
 exports.NotPossibleToVerify = NotPossibleToVerify;
 
 
-function NoChallangeRequired() {
-    this.name = 'NoChallangeRequired';
-    this.message = "No challange is required to use account!";
+function NoChallengeRequired() {
+    this.name = 'NoChallengeRequired';
+    this.message = "No challenge is required to use account!";
 }
 
-util.inherits(NoChallangeRequired, APIError);
-exports.NoChallangeRequired = NoChallangeRequired;
+util.inherits(NoChallengeRequired, APIError);
+exports.NoChallengeRequired = NoChallengeRequired;

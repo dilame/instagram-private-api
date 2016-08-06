@@ -57,8 +57,8 @@ const ROUTES = {
 
 
 const WEB_ROUTES = {
-    challangeReset: 'challenge/reset/',
-    challange: 'challenge/',
+    challengeReset: 'challenge/reset/',
+    challenge: 'challenge/',
     userInfo: '<%= id %>/'
 }
 

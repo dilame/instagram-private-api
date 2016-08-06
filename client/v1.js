@@ -43,11 +43,11 @@ InstagramV1.Feed.SelfLiked = require('./v1/feeds/self-liked');
 
 InstagramV1.Web = {};
 InstagramV1.Web.Request = require('./v1/web/web-request');
-var challange = require('./v1/web/challange');
-InstagramV1.Web.Challange = challange.Challange;
-InstagramV1.Web.CaptchaVerificationChallange = challange.CaptchaVerificationChallange;
-InstagramV1.Web.EmailVerificationChallange = challange.EmailVerificationChallange;
-InstagramV1.Web.PhoneVerificationChallange = challange.PhoneVerificationChallange;
+var challenge = require('./v1/web/challenge');
+InstagramV1.Web.Challenge = challenge.Challenge;
+InstagramV1.Web.CaptchaVerificationChallenge = challenge.CaptchaVerificationChallenge;
+InstagramV1.Web.EmailVerificationChallenge = challenge.EmailVerificationChallenge;
+InstagramV1.Web.PhoneVerificationChallenge = challenge.PhoneVerificationChallenge;
 
 
 module.exports = InstagramV1;

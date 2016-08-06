@@ -111,13 +111,13 @@ describe("Sessions", function () {
             }) 
     })
 
-    it("should be able to resolve challange", function(done) {
+    it("should be able to resolve challenge", function(done) {
         // to simulate checkpoint
         var checkpintError = new Client.Exceptions.CheckpointError({
             checkpoint_url: 'https://i.instagram.com/challenge/'
         }, session)
-        var request = new Client.Web.Challange.resolve(checkpintError)
-            .catch(Client.Exceptions.NoChallangeRequired, function(e) {
+        var request = new Client.Web.Challenge.resolve(checkpintError)
+            .catch(Client.Exceptions.NoChallengeRequired, function(e) {
                 done();
             })
     })

@@ -20,41 +20,41 @@ npm install instagram-private-api
 
 **Do you like this project:**
 
-Most of us fighting with time, plase support to give me more time to do more awesome features!
+Most of us are fighting with time, please support to give me more time to do more awesome features!
 
 ----
 
 **What is this?** 
 
-Since I had lot of troubles with official API (sandbox etc.) I decided to make Node.JS api wrapper and provide code to others. 
-It is OOP api, and have a small coverage ... **I DO NOT USE THIS FOR SPAM**, hope you will not too. 
+Since I had lot of trouble with the official API (sandbox etc.) I decided to make a Node.JS api wrapper and to provide the code to others. 
+It is an OOP api, and has a small coverage ... **I DO NOT USE THIS FOR SPAM**, hope you will not either. 
 
 ---
 
-**What you can do with this API wrapper?** 
+**What can you do with this API wrapper?** 
 
-On the bottom line, anything that instagram PRIVATE API allows, execpt some endpoints you need to 
+Pretty much anything that the Instagram PRIVATE API allows, except for some endpoints that you need to 
 implement by yourself or made a pull request to repository.
 
 Features:
-  - You can easily ask for any private endpoint with `Request` and `WebRequest` class
-  - Session and device managment
-  - Do follow / unfollow
+  - You can easily ask for any private endpoint with the `Request` and `WebRequest` classes
+  - Session and device management
+  - Follow / unfollow
   - Upload / delete media (photos)
   - Like anything you like :P
   - Search & Iterate for Location, Users, Hashtags
   - Edit account profile
-  - Resolve challanges (Captcha, Phone verification, Email verification)
+  - Resolve challenges (Captcha, Phone verification, Email verification)
   - Access media from many sources profile / location / hashtag
-  - Aceess feeds for timeline or discovery
+  - Access feeds for timeline or discovery
   - Create and manage new accounts  
-  - Send directs or list directs in inbox
+  - Send direct messages or list direct messages in inbox
   - Much more ...
 
 **How to use this (quick follow example)?** 
 
 
-You need to obtain session for accessing endpoints with `Session` class:
+You need to obtain a session to access endpoints with the `Session` class:
 
 ```javascript
 var Client = require('instagram-private-api').V1;
@@ -64,8 +64,8 @@ var storage = new Client.CookieFileStorage(__dirname + './cookies/someuser.json'
 // And go for login
 Client.Session.create(device, storage, 'someuser', 'somepassword')
 	.then(function(session) {
-   		// Now you have session, we can do follow / unfollow, anything...
-		// And we want to follow instagram official profile
+   		// Now you have a session, we can follow / unfollow, anything...
+		// And we want to follow Instagram official profile
 		return [session, Client.Account.searchForUser(session, 'instagram')]   
 	})
 	.spread(function(session, account) {
@@ -74,21 +74,21 @@ Client.Session.create(device, storage, 'someuser', 'somepassword')
 	.then(function(relationship) {
 		console.log(relationship.params)
 		// {followedBy: ... , following: ... }
-		// Yey, you just made an follow
+		// Yey, you just followed @instagram
 	})
 ```
 
 ---
 
-**Request & WebRequest Class**
+**Request & WebRequest Classes**
 
 > Nice! So you mentioned that we can hit any endpoint?
 
-That is true. Every request going to the instagram is actually done through
-Request & WebRequest class. For private endpoints used by android or iphone
-you can simply ask `Request` class, this will lead to host `i.instagram.com`
-where is a private API. For requests to `www.instagram.com` (web app) you can use
-`WebRequest` class. `WebRequest` is a child of `Request`;
+That is true. Every request going to Instagram is actually performed through the
+Request & WebRequest classes. For the private endpoints used by Android or iPhone,
+you can simply use the `Request` class, which will lead to host `i.instagram.com`,
+using the private API. For requests to `www.instagram.com` (web app), you can use
+the `WebRequest` class. `WebRequest` is a child of `Request`;
 
 Here is an example (how likes are actually implemented):
 
@@ -107,32 +107,32 @@ return new Request(session)
 		return new Like(session, {});
 	})
 ```
-**Let make this clear and unfold it little bit:**
+**Let make this clearer and explain it little bit more in detail:**
 
-`Request` constructor accepting as a first and only argument a class
-which should be an instanceof `Session` class. `Session` class is a
-glue between `Device` and `CookieStorage`. So if you create a session
-you can easily hit any endpoint without worring about authentication 
-or cookies managment.
+The `Request` constructor accepts, as its first and only argument a class
+which should be an instanceof `Session` class. `Session` class is the
+glue between `Device` and `CookieStorage`. So if you create a session,
+you can easily hit any endpoint without worrying about authentication 
+or cookies management.
 
 `.setResource(resource:string, params:Object)` 
 
-is method for setting up url which can be also interpreted as
+is the method to setup the URL, which can be also interpreted as
 
 `.setUrl(url:string)`
 
-but `setResource` method is predefined list of endpoints so you don't
-need to construct url by your self.
+but the `setResource` method has a predefined list of endpoints, so you don't
+need to construct the URL by yourself.
 
 `.generateUUID()`
 
-will generate Device UUID wich is what every device do, but probably
-not required. Also avaiable on `Device.prototype` as property `id`
+will generate a Device UUID, which is what every device does, but it's probably
+not required. Also available on `Device.prototype` as property `id`
 
 `.setData(params:Object, override:boolean)`
 
-will set data you want to send to the Instagram endpoint. With request class
-you can set the body format of request with method 
+will set data you want to send to the Instagram endpoint. With the `Request` class
+you can set the body format of the request with method 
 
 `.setBodyType(type:string)` 
 
@@ -140,26 +140,26 @@ choices used by instagram are `json`, `form`, `formData` (default).
 
 `.signPayload()`
 
-some endpoints require a signed payload. Under the hood instagram apps
-actually have c++ libraries which are compiled in to a machine code. Meaing
-it is not really easy to see source of these libraries. It is a great 
-way how to not let developers see what is going on. And there is a library
-called `libstrings.so` having methods to generate signature for JSON payload
-you want to send to the instagram. Funny thing about that is, you need ARM based
-processor to use these libraries, so you can sign request but only on ARM based processor.
+some endpoints require a signed payload. Under the hood the Instagram apps
+actually have C++ libraries that are compiled into machine code. This means
+it is not really easy to see the source of these libraries. This is a great 
+way to not let developers see what is going on. And there is a library
+called `libstrings.so`, that has methods to generate signatures for the JSON payload
+you want to send to Instagram. Funny thing about that is, you need ARM based
+processor to use these libraries, so you can sign requests but only on ARM based processors.
 
-This is actually give us 2 choinces. One is to start (virtual) machine with
-such a procesor and build some kind of bridge to communicate. Or find out how
-`libstrings.so` is working and apply same behavior in node (which would be of course better).
+This is actually gives us 2 choices. One is to start a (virtual) machine with
+such a processor and build some kind of bridge to communicate. The second is to find out how
+`libstrings.so` is working and apply the same behavior in node (which would of course be better).
 
-More about this interesting technique and how to exploit keys and also great
+More about this interesting technique and how to extract keys and also a great
 source of learning is here: [MKHDZNFQ Blog](http://mokhdzanifaeq.github.io/)
 
-Luckily for us we know and we are able to exploit `libstrings.so` and thus
-we have clean implementation of signatures for instagram.
+Luckily for us, we know and we are able to analyze `libstrings.so` and thus
+we have a clean implementation of signatures for Instagram.
 
-Signatures are not required for all endpoints, but for sensiteve ones 
-(likes / follow /directs/ login), without signature you will receive `400` Bad Request.
+Signatures are not required for all endpoints, but for all sensitive ones 
+(likes / follow / directs / login), you will receive a `400 Bad Request` error, without signature.
 
 
 Example of JSON payload to sign-in:
@@ -168,55 +168,55 @@ Example of JSON payload to sign-in:
 65eeaed09d7729f7aea06249c9fa33abd8a65a2a6514658f515346170b27c75b.{"_csrftoken":"missing","device_id":"android-85ee13e5ce740e2d","_uuid":"3c0755b3-a510-4a8e-8674-feb7219c2159","username":"xxxxxxxxxx","password":"xxxxxxxxx","login_attempt_count":0}
 ```
 
-First is hash (signature)  followed by dot and then JSON payload.
-Hash is actually created by hmac encryption in combination with 
+The first is the hash (signature), followed by dot and then the JSON payload.
+The hash is actually created by HMAC encryption, in combination with an
 encryption key called the `private key`.
 
 
 `.send(options:Object)`
 
-any other options you want to apply to request should be passed as first
-argument to `.send` method;
+any other options you want to apply to request should be passed as the first
+argument to the `.send` method;
 
 `.then` is just promise library. Must be called after `.send`.
 We are using [Bluebird library](bluebirdjs.com/docs/api-reference.html)
-which is a really nice way how to work with promises.
+which is a really nice way to work with promises.
 
-`Request` and `Webrequest` class is build on top of Request.js library.
-`Webrequest` library can actually use same session. No need to create new one.
+The `Request` and `Webrequest` classes are built on top of the Request.js library.
+The `Webrequest` library can actually use same session. No need to create a new one.
 
-> If you need to sniff traffic to see what is your phone doing and see 
-> available endpoints I strongly recommand [Charles Debug Proxy](charlesproxy.com).
+> If you need to sniff traffic to see what your phone is doing and see the
+> available endpoints I strongly recommend [Charles Debug Proxy](charlesproxy.com).
 > Easiest combination for me is iPhone + Charles. iPhone allows you to redirect 
 > all your traffic to your local machine and then you can inspect what is going
-> on by putting charles in middle. Traffic is encrypted by ssl, so you need
-> to install charles root certificate first.
+> on by putting Charles in middle. Traffic is encrypted by SSL, so you need
+> to install Charles root certificate first.
 
 ---
 
 
-**Session and cookies managment:**
+**Session and cookies management:**
 
-> So you said erlier there is a class gluing cookies and device, what?
+> So you said earlier there is a class gluing cookies and device, what?
 
-Session class is actually gluing any instance of `CookieStorage` and `Device` together. 
-Every request to instagram must be chain with proper headers and data
-In order to make endpoint work.
-For example every endpoint require proper `User-Agent` header in
+The Session class is actually gluing any instance of `CookieStorage` and `Device` together. 
+Every request to Instagram must be chained with proper headers and data,
+in order to make endpoints work.
+For example every endpoint requires a proper `User-Agent` header in
 order to verify signature or `X-CSFR-Token` | `_csrftoken` to verify that you
 are doing request intentionally.
 
 **Show time for class `Device`**:
 
-Device class is responsible for `device_id` property wich is often
-send with other data. It is responsible for generating correlated `android-id`.
+The Device class is responsible for the `device_id` property, which is often
+sent with other data. It is responsible for generating a correlated `android-id`.
 
 ```javascript
 // Available phones are SAMSUNG_GALAXY_S2, GOOGLE_NEXUS_7, XIAOMI_ARMANI
-// IG username is required due to correlated andorid id for every user
+// IG username is required due to correlated android id for every user
 var device = new Client.Device('SAMSUNG_GALAXY_S2', 'instagram.username')
 console.log(device.id) 
-//->  andorid-xxxxxxxxxx
+//->  android-xxxxxxxxxx
 console.log(device.userAgent('18'))
 //-> User-Agent: Instagram 9.0.0 Android (18/4.4.4; 240dpi; 480x800; Samsung Galaxy S2 - 4.4.4 - API 21 - 480x800; en_US)
 ```
@@ -224,8 +224,8 @@ console.log(device.userAgent('18'))
 **CookieStorage & CookieFileStorage**
 
 You can store cookies anywhere you want. Cookies are done with [tough-cookie](https://github.com/SalesforceEng/tough-cookie/).
-Simple overview whould be that, `CookieStorage` should have property
-store which should be child instance of `tough.Store` class.
+Simple overview would be that, `CookieStorage` should have property
+store, which should be child instance of `tough.Store` class.
 
 For more info checkout this:
 
@@ -238,36 +238,36 @@ var storage = new Client.CookieFileStorage(__dirname + './cookies/someuser.json'
 storage.getAccountId()
 	.then(function(accountId){
 		console.log(accountId);
-		// will return actuall userId from cookies
+		// will return actual userId from cookies
 	})
 ```
 
 **Session class**
 
-You can create new instance of Session by calling 
+You can create a new instance of Session by calling 
 `var session = new Session(storeage:CookieStorage, device:Device)`
 
-If you have valid cookies you don't need to worry about anyting else
-if you not, you need to create session with storage and device.
+If you have valid cookies, you don't need to worry about anything else
+if you don't, you need to create a session with storage and device.
 
 static method 
 
 `Session.create(device:Device, storeage:CookieStorage, username:string, password:string, proxyUrl?:string)`
 
 can help you with that. This method will sign-in and create a 
-new instance session session.
+new Session instance.
 
 `.getAccountId() : Promise<void|string>`
 
-this medhod can return account id from cookies
+this method returns the account id from cookies
 
 `.setProxy(proxyUrl:string)`
 
-this will set proper proxy-url. More about this bellow.
+this will set proper proxy-url. More about this below.
 
 `.getAccount() : Promise<Account>`
 
-will ask for account object associated with your session.
+will return the account object associated with your session.
 
 
 ```javascript
@@ -284,22 +284,23 @@ session.getAccount()
 **How to proxy every request:**
 
 
-There are 2 choices of how to proxy requests:
+There are 2 choices to proxy requests:
 
-Poroxy URL has a standart format: 
+Proxy URL has a standard format: 
  - Unauthenticated: `http(s)://yourhost.com/`
  - Authenticated: `http(s)://user:pass@yourhost.com/`
 
-1) You can set global proxy or default proxy by calling
+1) You can set a global proxy or default proxy by calling
 `Client.Request.setProxy(proxyURL)`
 
-2) Or If you interested one proxy per session
+2) Or if you are interested in one proxy per session
 `session.proxyUrl = proxyURL` SAME AS `session.setProxy(proxyURL)`
 
-If you use combination of these two methods first way has lower priority, 
-meaning if you set global proxy, and then session proxy, session proxy will be prefered.
+If you use a combination of these two methods, the first one has lower priority, 
+meaning that, if you set a global proxy, and then a session proxy, the session
+proxy will be used.
 
-Static `.create` method also accept the proxy as last (optional parametr)
+Static `.create` method also accepts the proxy as last (optional parameter)
 
 `Session.create(device, storage, username, password, proxyURL)`
 
@@ -307,15 +308,15 @@ Static `.create` method also accept the proxy as last (optional parametr)
 
 **Resource classes:**
 
-`InstagramResource` class is base class for every resource.
+`InstagramResource` class is the base class for every resource.
 
-From this class inherits:
+From this class inherit:
 
 [Account](https://github.com/huttarichard/instagram-private-api/blob/master/client/v1/account.js),
 [Comment](https://github.com/huttarichard/instagram-private-api/blob/master/client/v1/comment.js),
 [Hashtag](https://github.com/huttarichard/instagram-private-api/blob/master/client/v1/hashtag.js),
 [Like](https://github.com/huttarichard/instagram-private-api/blob/master/client/v1/like.js),
-[Locatio](https://github.com/huttarichard/instagram-private-api/blob/master/client/v1/location.js),
+[Location](https://github.com/huttarichard/instagram-private-api/blob/master/client/v1/location.js),
 [Media](https://github.com/huttarichard/instagram-private-api/blob/master/client/v1/media.js),
 [Relationship](https://github.com/huttarichard/instagram-private-api/blob/master/client/v1/relationship.js),
 [Thread](https://github.com/huttarichard/instagram-private-api/blob/master/client/v1/thread.js),
@@ -325,15 +326,14 @@ From this class inherits:
 
 `InstagramResource` constructor accepts two arguments:
 
-
 `new InstagramResource(session: Session, params: Object)`
 
-This class is keeping session and params of every resource class mentioned above.
+This class is keeping the session and params of every resource class mentioned above.
 
 Remember this example?
 
 ```javascript
-// lets assume you got valid session
+// let's assume you got a valid session
 var session = new Client.Session(Client.Device.getRandom())
 session.getAccount()
   .then(function(account) {
@@ -353,8 +353,8 @@ Account.getById = function (session, id) {
         .setResource('userInfo', {id: id})
         .send()
         .then(function(data) {
-			// data variable is pure json object which will be parsed
-			// by Account.prototype.parse and set as top level property params 
+			// data variable is a pure JSON object which will be parsed
+			// by Account.prototype.parse and set as the top level property params 
             return new Account(session, data.user)
         })
 };  
@@ -373,20 +373,20 @@ Account.getById(session, '1234567')
 ```
 
 
-Another example whould be upload:
+Another example would be upload:
 
 ```javascript
-// JPEG is only supported format now, pull request for any other format
+// JPEG is the only supported format now, pull request for any other format
 // or video welcomed!
 Upload.photo(session, './path/to/your/jpeg.jpg')
 	.then(function(upload) {
 		// upload instanceof Client.Upload
-		// nothing more then just keeping upload id
+		// nothing more than just keeping upload id
 		console.log(upload.params.uploadId);
 		return Media.configurePhoto(session, upload.params.uploadId, 'akward caption');
 	})
 	.then(function(medium) {
-		// we configure medium it is now visible with caption
+		// we configure medium, it is now visible with caption
 		console.log(medium.params)
 	})
 ```
@@ -395,16 +395,16 @@ Upload.photo(session, './path/to/your/jpeg.jpg')
 
 **Feeds**
 
-Feed is class which implements functionality to iterate
-through list (which can be infinite list) of data, like user media or 
+Feed is the class which implements functionality to iterate
+through a list (which can be an infinite list) of data, like user media or 
 hashtag media or locations.
 
-Every feed implement method `.get` to help you
-go through cursor and fetch items until you hit a bottom.
+Every feed implements the method `.get` to help you
+go move the cursor and fetch items until you hit the bottom.
 
-`cursor` is sort of pagination for API. Bascially in every
-request you will receive a next cursor for next request, which will
-lead to another dose of data for a specific feed.
+`cursor` is a sort of pagination for the API. Basically in every
+request you will receive the next cursor for next request, which will
+lead to another set of data for this specific feed.
 
 Implemented are:
 [AccountSearch](https://github.com/huttarichard/instagram-private-api/blob/master/client/v1/feeds/account-search.js),
@@ -421,12 +421,12 @@ Implemented are:
 [InboxPending](https://github.com/huttarichard/instagram-private-api/blob/master/client/v1/feeds/inbox-pending.js),
 [Thread](https://github.com/huttarichard/instagram-private-api/blob/master/client/v1/feeds/thread.js)
 
-**Feed API is same almost every time:**
+**Feed API is the same almost every time:**
 
 `var feed = new Client.Feed.UserMedia(session:Session, ...extraArguments)`
 
-Since feeds can be infinite and we cannot obviosly fetch all results we need
-to iterate. Every time you call `.get` you will receive a new dose od data
+Since feeds can be infinite and we cannot obviosly fetch all results, we need
+to iterate. Every time you call `.get`, you will receive a new set of data
 and set new `maxId` mentioned above as `cursor`. 
 
 `feed.get() : Promise<Media[]>`
@@ -453,33 +453,33 @@ Promise.map(_.range(0, 20), function() {
 
 `feed.getMaxId() : Promise<Media[]>`
 
-will return current `cursor` this will be set after calling `.get`
+will return the current `cursor`, which will be set after calling `.get`
 
 `feed.setMaxId() : Promise<Media[]>`
 
-will set new `cursor` from you can start iterate
+will set new `cursor`, from which you can start to iterate
 
 `feed.isMoreAvailable() : Boolean`
 
-return a boolean indicating if there is more data to fetch.
-Of course you can hit bottom and then would be no other data to fetch.
+returns a boolean indicating if there is more data to fetch.
+Of course you can hit bottom and then there would be no other data to fetch.
 
-Some feeds have more methods to make things easier. You can check tem out.
+Some feeds have more methods to make things easier. You can check them out.
 
 ---
 
-**Challanges**
+**Challenges**
 
-`Challange` class and her childs are way to somehow win competition with 
-instagram about verification. Let me tell you first **I hope you will
-not spam on instagram, because their are providing really great service
-and this repo should be just for easier access to their API**, anyway
-Instagram is really friking smart about getting you banned for 
-malicious activity, so be carful Icarus and don't spam.
+The `Challenge` class and its children are a way to somehow respond to 
+Instagram verification requests. Let me tell you this first: **I hope you will
+not spam Instagram, because they are providing a really great service
+and this repo should just be used for easier access to their API**... Anyway
+Instagram is really freaking smart and aggressive about getting you banned for 
+any malicious activity, so be careful Icarus and don't spam.
 
-In case you don't have malicious intentions and you will get into situation
-that you need to verify mail, phone or do a captcha (not implemented due
-to missing account for testing) you can use challange classes to automate
+In case you don't have any malicious intentions and you get into a situation
+that requires you to verify via mail or phone, or to pass a captcha (not implemented
+yet, due to missing account for testing) you can use the challenge classes to automate
 this process.
 
 Example first:
@@ -489,29 +489,29 @@ Example first:
 // you get those from previous examples
 
 function challengeMe(error) {
-	return Client.Web.Challange.resolve(error)
+	return Client.Web.Challenge.resolve(error)
 		.then(function(challenge) {
-			// challenge instanceof Client.Web.Challange
+			// challenge instanceof Client.Web.Challenge
 			console.log(challenge.type);
 			// can be phone, email, or captcha
-			// let assume we got email
+			// let's assume we got email
 			if(!challenge.type !== 'email') return;
 			// Will send request to send email to you
 			// email will be one associated with your account
 			return challenge.email();
 		})
 		.then(function(challenge) {
-			// Ok we got next step, instagram expection code
+			// Ok we got to the next step, the response code expected by Instagram
 			return challenge.code('123456');
 		})
 		.then(function(challenge) {
-			// Yey instagram accept code
-			// now we confirm that instagram is happy, wierd :P
+			// Yey Instagram accepted the code
+			// now we confirmed that Instagram is happy, weird :P
 			return challenge.confirm()
 		})
 		.then(function(challenge) {
-			// And we got account confirmed!
-			// so let make this login again
+			// And we got the account confirmed!
+			// so let's login again
 			return loginAndFollow(device, storage, user, password);
 		})
 
@@ -521,8 +521,8 @@ function challengeMe(error) {
 function loginAndFollow(device, storage, user, password) {
 	return Client.Session.create(device, storage, user, password)
 		.then(function(session) {
-			// Now you have session, we can do follow / unfollow, anything...
-			// And we want to follow instagram official profile
+			// Now you have a session, we can follow / unfollow, anything...
+			// And we want to follow Instagram official profile
 			return [session, Client.Account.searchForUser(session, 'instagram')]   
 		})
 		.spread(function(session, account) {
@@ -533,33 +533,33 @@ function loginAndFollow(device, storage, user, password) {
 
 loginAndFollow(device, storage, user, password)
 	.catch(Client.Exceptions.CheckpointError, function(error){
-		// Ok now we know that instagram asking us to
+		// Ok now we know that Instagram is asking us to
 		// prove that we are real users
 		return challengeMe(error);
 	}) 
 	.then(function(relationship) {
 		console.log(relationship.params)
 		// {followedBy: ... , following: ... }
-		// Yey, you just made an follow
+		// Yey, you just followed an account
 	});
 ```
 
-More common for such a situation is [PhoneVerification](https://github.com/huttarichard/instagram-private-api/tree/master/client/v1/web/challange.js#L44).
+More common for such a situation is [PhoneVerification](https://github.com/huttarichard/instagram-private-api/tree/master/client/v1/web/challenge.js#L44).
 Of course there are services like textnow.com and others which will provide
-an API to let you receive instagram sms messages!
+an API to let you receive Instagram SMS messages!
 
 
 **Proxy server:**
 
-I create another repsitory, which implements functionality of this wrapper into very simple
-express app. It is a webserver with API, which can do many stuff as private API does, execept it 
-is probably much easier to read and manupulate with.
+I created another repository, which implements the functionality of this wrapper into a very simple
+express app. It is a webserver with API, which can do many things that the private API does, except it 
+is probably much easier to read and work with.
 
-https://github.com/huttarichard/instagram-private-api-proxy
+[https://github.com/huttarichard/instagram-private-api-proxy](https://github.com/huttarichard/instagram-private-api-proxy)
 
 ---
 
-**Simillar repository:**
+**Similar repository:**
 
 [https://github.com/mgp25/Instagram-API](https://github.com/mgp25/Instagram-API)
 
@@ -567,7 +567,7 @@ https://github.com/huttarichard/instagram-private-api-proxy
 
 **End User License Agreement (EULA)**
 
-  - 1) *You will not use* this repository for sending mass spam or any other malicious activity
-  - 2) *We / You will not support* anyone who is violating this EULA conditions
-  - 3) *Repository is just for learning / personal purposes* thus should not be part of any 
-  	service available on internet that is trying to do any malicios activity (mass bulk request, spam etc.)
+  1) *You will not use* this repository for sending mass spam or any other malicious activity
+  2) *We / You will not support* anyone who is violating this EULA conditions
+  3) *Repository is just for learning / personal purposes* thus should not be part of any 
+  	service available on the Internet that is trying to do any malicious activity (mass bulk request, spam etc.)
