@@ -6,7 +6,7 @@ function UserMediaFeed(session, accountId, limit) {
     this.accountId = accountId;
     this.session = session;
     this.allMedia = [];
-    this.timeout = 10 * 60 * 1000; // 1 minute
+    this.timeout = 10 * 60 * 1000; // 10 minutes
     this.limit = limit;
 }
 
