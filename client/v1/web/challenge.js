@@ -3,6 +3,11 @@ var errors = require('request-promise/errors');
 var Promise = require('bluebird');
 var util = require('util');
 
+// iPhone probably works best, even from android previosly done request
+var iPhoneUserAgent = _.template('Mozilla/5.0 (iPhone; CPU iPhone OS 9_3_3 like Mac OS X) '
+    + 'AppleWebKit/601.1.46 (KHTML, like Gecko) Mobile/13G34 Instagram <%= version %> '
+    + '(iPhone7,2; iPhone OS 9_3_3; cs_CZ; cs-CZ; scale=2.00; 750x1334)');
+
 var Challenge = function(session, type, error, body) {
     this._session = session;
     this._type = type;
@@ -115,18 +120,25 @@ PhoneVerificationChallenge.prototype.code = function(code) {
         .setMethod('POST')
         .setUrl(that.error.url)
         .setHeaders({
-            'Referer': that.error.url,
-            'Origin': ORIGIN
+            'Host': CONSTANTS.HOSTNAME,
+            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+            'Accept-Language': 'en-us',
+            'Content-Type': 'application/x-www-form-urlencoded',
+            'Origin': ORIGIN,
+            'Connection': 'keep-alive',
+            'User-Agent': iPhoneUserAgent({version: that.session.device.version}),
+            'Referer': that.error.url
         })
         .setBodyType('form')
+        .removeHeader('x-csrftoken') // we actually sending this as post param
         .setData({
             response_code: code,
             csrfmiddlewaretoken: that.session.CSRFToken
         })
-        .setHost(CONSTANTS.HOSTNAME)
-        .removeHeader('x-csrftoken')
         .send({followRedirect: false})
         .then(function(response) {
+            if(response.statusCode == 200 && response.body.indexOf('instagram://checkpoint/dismiss') !== -1)
+                return true;
             // Must be redirected
             throw new Exceptions.NotPossibleToResolveChallenge(
                 "Probably incorrect code",
@@ -136,6 +148,11 @@ PhoneVerificationChallenge.prototype.code = function(code) {
         .catch(errors.StatusCodeError, function(error) {
             if(error.statusCode == 302)
                 return true;
+            if(error.statusCode == 400)
+                throw new Exceptions.NotPossibleToResolveChallenge(
+                    "Verification has not been accepted",
+                    Exceptions.NotPossibleToResolveChallenge.CODE.NOT_ACCEPTED
+                );  
             throw error;    
         })
 }
@@ -210,7 +227,7 @@ EmailVerificationChallenge.prototype.code = function(code) {
         })
         .send({followRedirect: false, qs: {next: 'instagram://checkpoint/dismiss'}})
         .then(function(response) {
-            if(response.statusCode !== 200 && response.body.indexOf('has been verified') === -1)
+            if(response.statusCode !== 200 || response.body.indexOf('has been verified') === -1)
                 throw new Exceptions.NotPossibleToResolveChallenge(); 
             return that;    
         })
@@ -223,18 +240,25 @@ EmailVerificationChallenge.prototype.confirmate = function(code) {
         .setMethod('POST')
         .setUrl(that.error.url)
         .setHeaders({
-            'Referer': that.error.url,
-            'Origin': ORIGIN
+            'Host': CONSTANTS.HOSTNAME,
+            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+            'Accept-Language': 'en-us',
+            'Content-Type': 'application/x-www-form-urlencoded',
+            'Origin': ORIGIN,
+            'Connection': 'keep-alive',
+            'User-Agent': iPhoneUserAgent({version: that.session.device.version}),
+            'Referer': that.error.url
         })
         .setBodyType('form')
-        .setHost(CONSTANTS.HOSTNAME)
         .removeHeader('x-csrftoken') // we actually sending this as post param
         .setData({
-            OK: 'OK',
-            csrfmiddlewaretoken: that.session.CSRFToken
+            csrfmiddlewaretoken: that.session.CSRFToken,
+            OK: 'OK'
         })
         .send({followRedirect: false, qs: {next: 'instagram://checkpoint/dismiss'}})
         .then(function(response) {
+            if(response.statusCode == 200 && response.body.indexOf('instagram://checkpoint/dismiss') !== -1)
+                return true;
             throw new Exceptions.NotPossibleToResolveChallenge(); 
         })
         .catch(errors.StatusCodeError, function(error) {

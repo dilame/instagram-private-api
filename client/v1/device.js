@@ -63,6 +63,7 @@ Device.prototype.userAgent = function(version) {
     })
 }
 
+
 Device.prototype.getIndex = function () {
     var devices = _.keys(CONSTANTS.DEVICES);
     var index = _.indexOf(devices, this.name);
