@@ -108,7 +108,7 @@ const PRIVATE_KEY = {
 }
 
 
-
+const TLD = 'instagram.com';
 const HOSTNAME = 'i.instagram.com';
 const WEB_HOSTNAME = 'www.instagram.com';
 const HOST = 'https://' + HOSTNAME + '/';
@@ -122,6 +122,7 @@ module.exports = {
     WEB_HOSTNAME: WEB_HOSTNAME,
     HOST: HOST,
     WEBHOST: WEBHOST,
+    TLD: TLD,
     API_ENDPOINT: HOST + 'api/v1/',
     DEVICES: DEVICES,
     EXPERIMENTS: EXPERIMENTS,
