@@ -31,6 +31,8 @@ const ROUTES = {
     changeProfilePicture: 'accounts/change_profile_picture/',
     mediaConfigure: 'media/configure/',
     mediaInfo: 'media/<%= mediaId %>/info/',
+    mediaLikes: 'media/<%= mediaId %>/likers/',
+    mediaComments: 'media/<%= mediaId %>/comments/<%= maxId ? ("?max_id=" + maxId) : "" %>',
     mediaDeletePhoto: 'media/<%= mediaId %>/delete/?media_type=PHOTO',
     qeSync: 'qe/sync/',
     checkEmail: 'users/check_email/',
