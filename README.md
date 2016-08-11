@@ -415,6 +415,7 @@ Implemented are:
 [UserMedia](https://github.com/huttarichard/instagram-private-api/blob/master/client/v1/feeds/user-media.js),
 [LocationMedia](https://github.com/huttarichard/instagram-private-api/blob/master/client/v1/feeds/location-media.js),
 [TagMedia](https://github.com/huttarichard/instagram-private-api/blob/master/client/v1/feeds/tag-media.js),
+[MediaComments](https://github.com/huttarichard/instagram-private-api/blob/master/client/v1/feeds/media-comments.js),
 [SelfLiked](https://github.com/huttarichard/instagram-private-api/blob/master/client/v1/feeds/self-liked.js),
 [TimelineFeed](https://github.com/huttarichard/instagram-private-api/blob/master/client/v1/feeds/timeline-feed.js),
 [Inbox](https://github.com/huttarichard/instagram-private-api/blob/master/client/v1/feeds/inbox.js),
