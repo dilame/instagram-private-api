@@ -1,29 +1,29 @@
 var _ = require('underscore');
 
-function MediaComments(session, mediaId) {
+function MediaCommentsFeed(session, mediaId) {
     this.lastMaxId = null;
     this.moreAvailable = null;
     this.mediaId = mediaId;
     this.session = session;
 }
 
-module.exports = MediaComments;
+module.exports = MediaCommentsFeed;
 var Request = require('../request');
 var Comment = require('../comment');
 
-MediaComments.prototype.setMaxId = function (maxId) {
+MediaCommentsFeed.prototype.setMaxId = function (maxId) {
     this.lastMaxId = maxId;
 };
 
-MediaComments.prototype.getMaxId = function () {
+MediaCommentsFeed.prototype.getMaxId = function () {
     return this.lastMaxId;
 };
 
-MediaComments.prototype.isMoreAvailable = function() {
+MediaCommentsFeed.prototype.isMoreAvailable = function() {
     return !!this.lastMaxId;
 };
 
-MediaComments.prototype.get = function () {
+MediaCommentsFeed.prototype.get = function () {
     var that = this;
     return new Request(that.session)
         .setMethod('GET')

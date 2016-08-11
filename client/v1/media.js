@@ -61,6 +61,18 @@ Media.getById = function (session, id) {
         })
 }
 
+Media.likers = function(session, mediaId) {
+    return new Request(session)
+        .setMethod('GET')
+        .setResource('mediaLikes', {mediaId: mediaId})
+        .send()
+        .then(function(data) {
+            return _.map(data.users, function (user) {
+                return new Account(session, user);
+            });
+        });
+};
+
 
 Media.delete = function(session, mediaId) {
     return new Request(session)

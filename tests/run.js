@@ -120,5 +120,29 @@ describe("Sessions", function () {
             .catch(Client.Exceptions.NoChallengeRequired, function(e) {
                 done();
             })
+    });
+
+    it("should not be problem to fetch media comments", function(done) {
+        var feed = new Client.Feed.MediaComments(session, '1258975077729962593_1750777689');
+        return feed.get()
+            .then(function(comments) {
+                comments.length.should.be.equal(1);
+                comments[0].should.have.property('account')
+                comments[0].params.should.have.property('created')
+                comments[0].params.created.should.be.Number();
+                comments[0].params.should.have.property('text')
+                comments[0].params.text.should.be.String();
+                done();
+            });
+    })
+
+    it("should not be problem to get media likers", function(done) {
+        Client.Media.likers(session, '1258975077729962593_1750777689')
+            .then(function(likers) {
+                _.each(likers, function(liker){ 
+                    liker.should.be.instanceOf(Client.Account)
+                })
+                done();
+            });
     })
 })
