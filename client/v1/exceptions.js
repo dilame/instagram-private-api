@@ -337,7 +337,7 @@ exports.InvalidUsername = InvalidUsername;
 
 function InvalidPhone(phone, json) {
     this.name = 'InvalidPhone';
-    this.message = phone + " phone is not an valid phone";
+    this.message = phone + " phone is not a valid phone";
     this.json = json;
 }
 
@@ -345,12 +345,21 @@ util.inherits(InvalidPhone, APIError);
 exports.InvalidPhone = InvalidPhone;
 
 
+function InvalidPassword() {
+    this.name = 'InvalidPhone';
+    this.message = "Password must be at least 6 chars long";
+}
+
+util.inherits(InvalidPassword, APIError);
+exports.InvalidPassword = InvalidPassword;
+
+
 
 function AccountRegistrationError(message, json) {
     this.name = 'AccountRegistrationError';
     this.message = message
     this.json = json;
-    if(json.errors || !message) {
+    if(_.isObject(json) && json.errors && !message) {
         this.message = '';
         for(var key in json.errors) {
             this.message += json.errors[key].join('. ')

@@ -32,7 +32,7 @@ mkdirp.sync(__dirname + '/tmp');
 // For self-signed certificates
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 
-//Client.Request.setProxy('http://127.0.0.1:8888')
+// Client.Request.setProxy('http://127.0.0.1:8888')
 
 describe("Sessions", function () {
     before(function (done) {
@@ -52,7 +52,7 @@ describe("Sessions", function () {
     });
 
     it("should not be problem to create sessions", function (done) {
-        var device = new Client.Device('SAMSUNG_GALAXY_S2', credentails[0]);
+        var device = new Client.Device(credentails[0]);
         var storage = new Client.CookieFileStorage(__dirname + '/cookies/'+credentails[0]+'.json');
         var promise = Client.Session.create(device, storage, credentails[0], credentails[1], credentails[2]);
         promise.then(function(sessionInstance) {
@@ -138,4 +138,5 @@ describe("Sessions", function () {
     })
 
     require('./cases/device')(session);
+    require('./cases/account-creator')(session);
 })

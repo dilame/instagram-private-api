@@ -26,6 +26,11 @@ InstagramV1.QE = require('./v1/qe');
 InstagramV1.Upload = require('./v1/upload');
 InstagramV1.discover = require('./v1/discover');
 
+var creator = require('./v1/account-creator');
+InstagramV1.AccountCreator = creator.AccountCreator;
+InstagramV1.AccountPhoneCreator = creator.AccountPhoneCreator;
+InstagramV1.AccountEmailCreator = creator.AccountEmailCreator;
+
 InstagramV1.Feed = {};
 InstagramV1.Feed.AccountFollowers = require('./v1/feeds/account-followers');
 InstagramV1.Feed.AccountFollowing = require('./v1/feeds/account-following');

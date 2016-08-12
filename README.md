@@ -496,6 +496,69 @@ Some feeds have more methods to make things easier. You can check them out.
 
 ---
 
+**Account Creator**
+
+`AccountCreator` and his children `AccountEmailCreator`, `AccountPhoneCreator`
+are designed to create an account. To make account you want to probably use either
+`AccountEmailCreator` or `AccountPhoneCreator` to make an account.
+`AccountCreator` it self is just abstraction. 
+
+Example of `AccountEmailCreator`:
+
+```javascript
+// Create empty session
+var session = new Client.Session(device, storage);
+new AccountEmailCreator(session)
+	.setEmail('....@....')
+	.setUsername('nickname')
+	.setPassword('pwd')
+	.setName('Name')
+	.register()
+	.spread(function(account, discover) {
+		// account instanceof Client.Account
+		console.log("Created Account", account)
+		console.log("Discovery Feed", discover);
+	})
+```
+
+
+Example of `AccountPhoneCreator`:
+
+```javascript
+// Create empty session
+var session = new Client.Session(device, storage);
+new AccountPhoneCreator(session)
+	.setPhone('phone number ie 111222333')
+	.setUsername('nickname')
+	.setPassword('pwd')
+	.setName('Name')
+	.setPhoneCallback(function() {
+		// This will be called in order to 
+		// supply verification code, must return promise
+		// with actual value
+		return Promise.resolve("123456")
+	})
+	.register()
+	.spread(function(account, discover) {
+		// account instanceof Client.Account
+		console.log("Created Account", account)
+		console.log("Discovery Feed", discover);
+	})
+```
+
+Serval exceptions can be raised. 
+  - `InvalidEmail` if you dont supply valid email
+  - `InvalidUsername` if you dont have valid username
+  - `InvalidPhone` for invalid phone number
+  - `InvalidPassword` is you password is for example too short
+  - `AccountRegistrationError` when instagram denied your code or registrion
+  - `AuthenticationError` when account is created but you did not successfuly log in
+
+If you tried too much for you testing purposes you can supply proxy to
+session. Check the "How to proxy every request" section.
+
+---
+
 **Challenges**
 
 The `Challenge` class and its children are a way to somehow respond to 
