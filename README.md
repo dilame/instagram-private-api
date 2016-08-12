@@ -58,7 +58,7 @@ You need to obtain a session to access endpoints with the `Session` class:
 
 ```javascript
 var Client = require('instagram-private-api').V1;
-var device = new Client.Device('SAMSUNG_GALAXY_S2', 'someuser');
+var device = new Client.Device('someuser');
 var storage = new Client.CookieFileStorage(__dirname + './cookies/someuser.json');
 
 // And go for login
@@ -245,7 +245,7 @@ storage.getAccountId()
 **Session class**
 
 You can create a new instance of Session by calling 
-`var session = new Session(storeage:CookieStorage, device:Device)`
+`var session = new Session(storage:CookieStorage, device:Device)`
 
 If you have valid cookies, you don't need to worry about anything else
 if you don't, you need to create a session with storage and device.
@@ -272,7 +272,7 @@ will return the account object associated with your session.
 
 ```javascript
 // lets assume you got valid session
-var session = new Client.Session(Client.Device.getRandom())
+// var session = new Client.Session(device, storage)
 session.getAccount()
   .then(function(account) {
 	console.log(account.params)
@@ -280,6 +280,33 @@ session.getAccount()
   })
 ```
 ---
+
+**Device class**
+
+You can instantize new class, which will be able to represent it self as a device
+you are using to access instagram. By default it will generate device
+from list of device (can be found at `client/v1/devices.json`).
+
+Reason for username in argument is that you need to have same device
+for same user every time when you access instagram API. This is done through
+correlated md5 username hash.
+
+```
+var device = new Client.Device('username');
+device.md5 // will return md5 of your username
+device.md5int // will return md5 integer representation of your device
+device.info // will give you device model information
+device.resolution // will give you resolution of device
+device.dpi // will give you dpi of device
+device.api // android API
+device.release // android release
+
+device.userAgent() // will return useragent for device 
+```
+
+`device.userAgent` method is very important for many reasons. One of them
+is that without proper user agent there is no way how you can access signed endpoints.
+
 
 **How to proxy every request:**
 
@@ -334,7 +361,7 @@ Remember this example?
 
 ```javascript
 // let's assume you got a valid session
-var session = new Client.Session(Client.Device.getRandom())
+// var session = new Client.Session(device, storage)
 session.getAccount()
   .then(function(account) {
 	console.log(account.params)

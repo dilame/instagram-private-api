@@ -88,15 +88,6 @@ describe("Sessions", function () {
             }) 
     })
 
-    it("should not be problem to check username", function(done) {
-        Client.Account.checkUsername(Client.Device.getRandom(), 'instagram')
-            .then(function(result) {
-                result.available.should.equal(false);
-                done();
-            }) 
-    })
-
-
     it("should be able to ask for json endpoint trough web-request", function(done) {
         var request = new  Client.Web.Request(session)
             .setMethod('GET')
@@ -145,4 +136,6 @@ describe("Sessions", function () {
                 done();
             });
     })
+
+    require('./cases/device')(session);
 })

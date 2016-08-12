@@ -313,3 +313,50 @@ function NoChallengeRequired() {
 
 util.inherits(NoChallengeRequired, APIError);
 exports.NoChallengeRequired = NoChallengeRequired;
+
+
+function InvalidEmail(email, json) {
+    this.name = 'InvalidEmail';
+    this.message = email + " email is not an valid email";
+    this.json = json;
+}
+
+util.inherits(InvalidEmail, APIError);
+exports.InvalidEmail = InvalidEmail;
+
+
+function InvalidUsername(username, json) {
+    this.name = 'InvalidUsername';
+    this.message = username + " username is not an valid username";
+    this.json = json;
+}
+
+util.inherits(InvalidUsername, APIError);
+exports.InvalidUsername = InvalidUsername;
+
+
+function InvalidPhone(phone, json) {
+    this.name = 'InvalidPhone';
+    this.message = phone + " phone is not an valid phone";
+    this.json = json;
+}
+
+util.inherits(InvalidPhone, APIError);
+exports.InvalidPhone = InvalidPhone;
+
+
+
+function AccountRegistrationError(message, json) {
+    this.name = 'AccountRegistrationError';
+    this.message = message
+    this.json = json;
+    if(json.errors || !message) {
+        this.message = '';
+        for(var key in json.errors) {
+            this.message += json.errors[key].join('. ')
+        }
+    }
+}
+
+util.inherits(AccountRegistrationError, APIError);
+exports.AccountRegistrationError = AccountRegistrationError;

@@ -13,7 +13,13 @@ const ROUTES = {
     currentAccount: 'accounts/current_user/?edit=true',
     comment: 'media/<%= id %>/comment/',
     like: 'media/<%= id %>/like/',
-    registration: 'accounts/create/',
+    registrationCreate: 'accounts/create/',
+    registrationCreateValidated: 'accounts/create_validated/',
+    registrationSMSCode: 'accounts/send_signup_sms_code/',
+    registrationValidateSMSCode: 'accounts/validate_signup_sms_code/',
+    checkEmail: 'users/check_email/',
+    checkUsername: 'users/check_username/',
+    usernameSuggestions: 'accounts/username_suggestions/',
     uploadPhoto: 'upload/photo/',
     friendshipShow: 'friendships/show/<%= id %>/',
     friendshipShowMany: 'friendships/show_many/',
@@ -35,9 +41,6 @@ const ROUTES = {
     mediaComments: 'media/<%= mediaId %>/comments/<%= maxId ? ("?max_id=" + maxId) : "" %>',
     mediaDeletePhoto: 'media/<%= mediaId %>/delete/?media_type=PHOTO',
     qeSync: 'qe/sync/',
-    checkEmail: 'users/check_email/',
-    checkUsername: 'users/check_username/',
-    usernameSuggestions: 'accounts/username_suggestions/',
     discoverAyml: 'discover/ayml/',
     inbox: 'direct_v2/inbox/<%= maxId ? ("?max_id=" + maxId) : "" %>',
     threads: 'direct_v2/threads/?user_ids=<% JSON.stringify(threads) %>',
@@ -62,40 +65,6 @@ const WEB_ROUTES = {
     challengeReset: 'challenge/reset/',
     challenge: 'challenge/',
     userInfo: '<%= id %>/'
-}
-
-
-const DEVICES = {
-    
-    SAMSUNG_GALAXY_S2: {
-        api: 21,
-        release: '4.4.4',
-        dpi: '240',
-        resolution: '480x800',
-        model: 'Samsung Galaxy S2 - 4.4.4 - API 21 - 480x800',
-        manufacturer: 'Samsung',
-        language: 'en_US'
-    },
-    
-    GOOGLE_NEXUS_7: {
-        api: 22,
-        release: '5.1',
-        dpi: '320',
-        resolution: '800x1184',
-        model: 'Google Nexus 7 2013 - 4.3 - API 18 - 800x1184',
-        manufacturer: 'Google',
-        language: 'en_US'
-    },
-    
-    XIAOMI_ARMANI: {
-        api: 18,
-        release: '4.3',
-        dpi: '320',
-        resolution: '720x1280',
-        model: 'Xiaomi; HM 1SW; armani; qcom;',
-        manufacturer: 'Xiaomi',
-        language: 'en_US'
-    }
 }
 
 const PRIVATE_KEY = {
@@ -126,7 +95,6 @@ module.exports = {
     WEBHOST: WEBHOST,
     TLD: TLD,
     API_ENDPOINT: HOST + 'api/v1/',
-    DEVICES: DEVICES,
     EXPERIMENTS: EXPERIMENTS,
     PRIVATE_KEY: PRIVATE_KEY,
     instagramAgentTemplate: _.template('Instagram <%= version %> Android (<%= agent %>)')

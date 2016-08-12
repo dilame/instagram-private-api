@@ -1,22 +1,24 @@
 var CONSTANTS = require('./constants');
 var _ = require('underscore');
 var Helpers = require('../../helpers');
+var Promise = require('bluebird');
 var md5 = require('js-md5');
+var fs = require('fs');
+var clean = require('underscore.string/clean')
+var trim = require('underscore.string/trim')
+
+// Thanks to @mgp25 for such a list
+var devices = require('./devices.json');
 
 
-function Device(name, username) {
-    if(!_.isObject(CONSTANTS.DEVICES[name]))
-        throw new Error("Device you pass is not available")
+function Device(username) {
     if(!_.isString(username))
         throw new Error("`Device` class needs username to be able generate correlated device_id seed!");
-    this._version = CONSTANTS.PRIVATE_KEY.APP_VERSION;
-    this._device = CONSTANTS.DEVICES[name.toUpperCase()];
-    this._androidVersion = Helpers.getRandomArbitrary(18, 23);
-    this.name = name;
     this.username = username;
 }
 
 module.exports = Device;
+
 
 Object.defineProperty(Device.prototype, "id", {
     get: function() { 
@@ -24,62 +26,120 @@ Object.defineProperty(Device.prototype, "id", {
     }
 });
 
+
 Object.defineProperty(Device.prototype, "md5", {
     get: function() { 
-        return md5(this.name + this.username)
+        return md5(this.username)
     }
 });
 
 
-Object.defineProperty(Device.prototype, "version", {
-    set: function(version) { 
-        this.setVersion(version);
+// Useful for getting device from csv based on line number
+Object.defineProperty(Device.prototype, "md5int", {
+    get: function() { 
+        if(!this._md5int)
+            this._md5int = parseInt(parseInt(this.md5, 32) / 10e32);
+        return this._md5int;
+    }
+});
+
+
+Object.defineProperty(Device.prototype, "api", {
+    get: function() { 
+        if(!this._api)
+            this._api = 18 + (this.md5int % 5);
+        return this._api;
+    },
+    set: function(api) { 
+        this._api = api;
+    }
+});
+
+
+Object.defineProperty(Device.prototype, "release", {
+    get: function() { 
+        if(!this._release)
+            this._release = ['4.0.4', '4.3.1', '4.4.4', '5.1.1', '6.0.1'][this.md5int % 5];
+        return this._release;
+    },
+    set: function(release) { 
+        this._release = release;
+    }
+});
+
+
+Object.defineProperty(Device.prototype, "info", {
+    get: function() { 
+        if(this._info) return this._info;
+        var line = devices[this.md5int % devices.length];
+        var info = {
+            manufacturer: line[0],
+            device: line[1],
+            model: line[2]
+        };
+        this._info = info;
+        return info;
+    },
+    set: function(info) {
+        this._info = info;
     }
 });
 
 
 Object.defineProperty(Device.prototype, "payload", {
-    get: function() { 
-        var device = _.pick(_.clone(this._device), 'manufacturer', 'model');
-        device.android_version = this._device.api;
-        device.android_release = this._device.release;
-        return device;
+    get: function() {
+        var payload = {};
+        payload.manufacturer = this.info.manufacturer;
+        payload.model = this.info.model;
+        payload.android_version = this.api;
+        payload.android_release = this.release;
+        return payload;
     }
 });
 
 
-Device.prototype.setVersion  = function(version) {
-    this._version = version;
-}
+Object.defineProperty(Device.prototype, "dpi", {
+    get: function() {
+        if(!this._dpi)
+            this._dpi = ['801', '577', '576', '538', '515', '424', '401', '373'][this.md5int % 8];
+        return this._dpi;
+    },
+    set: function(set) {
+        return this._dpi = set;
+    }
+});
+
+
+Object.defineProperty(Device.prototype, "resolution", {
+    get: function() {
+        if(!this._resolution)
+            this._resolution = ['3840×2160', '1440×2560', '2560×1440', '1440×2560',
+             '2560×1440', '1080×1920', '1080×1920', '1080×1920'][this.md5int % 8];
+        return this._resolution;
+    },
+    set: function(resolution) {
+        return this._resolution = resolution;
+    }
+});
+
+
+Object.defineProperty(Device.prototype, "language", {
+    get: function() {
+        if(!this._language)
+            this._language = 'en_US';
+        return this._language;
+    },
+    set: function(lang) {
+        return this._language = lang;
+    }
+});
 
 
 Device.prototype.userAgent = function(version) {
-    var device = this._device;
-    var agent = [device.api + "/" + device.release, device.dpi + 'dpi', 
-        device.resolution, device.model, device.language];
+    var agent = [this.api + "/" + this.release, this.dpi + 'dpi', 
+        this.resolution, this.info.model, this.language];
     return CONSTANTS.instagramAgentTemplate({
         agent: agent.join('; '),
-        version: version || this._version
+        version: version || CONSTANTS.PRIVATE_KEY.APP_VERSION
     })
 }
-
-
-Device.prototype.getIndex = function () {
-    var devices = _.keys(CONSTANTS.DEVICES);
-    var index = _.indexOf(devices, this.name);
-    return index == -1 ? 0 : index;
-};
-
-
-Device.getDeviceSafe = function(arg, username, version) {
-    var deviceName = _.isNumber(arg) ? _.keys(CONSTANTS.DEVICES)[arg] : CONSTANTS.DEVICES[arg];
-    if(!deviceName)
-        deviceName = _.sample(_.keys(CONSTANTS.DEVICES));
-    return new Device(deviceName, username, version);
-};
-
-
-Device.getRandom = function(version) {
-    var deviceName = _.sample(_.keys(CONSTANTS.DEVICES));
-    return new Device(deviceName, Math.random().toString(), version);
-};
