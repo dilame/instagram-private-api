@@ -285,7 +285,7 @@ session.getAccount()
 
 You can instantize new class, which will be able to represent it self as a device
 you are using to access instagram. By default it will generate device
-from list of device (can be found at `client/v1/devices.json`).
+from list of devices (can be found at `client/v1/devices.json`).
 
 Reason for username in argument is that you need to have same device
 for same user every time when you access instagram API. This is done through
@@ -500,7 +500,7 @@ Some feeds have more methods to make things easier. You can check them out.
 
 `AccountCreator` and his children `AccountEmailCreator`, `AccountPhoneCreator`
 are designed to create an account. To make account you want to probably use either
-`AccountEmailCreator` or `AccountPhoneCreator` to make an account.
+`AccountEmailCreator` or `AccountPhoneCreator`.
 `AccountCreator` it self is just abstraction. 
 
 Example of `AccountEmailCreator`:
