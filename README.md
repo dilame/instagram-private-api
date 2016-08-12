@@ -206,20 +206,6 @@ For example every endpoint requires a proper `User-Agent` header in
 order to verify signature or `X-CSFR-Token` | `_csrftoken` to verify that you
 are doing request intentionally.
 
-**Show time for class `Device`**:
-
-The Device class is responsible for the `device_id` property, which is often
-sent with other data. It is responsible for generating a correlated `android-id`.
-
-```javascript
-// Available phones are SAMSUNG_GALAXY_S2, GOOGLE_NEXUS_7, XIAOMI_ARMANI
-// IG username is required due to correlated android id for every user
-var device = new Client.Device('SAMSUNG_GALAXY_S2', 'instagram.username')
-console.log(device.id) 
-//->  android-xxxxxxxxxx
-console.log(device.userAgent('18'))
-//-> User-Agent: Instagram 9.0.0 Android (18/4.4.4; 240dpi; 480x800; Samsung Galaxy S2 - 4.4.4 - API 21 - 480x800; en_US)
-```
 
 **CookieStorage & CookieFileStorage**
 
@@ -290,6 +276,9 @@ from list of devices (can be found at `client/v1/devices.json`).
 Reason for username in arguments is that you need to have same device
 for same user every time when you access instagram API. This is done through
 correlated md5 username hash.
+
+Also `Device` class is responsible for the `device_id` property, which is often
+sent with other data. It is responsible for generating a correlated `android-id`.
 
 ```
 var device = new Client.Device('username');
