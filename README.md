@@ -287,7 +287,7 @@ You can instantize new class, which will be able to represent it self as a devic
 you are using to access instagram. By default it will generate device
 from list of devices (can be found at `client/v1/devices.json`).
 
-Reason for username in argument is that you need to have same device
+Reason for username in arguments is that you need to have same device
 for same user every time when you access instagram API. This is done through
 correlated md5 username hash.
 
@@ -307,6 +307,7 @@ device.userAgent() // will return useragent for device
 `device.userAgent` method is very important for many reasons. One of them
 is that without proper user agent there is no way how you can access signed endpoints.
 
+---
 
 **How to proxy every request:**
 
