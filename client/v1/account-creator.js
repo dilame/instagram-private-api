@@ -98,21 +98,22 @@ AccountCreator.prototype.validateUsername = function() {
 
 AccountCreator.prototype.autocomplete = function (account) {
     var session = this.session;
-    return QE.sync(session)
-        .then(function () {
-            var autocomplete = Relationship.autocompleteUserList(session)
-                .catch(Exceptions.RequestsLimitError, function() {
-                    // autocompleteUserList has ability to fail often
-                    return false;
-                })
-            return [account, autocomplete];
-        })
-        .spread(function (account) {
-            return [account, Thread.recentRecipients(session)];
-        })
-        .spread(function (account) {
-            return [account, discover(session, true)];
-        })
+    return Promise.resolve(account)
+    // return QE.sync(session)
+    //     .then(function () {
+    //         var autocomplete = Relationship.autocompleteUserList(session)
+    //             .catch(Exceptions.RequestsLimitError, function() {
+    //                 // autocompleteUserList has ability to fail often
+    //                 return false;
+    //             })
+    //         return [account, autocomplete];
+    //     })
+    //     .spread(function (account) {
+    //         return [account, Thread.recentRecipients(session)];
+    //     })
+    //     .spread(function (account) {
+    //         return [account, discover(session, true)];
+    //     })
 }
 
 
