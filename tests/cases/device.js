@@ -56,8 +56,8 @@ module.exports = function(session) {
         
         it("should have property resolution", function() {
             device1.resolution.should.be.String();
-            device1.resolution.should.be.oneOf(['3840×2160', '1440×2560', '2560×1440', '1440×2560',
-             '2560×1440', '1080×1920', '1080×1920', '1080×1920']);
+            device1.resolution.should.be.oneOf(['3840x2160', '1440x2560', '2560x1440', '1440x2560',
+             '2560x1440', '1080x1920', '1080x1920', '1080x1920']);
         })
         
         it("should have property language", function() {
@@ -88,8 +88,8 @@ module.exports = function(session) {
         })
 
         it("should not be problem to get userAgent", function() {
-            var yellowstone = /^Instagram\s[0-9\.]{0,5}\sAndroid\s\(18\/4.0.4\;\s424dpi\;\s1080×1920\;\sYellowstone\;\sen_US\)$/;
-            device1.userAgent().match(yellowstone)
+            var yellowstone = /^Instagram\s[0-9\.]{0,5}\sAndroid\s\(18\/4.0.4\;\s424dpi\;\s1080x1920\;\sGoogle\;\sYellowstone\;\syellowstone\;\sen_US\)$/;
+            device1.userAgent().should.match(yellowstone)
         })
 
     })
