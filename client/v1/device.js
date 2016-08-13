@@ -113,8 +113,8 @@ Object.defineProperty(Device.prototype, "dpi", {
 Object.defineProperty(Device.prototype, "resolution", {
     get: function() {
         if(!this._resolution)
-            this._resolution = ['3840×2160', '1440×2560', '2560×1440', '1440×2560',
-             '2560×1440', '1080×1920', '1080×1920', '1080×1920'][this.md5int % 8];
+            this._resolution = ['3840x2160', '1440x2560', '2560x1440', '1440x2560',
+             '2560x1440', '1080x1920', '1080x1920', '1080x1920'][this.md5int % 8];
         return this._resolution;
     },
     set: function(resolution) {
@@ -137,7 +137,7 @@ Object.defineProperty(Device.prototype, "language", {
 
 Device.prototype.userAgent = function(version) {
     var agent = [this.api + "/" + this.release, this.dpi + 'dpi', 
-        this.resolution, this.info.model, this.language];
+        this.resolution, this.info.manufacturer, this.info.model, this.info.device, this.language];    
     return CONSTANTS.instagramAgentTemplate({
         agent: agent.join('; '),
         version: version || CONSTANTS.PRIVATE_KEY.APP_VERSION
