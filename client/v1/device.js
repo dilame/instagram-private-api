@@ -13,7 +13,7 @@ var devices = require('./devices.json');
 
 function Device(username) {
     if(!_.isString(username))
-        throw new Error("`Device` class needs username to be able generate correlated device_id seed!");
+        throw new Error("`Device` class needs username to be able generate correlated phone_id seed!");
     this.username = username;
 }
 

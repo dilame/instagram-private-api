@@ -27,6 +27,7 @@ var QE = require('./qe');
 var Relationship = require('./relationship');
 var discover = require('./discover');
 var Request = require('./request');
+var Thread = require('./thread');
 var Session = require('./session');
 var Account = require('./account');
 
@@ -98,22 +99,21 @@ AccountCreator.prototype.validateUsername = function() {
 
 AccountCreator.prototype.autocomplete = function (account) {
     var session = this.session;
-    return Promise.resolve(account)
-    // return QE.sync(session)
-    //     .then(function () {
-    //         var autocomplete = Relationship.autocompleteUserList(session)
-    //             .catch(Exceptions.RequestsLimitError, function() {
-    //                 // autocompleteUserList has ability to fail often
-    //                 return false;
-    //             })
-    //         return [account, autocomplete];
-    //     })
-    //     .spread(function (account) {
-    //         return [account, Thread.recentRecipients(session)];
-    //     })
-    //     .spread(function (account) {
-    //         return [account, discover(session, true)];
-    //     })
+    return QE.sync(session)
+        .then(function () {
+            var autocomplete = Relationship.autocompleteUserList(session)
+                .catch(Exceptions.RequestsLimitError, function() {
+                    // autocompleteUserList has ability to fail often
+                    return false;
+                })
+            return [account, autocomplete];
+        })
+        .spread(function (account) {
+            return [account, Thread.recentRecipients(session)];
+        })
+        .spread(function (account) {
+            return [account, discover(session, true)];
+        })
 }
 
 
@@ -213,7 +213,12 @@ AccountPhoneCreator.prototype.create = function() {
                     username: that.username,
                     phone_number: that.phone,
                     verification_code: code,
-                    first_name: that.name
+                    first_name: that.name,
+                    force_sign_up_code:"",
+                    qs_stamp: "",
+                    phone_id: Helpers.generateUUID(),
+                    guid: Helpers.generateUUID(),
+                    waterfall_id: Helpers.generateUUID()
                 })
                 .signPayload()
                 .send();    

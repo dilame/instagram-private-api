@@ -38,11 +38,11 @@ var Session = require('./session');
 
 Request.defaultHeaders = {
     'X-IG-Connection-Type': 'WIFI',
-    'X-IG-Capabilities': 'HQ==',
+    'X-IG-Capabilities': '3QI=',
     'Accept-Language': 'en-US',
     'Host': CONSTANTS.HOSTNAME,
     'Accept': '*/*',
-    'Accept-Encoding': 'gzip, deflate',
+    'Accept-Encoding': 'gzip, deflate, sdch',
     'Connection': 'Close'
 };
 

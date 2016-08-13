@@ -277,7 +277,7 @@ Reason for username in arguments is that you need to have same device
 for same user every time when you access instagram API. This is done through
 correlated md5 username hash.
 
-Also `Device` class is responsible for the `device_id` property, which is often
+Also `Device` class is responsible for the `phone_id` property, which is often
 sent with other data. It is responsible for generating a correlated `android-id`.
 
 ```
