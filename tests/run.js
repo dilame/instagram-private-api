@@ -123,13 +123,31 @@ describe("Sessions", function () {
         });
 
         it("should not be problem to get media likers", function(done) {
-            Client.Media.likers(session, '1258975077729962593_1750777689')
+            Client.Media.likers(session, '1317759032287303554_25025320')
                 .then(function(likers) {
                     _.each(likers, function(liker){ 
                         liker.should.be.instanceOf(Client.Account)
                     })
                     done();
                 });
+        })
+
+        it("should be able to block user", function(done) {
+            Client.Relationship.block(session, '1750777689')
+                .then(function(relationship) {
+                    relationship.should.be.instanceOf(Client.Relationship);
+                    relationship.params.blocking.should.be.Boolean();
+                    done();
+                })
+        })
+
+        it("should be able to unblock user", function(done) {
+            Client.Relationship.block(session, '1750777689')
+                .then(function(relationship) {
+                    relationship.should.be.instanceOf(Client.Relationship);
+                    relationship.params.blocking.should.be.Boolean();
+                    done();
+                })
         })
 
     })
