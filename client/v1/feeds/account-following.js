@@ -2,6 +2,7 @@ var _ = require('underscore');
 
 function AccountFollowingFeed(session, accountId, limit) {
     this.lastMaxId = null;
+    this.moreAvailable = null;
     this.accountId = accountId;
     this.session = session;
     this.limit = limit || 7500;
@@ -25,7 +26,7 @@ AccountFollowingFeed.prototype.getMaxId = function () {
 
 
 AccountFollowingFeed.prototype.isMoreAvailable = function () {
-    return !!this.lastMaxId;
+    return this.moreAvailable;
 };
 
 
@@ -40,7 +41,9 @@ AccountFollowingFeed.prototype.get = function () {
         })
         .send()
         .then(function(data) {
-            that.setMaxId(data.next_max_id);
+            that.moreAvailable = data.big_list && !!data.next_max_id;
+            if (data.moreAvailable)
+                that.setMaxId(data.next_max_id);
             return _.map(data.users, function (user) {
                 return new Account(that.session, user);
             });
@@ -54,7 +57,7 @@ AccountFollowingFeed.prototype.all = function () {
         that.allFollowings = that.allFollowings.concat(followings);
         var exceedLimit = false;
         if (that.limit && that.allFollowings.length > that.limit)
-            exceedLimit = true; 
+            exceedLimit = true;
         if (followings.length > 0 && that.isMoreAvailable() && !exceedLimit) {
             return that.all()
         } else {
