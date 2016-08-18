@@ -139,5 +139,6 @@ describe("Sessions", function () {
         require('./cases/feeds/account-followers')
         require('./cases/feeds/account-following')
         require('./cases/feeds/media-comments')
+        require('./cases/feeds/tagged-media')
     })
 })
