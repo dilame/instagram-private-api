@@ -135,6 +135,10 @@ Relationship.block = function (session, accountId) {
         });
 };
 
+Relationship.prototype.block = function () {
+    return Relationship.block(this.session, this.accountId)
+};
+
 Relationship.unblock = function (session, accountId) {
     return new Request(session)
         .setMethod('POST')
@@ -148,4 +152,8 @@ Relationship.unblock = function (session, accountId) {
             relationship.setAccountId(accountId);
             return relationship;
         });
+};
+
+Relationship.prototype.unblock = function () {
+    return Relationship.unblock(this.session, this.accountId)
 };
