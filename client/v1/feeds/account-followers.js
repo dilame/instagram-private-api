@@ -34,9 +34,10 @@ AccountFollowersFeed.prototype.get = function () {
         })
         .send()
         .then(function(data) {
-            that.moreAvailable = data.big_list && !!data.next_max_id;
-            if (data.moreAvailable)
+            that.moreAvailable = !!data.next_max_id;
+            if (that.moreAvailable) {
                 that.setMaxId(data.next_max_id);
+            }
             return _.map(data.users, function (user) {
                 return new Account(that.session, user);
             });

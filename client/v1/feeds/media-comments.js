@@ -34,8 +34,9 @@ MediaCommentsFeed.prototype.get = function () {
         .send()
         .then(function(data) {
             that.moreAvailable = data.has_more_comments && !!data.next_max_id;
-            if (that.moreAvailable)
+            if (that.moreAvailable) {
                 that.setMaxId(data.next_max_id);
+            }
             return _.map(data.comments, function (comment) {
                 comment.pk = comment.pk.c.join("");
                 comment.media_id = that.mediaId;
