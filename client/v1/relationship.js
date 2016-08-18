@@ -119,3 +119,33 @@ Relationship.autocompleteUserList = function (session) {
             return json;
         })
 };
+
+Relationship.block = function (session, accountId) {
+    return new Request(session)
+        .setMethod('POST')
+        .setResource('block', {id: accountId})
+        .generateUUID()
+        .setData({user_id: accountId})
+        .signPayload()
+        .send()
+        .then(function(data) {
+            var relationship = new Relationship(session, data.friendship_status);
+            relationship.setAccountId(accountId);
+            return relationship;
+        });
+};
+
+Relationship.unblock = function (session, accountId) {
+    return new Request(session)
+        .setMethod('POST')
+        .setResource('unblock', {id: accountId})
+        .generateUUID()
+        .setData({user_id: accountId})
+        .signPayload()
+        .send()
+        .then(function(data) {
+            var relationship = new Relationship(session, data.friendship_status);
+            relationship.setAccountId(accountId);
+            return relationship;
+        });
+};
