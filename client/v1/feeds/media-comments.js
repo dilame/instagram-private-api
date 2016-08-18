@@ -20,7 +20,7 @@ MediaCommentsFeed.prototype.getMaxId = function () {
 };
 
 MediaCommentsFeed.prototype.isMoreAvailable = function() {
-    return !!this.lastMaxId;
+    return this.moreAvailable;
 };
 
 MediaCommentsFeed.prototype.get = function () {

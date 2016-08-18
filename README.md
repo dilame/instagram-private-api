@@ -630,14 +630,6 @@ Of course there are services like textnow.com and others which will provide
 an API to let you receive Instagram SMS messages!
 
 
-**Proxy server:**
-
-I created another repository, which implements the functionality of this wrapper into a very simple
-express app. It is a webserver with API, which can do many things that the private API does, except it 
-is probably much easier to read and work with.
-
-[https://github.com/huttarichard/instagram-private-api-proxy](https://github.com/huttarichard/instagram-private-api-proxy)
-
 ---
 
 **Similar repository:**
