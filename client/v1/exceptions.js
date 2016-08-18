@@ -142,26 +142,6 @@ exports.OnlyRankedItemsError = OnlyRankedItemsError;
 
 
 
-function RegistrationError(errors) {
-    this.name = "RegistrationError";
-    this.data = _.clone(errors);
-    var messages = [];
-    _.each(errors, function (val, key) {
-        messages.push(val.join(' '));
-    });
-    this.message = messages.join('. ');
-}
-util.inherits(RegistrationError, APIError);
-exports.RegistrationError = RegistrationError;
-
-RegistrationError.prototype.serialize = function () {
-    var object = APIError.prototype.serialize.call(this);
-    return _.extend(object, { 
-        errorData: this.data 
-    });
-};
-
-
 function NotFoundError() {
     this.name = "NotFoundError";
     this.message = "Page wasn't found!";

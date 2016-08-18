@@ -299,7 +299,7 @@ AccountEmailCreator.prototype.create = function() {
         .send()
         .then(function(json) {
             if(!json.account_created)
-                throw new Exceptions.RegistrationError(json.errors);  
+                throw new Exceptions.AccountRegistrationError(null, json);
             return new Account(this.session, json.created_user);    
         })
 }
