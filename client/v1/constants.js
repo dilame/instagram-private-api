@@ -57,7 +57,9 @@ const ROUTES = {
     threadsApproveAll: 'direct_v2/threads/approve_all/',
     threadsRecentRecipients: 'direct_share/recent_recipients/',
     autocompleteUserList: 'friendships/autocomplete_user_list/?version=2&followinfo=True',
-    megaphoneLog: 'megaphone/log/'
+    megaphoneLog: 'megaphone/log/',
+    block: 'friendships/block/<%= id %>/',
+    unblock: 'friendships/unblock/<%= id %>/'
 };
 
 
