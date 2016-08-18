@@ -2,6 +2,7 @@ var _ = require('underscore');
 
 function AccountFollowersFeed(session, accountId) {
     this.lastMaxId = null;
+    this.moreAvailable = null;
     this.accountId = accountId;
     this.session = session;
 }
@@ -20,7 +21,7 @@ AccountFollowersFeed.prototype.getMaxId = function () {
 };
 
 AccountFollowersFeed.prototype.isMoreAvailable = function() {
-    return !!this.lastMaxId;
+    return this.moreAvailable;
 };
 
 AccountFollowersFeed.prototype.get = function () {
@@ -33,7 +34,8 @@ AccountFollowersFeed.prototype.get = function () {
         })
         .send()
         .then(function(data) {
-            if (data.next_max_id)
+            that.moreAvailable = data.big_list && !!data.next_max_id;
+            if (data.moreAvailable)
                 that.setMaxId(data.next_max_id);
             return _.map(data.users, function (user) {
                 return new Account(that.session, user);
