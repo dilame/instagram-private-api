@@ -14,7 +14,7 @@ describe("`AccountFollowing` class", function() {
 
     before(function() {
         session = require('../../run').session;
-        feed = new Client.Feed.AccountFollowing(session, '25025320');
+        feed = new Client.Feed.AccountFollowing(session, '193860719');
     })
 
     it("should not be problem to get followings", function(done) {
