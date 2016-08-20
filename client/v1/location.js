@@ -12,6 +12,29 @@ module.exports = Location;
 
 var Request = require('./request');
 var Helpers = require('../../helpers');
+var Media = require('./Media');
+var Exceptions = require('./exceptions');
+
+
+Location.getRankedMedia = function (session, locationId) {
+  return new Request(session)
+      .setMethod('GET')
+      .setResource('locationFeed', {
+          id: locationId,
+          maxId: null,
+          rankToken: Helpers.generateUUID()
+      })
+      .send()
+      .then(function(data) {
+          return _.map(data.ranked_items, function (medium) {
+              return new Media(session, medium);
+          });
+      })
+      // will throw an error with 500 which turn to parse error
+      .catch(Exceptions.ParseError, function(){
+          throw new Exceptions.PlaceNotFound();
+      })
+};
 
 
 Location.prototype.parseParams = function (json) {
