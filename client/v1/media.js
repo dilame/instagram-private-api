@@ -37,7 +37,7 @@ Media.prototype.parseParams = function (json) {
         location.title = location.name;
         location.subtitle = null;
 
-        hash.location = new Location(that.session, location);
+        this.location = new Location(that.session, location);
     }
     if (_.isObject(json.caption))
         hash.caption = json.caption.text;
@@ -56,7 +56,7 @@ Media.prototype.getParams = function () {
     return _.defaults({
         account: this.account.params,
         comments: _.pluck(this.comments, 'params'),
-        location: this._params.location.params
+        location: this.location.params
     }, this._params);
 };
 
