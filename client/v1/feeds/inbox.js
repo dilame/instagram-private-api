@@ -37,9 +37,9 @@ InboxFeed.prototype.get = function () {
         })
         .send()
         .then(function(json) {
-            that.moreAvailable = json.inbox.more_available && json.inbox.next_max_id;
+            that.moreAvailable = json.inbox.has_older;
             if (that.moreAvailable)
-                that.setMaxId(json.inbox.next_max_id);
+                that.setMaxId(json.inbox.oldest_cursor.toString());
             return _.map(json.inbox.threads, function (thread) {
                 return new Thread(that.session, thread);
             })

@@ -150,6 +150,27 @@ describe("Sessions", function () {
                 })
         })
 
+
+        it("should not be problem to access media location property", function(done) {
+            function shouldBeValidLocation(location) {
+                location.params.should.have.property('title')
+                location.params.should.have.property('id')
+                location.should.have.property('id')
+            }
+
+            Client.Location.search(session, 'New York')
+                .then(function(locations) {
+                    _.each(locations, shouldBeValidLocation);
+                    var locationFeed = new Client.Feed.LocationMedia(session, _.first(locations).id);
+                    return locationFeed.get();
+                })
+                .then(function(media) {
+                    var first = media[0];
+                    shouldBeValidLocation(first.location);
+                    done();
+                })
+        })
+
     })
 
 
@@ -158,5 +179,6 @@ describe("Sessions", function () {
         require('./cases/feeds/account-following')
         require('./cases/feeds/media-comments')
         require('./cases/feeds/tagged-media')
+        require('./cases/feeds/inbox')
     })
 })

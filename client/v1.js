@@ -39,7 +39,6 @@ InstagramV1.Feed.HashtagSearch = require('./v1/feeds/hashtag-search');
 InstagramV1.Feed.Inbox = require('./v1/feeds/inbox');
 InstagramV1.Feed.InboxPending = require('./v1/feeds/inbox-pending');
 InstagramV1.Feed.LocationMedia = require('./v1/feeds/location-media');
-InstagramV1.Feed.LocationSearch = require('./v1/feeds/location-search');
 InstagramV1.Feed.TaggedMedia = require('./v1/feeds/tagged-media');
 InstagramV1.Feed.TagMedia = InstagramV1.Feed.TaggedMedia; // Alias but deprecated
 InstagramV1.Feed.Thread = require('./v1/feeds/thread');

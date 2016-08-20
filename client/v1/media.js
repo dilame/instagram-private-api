@@ -56,7 +56,7 @@ Media.prototype.getParams = function () {
     return _.defaults({
         account: this.account.params,
         comments: _.pluck(this.comments, 'params'),
-        location: this.location.params
+        location: this.location ? this.location.params : {}
     }, this._params);
 };
 

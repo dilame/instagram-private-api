@@ -42,7 +42,7 @@ const ROUTES = {
     mediaDeletePhoto: 'media/<%= mediaId %>/delete/?media_type=PHOTO',
     qeSync: 'qe/sync/',
     discoverAyml: 'discover/ayml/',
-    inbox: 'direct_v2/inbox/<%= maxId ? ("?max_id=" + maxId) : "" %>',
+    inbox: 'direct_v2/inbox/<%= maxId ? ("?cursor=" + maxId) : "" %>',
     threads: 'direct_v2/threads/?user_ids=<% JSON.stringify(threads) %>',
     threadsShow: 'direct_v2/threads/<%= threadId %>/<%= maxId ? ("?max_id=" + maxId) : "" %>',
     threadsSeen: 'direct_v2/threads/<%= threadId %>/items/<%= itemId %>/seen/',
