@@ -46,7 +46,7 @@ describe("`Inbox` class", function() {
     }
 
     it("should not be problem to get comments", function(done) {
-        let firstDose;
+        var firstDose;
         feed.get().then(function(threads) {
             firstDose = threads;
             threads[0].params.should.have.property('title')
