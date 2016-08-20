@@ -75,9 +75,9 @@ const PRIVATE_KEY = {
         SIG_VERSION: '4',
         APP_VERSION: '8.5.2'
     },*/
-    SIG_KEY: '96724bcbd4fb3e608074e185f2d4f119156fcca061692a4a1db1c7bf142d3e22',
+    SIG_KEY: 'af0431ace409e957498c6050e2299baa829014a781905eef3fc94139151e5d38',
     SIG_VERSION: '4',
-    APP_VERSION: '9.0.1'
+    APP_VERSION: '9.1.5'
 }
 
 
