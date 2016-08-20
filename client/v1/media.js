@@ -17,6 +17,7 @@ var Request = require('./request');
 var Comment = require('./comment');
 var Session = require('./session');
 var Account = require('./account');
+var Location = require('./location');
 var Exceptions = require('./exceptions');
 
 
@@ -30,6 +31,14 @@ Media.prototype.parseParams = function (json) {
     hash.hasMoreComments = json.has_more_comments;
     hash.photoOfYou = json.photo_of_you;
     hash.originalWidth = json.original_width;
+    if(_.isObject(json.location)) {
+        var location = json.location;
+        location.location = json.location;
+        location.title = location.name;
+        location.subtitle = null;
+
+        this.location = new Location(that.session, location);
+    }
     if (_.isObject(json.caption))
         hash.caption = json.caption.text;
     hash.takenAt = parseInt(json.taken_at) * 1000;
@@ -46,7 +55,8 @@ Media.prototype.parseParams = function (json) {
 Media.prototype.getParams = function () {
     return _.defaults({
         account: this.account.params,
-        comments: _.pluck(this.comments, 'params')
+        comments: _.pluck(this.comments, 'params'),
+        location: this.location.params
     }, this._params);
 };
 
