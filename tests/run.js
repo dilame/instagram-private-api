@@ -171,6 +171,25 @@ describe("Sessions", function () {
                 })
         })
 
+        it("should not be problem to like media", function(done) {
+            var mId = '1312896938542959690_25025320';
+            Client.Like.destroy(session, mId)
+                .then(function(like) {
+                    return Client.Media.getById(session, mId)
+                })
+                .then(function(m) {
+                    m.params.hasLiked.should.equal(false);
+                    return Client.Like.create(session, mId);
+                })
+                .then(function() {
+                    return Client.Media.getById(session, mId)
+                })
+                .then(function(m) {
+                    m.params.hasLiked.should.equal(true);
+                    done();
+                })
+        })
+
     })
 
 

@@ -13,6 +13,7 @@ const ROUTES = {
     currentAccount: 'accounts/current_user/?edit=true',
     comment: 'media/<%= id %>/comment/',
     like: 'media/<%= id %>/like/',
+    unlike: 'media/<%= id %>/unlike/',
     registrationCreate: 'accounts/create/',
     registrationCreateValidated: 'accounts/create_validated/',
     registrationSMSCode: 'accounts/send_signup_sms_code/',

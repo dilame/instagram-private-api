@@ -33,3 +33,19 @@ Like.create = function(session, mediaId) {
             return new Like(session, {});
         })
 }
+
+Like.destroy = function(session, mediaId) {
+    return new Request(session)
+        .setMethod('POST')
+        .setResource('unlike', {id: mediaId})
+        .generateUUID()
+        .setData({
+            media_id: mediaId,
+            src: "profile"
+        })
+        .signPayload()
+        .send()
+        .then(function(data) {
+            return new Like(session, {});
+        })
+}
