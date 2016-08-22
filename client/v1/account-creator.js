@@ -33,6 +33,7 @@ var Account = require('./account');
 
 
 AccountCreator.prototype.setUsername = function(username) {
+    username = username.toLowerCase();
     if(!username || !(/^[a-z0-9\._]{1,50}$/).test(username))
         throw new Exceptions.InvalidUsername(username);
     this.username = username;
