@@ -8,6 +8,8 @@ var iPhoneUserAgent = _.template('Mozilla/5.0 (iPhone; CPU iPhone OS 9_3_3 like 
     + 'AppleWebKit/601.1.46 (KHTML, like Gecko) Mobile/13G34 Instagram <%= version %> '
     + '(iPhone7,2; iPhone OS 9_3_3; cs_CZ; cs-CZ; scale=2.00; 750x1334)');
 
+var EMAIL_FIELD_REGEXP = /email.*value(.*)"/gi;
+
 var Challenge = function(session, type, error, body) {
     this._session = session;
     this._type = type;
@@ -160,7 +162,8 @@ PhoneVerificationChallenge.prototype.code = function(code) {
 
 var EmailVerificationChallenge = function(session, type, checkpointError, body) {
     Challenge.apply(this, arguments);
-    this.verifyByValue = _.last(body.match(/email.*value(.*)"/gi)[0].split("value")).slice(2, -1);
+    var verifyByEmailValue = body.match(EMAIL_FIELD_REGEXP);
+    this.verifyByValue = verifyByEmailValue ? _.last(verifyByEmailValue[0].split("value")).slice(2, -1) : "Verify by Email";
 }
 
 util.inherits(EmailVerificationChallenge, Challenge);
@@ -297,7 +300,7 @@ Challenge.resolve = function(checkpointError) {
         })
         .then(function(response) {
             // This is obvious, email field is present it is email challenge
-            if(response.body.indexOf('email') !== -1)
+            if(response.body.indexOf('email') !== -1 && response.body.match(EMAIL_FIELD_REGEXP))
                 return new EmailVerificationChallenge(session, 'email', checkpointError, response.body);
             // On the otherhand this is not. We can be stuck in challenge
             // so we need to detect if instagram require code he `texted` us
