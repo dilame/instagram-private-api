@@ -283,24 +283,25 @@ AccountEmailCreator.prototype.validate = function() {
 AccountEmailCreator.prototype.create = function() {
     var uuid = Helpers.generateUUID();
     var guid = Helpers.generateUUID();
-    return new Request(this.session)
+    var that = this;
+    return new Request(that.session)
         .setMethod('POST')
         .setResource('registrationCreate')
         .setData({
             phone_id: uuid,
-            username: this.username,
-            first_name: this.name,
+            username: that.username,
+            first_name: that.name,
             guid: guid,
-            email: this.email,
+            email: that.email,
             force_sign_up_code: "",
             qs_stamp: "",
-            password: this.password
+            password: that.password
         })
         .signPayload()
         .send()
         .then(function(json) {
             if(!json.account_created)
                 throw new Exceptions.AccountRegistrationError(null, json);
-            return new Account(this.session, json.created_user);    
+            return new Account(that.session, json.created_user);    
         })
 }
