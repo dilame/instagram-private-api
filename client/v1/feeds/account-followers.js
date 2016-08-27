@@ -21,7 +21,7 @@ AccountFollowersFeed.prototype.getMaxId = function () {
 };
 
 AccountFollowersFeed.prototype.isMoreAvailable = function() {
-    return this.moreAvailable;
+    return !!this.moreAvailable;
 };
 
 AccountFollowersFeed.prototype.get = function () {

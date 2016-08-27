@@ -22,7 +22,7 @@ InboxPendingFeed.prototype.getMaxId = function () {
 
 
 InboxPendingFeed.prototype.isMoreAvailable = function () {
-    return this.moreAvailable;
+    return !!this.moreAvailable;
 };
 
 

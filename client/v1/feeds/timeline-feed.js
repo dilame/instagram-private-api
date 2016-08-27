@@ -21,7 +21,7 @@ TimelineFeed.prototype.getMaxId = function () {
 };
 
 TimelineFeed.prototype.isMoreAvailable = function () {
-    return this.moreAvailable;
+    return !!this.moreAvailable;
 };
 
 

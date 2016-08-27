@@ -25,7 +25,7 @@ InboxFeed.prototype.getCursor = function () {
 
 
 InboxFeed.prototype.isMoreAvailable = function () {
-    return this.moreAvailable;
+    return !!this.moreAvailable;
 };
 
 

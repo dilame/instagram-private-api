@@ -28,7 +28,7 @@ UserMediaFeed.prototype.getMaxId = function () {
 
 
 UserMediaFeed.prototype.isMoreAvailable = function () {
-    return this.moreAvailable;
+    return !!this.moreAvailable;
 };
 
 

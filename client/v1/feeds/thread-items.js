@@ -28,7 +28,7 @@ ThreadItemsFeed.prototype.getCursor = function () {
 
 
 ThreadItemsFeed.prototype.isMoreAvailable = function () {
-    return this.moreAvailable;
+    return !!this.moreAvailable;
 };
 
 
@@ -45,9 +45,9 @@ ThreadItemsFeed.prototype.get = function () {
             var items = _.map(json.thread.items, function(item) {
                 return new ThreadItem(that.session, item);
             })
-            that.moreAvailable = json.has_older
-            if(that.moreAvailable)
-                that.setCursor(json.oldest_cursor)
+            that.moreAvailable = json.thread.has_older;
+            if(that.isMoreAvailable())
+                that.setCursor(json.thread.oldest_cursor)
             return items;
         })
 };

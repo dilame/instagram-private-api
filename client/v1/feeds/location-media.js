@@ -24,7 +24,7 @@ LocationMediaFeed.prototype.getMaxId = function () {
 
 
 LocationMediaFeed.prototype.isMoreAvailable = function () {
-    return this.moreAvailable;
+    return !!this.moreAvailable;
 };
 
 LocationMediaFeed.prototype.get = function () {
