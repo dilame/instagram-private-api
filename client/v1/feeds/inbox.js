@@ -14,19 +14,20 @@ var Thread = require('../thread');
 var Request = require('../request');
 
 
-InboxFeed.prototype.setMaxId = function (maxId) {
-    this.lastMaxId = maxId;
+InboxFeed.prototype.setCursor = function (cursor) {
+    this.cursor = cursor;
 };
 
 
-InboxFeed.prototype.getMaxId = function () {
-    return this.lastMaxId;
+InboxFeed.prototype.getCursor = function () {
+    return this.cursor;
 };
 
 
 InboxFeed.prototype.isMoreAvailable = function () {
     return this.moreAvailable;
 };
+
 
 InboxFeed.prototype.getPendingRequestsTotal = function () {
     return this.pendingRequestsTotal;
@@ -38,14 +39,14 @@ InboxFeed.prototype.get = function () {
     return new Request(this.session)
         .setMethod('GET')
         .setResource('inbox', {
-            maxId: this.getMaxId()
+            cursor: this.getCursor()
         })
         .send()
         .then(function(json) {
             that.moreAvailable = json.inbox.has_older;
             that.pendingRequestsTotal = json.pending_requests_total;
             if (that.moreAvailable)
-                that.setMaxId(json.inbox.oldest_cursor.toString());
+                that.setCursor(json.inbox.oldest_cursor.toString());
             return _.map(json.inbox.threads, function (thread) {
                 return new Thread(that.session, thread);
             })
@@ -53,9 +54,8 @@ InboxFeed.prototype.get = function () {
 };
 
 
-InboxFeed.prototype.all = function (useCache) {
+InboxFeed.prototype.all = function () {
     var that = this;
-    if (useCache === undefined) useCache = true;
     return this.get()
         .then(function (threads) {
             that.allThreads = that.allThreads.concat(threads);

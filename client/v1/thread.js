@@ -44,16 +44,14 @@ function threadsWrapper(session, promise) {
 Thread.prototype.parseParams = function (params) {
     var hash = {};
     var that = this;
-    hash.nextMaxId = params.next_max_id;
-    hash.moreAvailableMin = params.more_available_min;
     hash.id = params.thread_id;
     if (_.isObject(params.image_versions2))
         hash.images = params.image_versions2.candidates;
     hash.lastActivityAt = parseInt(params.last_activity_at / 1000) || null;
-    hash.nextMinId = params.next_min_id;
     hash.muted = !!params.muted;
-    hash.moreAvailableMax = !!params.more_available_max;
     hash.title = params.thread_title;
+    hash.threadType = params.thread_type;
+    hash.pending = params.pending;
     hash.itemsSeenAt = {};
     _.each(params.last_seen_at || [], function (val, key) {
         hash.itemsSeenAt[key] = {
@@ -66,6 +64,9 @@ Thread.prototype.parseParams = function (params) {
         return new ThreadItem(that.session, item);
     });
     this.accounts = _.map(params.users, function (user) {
+        return new Account(that.session, user);
+    });
+    this.leftUsers = _.map(params.left_users, function (user) {
         return new Account(that.session, user);
     });
     return hash;
@@ -219,7 +220,7 @@ Thread.getById = function (session, id) {
         .generateUUID()
         .setResource('threadsShow', {
             threadId: id,
-            maxId: null
+            cursor: null
         })
         .send()
         .then(function(json) {
