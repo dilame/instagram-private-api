@@ -17,7 +17,6 @@ util.inherits(Account, Resource);
 
 module.exports = Account;
 var Exceptions = require('./exceptions');
-var AccountSearchFeed = require('./feeds/account-search');
 var Session = require('./session');
 var QE = require('./qe');
 var Relationship = require('./relationship');
@@ -49,9 +48,6 @@ Account.prototype.parseParams = function (json) {
 };
 
 
-// This is really tight on request limits
-// If you need to refresh profile a lot use
-// getByIdLimited
 Account.getById = function (session, id) {
     return new Request(session)
         .setMethod('GET')
@@ -73,9 +69,28 @@ Account.prototype.update = function () {
 };  
 
 
+Account.search = function (session, username) {
+    return session.getAccountId()
+        .then(function(id) {
+            var rankToken = Helpers.buildRankToken(id);
+            return new Request(session)
+                .setMethod('GET')
+                .setResource('accountsSearch', {
+                    query: username,
+                    rankToken: rankToken
+                })
+                .send();
+        })
+        .then(function(data) {
+            return _.map(data.users, function (user) {
+                return new Account(session, user);
+            });
+        })    
+};
+
+
 Account.searchForUser = function (session, username) {
-    return new AccountSearchFeed(session, username)
-        .get()
+    return Account.search(session, username)
         .then(function(accounts) {
             var account = _.find(accounts, function(account) {
                 return account.params.username === username;    
@@ -83,15 +98,6 @@ Account.searchForUser = function (session, username) {
             if(!account)
                 throw new Exceptions.IGAccountNotFoundError();
             return account;    
-        })        
-};
-
-
-Account.search = function (session, username) {
-    return new AccountSearchFeed(session, username)
-        .get()
-        .then(function(accounts) {
-            return accounts;
         })        
 };
 

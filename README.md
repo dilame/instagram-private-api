@@ -424,9 +424,6 @@ request you will receive the next cursor for next request, which will
 lead to another set of data for this specific feed.
 
 Implemented are:
-[AccountSearch](https://github.com/huttarichard/instagram-private-api/blob/master/client/v1/feeds/account-search.js),
-[HashtagSearch](https://github.com/huttarichard/instagram-private-api/blob/master/client/v1/feeds/hashtag-search.js),
-[LocationSearch](https://github.com/huttarichard/instagram-private-api/blob/master/client/v1/feeds/location-search.js),
 [AccountFollowers](https://github.com/huttarichard/instagram-private-api/blob/master/client/v1/feeds/account-followers.js),
 [AccountFollowing](https://github.com/huttarichard/instagram-private-api/blob/master/client/v1/feeds/account-following.js),
 [UserMedia](https://github.com/huttarichard/instagram-private-api/blob/master/client/v1/feeds/user-media.js),

@@ -190,6 +190,16 @@ describe("Sessions", function () {
                 })
         })
 
+        it("should not be problem to search hashtag", function(done) {
+            Client.Hashtag.search(session, "instagram")
+                .then(function(hashtags) {
+                    _.each(hashtags, function(hashtag) {
+                        hashtag.should.be.instanceOf(Client.Hashtag)
+                    })
+                    done();
+                })
+        })
+
     })
 
 

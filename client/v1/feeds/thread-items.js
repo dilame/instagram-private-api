@@ -11,7 +11,7 @@ function ThreadItemsFeed(session, threadId, limit) {
     this.limit = parseInt(limit) || null;
 }
 
-module.exports = ThreadFeed;
+module.exports = ThreadItemsFeed;
 var ThreadItem = require('../thread-item');
 var Request = require('../request');
 var Thread = require('../thread');
