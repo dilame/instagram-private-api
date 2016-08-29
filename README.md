@@ -433,7 +433,6 @@ Implemented are:
 [SelfLiked](https://github.com/huttarichard/instagram-private-api/blob/master/client/v1/feeds/self-liked.js),
 [TimelineFeed](https://github.com/huttarichard/instagram-private-api/blob/master/client/v1/feeds/timeline-feed.js),
 [Inbox](https://github.com/huttarichard/instagram-private-api/blob/master/client/v1/feeds/inbox.js),
-[InboxPending](https://github.com/huttarichard/instagram-private-api/blob/master/client/v1/feeds/inbox-pending.js),
 [Thread](https://github.com/huttarichard/instagram-private-api/blob/master/client/v1/feeds/thread.js)
 
 **Feed API is the same almost every time:**
