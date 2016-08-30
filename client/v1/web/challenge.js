@@ -18,7 +18,6 @@ var Challenge = function(session, type, error, body) {
 
 exports.Challenge = Challenge;
 
-
 var Exceptions = require('../exceptions');
 var Session = require('../session');
 var routes = require('../routes');
@@ -74,8 +73,12 @@ PhoneVerificationChallenge.prototype.phone = function(phone) {
                 return error.response;
             throw error;    
         })
+        .catch(Exceptions.NotFoundError, function(error) {
+            return error.response;   
+        })
         .then(function(response) {
-            if(response.statusCode !== 200 && response.statusCode !== 302)
+            // 200 working, 302 dont need reset, 404 account challenge reset not allowed
+            if(!_.contains([200, 302, 404], response.statusCode))
                 throw new Exceptions.NotPossibleToResolveChallenge(
                     "Reset is not working", 
                     Exceptions.NotPossibleToResolveChallenge.CODE.RESET_NOT_WORKING

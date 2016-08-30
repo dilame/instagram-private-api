@@ -142,9 +142,10 @@ exports.OnlyRankedItemsError = OnlyRankedItemsError;
 
 
 
-function NotFoundError() {
+function NotFoundError(response) {
     this.name = "NotFoundError";
     this.message = "Page wasn't found!";
+    this.response = response;
 }
 
 util.inherits(NotFoundError, APIError);

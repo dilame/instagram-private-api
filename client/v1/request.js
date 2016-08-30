@@ -356,7 +356,7 @@ Request.prototype.send = function (options, attemps) {
                 throw err;    
             var response = err.response;
             if (response.statusCode == 404)
-                throw new Exceptions.NotFoundError();
+                throw new Exceptions.NotFoundError(response);
             if (response.statusCode >= 500) {
                 if (attemps <= that.attemps) {
                     attemps += 1;

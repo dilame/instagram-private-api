@@ -111,7 +111,7 @@ WebRequest.prototype.send = function (options) {
                 throw err;    
             var response = err.response;
             if (response.statusCode == 404)
-                throw new Exceptions.NotFoundError();
+                throw new Exceptions.NotFoundError(response);
             throw err;
         })
         .catch(function(error) {
