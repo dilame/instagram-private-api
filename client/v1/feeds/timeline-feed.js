@@ -40,13 +40,13 @@ TimelineFeed.prototype.get = function () {
         })
         .then(function(data) {
             that.moreAvailable = data.more_available;
-            var media = _.map(data.items, function(medium){
+            var media = _.compact(_.map(data.feed_items, function(item){
+                var medium = item.media_or_ad;
+                if(!medium || medium.injected) return false;
                 return new Media(that.session, medium);
-            });
+            }));
             if (that.moreAvailable)
                 that.setMaxId(data.next_max_id);
-            if(media.length > 0)
-                that.setMaxId(_.last(media).id);
             return media;    
         });
 };

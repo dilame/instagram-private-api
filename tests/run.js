@@ -199,7 +199,6 @@ describe("Sessions", function () {
                     done();
                 })
         })
-
     })
 
 
@@ -209,5 +208,6 @@ describe("Sessions", function () {
         require('./cases/feeds/media-comments')
         require('./cases/feeds/tagged-media')
         require('./cases/feeds/inbox')
+        require('./cases/feeds/timeline')
     })
 })
