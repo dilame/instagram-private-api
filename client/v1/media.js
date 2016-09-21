@@ -31,6 +31,7 @@ Media.prototype.parseParams = function (json) {
     hash.hasMoreComments = json.has_more_comments;
     hash.photoOfYou = json.photo_of_you;
     hash.originalWidth = json.original_width;
+    hash.commentCount = json.comment_count;
     if(_.isObject(json.location)) {
         var location = json.location;
         location.location = json.location;
