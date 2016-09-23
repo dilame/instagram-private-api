@@ -14,13 +14,13 @@ var Helpers = require('../../../helpers');
 var Exceptions = require('../exceptions');
 
 
-TaggedMediaFeed.prototype.setMaxId = function (maxId) {
-    this.lastMaxId = maxId;
+TaggedMediaFeed.prototype.setCursor = function (cursor) {
+    this.cursor = cursor;
 };
 
 
-TaggedMediaFeed.prototype.getMaxId = function () {
-    return this.lastMaxId;
+TaggedMediaFeed.prototype.getCursor = function () {
+    return this.cursor;
 };
 
 
@@ -38,16 +38,16 @@ TaggedMediaFeed.prototype.get = function () {
                 .setMethod('GET')
                 .setResource('tagFeed', {
                     tag: that.tag,
-                    maxId: that.getMaxId(),
+                    maxId: that.getCursor(),
                     rankToken: rankToken
                 })
                 .send()
                 .then(function(data) {
                     that.moreAvailable = data.more_available && !!data.next_max_id;
-                    if (!that.moreAvailable && !_.isEmpty(data.ranked_items) && !that.getMaxId())
+                    if (!that.moreAvailable && !_.isEmpty(data.ranked_items) && !that.getCursor())
                         throw new Exceptions.OnlyRankedItemsError;
                     if (that.moreAvailable)
-                        that.setMaxId(data.next_max_id);
+                        that.setCursor(data.next_max_id);
                     return _.map(data.items, function (medium) {
                         return new Media(that.session, medium);
                     });
