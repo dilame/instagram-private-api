@@ -12,12 +12,12 @@ var Request = require('../request');
 var Helpers = require('../../../helpers');
 var Account = require('../account');
 
-AccountFollowersFeed.prototype.setMaxId = function (maxId) {
-    this.lastMaxId = maxId;
+AccountFollowersFeed.prototype.setCursor = function (cursor) {
+    this.cursor = cursor;
 };
 
-AccountFollowersFeed.prototype.getMaxId = function () {
-    return this.lastMaxId;
+AccountFollowersFeed.prototype.getCursor = function () {
+    return this.cursor;
 };
 
 AccountFollowersFeed.prototype.isMoreAvailable = function() {
@@ -30,13 +30,13 @@ AccountFollowersFeed.prototype.get = function () {
         .setMethod('GET')
         .setResource('followersFeed', {
             id: that.accountId,
-            maxId: that.lastMaxId
+            maxId: that.cursor
         })
         .send()
         .then(function(data) {
             that.moreAvailable = !!data.next_max_id;
             if (that.moreAvailable) {
-                that.setMaxId(data.next_max_id);
+                that.setCursor(data.next_max_id);
             }
             return _.map(data.users, function (user) {
                 return new Account(that.session, user);
