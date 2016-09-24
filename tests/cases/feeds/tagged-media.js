@@ -19,12 +19,12 @@ describe("`TaggedMedia` class", function() {
     })
 
     it("should not be problem to get media", function(done) {
-        var originalCursor = feed.getMaxId();
+        var originalCursor = feed.getCursor();
         feed.get().then(function(media) {
             _.each(media, function(medium) {
                 medium.should.be.instanceOf(Client.Media)
             })
-            should(originalCursor).should.not.equal(feed.getMaxId())
+            should(originalCursor).should.not.equal(feed.getCursor())
             feed.moreAvailable.should.be.Boolean();
             feed.moreAvailable.should.equal(true);
             done()
