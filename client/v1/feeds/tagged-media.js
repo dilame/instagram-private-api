@@ -1,7 +1,7 @@
 var _ = require('underscore');
 
 function TaggedMediaFeed(session, tag) {
-    this.lastMaxId = null;
+    this.cursor = null;
     this.moreAvailable = null;
     this.tag = tag;
     this.session = session;

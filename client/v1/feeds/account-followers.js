@@ -1,7 +1,7 @@
 var _ = require('underscore');
 
 function AccountFollowersFeed(session, accountId) {
-    this.lastMaxId = null;
+    this.cursor = null;
     this.moreAvailable = null;
     this.accountId = accountId;
     this.session = session;

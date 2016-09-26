@@ -1,7 +1,7 @@
 var _ = require('underscore');
 
 function MediaCommentsFeed(session, mediaId) {
-    this.lastMaxId = null;
+    this.cursor = null;
     this.moreAvailable = null;
     this.mediaId = mediaId;
     this.session = session;
@@ -11,12 +11,12 @@ module.exports = MediaCommentsFeed;
 var Request = require('../request');
 var Comment = require('../comment');
 
-MediaCommentsFeed.prototype.setMaxId = function (maxId) {
-    this.lastMaxId = maxId;
+MediaCommentsFeed.prototype.setCursor = function (maxId) {
+    this.cursor = maxId;
 };
 
-MediaCommentsFeed.prototype.getMaxId = function () {
-    return this.lastMaxId;
+MediaCommentsFeed.prototype.getCursor = function () {
+    return this.cursor;
 };
 
 MediaCommentsFeed.prototype.isMoreAvailable = function() {
@@ -29,13 +29,13 @@ MediaCommentsFeed.prototype.get = function () {
         .setMethod('GET')
         .setResource('mediaComments', {
             mediaId: that.mediaId,
-            maxId: that.lastMaxId
+            maxId: that.getCursor()
         })
         .send()
         .then(function(data) {
             that.moreAvailable = data.has_more_comments && !!data.next_max_id;
             if (that.moreAvailable) {
-                that.setMaxId(data.next_max_id);
+                that.setCursor(data.next_max_id);
             }
             return _.map(data.comments, function (comment) {
                 comment.pk = comment.pk.c.join("");

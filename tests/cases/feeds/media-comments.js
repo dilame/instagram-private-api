@@ -18,7 +18,7 @@ describe("`MediaComments` class", function() {
     })
 
     it("should not be problem to get comments", function(done) {
-        var originalCursor = feed.getMaxId();
+        var originalCursor = feed.getCursor();
         feed.get().then(function(comments) {
             comments[0].should.have.property('account')
             comments[0].params.should.have.property('created')
@@ -29,7 +29,7 @@ describe("`MediaComments` class", function() {
             _.each(comments, function(comment) {
                 comment.should.be.instanceOf(Client.Comment)
             })
-            should(originalCursor).should.not.equal(feed.getMaxId())
+            should(originalCursor).should.not.equal(feed.getCursor())
             feed.moreAvailable.should.be.Boolean();
             feed.moreAvailable.should.equal(true);
             done()

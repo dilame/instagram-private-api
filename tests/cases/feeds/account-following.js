@@ -18,12 +18,12 @@ describe("`AccountFollowing` class", function() {
     })
 
     it("should not be problem to get followings", function(done) {
-        var originalCursor = feed.getMaxId();
+        var originalCursor = feed.getCursor();
         feed.get().then(function(data) {
             _.each(data, function(account) {
                 account.should.be.instanceOf(Client.Account)
             })
-            should(originalCursor).should.not.equal(feed.getMaxId())
+            should(originalCursor).should.not.equal(feed.getCursor())
             feed.moreAvailable.should.be.Boolean();
             feed.moreAvailable.should.equal(true);
             done()

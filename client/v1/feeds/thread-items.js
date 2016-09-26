@@ -3,8 +3,8 @@ var _ = require('underscore');
 
 
 function ThreadItemsFeed(session, threadId, limit) {
-    this.threadId = threadId;
     this.cursor = null;
+    this.threadId = threadId;
     this.moreAvailable = null;
     this.session = session;
     this.allItems = [];

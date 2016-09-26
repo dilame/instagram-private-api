@@ -1,7 +1,7 @@
 var _ = require('underscore');
 
 function AccountFollowingFeed(session, accountId, limit) {
-    this.lastMaxId = null;
+    this.cursor = null;
     this.moreAvailable = null;
     this.accountId = accountId;
     this.session = session;
@@ -16,12 +16,12 @@ var Request = require('../request');
 var Helpers = require('../../../helpers');
 var Account = require('../account');
 
-AccountFollowingFeed.prototype.setMaxId = function (maxId) {
-    this.lastMaxId = maxId;
+AccountFollowingFeed.prototype.setCursor = function (maxId) {
+    this.cursor = maxId;
 };
 
-AccountFollowingFeed.prototype.getMaxId = function () {
-    return this.lastMaxId;
+AccountFollowingFeed.prototype.getCursor = function () {
+    return this.cursor;
 };
 
 
@@ -36,14 +36,14 @@ AccountFollowingFeed.prototype.get = function () {
         .setMethod('GET')
         .setResource('followingFeed', {
             id: that.accountId,
-            maxId: that.getMaxId(),
+            maxId: that.getCursor(),
             rankToken: Helpers.generateUUID()
         })
         .send()
         .then(function(data) {
             that.moreAvailable = !!data.next_max_id;
             if (that.moreAvailable)
-                that.setMaxId(data.next_max_id);
+                that.setCursor(data.next_max_id);
             return _.map(data.users, function (user) {
                 return new Account(that.session, user);
             });

@@ -13,12 +13,12 @@ var Request = require('../request');
 var Helpers = require('../../../helpers');
 var Exceptions = require('../exceptions');
 
-LocationMediaFeed.prototype.setMaxId = function (maxId) {
+LocationMediaFeed.prototype.setCursor = function (maxId) {
     this.lastMaxId = maxId;
 };
 
 
-LocationMediaFeed.prototype.getMaxId = function () {
+LocationMediaFeed.prototype.getCursor = function () {
     return this.lastMaxId;
 };
 
@@ -33,16 +33,16 @@ LocationMediaFeed.prototype.get = function () {
         .setMethod('GET')
         .setResource('locationFeed', {
             id: that.locationId,
-            maxId: that.getMaxId(),
+            maxId: that.getCursor(),
             rankToken: Helpers.generateUUID()
         })
         .send()
         .then(function(data) {
             that.moreAvailable = data.more_available && !!data.next_max_id;
-            if (!that.moreAvailable && !_.isEmpty(data.ranked_items) && !that.getMaxId())
+            if (!that.moreAvailable && !_.isEmpty(data.ranked_items) && !that.getCursor())
                 throw new Exceptions.OnlyRankedItemsError;
             if (that.moreAvailable)
-                that.setMaxId(data.next_max_id);
+                that.setCursor(data.next_max_id);
             return _.map(data.items, function (medium) {
                 return new Media(that.session, medium);
             });

@@ -1,7 +1,7 @@
 var _ = require('underscore');
 
 function UserMediaFeed(session, accountId, limit) {
-    this.lastMaxId = null;
+    this.cursor = null;
     this.moreAvailable = null;
     this.accountId = accountId;
     this.session = session;
@@ -17,13 +17,13 @@ var Helpers = require('../../../helpers');
 var Account = require('../account');
 
 
-UserMediaFeed.prototype.setMaxId = function (maxId) {
-    this.lastMaxId = maxId;
+UserMediaFeed.prototype.setCursor = function (maxId) {
+    this.cursor = maxId;
 };
 
 
-UserMediaFeed.prototype.getMaxId = function () {
-    return this.lastMaxId;
+UserMediaFeed.prototype.getCursor = function () {
+    return this.cursor;
 };
 
 
@@ -41,7 +41,7 @@ UserMediaFeed.prototype.get = function () {
                 .setMethod('GET')
                 .setResource('userFeed', {
                     id: that.accountId,
-                    maxId: that.getMaxId(),
+                    maxId: that.getCursor(),
                     rankToken: rankToken
                 })
                 .send()
@@ -49,7 +49,7 @@ UserMediaFeed.prototype.get = function () {
                     that.moreAvailable = data.more_available;
                     var lastOne = _.last(data.items);
                     if (that.moreAvailable && lastOne)
-                        that.setMaxId(lastOne.id);
+                        that.setCursor(lastOne.id);
                     return _.map(data.items, function (medium) {
                         return new Media(that.session, medium);
                     });

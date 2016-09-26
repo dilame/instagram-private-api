@@ -1,7 +1,7 @@
 var _ = require('underscore');
 
 function TimelineFeed(session) {
-    this.lastMaxId = null;
+    this.cursor = null;
     this.moreAvailable = null;
     this.session = session;
 }
@@ -12,12 +12,12 @@ var Helpers = require('../../../helpers');
 var Media = require('../media');
 
 
-TimelineFeed.prototype.setMaxId = function (maxId) {
-    this.lastMaxId = maxId;
+TimelineFeed.prototype.setCursor = function (maxId) {
+    this.cursor = maxId;
 };
 
-TimelineFeed.prototype.getMaxId = function () {
-    return this.lastMaxId;
+TimelineFeed.prototype.getCursor = function () {
+    return this.cursor;
 };
 
 TimelineFeed.prototype.isMoreAvailable = function () {
@@ -33,7 +33,7 @@ TimelineFeed.prototype.get = function () {
             return new Request(that.session)
                 .setMethod('GET')
                 .setResource('timelineFeed', {
-                    maxId: that.lastMaxId,
+                    maxId: that.getCursor(),
                     rankToken: rankToken
                 })
                 .send();
@@ -46,7 +46,7 @@ TimelineFeed.prototype.get = function () {
                 return new Media(that.session, medium);
             }));
             if (that.moreAvailable)
-                that.setMaxId(data.next_max_id);
+                that.setCursor(data.next_max_id);
             return media;    
         });
 };
