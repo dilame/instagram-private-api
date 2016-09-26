@@ -4,6 +4,8 @@ var request = require('request-promise');
 var JSONbig = require('json-bigint');
 var Agent = require('socks5-https-client/lib/Agent');
 
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
+
 function Request(session) {
     this._id = _.uniqueId();
     this._url = null;
@@ -54,7 +56,6 @@ Request.setProxy = function (proxyUrl) {
     if(!Helpers.isValidUrl(proxyUrl))
         throw new Error("`proxyUrl` argument is not an valid url")
     var object = { 'proxy': proxyUrl };    
-    process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
     Request.requestClient = request.defaults(object);
 }
 
@@ -64,7 +65,6 @@ Request.setSocks5Proxy = function (host, port) {
         socksHost: host, // Defaults to 'localhost'.
         socksPort: port // Defaults to 1080.
     }};
-    process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
     Request.requestClient = request.defaults(object);
 }
 
