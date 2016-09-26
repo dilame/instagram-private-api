@@ -1,10 +1,12 @@
 var _ = require('underscore');
 
-function MediaCommentsFeed(session, mediaId) {
+function MediaCommentsFeed(session, mediaId, limit) {
     this.cursor = null;
     this.moreAvailable = null;
     this.mediaId = mediaId;
     this.session = session;
+    this.allItems = [];
+    this.limit = limit;
 }
 
 module.exports = MediaCommentsFeed;
@@ -43,4 +45,19 @@ MediaCommentsFeed.prototype.get = function () {
                 return new Comment(that.session, comment);
             });
         })
+};
+
+MediaCommentsFeed.prototype.all = function () {
+    var that = this;
+    return this.get().then(function (items) {
+        that.allItems = that.allItems.concat(items);
+        var exceedLimit = false;
+        if (that.limit && that.allItems.length > that.limit)
+            exceedLimit = true;
+        if (that.moreAvailable && !exceedLimit) {
+            return that.all();
+        } else {
+            return that.allItems;
+        }
+    })
 };
