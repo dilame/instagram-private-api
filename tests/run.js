@@ -33,6 +33,7 @@ mkdirp.sync(__dirname + '/tmp');
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 
 // Client.Request.setProxy('http://127.0.0.1:8888')
+// Client.Request.setSocks5Proxy("127.0.0.1", 8888);
 
 describe("Sessions", function () {
     before(function (done) {

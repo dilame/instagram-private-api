@@ -2,6 +2,9 @@ var _ = require("underscore");
 var Promise = require("bluebird");
 var request = require('request-promise');
 var JSONbig = require('json-bigint');
+var Agent = require('socks5-https-client/lib/Agent');
+
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 
 function Request(session) {
     this._id = _.uniqueId();
@@ -49,15 +52,21 @@ Request.defaultHeaders = {
 
 Request.requestClient = request.defaults({});
 
-
 Request.setProxy = function (proxyUrl) {
     if(!Helpers.isValidUrl(proxyUrl))
         throw new Error("`proxyUrl` argument is not an valid url")
     var object = { 'proxy': proxyUrl };    
-    process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
     Request.requestClient = request.defaults(object);
 }
 
+Request.setSocks5Proxy = function (host, port) {
+    var object = { agentClass: Agent,
+    agentOptions: {
+        socksHost: host, // Defaults to 'localhost'.
+        socksPort: port // Defaults to 1080.
+    }};
+    Request.requestClient = request.defaults(object);
+}
 
 Object.defineProperty(Request.prototype, "session", {
     get: function() { 
