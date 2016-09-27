@@ -31,11 +31,15 @@ Account.prototype.parseParams = function (json) {
     hash.id = json.pk || json.id || json.instagram_id;
     hash.isPrivate = json.is_private;
     hash.hasAnonymousProfilePicture = json.has_anonymous_profile_picture;
-    if(_.isNumber(json.following_count))
-        hash.followingsCount = json.following_count;
-    if(_.isNumber(json.follower_count))
-        hash.followersCount = json.follower_count;
     hash.isBusiness = !!json.is_business;
+    if(_.isString(json.profile_pic_id))
+        hash.profilePicId = json.profile_pic_id;
+    if(_.isString(json.byline))
+        hash.byLine = json.byline;
+    if(_.isNumber(json.following_count))
+        hash.followingCount = json.following_count;
+    if(_.isNumber(json.follower_count))
+        hash.followerCount = json.follower_count;
     if(_.isString(json.biography))
         hash.biography = json.biography;
     if(_.isNumber(json.media_count))    
