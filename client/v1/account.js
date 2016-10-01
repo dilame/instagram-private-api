@@ -36,6 +36,8 @@ Account.prototype.parseParams = function (json) {
         hash.profilePicId = json.profile_pic_id;
     if(_.isString(json.byline))
         hash.byLine = json.byline;
+    if(_.isNumber(json.usertags_count))
+        hash.usertagsCount = json.usertags_count;
     if(_.isNumber(json.following_count))
         hash.followingCount = json.following_count;
     if(_.isNumber(json.follower_count))

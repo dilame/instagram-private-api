@@ -52,6 +52,11 @@ Request.defaultHeaders = {
 
 Request.requestClient = request.defaults({});
 
+Request.setTimeout = function (ms) {
+    var object = { 'timeout': parseInt(ms) };
+    Request.requestClient = request.defaults(object);
+}
+
 Request.setProxy = function (proxyUrl) {
     if(!Helpers.isValidUrl(proxyUrl))
         throw new Error("`proxyUrl` argument is not an valid url")
