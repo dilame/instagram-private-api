@@ -441,7 +441,7 @@ Implemented are:
 
 Since feeds can be infinite and we cannot obviosly fetch all results, we need
 to iterate. Every time you call `.get`, you will receive a new set of data
-and set new `maxId` mentioned above as `cursor`. 
+and set new `cursor`.
 
 `feed.get() : Promise<Media[]>`
 
@@ -465,11 +465,11 @@ Promise.map(_.range(0, 20), function() {
 })
 ```
 
-`feed.getMaxId() : Promise<Media[]>`
+`feed.getCursor() : Promise<Media[]>`
 
 will return the current `cursor`, which will be set after calling `.get`
 
-`feed.setMaxId() : Promise<Media[]>`
+`feed.setCursor() : Promise<Media[]>`
 
 will set new `cursor`, from which you can start to iterate
 
