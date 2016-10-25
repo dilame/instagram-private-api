@@ -465,11 +465,11 @@ Promise.map(_.range(0, 20), function() {
 })
 ```
 
-`feed.getCursor() : Promise<Media[]>`
+`feed.getCursor() : string`
 
 will return the current `cursor`, which will be set after calling `.get`
 
-`feed.setCursor() : Promise<Media[]>`
+`feed.setCursor() : void`
 
 will set new `cursor`, from which you can start to iterate
 
