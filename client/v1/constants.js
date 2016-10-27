@@ -26,6 +26,8 @@ const ROUTES = {
     friendshipShowMany: 'friendships/show_many/',
     userInfo: 'users/<%= id %>/info/',
     userFeed: 'feed/user/<%= id %>/?<%= maxId ? ("max_id=" + maxId + "&") : "" %>rank_token=<%= rankToken %>',
+    userFollowers: 'friendships/<%= id %>/followers/?<%= rankToken ? ("rank_token=" + rankToken) : "" %><%= maxId ? ("max_id=" + maxId) : "" %>',
+    userFollowings: 'friendships/<%= id %>/following/?<%= rankToken ? ("rank_token=" + rankToken) : "" %><%= maxId ? ("max_id=" + maxId) : "" %>',
     timelineFeed: 'feed/timeline/?<%= maxId ? ("max_id=" + maxId + "&") : "" %>rank_token=<%= rankToken %>&ranked_content=true',
     tagFeed: 'feed/tag/<%= encodeURI(tag) %>/?<%= maxId ? ("max_id=" + maxId + "&") : "" %>rank_token=<%= rankToken %>',
     selfLikedFeed: 'feed/liked/<%= maxId ? ("?max_id=" + maxId) : "" %>',
