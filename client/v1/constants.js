@@ -71,9 +71,9 @@ const WEB_ROUTES = {
 }
 
 const PRIVATE_KEY = {
-    SIG_KEY: 'fc4720e1bf9d79463f62608c86fbddd374cc71bbfb98216b52e3f75333bd130d',
+    SIG_KEY: '2f6dcdf76deb0d3fd008886d032162a79b88052b5f50538c1ee93c4fe7d02e60',
     SIG_VERSION: '4',
-    APP_VERSION: '9.4.0'
+    APP_VERSION: '9.7.0'
 }
 
 
