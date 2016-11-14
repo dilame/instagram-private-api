@@ -108,7 +108,7 @@ Session.prototype.getAccount = function () {
 
 
 Session.prototype.destroy = function () {
-    this.cookiesStore.destroy();
+    this._cookiesStore.destroy();
     return new Request(this)
         .setMethod('POST')
         .setResource('logout')
