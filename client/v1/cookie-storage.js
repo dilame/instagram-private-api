@@ -1,12 +1,7 @@
 var util = require("util");
-var tough = require('tough-cookie');
-var Store = tough.Store;
 var Promise = require('bluebird');
 var CONSTANTS = require("./constants");
-var fs = require('fs');
-var path = require('path');
 var _ = require('underscore');
-var Helpers = require('../../helpers');
 
 
 function CookieStorage(cookieStorage) {
