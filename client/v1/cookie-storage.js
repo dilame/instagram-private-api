@@ -3,7 +3,6 @@ var tough = require('tough-cookie');
 var Store = tough.Store;
 var Promise = require('bluebird');
 var CONSTANTS = require("./constants");
-var FileCookieStore = require('tough-cookie-filestore');
 var fs = require('fs');
 var path = require('path');
 var _ = require('underscore');
