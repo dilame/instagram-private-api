@@ -4,6 +4,7 @@ var _ = require("underscore");
 var crypto = require('crypto');
 var pruned = require('./json-pruned');
 var fs = require('fs');
+var request = require('request-promise');
 
 
 function Media(session, params) {
@@ -15,7 +16,6 @@ util.inherits(Media, Resource);
 module.exports = Media;
 var Request = require('./request');
 var Comment = require('./comment');
-var Session = require('./session');
 var Account = require('./account');
 var Location = require('./location');
 var Exceptions = require('./exceptions');
@@ -52,7 +52,7 @@ Media.prototype.parseParams = function (json) {
         hash.images = json.image_versions2.candidates;
     this.comments = _.map(json.comments, function(comment) {
         return new Comment(that.session, comment); 
-    })    
+    });
     this.account = new Account(that.session, json.user);
     return hash;
 };
@@ -75,7 +75,18 @@ Media.getById = function (session, id) {
         .then(function(json) {
             return new Media(session, json.items[0])
         })
-}
+};
+
+Media.getByUrl = function(session, url){
+    var self = this;
+    return request({
+        url: 'https://api.instagram.com/oembed/',
+        qs:{url:url},
+        json:true
+    }).then(function (response) {
+        return self.getById(session, response.media_id)
+    })
+};
 
 Media.likers = function(session, mediaId) {
     return new Request(session)
@@ -106,7 +117,7 @@ Media.delete = function(session, mediaId) {
                 messaage: 'Not posible to delete medium!'
             })
         })
-}
+};
 
 Media.configurePhoto = function (session, uploadId, caption, width, height) {
     if(_.isEmpty(uploadId))
@@ -129,7 +140,7 @@ Media.configurePhoto = function (session, uploadId, caption, width, height) {
             source_width: width,
             source_height: height
         }    
-    })
+    });
     payload = payload.replace(/\"\$width\"/gi, width.toFixed(1));
     payload = payload.replace(/\"\$height\"/gi, height.toFixed(1));
     payload = payload.replace(/\"\$zero\"/gi, (0).toFixed(1));
@@ -145,4 +156,4 @@ Media.configurePhoto = function (session, uploadId, caption, width, height) {
         .then(function(json) {
             return new Media(session, json.media)
         })
-}
+};
