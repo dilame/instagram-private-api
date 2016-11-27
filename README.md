@@ -153,7 +153,7 @@ such a processor and build some kind of bridge to communicate. The second is to 
 `libstrings.so` is working and apply the same behavior in node (which would of course be better).
 
 More about this interesting technique and how to extract keys and also a great
-source of learning is here: [MKHDZNFQ Blog](http://mokhdzanifaeq.github.io/)
+source of learning is here: [MKHDZNFQ Blog](https://mokhdzanifaeq.github.io/index.html)
 
 Luckily for us, we know and we are able to analyze `libstrings.so` and thus
 we have a clean implementation of signatures for Instagram.
@@ -207,7 +207,7 @@ order to verify signature or `X-CSFR-Token` | `_csrftoken` to verify that you
 are doing request intentionally.
 
 
-**CookieStorage & CookieFileStorage**
+**CookieStorage & CookieFileStorage & CookieMemoryStorage**
 
 You can store cookies anywhere you want. Cookies are done with [tough-cookie](https://github.com/SalesforceEng/tough-cookie/).
 Simple overview would be that, `CookieStorage` should have property
@@ -221,6 +221,7 @@ For more info checkout this:
 
 ```javascript
 var storage = new Client.CookieFileStorage(__dirname + './cookies/someuser.json');
+// or simply var storage = new Client.CookieMemoryStorage();
 storage.getAccountId()
 	.then(function(accountId){
 		console.log(accountId);
