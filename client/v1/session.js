@@ -2,6 +2,7 @@ var util = require("util");
 var Resource = require("./resource");
 var fs = require('fs');
 var _ = require('underscore');
+var Promise = require('bluebird');
 var request = require("request-promise");
 var CookieStorage = require("./cookie-storage");
 var RequestJar = require("./jar");
@@ -47,12 +48,19 @@ Object.defineProperty(Session.prototype, "device", {
 
 Object.defineProperty(Session.prototype, "CSRFToken", {
     get: function() { 
-        var cookies = this.jar.getCookies(CONSTANTS.HOST) 
+        var cookies = this.jar.getCookiesSync(CONSTANTS.HOST);
         var item = _.findWhere(cookies, { key: "csrftoken" });
         return item ? item.value : "missing";
     },
     set: function(val) {}
 });
+
+Session.prototype.getCSRFToken = function () {
+    return Promise.fromCallback(this.jar._jar.getCookies.bind(this.jar._jar,CONSTANTS.HOST)).then(function (cookies) {
+        var item = _.findWhere(cookies, { key: "csrftoken" });
+        return Promise.resolve(item ? item.value : "missing");
+    })
+};
 
 Object.defineProperty(Session.prototype, "proxyUrl", {
     get: function() { 
