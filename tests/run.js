@@ -200,8 +200,21 @@ describe("Sessions", function () {
                     done();
                 })
         })
-    })
 
+        it("should not be problem to use in memeroy cookies", function(done) {
+            var device = new Client.Device(credentails[0]);
+            var storage = new Client.CookieMemoryStorage();
+            var promise = Client.Session.create(device, storage, credentails[0], credentails[1], credentails[2]);
+            promise.then(function(sessionInstance) {
+                sessionInstance.should.be.instanceOf(Client.Session);
+                return sessionInstance.getAccount()
+            })
+            .then(function(account) {
+                account.should.be.instanceOf(Client.Account)
+                done();
+            })
+        })
+    })
 
     describe("Feeds", function() {
         require('./cases/feeds/account-followers')
