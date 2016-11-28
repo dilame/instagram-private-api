@@ -231,7 +231,7 @@ storage.getAccountId()
 **Session class**
 
 You can create a new instance of Session by calling 
-`var session = new Session(storage:CookieStorage, device:Device)`
+`var session = new Session(storage:CookieStorage, device:Device, proxyUrl?:string)`
 
 If you have valid cookies, you don't need to worry about anything else
 if you don't, you need to create a session with storage and device.
@@ -317,9 +317,11 @@ If you use a combination of these two methods, the first one has lower priority,
 meaning that, if you set a global proxy, and then a session proxy, the session
 proxy will be used.
 
-Static `.create` method also accepts the proxy as last (optional parameter)
+Static `.create` method and `Session` constructor also accepts the proxy as last (optional parameter)
 
-`Session.create(device, storage, username, password, proxyURL)`
+```Session.create(device, storage, username, password, proxyURL)```
+
+```new Session(device, storage, proxyURL)```
 
 ---
 
