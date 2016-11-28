@@ -7,6 +7,7 @@ InstagramV1.Signatures = require('./v1/signatures');
 InstagramV1.Device = require('./v1/device');
 InstagramV1.CookieStorage = require('./v1/cookie-storage');
 InstagramV1.CookieFileStorage = require('./v1/cookie-file-storage');
+InstagramV1.CookieMongoStorage = require('./v1/cookie-mongo-storage');
 InstagramV1.CookieMemoryStorage = require('./v1/cookie-memory-storage');
 InstagramV1.Exceptions = require("./v1/exceptions");
 InstagramV1.prunedJson = require('./v1/json-pruned');
