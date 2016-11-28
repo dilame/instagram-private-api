@@ -50,6 +50,9 @@ Account.prototype.parseParams = function (json) {
         hash.externalUrl = json.external_url;
     if(_.isNumber(json.mutual_followers_count))    
         hash.mutualFollowersCount = json.mutual_followers_count;
+
+    _.extend(hash,json);
+
     return hash;
 };
 
