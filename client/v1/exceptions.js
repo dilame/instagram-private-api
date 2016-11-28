@@ -6,6 +6,7 @@ var routes = require('./routes');
 
 // Basic error
 function APIError(message) {
+    Error.captureStackTrace(this, this.constructor);
     this.name = "APIError";
     this.message = (message || "Instagram API error was made.");
 }
@@ -22,6 +23,7 @@ APIError.prototype.serialize = function () {
 
 
 function NotImplementedError(message) {
+    Error.captureStackTrace(this, this.constructor);
     this.name = "NotImplementedError";
     this.message = (message || "This method is actually not implemented");
 }
@@ -31,6 +33,7 @@ exports.NotImplementedError = NotImplementedError;
 
 
 function NotAbleToSignError() {
+    Error.captureStackTrace(this, this.constructor);
     this.name = "NotAbleToSign";
     this.message = "It's not possible to sign request!";
 }
@@ -40,6 +43,7 @@ exports.NotAbleToSignError = NotAbleToSignError;
 
 
 function RequestError(payload) {
+    Error.captureStackTrace(this, this.constructor);
     this.name = "RequestError";
     this.message = "It's not possible to make request!";
     this.json = {};
@@ -55,6 +59,7 @@ exports.RequestError = RequestError;
 
 
 function AuthenticationError(message) {
+    Error.captureStackTrace(this, this.constructor);
     this.name = "AuthenticationError";
     this.message = message || "Not possible to authenticate";
 }
@@ -64,6 +69,7 @@ exports.AuthenticationError = AuthenticationError;
 
 
 function ParseError(response, request) {
+    Error.captureStackTrace(this, this.constructor);
     this.name = "ParseError";
     this.message = "Not possible to parse API response";
     this.response = response;
@@ -80,6 +86,7 @@ ParseError.prototype.getUrl = function () {
 
 
 function ActionSpamError(json) {
+    Error.captureStackTrace(this, this.constructor);
     this.json = json;
     this.name = "ActionSpamError";
     this.message = "This action was disabled due to block from instagram!";
@@ -117,6 +124,7 @@ ActionSpamError.prototype.getFeedbackMessage = function () {
 
 
 function CheckpointError(json, session) {
+    Error.captureStackTrace(this, this.constructor);
     this.json = json;
     this.name = "CheckpointError";
     this.message = "Instagram call checkpoint for this action!";
@@ -134,6 +142,7 @@ exports.CheckpointError = CheckpointError;
 
 
 function OnlyRankedItemsError() {
+    Error.captureStackTrace(this, this.constructor);
     this.name = "OnlyRankedItemsError";
     this.message = "Tag has only ranked items to show, due to blocked content";
 }
@@ -143,6 +152,7 @@ exports.OnlyRankedItemsError = OnlyRankedItemsError;
 
 
 function NotFoundError(response) {
+    Error.captureStackTrace(this, this.constructor);
     this.name = "NotFoundError";
     this.message = "Page wasn't found!";
     this.response = response;
@@ -154,6 +164,7 @@ exports.NotFoundError = NotFoundError;
 
 
 function PrivateUserError() {
+    Error.captureStackTrace(this, this.constructor);
     this.name = "PrivateUserError";
     this.message = "User is private and you are not authorized to view his content!";
 }
@@ -163,6 +174,7 @@ exports.PrivateUserError = PrivateUserError;
 
 
 function InvalidParamsError(object) {
+    Error.captureStackTrace(this, this.constructor);
     this.name = "InvalidParamsError";
     this.message = "There was validation error and problem with input you supply";
     this.errorData = object;
@@ -181,6 +193,7 @@ InvalidParamsError.prototype.serialize = function () {
 
 
 function TooManyFollowsError() {
+    Error.captureStackTrace(this, this.constructor);
     this.name = "TooManyFollowsError";
     this.message = "Account has just too much follows";
 }
@@ -191,6 +204,7 @@ exports.TooManyFollowsError = TooManyFollowsError;
 
 
 function RequestsLimitError() {
+    Error.captureStackTrace(this, this.constructor);
     this.name = "RequestsLimitError";
     this.message = "You just made too many request to instagram API";
 }
@@ -200,6 +214,7 @@ exports.RequestsLimitError = RequestsLimitError;
 
 
 function CookieNotValidError(cookieName) {
+    Error.captureStackTrace(this, this.constructor);
     this.name = "CookieNotValidError";
     this.message = "Cookie `"+cookieName+"` you are searching found was either not found or not valid!";
 }
@@ -209,6 +224,7 @@ exports.CookieNotValidError = CookieNotValidError;
 
 
 function IGAccountNotFoundError() {
+    Error.captureStackTrace(this, this.constructor);
     this.name = "IGAccountNotFoundError";
     this.message = "Account you are searching for was not found!";
 }
@@ -218,6 +234,7 @@ exports.IGAccountNotFoundError = IGAccountNotFoundError;
 
 
 function ThreadEmptyError() {
+    Error.captureStackTrace(this, this.constructor);
     this.name = "ThreadEmptyError";
     this.message = "Thread is empty there are no items!";
 }
@@ -228,6 +245,7 @@ exports.ThreadEmptyError = ThreadEmptyError;
 
 
 function AccountInactive(accountInstance) {
+    Error.captureStackTrace(this, this.constructor);
     this.name = 'AccountInactive';
     this.message = "The account you are trying to propagate is inactive";
     this.account = accountInstance;
@@ -238,6 +256,7 @@ exports.AccountInactive = AccountInactive;
 
 
 function AccountActivityPrivateFeed() {
+    Error.captureStackTrace(this, this.constructor);
     this.name = 'AccountActivityPrivateFeed';
     this.message = "The Account has private feed, account activity not really completed";
 }
@@ -247,6 +266,7 @@ exports.AccountActivityPrivateFeed = AccountActivityPrivateFeed;
 
 
 function PlaceNotFound() {
+    Error.captureStackTrace(this, this.constructor);
     this.name = 'PlaceNotFound';
     this.message = "Place you are searching for not exists!";
 }
@@ -256,6 +276,7 @@ exports.PlaceNotFound = PlaceNotFound;
 
 
 function NotPossibleToResolveChallenge(reason, code) {
+    Error.captureStackTrace(this, this.constructor);
     this.name = 'NotPossibleToResolveChallenge';
     this.reason = reason || 'Unknown reason';
     this.code = code || NotPossibleToResolveChallenge.CODE.UNKNOWN;
@@ -279,6 +300,7 @@ NotPossibleToResolveChallenge.CODE = {
 
 
 function NotPossibleToVerify() {
+    Error.captureStackTrace(this, this.constructor);
     this.name = 'NotPossibleToVerify';
     this.message = "Not possible to verify trough code!";
 }
@@ -288,6 +310,7 @@ exports.NotPossibleToVerify = NotPossibleToVerify;
 
 
 function NoChallengeRequired() {
+    Error.captureStackTrace(this, this.constructor);
     this.name = 'NoChallengeRequired';
     this.message = "No challenge is required to use account!";
 }
@@ -297,6 +320,7 @@ exports.NoChallengeRequired = NoChallengeRequired;
 
 
 function InvalidEmail(email, json) {
+    Error.captureStackTrace(this, this.constructor);
     this.name = 'InvalidEmail';
     this.message = email + " email is not an valid email";
     this.json = json;
@@ -307,6 +331,7 @@ exports.InvalidEmail = InvalidEmail;
 
 
 function InvalidUsername(username, json) {
+    Error.captureStackTrace(this, this.constructor);
     this.name = 'InvalidUsername';
     this.message = username + " username is not an valid username";
     this.json = json;
@@ -317,6 +342,7 @@ exports.InvalidUsername = InvalidUsername;
 
 
 function InvalidPhone(phone, json) {
+    Error.captureStackTrace(this, this.constructor);
     this.name = 'InvalidPhone';
     this.message = phone + " phone is not a valid phone";
     this.json = json;
@@ -327,6 +353,7 @@ exports.InvalidPhone = InvalidPhone;
 
 
 function InvalidPassword() {
+    Error.captureStackTrace(this, this.constructor);
     this.name = 'InvalidPhone';
     this.message = "Password must be at least 6 chars long";
 }
@@ -337,6 +364,7 @@ exports.InvalidPassword = InvalidPassword;
 
 
 function AccountRegistrationError(message, json) {
+    Error.captureStackTrace(this, this.constructor);
     this.name = 'AccountRegistrationError';
     this.message = message
     this.json = json;

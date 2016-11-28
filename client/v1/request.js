@@ -221,7 +221,6 @@ Request.prototype.setSession = function(session) {
     if(!(session instanceof Session))
         throw new Error("`session` parametr must be instance of `Session`")
     this._session = session;
-    this.setCSRFToken(session.CSRFToken);
     this.setOptions({
         jar: session.jar
     });
@@ -340,15 +339,19 @@ Request.prototype.afterError = function (error, request, attemps) {
 Request.prototype.send = function (options, attemps) {
     var that = this;
     if (!attemps) attemps = 0;
-    return this._mergeOptions(options)
+    return this.session.getCSRFToken()
+        .then(function (token) {
+            that.setCSRFToken(token);
+            return that._mergeOptions(options)
+        })
         .then(function(opts) {
-            return [opts, that._prepareData()];    
+            return [opts, that._prepareData()];
         })
         .spread(function(opts, data){
             opts = _.defaults(opts, data);
             return that._transform(opts);
         })
-        .then(function(opts) { 
+        .then(function(opts) {
             options = opts;
             return [Request.requestClient(options), options, attemps]
         })
