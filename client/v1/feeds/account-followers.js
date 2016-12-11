@@ -1,10 +1,14 @@
 var _ = require('underscore');
 
-function AccountFollowersFeed(session, accountId) {
+function AccountFollowersFeed(session, accountId, limit) {
     this.cursor = null;
     this.moreAvailable = null;
     this.accountId = accountId;
     this.session = session;
+    this.limit = limit || 7500;
+    this.allFollowers = [];
+    // Should be enought for 7500 records
+    this.timeout = 10 * 60 * 1000;
 }
 
 module.exports = AccountFollowersFeed;
@@ -42,4 +46,23 @@ AccountFollowersFeed.prototype.get = function () {
                 return new Account(that.session, user);
             });
         })
+};
+
+AccountFollowersFeed.prototype.all = function () {
+    var that = this;
+    return this.get().delay(1500).then(function (followings) {
+        that.allFollowers = that.allFollowers.concat(followings);
+        var exceedLimit = false;
+        if (that.limit && that.allFollowers.length > that.limit)
+            exceedLimit = true;
+        if (followings.length > 0 && that.isMoreAvailable() && !exceedLimit) {
+            return that.all()
+        } else {
+            return that.allFollowers;
+        }
+    })
+};
+
+AccountFollowersFeed.prototype.allSafe = function () {
+    return this.all().timeout(this.timeout);
 };
