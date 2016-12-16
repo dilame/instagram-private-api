@@ -142,10 +142,10 @@ Account.prototype.setProfilePicture = function(streamOrPath) {
 };
 
 
-Account.setPrivacy = function (session, private) {
+Account.setPrivacy = function (session, pri) {
     return new Request(session)
         .setMethod('POST')
-        .setResource(private ? 'setAccountPrivate' : 'setAccountPublic')                    
+        .setResource(pri ? 'setAccountPrivate' : 'setAccountPublic')                    
         .generateUUID()
         .signPayload()
         .send()
@@ -155,9 +155,9 @@ Account.setPrivacy = function (session, private) {
 };
 
 
-Account.prototype.setPrivacy = function(private) {
+Account.prototype.setPrivacy = function(pri) {
     var that = this;
-    return Account.setPrivacy(this.session, private) 
+    return Account.setPrivacy(this.session, pri) 
         .then(function(user) {
             that._params.isPrivate = user.params.isPrivate;
             return that;
