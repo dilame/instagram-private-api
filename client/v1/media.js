@@ -35,6 +35,7 @@ Media.prototype.parseParams = function (json) {
     hash.originalHeight = json.original_height;
     hash.mediaType = json.media_type;
     hash.deviceTimestamp = json.device_timestamp;
+
     if(json.view_count)
         hash.viewCount = json.view_count;
     if(_.isObject(json.location)) {
@@ -51,7 +52,7 @@ Media.prototype.parseParams = function (json) {
     if (_.isObject(json.image_versions2))
         hash.images = json.image_versions2.candidates;
     this.comments = _.map(json.comments, function(comment) {
-        return new Comment(that.session, comment); 
+        return new Comment(that.session, comment);
     });
     this.account = new Account(that.session, json.user);
     return hash;
@@ -112,7 +113,7 @@ Media.delete = function(session, mediaId) {
         .signPayload()
         .send()
         .then(function (json) {
-            if(json.did_delete) return;    
+            if(json.did_delete) return;
             throw new Exceptions.RequestError({
                 messaage: 'Not posible to delete medium!'
             })
@@ -122,10 +123,10 @@ Media.delete = function(session, mediaId) {
 Media.configurePhoto = function (session, uploadId, caption, width, height) {
     if(_.isEmpty(uploadId))
         throw new Error("Upload argument must be upload valid upload id");
-    if(!caption) caption = "";    
-    if(!width) width = 800;    
-    if(!height) height = 800; 
-    const CROP = 1;   
+    if(!caption) caption = "";
+    if(!width) width = 800;
+    if(!height) height = 800;
+    const CROP = 1;
     var payload = pruned({
         source_type: "4",
         caption: caption,
@@ -139,7 +140,7 @@ Media.configurePhoto = function (session, uploadId, caption, width, height) {
         extra: {
             source_width: width,
             source_height: height
-        }    
+        }
     });
     payload = payload.replace(/\"\$width\"/gi, width.toFixed(1));
     payload = payload.replace(/\"\$height\"/gi, height.toFixed(1));
