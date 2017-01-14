@@ -42,6 +42,7 @@ const ROUTES = {
     mediaLikes: 'media/<%= mediaId %>/likers/',
     mediaComments: 'media/<%= mediaId %>/comments/<%= maxId ? ("?max_id=" + maxId) : "" %>',
     mediaDeletePhoto: 'media/<%= mediaId %>/delete/?media_type=PHOTO',
+    mediaEdit: 'media/<%= mediaId %>/edit_media/',
     qeSync: 'qe/sync/',
     discoverAyml: 'discover/ayml/',
     inbox: 'direct_v2/inbox/<%= cursor ? ("?cursor=" + cursor) : "" %>',

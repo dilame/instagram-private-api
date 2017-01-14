@@ -120,6 +120,33 @@ Media.delete = function(session, mediaId) {
         })
 };
 
+Media.edit = function(session, mediaId, caption, userTags) {
+    var requestPayload = {
+        media_id: mediaId,
+        caption_text: caption
+    };
+
+    if (userTags) {
+        requestPayload.usertags = userTags;
+    }
+
+    return new Request(session)
+        .setMethod('POST')
+        .setResource('mediaEdit', {mediaId: mediaId})
+        .setData(requestPayload)
+        .generateUUID()
+        .signPayload()
+        .send()
+        .then(function (json) {
+            if(json.media.caption_is_edited) {
+                return new Media(session, json.media);
+            }
+            throw new Exceptions.RequestError({
+                messaage: 'Edit media not successful!'
+            });
+        });
+};
+
 Media.configurePhoto = function (session, uploadId, caption, width, height) {
     if(_.isEmpty(uploadId))
         throw new Error("Upload argument must be upload valid upload id");
