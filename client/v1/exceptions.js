@@ -44,7 +44,7 @@ function RequestError(payload) {
     this.message = "It's not possible to make request!";
     this.json = {};
     if(_.isString(payload.message))
-        this.message = payload.message;    
+        this.message = payload.message;
     if(_.isObject(payload)) {
         this.json = payload
     }
@@ -102,7 +102,7 @@ ActionSpamError.prototype.getBlockTime = function () {
         if (!hours || !_.isArray(hours)) return 0;
         var blockTime = parseInt(hours[1]) * 60 * 60 * 1000;
         return blockTime + (1000 * 60 * 5);
-    } 
+    }
     return 0;
 };
 
