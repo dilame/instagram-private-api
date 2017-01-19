@@ -22,6 +22,7 @@ const ROUTES = {
     checkUsername: 'users/check_username/',
     usernameSuggestions: 'accounts/username_suggestions/',
     uploadPhoto: 'upload/photo/',
+    uploadVideo: 'upload/video/',
     friendshipShow: 'friendships/show/<%= id %>/',
     friendshipShowMany: 'friendships/show_many/',
     userInfo: 'users/<%= id %>/info/',
