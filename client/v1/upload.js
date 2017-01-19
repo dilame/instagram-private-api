@@ -93,15 +93,15 @@ Upload.video = function (session, streamOrPath,width,height) {
                         .setMethod('POST')
                         .setUrl(uploadData._params.uploadUrl)
                         .generateUUID()
-                        .setHeaders({'job': uploadData._params.uploadJob})
+                        .setHeaders({
+                            'job': uploadData._params.uploadJob,
+                            'Content-Type': 'application/octet-stream',
+                            'Content-Disposition': 'attachment; filename="video.mp4"',
+                            'Content-Length': fileLength,
+                            'Content-Range': 'bytes 0-'+fileLength+'/'+fileLength
+                        })
                         .transform(function(opts){
-                            opts.formData.video = {
-                                value: stream,
-                                options: {
-                                    filename: filename,
-                                    contentType: 'application/octet-stream'
-                                }
-                            }
+                            opts.body = stream
                             return opts;
                         })
                         .send()
