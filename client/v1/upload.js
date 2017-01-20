@@ -20,12 +20,11 @@ var Request = require("./request");
 
 Upload.prototype.parseParams = function (params) {
     var hash = {};
-    if(params.upload_id) hash.uploadId = params.upload_id;
+    hash.uploadId = params.upload_id;
     if(params.video_upload_urls && params.video_upload_urls.length){
         hash.uploadUrl = params.video_upload_urls[0].url;
         hash.uploadJob = params.video_upload_urls[0].job;
     }
-    if(params.configure_delay_ms) hash.configure_delay_ms = params.configure_delay_ms
     return hash;
 };
 
@@ -93,10 +92,10 @@ Upload.video = function (session, streamOrPath,width,height) {
                     var request = new Request(session)
                     return request
                         .setMethod('POST')
-                        .setUrl(uploadData._params.uploadUrl)
+                        .setUrl(uploadData.params.uploadUrl)
                         .generateUUID()
                         .setHeaders({
-                            'job': uploadData._params.uploadJob,
+                            'job': uploadData.params.uploadJob,
                             'Host': 'upload.instagram.com',
                             'Session-ID': _generateSessionId(),
                             'Content-Type': 'application/octet-stream',
@@ -109,7 +108,18 @@ Upload.video = function (session, streamOrPath,width,height) {
                         })
                         .send()
                         .then(function(json) {
-                            return new Upload(session, json);
+                            //TEMP FIX for global setHeader problem
+                            request.removeHeader('job');
+                            request.removeHeader('Host');
+                            request.removeHeader('Session-ID');
+                            request.removeHeader('Content-Type');
+                            request.removeHeader('Content-Disposition');
+                            request.removeHeader('Content-Length');
+                            return {
+                                delay:json.configure_delay_ms,
+                                durationms:duration,
+                                uploadId:uploadData.params.uploadId
+                            }
                         })
                 })
     })

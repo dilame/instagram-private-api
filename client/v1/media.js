@@ -5,6 +5,7 @@ var crypto = require('crypto');
 var pruned = require('./json-pruned');
 var fs = require('fs');
 var request = require('request-promise');
+var Promise = require("bluebird");
 
 
 function Media(session, params) {
@@ -184,4 +185,55 @@ Media.configurePhoto = function (session, uploadId, caption, width, height) {
         .then(function(json) {
             return new Media(session, json.media)
         })
+};
+
+Media.configureVideo = function (session, uploadId, caption, durationms, delay) {
+    if(_.isEmpty(uploadId))
+        throw new Error("Upload argument must be upload valid upload id");
+    if(typeof(durationms)==='undefined')
+        throw new Error("Durationms argument must be upload valid video duration");
+    if(!caption) caption = "";
+    if(!delay) delay = 6500;
+    const source_type = 'library';  //We can replace it with 'camera'
+    var payload = pruned({
+        video_result: 'deprecated',
+        caption: caption,
+        upload_id: parseInt(uploadId),
+        device: session.device.payload,
+        audio_muted: false,
+        trim_type: 0,
+        camera_position:'unknown',
+        source_type:source_type,
+        length:durationms/1000,
+        disable_comments:false,
+        poster_frame_index:0,
+        geotag_enabled:false,
+        edits: {
+            filter_strength: 1
+        },
+        clips: [
+            {
+                length: durationms/1000,
+                cinema: 'unsupported',
+                original_length: durationms/1000,
+                source_type: source_type,
+                start_time: 0,
+                trim_type: 0,
+                camera_position: 'unknown'
+            }
+        ]
+    });
+    return Promise.delay(delay)
+        .then(function(){
+            return new Request(session)
+            .setMethod('POST')
+            .setResource('videoConfigure')
+            .setData(payload)
+            .generateUUID()
+            .signPayload()
+            .send()
+            .then(function(json) {
+                return new Media(session, json.media)
+            })
+    })
 };
