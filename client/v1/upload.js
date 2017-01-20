@@ -29,8 +29,9 @@ Upload.prototype.parseParams = function (params) {
 };
 
 
-Upload.photo = function (session, streamOrPath) {
+Upload.photo = function (session, streamOrPath, uploadId) {
     var stream = Helpers.pathToStream(streamOrPath);
+    if(!uploadId) uploadId = new Date().getTime();
     // This compresion is just default one
     var compresion = {
         "lib_name": "jt",
@@ -45,7 +46,7 @@ Upload.photo = function (session, streamOrPath) {
         .generateUUID()
         .setData({
             image_compression: JSON.stringify(compresion),
-            upload_id: predictedUploadId
+            upload_id: uploadId
         })
         .transform(function(opts){
             opts.formData.photo = {
@@ -63,8 +64,8 @@ Upload.photo = function (session, streamOrPath) {
         })
 }
 
-Upload.video = function (session, streamOrPath,width,height) {
-    var stream = Helpers.pathToStream(streamOrPath);
+Upload.video = function(session,videoStreamOrPath,photoStreamOrPath,width,height) {
+    var stream = Helpers.pathToStream(videoStreamOrPath);
     var predictedUploadId = new Date().getTime();
     var filename = "video.mp4";
     var request = new Request(session)
@@ -88,7 +89,7 @@ Upload.video = function (session, streamOrPath,width,height) {
                 })
                 .then(function(uploadData){
                     //Uploading video to url
-                    stream = Helpers.pathToStream(streamOrPath);    //Updating stream since old one is destroyed
+                    stream = Helpers.pathToStream(videoStreamOrPath);    //Updating stream since old one is destroyed
                     var request = new Request(session)
                     return request
                         .setMethod('POST')
@@ -107,7 +108,7 @@ Upload.video = function (session, streamOrPath,width,height) {
                             return opts;
                         })
                         .send()
-                        .then(function(json) {
+                        .then(function(json){
                             //TEMP FIX for global setHeader problem
                             request.removeHeader('job');
                             request.removeHeader('Host');
@@ -120,6 +121,12 @@ Upload.video = function (session, streamOrPath,width,height) {
                                 durationms:duration,
                                 uploadId:uploadData.params.uploadId
                             }
+                        })
+                })
+                .then(function(uploadData){
+                    return Upload.photo(session,photoStreamOrPath,uploadData.uploadId)
+                        .then(function(){
+                            return uploadData;
                         })
                 })
     })

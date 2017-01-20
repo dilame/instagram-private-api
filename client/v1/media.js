@@ -192,43 +192,49 @@ Media.configureVideo = function (session, uploadId, caption, durationms, delay) 
         throw new Error("Upload argument must be upload valid upload id");
     if(typeof(durationms)==='undefined')
         throw new Error("Durationms argument must be upload valid video duration");
+    var duration = durationms/1000
     if(!caption) caption = "";
     if(!delay) delay = 6500;
     const source_type = 'library';  //We can replace it with 'camera'
-    var payload = pruned({
-        video_result: 'deprecated',
-        caption: caption,
-        upload_id: parseInt(uploadId),
-        device: session.device.payload,
-        audio_muted: false,
-        trim_type: 0,
-        camera_position:'unknown',
-        source_type:source_type,
-        length:durationms/1000,
-        disable_comments:false,
-        poster_frame_index:0,
-        geotag_enabled:false,
-        edits: {
-            filter_strength: 1
-        },
-        clips: [
-            {
-                length: durationms/1000,
-                cinema: 'unsupported',
-                original_length: durationms/1000,
-                source_type: source_type,
-                start_time: 0,
-                trim_type: 0,
-                camera_position: 'unknown'
-            }
-        ]
-    });
     return Promise.delay(delay)
         .then(function(){
+            return session.getAccountId()
+        })
+        .then(function(accountId){
+            var payload = pruned({
+                "video_result":"deprecated",
+                "audio_muted":false,
+                "trim_type":0,
+                "client_timestamp":(Date.now()).toString(),
+                "caption":caption,
+                "edits":{
+                    "filter_strength":1
+                },
+                "clips":[{
+                    "length":duration.toFixed(14),
+                    "cinema":"unsupported",
+                    "original_length":duration.toFixed(14),
+                    "source_type":"library",
+                    "start_time":0,
+                    "trim_type":0,
+                    "camera_position":"unknown"
+                }],
+                "camera_position":"unknown",
+                "_uid":accountId.toString(),
+                "source_type":"library",
+                "length":duration.toFixed(14),
+                "disable_comments":false,
+                "poster_frame_index":0,
+                "geotag_enabled":false,
+                "waterfall_id":_generateWaterfallId(),
+                "upload_id":parseInt(uploadId)
+            });
+
             return new Request(session)
             .setMethod('POST')
             .setResource('videoConfigure')
-            .setData(payload)
+            .setBodyType('form')
+            .setData(JSON.parse(payload))
             .generateUUID()
             .signPayload()
             .send()
@@ -237,3 +243,13 @@ Media.configureVideo = function (session, uploadId, caption, durationms, delay) 
             })
     })
 };
+
+function _generateWaterfallId(){
+    var text = "";
+    var possible = "abcdef0123456789";
+
+    for( var i=0; i < 32; i++ )
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+    return text;
+}
