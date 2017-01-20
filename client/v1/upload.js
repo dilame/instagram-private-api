@@ -20,11 +20,12 @@ var Request = require("./request");
 
 Upload.prototype.parseParams = function (params) {
     var hash = {};
-    hash.uploadId = params.upload_id;
+    if(params.upload_id) hash.uploadId = params.upload_id;
     if(params.video_upload_urls && params.video_upload_urls.length){
         hash.uploadUrl = params.video_upload_urls[0].url;
         hash.uploadJob = params.video_upload_urls[0].job;
     }
+    if(params.configure_delay_ms) hash.configure_delay_ms = params.configure_delay_ms
     return hash;
 };
 
@@ -88,6 +89,7 @@ Upload.video = function (session, streamOrPath,width,height) {
                 })
                 .then(function(uploadData){
                     //Uploading video to url
+                    stream = Helpers.pathToStream(streamOrPath);    //Updating stream since old one is destroyed
                     var request = new Request(session)
                     return request
                         .setMethod('POST')
@@ -95,13 +97,14 @@ Upload.video = function (session, streamOrPath,width,height) {
                         .generateUUID()
                         .setHeaders({
                             'job': uploadData._params.uploadJob,
+                            'Host': 'upload.instagram.com',
+                            'Session-ID': _generateSessionId(),
                             'Content-Type': 'application/octet-stream',
-                            'Content-Disposition': 'attachment; filename="video.mp4"',
-                            'Content-Length': fileLength,
-                            'Content-Range': 'bytes 0-'+fileLength+'/'+fileLength
+                            'Content-Disposition': 'attachment; filename="'+filename+'"',
+                            'Content-Length': fileLength
                         })
                         .transform(function(opts){
-                            opts.body = stream
+                            opts.formData.video = stream;
                             return opts;
                         })
                         .send()
@@ -129,4 +132,14 @@ function _getVideoDurationMs(stream){
                 return resolve([movieLength*1000,buffer.length]);
             })
     })
+}
+
+function _generateSessionId(){
+    var text = "";
+    var possible = "abcdef0123456789";
+
+    for( var i=0; i < 32; i++ )
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+    return text;
 }

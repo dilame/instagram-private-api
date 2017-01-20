@@ -15,6 +15,7 @@ module.exports = RequestJar;
 
 RequestJar.prototype.rewriteUri = function(uri) {
     uri = uri.replace(CONSTANTS.WEB_HOSTNAME, CONSTANTS.HOSTNAME);
+    uri = uri.replace(CONSTANTS.WEB_HOSTNAME_UPLOAD, CONSTANTS.HOSTNAME);
     uri = uri.replace('://' + CONSTANTS.TLD, '://' + CONSTANTS.HOSTNAME);
     return uri;
 };
