@@ -12,6 +12,7 @@ const ROUTES = {
     editAccount: 'accounts/edit_profile/',
     currentAccount: 'accounts/current_user/?edit=true',
     comment: 'media/<%= id %>/comment/',
+    comment_bulk_delete: 'media/<%= id %>/comment/bulk_delete/',
     like: 'media/<%= id %>/like/',
     unlike: 'media/<%= id %>/unlike/',
     registrationCreate: 'accounts/create/',
