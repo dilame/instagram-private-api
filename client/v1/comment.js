@@ -57,3 +57,21 @@ Comment.create = function(session, mediaId, text) {
             return new Comment(session, data.comment)
         })
 }
+
+Comment.bulk_delete = function(session, mediaId, commentIds) {
+    return new Request(session)
+        .setMethod('POST')
+        .setResource('comment_bulk_delete', {id: mediaId})
+        .generateUUID()
+        .setData({
+            media_id: mediaId,
+            comment_ids_to_delete: commentIds.join(','),
+            src: "profile",
+            idempotence_token: crypto.createHash('md5').update(commentIds.join(',')).digest('hex')
+        })
+        .signPayload()
+        .send()
+        .then(function(data) {
+            return data;
+        })
+}
