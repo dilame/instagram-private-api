@@ -58,6 +58,23 @@ Comment.create = function(session, mediaId, text) {
         })
 }
 
+Comment.delete = function(session, mediaId, commentId) {
+    return new Request(session)
+        .setMethod('POST')
+        .setResource('commentDelete', {id: mediaId, commentId: commentId})
+        .generateUUID()
+        .setData({
+            media_id: mediaId,
+            src: "profile",
+            idempotence_token: crypto.createHash('md5').update(commentId).digest('hex')
+        })
+        .signPayload()
+        .send()
+        .then(function(data) {
+            return data;
+        })
+}
+
 Comment.bulkDelete = function(session, mediaId, commentIds) {
     return new Request(session)
         .setMethod('POST')
