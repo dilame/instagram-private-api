@@ -35,7 +35,6 @@ Media.prototype.parseParams = function (json) {
     hash.originalHeight = json.original_height;
     hash.mediaType = json.media_type;
     hash.deviceTimestamp = json.device_timestamp;
-
     if(json.view_count)
         hash.viewCount = json.view_count;
     if(_.isObject(json.location)) {
@@ -43,8 +42,14 @@ Media.prototype.parseParams = function (json) {
         location.location = json.location;
         location.title = location.name;
         location.subtitle = null;
-
         this.location = new Location(that.session, location);
+    }
+    if (json.media_type === 2) {
+        hash.video = {
+            versions: json.video_versions,
+            hasAudio: json.has_audio,
+            duration: json.video_duration
+        }
     }
     if (_.isObject(json.caption))
         hash.caption = json.caption.text;
