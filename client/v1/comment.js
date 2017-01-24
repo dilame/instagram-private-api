@@ -58,10 +58,10 @@ Comment.create = function(session, mediaId, text) {
         })
 }
 
-Comment.bulk_delete = function(session, mediaId, commentIds) {
+Comment.bulkDelete = function(session, mediaId, commentIds) {
     return new Request(session)
         .setMethod('POST')
-        .setResource('comment_bulk_delete', {id: mediaId})
+        .setResource('commentBulkDelete', {id: mediaId})
         .generateUUID()
         .setData({
             media_id: mediaId,
