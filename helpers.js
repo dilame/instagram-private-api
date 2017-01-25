@@ -79,6 +79,23 @@ Helpers.pathToStream = function (streamOrPath) {
     return stream;    
 }
 
+Helpers.pathToBuffer = function(bufferOrPath){
+    return new Promise(function(resolve){
+        if(!_.isString(bufferOrPath)){
+            return callback(null,bufferOrPath)
+        }else{
+            fs.readFile(path.resolve(bufferOrPath),callback)
+        }
+
+        function callback(err,buffer){
+            if(err) throw err;
+            if(!Buffer.isBuffer(buffer))
+                throw new Error("Argument is not posible to convert to buffer!");
+            return resolve(buffer);
+        }
+    })
+}
+
 Helpers.isStream = function (stream) {
     return isStream(stream);   
 }

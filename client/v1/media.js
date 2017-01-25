@@ -192,7 +192,7 @@ Media.configureVideo = function (session, uploadId, caption, durationms, delay) 
         throw new Error("Upload argument must be upload valid upload id");
     if(typeof(durationms)==='undefined')
         throw new Error("Durationms argument must be upload valid video duration");
-    var duration = durationms/1000
+    var duration = durationms/1000;
     if(!caption) caption = "";
     if(!delay) delay = 6500;
     const source_type = 'library';  //We can replace it with 'camera'
@@ -202,32 +202,28 @@ Media.configureVideo = function (session, uploadId, caption, durationms, delay) 
         })
         .then(function(accountId){
             var payload = pruned({
-                "video_result":"deprecated",
-                "audio_muted":false,
-                "trim_type":0,
-                "client_timestamp":(Date.now()).toString(),
                 "caption":caption,
-                "edits":{
-                    "filter_strength":1
-                },
-                "clips":[{
-                    "length":duration.toFixed(14),
-                    "cinema":"unsupported",
-                    "original_length":duration.toFixed(14),
-                    "source_type":"library",
-                    "start_time":0,
-                    "trim_type":0,
-                    "camera_position":"unknown"
-                }],
-                "camera_position":"unknown",
-                "_uid":accountId.toString(),
-                "source_type":"library",
-                "length":duration.toFixed(14),
-                "disable_comments":false,
+                "upload_id":parseInt(uploadId),
+                "source_type":"3",
+                "clips":[
+                        {"length":duration,"source_type":"3","camera_position":"back"}
+                ],
                 "poster_frame_index":0,
-                "geotag_enabled":false,
-                "waterfall_id":_generateWaterfallId(),
-                "upload_id":parseInt(uploadId)
+                "length":0.00,
+                "audio_muted":false,
+                "filter_type":"0",
+                "video_result":"deprecated",
+                "extra":{
+                    "source_width":960,
+                    "source_height":1280
+                },
+                "device":{
+                    "manufacturer":session.device.info.manufacturer,
+                    "model":session.device.info.manufacturer,
+                    "android_version":18,
+                    "android_release":"4.3"
+                },
+                "_uid":accountId.toString()
             });
 
             return new Request(session)
