@@ -35,6 +35,7 @@ Media.prototype.parseParams = function (json) {
     hash.originalHeight = json.original_height;
     hash.mediaType = json.media_type;
     hash.deviceTimestamp = json.device_timestamp;
+    hash.webLink = "https://www.instagram.com/p/" + json.code + "/"
     if(json.view_count)
         hash.viewCount = json.view_count;
     if(_.isObject(json.location)) {
