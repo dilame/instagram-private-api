@@ -36,6 +36,12 @@ Media.prototype.parseParams = function (json) {
     hash.mediaType = json.media_type;
     hash.deviceTimestamp = json.device_timestamp;
 
+    if(json.video_duration)
+        hash.videoDuration = json.video_duration;
+    if(json.filter_type)
+        hash.filterType = json.filter_type;
+    if(json.has_audio)
+        hash.hasAudio = json.has_audio;
     if(json.view_count)
         hash.viewCount = json.view_count;
     if(_.isObject(json.location)) {
@@ -51,6 +57,8 @@ Media.prototype.parseParams = function (json) {
     hash.takenAt = parseInt(json.taken_at) * 1000;
     if (_.isObject(json.image_versions2))
         hash.images = json.image_versions2.candidates;
+    if (_.isArray(json.video_versions))
+        hash.videos = json.video_versions;
     this.comments = _.map(json.comments, function(comment) {
         return new Comment(that.session, comment);
     });
@@ -193,7 +201,6 @@ Media.configureVideo = function (session, uploadId, caption, durationms) {
         throw new Error("Durationms argument must be upload valid video duration");
     var duration = durationms/1000;
     if(!caption) caption = "";
-    console.log(session.device)
     return session.getAccountId()
         .then(function(accountId){
             var payload = pruned({
