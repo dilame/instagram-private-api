@@ -147,8 +147,8 @@ Request.prototype.setData = function(data, override) {
 
 
 Request.prototype.setBodyType = function(type) {
-    if(!_.contains(['form', 'formData', 'json'], type))
-        throw new Error("`bodyType` param must be and form, formData or json")
+    if(!_.contains(['form', 'formData', 'json', 'body'], type))
+        throw new Error("`bodyType` param must be and form, formData, json or body")
     this._request.bodyType = type;
     return this;
 };

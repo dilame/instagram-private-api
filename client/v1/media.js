@@ -5,7 +5,6 @@ var crypto = require('crypto');
 var pruned = require('./json-pruned');
 var fs = require('fs');
 var request = require('request-promise');
-var Promise = require("bluebird");
 
 
 function Media(session, params) {
@@ -187,43 +186,39 @@ Media.configurePhoto = function (session, uploadId, caption, width, height) {
         })
 };
 
-Media.configureVideo = function (session, uploadId, caption, durationms, delay) {
+Media.configureVideo = function (session, uploadId, caption, durationms) {
     if(_.isEmpty(uploadId))
         throw new Error("Upload argument must be upload valid upload id");
     if(typeof(durationms)==='undefined')
         throw new Error("Durationms argument must be upload valid video duration");
     var duration = durationms/1000;
     if(!caption) caption = "";
-    if(!delay) delay = 6500;
-    const source_type = 'library';  //We can replace it with 'camera'
-    return Promise.delay(delay)
-        .then(function(){
-            return session.getAccountId()
-        })
+    console.log(session.device)
+    return session.getAccountId()
         .then(function(accountId){
             var payload = pruned({
-                "caption":caption,
-                "upload_id":parseInt(uploadId),
-                "source_type":"3",
-                "clips":[
-                        {"length":duration,"source_type":"3","camera_position":"back"}
-                ],
-                "poster_frame_index":0,
-                "length":0.00,
-                "audio_muted":false,
-                "filter_type":"0",
-                "video_result":"deprecated",
-                "extra":{
-                    "source_width":960,
-                    "source_height":1280
-                },
+                "filter_type": "0",
+                "source_type": "3",
+                "video_result": "deprecated",
+                "_uid":accountId.toString(),
+                "caption": caption,
+                "upload_id": uploadId.toString(),
                 "device":{
                     "manufacturer":session.device.info.manufacturer,
-                    "model":session.device.info.manufacturer,
-                    "android_version":18,
-                    "android_release":"4.3"
+                    "model":session.device.info.model,
+                    "android_version":session.device._api,
+                    "android_release":session.device._release
                 },
-                "_uid":accountId.toString()
+                "length": duration,
+                "clips": [
+                    {
+                        "length": duration,
+                        "source_type": "3",
+                        "camera_position": "back"
+                    }
+                ],
+                "audio_muted": false,
+                "poster_frame_index": 0
             });
 
             return new Request(session)
@@ -239,13 +234,3 @@ Media.configureVideo = function (session, uploadId, caption, durationms, delay) 
             })
     })
 };
-
-function _generateWaterfallId(){
-    var text = "";
-    var possible = "abcdef0123456789";
-
-    for( var i=0; i < 32; i++ )
-        text += possible.charAt(Math.floor(Math.random() * possible.length));
-
-    return text;
-}

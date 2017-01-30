@@ -28,24 +28,23 @@ Upload.prototype.parseParams = function (params) {
 };
 
 
-Upload.photo = function (session, streamOrPath, uploadId) {
+Upload.photo = function (session, streamOrPath, uploadId, name) {
     var stream = Helpers.pathToStream(streamOrPath);
-    if(!uploadId) uploadId = new Date().getTime();
     // This compresion is just default one
     var compresion = {
         "lib_name": "jt",
         "lib_version": "1.3.0",
         "quality": "92"
     }
-    var predictedUploadId = new Date().getTime();
-    var filename = "pending_media_"+predictedUploadId+".jpg"
+    var predictedUploadId = uploadId || new Date().getTime();
+    var filename = (name || "pending_media_")+predictedUploadId+".jpg"
     var request = new Request(session)
     return request.setMethod('POST')
         .setResource('uploadPhoto')                    
         .generateUUID()
         .setData({
             image_compression: JSON.stringify(compresion),
-            upload_id: uploadId
+            upload_id: predictedUploadId
         })
         .transform(function(opts){
             opts.formData.photo = {
@@ -63,7 +62,7 @@ Upload.photo = function (session, streamOrPath, uploadId) {
         })
 }
 
-Upload.video = function(session,videoBufferOrPath,photoStreamOrPath,width,height){
+Upload.video = function(session,videoBufferOrPath,photoStreamOrPath){
     //Probably not the best way to upload video, best to use stream not to store full video in memory, but it's the easiest
     var predictedUploadId = new Date().getTime();
     var request = new Request(session);
@@ -77,7 +76,8 @@ Upload.video = function(session,videoBufferOrPath,photoStreamOrPath,width,height
             .generateUUID()
             .setData({
                 upload_id: predictedUploadId,
-                media_type: 2
+                media_type: 2,
+                upload_media_duration_ms: Math.floor(duration)
             })
             .send()
             .then(function(json) {
@@ -85,22 +85,19 @@ Upload.video = function(session,videoBufferOrPath,photoStreamOrPath,width,height
             })
             .then(function(uploadData){
                 //Uploading video to url
-                var sessionId = predictedUploadId;// _generateSessionId();
-                var chunkLength = 200000;
+                var sessionId = _generateSessionId(uploadData.params.uploadId);
+                var chunkLength = 204800;
                 var chunks = [];
-                for (var i = 0; i < Math.ceil((buffer.length / chunkLength)); i++) {
-                    var chunkStart = i * chunkLength;
-                    var chunkEnd = (i + 1) * chunkLength;
-                    if (chunkEnd > buffer.length) chunkEnd = buffer.length;    //We don't want to be badasses, do we?
-                    var chunk = buffer.slice(chunkStart, chunkEnd);
-                    chunks.push(chunk)
-                }
+                chunks.push({
+                    data:buffer.slice(0, chunkLength),
+                    range:'bytes '+0+'-'+(chunkLength-1)+'/'+buffer.length
+                });
+                chunks.push({
+                    data:buffer.slice(chunkLength, buffer.length),
+                    range:'bytes '+chunkLength+'-'+(buffer.length-1)+'/'+buffer.length
+                });
                 return Promise.mapSeries(chunks,function(chunk,i){
-                        var chunkStart = i * chunkLength;
-                        var chunkEnd = (i + 1) * chunkLength;
-                        if (chunkEnd > buffer.length) chunkEnd = buffer.length;
-                        var range = 'bytes '+chunkStart+'-'+(chunkEnd-1)+'/'+buffer.length;
-                        return _sendChunkedRequest(session,uploadData.params.uploadUrl,uploadData.params.uploadJob,sessionId,chunk,range)
+                        return _sendChunkedRequest(session,uploadData.params.uploadUrl,uploadData.params.uploadJob,sessionId,chunk.data,chunk.range)
                     })
                     .then(function(results){
                         var videoUploadResult = results[results.length-1];
@@ -119,7 +116,7 @@ Upload.video = function(session,videoBufferOrPath,photoStreamOrPath,width,height
                         }
                     })
                     .then(function(uploadData){
-                        return Upload.photo(session,photoStreamOrPath,uploadData.uploadId)
+                        return Upload.photo(session,photoStreamOrPath,uploadData.uploadId,"cover_photo_")
                             .then(function(){
                                 return uploadData;
                             })
@@ -140,6 +137,7 @@ function _getVideoDurationMs(buffer){
 function _sendChunkedRequest(session,url,job,sessionId,buffer,range){
     return new Request(session)
         .setMethod('POST')
+        .setBodyType('body')
         .setUrl(url)
         .generateUUID()
         .setHeaders({
@@ -147,22 +145,22 @@ function _sendChunkedRequest(session,url,job,sessionId,buffer,range){
             'Host': 'upload.instagram.com',
             'Session-ID': sessionId,
             'Content-Type': 'application/octet-stream',
-            'Content-Disposition': 'attachment; filename="video.mp4"',
+            'Content-Disposition': 'attachment; filename=\\\"video.mov\\\"',
             'Content-Length': buffer.length,
             'Content-Range': range
         })
         .transform(function(opts){
-            opts.formData.video = buffer;
+            opts.body = buffer;
             return opts;
         })
         .send()
 }
 
-function _generateSessionId(){
-    var text = "";
-    var possible = "abcdef0123456789";
+function _generateSessionId(uploadId){
+    var text = (uploadId || "")+'-';
+    var possible = "0123456789";
 
-    for( var i=0; i < 32; i++ )
+    for( var i=0; i < 9; i++ )
         text += possible.charAt(Math.floor(Math.random() * possible.length));
 
     return text;
