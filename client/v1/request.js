@@ -17,7 +17,7 @@ function Request(session) {
     this._request.options = {
         gzip: true 
     };
-    this._request.headers = Request.defaultHeaders;
+    this._request.headers=_.extend({},Request.defaultHeaders);
     this.attemps = 2;
     if(session) {
         this.session = session;            
