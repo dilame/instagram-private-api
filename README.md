@@ -597,7 +597,7 @@ function challengeMe(error) {
 		.then(function(challenge) {
 			// Yey Instagram accepted the code
 			// now we confirmed that Instagram is happy, weird :P
-			return challenge.confirm()
+			return challenge.confirmate()
 		})
 		.then(function(challenge) {
 			// And we got the account confirmed!
