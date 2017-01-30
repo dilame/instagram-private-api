@@ -136,7 +136,7 @@ you can set the body format of the request with method
 
 `.setBodyType(type:string)` 
 
-choices used by instagram are `json`, `form`, `formData` (default).
+choices used by instagram are `json`, `form`, `body`, `formData` (default).
 
 `.signPayload()`
 
@@ -394,14 +394,26 @@ Account.getById(session, '1234567')
 Another example would be upload:
 
 ```javascript
-// JPEG is the only supported format now, pull request for any other format
-// or video welcomed!
+// JPEG is the only supported format now, pull request for any other format welcomed!
 Upload.photo(session, './path/to/your/jpeg.jpg')
 	.then(function(upload) {
 		// upload instanceof Client.Upload
 		// nothing more than just keeping upload id
 		console.log(upload.params.uploadId);
 		return Media.configurePhoto(session, upload.params.uploadId, 'akward caption');
+	})
+	.then(function(medium) {
+		// we configure medium, it is now visible with caption
+		console.log(medium.params)
+	})
+```
+
+Video upload:
+```javascript
+// MP4 is the only supported format now, pull request for any other format welcomed!
+Upload.video(session, './path/to/your/video.mp4','./path/to/your/coverImg.jpg')
+	.then(function(upload) {
+		return Media.configureVideo(session, upload.uploadId, 'akward caption', uploadInfo.durationms);
 	})
 	.then(function(medium) {
 		// we configure medium, it is now visible with caption

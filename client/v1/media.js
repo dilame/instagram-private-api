@@ -36,6 +36,13 @@ Media.prototype.parseParams = function (json) {
     hash.mediaType = json.media_type;
     hash.deviceTimestamp = json.device_timestamp;
     hash.webLink = "https://www.instagram.com/p/" + json.code + "/"
+
+    if(json.video_duration)
+        hash.videoDuration = json.video_duration;
+    if(json.filter_type)
+        hash.filterType = json.filter_type;
+    if(json.has_audio)
+        hash.hasAudio = json.has_audio;
     if(json.view_count)
         hash.viewCount = json.view_count;
     if(_.isObject(json.location)) {
@@ -57,6 +64,8 @@ Media.prototype.parseParams = function (json) {
     hash.takenAt = parseInt(json.taken_at) * 1000;
     if (_.isObject(json.image_versions2))
         hash.images = json.image_versions2.candidates;
+    if (_.isArray(json.video_versions))
+        hash.videos = json.video_versions;
     this.comments = _.map(json.comments, function(comment) {
         return new Comment(that.session, comment);
     });
@@ -190,4 +199,52 @@ Media.configurePhoto = function (session, uploadId, caption, width, height) {
         .then(function(json) {
             return new Media(session, json.media)
         })
+};
+
+Media.configureVideo = function (session, uploadId, caption, durationms) {
+    if(_.isEmpty(uploadId))
+        throw new Error("Upload argument must be upload valid upload id");
+    if(typeof(durationms)==='undefined')
+        throw new Error("Durationms argument must be upload valid video duration");
+    var duration = durationms/1000;
+    if(!caption) caption = "";
+    return session.getAccountId()
+        .then(function(accountId){
+            var payload = pruned({
+                "filter_type": "0",
+                "source_type": "3",
+                "video_result": "deprecated",
+                "_uid":accountId.toString(),
+                "caption": caption,
+                "upload_id": uploadId.toString(),
+                "device":{
+                    "manufacturer":session.device.info.manufacturer,
+                    "model":session.device.info.model,
+                    "android_version":session.device._api,
+                    "android_release":session.device._release
+                },
+                "length": duration,
+                "clips": [
+                    {
+                        "length": duration,
+                        "source_type": "3",
+                        "camera_position": "back"
+                    }
+                ],
+                "audio_muted": false,
+                "poster_frame_index": 0
+            });
+
+            return new Request(session)
+            .setMethod('POST')
+            .setResource('videoConfigure')
+            .setBodyType('form')
+            .setData(JSON.parse(payload))
+            .generateUUID()
+            .signPayload()
+            .send()
+            .then(function(json) {
+                return new Media(session, json.media)
+            })
+    })
 };

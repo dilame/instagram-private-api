@@ -147,8 +147,8 @@ Request.prototype.setData = function(data, override) {
 
 
 Request.prototype.setBodyType = function(type) {
-    if(!_.contains(['form', 'formData', 'json'], type))
-        throw new Error("`bodyType` param must be and form, formData or json")
+    if(!_.contains(['form', 'formData', 'json', 'body'], type))
+        throw new Error("`bodyType` param must be and form, formData, json or body")
     this._request.bodyType = type;
     return this;
 };
@@ -296,6 +296,11 @@ Request.prototype._mergeOptions = function(options) {
 
 
 Request.prototype.parseMiddleware = function (response) {
+    if(response.req._headers.host==='upload.instagram.com' && response.statusCode===201){
+        var loaded = /(\d+)-(\d+)\/(\d+)/.exec(response.body);
+        response.body = {status:"ok",start:loaded[1],end:loaded[2],total:loaded[3]};
+        return response;
+    }
     try {
         response.body = JSONbig.parse(response.body);
         return response;
