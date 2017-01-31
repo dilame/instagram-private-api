@@ -247,7 +247,7 @@ Media.configureVideo = function (session, uploadId, caption, durationms, delay) 
             .setData(JSON.parse(payload))
             .generateUUID()
             .signPayload()
-            .send()
+            .send({},3)
             .then(function(json) {
                 return new Media(session, json.media)
             })
