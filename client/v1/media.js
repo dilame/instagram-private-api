@@ -247,9 +247,13 @@ Media.configureVideo = function (session, uploadId, caption, durationms, delay) 
             .setData(JSON.parse(payload))
             .generateUUID()
             .signPayload()
-            .send({},3)
+            .send()
             .then(function(json) {
                 return new Media(session, json.media)
+            })
+            .catch(Exceptions.TranscodeTimeoutError,function(error){
+                //Well, we just want to repeat our request. Dunno why this is happening and we should not let our users deal with this crap themselves.
+                return Media.configureVideo(session,uploadId,caption,durationms,delay);
             })
     })
 };

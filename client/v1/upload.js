@@ -69,6 +69,7 @@ Upload.video = function(session,videoBufferOrPath,photoStreamOrPath){
     return Helpers.pathToBuffer(videoBufferOrPath)
         .then(function(buffer){
             var duration = _getVideoDurationMs(buffer);
+            if(duration > 63000) throw new Error('Video is too long. Maximum: 63. Got: '+duration/1000);
             return request
             .setMethod('POST')
             .setBodyType('form')
