@@ -5,6 +5,7 @@ var crypto = require('crypto');
 var pruned = require('./json-pruned');
 var fs = require('fs');
 var request = require('request-promise');
+var Promise = require("bluebird");
 
 
 function Media(session, params) {
@@ -201,14 +202,18 @@ Media.configurePhoto = function (session, uploadId, caption, width, height) {
         })
 };
 
-Media.configureVideo = function (session, uploadId, caption, durationms) {
+Media.configureVideo = function (session, uploadId, caption, durationms, delay) {
     if(_.isEmpty(uploadId))
         throw new Error("Upload argument must be upload valid upload id");
     if(typeof(durationms)==='undefined')
         throw new Error("Durationms argument must be upload valid video duration");
     var duration = durationms/1000;
     if(!caption) caption = "";
-    return session.getAccountId()
+    if(!delay || typeof delay != "number") delay = 6500;
+    return Promise.delay(delay)
+        .then(function(){
+            return session.getAccountId()
+        })
         .then(function(accountId){
             var payload = pruned({
                 "filter_type": "0",
