@@ -67,9 +67,12 @@ Media.prototype.parseParams = function (json) {
         hash.images = json.image_versions2.candidates;
     if (_.isArray(json.video_versions))
         hash.videos = json.video_versions;
-    this.comments = _.map(json.comments, function(comment) {
+    console.log(json)
+    this.previewComments = _.map(json.preview_comments, function(comment) {
         return new Comment(that.session, comment);
     });
+    // backward compability
+    this.comments = this.previewComments;
     this.account = new Account(that.session, json.user);
     return hash;
 };
