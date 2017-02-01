@@ -363,6 +363,8 @@ Request.prototype.send = function (options, attemps) {
             var json = response.body;
             if (_.isObject(json) && json.status == "ok")
                 return _.omit(response.body, 'status');
+            if (_.isString(json.message) && json.message.toLowerCase().indexOf('transcode timeout') !== -1)
+                throw new Exceptions.TranscodeTimeoutError();
             throw new Exceptions.RequestError(json);
         })
         .catch(function(error) {

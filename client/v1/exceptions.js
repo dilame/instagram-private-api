@@ -350,3 +350,10 @@ function AccountRegistrationError(message, json) {
 
 util.inherits(AccountRegistrationError, APIError);
 exports.AccountRegistrationError = AccountRegistrationError;
+
+function TranscodeTimeoutError() {
+    this.name = "Transcode Error";
+    this.message = "Server did not transcoded uploaded video in time";
+}
+util.inherits(TranscodeTimeoutError, APIError);
+exports.TranscodeTimeoutError = TranscodeTimeoutError;
