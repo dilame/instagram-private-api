@@ -244,19 +244,19 @@ Media.configureVideo = function (session, uploadId, caption, durationms, delay) 
             });
 
             return new Request(session)
-            .setMethod('POST')
-            .setResource('videoConfigure')
-            .setBodyType('form')
-            .setData(JSON.parse(payload))
-            .generateUUID()
-            .signPayload()
-            .send()
-            .then(function(json) {
-                return new Media(session, json.media)
-            })
-            .catch(Exceptions.TranscodeTimeoutError,function(error){
-                //Well, we just want to repeat our request. Dunno why this is happening and we should not let our users deal with this crap themselves.
-                return Media.configureVideo(session,uploadId,caption,durationms,delay);
-            })
+                .setMethod('POST')
+                .setResource('videoConfigure')
+                .setBodyType('form')
+                .setData(JSON.parse(payload))
+                .generateUUID()
+                .signPayload()
+                .send()
+                .then(function(json) {
+                    return new Media(session, json.media)
+                })
+                .catch(Exceptions.TranscodeTimeoutError,function(error){
+                    //Well, we just want to repeat our request. Dunno why this is happening and we should not let our users deal with this crap themselves.
+                    return Media.configureVideo(session,uploadId,caption,durationms,delay);
+                })
     })
 };
