@@ -1,35 +1,19 @@
-var NodeCache = require('node-cache');
 var _ = require('underscore');
+var FeedBase = require('./feed-base');
 
 
 function ThreadItemsFeed(session, threadId, limit) {
-    this.cursor = null;
     this.threadId = threadId;
-    this.moreAvailable = null;
-    this.session = session;
-    this.allItems = [];
     this.limit = parseInt(limit) || null;
+    FeedBase.apply(this, arguments);
 }
+_.extend(ThreadItemsFeed.prototype, FeedBase.prototype);
 
 module.exports = ThreadItemsFeed;
 var ThreadItem = require('../thread-item');
 var Request = require('../request');
 var Thread = require('../thread');
 
-
-ThreadItemsFeed.prototype.setCursor= function (cursor) {
-    this.cursor = cursor;
-};
-
-
-ThreadItemsFeed.prototype.getCursor = function () {
-    return this.cursor;
-};
-
-
-ThreadItemsFeed.prototype.isMoreAvailable = function () {
-    return !!this.moreAvailable;
-};
 
 
 ThreadItemsFeed.prototype.get = function () {
@@ -51,20 +35,3 @@ ThreadItemsFeed.prototype.get = function () {
             return items;
         })
 };
-
-
-ThreadItemsFeed.prototype.all = function () {
-    var that = this;
-    return this.get().then(function (items) {
-        that.allItems = that.allItems.concat(items);
-        var exceedLimit = false;
-        if (that.limit && that.allItems.length > that.limit)
-            exceedLimit = true;
-        if (that.moreAvailable && !exceedLimit) {
-            return that.all();
-        } else {
-            return that.allItems;
-        }
-    })
-};
-

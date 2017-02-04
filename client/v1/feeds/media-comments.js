@@ -1,29 +1,17 @@
 var _ = require('underscore');
+var FeedBase = require('./feed-base');
 
 function MediaCommentsFeed(session, mediaId, limit) {
-    this.cursor = null;
-    this.moreAvailable = null;
     this.mediaId = mediaId;
-    this.session = session;
-    this.allItems = [];
     this.limit = limit;
+    FeedBase.apply(this, arguments);
 }
+_.extend(MediaCommentsFeed.prototype, FeedBase.prototype);
 
 module.exports = MediaCommentsFeed;
 var Request = require('../request');
 var Comment = require('../comment');
 
-MediaCommentsFeed.prototype.setCursor = function (maxId) {
-    this.cursor = maxId;
-};
-
-MediaCommentsFeed.prototype.getCursor = function () {
-    return this.cursor;
-};
-
-MediaCommentsFeed.prototype.isMoreAvailable = function() {
-    return !!this.moreAvailable;
-};
 
 MediaCommentsFeed.prototype.get = function () {
     var that = this;
@@ -45,19 +33,4 @@ MediaCommentsFeed.prototype.get = function () {
                 return new Comment(that.session, comment);
             });
         })
-};
-
-MediaCommentsFeed.prototype.all = function () {
-    var that = this;
-    return this.get().then(function (items) {
-        that.allItems = that.allItems.concat(items);
-        var exceedLimit = false;
-        if (that.limit && that.allItems.length > that.limit)
-            exceedLimit = true;
-        if (that.moreAvailable && !exceedLimit) {
-            return that.all();
-        } else {
-            return that.allItems;
-        }
-    })
 };
