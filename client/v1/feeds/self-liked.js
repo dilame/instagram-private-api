@@ -1,29 +1,17 @@
 var _ = require('underscore');
+var FeedBase = require('./feed-base');
 
 function SelfLikedFeed(session) {
-    this.cursor = null;
     this.session = session;
+    FeedBase.apply(this, arguments);
 }
+_.extend(SelfLikedFeed.prototype, FeedBase.prototype);
 
 module.exports = SelfLikedFeed;
 var Media = require('../media');
 var Request = require('../request');
 var Helpers = require('../../../helpers');
 var Exceptions = require('../exceptions');
-
-SelfLikedFeed.prototype.setCursor = function (maxId) {
-    this.lastMaxId = maxId;
-};
-
-
-SelfLikedFeed.prototype.getCursor = function () {
-    return this.cursor;
-};
-
-
-SelfLikedFeed.prototype.isMoreAvailable = function () {
-    return this.moreAvailable;
-};
 
 
 SelfLikedFeed.prototype.get = function () {

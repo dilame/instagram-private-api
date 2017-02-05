@@ -1,35 +1,18 @@
 var _ = require('underscore');
+var FeedBase = require('./feed-base');
 
 function SavedFeed(session, limit) {
-    this.cursor = null;
-    this.moreAvailable = null;
-    this.session = session;
-    this.allMedia = [];
     this.timeout = 10 * 60 * 1000; // 10 minutes
     this.limit = limit;
+    FeedBase.apply(this, arguments);
 }
+_.extend(SavedFeed.prototype, FeedBase.prototype);
 
 module.exports = SavedFeed;
 var Media = require('../media');
 var Request = require('../request');
 var Helpers = require('../../../helpers');
 var Account = require('../account');
-
-
-SavedFeed.prototype.setCursor = function (maxId) {
-    this.cursor = maxId;
-};
-
-
-SavedFeed.prototype.getCursor = function () {
-    return this.cursor;
-};
-
-
-SavedFeed.prototype.isMoreAvailable = function () {
-    return !!this.moreAvailable;
-};
-
 
 SavedFeed.prototype.get = function () {
     var that = this;
@@ -51,24 +34,4 @@ SavedFeed.prototype.get = function () {
             return new Media(that.session, medium.media);
         });
       })
-};
-
-
-SavedFeed.prototype.all = function () {
-    var that = this;
-    return this.get().then(function (medias) {
-        that.allMedia = that.allMedia.concat(medias);
-        var exceedLimit = false;
-        if (that.limit && that.allMedia.length > that.limit)
-            exceedLimit = true;
-        if (that.moreAvailable && !exceedLimit) {
-            return that.all();
-        } else {
-            return that.allMedia;
-        }
-    })
-};
-
-SavedFeed.prototype.allSafe = function () {
-    return this.all().timeout(this.timeout);
 };

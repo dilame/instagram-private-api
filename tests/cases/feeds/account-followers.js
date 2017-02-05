@@ -14,7 +14,7 @@ describe("`AccountFollowers` class", function() {
 
     before(function() {
         session = require('../../run').session;
-        feed = new Client.Feed.AccountFollowers(session, '25025320');
+        feed = new Client.Feed.AccountFollowers(session, '25025320', 1000);
     })
 
     it("should not be problem to get followers", function(done) {
@@ -29,4 +29,16 @@ describe("`AccountFollowers` class", function() {
             done()
         })
     })
+
+    it("should not be problem to get all followers", function(done) {
+
+        feed.all().then(function(data) {
+            _.each(data, function(account) {
+                account.should.be.instanceOf(Client.Account)
+            })
+            feed.moreAvailable.should.be.Boolean();
+            done()
+        })
+    })
+
 })

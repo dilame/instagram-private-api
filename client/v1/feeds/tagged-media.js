@@ -1,33 +1,17 @@
 var _ = require('underscore');
+var FeedBase = require('./feed-base');
 
 function TaggedMediaFeed(session, tag) {
-    this.cursor = null;
-    this.moreAvailable = null;
     this.tag = tag;
-    this.session = session;
+    FeedBase.apply(this, arguments);
 }
+_.extend(TaggedMediaFeed.prototype, FeedBase.prototype);
 
 module.exports = TaggedMediaFeed;
 var Media = require('../media');
 var Request = require('../request');
 var Helpers = require('../../../helpers');
 var Exceptions = require('../exceptions');
-
-
-TaggedMediaFeed.prototype.setCursor = function (cursor) {
-    this.cursor = cursor;
-};
-
-
-TaggedMediaFeed.prototype.getCursor = function () {
-    return this.cursor;
-};
-
-
-TaggedMediaFeed.prototype.isMoreAvailable = function () {
-    return this.moreAvailable;
-};
-
 
 TaggedMediaFeed.prototype.get = function () {
     var that = this;

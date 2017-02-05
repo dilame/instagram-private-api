@@ -1,7 +1,6 @@
 var should = require('should');
 var Client = require('../../../client/v1');
 var Promise = require('bluebird');
-var path = require('path');
 var mkdirp = require('mkdirp');
 var inquirer = require('inquirer');
 var _ = require('underscore');
@@ -11,9 +10,9 @@ var threadBigOne = null;
 var threadItemsLength = 0;
 
 function shouldBeThreadItem(item) {
-    item.params.should.have.property('id')
-    item.params.should.have.property('type')
-    item.params.should.have.property('created')
+    item.params.should.have.property('id');
+    item.params.should.have.property('type');
+    item.params.should.have.property('created');
     item.params.type.should.be.oneOf(['text', 'media', 'mediaShare', 'actionLog', 'profile', 'location', 'hashtag']);
     if (item.params.type == "text") {
         item.params.text.should.be.String();
@@ -46,11 +45,11 @@ describe("`Inbox` class", function() {
     before(function() {
         session = require('../../run').session;
         feed = new Client.Feed.Inbox(session)
-    })
+    });
 
     function shouldBeThread(thread) {
-        thread.params.should.have.property('title') 
-        thread.params.should.have.property('id')
+        thread.params.should.have.property('title');
+        thread.params.should.have.property('id');
         thread.id.should.not.be.empty();
         if(thread.items.length > threadItemsLength){
             threadBigOne = thread;
@@ -63,20 +62,26 @@ describe("`Inbox` class", function() {
 
     it("should not be problem to get threads", function(done) {
         var firstDose;
-        feed.get().then(function(threads) {
-            firstDose = threads;
-            _.each(threads, shouldBeThread)
-            feed.isMoreAvailable().should.be.Boolean();
-            return feed.get();
-        })
-        .then(function(threads) {
-            firstDose[0].id.should.not.be.equal(threads[0].id);
-            _.each(threads, shouldBeThread)
-            done()
-        })
+        feed.get()
+            .then(function(threads) {
+                firstDose = threads;
+                _.each(threads, shouldBeThread);
+                feed.isMoreAvailable().should.be.Boolean();
+                if(feed.isMoreAvailable())
+                    return feed.get()
+                        .then(function(threads) {
+                            firstDose[0].id.should.not.be.equal(threads[0].id);
+                            _.each(threads, shouldBeThread);
+                            return Promise.resolve()
+                        });
+                else return Promise.resolve()
+            })
+            .then(function () {
+                done()
+            })
     })
 
-})
+});
 
 
 
@@ -87,22 +92,17 @@ describe("`ThreadItemsFeed` class", function() {
     before(function() {
         session = require('../../run').session;
         feed = new Client.Feed.ThreadItems(session, threadBigOne.id);
-    })
-
-    function shouldBeItem(item) {
-        item.should.be.instanceOf(Client.ThreadItem);
-        item
-    }
+    });
 
     it("should not be problem to get items", function(done) {
         var firstDose;
         feed.get().then(function(items) {
             firstDose = items;
-            _.each(items, shouldBeThreadItem)
+            _.each(items, shouldBeThreadItem);
             feed.isMoreAvailable().should.be.Boolean();
             done();
         })
     })
 
 
-})
+});

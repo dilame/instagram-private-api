@@ -14,7 +14,7 @@
   },
   "homepage": "https://github.com/huttarichard/instagram-private-api",
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha --inline-diffs --timeout 10000 tests/run.js"
+    "test": "./node_modules/mocha/bin/mocha --inline-diffs --timeout 1000000 tests/run.js"
   },
   "dependencies": {
     "bluebird": "^3.0.5",
