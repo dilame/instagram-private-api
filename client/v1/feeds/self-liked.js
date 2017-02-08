@@ -1,17 +1,16 @@
 var _ = require('underscore');
+var util = require('util');
 var FeedBase = require('./feed-base');
 
 function SelfLikedFeed(session) {
     this.session = session;
     FeedBase.apply(this, arguments);
 }
-_.extend(SelfLikedFeed.prototype, FeedBase.prototype);
+util.inherits(SelfLikedFeed, FeedBase);
 
 module.exports = SelfLikedFeed;
 var Media = require('../media');
 var Request = require('../request');
-var Helpers = require('../../../helpers');
-var Exceptions = require('../exceptions');
 
 
 SelfLikedFeed.prototype.get = function () {

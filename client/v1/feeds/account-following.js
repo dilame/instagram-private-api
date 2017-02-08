@@ -1,4 +1,5 @@
 var _ = require('underscore');
+var util = require('util');
 var FeedBase = require('./feed-base');
 
 function AccountFollowingFeed(session, accountId, limit) {
@@ -8,7 +9,7 @@ function AccountFollowingFeed(session, accountId, limit) {
     this.timeout = 10 * 60 * 1000;
     FeedBase.apply(this, arguments);
 }
-_.extend(AccountFollowingFeed.prototype, FeedBase.prototype);
+util.inherits(AccountFollowingFeed, FeedBase);
 
 module.exports = AccountFollowingFeed;
 var Request = require('../request');

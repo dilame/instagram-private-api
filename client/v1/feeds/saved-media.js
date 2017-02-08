@@ -1,4 +1,5 @@
 var _ = require('underscore');
+var util = require('util');
 var FeedBase = require('./feed-base');
 
 function SavedFeed(session, limit) {
@@ -6,13 +7,11 @@ function SavedFeed(session, limit) {
     this.limit = limit;
     FeedBase.apply(this, arguments);
 }
-_.extend(SavedFeed.prototype, FeedBase.prototype);
+util.inherits(SavedFeed, FeedBase);
 
 module.exports = SavedFeed;
 var Media = require('../media');
 var Request = require('../request');
-var Helpers = require('../../../helpers');
-var Account = require('../account');
 
 SavedFeed.prototype.get = function () {
     var that = this;

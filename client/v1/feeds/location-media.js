@@ -1,11 +1,12 @@
 var _ = require('underscore');
+var util = require('util');
 var FeedBase = require('./feed-base');
 
 function LocationMediaFeed(session, locationId) {
     this.locationId = locationId;
     FeedBase.apply(this, arguments);
 }
-_.extend(LocationMediaFeed.prototype, FeedBase.prototype);
+util.inherits(LocationMediaFeed, FeedBase);
 
 module.exports = LocationMediaFeed;
 var Media = require('../media');
