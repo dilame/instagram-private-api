@@ -1,4 +1,5 @@
 var _ = require('underscore');
+var util = require('util');
 var FeedBase = require('./feed-base');
 
 function MediaCommentsFeed(session, mediaId, limit) {
@@ -6,7 +7,7 @@ function MediaCommentsFeed(session, mediaId, limit) {
     this.limit = limit;
     FeedBase.apply(this, arguments);
 }
-_.extend(MediaCommentsFeed.prototype, FeedBase.prototype);
+util.inherits(MediaCommentsFeed, FeedBase);
 
 module.exports = MediaCommentsFeed;
 var Request = require('../request');

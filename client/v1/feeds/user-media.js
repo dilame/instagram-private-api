@@ -1,4 +1,5 @@
 var _ = require('underscore');
+var util = require('util');
 var FeedBase = require('./feed-base');
 
 function UserMediaFeed(session, accountId, limit) {
@@ -7,7 +8,7 @@ function UserMediaFeed(session, accountId, limit) {
     this.limit = limit;
     FeedBase.apply(this, arguments);
 }
-_.extend(UserMediaFeed.prototype, FeedBase.prototype);
+util.inherits(UserMediaFeed, FeedBase);
 
 module.exports = UserMediaFeed;
 var Media = require('../media');

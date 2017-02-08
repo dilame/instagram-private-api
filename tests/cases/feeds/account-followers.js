@@ -14,7 +14,7 @@ describe("`AccountFollowers` class", function() {
 
     before(function() {
         session = require('../../run').session;
-        feed = new Client.Feed.AccountFollowers(session, '25025320', 1000);
+        feed = new Client.Feed.AccountFollowers(session, '25025320', 400);
     })
 
     it("should not be problem to get followers", function(done) {
@@ -30,7 +30,7 @@ describe("`AccountFollowers` class", function() {
         })
     })
 
-    it("should not be problem to get all followers", function(done) {
+    it("should not be problem to get all followers with limit 400", function(done) {
 
         feed.all().then(function(data) {
             _.each(data, function(account) {

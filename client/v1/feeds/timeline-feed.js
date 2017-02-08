@@ -1,10 +1,11 @@
 var _ = require('underscore');
+var util = require('util');
 var FeedBase = require('./feed-base');
 
 function TimelineFeed(session) {
     FeedBase.apply(this, arguments);
 }
-_.extend(TimelineFeed.prototype, FeedBase.prototype);
+util.inherits(TimelineFeed, FeedBase);
 
 module.exports = TimelineFeed;
 var Request = require('../request');

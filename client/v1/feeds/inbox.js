@@ -1,4 +1,5 @@
 var _ = require('underscore');
+var util = require('util');
 var FeedBase = require('./feed-base');
 
 function InboxFeed(session, limit) {
@@ -6,7 +7,7 @@ function InboxFeed(session, limit) {
     this.pendingRequestsTotal = null;
     FeedBase.apply(this, arguments);
 }
-_.extend(InboxFeed.prototype, FeedBase.prototype);
+util.inherits(InboxFeed, FeedBase);
 
 module.exports = InboxFeed;
 var Thread = require('../thread');

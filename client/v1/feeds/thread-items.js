@@ -1,4 +1,5 @@
 var _ = require('underscore');
+var util = require('util');
 var FeedBase = require('./feed-base');
 
 
@@ -7,12 +8,11 @@ function ThreadItemsFeed(session, threadId, limit) {
     this.limit = parseInt(limit) || null;
     FeedBase.apply(this, arguments);
 }
-_.extend(ThreadItemsFeed.prototype, FeedBase.prototype);
+util.inherits(ThreadItemsFeed, FeedBase);
 
 module.exports = ThreadItemsFeed;
 var ThreadItem = require('../thread-item');
 var Request = require('../request');
-var Thread = require('../thread');
 
 
 

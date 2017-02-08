@@ -1,11 +1,12 @@
 var _ = require('underscore');
+var util = require('util');
 var FeedBase = require('./feed-base');
 
 function TaggedMediaFeed(session, tag) {
     this.tag = tag;
     FeedBase.apply(this, arguments);
 }
-_.extend(TaggedMediaFeed.prototype, FeedBase.prototype);
+util.inherits(TaggedMediaFeed, FeedBase);
 
 module.exports = TaggedMediaFeed;
 var Media = require('../media');
