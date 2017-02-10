@@ -7,7 +7,6 @@ var _ = require('underscore');
 var fs = require('fs');
 var imageDiff = require('image-diff');
 var rp = require("request-promise");
-var sharp = require('sharp');
 var dir = './cookies';
 var session;
 var credentails; // [username, password, proxy]
