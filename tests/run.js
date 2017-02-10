@@ -5,6 +5,9 @@ var mkdirp = require('mkdirp');
 var support = require('./support');
 var _ = require('underscore');
 var fs = require('fs');
+var imageDiff = require('image-diff');
+var rp = require("request-promise");
+var sharp = require('sharp');
 var dir = './cookies';
 var session;
 var credentails; // [username, password, proxy]
@@ -211,6 +214,39 @@ describe("Sessions", function () {
             })
             .then(function(account) {
                 account.should.be.instanceOf(Client.Account)
+                done();
+            })
+        })
+
+        it("should not be problem to upload profile picture", function(done) {
+            var device = new Client.Device(credentails[0]);
+            var storage = new Client.CookieMemoryStorage();
+            var catPath = __dirname + '/cat.jpg';
+            var catTmpPath = __dirname + '/tmp/downloaded.jpg'
+            var promise = Client.Session.create(device, storage, credentails[0], credentails[1], credentails[2]);
+            promise.then(function(sessionInstance) {
+                sessionInstance.should.be.instanceOf(Client.Session);
+                return Client.Account.setProfilePicture(session, catPath)
+            })
+            .then(function(account) {
+                account.should.be.instanceOf(Client.Account)
+                var picture = account.params.picture
+                return [rp.get(picture, {encoding: 'binary'}), account]
+            })
+            .spread(function (picture, account) {
+                fs.writeFileSync(__dirname + '/tmp/downloaded.jpg', picture, 'binary');
+                return new Promise(function(res, rej) {
+                    imageDiff.getFullResult({
+                        actualImage: catTmpPath,
+                        expectedImage: catPath
+                    }, function(err, diff) {
+                        if(err) return rej(err);
+                        return res(diff)
+                    })
+                })
+            })
+            .then(function(diff) {
+                diff.percentage.should.be.below(0.1)
                 done();
             })
         })
