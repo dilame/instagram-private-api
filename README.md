@@ -465,7 +465,7 @@ var Promise = require('bluebird');
 var accountId = '123456'
 var feed = new Client.Feed.UserMedia(session, accountId);
 
-Promise.map(_.range(0, 20), function() {
+Promise.mapSeries(_.range(0, 20), function() {
 	return feed.get();
 })
 .then(function(results) {
