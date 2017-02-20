@@ -205,9 +205,7 @@ Media.configurePhoto = function (session, uploadId, caption, width, height) {
             .signPayload()
             .send()
             .then(function(json) {
-                console.log(json);
                 var media = new Media(session, json.media);
-                console.log(media);
                 return media;
             })
     })
