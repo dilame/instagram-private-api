@@ -172,7 +172,7 @@ Media.configurePhoto = function (session, uploadId, caption, width, height) {
     if(!width) width = 800;
     if(!height) height = 800;
     const CROP = 1;
-    session.getAccountId()
+    return session.getAccountId()
         .then(function(accountId){
         var payload = pruned({
             source_type: "4",
@@ -205,7 +205,8 @@ Media.configurePhoto = function (session, uploadId, caption, width, height) {
             .signPayload()
             .send()
             .then(function(json) {
-                return new Media(session, json.media)
+                var media = new Media(session, json.media);
+                return media;
             })
     })
 };
