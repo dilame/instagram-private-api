@@ -99,33 +99,33 @@ describe("`AccountCreator` class", function() {
                 })
         })
         
-        it("create account should call phone creator", function(done) {
-            var creator = new Client.AccountPhoneCreator(session);
-            creator.setPhone('+8613100000000')
-            creator.setUsername(_.random(999999) + '.unexsiting')
-            creator.setPhoneCallback(function() {
-                throw new Error("test")
-            })
-            creator.create()
-                .catch(function(e) {
-                    e.message.should.equal('test');
-                    done()
-                })
-        })
+        // it("create account should call phone creator", function(done) {
+        //     var creator = new Client.AccountPhoneCreator(session);
+        //     creator.setPhone('+8613100000000')
+        //     creator.setUsername(_.random(999999) + '.unexsiting')
+        //     creator.setPhoneCallback(function() {
+        //         throw new Error("test")
+        //     })
+        //     creator.create()
+        //         .catch(function(e) {
+        //             e.message.should.equal('test');
+        //             done()
+        //         })
+        // })
         
-        it("create account should call phone creator and", function(done) {
-            var creator = new Client.AccountPhoneCreator(session);
-            creator.setPhone('+8613100000000')
-            creator.setUsername(_.random(999999) + '.unexsiting')
-            creator.setPhoneCallback(function() {
-                return Promise.resolve(123456)
-            })
-            creator.create()
-                .catch(function(e) {
-                    e.message.should.match(/valid/)
-                    done()
-                })
-        })
+        // it("create account should call phone creator and", function(done) {
+        //     var creator = new Client.AccountPhoneCreator(session);
+        //     creator.setPhone('+8613100000000')
+        //     creator.setUsername(_.random(999999) + '.unexsiting')
+        //     creator.setPhoneCallback(function() {
+        //         return Promise.resolve(123456)
+        //     })
+        //     creator.create()
+        //         .catch(function(e) {
+        //             e.message.should.match(/valid/)
+        //             done()
+        //         })
+        // })
     })
     
     describe("`AccountEmailCreator` class", function() {
