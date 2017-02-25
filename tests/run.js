@@ -252,11 +252,12 @@ describe("Sessions", function () {
     })
 
     describe("Feeds", function() {
-        require('./cases/feeds/account-followers')
-        require('./cases/feeds/account-following')
-        require('./cases/feeds/media-comments')
-        require('./cases/feeds/tagged-media')
-        require('./cases/feeds/inbox')
-        require('./cases/feeds/timeline')
+        require('./cases/feeds/media-comments');
+        require('./cases/feeds/tagged-media');
+        require('./cases/feeds/inbox');
+        require('./cases/feeds/inbox-pending');
+        require('./cases/feeds/timeline');
+        require('./cases/feeds/account-following');
+        require('./cases/feeds/account-followers');
     })
 })
