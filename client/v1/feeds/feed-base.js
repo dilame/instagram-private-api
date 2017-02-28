@@ -16,7 +16,8 @@ FeedBase.prototype.all = function (parameters) {
     parameters = _.isObject(parameters) ? parameters : {};
     _.defaults(parameters, { delay: 1500 , every: 200, pause: 30000, maxErrors : 9 });
     // every N requests we take a pause
-    return Promise.delay(this.iteration%parameters.every != 0 ? parameters.delay : parameters.pause)
+    var delay = this.iteration == 0 ? 0 : this.iteration%parameters.every != 0 ? parameters.delay : parameters.pause;
+    return Promise.delay(delay)
         .then(this.get.bind(this))
         .then(function (results) {
             // reset pause multiplier when we can execute requests again
