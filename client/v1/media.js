@@ -165,7 +165,7 @@ Media.edit = function(session, mediaId, caption, userTags) {
         });
 };
 
-Media.configurePhoto = function (session, uploadId, caption, width, height) {
+Media.configurePhoto = function (session, uploadId, story, caption, width, height) {
     if(_.isEmpty(uploadId))
         throw new Error("Upload argument must be upload valid upload id");
     if(!caption) caption = "";
@@ -196,7 +196,17 @@ Media.configurePhoto = function (session, uploadId, caption, width, height) {
             payload = payload.replace(/\"\$negativeZero\"/gi, "-" + (0).toFixed(1));
             payload = payload.replace(/\"\$crop\"/gi, CROP.toFixed(1));
 
-            return new Request(session)
+            if (story == true) {
+                return new Request(session)
+                .setMethod('POST')
+                .setResource('mediaConfigureStory')
+                .setBodyType('form')
+                .setData(JSON.parse(payload))
+                .generateUUID()
+                .signPayload()
+                .send()
+            }else {
+                return new Request(session)
                 .setMethod('POST')
                 .setResource('mediaConfigure')
                 .setBodyType('form')
@@ -204,6 +214,7 @@ Media.configurePhoto = function (session, uploadId, caption, width, height) {
                 .generateUUID()
                 .signPayload()
                 .send()
+            }
         })
         .then(function(json) {
             return new Media(session, json.media)

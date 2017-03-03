@@ -41,6 +41,7 @@ const ROUTES = {
     locationsSearch: 'fbsearch/places/?count=50&query=<%= encodeURIComponent(query) %>&rank_token=<%= rankToken %>',
     changeProfilePicture: 'accounts/change_profile_picture/',
     mediaConfigure: 'media/configure/',
+    mediaConfigureStory: 'media/configure_to_reel/',
     videoConfigure: 'media/configure/?video=1',
     mediaInfo: 'media/<%= mediaId %>/info/',
     mediaLikes: 'media/<%= mediaId %>/likers/',
@@ -68,7 +69,9 @@ const ROUTES = {
     block: 'friendships/block/<%= id %>/',
     unblock: 'friendships/unblock/<%= id %>/',
     save: 'media/<%= id %>/save/',
-    unsave: 'media/<%= id %>/unsave/'
+    unsave: 'media/<%= id %>/unsave/',
+    userStory: 'feed/reels_media/',
+    storyTray: 'feed/reels_tray/'
 };
 
 
