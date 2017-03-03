@@ -9,7 +9,6 @@ var Request = require('../request');
 var Helpers = require('../../../helpers');
 var Media = require('../media');
 
-
 StoryTray.prototype.get = function () {
     var that = this;
     return new Request(that.session)
@@ -17,7 +16,6 @@ StoryTray.prototype.get = function () {
         .setResource('storyTray')
         .send()
         .then(function(data) {
-            console.log(JSON.stringify(data, null, 2))
             var media = _.map(data.items, function(medium){
                 return new Media(that.session, medium);
             });

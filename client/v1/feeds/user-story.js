@@ -10,7 +10,6 @@ var Request = require('../request');
 var Helpers = require('../../../helpers');
 var Media = require('../media');
 
-
 UserStory.prototype.get = function () {
     var that = this;
     return new Request(that.session)
@@ -23,7 +22,6 @@ UserStory.prototype.get = function () {
         .signPayload()
         .send()
         .then(function(data) {
-            console.log(JSON.stringify(data, null, 2))
             var media = _.map(data.items, function(medium){
                 return new Media(that.session, medium);
             });
