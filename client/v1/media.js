@@ -220,7 +220,6 @@ Media.configurePhotoStory = function (session, uploadId, width, height) {
         .then(function(accountId){
             var payload = pruned({
                 source_type: "4",
-                caption: caption,
                 upload_id: uploadId,
                 _uid: accountId.toString(),
                 device: session.device.payload,
