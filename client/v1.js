@@ -38,6 +38,7 @@ InstagramV1.Feed = {};
 InstagramV1.Feed.AccountFollowers = require('./v1/feeds/account-followers');
 InstagramV1.Feed.AccountFollowing = require('./v1/feeds/account-following');
 InstagramV1.Feed.Inbox = require('./v1/feeds/inbox');
+InstagramV1.Feed.InboxPending = require('./v1/feeds/inbox-pending');
 InstagramV1.Feed.LocationMedia = require('./v1/feeds/location-media');
 InstagramV1.Feed.TaggedMedia = require('./v1/feeds/tagged-media');
 InstagramV1.Feed.TagMedia = InstagramV1.Feed.TaggedMedia; // Alias but deprecated
@@ -47,6 +48,8 @@ InstagramV1.Feed.UserMedia = require('./v1/feeds/user-media');
 InstagramV1.Feed.SelfLiked = require('./v1/feeds/self-liked');
 InstagramV1.Feed.MediaComments = require('./v1/feeds/media-comments');
 InstagramV1.Feed.SavedMedia = require('./v1/feeds/saved-media');
+InstagramV1.Feed.StoryTray = require('./v1/feeds/story-tray');
+InstagramV1.Feed.UserStory = require('./v1/feeds/user-story');
 
 InstagramV1.Web = {};
 InstagramV1.Web.Request = require('./v1/web/web-request');

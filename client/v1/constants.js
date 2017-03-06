@@ -41,6 +41,7 @@ const ROUTES = {
     locationsSearch: 'fbsearch/places/?count=50&query=<%= encodeURIComponent(query) %>&rank_token=<%= rankToken %>',
     changeProfilePicture: 'accounts/change_profile_picture/',
     mediaConfigure: 'media/configure/',
+    mediaConfigureStory: 'media/configure_to_reel/',
     videoConfigure: 'media/configure/?video=1',
     mediaInfo: 'media/<%= mediaId %>/info/',
     mediaLikes: 'media/<%= mediaId %>/likers/',
@@ -50,12 +51,12 @@ const ROUTES = {
     qeSync: 'qe/sync/',
     discoverAyml: 'discover/ayml/',
     inbox: 'direct_v2/inbox/<%= cursor ? ("?cursor=" + cursor) : "" %>',
+    inboxPending: 'direct_v2/pending_inbox/<%= maxId ? ("?max_id=" + maxId) : "" %>',
     threads: 'direct_v2/threads/?user_ids=<% JSON.stringify(threads) %>',
     threadsShow: 'direct_v2/threads/<%= threadId %>/<%= cursor ? ("?cursor=" + cursor) : "" %>',
     threadsSeen: 'direct_v2/threads/<%= threadId %>/items/<%= itemId %>/seen/',
     threadsApprove: 'direct_v2/threads/<%= threadId %>/approve/',
     threadsHide: 'direct_v2/threads/<%= threadId %>/hide/',
-    threadsPending: 'direct_v2/pending_inbox/<%= maxId ? ("?max_id=" + maxId) : "" %>',
     threadsBrodcastText: 'direct_v2/threads/broadcast/text/',
     threadsBrodcastShare: 'direct_v2/threads/broadcast/media_share/?media_type=photo',
     threadsBrodcastProfile: 'direct_v2/threads/broadcast/profile/',
@@ -68,7 +69,9 @@ const ROUTES = {
     block: 'friendships/block/<%= id %>/',
     unblock: 'friendships/unblock/<%= id %>/',
     save: 'media/<%= id %>/save/',
-    unsave: 'media/<%= id %>/unsave/'
+    unsave: 'media/<%= id %>/unsave/',
+    userStory: 'feed/reels_media/',
+    storyTray: 'feed/reels_tray/'
 };
 
 
@@ -79,9 +82,9 @@ const WEB_ROUTES = {
 }
 
 const PRIVATE_KEY = {
-    SIG_KEY: '5ad7d6f013666cc93c88fc8af940348bd067b68f0dce3c85122a923f4f74b251',
+    SIG_KEY: '68a04945eb02970e2e8d15266fc256f7295da123e123f44b88f09d594a5902df',
     SIG_VERSION: '4',
-    APP_VERSION: '10.3.2'
+    APP_VERSION: '10.8.0'
 }
 
 
