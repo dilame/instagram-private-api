@@ -62,7 +62,7 @@ Media.prototype.parseParams = function (json) {
     }
     if (_.isObject(json.caption))
         hash.caption = json.caption.text;
-    hash.takenAt = parseInt(json.taken_at) * 1000;
+    hash.takenAt = parseInt(json.taken_at) * 1000;
     if (_.isObject(json.image_versions2))
         hash.images = json.image_versions2.candidates;
     if (_.isArray(json.video_versions))
