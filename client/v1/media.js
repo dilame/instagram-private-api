@@ -62,7 +62,7 @@ Media.prototype.parseParams = function (json) {
     }
     if (_.isObject(json.caption))
         hash.caption = json.caption.text;
-    hash.takenAt = parseInt(json.taken_at) * 1000;
+    hash.takenAt = parseInt(json.taken_at) * 1000;
     if (_.isObject(json.image_versions2))
         hash.images = json.image_versions2.candidates;
     if (_.isArray(json.video_versions))
@@ -172,85 +172,42 @@ Media.configurePhoto = function (session, uploadId, caption, width, height) {
     if(!width) width = 800;
     if(!height) height = 800;
     const CROP = 1;
-    return session.getAccountId()
+    session.getAccountId()
         .then(function(accountId){
-            var payload = pruned({
-                source_type: "4",
-                caption: caption,
-                upload_id: uploadId,
-                _uid: accountId.toString(),
-                device: session.device.payload,
-                edits: {
-                    crop_original_size:["$width","$height"],
-                    crop_center: ["$zero","$negativeZero"],
-                    crop_zoom: "$crop"
-                },
-                extra: {
-                    source_width: width,
-                    source_height: height
-                }
-            });
-            payload = payload.replace(/\"\$width\"/gi, width.toFixed(1));
-            payload = payload.replace(/\"\$height\"/gi, height.toFixed(1));
-            payload = payload.replace(/\"\$zero\"/gi, (0).toFixed(1));
-            payload = payload.replace(/\"\$negativeZero\"/gi, "-" + (0).toFixed(1));
-            payload = payload.replace(/\"\$crop\"/gi, CROP.toFixed(1));
+        var payload = pruned({
+            source_type: "4",
+            caption: caption,
+            upload_id: uploadId,
+            _uid:accountId.toString(),
+            device: session.device.payload,
+            edits: {
+                crop_original_size:["$width","$height"],
+                crop_center: ["$zero","$negativeZero"],
+                crop_zoom: "$crop"
+            },
+            extra: {
+                source_width: width,
+                source_height: height
+            }
+        });
+        payload = payload.replace(/\"\$width\"/gi, width.toFixed(1));
+        payload = payload.replace(/\"\$height\"/gi, height.toFixed(1));
+        payload = payload.replace(/\"\$zero\"/gi, (0).toFixed(1));
+        payload = payload.replace(/\"\$negativeZero\"/gi, "-" + (0).toFixed(1));
+        payload = payload.replace(/\"\$crop\"/gi, CROP.toFixed(1));
 
-            return new Request(session)
-                .setMethod('POST')
-                .setResource('mediaConfigure')
-                .setBodyType('form')
-                .setData(JSON.parse(payload))
-                .generateUUID()
-                .signPayload()
-                .send()
-        })
-        .then(function(json) {
-            return new Media(session, json.media)
-        })
-};
-
-Media.configurePhotoStory = function (session, uploadId, width, height) {
-    if(_.isEmpty(uploadId))
-        throw new Error("Upload argument must be upload valid upload id");
-    if(!width) width = 800;
-    if(!height) height = 800;
-    const CROP = 1;
-    return session.getAccountId()
-        .then(function(accountId){
-            var payload = pruned({
-                source_type: "4",
-                upload_id: uploadId,
-                _uid: accountId.toString(),
-                device: session.device.payload,
-                edits: {
-                    crop_original_size:["$width","$height"],
-                    crop_center: ["$zero","$negativeZero"],
-                    crop_zoom: "$crop"
-                },
-                extra: {
-                    source_width: width,
-                    source_height: height
-                }
-            });
-            payload = payload.replace(/\"\$width\"/gi, width.toFixed(1));
-            payload = payload.replace(/\"\$height\"/gi, height.toFixed(1));
-            payload = payload.replace(/\"\$zero\"/gi, (0).toFixed(1));
-            payload = payload.replace(/\"\$negativeZero\"/gi, "-" + (0).toFixed(1));
-            payload = payload.replace(/\"\$crop\"/gi, CROP.toFixed(1));
-
-            return new Request(session)
-                .setMethod('POST')
-                .setResource('mediaConfigureStory')
-                .setBodyType('form')
-                .setData(JSON.parse(payload))
-                .generateUUID()
-                .signPayload()
-                .send()
-        })
-        .then(function(json) {
-            return new Media(session, json.media)
-        })
+        return new Request(session)
+            .setMethod('POST')
+            .setResource('mediaConfigure')
+            .setBodyType('form')
+            .setData(JSON.parse(payload))
+            .generateUUID()
+            .signPayload()
+            .send()
+            .then(function(json) {
+                return new Media(session, json.media)
+            })
+    })
 };
 
 Media.configureVideo = function (session, uploadId, caption, durationms, delay) {
