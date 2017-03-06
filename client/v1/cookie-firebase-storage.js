@@ -2,8 +2,6 @@ var util = require("util");
 var FirebaseCookieStore = require('tough-cookie-firebasestore');
 var CookieStorage = require('./cookie-storage');
 
-console.log("included firebase");
-
 function CookieFirebaseStorage(app, firebasePath) {
     CookieStorage.call(this, new FirebaseCookieStore(app,firebasePath))
 }
