@@ -37,6 +37,7 @@ Media.prototype.parseParams = function (json) {
     hash.mediaType = json.media_type;
     hash.deviceTimestamp = json.device_timestamp;
     hash.webLink = "https://www.instagram.com/p/" + json.code + "/"
+    hash.usertags = json.usertags;
 
     if(json.video_duration)
         hash.videoDuration = json.video_duration;
