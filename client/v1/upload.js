@@ -102,14 +102,6 @@ Upload.video = function(session,videoBufferOrPath,photoStreamOrPath){
                     })
                     .then(function(results){
                         var videoUploadResult = results[results.length-1];
-                        //TEMP FIX for global setHeader problem
-                        request.removeHeader('job');
-                        request.removeHeader('Host');
-                        request.removeHeader('Session-ID');
-                        request.removeHeader('Content-Type');
-                        request.removeHeader('Content-Disposition');
-                        request.removeHeader('Content-Length');
-                        request.removeHeader('Content-Range');
                         return {
                             delay:videoUploadResult.configure_delay_ms,
                             durationms:duration,
