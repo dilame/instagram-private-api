@@ -15,22 +15,22 @@ var Request = require('../request');
 
 SavedFeed.prototype.get = function () {
     var that = this;
-
     return new Request(that.session)
-      .setMethod('POST')
-      .setResource('savedFeed')
-      .generateUUID()
-      .setData({})
-      .signPayload()
-      .send()
-      .then(function(data) {
-        that.moreAvailable = data.more_available;
-        var lastOne = _.last(data.items);
-        if (that.moreAvailable && lastOne) {
-            that.setCursor(lastOne.id);
-        }
-        return _.map(data.items, function (medium) {
-            return new Media(that.session, medium.media);
-        });
-      })
+        .setMethod('POST')
+        .setResource('savedFeed', {
+            maxId: that.cursor,
+        })
+        .generateUUID()
+        .setData({})
+        .signPayload()
+        .send()
+        .then(function(data) {
+            that.moreAvailable = data.more_available;
+            if (that.moreAvailable && data.next_max_id) {
+                that.setCursor(data.next_max_id);
+            }
+            return _.map(data.items, function (medium) {
+                return new Media(that.session, medium.media);
+            });
+        })
 };
