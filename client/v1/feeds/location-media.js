@@ -2,7 +2,8 @@ var _ = require('underscore');
 var util = require('util');
 var FeedBase = require('./feed-base');
 
-function LocationMediaFeed(session, locationId) {
+function LocationMediaFeed(session, locationId, limit) {
+    this.limit = parseInt(limit) || null;
     this.locationId = locationId;
     FeedBase.apply(this, arguments);
 }
