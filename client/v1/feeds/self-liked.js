@@ -2,8 +2,9 @@ var _ = require('underscore');
 var util = require('util');
 var FeedBase = require('./feed-base');
 
-function SelfLikedFeed(session) {
+function SelfLikedFeed(session, limit) {
     this.session = session;
+    this.limit = parseInt(limit) || null;
     FeedBase.apply(this, arguments);
 }
 util.inherits(SelfLikedFeed, FeedBase);

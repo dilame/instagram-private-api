@@ -4,7 +4,7 @@ var FeedBase = require('./feed-base');
 
 function TaggedMediaFeed(session, tag, limit) {
     this.tag = tag;
-    this.limit = limit;
+    this.limit = parseInt(limit) || null;
     FeedBase.apply(this, arguments);
 }
 util.inherits(TaggedMediaFeed, FeedBase);

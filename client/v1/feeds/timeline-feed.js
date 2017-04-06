@@ -2,7 +2,8 @@ var _ = require('underscore');
 var util = require('util');
 var FeedBase = require('./feed-base');
 
-function TimelineFeed(session) {
+function TimelineFeed(session, limit) {
+    this.limit = parseInt(limit) || null;
     FeedBase.apply(this, arguments);
 }
 util.inherits(TimelineFeed, FeedBase);
