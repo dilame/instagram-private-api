@@ -78,7 +78,9 @@ Upload.video = function(session,videoBufferOrPath,photoStreamOrPath){
             .setData({
                 upload_id: predictedUploadId,
                 media_type: 2,
-                upload_media_duration_ms: Math.floor(duration)
+                upload_media_duration_ms: Math.floor(duration),
+                upload_media_height:720,
+                upload_media_width:720
             })
             .send()
             .then(function(json) {
