@@ -35,12 +35,14 @@ const ROUTES = {
     locationFeed: 'feed/location/<%= id %>/?<%= maxId ? ("max_id=" + maxId + "&") : "" %>rank_token=<%= rankToken %>',
     followingFeed: 'friendships/<%= id %>/following/?<%= maxId ? ("max_id=" + maxId + "&") : "" %>rank_token=<%= rankToken %>',
     followersFeed: 'friendships/<%= id %>/followers/<%= maxId ? ("?max_id=" + maxId) : "" %>',
-    savedFeed: 'feed/saved/',
+    savedFeed: 'feed/saved/<%= maxId ? ("?max_id=" + maxId) : "" %>',
+
     accountsSearch: 'users/search/?is_typehead=true&q=<%= encodeURIComponent(query) %>&rank_token=<%= rankToken %>',
     hashtagsSearch: 'tags/search/?count=50&q=<%= encodeURIComponent(query) %>&rank_token=<%= rankToken %>',
     locationsSearch: 'fbsearch/places/?count=50&query=<%= encodeURIComponent(query) %>&rank_token=<%= rankToken %>',
     changeProfilePicture: 'accounts/change_profile_picture/',
     mediaConfigure: 'media/configure/',
+    mediaConfigureStory: 'media/configure_to_reel/',
     videoConfigure: 'media/configure/?video=1',
     mediaInfo: 'media/<%= mediaId %>/info/',
     mediaLikes: 'media/<%= mediaId %>/likers/',
@@ -68,7 +70,9 @@ const ROUTES = {
     block: 'friendships/block/<%= id %>/',
     unblock: 'friendships/unblock/<%= id %>/',
     save: 'media/<%= id %>/save/',
-    unsave: 'media/<%= id %>/unsave/'
+    unsave: 'media/<%= id %>/unsave/',
+    userStory: 'feed/reels_media/',
+    storyTray: 'feed/reels_tray/'
 };
 
 
@@ -79,9 +83,9 @@ const WEB_ROUTES = {
 }
 
 const PRIVATE_KEY = {
-    SIG_KEY: '5ad7d6f013666cc93c88fc8af940348bd067b68f0dce3c85122a923f4f74b251',
+    SIG_KEY: '68a04945eb02970e2e8d15266fc256f7295da123e123f44b88f09d594a5902df',
     SIG_VERSION: '4',
-    APP_VERSION: '10.3.2'
+    APP_VERSION: '10.8.0'
 }
 
 

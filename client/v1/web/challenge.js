@@ -215,7 +215,7 @@ EmailVerificationChallenge.prototype.email = function() {
 
 EmailVerificationChallenge.prototype.code = function(code) {
     var that = this;
-    if(!_.isNumber(code))
+    if(!isNumeric(code))
         throw new Error("Code input should be 6-digits number"); 
     return new WebRequest(this.session)
         .setMethod('POST')
@@ -319,5 +319,9 @@ Challenge.resolve = function(checkpointError) {
                 throw new Exceptions.NoChallengeRequired;
             throw error;    
         })
+}
+
+function isNumeric(num){
+    return !isNaN(num)
 }
 

@@ -6,9 +6,11 @@ var request = require("request-promise");
 var CookieStorage = require("./cookie-storage");
 var RequestJar = require("./jar");
 
-function Session(device, storage) {
+function Session(device, storage, proxy) {
     this.setDevice(device);    
     this.setCookiesStorage(storage);
+    if(_.isString(proxy) && !_.isEmpty(proxy))
+        this.proxyUrl = proxy;
 }
 
 util.inherits(Session, Resource);

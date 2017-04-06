@@ -413,7 +413,7 @@ Video upload:
 // MP4 is the only supported format now, pull request for any other format welcomed!
 Upload.video(session, './path/to/your/video.mp4','./path/to/your/coverImg.jpg')
 	.then(function(upload) {
-		return Media.configureVideo(session, upload.uploadId, 'akward caption', uploadInfo.durationms);
+		return Media.configureVideo(session, upload.uploadId, 'akward caption', upload.durationms);
 	})
 	.then(function(medium) {
 		// we configure medium, it is now visible with caption
