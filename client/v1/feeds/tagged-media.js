@@ -2,8 +2,9 @@ var _ = require('underscore');
 var util = require('util');
 var FeedBase = require('./feed-base');
 
-function TaggedMediaFeed(session, tag) {
+function TaggedMediaFeed(session, tag, limit) {
     this.tag = tag;
+    this.limit = limit;
     FeedBase.apply(this, arguments);
 }
 util.inherits(TaggedMediaFeed, FeedBase);
