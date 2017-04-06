@@ -3,7 +3,7 @@ var _ = require("underscore");
 var Resource = require("./resource");
 
 
-function Location(session, params) { 
+function Location(session, params) {
     Resource.apply(this, arguments);
 }
 
@@ -45,8 +45,8 @@ Location.prototype.parseParams = function (json) {
     hash.city = json.location.city;
     hash.state = json.location.state;
     hash.id = json.location.id || json.location.pk;
-    hash.lat = parseFloat(json.lat) || 0;
-    hash.lng = parseFloat(json.lng) || 0;
+    hash.lat = parseFloat(json.location.lat) || 0;
+    hash.lng = parseFloat(json.location.lng) || 0;
     return hash;
 };
 
