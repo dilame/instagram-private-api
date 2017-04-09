@@ -64,8 +64,13 @@ Media.prototype.parseParams = function (json) {
     if (_.isObject(json.caption))
         hash.caption = json.caption.text;
     hash.takenAt = parseInt(json.taken_at) * 1000;
-    if (_.isObject(json.image_versions2))
+    if (_.isObject(json.image_versions2)) {
         hash.images = json.image_versions2.candidates;
+    } else if (_.isObject(json.carousel_media)) {
+        hash.images = json.carousel_media.map(function(media) {
+            return media.image_versions2.candidates
+        })
+    }
     if (_.isArray(json.video_versions))
         hash.videos = json.video_versions;
     this.previewComments = _.map(json.preview_comments, function(comment) {
