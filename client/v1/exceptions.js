@@ -237,6 +237,15 @@ util.inherits(AccountInactive, APIError);
 exports.AccountInactive = AccountInactive;
 
 
+function AccountBanned(message) {
+    this.name = 'AccountBanned';
+    this.message = message;
+}
+
+util.inherits(AccountBanned, APIError);
+exports.AccountBanned = AccountBanned;
+
+
 function AccountActivityPrivateFeed() {
     this.name = 'AccountActivityPrivateFeed';
     this.message = "The Account has private feed, account activity not really completed";

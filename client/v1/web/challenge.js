@@ -8,7 +8,10 @@ var iPhoneUserAgent = _.template('Mozilla/5.0 (iPhone; CPU iPhone OS 9_3_3 like 
     + 'AppleWebKit/601.1.46 (KHTML, like Gecko) Mobile/13G34 Instagram <%= version %> '
     + '(iPhone7,2; iPhone OS 9_3_3; cs_CZ; cs-CZ; scale=2.00; 750x1334)');
 
-var EMAIL_FIELD_REGEXP = /email.*value(.*)"/gi;
+var EMAIL_FIELD_REGEXP = /email.*value(.*)"/i;
+var PHONE_FIELD_REGEXP = /sms.*value(.*)"/i;
+var PHONE_ENTERED_FIELD_REGEXP = /tel.*value="(\+\d+)"/i
+var RESET_FIELD_REGEXP = /reset_progress_form.*action="\/(.*)"/i
 
 var Challenge = function(session, type, error, body) {
     this._session = session;
@@ -18,14 +21,13 @@ var Challenge = function(session, type, error, body) {
 
 exports.Challenge = Challenge;
 
-var Exceptions = require('../exceptions');
 var Session = require('../session');
 var routes = require('../routes');
 var CONSTANTS = require('../constants');
 var WebRequest = require('./web-request');
 var Helpers = require('../../../helpers');
 var Exceptions = require("../exceptions");
-var ORIGIN = CONSTANTS.HOST.slice(0, -1); // Trailing / in origin
+var ORIGIN = CONSTANTS.WEBHOST.slice(0, -1); // Trailing / in origin
 
 
 Object.defineProperty(Challenge.prototype, "type", {
@@ -49,7 +51,10 @@ Object.defineProperty(Challenge.prototype, "error", {
 
 var PhoneVerificationChallenge = function(session, type, checkpointError, body) {
     Challenge.apply(this, arguments);
-    this.phoneInserted = false;
+    var verifyByPhoneValue = new RegExp(PHONE_FIELD_REGEXP).exec(body);
+    this.verifyByValue = verifyByPhoneValue ? verifyByPhoneValue[1] : false;
+    var insertedPhoneNumber = new RegExp(PHONE_ENTERED_FIELD_REGEXP).exec(body);
+    this.phoneInserted = insertedPhoneNumber ? insertedPhoneNumber[1] : false;
 }
 util.inherits(PhoneVerificationChallenge, Challenge);
 exports.PhoneVerificationChallenge = PhoneVerificationChallenge;
@@ -57,75 +62,77 @@ exports.PhoneVerificationChallenge = PhoneVerificationChallenge;
 
 PhoneVerificationChallenge.prototype.phone = function(phone) {
     var that = this;
-    // ask for reset first to be sure we are going to submit phone
-    return new WebRequest(that.session)
-        .setMethod('GET')
-        .setResource('challengeReset')
-        .setHeaders({
-            'Referer': that.error.url,
-            'Origin': ORIGIN
-        })
-        .setHost(CONSTANTS.HOSTNAME)
-        .removeHeader('x-csrftoken')
-        .send({followRedirect: false})
-        .catch(errors.StatusCodeError, function(error) {
-            if(error.statusCode == 302)
-                return error.response;
-            throw error;    
-        })
-        .catch(Exceptions.NotFoundError, function(error) {
-            return error.response;   
-        })
-        .then(function(response) {
-            // 200 working, 302 dont need reset, 404 account challenge reset not allowed
-            if(!_.contains([200, 302, 404], response.statusCode))
-                throw new Exceptions.NotPossibleToResolveChallenge(
-                    "Reset is not working", 
-                    Exceptions.NotPossibleToResolveChallenge.CODE.RESET_NOT_WORKING
-                );  
-            // We got clean new challenge
+    that.error.url = that.error.url.replace('i.instagram.com','www.instagram.com')
+    //Confirming phone number or selecting confirm type is optional and not always required
+    return new Promise(function(resolve,reject){
+        if(that.verifyByValue!==false){
             return new WebRequest(that.session)
+                .setMethod('GET')
+                .setResource('challengeReset')
                 .setMethod('POST')
                 .setUrl(that.error.url)
                 .setHeaders({
+                    'Host': CONSTANTS.WEB_HOSTNAME,
                     'Referer': that.error.url,
                     'Origin': ORIGIN
                 })
                 .setBodyType('form')
                 .setData({
-                    phone_number: phone,
+                    sms: that.verifyByValue,
                     csrfmiddlewaretoken: that.session.CSRFToken
                 })
-                .setHost(CONSTANTS.HOSTNAME)
                 .removeHeader('x-csrftoken')
                 .send({followRedirect: false})
-        })
-        .then(function(response) {
-            if(response.statusCode !== 200)
-                throw new Exceptions.NotPossibleToResolveChallenge(
-                    "Instagram not accpetion the number",
-                    Exceptions.NotPossibleToResolveChallenge.CODE.NOT_ACCEPTING_NUMBER
-                );  
-            if(response.body.indexOf('incorrect') !== -1)
-                throw new Exceptions.NotPossibleToResolveChallenge(
-                    "Probably incorrect number",
-                    Exceptions.NotPossibleToResolveChallenge.CODE.INCORRECT_NUMBER
-                );
-            if(response.body.indexOf('response_code') === -1)
-                throw new Exceptions.NotPossibleToResolveChallenge();
-            that.phoneInserted = true;    
-            return that;    
-        })
+                .then(resolve)
+                .catch(reject)
+        }else if(that.phoneInserted!==false){
+            return new WebRequest(that.session)
+                .setMethod('POST')
+                .setUrl(that.error.url)
+                .setHeaders({
+                    'Host': CONSTANTS.WEB_HOSTNAME,
+                    'Referer': that.error.url,
+                    'Origin': ORIGIN
+                })
+                .setBodyType('form')
+                .setData({
+                    phone_number: phone || that.phoneInserted,
+                    csrfmiddlewaretoken: that.session.CSRFToken
+                })
+                .removeHeader('x-csrftoken')
+                .send({followRedirect: false})
+                .then(resolve)
+                .catch(reject)
+        }else{
+            return reject(new Exceptions.NotPossibleToResolveChallenge('Unexpected confirm type'));
+        }
+    })
+    .then(function(response) {
+        if(response.statusCode !== 200)
+            throw new Exceptions.NotPossibleToResolveChallenge(
+                "Instagram not accpetion the number",
+                Exceptions.NotPossibleToResolveChallenge.CODE.NOT_ACCEPTING_NUMBER
+            );
+        if(response.body.indexOf('incorrect') !== -1)
+            throw new Exceptions.NotPossibleToResolveChallenge(
+                "Probably incorrect number",
+                Exceptions.NotPossibleToResolveChallenge.CODE.INCORRECT_NUMBER
+            );
+        if(response.body.indexOf('security_code') === -1)
+            throw new Exceptions.NotPossibleToResolveChallenge();
+        return that;
+    })
 }
 
 
 PhoneVerificationChallenge.prototype.code = function(code) {
     var that = this;
+    that.error.url = that.error.url.replace('i.instagram.com','www.instagram.com')
     return new WebRequest(that.session)
         .setMethod('POST')
         .setUrl(that.error.url)
         .setHeaders({
-            'Host': CONSTANTS.HOSTNAME,
+            'Host': CONSTANTS.WEB_HOSTNAME,
             'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
             'Accept-Language': 'en-us',
             'Content-Type': 'application/x-www-form-urlencoded',
@@ -137,7 +144,7 @@ PhoneVerificationChallenge.prototype.code = function(code) {
         .setBodyType('form')
         .removeHeader('x-csrftoken') // we actually sending this as post param
         .setData({
-            response_code: code,
+            security_code: code,
             csrfmiddlewaretoken: that.session.CSRFToken
         })
         .send({followRedirect: false})
@@ -145,10 +152,12 @@ PhoneVerificationChallenge.prototype.code = function(code) {
             if(response.statusCode == 200 && response.body.indexOf('instagram://checkpoint/dismiss') !== -1)
                 return true;
             // Must be redirected
-            throw new Exceptions.NotPossibleToResolveChallenge(
-                "Probably incorrect code",
-                Exceptions.NotPossibleToResolveChallenge.CODE.INCORRECT_CODE
-            );
+            if(response.body.indexOf('check the code') > -1)
+                throw new Exceptions.NotPossibleToResolveChallenge(
+                    "Incorrect code",
+                    Exceptions.NotPossibleToResolveChallenge.CODE.INCORRECT_CODE
+                );
+            throw new Exceptions.NotPossibleToResolveChallenge('Unknown error. Dismiss expected.')
         })
         .catch(errors.StatusCodeError, function(error) {
             if(error.statusCode == 302)
@@ -157,8 +166,8 @@ PhoneVerificationChallenge.prototype.code = function(code) {
                 throw new Exceptions.NotPossibleToResolveChallenge(
                     "Verification has not been accepted",
                     Exceptions.NotPossibleToResolveChallenge.CODE.NOT_ACCEPTED
-                );  
-            throw error;    
+                );
+            throw error;
         })
 }
 
@@ -178,7 +187,7 @@ EmailVerificationChallenge.prototype.parseCode = function(email) {
     if(!match) throw new Exceptions.NotPossibleToResolveChallenge(
         "Unable to parse code",
         Exceptions.NotPossibleToResolveChallenge.CODE.UNABLE_TO_PARSE
-    ); 
+    );
     return parseInt(match[1]);
 };
 
@@ -190,15 +199,16 @@ EmailVerificationChallenge.prototype.reset = function() {
 
 EmailVerificationChallenge.prototype.email = function() {
     var that = this;
+    that.error.url = that.error.url.replace('i.instagram.com','www.instagram.com')
     return new WebRequest(that.session)
         .setMethod('POST')
         .setUrl(that.error.url)
         .setHeaders({
+            'Host': CONSTANTS.WEB_HOSTNAME,
             'Referer': that.error.url,
             'Origin': ORIGIN
         })
         .setBodyType('form')
-        .setHost(CONSTANTS.HOSTNAME)
         .removeHeader('x-csrftoken') // we actually sending this as post param
         .setData({
             email: that.verifyByValue,
@@ -207,46 +217,60 @@ EmailVerificationChallenge.prototype.email = function() {
         .send({followRedirect: false, qs: {next: 'instagram://checkpoint/dismiss'}})
         .then(function(response) {
             if(response.statusCode !== 200)
-                throw new Exceptions.NotPossibleToResolveChallenge(); 
-            return that;    
+                throw new Exceptions.NotPossibleToResolveChallenge();
+            return that;
         })
 };
 
 
-EmailVerificationChallenge.prototype.code = function(code) {
+EmailVerificationChallenge.prototype.code = function(code){
     var that = this;
     if(!isNumeric(code))
-        throw new Error("Code input should be 6-digits number"); 
+        throw new Error("Code input should be 6-digits number");
+    that.error.url = that.error.url.replace('i.instagram.com','www.instagram.com')
     return new WebRequest(this.session)
         .setMethod('POST')
         .setUrl(that.error.url)
         .setHeaders({
+            'Host': CONSTANTS.WEB_HOSTNAME,
             'Referer': that.error.url,
             'Origin': ORIGIN
         })
         .setBodyType('form')
-        .setHost(CONSTANTS.HOSTNAME)
         .removeHeader('x-csrftoken') // we actually sending this as post param
         .setData({
             response_code: code,
             csrfmiddlewaretoken: that.session.CSRFToken
         })
         .send({followRedirect: false, qs: {next: 'instagram://checkpoint/dismiss'}})
-        .then(function(response) {
-            if(response.statusCode !== 200 || response.body.indexOf('has been verified') === -1)
-                throw new Exceptions.NotPossibleToResolveChallenge(); 
-            return that;    
+        .then(function(response){
+            if(response.statusCode != 200)
+                throw new Exceptions.NotPossibleToResolveChallenge('Invalid status code: '+response.statusCode);
+            if(response.body.indexOf('has been verified') > -1){
+                return that;
+            }else if(response.body.indexOf('check the code') > -1){
+                throw new Exceptions.NotPossibleToResolveChallenge(
+                    'Incorrect code',
+                    Exceptions.NotPossibleToResolveChallenge.INCORRECT_CODE
+                );
+            }else if(response.body.indexOf('something wrong sending') > -1){
+                throw new Exceptions.NotPossibleToResolveChallenge('Something went wrong while sending code');
+            }else{
+                throw new Exceptions.NotPossibleToResolveChallenge();
+            }
+
         })
 };
 
 
 EmailVerificationChallenge.prototype.confirmate = function(code) {
     var that = this;
+    that.error.url = that.error.url.replace('i.instagram.com','www.instagram.com')
     return new WebRequest(this.session)
         .setMethod('POST')
         .setUrl(that.error.url)
         .setHeaders({
-            'Host': CONSTANTS.HOSTNAME,
+            'Host': CONSTANTS.WEB_HOSTNAME,
             'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
             'Accept-Language': 'en-us',
             'Content-Type': 'application/x-www-form-urlencoded',
@@ -274,6 +298,94 @@ EmailVerificationChallenge.prototype.confirmate = function(code) {
         })
 };
 
+var ButtonVerificationChallenge = function(session, type, checkpointError, body) {
+    Challenge.apply(this, arguments);
+}
+
+util.inherits(ButtonVerificationChallenge, Challenge);
+exports.ButtonVerificationChallenge = ButtonVerificationChallenge;
+
+ButtonVerificationChallenge.prototype.click = function() {
+    var that = this;
+    that.error.url = that.error.url.replace('i.instagram.com','www.instagram.com')
+    return new WebRequest(that.session)
+        .setMethod('POST')
+        .setUrl(that.error.url)
+        .setHeaders({
+            'Host': CONSTANTS.WEB_HOSTNAME,
+            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+            'Accept-Language': 'en-us',
+            'Content-Type': 'application/x-www-form-urlencoded',
+            'Origin': ORIGIN,
+            'Connection': 'keep-alive',
+            'User-Agent': iPhoneUserAgent({version: that.session.device.version}),
+            'Referer': that.error.url
+        })
+        .setBodyType('form')
+        .removeHeader('x-csrftoken') // we actually sending this as post param
+        .setData({
+            approve: "It Was Me",
+            csrfmiddlewaretoken: that.session.CSRFToken
+        })
+        .send({followRedirect: false})
+        .then(function(response) {
+            if(response.statusCode == 200 && response.body.indexOf('Your account has been verified') !== -1) {
+                return that;
+            }
+            // Must be redirected
+            throw new Exceptions.NotPossibleToResolveChallenge(
+                "Probably incorrect code",
+                Exceptions.NotPossibleToResolveChallenge.CODE.INCORRECT_CODE
+            );
+        })
+        .catch(errors.StatusCodeError, function(error) {
+            if(error.statusCode == 302)
+                return true;
+            if(error.statusCode == 400)
+                throw new Exceptions.NotPossibleToResolveChallenge(
+                    "Verification has not been accepted",
+                    Exceptions.NotPossibleToResolveChallenge.CODE.NOT_ACCEPTED
+                );
+            throw error;
+        })
+}
+
+ButtonVerificationChallenge.prototype.confirmate = function(code) {
+    var that = this;
+    that.error.url = that.error.url.replace('i.instagram.com','www.instagram.com')
+    return new WebRequest(this.session)
+        .setMethod('POST')
+        .setUrl(that.error.url)
+        .setHeaders({
+            'Host': CONSTANTS.WEB_HOSTNAME,
+            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+            'Accept-Language': 'en-us',
+            'Content-Type': 'application/x-www-form-urlencoded',
+            'Origin': ORIGIN,
+            'Connection': 'keep-alive',
+            'User-Agent': iPhoneUserAgent({version: that.session.device.version}),
+            'Referer': that.error.url
+        })
+        .setBodyType('form')
+        .removeHeader('x-csrftoken') // we actually sending this as post param
+        .setData({
+            csrfmiddlewaretoken: that.session.CSRFToken,
+            OK: 'OK'
+        })
+        .send({followRedirect: false, qs: {next: 'instagram://checkpoint/dismiss'}})
+        .then(function(response) {
+
+            if(response.statusCode == 200 && response.body.indexOf('instagram://checkpoint/dismiss') !== -1)
+                return true;
+            throw new Exceptions.NotPossibleToResolveChallenge();
+        })
+        .catch(errors.StatusCodeError, function(error) {
+            if(error.statusCode == 302)
+                return true;
+            throw error;
+        })
+};
+
 
 var CaptchaVerificationChallenge = function(session) {
     Challenge.apply(this, arguments);
@@ -293,27 +405,55 @@ exports.CaptchaVerificationChallenge = CaptchaVerificationChallenge;
 Challenge.resolve = function(checkpointError) {
     if(!(checkpointError instanceof Exceptions.CheckpointError))
         throw new Error("`Challenge.resolve` method must get exception (type of `CheckpointError`) as a first argument");
-    var session = checkpointError.session;   
+    var session = checkpointError.session;
+    checkpointError.url=checkpointError.url.replace('i.instagram.com','www.instagram.com');
+
+    function parseResponse(response){
+        //Challenge is not required
+        if(response.statusCode == 200 && response.body.indexOf('instagram://checkpoint/dismiss') !== -1)
+            throw new Exceptions.NoChallengeRequired;
+        // This is obvious, email field is present it is email challenge
+        if(response.body.indexOf('email') !== -1 && response.body.match(EMAIL_FIELD_REGEXP))
+            return new EmailVerificationChallenge(session, 'email', checkpointError, response.body);
+        // On the otherhand this is not. We can be stuck in challenge
+        // so we need to detect if instagram require code he `texted` us
+        // or sms field on first step will be present
+        if(response.body.indexOf('id_phone_number') !== -1 || response.body.indexOf('sms') !== -1 || response.body.match(PHONE_FIELD_REGEXP))
+            return new PhoneVerificationChallenge(session, 'phone', checkpointError, response.body);
+        //Thx to @generictitle for ButtonVerificationChallenge
+        if(response.body.indexOf('It Was Me') !== -1)
+            return new ButtonVerificationChallenge(session, 'button', checkpointError, response.body);
+        //Looks like unfinished challenge, let's reset it
+        if(response.body.indexOf('security_code') !== -1){
+            //Resetting challenge.
+            var resetLink = RESET_FIELD_REGEXP.exec(response.body)[1];
+            return new WebRequest(session)
+                .setMethod('GET')
+                .setUrl(CONSTANTS.WEBHOST+resetLink)
+                .setHeaders({
+                    'Host': CONSTANTS.WEB_HOSTNAME,
+                    'Origin': ORIGIN
+                })
+                .removeHeader('x-csrftoken')
+                .send({followRedirect: false})
+                .then(parseResponse)
+        }
+        // For last we now that email or phone verification
+        // is not required so last one dont need check, it is captcha
+        return new CaptchaVerificationChallenge(session, 'capcha', checkpointError, response.body);
+    }
+
     return session.cookieStore.removeCheckpointStep()
         .then(function() {
             return new WebRequest(session)
                 .setMethod('GET')
                 .setUrl(checkpointError.url)
-                .send({followRedirect: false})
+                .setHeaders({
+                    'Host': CONSTANTS.WEB_HOSTNAME
+                })
+                .send({followRedirect: true})
         })
-        .then(function(response) {
-            // This is obvious, email field is present it is email challenge
-            if(response.body.indexOf('email') !== -1 && response.body.match(EMAIL_FIELD_REGEXP))
-                return new EmailVerificationChallenge(session, 'email', checkpointError, response.body);
-            // On the otherhand this is not. We can be stuck in challenge
-            // so we need to detect if instagram require code he `texted` us
-            // or phone_number field on first step will be present
-            if(response.body.indexOf('phone_number') !== -1 || response.body.indexOf('code we texted you') !== -1)
-                return new PhoneVerificationChallenge(session, 'phone', checkpointError, response.body);
-            // For last we now that email or phone verification
-            // is not required so last one dont need check, it is captcha
-            return new CaptchaVerificationChallenge(session, 'capcha', checkpointError, response.body);
-        })
+        .then(parseResponse)
         .catch(errors.StatusCodeError, function(error) {
             if(error.statusCode == 302)
                 throw new Exceptions.NoChallengeRequired;
@@ -324,4 +464,3 @@ Challenge.resolve = function(checkpointError) {
 function isNumeric(num){
     return !isNaN(num)
 }
-

@@ -132,10 +132,11 @@ Session.login = function(session, username, password) {
         .signPayload()
         .send()
         .catch(function (error) {
-            if (error.name == "RequestError" && 
-                _.isObject(error.json) && 
-                error.json.invalid_credentials) {
+            if (error.name == "RequestError" && _.isObject(error.json)) {
+                if(error.json.invalid_credentials)
                     throw new Exceptions.AuthenticationError(error.message);
+                if(error.json.error_type==="inactive user")
+                    throw new Exceptions.AccountBanned(error.json.message+' '+error.json.help_url);
             }
             throw error;
         })
