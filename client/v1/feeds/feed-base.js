@@ -1,6 +1,8 @@
+var util = require('util');
 var _ = require('underscore');
 var Promise = require('bluebird');
 var Exceptions = require('../exceptions');
+var EventEmitter = require('events').EventEmitter;
 
 function FeedBase(session) {
     this.session = session;
@@ -11,6 +13,8 @@ function FeedBase(session) {
     // Pause multiplier.
     this.parseErrorsMultiplier = 0;
 }
+util.inherits(FeedBase, EventEmitter);
+
 FeedBase.prototype.all = function (parameters) {
     var that = this;
     parameters = _.isObject(parameters) ? parameters : {};
@@ -35,6 +39,7 @@ FeedBase.prototype.all = function (parameters) {
         })
         .then(function (results) {
             that.allResults = that.allResults.concat(results);
+            that.emit('data', that.allResults);
             var exceedLimit = false;
             if (that.limit && that.allResults.length > that.limit)
                 exceedLimit = true;
