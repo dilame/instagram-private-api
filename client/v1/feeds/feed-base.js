@@ -39,7 +39,7 @@ FeedBase.prototype.all = function (parameters) {
         })
         .then(function (results) {
             that.allResults = that.allResults.concat(results);
-            that.emit('data', that.allResults);
+            that.emit('data', results);
             var exceedLimit = false;
             if (that.limit && that.allResults.length > that.limit)
                 exceedLimit = true;
