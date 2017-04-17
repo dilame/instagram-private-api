@@ -63,7 +63,7 @@ Media.prototype.parseParams = function (json) {
             duration: json.video_duration
         }
     }
-    if (json.media_type === 8) {
+    if (json.media_type === 8 && _.isArray(json.carousel_media)) { 
         hash.carouselMedia = _.map(json.carousel_media, function (medium) {
            return new Media(that.session, medium);
         });
