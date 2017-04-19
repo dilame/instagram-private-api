@@ -32,6 +32,7 @@ Account.prototype.parseParams = function (json) {
     hash.isPrivate = json.is_private;
     hash.hasAnonymousProfilePicture = json.has_anonymous_profile_picture;
     hash.isBusiness = !!json.is_business;
+    hash.isVerified = !!json.is_verified;
     if(_.isString(json.profile_pic_id))
         hash.profilePicId = json.profile_pic_id;
     if(_.isString(json.byline))
