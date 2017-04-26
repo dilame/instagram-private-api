@@ -239,7 +239,7 @@ if you don't, you need to create a session with storage and device.
 
 static method 
 
-`Session.create(device:Device, storeage:CookieStorage, username:string, password:string, proxyUrl?:string)`
+`Session.create(device:Device, storage:CookieStorage, username:string, password:string, proxyUrl?:string)`
 
 can help you with that. This method will sign-in and create a 
 new Session instance.
