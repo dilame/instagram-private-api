@@ -91,11 +91,12 @@ Media.prototype.parseParams = function (json) {
 
 
 Media.prototype.getParams = function () {
-    return _.defaults({
+    return _.extend(this._params, {
         account: this.account.params,
         comments: _.pluck(this.comments, 'params'),
-        location: this.location ? this.location.params : {}
-    }, this._params);
+        location: this.location ? this.location.params : {},
+        carouselMedia:  _.pluck(this._params.carouselMedia, 'params')
+    });
 };
 
 
