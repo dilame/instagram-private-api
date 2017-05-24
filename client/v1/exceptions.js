@@ -132,6 +132,14 @@ util.inherits(CheckpointError, APIError);
 exports.CheckpointError = CheckpointError;
 
 
+function SentryBlockError(json) {
+    this.name = "SentryBlockError";
+    this.message = "Sentry block from instagram";
+    this.json = json;
+}
+util.inherits(SentryBlockError, APIError);
+exports.SentryBlockError = SentryBlockError;
+
 
 function OnlyRankedItemsError() {
     this.name = "OnlyRankedItemsError";
