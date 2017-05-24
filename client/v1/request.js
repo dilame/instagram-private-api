@@ -317,8 +317,8 @@ Request.prototype.errorMiddleware = function (response) {
         throw new Exceptions.ActionSpamError(json);
     if (json.message == 'checkpoint_required')
         throw new Exceptions.CheckpointError(json, this.session);
-    if (json.message == 'checkpoint_required')
-        throw new Exceptions.CheckpointError(json, this.session);
+    if (json.message == 'login_required')
+        throw new Exceptions.AuthenticationError("Login required to process this request");
     if (json.error_type == 'sentry_block')
         throw new Exceptions.SentryBlockError(json);
     if (response.statusCode===429 || _.isString(json.message) && json.message.toLowerCase().indexOf('too many requests') !== -1)
