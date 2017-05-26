@@ -71,8 +71,13 @@ FeedBase.prototype.isMoreAvailable = function() {
     return !!this.moreAvailable;
 };
 
-FeedBase.prototype.allSafe = function (parameters) {
-    return this.all(parameters).timeout(this.timeout);
+FeedBase.prototype.allSafe = function (parameters, timeout) {
+    var that = this;
+    return this.all(parameters).timeout(timeout || this.timeout)
+        .catch(Promise.TimeoutError, function (reason) {
+            that.stop();
+            throw reason;
+        })
 };
 
 module.exports = FeedBase;
