@@ -41,7 +41,8 @@ FeedBase.prototype.all = function (parameters) {
             that.allResults = that.allResults.concat(results);
             that.emit('data', results);
             var exceedLimit = false;
-            if (that.limit && that.allResults.length > that.limit)
+            console.log(that._stopAll);
+            if ( (that.limit && that.allResults.length > that.limit) || that._stopAll === true)
                 exceedLimit = true;
             if (that.isMoreAvailable() && !exceedLimit) {
                 that.iteration++;
@@ -52,6 +53,11 @@ FeedBase.prototype.all = function (parameters) {
             }
         })
 
+};
+
+// Stops collecting results with .all() method. Will wait unfinished request.
+FeedBase.prototype.stop = function () {
+    this._stopAll = true;
 };
 
 FeedBase.prototype.setCursor = function (cursor) {
