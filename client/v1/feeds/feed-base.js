@@ -39,6 +39,7 @@ FeedBase.prototype.all = function (parameters) {
         })
         .then(function (results) {
             that.allResults = that.allResults.concat(results);
+            results = that._handleInfinityListBug(results);
             that.emit('data', results);
             var exceedLimit = false;
             if ( (that.limit && that.allResults.length > that.limit) || that._stopAll === true)
@@ -52,6 +53,28 @@ FeedBase.prototype.all = function (parameters) {
             }
         })
 
+};
+
+/* Instagram backend has a bug. Sometimes it response with next_max_id cursor, but actually there is no next subjects to
+* request. And when we trying to get next data, we got the same as previous. And so on to infinity.
+* to prevent such behaviour, we assume that every element in this.allResults must be unique.
+* And if it is not - we stop collecting.
+* To see this bug try to collect AccountFollowingFeed of id 1571836453 */
+
+FeedBase.prototype._handleInfinityListBug = function(results){
+    var that = this;
+    this.allResultsMap = _.isObject(this.allResultsMap) ? this.allResultsMap : {};
+    results.forEach( function (result) {
+        that.allResultsMap[result.id] = result;
+    });
+
+    if (_.keys(this.allResultsMap).length === this.allResults.length) {
+        return results;
+    } else {
+        this.allResults = _.values(this.allResultsMap);
+        this.stop();
+        return new Array(0);
+    }
 };
 
 // Stops collecting results with .all() method. Will wait unfinished request.
