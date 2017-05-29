@@ -159,7 +159,7 @@ Media.edit = function(session, mediaId, caption, userTags) {
     };
 
     if (userTags) {
-        requestPayload.usertags = userTags;
+        requestPayload.usertags = JSON.stringify(userTags);
     }
 
     return new Request(session)
@@ -179,12 +179,15 @@ Media.edit = function(session, mediaId, caption, userTags) {
         });
 };
 
-Media.configurePhoto = function (session, uploadId, caption, width, height) {
+Media.configurePhoto = function (session, uploadId, caption, width, height, userTags) {
     if(_.isEmpty(uploadId))
         throw new Error("Upload argument must be upload valid upload id");
     if(!caption) caption = "";
     if(!width) width = 800;
     if(!height) height = 800;
+    if (!userTags) userTags = {};
+    userTags = JSON.stringify(userTags);
+
     const CROP = 1;
     return session.getAccountId()
         .then(function(accountId){
@@ -192,6 +195,7 @@ Media.configurePhoto = function (session, uploadId, caption, width, height) {
                 source_type: "4",
                 caption: caption,
                 upload_id: uploadId,
+                usertags: userTags,
                 _uid: accountId.toString(),
                 device: session.device.payload,
                 edits: {
