@@ -186,7 +186,6 @@ Media.configurePhoto = function (session, uploadId, caption, width, height, user
     if(!width) width = 800;
     if(!height) height = 800;
     if (!userTags) userTags = {};
-    userTags = JSON.stringify(userTags);
 
     const CROP = 1;
     return session.getAccountId()
@@ -195,7 +194,7 @@ Media.configurePhoto = function (session, uploadId, caption, width, height, user
                 source_type: "4",
                 caption: caption,
                 upload_id: uploadId,
-                usertags: userTags,
+                usertags: JSON.stringify(userTags),
                 _uid: accountId.toString(),
                 device: session.device.payload,
                 edits: {
