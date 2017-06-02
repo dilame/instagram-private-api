@@ -116,9 +116,14 @@ Media.getByUrl = function(session, url){
         url: 'https://api.instagram.com/oembed/',
         qs:{url:url},
         json:true
-    }).then(function (response) {
-        return self.getById(session, response.media_id)
     })
+        .then(function (response) {
+            return self.getById(session, response.media_id)
+        })
+        .catch(function (reason) {
+            if(reason.error === 'No URL Match')throw new Exceptions.NotFoundError('No URL Match');
+            else throw reason;
+        })
 };
 
 Media.likers = function(session, mediaId) {
