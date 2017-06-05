@@ -86,6 +86,13 @@ Media.prototype.parseParams = function (json) {
     // backward compability
     this.comments = this.previewComments;
     this.account = new Account(that.session, json.user);
+    if (json.media_type === 2) {
+      hash.video = {
+        versions: json.video_versions,
+        has_audio: json.has_audio,
+        duration: json.video_duration
+      };
+    }
     return hash;
 };
 
