@@ -174,8 +174,12 @@ PhoneVerificationChallenge.prototype.code = function(code) {
 
 var EmailVerificationChallenge = function(session, type, checkpointError, body) {
     Challenge.apply(this, arguments);
-    var verifyByEmailValue = body.match(EMAIL_FIELD_REGEXP);
-    this.verifyByValue = verifyByEmailValue ? _.last(verifyByEmailValue[0].split("value")).slice(2, -1) : "Verify by Email";
+    if(body.indexOf('SelectVerificationMethodForm_0')>-1){
+        this.choice = '1';
+    }else{
+        var verifyByEmailValue = body.match(EMAIL_FIELD_REGEXP);
+        this.verifyByValue = verifyByEmailValue ? _.last(verifyByEmailValue[0].split("value")).slice(2, -1) : "Verify by Email";
+    }
 }
 
 util.inherits(EmailVerificationChallenge, Challenge);
@@ -200,6 +204,11 @@ EmailVerificationChallenge.prototype.reset = function() {
 EmailVerificationChallenge.prototype.email = function() {
     var that = this;
     that.error.url = that.error.url.replace('i.instagram.com','www.instagram.com')
+    var data = {
+        csrfmiddlewaretoken: that.session.CSRFToken
+    }
+    if(that.verifyByValue) data.email = that.verifyByValue;
+    if(that.choice) data.choice = that.choice;
     return new WebRequest(that.session)
         .setMethod('POST')
         .setUrl(that.error.url)
@@ -210,14 +219,12 @@ EmailVerificationChallenge.prototype.email = function() {
         })
         .setBodyType('form')
         .removeHeader('x-csrftoken') // we actually sending this as post param
-        .setData({
-            email: that.verifyByValue,
-            csrfmiddlewaretoken: that.session.CSRFToken
-        })
+        .setData(data)
         .send({followRedirect: false, qs: {next: 'instagram://checkpoint/dismiss'}})
         .then(function(response) {
             if(response.statusCode !== 200)
                 throw new Exceptions.NotPossibleToResolveChallenge();
+            that.codeName = response.body.indexOf('security_code')>-1 ? 'security_code' : 'response_code';
             return that;
         })
 };
@@ -228,6 +235,10 @@ EmailVerificationChallenge.prototype.code = function(code){
     if(!isNumeric(code))
         throw new Error("Code input should be 6-digits number");
     that.error.url = that.error.url.replace('i.instagram.com','www.instagram.com')
+    var data = {
+        csrfmiddlewaretoken: that.session.CSRFToken
+    };
+    data[that.codeName] = code;
     return new WebRequest(this.session)
         .setMethod('POST')
         .setUrl(that.error.url)
@@ -238,15 +249,12 @@ EmailVerificationChallenge.prototype.code = function(code){
         })
         .setBodyType('form')
         .removeHeader('x-csrftoken') // we actually sending this as post param
-        .setData({
-            response_code: code,
-            csrfmiddlewaretoken: that.session.CSRFToken
-        })
+        .setData(data)
         .send({followRedirect: false, qs: {next: 'instagram://checkpoint/dismiss'}})
         .then(function(response){
             if(response.statusCode != 200)
                 throw new Exceptions.NotPossibleToResolveChallenge('Invalid status code: '+response.statusCode);
-            if(response.body.indexOf('has been verified') > -1){
+            if(response.body.indexOf('has been verified') > -1 || response.body.indexOf('instagram://checkpoint/dismiss')>-1){
                 return that;
             }else if(response.body.indexOf('check the code') > -1){
                 throw new Exceptions.NotPossibleToResolveChallenge(
@@ -263,7 +271,7 @@ EmailVerificationChallenge.prototype.code = function(code){
 };
 
 
-EmailVerificationChallenge.prototype.confirmate = function(code) {
+EmailVerificationChallenge.prototype.confirmate = function(code){
     var that = this;
     that.error.url = that.error.url.replace('i.instagram.com','www.instagram.com')
     return new WebRequest(this.session)
@@ -412,19 +420,20 @@ Challenge.resolve = function(checkpointError) {
         //Challenge is not required
         if(response.statusCode == 200 && response.body.indexOf('instagram://checkpoint/dismiss') !== -1)
             throw new Exceptions.NoChallengeRequired;
+        var lcBody = response.body.toLowerCase();
         // This is obvious, email field is present it is email challenge
-        if(response.body.indexOf('email') !== -1 && response.body.match(EMAIL_FIELD_REGEXP))
+        if(lcBody.indexOf('email') !== -1 || lcBody.match(EMAIL_FIELD_REGEXP))
             return new EmailVerificationChallenge(session, 'email', checkpointError, response.body);
         // On the otherhand this is not. We can be stuck in challenge
         // so we need to detect if instagram require code he `texted` us
         // or sms field on first step will be present
-        if(response.body.indexOf('id_phone_number') !== -1 || response.body.indexOf('sms') !== -1 || response.body.match(PHONE_FIELD_REGEXP))
+        if(lcBody.indexOf('id_phone_number') !== -1 || lcBody.indexOf('sms') !== -1 || lcBody.match(PHONE_FIELD_REGEXP))
             return new PhoneVerificationChallenge(session, 'phone', checkpointError, response.body);
         //Thx to @generictitle for ButtonVerificationChallenge
-        if(response.body.indexOf('It Was Me') !== -1)
+        if(lcBody.indexOf('it was me') !== -1)
             return new ButtonVerificationChallenge(session, 'button', checkpointError, response.body);
         //Looks like unfinished challenge, let's reset it
-        if(response.body.indexOf('security_code') !== -1){
+        if(lcBody.indexOf('security_code') !== -1){
             //Resetting challenge.
             var resetLink = RESET_FIELD_REGEXP.exec(response.body)[1];
             return new WebRequest(session)
@@ -457,7 +466,7 @@ Challenge.resolve = function(checkpointError) {
         .catch(errors.StatusCodeError, function(error) {
             if(error.statusCode == 302)
                 throw new Exceptions.NoChallengeRequired;
-            throw error;    
+            throw error;
         })
 }
 
