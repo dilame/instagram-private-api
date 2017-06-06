@@ -1,9 +1,15 @@
 var util = require("util");
 var _ = require("underscore");
 var Resource = require('./resource');
+var Helpers = require('../../helpers');
 
 function Relationship(session, params) {
-      Resource.apply(this, arguments);
+    this.cursor = {};
+    this.moreAvailable = {
+        follower: false,
+        following: false
+    };
+    Resource.apply(this, arguments);
 }
 
 util.inherits(Relationship, Resource);
@@ -12,6 +18,17 @@ var Request = require('./request');
 var Account = require('./account');
 var Exceptions = require('./exceptions');
 
+Relationship.prototype.setCursor = function (maxId, type) {
+    this.cursor[type] = maxId;
+};
+
+Relationship.prototype.getCursor = function (type) {
+    return this.cursor[type];
+};
+
+Relationship.prototype.isMoreAvailable = function(type) {
+    return !!this.moreAvailable[type];
+};
 
 Relationship.prototype.parseParams = function(json) {
     var hash = {};
@@ -156,4 +173,60 @@ Relationship.unblock = function (session, accountId) {
 
 Relationship.prototype.unblock = function () {
     return Relationship.unblock(this.session, this.accountId)
+};
+
+Relationship.prototype.getFollowers = function (session, accountId) {
+    var that = this;
+    var params = {
+        id: accountId
+    };
+    if (this.moreAvailable.follower) {
+        params.rankToken = null;
+        params.maxId = this.cursor['follower'];
+    } else {
+        params.rankToken = Helpers.buildRankToken(accountId);
+        params.maxId = null;
+    }
+
+    return new Request(session)
+        .setMethod('GET')
+        .setResource('userFollowers', params)
+        .send()
+        .then(function(json) {
+            that.moreAvailable.follower = !!json.next_max_id;
+            if (that.moreAvailable.follower) {
+                that.setCursor(json.next_max_id, 'follower');
+            }
+            return _.map(json.users, function (account) {
+                return new Account(session, account);
+            });
+        })
+};
+
+Relationship.prototype.getFollowings = function (session, accountId) {
+    var that = this;
+    var params = {
+        id: accountId
+    };
+    if (this.moreAvailable.following) {
+        params.rankToken = null;
+        params.maxId = this.cursor['following'];
+    } else {
+        params.rankToken = Helpers.buildRankToken(accountId);
+        params.maxId = null;
+    }
+
+    return new Request(session)
+        .setMethod('GET')
+        .setResource('userFollowings', params)
+        .send()
+        .then(function(json) {
+            that.moreAvailable.following = !!json.next_max_id;
+            if (that.moreAvailable.following) {
+                that.setCursor(json.next_max_id, 'following');
+            }
+            return _.map(json.users, function (account) {
+                return new Account(session, account);
+            });
+        })
 };
