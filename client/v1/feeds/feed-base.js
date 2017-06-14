@@ -18,7 +18,7 @@ util.inherits(FeedBase, EventEmitter);
 FeedBase.prototype.all = function (parameters) {
     var that = this;
     parameters = _.isObject(parameters) ? parameters : {};
-    _.defaults(parameters, { delay: 1500 , every: 200, pause: 30000, maxErrors : 9 });
+    _.defaults(parameters, { delay: 1500 , every: 200, pause: 30000, maxErrors : 9, limit: this.limit });
     // every N requests we take a pause
     var delay = this.iteration == 0 ? 0 : this.iteration%parameters.every != 0 ? parameters.delay : parameters.pause;
     return Promise.delay(delay)
@@ -42,8 +42,10 @@ FeedBase.prototype.all = function (parameters) {
             results = that._handleInfinityListBug(results);
             that.emit('data', results);
             var exceedLimit = false;
-            if ( (that.limit && that.allResults.length > that.limit) || that._stopAll === true)
+            
+            if ( (parameters.limit && that.allResults.length > parameters.limit) || that._stopAll === true)
                 exceedLimit = true;
+
             if (that.isMoreAvailable() && !exceedLimit) {
                 that.iteration++;
                 return that.all(parameters);
