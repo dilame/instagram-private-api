@@ -43,3 +43,31 @@ Hashtag.search = function (session, query) {
             });
         });
 };
+
+Hashtag.related = function(session, tag){
+    return new Request(session)
+        .setMethod('GET')
+        .setResource('hashtagsRelated', {
+            tag: tag,
+            visited: `[{"id":"${tag}","type":"hashtag"}]`,
+            related_types: '["hashtag"]'
+        })
+       .send()
+       .then(function(data) {
+            return _.map(data.related, function (hashtag) {
+                return new Hashtag(session, hashtag);
+            });
+        });
+}
+
+Hashtag.info = function(session, tag){
+    return new Request(session)
+        .setMethod('GET')
+        .setResource('hashtagsInfo', {
+            tag: tag
+        })
+       .send()
+       .then(function(hashtag) {
+          return new Hashtag(session, hashtag);
+       });
+}
