@@ -374,3 +374,11 @@ function TranscodeTimeoutError() {
 }
 util.inherits(TranscodeTimeoutError, APIError);
 exports.TranscodeTimeoutError = TranscodeTimeoutError;
+
+
+function MediaUnavailableError() {
+    this.name = "MediaUnavailableError";
+    this.message = "Media is unavailable";
+}
+util.inherits(MediaUnavailableError, APIError);
+exports.MediaUnavailableError = MediaUnavailableError;
