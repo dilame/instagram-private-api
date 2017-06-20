@@ -1,6 +1,7 @@
 var _ = require('underscore');
 var util = require('util');
 var FeedBase = require('./feed-base');
+var Exceptions = require('../exceptions');
 
 function MediaCommentsFeed(session, mediaId, limit) {
     this.mediaId = mediaId;
@@ -33,5 +34,9 @@ MediaCommentsFeed.prototype.get = function () {
                 comment.media_id = that.mediaId;
                 return new Comment(that.session, comment);
             });
+        })
+        .catch(function (reason) {
+            if(reason.json.message === 'Media is unavailable')throw new Exceptions.MediaUnavailableError();
+            else throw reason;
         })
 };
