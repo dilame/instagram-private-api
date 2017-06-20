@@ -9,6 +9,11 @@ Instagram Private NODE.JS API
 
 ----
 
+Carefully consider using this library. Im no longer maintaining repository.
+Community is taking care of development and new features. Thanks to: @IvanMMM @SergeyMihrjakov @dilame @sebyddd @hieven
+
+----
+
 **Installation**
 
 
