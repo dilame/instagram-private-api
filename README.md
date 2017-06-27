@@ -97,7 +97,7 @@ the `WebRequest` class. `WebRequest` is a child of `Request`;
 Here is an example (how likes are actually implemented):
 
 ```javascript
-return new Request(session)
+return new Client.Request(session)
 	.setMethod('POST')
 	.setResource('like', {id: mediaId})
 	.generateUUID()
@@ -108,9 +108,10 @@ return new Request(session)
 	.signPayload()
 	.send()
 	.then(function(data) {
-		return new Like(session, {});
+		return new Client.Like(session, {});
 	})
 ```
+> If you don't know how to find the media ID of an image, you might find this [link](https://stackoverflow.com/questions/16758316/where-do-i-find-the-instagram-media-id-of-a-image) helpful. There is an NPM [package](https://www.npmjs.com/package/instagram-id-to-url-segment) that convert the image url fragment to the media ID for you.  
 **Let me make this clearer and explain it a little bit more in detail:**
 
 The `Request` constructor accepts, as its first and only argument a class
