@@ -47,6 +47,7 @@ const ROUTES = {
     mediaConfigure: 'media/configure/',
     mediaConfigureStory: 'media/configure_to_reel/',
     videoConfigure: 'media/configure/?video=1',
+    mediaConfigureSidecar: 'media/configure_sidecar/',
     mediaInfo: 'media/<%= mediaId %>/info/',
     mediaLikes: 'media/<%= mediaId %>/likers/',
     mediaComments: 'media/<%= mediaId %>/comments/<%= maxId ? ("?max_id=" + maxId) : "" %>',

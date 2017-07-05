@@ -330,3 +330,106 @@ Media.configureVideo = function (session, uploadId, caption, durationms, delay) 
                 })
     })
 };
+
+Media.configurePhotoAlbum = function (session, uploadId, caption, width, height, userTags) {
+    if(_.isEmpty(uploadId))
+        throw new Error("Upload argument must be upload valid upload id");
+    if(!caption) caption = "";
+    if(!width) width = 800;
+    if(!height) height = 800;
+    if (!userTags) userTags = {};
+
+    const CROP = 1;
+
+    var payload = {
+        source_type: "4",
+        caption: caption,
+        upload_id: uploadId,
+        media_folder: 'Instagram',
+        device: session.device.payload,
+        edits: {
+            crop_original_size:[width.toFixed(1),height.toFixed(1)],
+            crop_center: [(0).toFixed(1), "-" + (0).toFixed(1)],
+            crop_zoom: CROP.toFixed(1)
+        },
+        extra: {
+            source_width: width,
+            source_height: height
+        }
+    };
+    return Promise.resolve(payload);
+};
+
+Media.configureVideoAlbum = function (session, uploadId, caption, durationms, delay, width, height) {
+    if(_.isEmpty(uploadId))
+        throw new Error("Upload argument must be upload valid upload id");
+    if(typeof(durationms)==='undefined')
+        throw new Error("Durationms argument must be upload valid video duration");
+    var duration = durationms/1000;
+    if(!caption) caption = "";
+    if(!delay || typeof delay != "number") delay = 6500;
+    return Promise.delay(delay)
+        .then(function(){
+            var payload = {
+                filter_type: "0",
+                source_type: "3",
+                video_result: "deprecated",
+                caption: caption,
+                upload_id: uploadId,
+                device: session.device.payload,
+                length: duration,
+                clips: [
+                    {
+                        length: duration,
+                        source_type: "3",
+                        camera_position: "back"
+                    }
+                ],
+                audio_muted: false,
+                poster_frame_index: 0,
+                extra: {
+                    source_width: width,
+                    source_height: height
+                }
+            };
+
+            return Promise.resolve(payload);
+        })
+};
+
+Media.configureAlbum = function (session, medias, caption, disableComments) {
+    var albumUploadId = new Date().getTime();
+
+    caption = caption || '';
+    disableComments = disableComments || false;
+
+    Promise.mapSeries(medias, function (media) {
+        if(media.type === 'photo') {
+            return Media.configurePhotoAlbum(session, media.uploadId, caption, media.size[0], media.size[1], media.usertags)
+        } else if (media.type === 'video') {
+            return Media.configureVideoAlbum(session, media.uploadId, caption, media.durationms, media.delay, media.size[0], media.size[1]);
+        } else {
+            throw new Error('Invalid media type: ' + media.type);
+        }
+    })
+        .then(function (results) {
+            var params = {
+                caption: caption,
+                client_sidecar_id: albumUploadId,
+                children_metadata: results
+            };
+
+            if(disableComments) {
+                params['disable_comments'] = '1';
+            }
+
+            return new Request(session)
+                .setMethod('POST')
+                .setResource('mediaConfigureSidecar')
+                .setBodyType('form')
+                .setData(params)
+                .generateUUID()
+                .signPayload()
+                .send()
+        })
+};

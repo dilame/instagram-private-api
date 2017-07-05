@@ -426,6 +426,32 @@ Upload.video(session, './path/to/your/video.mp4','./path/to/your/coverImg.jpg')
 	})
 ```
 
+Album upload:
+```javascript
+var medias = [
+	{
+        type: 'photo',
+        size: [400, 400],
+        data: './path/to/photo/photo.jpg'
+    }, 
+    {
+        type: 'video',
+        size: [720, 720],
+        thumbnail: './path/to/video/thumbnail/thumbnail.jpg',
+        data: './path/to/video/video.mp4'
+    } // ... up to 10 media files (photo/video)
+], disabledComments = true;
+
+Client.Upload.album(session, medias)
+    .then(function (payload) {
+        Client.Media.configureAlbum(session, payload, 'akward caption', disabledComments)
+    })
+    .then(function () {
+        // we configure album
+    })    
+```
+
+
 ---
 
 **Feeds**
