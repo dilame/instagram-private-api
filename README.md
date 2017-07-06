@@ -568,8 +568,7 @@ Instagram is really freaking smart and aggressive about getting you banned for
 any malicious activity, so be careful Icarus and don't spam.
 
 In case you don't have any malicious intentions and you get into a situation
-that requires you to verify via mail or phone, or to pass a captcha (not implemented
-yet, due to missing account for testing) you can use the challenge classes to automate
+that requires you to verify via mail or phone you can use the challenge classes to automate
 this process.
 
 Example first:
@@ -578,33 +577,26 @@ Example first:
 // var device, storage, user, password;
 // you get those from previous examples
 
-function challengeMe(error) {
+function challengeMe(error){
 	return Client.Web.Challenge.resolve(error)
-		.then(function(challenge) {
+		.then(function(challenge){
 			// challenge instanceof Client.Web.Challenge
 			console.log(challenge.type);
-			// can be phone, email, or captcha
-			// let's assume we got email
-			if(!challenge.type !== 'email') return;
-			// Will send request to send email to you
-			// email will be one associated with your account
-			return challenge.email();
+			// can be phone or email
+			// let's assume we got phone
+			if(!challenge.type !== 'phone') return;
+			//Let's check if we need to submit/change our phone number
+			return challenge.phone('+10123456789')
 		})
-		.then(function(challenge) {
+		.then(function(challenge){
 			// Ok we got to the next step, the response code expected by Instagram
 			return challenge.code('123456');
 		})
-		.then(function(challenge) {
-			// Yey Instagram accepted the code
-			// now we confirmed that Instagram is happy, weird :P
-			return challenge.confirmate()
-		})
-		.then(function(challenge) {
+		.then(function(challenge){
 			// And we got the account confirmed!
 			// so let's login again
 			return loginAndFollow(device, storage, user, password);
 		})
-
 }
 
 
