@@ -319,6 +319,8 @@ Request.prototype.errorMiddleware = function (response) {
         throw new Exceptions.CheckpointError(json, this.session);
     if (json.message == 'login_required')
         throw new Exceptions.AuthenticationError("Login required to process this request");
+    if (json.error_type == 'sentry_block')
+        throw new Exceptions.SentryBlockError(json);
     if (response.statusCode===429 || _.isString(json.message) && json.message.toLowerCase().indexOf('too many requests') !== -1)
         throw new Exceptions.RequestsLimitError();
     if (_.isString(json.message) && json.message.toLowerCase().indexOf('not authorized to view user') !== -1) 

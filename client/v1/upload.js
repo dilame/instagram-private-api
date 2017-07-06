@@ -28,7 +28,7 @@ Upload.prototype.parseParams = function (params) {
 };
 
 
-Upload.photo = function (session, streamOrPath, uploadId, name) {
+Upload.photo = function (session, streamOrPath, uploadId, name, isSidecar) {
     var stream = Helpers.pathToStream(streamOrPath);
     // This compresion is just default one
     var compresion = {
@@ -36,16 +36,27 @@ Upload.photo = function (session, streamOrPath, uploadId, name) {
         "lib_version": "1.3.0",
         "quality": "92"
     }
+    var isThumbnail = !!uploadId;
     var predictedUploadId = uploadId || new Date().getTime();
     var filename = (name || "pending_media_")+predictedUploadId+".jpg"
     var request = new Request(session)
+
+    var fields = {
+        image_compression: JSON.stringify(compresion),
+        upload_id: predictedUploadId
+    };
+
+    if(isSidecar) {
+        fields['is_sidecar'] = 1;
+        if(isThumbnail) {
+            fields['media_type'] = 2;
+        }
+    }
+
     return request.setMethod('POST')
         .setResource('uploadPhoto')                    
         .generateUUID()
-        .setData({
-            image_compression: JSON.stringify(compresion),
-            upload_id: predictedUploadId
-        })
+        .setData(fields)
         .transform(function(opts){
             opts.formData.photo = {
                 value: stream,
@@ -62,7 +73,7 @@ Upload.photo = function (session, streamOrPath, uploadId, name) {
         })
 }
 
-Upload.video = function(session,videoBufferOrPath,photoStreamOrPath){
+Upload.video = function(session,videoBufferOrPath,photoStreamOrPath,isSidecar){
     //Probably not the best way to upload video, best to use stream not to store full video in memory, but it's the easiest
     var predictedUploadId = new Date().getTime();
     var request = new Request(session);
@@ -70,18 +81,23 @@ Upload.video = function(session,videoBufferOrPath,photoStreamOrPath){
         .then(function(buffer){
             var duration = _getVideoDurationMs(buffer);
             if(duration > 63000) throw new Error('Video is too long. Maximum: 63. Got: '+duration/1000);
+            var fields = {
+                upload_id: predictedUploadId
+            };
+            if(isSidecar) {
+                fields['is_sidecar'] = 1;
+            } else {
+                fields['media_type'] = 2;
+                fields['upload_media_duration_ms'] = Math.floor(duration);
+                fields['upload_media_height'] = 720;
+                fields['upload_media_width'] = 720;
+            }
             return request
             .setMethod('POST')
             .setBodyType('form')
             .setResource('uploadVideo')
             .generateUUID()
-            .setData({
-                upload_id: predictedUploadId,
-                media_type: 2,
-                upload_media_duration_ms: Math.floor(duration),
-                upload_media_height:720,
-                upload_media_width:720
-            })
+            .setData(fields)
             .send()
             .then(function(json) {
                 return new Upload(session, json);
@@ -100,7 +116,7 @@ Upload.video = function(session,videoBufferOrPath,photoStreamOrPath){
                     range:'bytes '+chunkLength+'-'+(buffer.length-1)+'/'+buffer.length
                 });
                 return Promise.mapSeries(chunks,function(chunk,i){
-                        return _sendChunkedRequest(session,uploadData.params.uploadUrl,uploadData.params.uploadJob,sessionId,chunk.data,chunk.range)
+                        return _sendChunkedRequest(session,uploadData.params.uploadUrl,uploadData.params.uploadJob,sessionId,chunk.data,chunk.range,isSidecar)
                     })
                     .then(function(results){
                         var videoUploadResult = results[results.length-1];
@@ -111,14 +127,62 @@ Upload.video = function(session,videoBufferOrPath,photoStreamOrPath){
                         }
                     })
                     .then(function(uploadData){
-                        return Upload.photo(session,photoStreamOrPath,uploadData.uploadId,"cover_photo_")
+                        return Upload.photo(session,photoStreamOrPath,uploadData.uploadId,"cover_photo_", isSidecar)
                             .then(function(){
                                 return uploadData;
                             })
                     })
             })
     })
-}
+};
+
+Upload.album = function (session, medias, caption, disableComments) {
+    var uploadPromises = [];
+
+    if(medias.length < 2 || medias.length > 10) {
+        throw new Error('Invalid album size');
+    }
+
+    medias.forEach(function (media) {
+        if(['photo', 'video'].indexOf(media.type) === -1) {
+            throw new Error('Invalid media type: ' + media.type);
+        }
+        if(!media.data) {
+            throw new Error('Data not specified.');
+        }
+        if(!media.size) {
+            throw new Error('Size not specified.');
+        }
+        if(media.type === 'video') {
+            if(!media.thumbnail) {
+                throw new Error('Thumbnail not specified.');
+            }
+        }
+        var aspect_ratio = (media.size[0] * 1.0) / (media.size[1] * 1.0);
+        if(aspect_ratio > 1.0 || aspect_ratio < 1.0) {
+            throw new Error('Invalid media aspect ratio.');
+        }
+
+        if(media.type === 'photo') {
+            uploadPromises.push(
+                Upload.photo(session, media.data, undefined, undefined, true)
+                    .then(function (payload) {
+                        return Promise.resolve(Object.assign({}, {uploadId: payload.params.uploadId}, media));
+                    })
+            )
+        }
+        if(media.type === 'video') {
+            uploadPromises.push(
+                Upload.video(session, media.data, media.thumbnail, true)
+                    .then(function (payload) {
+                        return Promise.resolve(Object.assign({}, payload, media));
+                    })
+            )
+        }
+    });
+
+    return Promise.all(uploadPromises);
+};
 
 function _getVideoDurationMs(buffer){
     var start = buffer.indexOf(new Buffer('mvhd')) + 17;
@@ -129,21 +193,25 @@ function _getVideoDurationMs(buffer){
     return movieLength*1000;
 }
 
-function _sendChunkedRequest(session,url,job,sessionId,buffer,range){
+function _sendChunkedRequest(session,url,job,sessionId,buffer,range,isSidecar){
+    var headers = {
+        'job': job,
+        'Host': 'upload.instagram.com',
+        'Session-ID': sessionId,
+        'Content-Type': 'application/octet-stream',
+        'Content-Disposition': 'attachment; filename=\\\"video.mov\\\"',
+        'Content-Length': buffer.length,
+        'Content-Range': range
+    };
+    if(isSidecar) {
+        headers['Cookie'] = 'sessionid=' + sessionId;
+    }
     return new Request(session)
         .setMethod('POST')
         .setBodyType('body')
         .setUrl(url)
         .generateUUID()
-        .setHeaders({
-            'job': job,
-            'Host': 'upload.instagram.com',
-            'Session-ID': sessionId,
-            'Content-Type': 'application/octet-stream',
-            'Content-Disposition': 'attachment; filename=\\\"video.mov\\\"',
-            'Content-Length': buffer.length,
-            'Content-Range': range
-        })
+        .setHeaders(headers)
         .transform(function(opts){
             opts.body = buffer;
             return opts;

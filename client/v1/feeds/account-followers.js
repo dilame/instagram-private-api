@@ -4,8 +4,7 @@ var FeedBase = require('./feed-base');
 
 function AccountFollowersFeed(session, accountId, limit) {
     this.accountId = accountId;
-    this.limit = limit || 7500;
-    // Should be enought for 7500 records
+    this.limit = limit || Infinity;
     this.timeout = 10 * 60 * 1000;
     FeedBase.apply(this, arguments);
 }

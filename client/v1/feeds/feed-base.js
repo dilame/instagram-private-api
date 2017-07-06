@@ -18,7 +18,7 @@ util.inherits(FeedBase, EventEmitter);
 FeedBase.prototype.all = function (parameters) {
     var that = this;
     parameters = _.isObject(parameters) ? parameters : {};
-    _.defaults(parameters, { delay: 1500 , every: 200, pause: 30000, maxErrors : 9 });
+    _.defaults(parameters, { delay: 1500 , every: 200, pause: 30000, maxErrors : 9, limit: this.limit });
     // every N requests we take a pause
     var delay = this.iteration == 0 ? 0 : this.iteration%parameters.every != 0 ? parameters.delay : parameters.pause;
     return Promise.delay(delay)
@@ -39,10 +39,13 @@ FeedBase.prototype.all = function (parameters) {
         })
         .then(function (results) {
             that.allResults = that.allResults.concat(results);
+            results = that._handleInfinityListBug(results);
             that.emit('data', results);
             var exceedLimit = false;
-            if (that.limit && that.allResults.length > that.limit)
+            
+            if ( (parameters.limit && that.allResults.length > parameters.limit) || that._stopAll === true)
                 exceedLimit = true;
+
             if (that.isMoreAvailable() && !exceedLimit) {
                 that.iteration++;
                 return that.all(parameters);
@@ -52,6 +55,33 @@ FeedBase.prototype.all = function (parameters) {
             }
         })
 
+};
+
+/* Instagram backend has a bug. Sometimes it response with next_max_id cursor, but actually there is no next subjects to
+* request. And when we trying to get next data, we got the same as previous. And so on to infinity.
+* to prevent such behaviour, we assume that every element in this.allResults must be unique.
+* And if it is not - we stop collecting.
+* To see this bug try to collect AccountFollowingFeed of id 1571836453 */
+
+FeedBase.prototype._handleInfinityListBug = function(results){
+    var that = this;
+    this.allResultsMap = _.isObject(this.allResultsMap) ? this.allResultsMap : {};
+    results.forEach( function (result) {
+        that.allResultsMap[result.id] = result;
+    });
+
+    if (_.keys(this.allResultsMap).length === this.allResults.length) {
+        return results;
+    } else {
+        this.allResults = _.values(this.allResultsMap);
+        this.stop();
+        return new Array(0);
+    }
+};
+
+// Stops collecting results with .all() method. Will wait unfinished request.
+FeedBase.prototype.stop = function () {
+    this._stopAll = true;
 };
 
 FeedBase.prototype.setCursor = function (cursor) {
@@ -66,8 +96,13 @@ FeedBase.prototype.isMoreAvailable = function() {
     return !!this.moreAvailable;
 };
 
-FeedBase.prototype.allSafe = function (parameters) {
-    return this.all(parameters).timeout(this.timeout);
+FeedBase.prototype.allSafe = function (parameters, timeout) {
+    var that = this;
+    return this.all(parameters).timeout(timeout || this.timeout)
+        .catch(Promise.TimeoutError, function (reason) {
+            that.stop();
+            throw reason;
+        })
 };
 
 module.exports = FeedBase;
