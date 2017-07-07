@@ -55,7 +55,7 @@ InstagramV1.Web = {};
 InstagramV1.Web.Request = require('./v1/web/web-request');
 var challenge = require('./v1/web/challenge');
 InstagramV1.Web.Challenge = challenge.Challenge;
-InstagramV1.Web.CaptchaVerificationChallenge = challenge.CaptchaVerificationChallenge;
+InstagramV1.Web.NotImplementedChallenge = challenge.NotImplementedChallenge;
 InstagramV1.Web.EmailVerificationChallenge = challenge.EmailVerificationChallenge;
 InstagramV1.Web.PhoneVerificationChallenge = challenge.PhoneVerificationChallenge;
 
