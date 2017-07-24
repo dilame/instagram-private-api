@@ -36,7 +36,7 @@ var Challenge = function(session, type, error, json) {
 //Selecting method and sending code is diffenent, depending on native or html style.
 //As soon as we got the code we can confirm it using Native version.
 //Oh, and code confirm is same now for email and phone checkpoints
-Challenge.resolve = function(checkpointError,defaultMethod){
+Challenge.resolve = function(checkpointError,defaultMethod,skipResetStep){
     var that = this;
     if(typeof defaultMethod==='undefined') defaultMethod = 'email';
     if(!(checkpointError instanceof Exceptions.CheckpointError)) throw new Error("`Challenge.resolve` method must get exception (type of `CheckpointError`) as a first argument");
@@ -44,7 +44,10 @@ Challenge.resolve = function(checkpointError,defaultMethod){
     var session = checkpointError.session;
     checkpointError.url=checkpointError.url.replace('instagram.com/challenge/','instagram.com/api/v1/challenge/');
 
-    return that.reset(checkpointError)
+    return new Promise(function(res,rej){
+        if(skipResetStep) return res();
+        return res(that.reset(checkpointError))
+    })
     .then(function() {
         return new WebRequest(session)
             .setMethod('GET')
@@ -61,6 +64,7 @@ Challenge.resolve = function(checkpointError,defaultMethod){
         try{
             var json = JSON.parse(response.body);
         }catch(e){
+            if(response.body.indexOf('url=instagram://checkpoint/dismiss')!=-1) throw new Exceptions.NoChallengeRequired;
             throw new TypeError('Invalid response. JSON expected');
         }
         //Using html unlock if native is not supported
@@ -72,7 +76,7 @@ Challenge.resolve = function(checkpointError,defaultMethod){
         switch(json.step_name){
             case 'select_verify_method':{
                 return new WebRequest(session)
-                    .setMethod('GET')
+                    .setMethod('POST')
                     .setUrl(checkpointError.url)
                     .setHeaders({
                         'User-Agent': iPhoneUserAgent
@@ -82,7 +86,7 @@ Challenge.resolve = function(checkpointError,defaultMethod){
                     })
                     .send({followRedirect: true})
                     .then(function(){
-                        return that.resolve(checkpointError,defaultMethod)
+                        return that.resolve(checkpointError,defaultMethod,true)
                     })
             }
             case 'verify_code':
