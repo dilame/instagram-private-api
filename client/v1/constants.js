@@ -27,6 +27,8 @@ const ROUTES = {
     uploadVideo: 'upload/video/',
     friendshipShow: 'friendships/show/<%= id %>/',
     friendshipShowMany: 'friendships/show_many/',
+    friendshipPending: 'friendships/pending/',
+    friendshipPendingApprove: 'friendships/approve/<%= id %>/',
     userInfo: 'users/<%= id %>/info/',
     userFeed: 'feed/user/<%= id %>/?<%= maxId ? ("max_id=" + maxId + "&") : "" %>rank_token=<%= rankToken %>',
     timelineFeed: 'feed/timeline/?<%= maxId ? ("max_id=" + maxId + "&") : "" %>rank_token=<%= rankToken %>&ranked_content=true',
