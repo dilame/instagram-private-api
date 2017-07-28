@@ -21,6 +21,7 @@ Relationship.prototype.parseParams = function(json) {
     hash.following = json.following;
     hash.blocking = json.blocking;
     hash.isPrivate = json.is_private;
+    hash.username = json.username;
     return hash;
 };
 
@@ -47,6 +48,39 @@ Relationship.get = function (session, accountId) {
             relationship.setAccountId(accountId);
             return relationship;
         })
+};
+
+
+Relationship.pendingFollowers = function (session) {
+    return new Request(session)
+        .setMethod('GET')
+        .setResource('friendshipPending')
+        .generateUUID()
+        .signPayload()
+        .send()
+        .then(function(data) {
+            return _.map(data.users, function(data, key) {
+                var relationship = new Relationship(session, data);    
+                relationship.setAccountId(data.pk);
+                return relationship;
+            })
+        })
+};
+
+
+Relationship.prototype.approvePending = function () {
+    return Relationship.approvePending(this.session, this.accountId)
+};
+Relationship.approvePending = function (session, accountId) {
+    return new Request( session )
+        .setMethod('POST')
+        .setResource('friendshipPendingApprove', { id: accountId })
+        .setData({
+            user_id: accountId
+        })
+        .generateUUID()
+        .signPayload()
+        .send()
 };
 
 
