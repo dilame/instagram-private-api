@@ -190,7 +190,7 @@ Request.prototype.removeHeader = function(name) {
 
 Request.prototype.setUrl = function(url) {
     if(!_.isString(url) || !Helpers.isValidUrl(url))
-        throw new Error("The `url` parametr must be valid url string");
+        throw new Error("The `url` parameter must be valid url string");
     this._url = url;    
     return this;
 };
