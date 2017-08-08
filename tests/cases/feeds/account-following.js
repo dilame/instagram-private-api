@@ -25,7 +25,7 @@ describe("`AccountFollowing` class", function() {
             })
             should(originalCursor).should.not.equal(feed.getCursor())
             feed.moreAvailable.should.be.Boolean();
-            feed.moreAvailable.should.equal(true);
+            feed.moreAvailable.should.equal(false);
             done()
         })
     })

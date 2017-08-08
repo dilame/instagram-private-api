@@ -114,17 +114,6 @@ describe("Sessions", function () {
                 }) 
         })
 
-        it("should be able to resolve challenge", function(done) {
-            // to simulate checkpoint
-            var checkpintError = new Client.Exceptions.CheckpointError({
-                checkpoint_url: 'https://i.instagram.com/challenge/'
-            }, session)
-            var request = new Client.Web.Challenge.resolve(checkpintError)
-                .catch(Client.Exceptions.NoChallengeRequired, function(e) {
-                    done();
-                })
-        });
-
         it("should not be problem to get media likers", function(done) {
             Client.Media.likers(session, '1317759032287303554_25025320')
                 .then(function(likers) {
