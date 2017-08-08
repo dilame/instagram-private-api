@@ -275,7 +275,17 @@ Media.configurePhotoStory = function (session, uploadId, width, height) {
         })
 };
 
-Media.configureVideo = function (session, uploadId, caption, durationms, delay) {
+Media.configureVideo = function (session, uploadId, caption, durationms, delay, {
+  audio_muted = false,
+  trim_type = 0,
+  source_type = 'camera',
+  mas_opt_in = 'NOT_PROMPTED',
+  disable_comments = false,
+  filter_type = 0,
+  poster_frame_index = 0,
+  geotag_enabled = false,
+  camera_position = 'unknown'
+} = {}) {
     if(_.isEmpty(uploadId))
         throw new Error("Upload argument must be upload valid upload id");
     if(typeof(durationms)==='undefined')
@@ -289,28 +299,35 @@ Media.configureVideo = function (session, uploadId, caption, durationms, delay) 
         })
         .then(function(accountId){
             var payload = pruned({
-                "filter_type": "0",
-                "source_type": "3",
-                "video_result": "deprecated",
-                "_uid":accountId.toString(),
-                "caption": caption,
-                "upload_id": uploadId.toString(),
-                "device":{
-                    "manufacturer":session.device.info.manufacturer,
-                    "model":session.device.info.model,
-                    "android_version":session.device._api,
-                    "android_release":session.device._release
-                },
-                "length": duration,
-                "clips": [
-                    {
-                        "length": duration,
-                        "source_type": "3",
-                        "camera_position": "back"
-                    }
-                ],
-                "audio_muted": false,
-                "poster_frame_index": 0
+              "video_result": "deprecated",
+              audio_muted,
+              trim_type,
+              "client_timestamp": String(new Date().getTime()).substr(0,10),
+              "caption": caption,
+              "edits": {
+                "filter_strength": 1
+              },
+              "clips": [
+                {
+                  "length": duration,
+                  "cinema": "unsupported",
+                  "original_length": duration,
+                  source_type,
+                  start_time:0,
+                  trim_type,
+                  "camera_position": "back"
+                }
+              ],
+              "_uid":accountId.toString(),
+              source_type,
+              mas_opt_in,
+              "length": duration,
+              disable_comments,
+              filter_type,
+              poster_frame_index,
+              geotag_enabled,
+              camera_position,
+              "upload_id": uploadId.toString()
             });
 
             return new Request(session)
