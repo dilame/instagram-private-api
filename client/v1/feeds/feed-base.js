@@ -37,9 +37,11 @@ FeedBase.prototype.all = function (parameters) {
                 throw new Exceptions.RequestsLimitError;
             return Promise.resolve([]).delay(parameters.pause * that.parseErrorsMultiplier)
         })
-        .then(function (results) {
+        .then(function (response) {
+            var results = response.map(that.map);
+            console.log(results)
             that.allResults = that.allResults.concat(results);
-            results = that._handleInfinityListBug(results);
+            results = that._handleInfinityListBug(response, results);
             that.emit('data', results);
             var exceedLimit = false;
             
@@ -56,6 +58,17 @@ FeedBase.prototype.all = function (parameters) {
         })
 
 };
+/* This function is designed for response realtime processing when .all method is in progress.
+* This is useful when you are collecting real large amount of data, and you have not so much RAM.
+* The return of this function will be saved in RAM  instead of original response.
+* For example, if you need only ids, you can redefine this method in your feed instance like this
+* const feed = new AccountFollowingFeed();
+* feed.map = follower => follower.id;
+* feed.all();
+* */
+FeedBase.prototype.map = function (item) {
+  return item;
+}
 
 /* Instagram backend has a bug. Sometimes it response with next_max_id cursor, but actually there is no next subjects to
 * request. And when we trying to get next data, we got the same as previous. And so on to infinity.
@@ -63,11 +76,11 @@ FeedBase.prototype.all = function (parameters) {
 * And if it is not - we stop collecting.
 * To see this bug try to collect AccountFollowingFeed of id 1571836453 */
 
-FeedBase.prototype._handleInfinityListBug = function(results){
+FeedBase.prototype._handleInfinityListBug = function(response, results){
     var that = this;
     this.allResultsMap = _.isObject(this.allResultsMap) ? this.allResultsMap : {};
-    results.forEach( function (result) {
-        that.allResultsMap[result.id] = result;
+    response.forEach( function (result, index) {
+        that.allResultsMap[result.id] = results[index];
     });
 
     if (_.keys(this.allResultsMap).length === this.allResults.length) {
