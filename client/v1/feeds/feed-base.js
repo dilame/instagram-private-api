@@ -39,7 +39,6 @@ FeedBase.prototype.all = function (parameters) {
         })
         .then(function (response) {
             var results = response.map(that.map);
-            console.log(results)
             that.allResults = that.allResults.concat(results);
             results = that._handleInfinityListBug(response, results);
             that.emit('data', results);
