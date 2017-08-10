@@ -65,6 +65,7 @@ const ROUTES = {
     threadsApprove: 'direct_v2/threads/<%= threadId %>/approve/',
     threadsHide: 'direct_v2/threads/<%= threadId %>/hide/',
     threadsBrodcastText: 'direct_v2/threads/broadcast/text/',
+    threadsBrodcastLink: 'direct_v2/threads/broadcast/link/',
     threadsBrodcastShare: 'direct_v2/threads/broadcast/media_share/?media_type=photo',
     threadsBrodcastProfile: 'direct_v2/threads/broadcast/profile/',
     threadsBrodcastHashtag: 'direct_v2/threads/broadcast/hashtag/',

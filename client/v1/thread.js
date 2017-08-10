@@ -230,16 +230,27 @@ Thread.getById = function (session, id) {
 
 
 Thread.configureText = function(session, users, text) { 
-    if(!_.isArray(users)) users = [users]; 
+    if(!_.isArray(users)) users = [users];
+    var link_urls = Helpers.extractUrl(text);
+    var endpoint = 'threadsBrodcastText';
+
     var payload = {
-        recipient_users: JSON.stringify([users]),
-        client_context: Helpers.generateUUID(),
-        text: text
-    };
+      recipient_users: JSON.stringify([users]),
+      client_context: Helpers.generateUUID()
+    }
+
+    if(link_urls.length > 0) {
+        payload.link.text = text;
+        payload.link_urls = link_urls;
+        endpoint = 'threadsBrodcastLink';
+    } else {
+        payload.text = text;
+    }
+
     var request = new Request(session)
         .setMethod('POST')
         .generateUUID()
-        .setResource('threadsBrodcastText')
+        .setResource(endpoint)
         .setData(payload)
         .send();
     return threadsWrapper(session, request);  
