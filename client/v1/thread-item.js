@@ -13,6 +13,7 @@ module.exports = ThreadItem;
 var Account = require('./account');
 var Media = require('./media');
 var Location = require('./location');
+var Link = require('./link');
 var Hashtag = require('./hashtag');
 
 
@@ -20,6 +21,12 @@ ThreadItem.prototype.parseParams = function (json) {
     var hash = {};
     hash.id = json.item_id || json.id;
     hash.type = json.item_type;
+
+    if(hash.type == "link"){
+        hash.link = 'link';
+        this.link = new Link(this.session, json.link)
+    }
+
     if (hash.type == "text") {
         hash.text = json.text;
     }
@@ -62,6 +69,8 @@ ThreadItem.prototype.parseParams = function (json) {
 
 ThreadItem.prototype.getParams = function() {
     var params = _.clone(this._params);
+    if(params.type == 'link')
+        params.link = this.link.params;
     if(params.type == 'mediaShare')
         params.mediaShare = this.mediaShare.params;
     if(params.type == 'profile')

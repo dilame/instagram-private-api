@@ -19,6 +19,7 @@ InstagramV1.Media = require('./v1/media');
 InstagramV1.Comment = require('./v1/comment');
 InstagramV1.Hashtag = require('./v1/hashtag');
 InstagramV1.Like = require('./v1/like');
+InstagramV1.Link = require('./v1/link');
 InstagramV1.Location = require('./v1/location');
 InstagramV1.Relationship = require('./v1/relationship');
 InstagramV1.Thread = require('./v1/thread');
