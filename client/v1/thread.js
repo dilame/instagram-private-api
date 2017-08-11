@@ -239,7 +239,7 @@ Thread.configureText = function(session, users, text) {
       client_context: Helpers.generateUUID()
     }
 
-    if(link_urls.length > 0) {
+    if(link_urls) {
         payload.link.text = text;
         payload.link_urls = link_urls;
         endpoint = 'threadsBrodcastLink';
