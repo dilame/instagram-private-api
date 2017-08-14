@@ -9,3 +9,7 @@ function CookieMemoryStorage() {
 
 util.inherits(CookieMemoryStorage, CookieStorage);
 module.exports = CookieMemoryStorage;
+
+CookieMemoryStorage.prototype.destroy = function(){
+
+}
