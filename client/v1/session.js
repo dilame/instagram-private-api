@@ -110,12 +110,17 @@ Session.prototype.getAccount = function () {
 
 
 Session.prototype.destroy = function () {
-    this._cookiesStore.destroy();
+    var that = this;
     return new Request(this)
         .setMethod('POST')
         .setResource('logout')
         .generateUUID()
-        .send();
+        .send()
+        .then(function (response) {
+          that._cookiesStore.destroy();
+          delete that._cookiesStore;
+          return response;
+        })
 };
 
 
