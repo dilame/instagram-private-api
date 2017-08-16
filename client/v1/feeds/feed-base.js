@@ -54,6 +54,7 @@ FeedBase.prototype.all = function (parameters) {
                 return that.all(parameters);
             } else {
                 that.iteration = 0;
+                that.emit('end', that.allResults);
                 return that.allResults;
             }
         })
