@@ -7,6 +7,7 @@ var EventEmitter = require('events').EventEmitter;
 function FeedBase(session) {
     this.session = session;
     this.allResults=[];
+    this.totalCollected = 0;
     this.cursor = null;
     this.moreAvailable = null;
     this.iteration = 0;
@@ -41,12 +42,14 @@ FeedBase.prototype.all = function (parameters) {
             var results = response.map(that.map);
             if(_.isFunction(that.reduce))
                 that.allResults = that.reduce(that.allResults, results);
+            that.totalCollected += response.length;
+
             that._handleInfinityListBug(response, results);
 
             that.emit('data', results);
             var exceedLimit = false;
             
-            if ( (parameters.limit && that.allResults.length > parameters.limit) || that._stopAll === true)
+            if ( (parameters.limit && that.totalCollected > parameters.limit) || that._stopAll === true)
                 exceedLimit = true;
 
             if (that.isMoreAvailable() && !exceedLimit) {
