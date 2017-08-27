@@ -619,6 +619,7 @@ function challengeMe(error){
 			if(!challenge.type !== 'phone') return;
 			//Let's check if we need to submit/change our phone number
 			return challenge.phone('+10123456789')
+				.then(function(){return challenge});
 		})
 		.then(function(challenge){
 			// Ok we got to the next step, the response code expected by Instagram
