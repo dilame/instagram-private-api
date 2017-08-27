@@ -28,8 +28,8 @@ Upload.prototype.parseParams = function (params) {
 };
 
 
-Upload.photo = function (session, streamOrPath, uploadId, name, isSidecar) {
-    var stream = Helpers.pathToStream(streamOrPath);
+Upload.photo = function (session, streamOrPathOrBuffer, uploadId, name, isSidecar) {
+    var data = Buffer.isBuffer(streamOrPathOrBuffer) ? streamOrPathOrBuffer : Helpers.pathToStream(streamOrPathOrBuffer);
     // This compresion is just default one
     var compresion = {
         "lib_name": "jt",
@@ -59,7 +59,7 @@ Upload.photo = function (session, streamOrPath, uploadId, name, isSidecar) {
         .setData(fields)
         .transform(function(opts){
             opts.formData.photo = {
-                value: stream,
+                value: data,
                 options: {
                     filename: filename,
                     contentType: 'image/jpeg'
