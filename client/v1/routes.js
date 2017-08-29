@@ -1,5 +1,5 @@
 var CONSTANTS = require('./constants');
-var _ = require('underscore');
+var _ = require('lodash');
 
 var URLs = {};
 _.each(CONSTANTS.ROUTES, function (val, key) {

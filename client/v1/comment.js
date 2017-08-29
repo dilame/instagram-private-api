@@ -1,8 +1,8 @@
 var Resource = require('./resource');
 var util = require("util");
-var _ = require("underscore");
+var _ = require("lodash");
 var crypto = require('crypto');
-
+var camelKeys = require('camelcase-keys');
 
 function Comment(session, params) {
     Resource.apply(this, arguments);
@@ -17,11 +17,9 @@ var Media = require('./media');
 
 
 Comment.prototype.parseParams = function (json) {
-  var hash = {};
+  var hash = camelKeys(json);
   hash.created = json.created_at;
   hash.status = (json.status || "unknown").toLowerCase();
-  hash.text = json.text;
-  hash.mediaId = json.media_id;
   hash.id = json.pk || json.id;
   this.account = new Account(this.session, json.user);
   return hash;

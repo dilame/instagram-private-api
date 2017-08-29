@@ -1,6 +1,6 @@
 var Resource = require('./resource');
 var util = require("util");
-var _ = require("underscore");
+var _ = require("lodash");
 var crypto = require('crypto');
 var pruned = require('./json-pruned');
 var fs = require('fs');
@@ -20,35 +20,15 @@ var Comment = require('./comment');
 var Account = require('./account');
 var Location = require('./location');
 var Exceptions = require('./exceptions');
+var camelKeys = require('camelcase-keys');
 
 
 Media.prototype.parseParams = function (json) {
-    var hash = {};
+    var hash = camelKeys(json);
     var that = this;
-    hash.code = json.code;
-    hash.id = json.id;
-    hash.likeCount = json.like_count;
-    hash.hasLiked = json.has_liked;
-    hash.hasMoreComments = json.has_more_comments;
-    hash.photoOfYou = json.photo_of_you;
-    hash.originalWidth = json.original_width;
-    hash.commentsDisabled = json.comments_disabled;
     hash.commentCount = hash.commentsDisabled ? 0 : json.comment_count ;
-    hash.originalHeight = json.original_height;
-    hash.mediaType = json.media_type;
-    hash.deviceTimestamp = json.device_timestamp;
-    hash.webLink = "https://www.instagram.com/p/" + json.code + "/"
-    hash.usertags = json.usertags;
+    hash.webLink = "https://www.instagram.com/p/" + json.code + "/";
     hash.carouselMedia = [];
-
-    if(json.video_duration)
-        hash.videoDuration = json.video_duration;
-    if(json.filter_type)
-        hash.filterType = json.filter_type;
-    if(json.has_audio)
-        hash.hasAudio = json.has_audio;
-    if(json.view_count)
-        hash.viewCount = json.view_count;
     if(_.isObject(json.location)) {
         var location = json.location;
         location.location = json.location;
@@ -93,9 +73,9 @@ Media.prototype.parseParams = function (json) {
 Media.prototype.getParams = function () {
     return _.extend(this._params, {
         account: this.account.params,
-        comments: _.pluck(this.comments, 'params'),
+        comments: _.map(this.comments, 'params'),
         location: this.location ? this.location.params : {},
-        carouselMedia:  _.pluck(this._params.carouselMedia, 'params')
+        carouselMedia:  _.map(this._params.carouselMedia, 'params')
     });
 };
 

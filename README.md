@@ -491,7 +491,7 @@ and set new `cursor`.
 `feed.get() : Promise<Media[]>`
 
 ```javascript
-var _ = require('underscore');
+var _ = require('lodash');
 var Promise = require('bluebird');
 
 var accountId = '123456'

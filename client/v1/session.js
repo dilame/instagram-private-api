@@ -1,7 +1,7 @@
 var util = require("util");
 var Resource = require("./resource");
 var fs = require('fs');
-var _ = require('underscore');
+var _ = require('lodash');
 var request = require("request-promise");
 var CookieStorage = require("./cookie-storage");
 var RequestJar = require("./jar");
@@ -50,7 +50,7 @@ Object.defineProperty(Session.prototype, "device", {
 Object.defineProperty(Session.prototype, "CSRFToken", {
     get: function() { 
         var cookies = this.jar.getCookies(CONSTANTS.HOST) 
-        var item = _.findWhere(cookies, { key: "csrftoken" });
+        var item = _.find(cookies, { key: "csrftoken" });
         return item ? item.value : "missing";
     },
     set: function(val) {}

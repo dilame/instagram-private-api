@@ -3,7 +3,7 @@ var Client = require('../client/v1');
 var path = require('path');
 var mkdirp = require('mkdirp');
 var support = require('./support');
-var _ = require('underscore');
+var _ = require('lodash');
 var fs = require('fs');
 var imageDiff = require('image-diff');
 var rp = require("request-promise");
@@ -237,6 +237,9 @@ describe("Sessions", function () {
                 diff.percentage.should.be.below(0.1)
                 done();
             })
+              .catch(function (reason) {
+                done(reason);
+              })
         })
     })
 

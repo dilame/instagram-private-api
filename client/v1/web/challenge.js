@@ -1,4 +1,4 @@
-var _ = require("underscore");
+var _ = require("lodash");
 var errors = require('request-promise/errors');
 var Promise = require('bluebird');
 var util = require('util');

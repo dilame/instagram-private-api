@@ -4,7 +4,7 @@ var path = require("path");
 var touch = require("touch");
 var isStream = require("is-stream");
 var validUrl = require('valid-url');
-var _ = require("underscore");
+var _ = require("lodash");
 
 var emailTester = /^[-!#$%&'*+\/0-9=?A-Z^_a-z{|}~](\.?[-!#$%&'*+\/0-9=?A-Z^_a-z`{|}~])*@[a-zA-Z0-9](-?\.?[a-zA-Z0-9])*\.[a-zA-Z](-?[a-zA-Z0-9])+$/;
 

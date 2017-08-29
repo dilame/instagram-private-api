@@ -1,12 +1,12 @@
 var should = require('should');
-var _ = require('underscore');
+var _ = require('lodash');
 var Client = require('../../client/v1');
 
 function shouldBeThreadItem (item) {
     item.params.should.have.property('id');
     item.params.should.have.property('type');
     item.params.should.have.property('created');
-    item.params.type.should.be.oneOf(['text', 'media', 'mediaShare', 'actionLog', 'profile', 'location', 'hashtag', 'like']);
+    item.params.type.should.be.oneOf(['text', 'media', 'mediaShare', 'actionLog', 'profile', 'location', 'hashtag', 'like', 'link']);
     if (item.params.type == "text") {
         item.params.text.should.be.String();
     }
@@ -27,6 +27,9 @@ function shouldBeThreadItem (item) {
     }
     if (item.params.type == "hashtag") {
         item.hashtag.should.be.instanceOf(Client.Hashtag);
+    }
+    if (item.params.type == "link") {
+        item.params.link.should.be.Object();
     }
 }
 

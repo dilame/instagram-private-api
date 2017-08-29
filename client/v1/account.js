@@ -1,13 +1,9 @@
 var util = require("util");
-var _ = require("underscore");
-var fs = require("fs");
-var path = require("path");
-var crypto = require('crypto');
+var _ = require("lodash");
 var Resource = require('./resource');
 var Request = require('./request');
 var Helpers = require('../../helpers');
-var camelize = require('underscore.string/camelize');
-
+var camelKeys = require('camelcase-keys');
 
 function Account() {
     Resource.apply(this, arguments);
@@ -17,40 +13,11 @@ util.inherits(Account, Resource);
 
 module.exports = Account;
 var Exceptions = require('./exceptions');
-var Session = require('./session');
-var QE = require('./qe');
-var Relationship = require('./relationship');
-var Thread = require('./thread');
-var discover = require('./discover');
 
 Account.prototype.parseParams = function (json) {
-    var hash = {};
-    hash.username = json.username;
+    var hash = camelKeys(json);
     hash.picture = json.profile_pic_url;
-    hash.fullName = json.full_name;
     hash.id = json.pk || json.id || json.instagram_id;
-    hash.isPrivate = json.is_private;
-    hash.hasAnonymousProfilePicture = json.has_anonymous_profile_picture;
-    hash.isBusiness = !!json.is_business;
-    hash.isVerified = !!json.is_verified;
-    if(_.isString(json.profile_pic_id))
-        hash.profilePicId = json.profile_pic_id;
-    if(_.isString(json.byline))
-        hash.byLine = json.byline;
-    if(_.isNumber(json.usertags_count))
-        hash.usertagsCount = json.usertags_count;
-    if(_.isNumber(json.following_count))
-        hash.followingCount = json.following_count;
-    if(_.isNumber(json.follower_count))
-        hash.followerCount = json.follower_count;
-    if(_.isString(json.biography))
-        hash.biography = json.biography;
-    if(_.isNumber(json.media_count))    
-        hash.mediaCount = parseInt(json.media_count);
-    if(_.isString(json.external_url))    
-        hash.externalUrl = json.external_url;
-    if(_.isNumber(json.mutual_followers_count))    
-        hash.mutualFollowersCount = json.mutual_followers_count;
     return hash;
 };
 
@@ -211,13 +178,7 @@ Account.showProfile = function(session) {
         .setResource('currentAccount')
         .send()
         .then(function (json) {
-            var parsed = {};
-            var newJson = Account.prototype.parseParams(json.user);
-            _.extend(newJson, json.user);
-            _.each(newJson, function(val, key) {
-                parsed[camelize(key, true)] = val;
-            })
-            return _.omit(parsed, 'hdProfilePicVersions', 'pk', 'hdProfilePicUrlInfo');
+            return Account.prototype.parseParams(json.user);
         });
 };
 

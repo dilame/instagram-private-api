@@ -3,7 +3,7 @@ var Client = require('../../../client/v1');
 var Promise = require('bluebird');
 var mkdirp = require('mkdirp');
 var inquirer = require('inquirer');
-var _ = require('underscore');
+var _ = require('lodash');
 var fs = require('fs');
 
 var shouldBeThreadItem = require('../thread').shouldBeThreadItem;
@@ -26,7 +26,7 @@ describe("`Inbox` class", function() {
             .then(function(threads) {
                 firstDose = threads;
                 _.each(threads, shouldBeThread);
-                threadBigOne = _.max(threads, function (thread) { return thread.items.length });
+                threadBigOne = _.maxBy(threads, function (thread) { return thread.items.length });
                 feed.isMoreAvailable().should.be.Boolean();
                 if(feed.isMoreAvailable())
                     return feed.get()

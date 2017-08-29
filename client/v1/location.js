@@ -1,6 +1,7 @@
 var util = require("util");
-var _ = require("underscore");
+var _ = require("lodash");
 var Resource = require("./resource");
+var camelKeys = require('camelcase-keys');
 
 
 function Location(session, params) {
@@ -38,9 +39,7 @@ Location.getRankedMedia = function (session, locationId) {
 
 
 Location.prototype.parseParams = function (json) {
-    var hash = {};
-    hash.title = json.title;
-    hash.subtitle = json.subtitle;
+    var hash = camelKeys(json);
     hash.address = json.location.address;
     hash.city = json.location.city;
     hash.state = json.location.state;

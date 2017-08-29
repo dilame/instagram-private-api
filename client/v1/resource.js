@@ -1,7 +1,7 @@
 var EventEmitter = require('events').EventEmitter;
 var util = require("util");
-var _ = require('underscore');
-
+var _ = require('lodash');
+var camelKeys = require('camelcase-keys');
 
 function InstagramResource(session, params) {
     EventEmitter.call(this);

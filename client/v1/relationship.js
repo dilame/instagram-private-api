@@ -1,5 +1,5 @@
 var util = require("util");
-var _ = require("underscore");
+var _ = require("lodash");
 var Resource = require('./resource');
 
 function Relationship(session, params) {
@@ -11,20 +11,6 @@ module.exports = Relationship;
 var Request = require('./request');
 var Account = require('./account');
 var Exceptions = require('./exceptions');
-
-
-Relationship.prototype.parseParams = function(json) {
-    var hash = {};
-    hash.incomingRequest = json.incoming_request;
-    hash.outgoingRequest = json.outgoing_request;
-    hash.followedBy = json.followed_by;
-    hash.following = json.following;
-    hash.blocking = json.blocking;
-    hash.isPrivate = json.is_private;
-    hash.username = json.username;
-    return hash;
-};
-
 
 Relationship.prototype.setAccountId = function(accountId) {
     this.accountId = parseInt(accountId);

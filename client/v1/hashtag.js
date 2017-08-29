@@ -1,6 +1,7 @@
 var util = require("util");
-var _ = require("underscore");
+var _ = require("lodash");
 var Resource = require("./resource");
+var camelKeys = require('camelcase-keys');
 
 
 function Hashtag(session, params) { 
@@ -15,10 +16,8 @@ var Helpers = require('../../helpers');
 
 
 Hashtag.prototype.parseParams = function (json) {
-  var hash = {};
+  var hash = camelKeys(json);
   hash.mediaCount = parseInt(json.media_count);
-  hash.name = json.name;
-  hash.id = json.id;
   if(_.isObject(hash.id))
     hash.id = hash.id.toString();
   return hash;
