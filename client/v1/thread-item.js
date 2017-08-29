@@ -1,7 +1,7 @@
 var util = require("util");
 var _ = require("lodash");
 var Resource = require("./resource");
-
+var camelKeys = require('camelcase-keys');
 
 function ThreadItem(session, params) {
     Resource.apply(this, arguments);
@@ -18,30 +18,30 @@ var Hashtag = require('./hashtag');
 
 
 ThreadItem.prototype.parseParams = function (json) {
-    var hash = {};
+    var hash = camelKeys(json);
     hash.id = json.item_id || json.id;
     hash.type = json.item_type;
 
-    if(hash.type == "link"){
+    if(hash.type === "link"){
         hash.link = 'link';
         this.link = new Link(this.session, json.link)
     }
 
-    if (hash.type == "text") {
+    if (hash.type === "text") {
         hash.text = json.text;
     }
-    if (hash.type == "media") {
+    if (hash.type === "media") {
         hash.media = json.media.image_versions2.candidates;
     }
-    if (hash.type == "media_share") {
+    if (hash.type === "media_share") {
         hash.type = 'mediaShare';
         this.mediaShare = new Media(this.session, json.media_share)
     }
-    if (hash.type == "action_log") {
+    if (hash.type === "action_log") {
         hash.type = 'actionLog';
         hash.actionLog = json.action_log;
     }
-    if (hash.type == "profile") {
+    if (hash.type === "profile") {
         this.profile = new Account(this.session, json.profile);
         hash.profileMediaPreview = _.map(json.preview_medias || [], function (medium) {
             return {
@@ -51,14 +51,14 @@ ThreadItem.prototype.parseParams = function (json) {
         })
     }
     // @Todo media preview just like profile for location and hashtag
-    if (hash.type == "location") {
+    if (hash.type === "location") {
         var location = json.location;
         location.location = json.location;
         location.title = location.name;
         location.subtitle = null;
         this.location = new Location(this.session, location);
     }
-    if (hash.type == "hashtag") {
+    if (hash.type === "hashtag") {
         this.hashtag = new Hashtag(this.session, json.hashtag);
     }
     hash.accountId = json.user_id;

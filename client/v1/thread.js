@@ -2,6 +2,7 @@ var util = require("util");
 var _ = require("lodash");
 var Resource = require("./resource");
 var Promise = require("bluebird");
+var camelKeys = require('camelcase-keys');
 
 
 function Thread(session, params) {
@@ -41,32 +42,30 @@ function threadsWrapper(session, promise) {
 }
 
 
-Thread.prototype.parseParams = function (params) {
-    var hash = {};
+Thread.prototype.parseParams = function (json) {
+    var hash = camelKeys(json);
     var that = this;
-    hash.id = params.thread_id;
-    if (_.isObject(params.image_versions2))
-        hash.images = params.image_versions2.candidates;
-    hash.lastActivityAt = parseInt(params.last_activity_at / 1000) || null;
-    hash.muted = !!params.muted;
-    hash.title = params.thread_title;
-    hash.threadType = params.thread_type;
-    hash.pending = params.pending;
+    hash.id = json.thread_id;
+    if (_.isObject(json.image_versions2))
+        hash.images = json.image_versions2.candidates;
+    hash.lastActivityAt = parseInt(json.last_activity_at / 1000) || null;
+    hash.muted = !!json.muted;
+    hash.title = json.thread_title;
     hash.itemsSeenAt = {};
-    _.each(params.last_seen_at || [], function (val, key) {
+    _.each(json.last_seen_at || [], function (val, key) {
         hash.itemsSeenAt[key] = {
             itemId: val.item_id,
             timestamp: parseInt(parseInt(val.timestamp) / 1000)
         }
     });
-    hash.inviter = new Account(that.session, params.inviter);
-    this.items = _.map(params.items, function (item) {
+    hash.inviter = new Account(that.session, json.inviter);
+    this.items = _.map(json.items, function (item) {
         return new ThreadItem(that.session, item);
     });
-    this.accounts = _.map(params.users, function (user) {
+    this.accounts = _.map(json.users, function (user) {
         return new Account(that.session, user);
     });
-    this.leftUsers = _.map(params.left_users, function (user) {
+    this.leftUsers = _.map(json.left_users, function (user) {
         return new Account(that.session, user);
     });
     return hash;

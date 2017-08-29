@@ -1,11 +1,6 @@
 var CONSTANTS = require('./constants');
 var _ = require('lodash');
-var Helpers = require('../../helpers');
-var Promise = require('bluebird');
 var md5 = require('js-md5');
-var fs = require('fs');
-var clean = require('underscore.string/clean')
-var trim = require('underscore.string/trim')
 
 // Thanks to @mgp25 for such a list
 var devices = require('./devices.json');

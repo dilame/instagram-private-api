@@ -5,7 +5,6 @@ var path = require("path");
 var crypto = require('crypto');
 var Resource = require('./resource');
 var Helpers = require('../../helpers');
-var trim = require('underscore.string/trim');
 var clean = require('underscore.string/clean');
 
 
@@ -189,7 +188,7 @@ AccountPhoneCreator.prototype.create = function() {
         .then(function(code) {
             if(!_.isString(code) && !_.isNumber(code))
                 throw new Exceptions.AccountRegistrationError("Code is invalid");
-            code = clean(trim(code.toString())).replace(/\s+/, '');
+            code = clean(code.toString().trim()).replace(/\s+/, '');
             if(code.toString().length !== 6)
                 throw new Error("Code must be 6 digits number");   
             return [new Request(that.session)
