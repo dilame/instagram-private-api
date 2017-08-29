@@ -1,14 +1,11 @@
 var _ = require('lodash');
+var Request = require('../request');
+var Media = require('../media');
 
 function UserStory(session, userIds) {
     this.session = session;
-    this.userIds = userIds;
+    this.userIds = userIds.map( id => String(id) );
 }
-
-module.exports = UserStory;
-var Request = require('../request');
-var Helpers = require('../../../helpers');
-var Media = require('../media');
 
 UserStory.prototype.get = function () {
     var that = this;
@@ -17,14 +14,15 @@ UserStory.prototype.get = function () {
         .setResource('userStory')
         .generateUUID()
         .setData({
-            user_ids: that.userIds
+            user_ids: this.userIds
         })
         .signPayload()
         .send()
         .then(function(data) {
-            var media = _.map(data.items, function(medium){
-                return new Media(that.session, medium);
+          return _.map(data.items, function (medium) {
+              return new Media(that.session, medium);
             });
-            return media;    
         });
 };
+
+module.exports = UserStory;
