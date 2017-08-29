@@ -237,6 +237,9 @@ describe("Sessions", function () {
                 diff.percentage.should.be.below(0.1)
                 done();
             })
+              .catch(function (reason) {
+                done(reason);
+              })
         })
     })
 
