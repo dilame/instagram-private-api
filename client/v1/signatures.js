@@ -1,4 +1,4 @@
-var _ = require('underscore');
+var _ = require('lodash');
 var Promise = require('bluebird');
 var Exceptions = require('./exceptions');
 var hmac = require('crypto-js/hmac-sha256');

@@ -1,5 +1,5 @@
 var util = require("util");
-var _ = require("underscore");
+var _ = require("lodash");
 var Resource = require("./resource");
 const CONSTANTS = require("./constants");
 
@@ -17,7 +17,7 @@ var Request = require("./request");
 // Lets fake this experiment bullshit
 QE.sync = function (session) {
     var random = parseInt(Math.random() * 100) + 1;   
-    var experiments = _.sample(CONSTANTS.EXPERIMENTS, random);
+    var experiments = _.sampleSize(CONSTANTS.EXPERIMENTS, random);
     return session.getAccountId()
         .then(function(id) {
             return new Request(session)

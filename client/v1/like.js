@@ -1,6 +1,6 @@
 var Resource = require('./resource');
 var util = require("util");
-var _ = require("underscore");
+var _ = require("lodash");
 
 
 function Like(session, params) {

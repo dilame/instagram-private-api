@@ -1,5 +1,5 @@
 var should = require('should');
-var _ = require('underscore');
+var _ = require('lodash');
 var Client = require('../../client/v1');
 
 function shouldBeThreadItem (item) {

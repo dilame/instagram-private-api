@@ -1,4 +1,4 @@
-var _ = require('underscore');
+var _ = require('lodash');
 
 function StoryTray(session) {
     this.session = session;

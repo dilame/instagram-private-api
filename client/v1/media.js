@@ -1,6 +1,6 @@
 var Resource = require('./resource');
 var util = require("util");
-var _ = require("underscore");
+var _ = require("lodash");
 var crypto = require('crypto');
 var pruned = require('./json-pruned');
 var fs = require('fs');
@@ -93,9 +93,9 @@ Media.prototype.parseParams = function (json) {
 Media.prototype.getParams = function () {
     return _.extend(this._params, {
         account: this.account.params,
-        comments: _.pluck(this.comments, 'params'),
+        comments: _.map(this.comments, 'params'),
         location: this.location ? this.location.params : {},
-        carouselMedia:  _.pluck(this._params.carouselMedia, 'params')
+        carouselMedia:  _.map(this._params.carouselMedia, 'params')
     });
 };
 

@@ -22,6 +22,7 @@
     "is-stream": "^1.1.0",
     "js-md5": "^0.3.0",
     "json-bigint": "^0.2.0",
+    "lodash": "^4.17.4",
     "node-cache": "^3.0.0",
     "request": "^2.64.0",
     "request-promise": "^1.0.2",
@@ -29,7 +30,6 @@
     "touch": "^1.0.0",
     "tough-cookie": "^2.3.1",
     "tough-cookie-filestore": "0.0.1",
-    "underscore": "^1.8.3",
     "underscore.string": "^3.2.2",
     "valid-url": "^1.0.9"
   },

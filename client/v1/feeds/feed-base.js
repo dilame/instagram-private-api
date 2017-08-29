@@ -1,5 +1,5 @@
 var util = require('util');
-var _ = require('underscore');
+var _ = require('lodash');
 var Promise = require('bluebird');
 var Exceptions = require('../exceptions');
 var EventEmitter = require('events').EventEmitter;

@@ -1,5 +1,5 @@
 var CONSTANTS = require('./constants');
-var _ = require('underscore');
+var _ = require('lodash');
 var Helpers = require('../../helpers');
 var Promise = require('bluebird');
 var md5 = require('js-md5');

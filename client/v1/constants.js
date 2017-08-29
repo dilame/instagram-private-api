@@ -1,4 +1,4 @@
-var _ = require('underscore');
+var _ = require('lodash');
 const EXPERIMENTS = require('./experiments.json')
 
 const ROUTES = {

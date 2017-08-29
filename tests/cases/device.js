@@ -3,7 +3,7 @@ var Client = require('../../client/v1');
 var path = require('path');
 var mkdirp = require('mkdirp');
 var support = require('../support');
-var _ = require('underscore');
+var _ = require('lodash');
 var fs = require('fs');
 
 

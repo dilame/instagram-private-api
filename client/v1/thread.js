@@ -1,5 +1,5 @@
 var util = require("util");
-var _ = require("underscore");
+var _ = require("lodash");
 var Resource = require("./resource");
 var Promise = require("bluebird");
 
@@ -75,8 +75,8 @@ Thread.prototype.parseParams = function (params) {
 
 Thread.prototype.getParams = function () {
     var params = _.clone(this._params);
-    params.accounts = _.pluck(this.accounts, 'params');
-    params.items = _.pluck(this.items, 'params');
+    params.accounts = _.map(this.accounts, 'params');
+    params.items = _.map(this.items, 'params');
     params.inviter = params.inviter.params;
     return params;
 };

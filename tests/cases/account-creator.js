@@ -5,7 +5,7 @@ var path = require('path');
 var mkdirp = require('mkdirp');
 var inquirer = require('inquirer');
 var support = require('../support');
-var _ = require('underscore');
+var _ = require('lodash');
 var fs = require('fs');
 
 

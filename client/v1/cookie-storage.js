@@ -1,7 +1,7 @@
 var util = require("util");
 var Promise = require('bluebird');
 var CONSTANTS = require("./constants");
-var _ = require('underscore');
+var _ = require('lodash');
 
 
 function CookieStorage(cookieStorage) {

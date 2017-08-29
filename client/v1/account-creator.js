@@ -1,11 +1,10 @@
 var util = require("util");
-var _ = require("underscore");
+var _ = require("lodash");
 var fs = require("fs");
 var path = require("path");
 var crypto = require('crypto');
 var Resource = require('./resource');
 var Helpers = require('../../helpers');
-var camelize = require('underscore.string/camelize');
 var trim = require('underscore.string/trim');
 var clean = require('underscore.string/clean');
 
@@ -14,7 +13,7 @@ function AccountCreator(session, type) {
     if(!(session instanceof Session))
         throw new Error("AccounCreator needs valid session as first argument")
     this.session = session;
-    if(!_.contains(['phone', 'email'], type))
+    if(!_.includes(['phone', 'email'], type))
         throw new Error("AccountCreator class needs either phone or email as type")
     this.type = type;
 }

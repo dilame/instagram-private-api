@@ -2,7 +2,7 @@ var util = require("util");
 var FileCookieStore = require('tough-cookie-filestore');
 var path = require('path');
 var fs = require('fs');
-var _ = require('underscore');
+var _ = require('lodash');
 var Helpers = require('../../helpers');
 var CookieStorage = require('./cookie-storage');
 

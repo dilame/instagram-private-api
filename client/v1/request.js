@@ -1,4 +1,4 @@
-var _ = require("underscore");
+var _ = require("lodash");
 var Promise = require("bluebird");
 var request = require('request-promise');
 var JSONbig = require('json-bigint');
@@ -120,7 +120,7 @@ Request.prototype.setOptions = function(options, override) {
 
 Request.prototype.setMethod = function(method) {
     method = method.toUpperCase();
-    if(!_.contains(['POST', 'GET', 'PATCH', 'PUT', 'DELETE'], method))
+    if(!_.includes(['POST', 'GET', 'PATCH', 'PUT', 'DELETE'], method))
         throw new Error("Method `"+ method + "` is not valid method");
     this._request.method = method;
     return this;
@@ -147,7 +147,7 @@ Request.prototype.setData = function(data, override) {
 
 
 Request.prototype.setBodyType = function(type) {
-    if(!_.contains(['form', 'formData', 'json', 'body'], type))
+    if(!_.includes(['form', 'formData', 'json', 'body'], type))
         throw new Error("`bodyType` param must be and form, formData, json or body")
     this._request.bodyType = type;
     return this;
@@ -249,7 +249,7 @@ Request.prototype.setDevice = function(device) {
 
 Request.prototype.signData = function () {
     var that = this;
-    if(!_.contains(['POST', 'PUT', 'PATCH', 'DELETE'], this._request.method))
+    if(!_.includes(['POST', 'PUT', 'PATCH', 'DELETE'], this._request.method))
         throw new Error("Wrong request method for signing data!");
     return signatures.sign(this._request.data)
         .then(function (data) {

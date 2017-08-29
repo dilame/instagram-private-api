@@ -4,7 +4,7 @@ var Promise = require('bluebird');
 var path = require('path');
 var mkdirp = require('mkdirp');
 var inquirer = require('inquirer');
-var _ = require('underscore');
+var _ = require('lodash');
 var fs = require('fs');
 
 describe("`Timeline` class", function() {

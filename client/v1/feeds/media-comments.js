@@ -1,4 +1,4 @@
-var _ = require('underscore');
+var _ = require('lodash');
 var util = require('util');
 var FeedBase = require('./feed-base');
 var Exceptions = require('../exceptions');

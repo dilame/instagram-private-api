@@ -1,6 +1,6 @@
 var EventEmitter = require('events').EventEmitter;
 var util = require("util");
-var _ = require('underscore');
+var _ = require('lodash');
 
 
 function InstagramResource(session, params) {

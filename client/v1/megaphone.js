@@ -1,5 +1,5 @@
 var util = require("util");
-var _ = require("underscore");
+var _ = require("lodash");
 var Resource = require("./resource");
 
 function Megaphone() {

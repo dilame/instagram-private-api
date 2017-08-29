@@ -1,6 +1,6 @@
 var should = require('should');
 var Client = require('../../../client/v1');
-var _ = require('underscore');
+var _ = require('lodash');
 
 var shouldBeThread = require('../thread').shouldBeThread;
 

@@ -1,4 +1,4 @@
-var _ = require('underscore');
+var _ = require('lodash');
 var Request = require('./request');
 var Helpers = require('../../helpers');
 var Account = require('./account');
