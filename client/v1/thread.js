@@ -239,8 +239,8 @@ Thread.configureText = function(session, users, text) {
     }
 
     if(link_urls) {
-        payload.link.text = text;
-        payload.link_urls = link_urls;
+        payload.link_text = text;
+        payload.link_urls = JSON.stringify(link_urls);
         endpoint = 'threadsBrodcastLink';
     } else {
         payload.text = text;
