@@ -344,7 +344,7 @@ exports.InvalidPhone = InvalidPhone;
 
 
 function InvalidPassword() {
-    this.name = 'InvalidPhone';
+    this.name = 'InvalidPassword';
     this.message = "Password must be at least 6 chars long";
 }
 
