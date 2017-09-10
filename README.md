@@ -238,7 +238,7 @@ storage.getAccountId()
 **Session class**
 
 You can create a new instance of Session by calling 
-`var session = new Session(storage:CookieStorage, device:Device)`
+`var session = new Session(device:Device, storage:CookieStorage)`
 
 If you have valid cookies, you don't need to worry about anything else
 if you don't, you need to create a session with storage and device.
