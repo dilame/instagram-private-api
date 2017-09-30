@@ -401,12 +401,12 @@ Another example would be upload:
 
 ```javascript
 // JPEG is the only supported format now, pull request for any other format welcomed!
-Upload.photo(session, './path/to/your/jpeg.jpg')
+Client.Upload.photo(session, './path/to/your/jpeg.jpg')
 	.then(function(upload) {
 		// upload instanceof Client.Upload
 		// nothing more than just keeping upload id
 		console.log(upload.params.uploadId);
-		return Media.configurePhoto(session, upload.params.uploadId, 'akward caption');
+		return Client.Media.configurePhoto(session, upload.params.uploadId, 'akward caption');
 	})
 	.then(function(medium) {
 		// we configure medium, it is now visible with caption
@@ -417,9 +417,9 @@ Upload.photo(session, './path/to/your/jpeg.jpg')
 Video upload:
 ```javascript
 // MP4 is the only supported format now, pull request for any other format welcomed!
-Upload.video(session, './path/to/your/video.mp4','./path/to/your/coverImg.jpg')
+Client.Upload.video(session, './path/to/your/video.mp4','./path/to/your/coverImg.jpg')
 	.then(function(upload) {
-		return Media.configureVideo(session, upload.uploadId, 'akward caption', upload.durationms);
+		return Client.Media.configureVideo(session, upload.uploadId, 'akward caption', upload.durationms);
 	})
 	.then(function(medium) {
 		// we configure medium, it is now visible with caption
