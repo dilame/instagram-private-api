@@ -36,7 +36,10 @@ ThreadItem.prototype.parseParams = function (json) {
         hash.text = json.text;
     }
     if (hash.type === "media") {
-        hash.media = json.media.image_versions2.candidates;
+        var media = {};
+        media.images = json.media.image_versions2.candidates;
+        media.mediaType = json.media.media_type;
+        hash.media = media;
     }
     if (hash.type === "media_share") {
         hash.type = 'mediaShare';
