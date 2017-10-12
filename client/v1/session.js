@@ -6,11 +6,13 @@ var request = require("request-promise");
 var CookieStorage = require("./cookie-storage");
 var RequestJar = require("./jar");
 
-function Session(device, storage, proxy) {
-    this.setDevice(device);    
+function Session(device, storage, proxy, localAddress) {
+    this.setDevice(device);
     this.setCookiesStorage(storage);
     if(_.isString(proxy) && !_.isEmpty(proxy))
         this.proxyUrl = proxy;
+    if(_.isString(localAddress) && !_.isEmpty(localAddress))
+        this.localAddress = localAddress;
 }
 
 util.inherits(Session, Resource);
@@ -48,8 +50,8 @@ Object.defineProperty(Session.prototype, "device", {
 
 
 Object.defineProperty(Session.prototype, "CSRFToken", {
-    get: function() { 
-        var cookies = this.jar.getCookies(CONSTANTS.HOST) 
+    get: function() {
+        var cookies = this.jar.getCookies(CONSTANTS.HOST)
         var item = _.find(cookies, { key: "csrftoken" });
         return item ? item.value : "missing";
     },
@@ -57,7 +59,7 @@ Object.defineProperty(Session.prototype, "CSRFToken", {
 });
 
 Object.defineProperty(Session.prototype, "proxyUrl", {
-    get: function() { 
+    get: function() {
         return this._proxyUrl;
     },
     set: function (val) {
@@ -67,6 +69,14 @@ Object.defineProperty(Session.prototype, "proxyUrl", {
     }
 });
 
+Object.defineProperty(Session.prototype, "localAddress", {
+    get: function() {
+        return this._localAddress;
+    },
+    set: function (val) {
+        this._localAddress = val;
+    }
+});
 
 Session.prototype.setCookiesStorage = function (storage) {
     if(!(storage instanceof CookieStorage))
@@ -96,6 +106,12 @@ Session.prototype.getAccountId = function() {
 
 Session.prototype.setProxy = function(url) {
     this.proxyUrl = url;
+    return this;
+}
+
+
+Session.prototype.setLocalAddress = function(ipAddress) {
+    this.localAddress = ipAddress;
     return this;
 }
 
@@ -177,21 +193,23 @@ Session.login = function(session, username, password) {
             // verification, it is still an valid session unless `sessionid` missing
             return session.getAccountId()
                 .then(function () {
-                    // We got sessionId and accountId, we are good to go 
-                    return session; 
+                    // We got sessionId and accountId, we are good to go
+                    return session;
                 })
                 .catch(Exceptions.CookieNotValidError, function (e) {
                     throw error;
                 })
         })
-        
+
 }
 
-Session.create = function(device, storage, username, password, proxy) {
+Session.create = function(device, storage, username, password, proxy, localAddress) {
     var that = this;
     var session = new Session(device, storage);
     if(_.isString(proxy) && !_.isEmpty(proxy))
         session.proxyUrl = proxy;
+    if(_.isString(localAddress) && !_.isEmpty(localAddress))
+        session.localAddress = localAddress;
     return session.getAccountId()
         .then(function () {
             return session;
