@@ -31,6 +31,7 @@ Media.prototype.parseParams = function (json) {
     hash.carouselMedia = [];
     if(_.isObject(json.location)) {
         var location = json.location;
+        location.location = Object.create(json.location);
         location.title = location.name;
         location.subtitle = null;
         this.location = new Location(that.session, location);
