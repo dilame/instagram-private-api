@@ -58,7 +58,7 @@ ThreadItem.prototype.parseParams = function (json) {
     // @Todo media preview just like profile for location and hashtag
     if (hash.type === "location") {
         var location = json.location;
-        location.location = json.location;
+        location.location = Object.create(json.location);
         location.title = location.name;
         location.subtitle = null;
         this.location = new Location(this.session, location);
