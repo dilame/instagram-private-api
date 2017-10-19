@@ -157,8 +157,8 @@ Upload.album = function (session, medias, caption, disableComments) {
                 throw new Error('Thumbnail not specified.');
             }
         }
-        var aspect_ratio = (media.size[0] * 1.0) / (media.size[1] * 1.0);
-        if(aspect_ratio > 1.0 || aspect_ratio < 1.0) {
+        var aspect_ratio = (media.size[0] / media.size[1]).toFixed(2);
+        if(aspect_ratio < 0.8 || aspect_ratio > 1.91) {
             throw new Error('Invalid media aspect ratio.');
         }
 
