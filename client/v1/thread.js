@@ -255,6 +255,24 @@ Thread.configureText = function(session, users, text) {
     return threadsWrapper(session, request);  
 };
 
+Thread.configurePhoto = function (session, users, upload_id) {    
+        if (!_.isArray(users)) users = [users];
+    
+        var payload = {
+            recipient_users: JSON.stringify([users]),
+            client_context: Helpers.generateUUID(),
+            upload_id: upload_id
+        };
+    
+        var request = new Request(session)
+        return request.setMethod('POST')
+            .setResource('threadsBrodcastPhoto')
+            .generateUUID()
+            .setData(payload)
+            .send();
+    
+        return threadsWrapper(session, request);
+    };
 
 Thread.configureMediaShare = function(session, users, mediaId, text) {  
     if(!_.isArray(users)) users = [users];
