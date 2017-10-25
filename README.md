@@ -611,15 +611,15 @@ Example first:
 // you get those from previous examples
 
 function challengeMe(error){
-	return Client.Web.Challenge.resolve(error)
+	return Client.Web.Challenge.resolve(error,'phone')
 		.then(function(challenge){
 			// challenge instanceof Client.Web.Challenge
 			console.log(challenge.type);
 			// can be phone or email
 			// let's assume we got phone
-			if(!challenge.type !== 'phone') return;
+			if(challenge.type !== 'phone') return;
 			//Let's check if we need to submit/change our phone number
-			return challenge.phone('+10123456789')
+			return challenge.phone('79876543210')
 				.then(function(){return challenge});
 		})
 		.then(function(challenge){
