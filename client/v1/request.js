@@ -315,7 +315,7 @@ Request.prototype.errorMiddleware = function (response) {
     var json = response.body;
     if (json.spam)
         throw new Exceptions.ActionSpamError(json);
-    if (json.message == 'checkpoint_required')
+    if (json.message == 'challenge_required')
         throw new Exceptions.CheckpointError(json, this.session);
     if (json.message == 'login_required')
         throw new Exceptions.AuthenticationError("Login required to process this request");
