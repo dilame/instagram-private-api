@@ -186,7 +186,7 @@ any other options you want to apply to request should be passed as the first
 argument to the `.send` method;
 
 `.then` is just promise library. Must be called after `.send`.
-We are using [Bluebird library](bluebirdjs.com/docs/api-reference.html)
+We are using [Bluebird library](http://bluebirdjs.com/docs/api-reference.html)
 which is a really nice way to work with promises.
 
 The `Request` and `Webrequest` classes are built on top of the Request.js library.
