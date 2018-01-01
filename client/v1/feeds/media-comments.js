@@ -15,6 +15,14 @@ var Request = require('../request');
 var Comment = require('../comment');
 
 
+MediaCommentsFeed.prototype.getCursor = function () {
+    if(typeof this.cursor === 'string'){
+      this.cursor = JSON.parse(this.cursor);
+    }
+
+    return this.cursor ? this.cursor.server_cursor : this.cursor;
+};
+
 MediaCommentsFeed.prototype.get = function () {
     var that = this;
     return new Request(that.session)
