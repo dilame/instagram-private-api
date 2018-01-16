@@ -39,6 +39,7 @@ InstagramV1.AccountEmailCreator = creator.AccountEmailCreator;
 InstagramV1.Feed = {};
 InstagramV1.Feed.AccountFollowers = require('./v1/feeds/account-followers');
 InstagramV1.Feed.AccountFollowing = require('./v1/feeds/account-following');
+InstagramV1.Feed.InboxMedia = require('./v1/feeds/inbox-media');
 InstagramV1.Feed.Inbox = require('./v1/feeds/inbox');
 InstagramV1.Feed.InboxPending = require('./v1/feeds/inbox-pending');
 InstagramV1.Feed.LocationMedia = require('./v1/feeds/location-media');

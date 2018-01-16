@@ -57,6 +57,7 @@ const ROUTES = {
     mediaEdit: 'media/<%= mediaId %>/edit_media/',
     qeSync: 'qe/sync/',
     discoverAyml: 'discover/ayml/',
+    inboxMedia: 'direct_v2/visual_inbox/<%= cursor ? ("?cursor=" + cursor) : "" %>',
     inbox: 'direct_v2/inbox/<%= cursor ? ("?cursor=" + cursor) : "" %>',
     inboxPending: 'direct_v2/pending_inbox/<%= maxId ? ("?max_id=" + maxId) : "" %>',
     threads: 'direct_v2/threads/?user_ids=<% JSON.stringify(threads) %>',
