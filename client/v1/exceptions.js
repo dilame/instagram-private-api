@@ -124,6 +124,8 @@ function CheckpointError(json, session) {
         this.url = json.checkpoint_url;
     if(!this.url && _.isObject(json.checkpoint) && _.isString(json.checkpoint.url))
         this.url = json.checkpoint.url;
+    if(!this.url && _.isObject(json.challenge) && _.isString(json.challenge.url))
+        this.url = json.challenge.url;
     if(!this.url)
         this.url = routes.getWebUrl('challenge')
     this.session = session;
