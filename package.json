@@ -14,7 +14,9 @@
   },
   "homepage": "https://github.com/huttarichard/instagram-private-api",
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha --inline-diffs --timeout 1000000 tests/run.js"
+    "precommit": "pretty-quick --staged",
+    "test":
+      "./node_modules/mocha/bin/mocha --inline-diffs --timeout 1000000 tests/run.js"
   },
   "dependencies": {
     "bluebird": "^3.0.5",
@@ -37,11 +39,14 @@
   "devDependencies": {
     "faker": "^3.1.0",
     "gm": "^1.23.0",
+    "husky": "^0.14.3",
     "image-diff": "^1.6.3",
     "inquirer": "^1.1.2",
     "mkdirp": "^0.5.1",
     "mocha": "^2.4.5",
     "node-resemble-js": "0.0.5",
+    "prettier": "1.11.1",
+    "pretty-quick": "^1.4.1",
     "should": "^8.3.1",
     "should-sinon": "0.0.5",
     "sinon": "^1.17.3",
