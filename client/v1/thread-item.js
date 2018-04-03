@@ -36,7 +36,19 @@ ThreadItem.prototype.parseParams = function (json) {
         hash.text = json.text;
     }
     if (hash.type === "media") {
-        hash.media = json.media.image_versions2.candidates;
+        var directMedia = {};
+        directMedia.mediaType = json.media.media_type;
+        directMedia.images = json.media.image_versions2 ? json.media.image_versions2.candidates : null;
+        directMedia.videos = json.media.video_versions;
+        hash.directMedia = directMedia;
+    }
+    if (hash.type === "raven_media") {
+        hash.type = 'ravenMedia';
+        var directStory = {};
+        directStory.mediaType = json.raven_media.media_type;
+        directStory.images = json.raven_media.image_versions2 ? json.raven_media.image_versions2.candidates : null;
+        directStory.videos = json.raven_media.video_versions;
+        hash.directStory = directStory;
     }
     if (hash.type === "media_share") {
         hash.type = 'mediaShare';
