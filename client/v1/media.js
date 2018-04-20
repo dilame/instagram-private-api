@@ -400,7 +400,7 @@ Media.configureAlbum = function (session, medias, caption, disableComments) {
     caption = caption || '';
     disableComments = disableComments || false;
 
-    Promise.mapSeries(medias, function (media) {
+    return Promise.mapSeries(medias, function (media) {
         if(media.type === 'photo') {
             return Media.configurePhotoAlbum(session, media.uploadId, caption, media.size[0], media.size[1], media.usertags)
         } else if (media.type === 'video') {
