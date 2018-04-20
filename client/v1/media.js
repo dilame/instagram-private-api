@@ -30,7 +30,7 @@ Media.prototype.parseParams = function (json) {
     hash.webLink = "https://www.instagram.com/p/" + json.code + "/";
     hash.carouselMedia = [];
     if(_.isObject(json.location)) {
-        var location = json.location;
+        var location = _.clone(json.location);
         location.location = Object.create(json.location);
         location.title = location.name;
         location.subtitle = null;
