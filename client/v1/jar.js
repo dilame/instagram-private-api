@@ -22,7 +22,7 @@ RequestJar.prototype.rewriteUri = function(uri) {
 RequestJar.prototype.setCookie = function(cookieOrStr, uri, options) {
     var self = this;
     uri = this.rewriteUri(uri);
-    // remove domain from cookie strign so domain from uri will be used
+    // remove domain from cookie string so domain from uri will be used
     cookieOrStr = cookieOrStr.replace(/Domain=(.*?); /g, '');
     return self._jar.setCookieSync(cookieOrStr, uri, options || {});
 };
