@@ -64,11 +64,13 @@ Request.setProxy = function (proxyUrl) {
     Request.requestClient = request.defaults(object);
 }
 
-Request.setSocks5Proxy = function (host, port) {
+Request.setSocks5Proxy = function (host, port,username,password) {
     var object = { agentClass: Agent,
     agentOptions: {
         socksHost: host, // Defaults to 'localhost'.
-        socksPort: port // Defaults to 1080.
+        socksPort: port, // Defaults to 1080.
+        socksUsername: username,
+        socksPassword: password
     }};
     Request.requestClient = request.defaults(object);
 }
