@@ -29,7 +29,7 @@
     "request-promise": "^1.0.2",
     "socks5-https-client": "^1.1.3",
     "touch": "^1.0.0",
-    "tough-cookie": "^2.3.1",
+    "tough-cookie": "^2.4.2",
     "tough-cookie-filestore": "0.0.1",
     "underscore.string": "^3.3.4",
     "valid-url": "^1.0.9"
