@@ -2,16 +2,15 @@ var Promise = require('bluebird');
 var _ = require('lodash');
 var inquirer = require('inquirer');
 
-
 var askCredentialsSchema = [{
     type: 'input',
     name: 'username',
-    message: 'Please enter Intagram username',
+    message: 'Please enter Instagram username',
     require: true
 },{
     type: 'password',
     name: 'password',
-    message: 'Please enter Intagram password',
+    message: 'Please enter Instagram password',
     require: true
 },{
     type: 'input',
@@ -26,7 +25,7 @@ exports.credentials = function() {
         process.env['IG_PROXY']
     ]
     if(_.isString(credentials[0]) && _.isString(credentials[1]))
-        return Promise.resolve(credentials);   
+        return Promise.resolve(credentials);
     return new Promise(function (resolve,reject) {
         return inquirer.prompt(askCredentialsSchema)
             .then(function (answers) {
