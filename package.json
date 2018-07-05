@@ -23,28 +23,28 @@
     "is-stream": "^1.1.0",
     "js-md5": "^0.3.0",
     "json-bigint": "^0.2.0",
-    "lodash": "^4.17.4",
+    "lodash": "^4.17.10",
     "node-cache": "^3.0.0",
-    "request": "^2.64.0",
-    "request-promise": "^1.0.2",
+    "request": "^2.87.0",
+    "request-promise": "^4.2.2",
     "socks5-https-client": "^1.1.3",
     "touch": "^1.0.0",
-    "tough-cookie": "^2.3.1",
-    "tough-cookie-filestore": "0.0.1",
+    "tough-cookie": "^2.4.2",
+    "tough-cookie-file-store": "^1.2.0",
     "underscore.string": "^3.3.4",
     "valid-url": "^1.0.9"
   },
   "devDependencies": {
     "faker": "^3.1.0",
-    "gm": "^1.23.0",
-    "image-diff": "^1.6.3",
-    "inquirer": "^1.1.2",
+    "gm": "^1.23.1",
+    "image-diff": "uber-archive/image-diff#8b971b01054eddbfd77bbc48b6db9facf7e1509c",
+    "inquirer": "^6.0.0",
     "mkdirp": "^0.5.1",
-    "mocha": "^2.4.5",
+    "mocha": "^5.2.0",
     "node-resemble-js": "0.0.5",
     "should": "^8.3.1",
     "should-sinon": "0.0.5",
     "sinon": "^1.17.3",
-    "tmp": "0.0.28"
+    "tmp": "0.0.33"
   }
 }
