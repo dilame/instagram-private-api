@@ -104,9 +104,9 @@ describe('Sessions', function () {
                 .setJSONEndpoint()
                 .send()
                 .then(function(result) {
-                    result.user.should.be.Object();
-                    result.user.username.should.be.String();
-                    result.user.username.should.equal('instagram')
+                    result.graphql.user.should.be.Object();
+                    result.graphql.user.username.should.be.String();
+                    result.graphql.user.username.should.equal('instagram')
                     done();
                 });
         });
@@ -189,7 +189,7 @@ describe('Sessions', function () {
                 });
         });
 
-        it('should not be problem to use in memeroy cookies', function(done) {
+        it('should not be problem to use in memory cookies', function(done) {
             var device = new Client.Device(credentials[0]);
             var storage = new Client.CookieMemoryStorage();
             var promise = Client.Session.create(device, storage, credentials[0], credentials[1], credentials[2]);
