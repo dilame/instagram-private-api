@@ -87,7 +87,7 @@ describe("Sessions", function () {
                 .then(function(account) {
                     account.params.username.should.be.equal('instagram');
                     done();
-                }) 
+                })
         })
 
         it("should not be problem to show discover feed", function(done) {
@@ -97,7 +97,7 @@ describe("Sessions", function () {
                     discover[0].account.should.be.instanceOf(Client.Account)
                     discover[0].mediaIds.should.be.Array();
                     done();
-                }) 
+                })
         })
 
         it("should be able to ask for json endpoint trough web-request", function(done) {
@@ -111,13 +111,13 @@ describe("Sessions", function () {
                     result.user.username.should.be.String();
                     result.user.username.should.equal('instagram')
                     done();
-                }) 
+                })
         })
 
         it("should not be problem to get media likers", function(done) {
             Client.Media.likers(session, '1317759032287303554_25025320')
                 .then(function(likers) {
-                    _.each(likers, function(liker){ 
+                    _.each(likers, function(liker){
                         liker.should.be.instanceOf(Client.Account)
                     })
                     done();
@@ -251,5 +251,6 @@ describe("Sessions", function () {
         require('./cases/feeds/timeline');
         require('./cases/feeds/account-following');
         require('./cases/feeds/account-followers');
-    })
-})
+        require('./cases/feeds/user-tags-media');
+    });
+});

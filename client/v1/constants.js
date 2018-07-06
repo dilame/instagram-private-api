@@ -31,6 +31,7 @@ const ROUTES = {
     friendshipPendingApprove: 'friendships/approve/<%= id %>/',
     userInfo: 'users/<%= id %>/info/',
     userFeed: 'feed/user/<%= id %>/?<%= maxId ? ("max_id=" + maxId + "&") : "" %>rank_token=<%= rankToken %>',
+    userTagsFeed: 'usertags/<%= id %>/feed/?<%= maxId ? ("max_id=" + maxId + "&") : "" %>',
     timelineFeed: 'feed/timeline/?<%= maxId ? ("max_id=" + maxId + "&") : "" %>rank_token=<%= rankToken %>&ranked_content=true',
     tagFeed: 'feed/tag/<%= encodeURI(tag) %>/?<%= maxId ? ("max_id=" + maxId + "&") : "" %>rank_token=<%= rankToken %>',
     selfLikedFeed: 'feed/liked/<%= maxId ? ("?max_id=" + maxId) : "" %>',

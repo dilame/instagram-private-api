@@ -47,6 +47,7 @@ InstagramV1.Feed.TagMedia = InstagramV1.Feed.TaggedMedia; // Alias but deprecate
 InstagramV1.Feed.ThreadItems = require('./v1/feeds/thread-items');
 InstagramV1.Feed.Timeline = require('./v1/feeds/timeline-feed');
 InstagramV1.Feed.UserMedia = require('./v1/feeds/user-media');
+InstagramV1.Feed.UserTagsMedia = require('./v1/feeds/user-tags-media');
 InstagramV1.Feed.SelfLiked = require('./v1/feeds/self-liked');
 InstagramV1.Feed.MediaComments = require('./v1/feeds/media-comments');
 InstagramV1.Feed.SavedMedia = require('./v1/feeds/saved-media');
