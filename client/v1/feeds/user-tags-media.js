@@ -26,10 +26,9 @@ UserTagsMediaFeed.prototype.get = function () {
                 })
                 .send()
                 .then(function(data) {
-                    that.moreAvailable = data.more_available;
-                    var lastOne = _.last(data.items);
-                    if (that.moreAvailable && lastOne) {
-                        that.setCursor(lastOne.id);
+                    that.moreAvailable = !!data.next_max_id;
+                    if (that.moreAvailable) {
+                        that.setCursor(data.next_max_id);
                     }
                     return _.map(data.items, function (medium) {
                         return new Media(that.session, medium);
