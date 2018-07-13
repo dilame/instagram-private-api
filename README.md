@@ -66,7 +66,7 @@ You need to obtain a session to access endpoints with the `Session` class:
 ```javascript
 var Client = require('instagram-private-api').V1;
 var device = new Client.Device('someuser');
-var storage = new Client.CookieFileStorage(__dirname + './cookies/someuser.json');
+var storage = new Client.CookieFileStorage(__dirname + '/cookies/someuser.json');
 
 // And go for login
 Client.Session.create(device, storage, 'someuser', 'somepassword')
