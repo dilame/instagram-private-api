@@ -177,3 +177,83 @@ Relationship.unblock = function (session, accountId) {
 Relationship.prototype.unblock = function () {
     return Relationship.unblock(this.session, this.accountId)
 };
+
+Relationship.prototype.muteStory = function () {
+  return Relationship.muteStory(this.session, this.accountId)
+};
+
+Relationship.muteStory = function (session, accountId) {
+  return new Request(session)
+    .setMethod('POST')
+    .setResource('muteStory', {id: accountId})
+    .generateUUID()
+    .setData({target_reel_author_id: accountId})
+    .signPayload()
+    .send()
+    .then(function(data) {
+      var relationship = new Relationship(session, data.friendship_status);
+      relationship.setAccountId(accountId);
+      return relationship;
+    });
+};
+
+Relationship.prototype.muteStory = function () {
+  return Relationship.muteStory(this.session, this.accountId)
+};
+
+Relationship.unmuteStory = function (session, accountId) {
+  return new Request(session)
+    .setMethod('POST')
+    .setResource('unmuteStory', {id: accountId})
+    .generateUUID()
+    .setData({target_reel_author_id: accountId})
+    .signPayload()
+    .send()
+    .then(function(data) {
+      var relationship = new Relationship(session, data.friendship_status);
+      relationship.setAccountId(accountId);
+      return relationship;
+    });
+};
+
+Relationship.prototype.unmuteStory = function () {
+  return Relationship.unmuteStory(this.session, this.accountId)
+};
+
+Relationship.mutePosts = function (session, accountId) {
+  return new Request(session)
+    .setMethod('POST')
+    .setResource('mutePosts', {id: accountId})
+    .generateUUID()
+    .setData({target_posts_author_id: accountId})
+    .signPayload()
+    .send()
+    .then(function(data) {
+      var relationship = new Relationship(session, data.friendship_status);
+      relationship.setAccountId(accountId);
+      return relationship;
+    });
+};
+
+Relationship.prototype.mutePosts = function () {
+  return Relationship.mutePosts(this.session, this.accountId)
+};
+
+Relationship.unmutePosts = function (session, accountId) {
+  return new Request(session)
+    .setMethod('POST')
+    .setResource('unmutePosts', {id: accountId})
+    .generateUUID()
+    .setData({target_posts_author_id: accountId})
+    .signPayload()
+    .send()
+    .then(function(data) {
+      var relationship = new Relationship(session, data.friendship_status);
+      relationship.setAccountId(accountId);
+      return relationship;
+    });
+};
+
+Relationship.prototype.unmutePosts = function () {
+  return Relationship.unmutePosts(this.session, this.accountId)
+};
