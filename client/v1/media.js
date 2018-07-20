@@ -212,7 +212,7 @@ Media.configurePhoto = function (session, uploadId, caption, width, height, user
         })
 };
 
-Media.configurePhotoStory = function (session, uploadId, width, height) {
+Media.configurePhotoStory = function (session, uploadId, width, height, storyMentions = [], storyPoll = {}) {
     if(_.isEmpty(uploadId))
         throw new Error("Upload argument must be upload valid upload id");
     if(!width) width = 800;
@@ -222,6 +222,8 @@ Media.configurePhotoStory = function (session, uploadId, width, height) {
         .then(function(accountId){
             var payload = pruned({
                 source_type: "4",
+                reel_mentions: JSON.stringify(storyMentions),
+                story_polls: JSON.stringify([storyPoll]),
                 upload_id: uploadId,
                 _uid: accountId.toString(),
                 device: session.device.payload,
@@ -235,6 +237,7 @@ Media.configurePhotoStory = function (session, uploadId, width, height) {
                     source_height: height
                 }
             });
+
             payload = payload.replace(/\"\$width\"/gi, width.toFixed(1));
             payload = payload.replace(/\"\$height\"/gi, height.toFixed(1));
             payload = payload.replace(/\"\$zero\"/gi, (0).toFixed(1));
