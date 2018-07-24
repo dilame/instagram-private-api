@@ -19,9 +19,9 @@ UserStory.prototype.get = function () {
         .signPayload()
         .send()
         .then(function(data) {
-          return _.map(data.items, function (medium) {
-              return new Media(that.session, medium);
-            });
+            let reels = Object.values(data.reels);
+            if (!reels.length) return [];
+            return reels.map(reel => reel.items).reduce((acc, val) => acc.concat(val)).map(item => new Media(that.session, item));
         });
 };
 
