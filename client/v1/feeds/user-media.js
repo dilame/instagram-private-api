@@ -34,7 +34,7 @@ UserMediaFeed.prototype.get = function () {
                     that.moreAvailable = data.more_available;
                     var lastOne = _.last(data.items);
                     if (that.moreAvailable && lastOne)
-                        that.setCursor(lastOne.id);
+                        that.setCursor(data.next_max_id);
                     return _.map(data.items, function (medium) {
                         return new Media(that.session, medium);
                     });
