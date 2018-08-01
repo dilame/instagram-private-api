@@ -31,6 +31,7 @@ UserMediaFeed.prototype.get = function () {
                 })
                 .send()
                 .then(function(data) {
+                    console.log('data', data)
                     that.moreAvailable = data.more_available && !!data.next_max_id;
                     if (that.moreAvailable) {
                         that.setCursor(data.next_max_id);
