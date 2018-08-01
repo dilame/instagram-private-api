@@ -10,7 +10,8 @@ Instagram Private NODE.JS API
 
 ----
 
-Carefully consider using this library. I’m no longer maintaining the repository.
+*Carefully consider using this library. I’m no longer maintaining the repository.*
+
 Community is taking care of development and new features. Thanks to: @IvanMMM @SergeyMihrjakov @dilame @sebyddd @hieven
 
 ----
@@ -185,7 +186,7 @@ any other options you want to apply to request should be passed as the first
 argument to the `.send` method;
 
 `.then` is just promise library. Must be called after `.send`.
-We are using [Bluebird library](bluebirdjs.com/docs/api-reference.html)
+We are using [Bluebird library](http://bluebirdjs.com/docs/api-reference.html)
 which is a really nice way to work with promises.
 
 The `Request` and `Webrequest` classes are built on top of the Request.js library.
@@ -238,7 +239,7 @@ storage.getAccountId()
 **Session class**
 
 You can create a new instance of Session by calling 
-`var session = new Session(device:Device, storage:CookieStorage)`
+`var session = new Client.Session(device:Device, storage:CookieStorage)`
 
 If you have valid cookies, you don't need to worry about anything else
 if you don't, you need to create a session with storage and device.
@@ -610,15 +611,15 @@ Example first:
 // you get those from previous examples
 
 function challengeMe(error){
-	return Client.Web.Challenge.resolve(error)
+	return Client.Web.Challenge.resolve(error,'phone')
 		.then(function(challenge){
 			// challenge instanceof Client.Web.Challenge
 			console.log(challenge.type);
 			// can be phone or email
 			// let's assume we got phone
-			if(!challenge.type !== 'phone') return;
+			if(challenge.type !== 'phone') return;
 			//Let's check if we need to submit/change our phone number
-			return challenge.phone('+10123456789')
+			return challenge.phone('79876543210')
 				.then(function(){return challenge});
 		})
 		.then(function(challenge){
