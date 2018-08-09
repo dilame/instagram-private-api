@@ -16,7 +16,7 @@ StoryTray.prototype.get = function () {
         .setResource('storyTray')
         .send()
         .then(function(data) {
-            var media = _.map(data.items, function(medium){
+            var media = _.map(data.tray, function(medium){
                 return new Media(that.session, medium);
             });
             return media;    
