@@ -121,4 +121,28 @@ Helpers.extractUrl = function (text) {
   return text.match(/((?:https\:\/\/)|(?:http\:\/\/)|(?:www\.))?([a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(?:\??)[a-zA-Z0-9\-\._\?\,\'\/\\\+&%\$#\=~]+)/g);
 }
 
+Helpers.getProxyObject = function (str) {
+    var obj = {
+        http: null,
+        socks: null
+    };
+
+    if(/^http/.test(str)) {
+        obj.http = str;
+    } else if(/^socks/.test(str)) {
+        const parts = _.trim(str).match(/^socks:\/\/((.*?):(.*?)@)*(.*?):(\d+)$/);
+
+        if(parts && parts[4] && parts[5]) {
+            obj.socks = {
+                host: parts[4],
+                port: parts[5],
+                username: parts[2] || null,
+                password: parts[3] || null
+            }
+        }
+    }
+
+    return obj;
+}
+
 module.exports = Helpers;
