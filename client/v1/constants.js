@@ -14,6 +14,7 @@ const ROUTES = {
     comment: 'media/<%= id %>/comment/',
     commentDelete: 'media/<%= id %>/comment/<%= commentId %>/delete/',
     commentBulkDelete: 'media/<%= id %>/comment/bulk_delete/',
+    commentLike: 'media/<%= id %>/comment_like/',
     like: 'media/<%= id %>/like/',
     unlike: 'media/<%= id %>/unlike/',
     registrationCreate: 'accounts/create/',

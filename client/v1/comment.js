@@ -90,3 +90,15 @@ Comment.bulkDelete = function(session, mediaId, commentIds) {
             return data;
         })
 }
+
+Comment.like = function(session, commentId) {
+    return new Request(session)
+        .setMethod('POST')
+        .setResource('commentLike', {id: commentId})
+        .generateUUID()
+        .signPayload()
+        .send()
+        .then(function(data) {
+            return data;
+        })
+}
