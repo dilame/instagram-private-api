@@ -72,7 +72,7 @@ Upload.photo = function (session, streamOrPathOrBuffer, uploadId, name, isSideca
         })
 }
 
-Upload.video = function(session,videoBufferOrPath,photoStreamOrPath,isSidecar){
+Upload.video = function(session, videoBufferOrPath, photoStreamOrPath, isSidecar, fields) {
     //Probably not the best way to upload video, best to use stream not to store full video in memory, but it's the easiest
     var predictedUploadId = new Date().getTime();
     var request = new Request(session);
@@ -80,16 +80,16 @@ Upload.video = function(session,videoBufferOrPath,photoStreamOrPath,isSidecar){
         .then(function(buffer){
             var duration = _getVideoDurationMs(buffer);
             if(duration > 63000) throw new Error('Video is too long. Maximum: 63. Got: '+duration/1000);
-            var fields = {
-                upload_id: predictedUploadId
-            };
+            fields = fields || {};
+            fields.upload_id = predictedUploadId;
             if(isSidecar) {
                 fields['is_sidecar'] = 1;
             } else {
                 fields['media_type'] = 2;
                 fields['upload_media_duration_ms'] = Math.floor(duration);
-                fields['upload_media_height'] = 720;
-                fields['upload_media_width'] = 720;
+                // Bugfix, when a disproportionate video is upload (e.g. 640x320)
+                // fields['upload_media_height'] = 320;
+                // fields['upload_media_width'] = 640;
             }
             return request
             .setMethod('POST')
