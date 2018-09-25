@@ -91,9 +91,9 @@ const WEB_ROUTES = {
 }
 
 const PRIVATE_KEY = {
-    SIG_KEY: '109513c04303341a7daf27bb41b268e633b30dcc65a3fe14503f743176113869',
+    SIG_KEY: '673581b0ddb792bf47da5f9ca816b613d7996f342723aa06993a3f0552311c7d',
     SIG_VERSION: '4',
-    APP_VERSION: '27.0.0.7.97'
+    APP_VERSION: '42.0.0.19.95'
 }
 
 
@@ -103,9 +103,15 @@ const WEB_HOSTNAME = 'www.instagram.com';
 const HOST = 'https://' + HOSTNAME + '/';
 const WEBHOST = 'https://' + WEB_HOSTNAME + '/';
 
+const HEADERS = {
+    FB_ANALYTICS_APPLICATION_ID: '567067343352427',
+    X_IG_Connection_Type: 'WIFI',
+    X_IG_Capabilities: '3brTPw=='
+}
 
 module.exports = {
     ROUTES: ROUTES,
+    HEADERS: HEADERS,
     WEB_ROUTES: WEB_ROUTES,
     HOSTNAME: HOSTNAME,
     WEB_HOSTNAME: WEB_HOSTNAME,

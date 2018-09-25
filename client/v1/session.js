@@ -11,6 +11,10 @@ function Session(device, storage, proxy) {
     this.setCookiesStorage(storage);
     if(_.isString(proxy) && !_.isEmpty(proxy))
         this.proxyUrl = proxy;
+
+    this._uuid = Helpers.generateUUID();
+    this._phone_id = Helpers.generateUUID();
+    this._adid = Helpers.generateUUID();
 }
 
 util.inherits(Session, Resource);
@@ -43,6 +47,21 @@ Object.defineProperty(Session.prototype, "cookieStore", {
 
 Object.defineProperty(Session.prototype, "device", {
     get: function() { return this._device },
+    set: function(val) {}
+});
+
+Object.defineProperty(Session.prototype, "uuid", {
+    get: function() { return this._uuid },
+    set: function(val) {}
+});
+
+Object.defineProperty(Session.prototype, "phone_id", {
+    get: function() { return this._phone_id },
+    set: function(val) {}
+});
+
+Object.defineProperty(Session.prototype, "advertising_id", {
+    get: function() { return this._adid },
     set: function(val) {}
 });
 
@@ -128,10 +147,12 @@ Session.login = function(session, username, password) {
     return new Request(session)
         .setResource('login')
         .setMethod('POST')
-        .generateUUID()
         .setData({
             username: username,
             password: password,
+            guid: session.uuid,
+            phone_id: session.phone_id,
+            adid: session.adid,
             login_attempt_count: 0
         })
         .signPayload()
@@ -200,4 +221,8 @@ Session.create = function(device, storage, username, password, proxy) {
             // We either not have valid cookes or authentication is not fain!
             return Session.login(session, username, password)
         })
+}
+
+Session.loginFlow = function() {
+    
 }
