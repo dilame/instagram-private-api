@@ -7,3 +7,5 @@ tests/credentials.json
 tests/cookies/*
 
 php-*
+cookies/
+test*

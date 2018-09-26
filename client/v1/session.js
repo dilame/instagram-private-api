@@ -224,5 +224,9 @@ Session.create = function(device, storage, username, password, proxy) {
 }
 
 Session.loginFlow = function() {
-    
+
+}
+
+Session.preLoginFlow = function() {
+    // Only on full re-login.
 }
