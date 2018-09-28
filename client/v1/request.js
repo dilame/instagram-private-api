@@ -203,6 +203,7 @@ Request.prototype.setUrl = function(url) {
 
 Request.prototype.setResource = function(resource, data) {
     this._resource = resource;
+    console.log(routes.getUrl(resource, data));
     this.setUrl(routes.getUrl(resource, data));
     return this;
 };
@@ -301,7 +302,8 @@ Request.prototype._mergeOptions = function(options) {
 
 
 Request.prototype.parseMiddleware = function (response) {
-    console.log(response);
+    console.log(response.request.href);
+    console.log(response.body + "\n");
     if(response.req._headers.host==='upload.instagram.com' && response.statusCode===201){
         var loaded = /(\d+)-(\d+)\/(\d+)/.exec(response.body);
         response.body = {status:"ok",start:loaded[1],end:loaded[2],total:loaded[3]};

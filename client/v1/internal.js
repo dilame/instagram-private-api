@@ -107,15 +107,13 @@ Internal.logAttribution = function (session) {
 Internal.fetchZeroRatingToken = function (session) {
     return new Request(session)
         .setMethod('GET')
-        .setResource('zeroRatingToken')
-        .setBodyType('form')
-        .setData({})
-        .setData({
-            custom_device_id: session.uuid,
-            device_id: session.device.id,
-            fetch_reason: 'token_expired',
-            token_hash: ''
+        .setResource('zeroRatingToken', {
+            cd_id: session.uuid,
+            d_id: session.device.id,
+            fr: 'token_expired',
+            th: ''
         })
+        .setBodyType('form')
         .send()
 }
 
@@ -131,5 +129,76 @@ Internal.setContactPointPrefill = function (session) {
             _csrftoken: session.CSRFToken
         })
         .signPayload()
+        .send()
+}
+
+
+Internal.getRankedRecipients = function (session, mode) {
+    return new Request(session)
+        .setMethod('GET')
+        .setResource('getRankedRecipients', {
+            mode: mode,
+            show_threads: true,
+            use_unified_inbox: true 
+        })
+        .setBodyType('form')
+        .send()
+}
+
+
+Internal.getPresences = function (session) {
+    return new Request(session)
+        .setMethod('GET')
+        .setResource('getPresences')
+        .setBodyType('form')
+        .send()
+}
+
+Internal.getRecentActivityInbox = function (session) {
+    return new Request(session)
+        .setMethod('GET')
+        .setResource('getRecentActivityInbox')
+        .setBodyType('form')
+        .send()
+}
+
+Internal.getProfileNotice = function (session) {
+    return new Request(session)
+        .setMethod('GET')
+        .setResource('getProfileNotice')
+        .setBodyType('form')
+        .send()
+}
+
+Internal.getExploreFeed = function (session,) {
+
+    var supported_capabilities = [
+        {
+            name: 'SUPPORTED_SDK_VERSIONS',
+            value: '9.0,10.0,11.0,12.0,13.0,14.0,15.0,16.0,17.0,18.0,19.0,20.0,21.0,22.0,23.0,24.0,25.0,26.0,27.0,28.0,29.0,30.0,31.0,32.0,33.0,34.0,35.0,36.0,37.0,38.0,39.0,40.0,41.0,42.0,43.0'
+        },
+        {
+            name: 'FACE_TRACKER_VERSION',
+            value: 10
+        },
+        {
+            name: 'segmentation',
+            value: 'segmentation_enabled'
+        },
+        {
+            name: 'WORLD_TRACKER',
+            value: 'WORLD_TRACKER_ENABLED'
+        }
+    ]
+
+
+    return new Request(session)
+        .setMethod('GET')
+        .setResource('exploreFeed', {
+            is_prefetch: '',
+            session_id: session.session_id,
+            supported_capabilities_new: encodeURIComponent(JSON.stringify(supported_capabilities))
+        })
+        .setBodyType('form')
         .send()
 }
