@@ -29,13 +29,13 @@ MediaCommentsFeed.prototype.get = function () {
         .setMethod('GET')
         .setResource('mediaComments', {
             mediaId: that.mediaId,
-            maxId: that.getCursor()
+            minId: that.getCursor()
         })
         .send()
         .then(function(data) {
-            that.moreAvailable = data.has_more_comments && !!data.next_max_id;
+            that.moreAvailable = data.has_more_comments && !!data.next_min_id;
             if (that.moreAvailable) {
-                that.setCursor(data.next_max_id);
+                that.setCursor(data.next_min_id);
             }
             return _.map(data.comments, function (comment) {
                 comment.pk = comment.pk.c.join("");
