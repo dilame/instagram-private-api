@@ -20,7 +20,7 @@ Comment.prototype.parseParams = function (json) {
   var hash = camelKeys(json);
   hash.created = json.created_at;
   hash.status = (json.status || "unknown").toLowerCase();
-  hash.id = json.pk || json.id;
+  hash.id = (json.pk || json.id).toString();
   this.account = new Account(this.session, json.user);
   return hash;
 };

@@ -17,7 +17,7 @@ var Exceptions = require('./exceptions');
 Account.prototype.parseParams = function (json) {
     var hash = camelKeys(json);
     hash.picture = json.profile_pic_url;
-    hash.id = json.pk || json.id || json.instagram_id;
+    hash.id = (json.pk || json.id || json.instagram_id).toString();
     return hash;
 };
 

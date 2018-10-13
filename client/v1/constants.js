@@ -53,7 +53,7 @@ const ROUTES = {
     mediaConfigureSidecar: 'media/configure_sidecar/',
     mediaInfo: 'media/<%= mediaId %>/info/',
     mediaLikes: 'media/<%= mediaId %>/likers/',
-    mediaComments: 'media/<%= mediaId %>/comments/<%= maxId ? ("?max_id=" + maxId) : "" %>',
+    mediaComments: 'media/<%= mediaId %>/comments/?can_support_threading=true<%= minId ? ("&min_id=" + minId) : "" %><%= maxId ? ("&max_id=" + maxId) : "" %>',
     mediaDeletePhoto: 'media/<%= mediaId %>/delete/?media_type=PHOTO',
     mediaEdit: 'media/<%= mediaId %>/edit_media/',
     qeSync: 'qe/sync/',

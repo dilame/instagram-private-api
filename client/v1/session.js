@@ -201,8 +201,11 @@ Session.create = function(device, storage, username, password, proxy) {
         session.proxyUrl = proxy;
     return session.getAccountId()
         .then(function () {
-            return session.loginFlow()
-                .then(() => session)
+            return session;
+            // Disabled for the moment
+            // But `loginFlow` should be called every time the user closes an reopen the app.
+            //return session.loginFlow()
+            //    .then(() => session)
         })
         .catch(Exceptions.CookieNotValidError, function() {
             // We either not have valid cookes or authentication is not fain!
