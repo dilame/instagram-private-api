@@ -3,23 +3,10 @@ var errors = require('request-promise/errors');
 var Promise = require('bluebird');
 var util = require('util');
 
-var Session = require('../session');
-var routes = require('../routes');
-var CONSTANTS = require('../constants');
 var WebRequest = require('./web-request');
 var Request = require('../request');
-var Helpers = require('../../../helpers');
 var Exceptions = require("../exceptions");
-var ORIGIN = CONSTANTS.WEBHOST.slice(0, -1); // Trailing / in origin
 
-// iPhone probably works best, even from android previosly done request
-var iPhoneUserAgent = 'Instagram 19.0.0.27.91 (iPhone6,1; iPhone OS 9_3_1; en_US; en; scale=2.00; gamut=normal; 640x1136) AppleWebKit/420+';
-var iPhoneUserAgentHtml = 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_3_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Mobile/13E238 Instagram 10.28.0 (iPhone6,1; iPhone OS 9_3_1; en_US; en; scale=2.00; gamut=normal; 640x1136)'
-
-var EMAIL_FIELD_REGEXP = /email.*value(.*)"/i;
-var PHONE_FIELD_REGEXP = /sms.*value(.*)"/i;
-var PHONE_ENTERED_FIELD_REGEXP = /tel.*value="(\+\d+)"/i
-var RESET_FIELD_REGEXP = /reset_progress_form.*action="\/(.*)"/i
 var SHARED_JSON_REGEXP = /window._sharedData = (.*);<\/script>/i
 
 var Challenge = function(session, type, error, json) {
@@ -54,9 +41,6 @@ Challenge.resolve = function(checkpointError,defaultMethod,skipResetStep){
         return new WebRequest(session)
             .setMethod('GET')
             .setUrl(that.apiUrl)
-            .setHeaders({
-                'User-Agent': iPhoneUserAgent
-            })
             .send({followRedirect: true})
         })
         .catch(errors.StatusCodeError, function(error){
@@ -80,9 +64,6 @@ Challenge.resolve = function(checkpointError,defaultMethod,skipResetStep){
                 return new WebRequest(session)
                     .setMethod('POST')
                     .setUrl(that.apiUrl)
-                    .setHeaders({
-                        'User-Agent': iPhoneUserAgent
-                    })
                     .setData({
                         "choice": defaultMethod==='email' ? 1 : 0
                         })
@@ -113,7 +94,6 @@ Challenge.resolveHtml = function(checkpointError,defaultMethod){
         .setMethod('GET')
         .setUrl(checkpointError.url)
         .setHeaders({
-            'User-Agent': iPhoneUserAgentHtml,
             'Referer': checkpointError.url,
         })
         .send({followRedirect: true})
@@ -147,7 +127,6 @@ Challenge.resolveHtml = function(checkpointError,defaultMethod){
                     .setMethod('POST')
                     .setUrl(checkpointError.url)
                     .setHeaders({
-                        'User-Agent': iPhoneUserAgentHtml,
                         'Referer': checkpointError.url,
                         'Content-Type': 'application/x-www-form-urlencoded',
                         'X-Instagram-AJAX': 1
@@ -179,9 +158,6 @@ Challenge.reset = function(checkpointError){
         .setMethod('POST')
         .setBodyType('form')
         .setUrl(that.apiUrl.replace('/challenge/','/challenge/reset/'))
-        .setHeaders({
-            'User-Agent': iPhoneUserAgent
-        })
         .signPayload()
         .send({followRedirect: true})
     .catch(function(error){
@@ -197,9 +173,6 @@ Challenge.prototype.code = function(code){
     return new WebRequest(that.session)
         .setMethod('POST')
         .setUrl(that.apiUrl)
-        .setHeaders({
-            'User-Agent': iPhoneUserAgent
-        })
         .setBodyType('form')
         .setData({
             "security_code":code
@@ -256,9 +229,6 @@ PhoneVerificationChallenge.prototype.phone = function(phone){
     return new WebRequest(that.session)
         .setMethod('POST')
         .setUrl(that.apiUrl)
-        .setHeaders({
-            'User-Agent': iPhoneUserAgent
-        })
         .setBodyType('form')
         .setData({
             "phone_number": _phone
