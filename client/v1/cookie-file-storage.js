@@ -1,5 +1,5 @@
 var util = require("util");
-var FileCookieStore = require('tough-cookie-filestore');
+var FileCookieStore = require('tough-cookie-file-store');
 var path = require('path');
 var fs = require('fs');
 var _ = require('lodash');
