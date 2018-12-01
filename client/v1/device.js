@@ -41,8 +41,10 @@ Object.defineProperty(Device.prototype, "md5int", {
 
 Object.defineProperty(Device.prototype, "api", {
     get: function() { 
-        if(!this._api)
-            this._api = 18 + (this.md5int % 5);
+        if(!this._api) {
+            this._api = 15 + (this.md5int % 10);
+            if (this._api>19) this._api++; // ignore api 19
+        }
         return this._api;
     },
     set: function(api) { 
@@ -54,11 +56,23 @@ Object.defineProperty(Device.prototype, "api", {
 Object.defineProperty(Device.prototype, "release", {
     get: function() { 
         if(!this._release)
-            this._release = ['4.0.4', '4.3.1', '4.4.4', '5.1.1', '6.0.1'][this.md5int % 5];
+            this._release = ['4.0.4', '4.1.2', '4.2.2', '4.3.1', '4.4.4', '5.0.1', '5.1.1', '6.0.1', '7.0', '7.1.2'][this.md5int % 10];
         return this._release;
     },
     set: function(release) { 
         this._release = release;
+    }
+});
+
+
+Object.defineProperty(Device.prototype, "build", {
+    get: function() { 
+        if(!this._build)
+            this._build = ['IMM76L', 'JZO54K', 'JDQ39', 'JLS36I', 'KTU84P', 'LRX22C', 'LMY48M', 'MMB29V', 'NRD91N', 'N2G48C'][this.md5int % 10];
+        return this._build;
+    },
+    set: function(build) { 
+        this._build = build;
     }
 });
 
@@ -136,5 +150,14 @@ Device.prototype.userAgent = function(version) {
     return CONSTANTS.instagramAgentTemplate({
         agent: agent.join('; '),
         version: version || CONSTANTS.PRIVATE_KEY.APP_VERSION
+    })
+}
+
+Device.prototype.userAgentWeb = function(version) {   
+    return CONSTANTS.instagramAgentWebTemplate({
+        instagramAgent: this.userAgent(),
+        release: this.release,
+        model: this.info.model,
+        build: this.build
     })
 }

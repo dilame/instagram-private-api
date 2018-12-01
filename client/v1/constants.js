@@ -90,9 +90,9 @@ const WEB_ROUTES = {
 }
 
 const PRIVATE_KEY = {
-    SIG_KEY: '109513c04303341a7daf27bb41b268e633b30dcc65a3fe14503f743176113869',
+    SIG_KEY: 'ac5f26ee05af3e40a81b94b78d762dc8287bcdd8254fe86d0971b2aded8884a4',
     SIG_VERSION: '4',
-    APP_VERSION: '27.0.0.7.97'
+    APP_VERSION: '64.0.0.14.96'
 }
 
 
@@ -114,5 +114,6 @@ module.exports = {
     API_ENDPOINT: HOST + 'api/v1/',
     EXPERIMENTS: EXPERIMENTS,
     PRIVATE_KEY: PRIVATE_KEY,
-    instagramAgentTemplate: _.template('Instagram <%= version %> Android (<%= agent %>)')
+    instagramAgentTemplate: _.template('Instagram <%= version %> Android (<%= agent %>)'),
+    instagramAgentWebTemplate: _.template('Mozilla/5.0 (Linux; Android <%= release %>; <%= model %> Build/<%= build %>; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/70.0.3538.110 Mobile Safari/537.36 <%= instagramAgent %>')
 }
