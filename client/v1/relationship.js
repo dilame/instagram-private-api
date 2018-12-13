@@ -140,6 +140,24 @@ Relationship.autocompleteUserList = function (session) {
         })
 };
 
+Relationship.getBootstrapUsers = function (session) {
+    var surfaces = [
+        'coefficient_direct_closed_friends_ranking',
+        'coefficient_direct_recipients_ranking_variant_2',
+        'coefficient_rank_recipient_user_suggestion',
+        'coefficient_ios_section_test_bootstrap_ranking',
+        'autocomplete_user_list',
+    ];
+
+    return new Request(session)
+        .setMethod('GET')
+        .setResource('getBootstrapUsers', {
+            surfaces: encodeURIComponent(JSON.stringify(surfaces))
+        })
+        .setBodyType('form')
+        .send()
+}
+
 Relationship.block = function (session, accountId) {
     return new Request(session)
         .setMethod('POST')

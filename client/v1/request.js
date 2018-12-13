@@ -40,10 +40,15 @@ var CONSTANTS = require('./constants');
 var Session = require('./session');
 
 Request.defaultHeaders = {
-    'X-IG-Connection-Type': 'WIFI',
-    'X-IG-Capabilities': '3QI=',
+    'X-IG-Connection-Type': CONSTANTS.HEADERS.X_IG_Connection_Type,
+    'X-IG-Capabilities': CONSTANTS.HEADERS.X_IG_Capabilities,
+    'X-IG-App-ID': CONSTANTS.HEADERS.FB_ANALYTICS_APPLICATION_ID,
+    'X-IG-Connection-Speed': Math.round(Helpers.getRandomArbitrary(1000, 3700)) + 'kbps',
+    'X-IG-Bandwidth-Speed-KBPS': '-1.000',
+    'X-IG-Bandwidth-TotalBytes-B': '0',
+    'X-IG-Bandwidth-TotalTime-MS': '0',
     'Accept-Language': 'en-US',
-    'Host': CONSTANTS.HOSTNAME,
+    'Host': 'i.instagram.com',
     'Accept': '*/*',
     'Accept-Encoding': 'gzip, deflate, sdch',
     'Connection': 'Close'
@@ -198,6 +203,7 @@ Request.prototype.setUrl = function(url) {
 
 Request.prototype.setResource = function(resource, data) {
     this._resource = resource;
+    console.log(routes.getUrl(resource, data));
     this.setUrl(routes.getUrl(resource, data));
     return this;
 };
@@ -296,6 +302,8 @@ Request.prototype._mergeOptions = function(options) {
 
 
 Request.prototype.parseMiddleware = function (response) {
+    console.log(response.request.href);
+    console.log(response.body + "\n");
     if(response.req._headers.host==='upload.instagram.com' && response.statusCode===201){
         var loaded = /(\d+)-(\d+)\/(\d+)/.exec(response.body);
         response.body = {status:"ok",start:loaded[1],end:loaded[2],total:loaded[3]};
