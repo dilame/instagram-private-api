@@ -19,7 +19,7 @@ UserStory.prototype.get = function () {
         .signPayload()
         .send()
         .then(function(data) {
-          return _.map(data.items, function (medium) {
+          return _.map(data.reels[that.userIds].items, function (medium) {
               return new Media(that.session, medium);
             });
         });
