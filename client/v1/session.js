@@ -152,23 +152,23 @@ Session.prototype.destroy = function () {
 
 
 Session.login = function(session, username, password) {
-    session.preLoginFlow()
-        .then(function() {
-            return new Request(session)
-                .setResource('login')
-                .setMethod('POST')
-                .setData({
-                    username: username,
-                    password: password,
-                    guid: session.uuid,
-                    phone_id: session.phone_id,
-                    adid: session.adid,
-                    login_attempt_count: 0
-                })
-                .signPayload()
-                .send()
-        })
+    return session.preLoginFlow()
+        .then(() => new Request(session)
+            .setResource('login')
+            .setMethod('POST')
+            .setData({
+                username: username,
+                password: password,
+                guid: session.uuid,
+                phone_id: session.phone_id,
+                adid: session.adid,
+                login_attempt_count: 0
+            })
+            .signPayload()
+            .send()
+        )
         .then(() => session.loginFlow())
+        .then(() => session)
         .catch(Exceptions.CheckpointError, function(error) {
             // This situation is not really obvious,
             // but even if you got checkpoint error (aka captcha or phone)
