@@ -57,6 +57,10 @@ Request.defaultHeaders = {
 
 Request.requestClient = request.defaults({});
 
+Request.jar = function (store) {
+    return request.jar(store);
+}
+
 Request.setTimeout = function (ms) {
     var object = { 'timeout': parseInt(ms) };
     Request.requestClient = request.defaults(object);
