@@ -60,28 +60,37 @@ Challenge.resolve = function(checkpointError,defaultMethod,skipResetStep){
 
         //Using API-version of challenge
         switch(json.step_name){
-            case 'select_verify_method':{
+            case 'select_verify_method': {
                 return new WebRequest(session)
                     .setMethod('POST')
                     .setUrl(that.apiUrl)
                     .setData({
-                        "choice": defaultMethod==='email' ? 1 : 0
-                        })
-                        .send({followRedirect: true})
-                        .then(function(){
-                            return that.resolve(checkpointError,defaultMethod,true)
-                        })
-                }
-                case 'verify_code':
-                case 'submit_phone':{
-                    return new PhoneVerificationChallenge(session, 'phone', checkpointError, json);
-                }
-                case 'verify_email':{
-                    return new EmailVerificationChallenge(session, 'email', checkpointError, json);
-                }
-                default: return new NotImplementedChallenge(session, json.step_name, checkpointError, json);
+                        "choice": defaultMethod === 'email' ? 1 : 0
+                    })
+                    .send({ followRedirect: true })
+                    .then(function () {
+                        return that.resolve(checkpointError, defaultMethod, true)
+                    })
             }
-        })
+            case 'verify_code':
+            case 'submit_phone':
+                return new PhoneVerificationChallenge(session, 'phone', checkpointError, json);
+            case 'verify_email':
+                return new EmailVerificationChallenge(session, 'email', checkpointError, json);
+            case 'delta_login_review':
+                return new WebRequest(session)
+                    .setMethod('POST')
+                    .setUrl(that.apiUrl)
+                    .setData({
+                        "choice": 0 // 0 - It's was me // 1 - Not me, change password
+                    })
+                    .send({ followRedirect: true })
+                    .then(function (data) {
+                        return that.resolve(checkpointError, defaultMethod, true)
+                    });
+            default: return new NotImplementedChallenge(session, json.step_name, checkpointError, json);
+        }
+    })
 }
 Challenge.resolveHtml = function(checkpointError,defaultMethod){
     //Using html version
@@ -94,6 +103,7 @@ Challenge.resolveHtml = function(checkpointError,defaultMethod){
         .setMethod('GET')
         .setUrl(checkpointError.url)
         .setHeaders({
+            'User-Agent': session.device.userAgentWeb(),
             'Referer': checkpointError.url,
         })
         .send({followRedirect: true})
@@ -127,6 +137,7 @@ Challenge.resolveHtml = function(checkpointError,defaultMethod){
                     .setMethod('POST')
                     .setUrl(checkpointError.url)
                     .setHeaders({
+                        'User-Agent': session.device.userAgentWeb(),
                         'Referer': checkpointError.url,
                         'Content-Type': 'application/x-www-form-urlencoded',
                         'X-Instagram-AJAX': 1
@@ -139,12 +150,10 @@ Challenge.resolveHtml = function(checkpointError,defaultMethod){
                         return that.resolveHtml(checkpointError,defaultMethod)
                     })
             }
-            case 'VerifyEmailCodeForm':{
+            case 'VerifyEmailCodeForm':
                 return new EmailVerificationChallenge(session, 'email', checkpointError, json);
-            }
-            case 'VerifySMSCodeForm':{
+            case 'VerifySMSCodeForm':
                 return new PhoneVerificationChallenge(session, 'phone', checkpointError, json);
-            }
             default: return new NotImplementedChallenge(session, challenge.challengeType, checkpointError, json);
         }
     }

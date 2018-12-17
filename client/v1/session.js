@@ -1,10 +1,7 @@
 var util = require("util");
 var Resource = require("./resource");
-var fs = require('fs');
 var _ = require('lodash');
-var request = require("request-promise");
 var CookieStorage = require("./cookie-storage");
-var RequestJar = require("./jar");
 
 function Session(device, storage, proxy) {
     this.setDevice(device);    
@@ -99,7 +96,7 @@ Session.prototype.setCookiesStorage = function (storage) {
     if(!(storage instanceof CookieStorage))
         throw new Error("`storage` is not an valid instance of `CookieStorage`");
     this._cookiesStore = storage;
-    this._jar = new RequestJar(storage.store);
+    this._jar = Request.jar(storage.store);
     return this;
 };
 
@@ -152,23 +149,23 @@ Session.prototype.destroy = function () {
 
 
 Session.login = function(session, username, password) {
-    session.preLoginFlow()
-        .then(function() {
-            return new Request(session)
-                .setResource('login')
-                .setMethod('POST')
-                .setData({
-                    username: username,
-                    password: password,
-                    guid: session.uuid,
-                    phone_id: session.phone_id,
-                    adid: session.adid,
-                    login_attempt_count: 0
-                })
-                .signPayload()
-                .send()
-        })
+    return session.preLoginFlow()
+        .then(() => new Request(session)
+            .setResource('login')
+            .setMethod('POST')
+            .setData({
+                username: username,
+                password: password,
+                guid: session.uuid,
+                phone_id: session.phone_id,
+                adid: session.adid,
+                login_attempt_count: 0
+            })
+            .signPayload()
+            .send()
+        )
         .then(() => session.loginFlow())
+        .then(() => session)
         .catch(Exceptions.CheckpointError, function(error) {
             // This situation is not really obvious,
             // but even if you got checkpoint error (aka captcha or phone)
