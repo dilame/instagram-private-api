@@ -40,3 +40,29 @@ TaggedMediaFeed.prototype.get = function () {
                 })
         });
 };
+
+TaggedMediaFeed.prototype.getRankedItems = function () {
+    var that = this;
+    return this.session.getAccountId()
+        .then(function(id) {
+            var rankToken = Helpers.buildRankToken(id);
+            return new Request(that.session)
+                .setMethod('GET')
+                .setResource('tagFeed', {
+                    tag: that.tag,
+                    maxId: that.getCursor(),
+                    rankToken: rankToken
+                })
+                .send()
+                .then(function(data) {
+                    let {ranked_items} = data;
+                    let {next_max_id} = ranked_items[ranked_items.length - 1];
+                    that.moreAvailable = !!next_max_id;
+                    if (that.moreAvailable)
+                        that.setCursor(ranked_items.next_max_id);
+                    return _.map(ranked_items, function (medium) {
+                        return new Media(that.session, medium);
+                    });
+                })
+        });
+};
