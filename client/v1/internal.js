@@ -170,7 +170,7 @@ Internal.getProfileNotice = function (session) {
         .send()
 }
 
-Internal.getExploreFeed = function (session,) {
+Internal.getExploreFeed = function (session) {
 
     var supported_capabilities = [
         {
