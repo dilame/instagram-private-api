@@ -73,7 +73,7 @@ Media.prototype.parseParams = function (json) {
 
 Media.prototype.getParams = function () {
     return _.extend(this._params, {
-        account: this.account.params,
+        account: this.account ? this.account.params : {},
         comments: _.map(this.comments, 'params'),
         location: this.location ? this.location.params : {},
         carouselMedia:  _.map(this._params.carouselMedia, 'params')
