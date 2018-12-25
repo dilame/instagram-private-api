@@ -39,7 +39,7 @@ FeedBase.prototype.all = function (parameters) {
             return Promise.resolve([]).delay(parameters.pause * that.parseErrorsMultiplier)
         })
         .then(function (response) {
-            var results = response.map(that.map);
+            var results = response.filter(that.filter).map(that.map);
             if(_.isFunction(that.reduce))
                 that.allResults = that.reduce(that.allResults, results);
             that.totalCollected += response.length;
@@ -84,6 +84,10 @@ FeedBase.prototype.map = function (item) {
  * */
 FeedBase.prototype.reduce = function (accumulator, response) {
     return accumulator.concat(response);
+}
+
+FeedBase.prototype.filter = function () {
+    return true;
 }
 /* Instagram backend has a bug. Sometimes it response with next_max_id cursor, but actually there is no next subjects to
 * request. And when we trying to get next data, we got the same as previous. And so on to infinity.
