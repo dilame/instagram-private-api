@@ -89,7 +89,7 @@ AccountCreator.prototype.validateUsername = function() {
         .catch(Exceptions.InvalidUsername, function(e) {
             return self.usernameSuggestions(username)
                 .then(function(json) {
-                    e.json.suggestions = json.suggestions;
+                    e.json.suggestions = json.suggestions_with_metadata.suggestions;
                     throw e;
                 })
         })

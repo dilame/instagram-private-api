@@ -10,3 +10,4 @@ cookies/
 test*
 Untitled*
 .idea
+.env

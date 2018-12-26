@@ -33,7 +33,7 @@ describe('`AccountCreator` class', function() {
         var creator = new Client.AccountCreator(session, 'email');
         creator.usernameSuggestions('hello')
             .then(function(json) {
-                json.suggestions.should.be.Array();
+                json.suggestions_with_metadata.suggestions.should.be.Array();
                 done();
             });
     });
