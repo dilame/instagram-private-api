@@ -76,7 +76,7 @@ Relationship.prototype.removeFollower = function () {
 Relationship.removeFollower = function (session, accountId) {
     return new Request( session )
         .setMethod('POST')
-        .setResource('friendshipRemoveFollover', { id: accountId })
+        .setResource('friendshipRemoveFollower', { id: accountId })
         .setData({
             user_id: accountId
         })
