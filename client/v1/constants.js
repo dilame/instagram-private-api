@@ -29,7 +29,7 @@ const ROUTES = {
     friendshipShowMany: 'friendships/show_many/',
     friendshipPending: 'friendships/pending/',
     friendshipPendingApprove: 'friendships/approve/<%= id %>/',
-    friendshipRemoveFollover: 'friendships/remove_follower/<%= id %>/',
+    friendshipRemoveFollower: 'friendships/remove_follower/<%= id %>/',
     userInfo: 'users/<%= id %>/info/',
     userFeed: 'feed/user/<%= id %>/?<%= maxId ? ("max_id=" + maxId + "&") : "" %>rank_token=<%= rankToken %>',
     timelineFeed: 'feed/timeline/?<%= maxId ? ("max_id=" + maxId + "&") : "" %>rank_token=<%= rankToken %>&ranked_content=true',
