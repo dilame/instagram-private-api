@@ -70,6 +70,22 @@ Relationship.approvePending = function (session, accountId) {
 };
 
 
+Relationship.prototype.removeFollower = function () {
+    return Relationship.removeFollower(this.session, this.accountId)
+};
+Relationship.removeFollower = function (session, accountId) {
+    return new Request( session )
+        .setMethod('POST')
+        .setResource('friendshipRemoveFollower', { id: accountId })
+        .setData({
+            user_id: accountId
+        })
+        .generateUUID()
+        .signPayload()
+        .send()
+};
+
+
 Relationship.getMany = function (session, accountIds) {
     return new Request(session)
         .setMethod('POST')
