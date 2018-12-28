@@ -9,10 +9,9 @@ Instagram Private NODE.JS API
 [![Join the chat at https://gitter.im/instagram-private-api/Lobby](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/instagram-private-api/Lobby)
 
 ----
+Original author of this library is [Richard Hutta](https://github.com/huttarichard). Thanks to him for starting it. 
 
-*Carefully consider using this library. I’m no longer maintaining the repository.*
-
-Community is taking care of development and new features. Thanks to: @IvanMMM @SergeyMihrjakov @dilame @sebyddd @hieven
+Community is taking care of development and new features. Thanks to: @IvanMMM @SergeyMihrjakov @sebyddd @hieven
 
 ----
 
