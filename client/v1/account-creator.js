@@ -10,7 +10,7 @@ var clean = require('underscore.string/clean');
 
 function AccountCreator(session, type) {
     if(!(session instanceof Session))
-        throw new Error("AccounCreator needs valid session as first argument")
+        throw new Error("AccountCreator needs valid session as first argument")
     this.session = session;
     if(!_.includes(['phone', 'email'], type))
         throw new Error("AccountCreator class needs either phone or email as type")
@@ -89,7 +89,7 @@ AccountCreator.prototype.validateUsername = function() {
         .catch(Exceptions.InvalidUsername, function(e) {
             return self.usernameSuggestions(username)
                 .then(function(json) {
-                    e.json.suggestions = json.suggestions;
+                    e.json.suggestions = json.suggestions_with_metadata.suggestions;
                     throw e;
                 })
         })

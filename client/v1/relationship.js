@@ -70,6 +70,22 @@ Relationship.approvePending = function (session, accountId) {
 };
 
 
+Relationship.prototype.removeFollower = function () {
+    return Relationship.removeFollower(this.session, this.accountId)
+};
+Relationship.removeFollower = function (session, accountId) {
+    return new Request( session )
+        .setMethod('POST')
+        .setResource('friendshipRemoveFollower', { id: accountId })
+        .setData({
+            user_id: accountId
+        })
+        .generateUUID()
+        .signPayload()
+        .send()
+};
+
+
 Relationship.getMany = function (session, accountIds) {
     return new Request(session)
         .setMethod('POST')
@@ -139,6 +155,24 @@ Relationship.autocompleteUserList = function (session) {
             return json;
         })
 };
+
+Relationship.getBootstrapUsers = function (session) {
+    var surfaces = [
+        'coefficient_direct_closed_friends_ranking',
+        'coefficient_direct_recipients_ranking_variant_2',
+        'coefficient_rank_recipient_user_suggestion',
+        'coefficient_ios_section_test_bootstrap_ranking',
+        'autocomplete_user_list',
+    ];
+
+    return new Request(session)
+        .setMethod('GET')
+        .setResource('getBootstrapUsers', {
+            surfaces: encodeURIComponent(JSON.stringify(surfaces))
+        })
+        .setBodyType('form')
+        .send()
+}
 
 Relationship.block = function (session, accountId) {
     return new Request(session)

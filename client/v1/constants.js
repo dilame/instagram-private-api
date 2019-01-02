@@ -14,6 +14,7 @@ const ROUTES = {
     comment: 'media/<%= id %>/comment/',
     commentDelete: 'media/<%= id %>/comment/<%= commentId %>/delete/',
     commentBulkDelete: 'media/<%= id %>/comment/bulk_delete/',
+    commentLike: 'media/<%= id %>/comment_like/',
     like: 'media/<%= id %>/like/',
     unlike: 'media/<%= id %>/unlike/',
     registrationCreate: 'accounts/create/',
@@ -29,9 +30,10 @@ const ROUTES = {
     friendshipShowMany: 'friendships/show_many/',
     friendshipPending: 'friendships/pending/',
     friendshipPendingApprove: 'friendships/approve/<%= id %>/',
+    friendshipRemoveFollower: 'friendships/remove_follower/<%= id %>/',
     userInfo: 'users/<%= id %>/info/',
     userFeed: 'feed/user/<%= id %>/?<%= maxId ? ("max_id=" + maxId + "&") : "" %>rank_token=<%= rankToken %>',
-    timelineFeed: 'feed/timeline/?<%= maxId ? ("max_id=" + maxId + "&") : "" %>rank_token=<%= rankToken %>&ranked_content=true',
+    timelineFeed: 'feed/timeline/<%= maxId ? ("?max_id=" + maxId) : "" %>',
     tagFeed: 'feed/tag/<%= encodeURI(tag) %>/?<%= maxId ? ("max_id=" + maxId + "&") : "" %>rank_token=<%= rankToken %>',
     selfLikedFeed: 'feed/liked/<%= maxId ? ("?max_id=" + maxId) : "" %>',
     storyViewers: 'media/<%= mediaId %>/list_reel_media_viewer/<%= maxId ? ("?max_id=" + maxId) : "" %>',
@@ -53,12 +55,18 @@ const ROUTES = {
     mediaConfigureSidecar: 'media/configure_sidecar/',
     mediaInfo: 'media/<%= mediaId %>/info/',
     mediaLikes: 'media/<%= mediaId %>/likers/',
-    mediaComments: 'media/<%= mediaId %>/comments/<%= maxId ? ("?max_id=" + maxId) : "" %>',
+    mediaComments: 'media/<%= mediaId %>/comments/?can_support_threading=true<%= minId ? ("&min_id=" + minId) : "" %><%= maxId ? ("&max_id=" + maxId) : "" %>',
     mediaDeletePhoto: 'media/<%= mediaId %>/delete/?media_type=PHOTO',
     mediaEdit: 'media/<%= mediaId %>/edit_media/',
     qeSync: 'qe/sync/',
+    launcherSync: 'launcher/sync/',
+    readMsisdnHeader: 'accounts/read_msisdn_header/',
+    logAttribution: 'attribution/log_attribution/',
+    zeroRatingToken: 'zr/token/result/?custom_device_id=<%=cd_id%>&device_id=<%=d_id%>&fetch_reason=<%=fr%>&token_hash=<%=th%>',
+    contactPointPrefill: 'accounts/contact_point_prefill/',
     discoverAyml: 'discover/ayml/',
-    inbox: 'direct_v2/inbox/<%= cursor ? ("?cursor=" + cursor) : "" %>',
+    exploreFeed: 'discover/explore/?is_prefetch=<%=is_prefetch%>&is_from_promote=false&timezone_offset=2&session_id=<%=session_id%>&supported_capabilities_new=<%=supported_capabilities_new%>&max_id=0&module=explore_popular',
+    inbox: 'direct_v2/inbox/?persistentBadging=true&use_unified_inbox=true<%= cursor ? ("&cursor=" + cursor) : "" %>',
     inboxPending: 'direct_v2/pending_inbox/<%= maxId ? ("?max_id=" + maxId) : "" %>',
     threads: 'direct_v2/threads/?user_ids=<% JSON.stringify(threads) %>',
     threadsShow: 'direct_v2/threads/<%= threadId %>/<%= cursor ? ("?cursor=" + cursor) : "" %>',
@@ -73,7 +81,12 @@ const ROUTES = {
     threadsBrodcastPhoto: 'direct_v2/threads/broadcast/configure_photo/',
     threadsApproveAll: 'direct_v2/threads/approve_all/',
     threadsRecentRecipients: 'direct_share/recent_recipients/',
+    getRankedRecipients: 'direct_v2/ranked_recipients/?mode=<%=mode%>&show_threads=<%=show_threads%>&use_unified_inbox=<%=use_unified_inbox%>',
     autocompleteUserList: 'friendships/autocomplete_user_list/?version=2&followinfo=True',
+    getBootstrapUsers: 'scores/bootstrap/users/?surfaces=<%=surfaces%>',
+    getPresences: 'direct_v2/get_presence/',
+    getRecentActivityInbox: 'news/inbox/',
+    getProfileNotice: 'users/profile_notice/',
     megaphoneLog: 'megaphone/log/',
     block: 'friendships/block/<%= id %>/',
     unblock: 'friendships/unblock/<%= id %>/',
@@ -91,9 +104,9 @@ const WEB_ROUTES = {
 }
 
 const PRIVATE_KEY = {
-    SIG_KEY: '109513c04303341a7daf27bb41b268e633b30dcc65a3fe14503f743176113869',
+    SIG_KEY: '673581b0ddb792bf47da5f9ca816b613d7996f342723aa06993a3f0552311c7d',
     SIG_VERSION: '4',
-    APP_VERSION: '27.0.0.7.97'
+    APP_VERSION: '42.0.0.19.95'
 }
 
 
@@ -103,9 +116,15 @@ const WEB_HOSTNAME = 'www.instagram.com';
 const HOST = 'https://' + HOSTNAME + '/';
 const WEBHOST = 'https://' + WEB_HOSTNAME + '/';
 
+const HEADERS = {
+    FB_ANALYTICS_APPLICATION_ID: '567067343352427',
+    X_IG_Connection_Type: 'WIFI',
+    X_IG_Capabilities: '3brTPw=='
+}
 
 module.exports = {
     ROUTES: ROUTES,
+    HEADERS: HEADERS,
     WEB_ROUTES: WEB_ROUTES,
     HOSTNAME: HOSTNAME,
     WEB_HOSTNAME: WEB_HOSTNAME,
@@ -115,5 +134,6 @@ module.exports = {
     API_ENDPOINT: HOST + 'api/v1/',
     EXPERIMENTS: EXPERIMENTS,
     PRIVATE_KEY: PRIVATE_KEY,
-    instagramAgentTemplate: _.template('Instagram <%= version %> Android (<%= agent %>)')
+    instagramAgentTemplate: _.template('Instagram <%= version %> Android (<%= agent %>)'),
+    instagramAgentWebTemplate: _.template('Mozilla/5.0 (Linux; Android <%= release %>; <%= model %> Build/<%= build %>; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/70.0.3538.110 Mobile Safari/537.36 <%= instagramAgent %>')
 }

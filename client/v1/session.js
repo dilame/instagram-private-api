@@ -1,16 +1,18 @@
 var util = require("util");
 var Resource = require("./resource");
-var fs = require('fs');
 var _ = require('lodash');
-var request = require("request-promise");
 var CookieStorage = require("./cookie-storage");
-var RequestJar = require("./jar");
 
 function Session(device, storage, proxy) {
     this.setDevice(device);    
     this.setCookiesStorage(storage);
     if(_.isString(proxy) && !_.isEmpty(proxy))
         this.proxyUrl = proxy;
+
+    this._uuid = Helpers.generateUUID();
+    this._phone_id = Helpers.generateUUID();
+    this._adid = Helpers.generateUUID();
+    this._id = Helpers.generateUUID();
 }
 
 util.inherits(Session, Resource);
@@ -22,11 +24,13 @@ var Exceptions = require('./exceptions');
 var Request = require('./request');
 var Device = require("./device");
 var QE = require("./qe");
+var Internal = require('./internal');
 var Megaphone = require("./megaphone");
 var Timeline = require("./feeds/timeline-feed");
 var Inbox = require("./feeds/inbox");
 var Thread = require("./thread");
 var Relationship = require("./relationship");
+var Story = require('./feeds/story-tray');
 var Helpers = require("../../helpers");
 
 Object.defineProperty(Session.prototype, "jar", {
@@ -43,6 +47,26 @@ Object.defineProperty(Session.prototype, "cookieStore", {
 
 Object.defineProperty(Session.prototype, "device", {
     get: function() { return this._device },
+    set: function(val) {}
+});
+
+Object.defineProperty(Session.prototype, "uuid", {
+    get: function() { return this._uuid },
+    set: function(val) {}
+});
+
+Object.defineProperty(Session.prototype, "phone_id", {
+    get: function() { return this._phone_id },
+    set: function(val) {}
+});
+
+Object.defineProperty(Session.prototype, "advertising_id", {
+    get: function() { return this._adid },
+    set: function(val) {}
+});
+
+Object.defineProperty(Session.prototype, "session_id", {
+    get: function() { return this._id },
     set: function(val) {}
 });
 
@@ -72,7 +96,7 @@ Session.prototype.setCookiesStorage = function (storage) {
     if(!(storage instanceof CookieStorage))
         throw new Error("`storage` is not an valid instance of `CookieStorage`");
     this._cookiesStore = storage;
-    this._jar = new RequestJar(storage.store);
+    this._jar = Request.jar(storage.store);
     return this;
 };
 
@@ -125,52 +149,23 @@ Session.prototype.destroy = function () {
 
 
 Session.login = function(session, username, password) {
-    return new Request(session)
-        .setResource('login')
-        .setMethod('POST')
-        .generateUUID()
-        .setData({
-            username: username,
-            password: password,
-            login_attempt_count: 0
-        })
-        .signPayload()
-        .send()
-        .catch(function (error) {
-            if (error.name == "RequestError" && _.isObject(error.json)) {
-                if(error.json.invalid_credentials)
-                    throw new Exceptions.AuthenticationError(error.message);
-                if(error.json.error_type==="inactive user")
-                    throw new Exceptions.AccountBanned(error.json.message+' '+error.json.help_url);
-            }
-            throw error;
-        })
-        .then(function () {
-            return [session, QE.sync(session)];
-        })
-        .spread(function (session) {
-            var autocomplete = Relationship.autocompleteUserList(session)
-                .catch(Exceptions.RequestsLimitError, function() {
-                    // autocompleteUserList has ability to fail often
-                    return false;
-                })
-            return [session, autocomplete];
-        })
-        .spread(function (session) {
-            return [session, new Timeline(session).get()];
-        })
-        .spread(function (session) {
-            return [session, Thread.recentRecipients(session)];
-        })
-        .spread(function (session) {
-            return [session, new Inbox(session).get()];
-        })
-        .spread(function (session) {
-            return [session, Megaphone.logSeenMainFeed(session)];
-        })
-        .spread(function(session) {
-            return session;
-        })
+    return session.preLoginFlow()
+        .then(() => new Request(session)
+            .setResource('login')
+            .setMethod('POST')
+            .setData({
+                username: username,
+                password: password,
+                guid: session.uuid,
+                phone_id: session.phone_id,
+                adid: session.adid,
+                login_attempt_count: 0
+            })
+            .signPayload()
+            .send()
+        )
+        .then(() => session.loginFlow())
+        .then(() => session)
         .catch(Exceptions.CheckpointError, function(error) {
             // This situation is not really obvious,
             // but even if you got checkpoint error (aka captcha or phone)
@@ -184,6 +179,15 @@ Session.login = function(session, username, password) {
                     throw error;
                 })
         })
+        .catch(function (error) {
+            if (error.name == "RequestError" && _.isObject(error.json)) {
+                if(error.json.invalid_credentials)
+                    throw new Exceptions.AuthenticationError(error.message);
+                if(error.json.error_type==="inactive user")
+                    throw new Exceptions.AccountBanned(error.json.message+' '+error.json.help_url);
+            }
+            throw error;
+        })
         
 }
 
@@ -195,9 +199,42 @@ Session.create = function(device, storage, username, password, proxy) {
     return session.getAccountId()
         .then(function () {
             return session;
+            // Disabled for the moment
+            // But `loginFlow` should be called every time the user closes an reopen the app.
+            //return session.loginFlow()
+            //    .then(() => session)
         })
         .catch(Exceptions.CookieNotValidError, function() {
             // We either not have valid cookes or authentication is not fain!
             return Session.login(session, username, password)
         })
+}
+
+Session.prototype.loginFlow = function() {
+    // Right now only requests after closing and re-opening the app are made
+    // Later we should also include requests made after a full re-login.
+
+    return new Timeline(this).get()
+                    .then(() => Relationship.getBootstrapUsers(this))
+                    .then(() => new Story(this).get())
+                    .then(() => Internal.getRankedRecipients(this, 'reshare'))
+                    .then(() => Internal.getRankedRecipients(this, 'raven'))
+                    .then(() => new Inbox(this).get())
+                    .then(() => Internal.getPresences(this))
+                    .then(() => Internal.getRecentActivityInbox(this))
+                    .then(() => Internal.getProfileNotice(this))
+                    .then(() => Internal.getExploreFeed(this))
+}
+
+Session.prototype.preLoginFlow = function() {
+    // Only on full re-login.
+    return Internal.readMsisdnHeader(this)
+                .then(() => Internal.qeSync(this, true))
+                .then(() => Internal.launcherSync(this, true))
+                .then(() => Internal.logAttribution(this))
+                .then(() => Internal.fetchZeroRatingToken(this))
+                .then(() => Internal.setContactPointPrefill(this))
+                .catch(function (error) {
+                    throw new Error(error.message);
+                })
 }

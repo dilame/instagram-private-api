@@ -2,7 +2,7 @@ var _ = require("lodash");
 var Promise = require("bluebird");
 var request = require('request-promise');
 var JSONbig = require('json-bigint');
-var Agent = require('socks5-https-client/lib/Agent');
+var ProxyAgent = require('proxy-agent');
 
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 
@@ -40,8 +40,13 @@ var CONSTANTS = require('./constants');
 var Session = require('./session');
 
 Request.defaultHeaders = {
-    'X-IG-Connection-Type': 'WIFI',
-    'X-IG-Capabilities': '3QI=',
+    'X-IG-Connection-Type': CONSTANTS.HEADERS.X_IG_Connection_Type,
+    'X-IG-Capabilities': CONSTANTS.HEADERS.X_IG_Capabilities,
+    'X-IG-App-ID': CONSTANTS.HEADERS.FB_ANALYTICS_APPLICATION_ID,
+    'X-IG-Connection-Speed': Math.round(Helpers.getRandomArbitrary(1000, 3700)) + 'kbps',
+    'X-IG-Bandwidth-Speed-KBPS': '-1.000',
+    'X-IG-Bandwidth-TotalBytes-B': '0',
+    'X-IG-Bandwidth-TotalTime-MS': '0',
     'Accept-Language': 'en-US',
     'Host': CONSTANTS.HOSTNAME,
     'Accept': '*/*',
@@ -52,6 +57,10 @@ Request.defaultHeaders = {
 
 Request.requestClient = request.defaults({});
 
+Request.jar = function (store) {
+    return request.jar(store);
+}
+
 Request.setTimeout = function (ms) {
     var object = { 'timeout': parseInt(ms) };
     Request.requestClient = request.defaults(object);
@@ -60,16 +69,7 @@ Request.setTimeout = function (ms) {
 Request.setProxy = function (proxyUrl) {
     if(!Helpers.isValidUrl(proxyUrl))
         throw new Error("`proxyUrl` argument is not an valid url")
-    var object = { 'proxy': proxyUrl };    
-    Request.requestClient = request.defaults(object);
-}
-
-Request.setSocks5Proxy = function (host, port) {
-    var object = { agentClass: Agent,
-    agentOptions: {
-        socksHost: host, // Defaults to 'localhost'.
-        socksPort: port // Defaults to 1080.
-    }};
+    var object = { agent: new ProxyAgent(proxyUrl) };
     Request.requestClient = request.defaults(object);
 }
 
@@ -198,6 +198,7 @@ Request.prototype.setUrl = function(url) {
 
 Request.prototype.setResource = function(resource, data) {
     this._resource = resource;
+    console.log(routes.getUrl(resource, data));
     this.setUrl(routes.getUrl(resource, data));
     return this;
 };
@@ -219,7 +220,7 @@ Request.prototype.setCSRFToken = function(token) {
 
 Request.prototype.setSession = function(session) {
     if(!(session instanceof Session))
-        throw new Error("`session` parametr must be instance of `Session`")
+        throw new Error("`session` parameter must be instance of `Session`")
     this._session = session;
     this.setCSRFToken(session.CSRFToken);
     this.setOptions({
@@ -228,14 +229,14 @@ Request.prototype.setSession = function(session) {
     if(session.device)
         this.setDevice(session.device);
     if(session.proxyUrl)
-        this.setOptions({proxy: session.proxyUrl});
+        this.setOptions({ agent: new ProxyAgent(session.proxyUrl) });
     return this;
 };
 
 
 Request.prototype.setDevice = function(device) {
     if(!(device instanceof Device))
-        throw new Error("`device` parametr must be instance of `Device`") 
+        throw new Error("`device` parameter must be instance of `Device`") 
     this._device = device;
     this.setHeaders({
         'User-Agent': device.userAgent()

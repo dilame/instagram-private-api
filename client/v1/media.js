@@ -43,7 +43,7 @@ Media.prototype.parseParams = function (json) {
             duration: json.video_duration
         }
     }
-    if (json.media_type === 8 && _.isArray(json.carousel_media)) { 
+    if (json.media_type === 8 && _.isArray(json.carousel_media)) {
         hash.carouselMedia = _.map(json.carousel_media, function (medium) {
            return new Media(that.session, medium);
         });
@@ -65,14 +65,15 @@ Media.prototype.parseParams = function (json) {
     });
     // backward compability
     this.comments = this.previewComments;
-    this.account = new Account(that.session, json.user);
+    if(_.isPlainObject(json.user))
+      this.account = new Account(that.session, json.user);
     return hash;
 };
 
 
 Media.prototype.getParams = function () {
     return _.extend(this._params, {
-        account: this.account.params,
+        account: this.account ? this.account.params : {},
         comments: _.map(this.comments, 'params'),
         location: this.location ? this.location.params : {},
         carouselMedia:  _.map(this._params.carouselMedia, 'params')
