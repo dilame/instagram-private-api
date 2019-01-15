@@ -198,7 +198,6 @@ Request.prototype.setUrl = function(url) {
 
 Request.prototype.setResource = function(resource, data) {
     this._resource = resource;
-    console.log(routes.getUrl(resource, data));
     this.setUrl(routes.getUrl(resource, data));
     return this;
 };
