@@ -35,7 +35,7 @@ var signatures = require('./signatures');
 var Device = require('./device');
 var Exceptions = require('./exceptions');
 var routes = require('./routes');
-var Helpers = require('../../helpers');
+var Helpers = require('../helpers');
 var CONSTANTS = require('./constants');
 var Session = require('./session');
 

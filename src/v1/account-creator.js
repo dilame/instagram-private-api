@@ -4,7 +4,7 @@ var fs = require("fs");
 var path = require("path");
 var crypto = require('crypto');
 var Resource = require('./resource');
-var Helpers = require('../../helpers');
+var Helpers = require('../helpers');
 var clean = require('underscore.string/clean');
 
 

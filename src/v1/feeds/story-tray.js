@@ -6,7 +6,7 @@ function StoryTray(session) {
 
 module.exports = StoryTray;
 var Request = require('../request');
-var Helpers = require('../../../helpers');
+var Helpers = require('../../helpers');
 var Media = require('../media');
 
 StoryTray.prototype.get = function () {

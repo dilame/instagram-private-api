@@ -12,7 +12,7 @@ util.inherits(Hashtag, Resource);
 module.exports = Hashtag;
 
 var Request = require('./request');
-var Helpers = require('../../helpers');
+var Helpers = require('../helpers');
 
 
 Hashtag.prototype.parseParams = function (json) {

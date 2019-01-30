@@ -10,7 +10,7 @@ util.inherits(TimelineFeed, FeedBase);
 
 module.exports = TimelineFeed;
 var Request = require('../request');
-var Helpers = require('../../../helpers');
+var Helpers = require('../../helpers');
 var Media = require('../media');
 
 

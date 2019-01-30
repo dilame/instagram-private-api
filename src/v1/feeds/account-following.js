@@ -13,7 +13,7 @@ util.inherits(AccountFollowingFeed, FeedBase);
 
 module.exports = AccountFollowingFeed;
 var Request = require('../request');
-var Helpers = require('../../../helpers');
+var Helpers = require('../../helpers');
 var Account = require('../account');
 
 AccountFollowingFeed.prototype.get = function () {

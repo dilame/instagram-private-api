@@ -3,7 +3,7 @@ var FileCookieStore = require('tough-cookie-file-store');
 var path = require('path');
 var fs = require('fs');
 var _ = require('lodash');
-var Helpers = require('../../helpers');
+var Helpers = require('../helpers');
 var CookieStorage = require('./cookie-storage');
 var CONSTANTS = require("./constants");
 

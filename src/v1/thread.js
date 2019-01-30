@@ -16,7 +16,7 @@ var Account = require('./account');
 var ThreadItem = require('./thread-item');
 var Exceptions = require('./exceptions');
 var Request = require('./request');
-var Helpers = require('../../helpers');
+var Helpers = require('../helpers');
 
 
 function mapPayload(session, payload) {

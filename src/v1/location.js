@@ -12,7 +12,7 @@ util.inherits(Location, Resource);
 module.exports = Location;
 
 var Request = require('./request');
-var Helpers = require('../../helpers');
+var Helpers = require('../helpers');
 var Media = require('./media');
 var Exceptions = require('./exceptions');
 

@@ -1,7 +1,7 @@
 var util = require("util");
 var _ = require("lodash");
 var Resource = require("./resource");
-var Helpers = require('../../helpers');
+var Helpers = require('../helpers');
 var Promise = require("bluebird");
 var camelKeys = require('camelcase-keys');
 

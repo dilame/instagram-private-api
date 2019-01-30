@@ -13,7 +13,7 @@ util.inherits(UserMediaFeed, FeedBase);
 module.exports = UserMediaFeed;
 var Media = require('../media');
 var Request = require('../request');
-var Helpers = require('../../../helpers');
+var Helpers = require('../../helpers');
 var Account = require('../account');
 
 

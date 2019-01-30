@@ -1,5 +1,5 @@
 var Request = require('./request');
-var Helpers = require('../../helpers');
+var Helpers = require('../helpers');
 var _ = require('lodash');
 var Media = require('./media');
 var Account = require('./account');

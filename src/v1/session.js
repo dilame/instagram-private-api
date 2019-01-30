@@ -31,7 +31,7 @@ var Inbox = require("./feeds/inbox");
 var Thread = require("./thread");
 var Relationship = require("./relationship");
 var Story = require('./feeds/story-tray');
-var Helpers = require("../../helpers");
+var Helpers = require("../helpers");
 
 Object.defineProperty(Session.prototype, "jar", {
     get: function() { return this._jar },

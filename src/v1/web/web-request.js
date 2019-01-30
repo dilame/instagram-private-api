@@ -3,7 +3,7 @@ var _ = require("lodash");
 var fs = require("fs");
 var Request = require('../request');
 var routes = require('../routes');
-var Helpers = require('../../../helpers');
+var Helpers = require('../../helpers');
 var CONSTANTS = require('../constants');
 
 

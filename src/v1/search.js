@@ -1,6 +1,6 @@
 var _ = require('lodash');
 var Request = require('./request');
-var Helpers = require('../../helpers');
+var Helpers = require('../helpers');
 var Account = require('./account');
 var Hashtag = require('./hashtag');
 var Location = require('./location');

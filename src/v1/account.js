@@ -2,7 +2,7 @@ var util = require("util");
 var _ = require("lodash");
 var Resource = require('./resource');
 var Request = require('./request');
-var Helpers = require('../../helpers');
+var Helpers = require('../helpers');
 var camelKeys = require('camelcase-keys');
 
 function Account() {
