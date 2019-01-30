@@ -29,10 +29,6 @@ Helpers.generateUUID = function () {
     }).toLowerCase();
 };
 
-Helpers.getRandomArbitrary = function(min, max) {
-    return Math.random() * (max - min) + min;
-}
-
 
 Helpers.buildRankToken = function (accountId) {
     return accountId + '_' + Helpers.generateUUID();

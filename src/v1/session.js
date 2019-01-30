@@ -22,13 +22,9 @@ var CONSTANTS = require("./constants");
 var Account = require('./account');
 var Exceptions = require('./exceptions');
 var Request = require('./request');
-var Device = require("./device");
-var QE = require("./qe");
 var Internal = require('./internal');
-var Megaphone = require("./megaphone");
 var Timeline = require("./feeds/timeline-feed");
 var Inbox = require("./feeds/inbox");
-var Thread = require("./thread");
 var Relationship = require("./relationship");
 var Story = require('./feeds/story-tray');
 var Helpers = require("../helpers");
@@ -102,8 +98,6 @@ Session.prototype.setCookiesStorage = function (storage) {
 
 
 Session.prototype.setDevice = function (device) {
-    if(!(device instanceof Device))
-        throw new Error("`device` is not an valid instance of `Device`");
     this._device = device;
     return this;
 };

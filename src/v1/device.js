@@ -1,3 +1,6 @@
+// THIS CLASS IS DEPRECATED AND WILL BE REMOVED IN NEXT MAJOR VERSION
+// Please, use require('instagram-private-api').Device instead
+
 var CONSTANTS = require('./constants');
 var _ = require('lodash');
 var md5 = require('js-md5');

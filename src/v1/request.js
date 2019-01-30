@@ -32,7 +32,6 @@ module.exports = Request;
 
 
 var signatures = require('./signatures');
-var Device = require('./device');
 var Exceptions = require('./exceptions');
 var routes = require('./routes');
 var Helpers = require('../helpers');
@@ -40,18 +39,19 @@ var CONSTANTS = require('./constants');
 var Session = require('./session');
 
 Request.defaultHeaders = {
+    'X-FB-HTTP-Engine': 'Liger',
     'X-IG-Connection-Type': CONSTANTS.HEADERS.X_IG_Connection_Type,
     'X-IG-Capabilities': CONSTANTS.HEADERS.X_IG_Capabilities,
     'X-IG-App-ID': CONSTANTS.HEADERS.FB_ANALYTICS_APPLICATION_ID,
-    'X-IG-Connection-Speed': Math.round(Helpers.getRandomArbitrary(1000, 3700)) + 'kbps',
+    'X-IG-Connection-Speed': _.random(1000, 3700) + 'kbps', // TODO: Need to be random per request
     'X-IG-Bandwidth-Speed-KBPS': '-1.000',
     'X-IG-Bandwidth-TotalBytes-B': '0',
     'X-IG-Bandwidth-TotalTime-MS': '0',
     'Accept-Language': 'en-US',
     'Host': CONSTANTS.HOSTNAME,
     'Accept': '*/*',
-    'Accept-Encoding': 'gzip, deflate, sdch',
-    'Connection': 'Close'
+    'Accept-Encoding': 'gzip,deflate',
+    'Connection': 'Keep-Alive'
 };
 
 
@@ -234,8 +234,6 @@ Request.prototype.setSession = function(session) {
 
 
 Request.prototype.setDevice = function(device) {
-    if(!(device instanceof Device))
-        throw new Error("`device` parameter must be instance of `Device`") 
     this._device = device;
     this.setHeaders({
         'User-Agent': device.userAgent()

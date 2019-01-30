@@ -23,9 +23,6 @@ util.inherits(WebRequest, Request);
 
 module.exports = WebRequest;
 var Exceptions = require('../exceptions');
-var Session = require('../session');
-var Device = require('../device');
-
 
 WebRequest.prototype.setResource = function(resource, data) {
     this._resource = resource;
@@ -35,8 +32,6 @@ WebRequest.prototype.setResource = function(resource, data) {
 
 
 WebRequest.prototype.setDevice = function(device) {
-    if(!(device instanceof Device))
-        throw new Error("`device` parametr must be instance of `Device`") 
     this._device = device;
     this.setHeaders({
         'User-Agent': device.userAgent()

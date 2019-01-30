@@ -25,8 +25,11 @@
     "test": "./node_modules/mocha/bin/mocha --inline-diffs --timeout 1000000 tests/run.js"
   },
   "dependencies": {
+    "@types/chance": "^1.0.1",
+    "@types/lodash": "^4.14.120",
     "bluebird": "^3.5.2",
     "camelcase-keys": "^4.2.0",
+    "chance": "^1.0.18",
     "crypto-js": "^3.1.6",
     "instagram-id-to-url-segment": "0.0.0",
     "is-stream": "^1.1.0",
