@@ -1,5 +1,5 @@
 var should = require('should');
-var Client = require('../../../client/v1');
+var Client = require('../../../src/v1');
 var Promise = require('bluebird');
 var path = require('path');
 var mkdirp = require('mkdirp');

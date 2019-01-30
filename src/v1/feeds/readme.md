@@ -1,7 +1,7 @@
 Example usage
 
 ```js
-const InstagramV1 = require('./client/v1')
+const InstagramV1 = require(src)
 
 async function main () {
     const device = new InstagramV1.Device('smmtooltest')

@@ -1,5 +1,5 @@
 var should = require('should');
-var Client = require('../../client/v1');
+var Client = require('../../src/v1');
 var _ = require('lodash');
 
 describe('`AccountCreator` class', function() {

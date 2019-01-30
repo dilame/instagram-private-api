@@ -1,6 +1,6 @@
 var should = require('should');
 var _ = require('lodash');
-var Client = require('../../client/v1');
+var Client = require('../../src/v1');
 
 function shouldBeThreadItem (item) {
     item.params.should.have.property('id');

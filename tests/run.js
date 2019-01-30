@@ -1,4 +1,4 @@
-var Client = require('../client/v1');
+var Client = require('../src/v1');
 var mkdirp = require('mkdirp');
 var support = require('./support');
 var _ = require('lodash');

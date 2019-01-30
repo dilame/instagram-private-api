@@ -1,4 +1,4 @@
-var Client = require('../../client/v1');
+var Client = require('../../src/v1');
 
 describe('`Device` class', function() {
     var device1;
