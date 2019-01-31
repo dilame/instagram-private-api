@@ -1,44 +1,34 @@
-var should = require('should');
-var Client = require('../../../src/v1');
-var Promise = require('bluebird');
-var path = require('path');
-var mkdirp = require('mkdirp');
-var inquirer = require('inquirer');
-var _ = require('lodash');
-var fs = require('fs');
+const { V1: Client } = require('../../../dist');
 
+describe('`AccountFollowers` class', () => {
+  let feed;
+  let session;
 
-describe("`AccountFollowers` class", function() {
+  before(() => {
+    session = require('../../run').session;
+    feed = new Client.Feed.AccountFollowers(session, '25025320', 400);
+  });
 
-    var feed, session;
+  it('should not be problem to get followers', done => {
+    const originalCursor = feed.getCursor();
+    feed.get().then(data => {
+      data.forEach(account => {
+        account.should.be.instanceOf(Client.Account);
+      });
+      should(originalCursor).not.equal(feed.getCursor());
+      feed.moreAvailable.should.be.Boolean();
+      feed.moreAvailable.should.equal(true);
+      done();
+    });
+  });
 
-    before(function() {
-        session = require('../../run').session;
-        feed = new Client.Feed.AccountFollowers(session, '25025320', 400);
-    })
-
-    it("should not be problem to get followers", function(done) {
-        var originalCursor = feed.getCursor();
-        feed.get().then(function(data) {
-            _.each(data, function(account) {
-                account.should.be.instanceOf(Client.Account)
-            })
-            should(originalCursor).not.equal(feed.getCursor())
-            feed.moreAvailable.should.be.Boolean();
-            feed.moreAvailable.should.equal(true);
-            done()
-        })
-    })
-
-    it("should not be problem to get all followers with limit 400", function(done) {
-
-        feed.all().then(function(data) {
-            _.each(data, function(account) {
-                account.should.be.instanceOf(Client.Account)
-            })
-            feed.moreAvailable.should.be.Boolean();
-            done()
-        })
-    })
-
-})
+  it('should not be problem to get all followers with limit 400', done => {
+    feed.all().then(data => {
+      data.forEach(account => {
+        account.should.be.instanceOf(Client.Account);
+      });
+      feed.moreAvailable.should.be.Boolean();
+      done();
+    });
+  });
+});

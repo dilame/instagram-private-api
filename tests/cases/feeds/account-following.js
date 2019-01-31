@@ -1,32 +1,25 @@
-var should = require('should');
-var Client = require('../../../src/v1');
-var Promise = require('bluebird');
-var path = require('path');
-var mkdirp = require('mkdirp');
-var inquirer = require('inquirer');
-var _ = require('lodash');
-var fs = require('fs');
+const { V1: Client } = require('../../../dist');
+const _ = require('lodash');
 
+describe('`AccountFollowing` class', () => {
+  let feed;
+  let session;
 
-describe("`AccountFollowing` class", function() {
+  before(() => {
+    session = require('../../run').session;
+    feed = new Client.Feed.AccountFollowing(session, '193860719');
+  });
 
-    var feed, session;
-
-    before(function() {
-        session = require('../../run').session;
-        feed = new Client.Feed.AccountFollowing(session, '193860719');
-    })
-
-    it("should not be problem to get followings", function(done) {
-        var originalCursor = feed.getCursor();
-        feed.get().then(function(data) {
-            _.each(data, function(account) {
-                account.should.be.instanceOf(Client.Account)
-            })
-            should(originalCursor).should.not.equal(feed.getCursor())
-            feed.moreAvailable.should.be.Boolean();
-            feed.moreAvailable.should.equal(false);
-            done()
-        })
-    })
-})
+  it('should not be problem to get followings', done => {
+    const originalCursor = feed.getCursor();
+    feed.get().then(data => {
+      data.forEach(account => {
+        account.should.be.instanceOf(Client.Account);
+      });
+      should(originalCursor).should.not.equal(feed.getCursor());
+      feed.moreAvailable.should.be.Boolean();
+      feed.moreAvailable.should.equal(false);
+      done();
+    });
+  });
+});

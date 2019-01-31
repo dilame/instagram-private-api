@@ -1,25 +1,21 @@
-var should = require('should');
-var Client = require('../../../src/v1');
-var _ = require('lodash');
+const { V1: Client } = require('../../../dist');
 
-var shouldBeThread = require('../thread').shouldBeThread;
+const shouldBeThread = require('../thread').shouldBeThread;
 
-describe("`InboxPending` class", function() {
+describe('`InboxPending` class', () => {
+  let feed;
+  let session;
 
-    var feed, session;
+  before(() => {
+    session = require('../../run').session;
+    feed = new Client.Feed.InboxPending(session);
+  });
 
-    before(function() {
-        session = require('../../run').session;
-        feed = new Client.Feed.InboxPending(session);
+  it('should not be problem to get pending threads', done => {
+    feed.get().then(items => {
+      items.forEach(shouldBeThread);
+      feed.isMoreAvailable().should.be.Boolean();
+      done();
     });
-
-    it("should not be problem to get pending threads", function(done) {
-
-        feed.get().then(function(items) {
-            _.each(items, shouldBeThread);
-            feed.isMoreAvailable().should.be.Boolean();
-            done();
-        })
-    })
-
+  });
 });
