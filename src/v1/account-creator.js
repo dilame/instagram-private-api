@@ -7,7 +7,7 @@ const Relationship = require('./relationship');
 const discover = require('./discover');
 const Request = require('../request');
 const Thread = require('./thread');
-const Session = require('./session');
+const Session = require('../session');
 const Account = require('./account');
 
 class AccountCreator {

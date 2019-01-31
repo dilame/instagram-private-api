@@ -5,7 +5,7 @@ const Request = require('../request');
 class InstagramResource extends EventEmitter {
   constructor(session, params) {
     super();
-    const Session = require('./session');
+    const Session = require('../session');
     if (!(session instanceof Session))
       throw new Error('Argument `session` is not instace of Session');
     this._session = session;

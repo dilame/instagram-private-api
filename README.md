@@ -278,7 +278,7 @@ session.getAccount()
 
 You can instantize new class, which will be able to represent it self as a device
 you are using to access instagram. By default it will generate device
-from list of devices (can be found at `client/v1/devices.json`).
+from list of devices (can be found at `src/devices/devices.json`).
 
 Reason for username in arguments is that you need to have same device
 for same user every time when you access instagram API. This is done through

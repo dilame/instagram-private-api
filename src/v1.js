@@ -3,7 +3,7 @@ const InstagramV1 = {};
 InstagramV1.CONSTANTS = require('./v1/constants');
 InstagramV1.routes = require('./v1/routes');
 InstagramV1.Signatures = require('./v1/signatures');
-InstagramV1.Device = require('./v1/device');
+InstagramV1.Device = require('./devices/device').Device;
 InstagramV1.CookieStorage = require('./v1/cookie-storage');
 InstagramV1.CookieFileStorage = require('./v1/cookie-file-storage');
 InstagramV1.CookieMemoryStorage = require('./v1/cookie-memory-storage');
@@ -12,7 +12,7 @@ InstagramV1.prunedJson = require('./v1/json-pruned');
 InstagramV1.Resource = require('./v1/resource');
 
 InstagramV1.Request = require('./request');
-InstagramV1.Session = require('./v1/session');
+InstagramV1.Session = require('./session');
 InstagramV1.Account = require('./v1/account');
 InstagramV1.Media = require('./v1/media');
 InstagramV1.Comment = require('./v1/comment');

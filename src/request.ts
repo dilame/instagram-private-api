@@ -8,19 +8,18 @@ import * as Exceptions from './v1/exceptions';
 import * as routes from './v1/routes';
 import * as Helpers from './helpers';
 import * as CONSTANTS from './v1/constants';
+import Session from './session'
 
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 
 class Request {
   static requestClient: any = request.defaults({});
-  _id: string;
   _signData: boolean;
   _request: any;
   attemps: number;
   private _resource: any;
 
-  constructor(session) {
-    this._id = _.uniqueId();
+  constructor(session?: Session) {
     this._url = null;
     this._signData = false;
     this._request = {};
@@ -162,7 +161,7 @@ class Request {
 
   generateUUID() {
     this.setData({
-      _uuid: Helpers.generateUUID(),
+      _uuid: this.session,
     });
     return this;
   }
