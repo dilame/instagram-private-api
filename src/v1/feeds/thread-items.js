@@ -1,33 +1,35 @@
-var _ = require('lodash');
-var util = require('util');
-var FeedBase = require('./feed-base');
+const _ = require('lodash');
+const util = require('util');
+const FeedBase = require('./feed-base');
+const ThreadItem = require('../thread-item');
+const Request = require('../../request');
 
-function ThreadItemsFeed(session, threadId, limit) {
-  this.threadId = threadId;
-  this.limit = parseInt(limit) || null;
-  FeedBase.apply(this, arguments);
+class ThreadItemsFeed extends FeedBase {
+  constructor(session, threadId, limit) {
+    super(...arguments);
+    this.threadId = threadId;
+    this.limit = parseInt(limit) || null;
+  }
+
+  get() {
+    const that = this;
+    return new Request(this.session)
+      .setMethod('GET')
+      .setResource('threadsShow', {
+        cursor: this.getCursor(),
+        threadId: this.threadId,
+      })
+      .send()
+      .then(json => {
+        const items = _.map(
+          json.thread.items,
+          item => new ThreadItem(that.session, item),
+        );
+        that.moreAvailable = json.thread.has_older;
+        if (that.isMoreAvailable()) that.setCursor(json.thread.oldest_cursor);
+        return items;
+      });
+  }
 }
-util.inherits(ThreadItemsFeed, FeedBase);
 
 module.exports = ThreadItemsFeed;
-var ThreadItem = require('../thread-item');
-var Request = require('../../request');
-
-ThreadItemsFeed.prototype.get = function() {
-  var that = this;
-  return new Request(this.session)
-    .setMethod('GET')
-    .setResource('threadsShow', {
-      cursor: this.getCursor(),
-      threadId: this.threadId,
-    })
-    .send()
-    .then(function(json) {
-      var items = _.map(json.thread.items, function(item) {
-        return new ThreadItem(that.session, item);
-      });
-      that.moreAvailable = json.thread.has_older;
-      if (that.isMoreAvailable()) that.setCursor(json.thread.oldest_cursor);
-      return items;
-    });
-};

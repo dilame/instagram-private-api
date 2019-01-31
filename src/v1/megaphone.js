@@ -1,33 +1,27 @@
-var util = require('util');
-var _ = require('lodash');
-var Resource = require('./resource');
+const _ = require('lodash');
+const Resource = require('./resource');
+const Request = require('../request');
 
-function Megaphone() {
-  Resource.apply(this, arguments);
+class Megaphone extends Resource {
+  static log(session, data) {
+    return new Request(session)
+      .setMethod('POST')
+      .setResource('megaphoneLog')
+      .generateUUID()
+      .setData(
+        _.extend(data, {
+          uuid: session.device.md5,
+        }),
+      );
+  }
+
+  static logSeenMainFeed(session) {
+    return Megaphone.log(session, {
+      action: 'seen',
+      display_medium: 'main_feed',
+      type: 'feed_aysf',
+    });
+  }
 }
 
-util.inherits(Megaphone, Resource);
-var Request = require('../request');
-
 module.exports = Megaphone;
-var Exceptions = require('./exceptions');
-
-Megaphone.log = function(session, data) {
-  return new Request(session)
-    .setMethod('POST')
-    .setResource('megaphoneLog')
-    .generateUUID()
-    .setData(
-      _.extend(data, {
-        uuid: session.device.md5,
-      }),
-    );
-};
-
-Megaphone.logSeenMainFeed = function(session) {
-  return Megaphone.log(session, {
-    action: 'seen',
-    display_medium: 'main_feed',
-    type: 'feed_aysf',
-  });
-};

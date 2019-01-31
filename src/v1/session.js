@@ -12,7 +12,7 @@ import * as Story from './feeds/story-tray';
 import * as Helpers from '../helpers';
 
 class Session {
-  constructor (device, storage, proxy) {
+  constructor(device, storage, proxy) {
     this.setDevice(device);
     this.setCookiesStorage(storage);
     if (_.isString(proxy) && !_.isEmpty(proxy)) this.proxyUrl = proxy;
@@ -23,67 +23,67 @@ class Session {
     this._id = Helpers.generateUUID();
   }
 
-  get jar () {
+  get jar() {
     return this._jar;
   }
 
-  set jar (val) {}
+  set jar(val) {}
 
-  get cookieStore () {
+  get cookieStore() {
     return this._cookiesStore;
   }
 
-  set cookieStore (val) {}
+  set cookieStore(val) {}
 
-  get device () {
+  get device() {
     return this._device;
   }
 
-  set device (val) {}
+  set device(val) {}
 
-  get uuid () {
+  get uuid() {
     return this._uuid;
   }
 
-  set uuid (val) {}
+  set uuid(val) {}
 
-  get phone_id () {
+  get phone_id() {
     return this._phone_id;
   }
 
-  set phone_id (val) {}
+  set phone_id(val) {}
 
-  get advertising_id () {
+  get advertising_id() {
     return this._adid;
   }
 
-  set advertising_id (val) {}
+  set advertising_id(val) {}
 
-  get session_id () {
+  get session_id() {
     return this._id;
   }
 
-  set session_id (val) {}
+  set session_id(val) {}
 
-  get CSRFToken () {
+  get CSRFToken() {
     const cookies = this.jar.getCookies(CONSTANTS.HOST);
     const item = _.find(cookies, { key: 'csrftoken' });
     return item ? item.value : 'missing';
   }
 
-  set CSRFToken (val) {}
+  set CSRFToken(val) {}
 
-  get proxyUrl () {
+  get proxyUrl() {
     return this._proxyUrl;
   }
 
-  set proxyUrl (val) {
+  set proxyUrl(val) {
     if (!Helpers.isValidUrl(val) && val !== null)
       throw new Error('`proxyUrl` argument is not an valid url');
     this._proxyUrl = val;
   }
 
-  setCookiesStorage (storage) {
+  setCookiesStorage(storage) {
     if (!(storage instanceof CookieStorage))
       throw new Error('`storage` is not an valid instance of `CookieStorage`');
     this._cookiesStore = storage;
@@ -91,27 +91,29 @@ class Session {
     return this;
   }
 
-  setDevice (device) {
+  setDevice(device) {
     this._device = device;
     return this;
   }
 
-  getAccountId () {
+  getAccountId() {
     const that = this;
-    return this._cookiesStore.getSessionId().then(() => that._cookiesStore.getAccountId());
+    return this._cookiesStore
+      .getSessionId()
+      .then(() => that._cookiesStore.getAccountId());
   }
 
-  setProxy (url) {
+  setProxy(url) {
     this.proxyUrl = url;
     return this;
   }
 
-  getAccount () {
+  getAccount() {
     const that = this;
     return that.getAccountId().then(id => Account.getById(that, id));
   }
 
-  destroy () {
+  destroy() {
     const that = this;
     return new Request(this)
       .setMethod('POST')
@@ -125,22 +127,27 @@ class Session {
       });
   }
 
-  static create (device, storage, username, password, proxy) {
+  static create(device, storage, username, password, proxy) {
     const that = this;
     const session = new Session(device, storage);
     if (_.isString(proxy) && !_.isEmpty(proxy)) session.proxyUrl = proxy;
     return session
       .getAccountId()
-      .then(() => // Disabled for the moment
-        // But `loginFlow` should be called every time the user closes an reopen the app.
-        //return session.loginFlow()
-        //    .then(() => session)
-        session)
-      .catch(Exceptions.CookieNotValidError, () => // We either not have valid cookes or authentication is not fain!
-        Session.login(session, username, password));
+      .then(
+        () =>
+          // Disabled for the moment
+          // But `loginFlow` should be called every time the user closes an reopen the app.
+          //return session.loginFlow()
+          //    .then(() => session)
+          session,
+      )
+      .catch(Exceptions.CookieNotValidError, () =>
+        // We either not have valid cookes or authentication is not fain!
+        Session.login(session, username, password),
+      );
   }
 
-  loginFlow () {
+  loginFlow() {
     // Right now only requests after closing and re-opening the app are made
     // Later we should also include requests made after a full re-login.
 
@@ -157,7 +164,7 @@ class Session {
       .then(() => Internal.getExploreFeed(this));
   }
 
-  preLoginFlow () {
+  preLoginFlow() {
     // Only on full re-login.
     return Internal.readMsisdnHeader(this)
       .then(() => Internal.qeSync(this, true))
@@ -170,7 +177,7 @@ class Session {
       });
   }
 
-  static login (session, username, password) {
+  static login(session, username, password) {
     return session
       .preLoginFlow()
       .then(() =>
@@ -190,16 +197,22 @@ class Session {
       )
       .then(() => session.loginFlow())
       .then(() => session)
-      .catch(Exceptions.CheckpointError, error => // This situation is not really obvious,
-// but even if you got checkpoint error (aka captcha or phone)
-// verification, it is still an valid session unless `sessionid` missing
+      .catch(Exceptions.CheckpointError, (
+        error, // This situation is not really obvious,
+      ) =>
+        // but even if you got checkpoint error (aka captcha or phone)
+        // verification, it is still an valid session unless `sessionid` missing
         session
           .getAccountId()
-          .then(() => // We got sessionId and accountId, we are good to go
-            session)
+          .then(
+            () =>
+              // We got sessionId and accountId, we are good to go
+              session,
+          )
           .catch(Exceptions.CookieNotValidError, e => {
             throw error;
-          }))
+          }),
+      )
       .catch(error => {
         if (error.name === 'RequestError' && _.isObject(error.json)) {
           if (error.json.invalid_credentials)

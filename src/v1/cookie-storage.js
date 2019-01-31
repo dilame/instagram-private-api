@@ -1,86 +1,85 @@
-var util = require('util');
-var Promise = require('bluebird');
-var CONSTANTS = require('./constants');
-var _ = require('lodash');
+const Promise = require('bluebird');
+const CONSTANTS = require('./constants');
+const _ = require('lodash');
+const Exceptions = require('./exceptions');
 
-function CookieStorage(cookieStorage) {
-  this.storage = cookieStorage;
+class CookieStorage {
+  constructor(cookieStorage) {
+    this.storage = cookieStorage;
+  }
+
+  get store() {
+    return this.storage;
+  }
+
+  set store(val) {}
+
+  getCookieValue(name) {
+    const self = this;
+    return new Promise((resolve, reject) => {
+      self.storage.findCookie(CONSTANTS.TLD, '/', name, (err, cookie) => {
+        if (err) return reject(err);
+        if (!_.isObject(cookie))
+          return reject(new Exceptions.CookieNotValidError(name));
+        resolve(cookie);
+      });
+    });
+  }
+
+  putCookie(cookie) {
+    const args = _.toArray(arguments);
+    const self = this;
+    return new Promise((resolve, reject) => {
+      self.storage.putCookie(cookie, resolve);
+    });
+  }
+
+  getCookies() {
+    const self = this;
+    return new Promise((resolve, reject) => {
+      self.storage.findCookies(CONSTANTS.TLD, '/', (err, cookies) => {
+        if (err) return reject(err);
+        resolve(cookies || []);
+      });
+    });
+  }
+
+  getAccountId() {
+    const self = this;
+    return this.getCookieValue('ds_user_id').then(cookie => {
+      const id = parseInt(cookie.value);
+      if (_.isNumber(id) && !_.isNaN(id)) {
+        return id;
+      } else {
+        throw new Exceptions.CookieNotValidError('ds_user_id');
+      }
+    });
+  }
+
+  getSessionId() {
+    const currentTime = new Date().getTime();
+    return this.getCookieValue('sessionid').then(cookie => {
+      const acceptable =
+        cookie.expires instanceof Date &&
+        cookie.expires.getTime() > currentTime;
+      if (acceptable) return cookie.value;
+      throw new Exceptions.CookieNotValidError('sessionid');
+    });
+  }
+
+  removeCheckpointStep() {
+    const self = this;
+    return new Promise((resolve, reject) => {
+      self.storage.removeCookie(CONSTANTS.TLD, '/', 'checkpoint_step', err => {
+        if (err) return reject(err);
+        resolve();
+      });
+    });
+  }
+
+  destroy() {
+    throw new Error('Method destroy is not implemented');
+  }
 }
 
-Object.defineProperty(CookieStorage.prototype, 'store', {
-  get: function() {
-    return this.storage;
-  },
-  set: function(val) {},
-});
-
-var Exceptions = require('./exceptions');
 module.exports = CookieStorage;
-
-CookieStorage.prototype.getCookieValue = function(name) {
-  var self = this;
-  return new Promise(function(resolve, reject) {
-    self.storage.findCookie(CONSTANTS.TLD, '/', name, function(err, cookie) {
-      if (err) return reject(err);
-      if (!_.isObject(cookie))
-        return reject(new Exceptions.CookieNotValidError(name));
-      resolve(cookie);
-    });
-  });
-};
-
-CookieStorage.prototype.putCookie = function(cookie) {
-  var args = _.toArray(arguments);
-  var self = this;
-  return new Promise(function(resolve, reject) {
-    self.storage.putCookie(cookie, resolve);
-  });
-};
-
-CookieStorage.prototype.getCookies = function() {
-  var self = this;
-  return new Promise(function(resolve, reject) {
-    self.storage.findCookies(CONSTANTS.TLD, '/', function(err, cookies) {
-      if (err) return reject(err);
-      resolve(cookies || []);
-    });
-  });
-};
-
-CookieStorage.prototype.getAccountId = function() {
-  var self = this;
-  return this.getCookieValue('ds_user_id').then(function(cookie) {
-    var id = parseInt(cookie.value);
-    if (_.isNumber(id) && !_.isNaN(id)) {
-      return id;
-    } else {
-      throw new Exceptions.CookieNotValidError('ds_user_id');
-    }
-  });
-};
-
-CookieStorage.prototype.getSessionId = function() {
-  var currentTime = new Date().getTime();
-  return this.getCookieValue('sessionid').then(function(cookie) {
-    var acceptable =
-      cookie.expires instanceof Date && cookie.expires.getTime() > currentTime;
-    if (acceptable) return cookie.value;
-    throw new Exceptions.CookieNotValidError('sessionid');
-  });
-};
-
-CookieStorage.prototype.removeCheckpointStep = function() {
-  var self = this;
-  return new Promise(function(resolve, reject) {
-    self.storage.removeCookie(CONSTANTS.TLD, '/', 'checkpoint_step', function(
-      err,
-    ) {
-      if (err) return reject(err);
-      resolve();
-    });
-  });
-};
-
-CookieStorage.prototype.destroy = function() {
-  throw new Error('Method destroy is not implemented');
-};

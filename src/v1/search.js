@@ -1,46 +1,39 @@
-var _ = require('lodash');
-var Request = require('../request');
-var Helpers = require('../helpers');
-var Account = require('./account');
-var Hashtag = require('./hashtag');
-var Location = require('./location');
+const _ = require('lodash');
+const Request = require('../request');
+const Helpers = require('../helpers');
+const Account = require('./account');
+const Hashtag = require('./hashtag');
+const Location = require('./location');
 
-module.exports = function(session, query) {
-  return session
+module.exports = (session, query) =>
+  session
     .getAccountId()
-    .then(function(id) {
-      return new Request(session)
+    .then(id =>
+      new Request(session)
         .setMethod('GET')
         .setResource('topSearch', {
           rankToken: Helpers.buildRankToken(id).toUpperCase(),
-          query: query,
+          query,
         })
-        .send();
-    })
-    .then(function(json) {
-      var users = json.users.map(function(user) {
-        return {
-          user: new Account(session, user.user),
-          position: user.position,
-        };
-      });
-      var places = json.places.map(function(place) {
-        return {
-          place: new Location(session, place.place),
-          position: place.position,
-        };
-      });
-      var hashtags = json.hashtags.map(function(hashtag) {
-        return {
-          hashtag: new Hashtag(session, hashtag.hashtag),
-          position: hashtag.position,
-        };
-      });
+        .send(),
+    )
+    .then(json => {
+      const users = json.users.map(user => ({
+        user: new Account(session, user.user),
+        position: user.position,
+      }));
+      const places = json.places.map(place => ({
+        place: new Location(session, place.place),
+        position: place.position,
+      }));
+      const hashtags = json.hashtags.map(hashtag => ({
+        hashtag: new Hashtag(session, hashtag.hashtag),
+        position: hashtag.position,
+      }));
 
       return {
-        users: users,
-        places: places,
-        hashtags: hashtags,
+        users,
+        places,
+        hashtags,
       };
     });
-};

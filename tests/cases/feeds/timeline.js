@@ -1,5 +1,5 @@
+require('should');
 const { V1: Client } = require('../../../dist');
-const _ = require('lodash');
 
 describe('`Timeline` class', () => {
   let feed;

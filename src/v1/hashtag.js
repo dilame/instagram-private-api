@@ -1,69 +1,58 @@
-var util = require('util');
-var _ = require('lodash');
-var Resource = require('./resource');
-var camelKeys = require('camelcase-keys');
+const _ = require('lodash');
+const Resource = require('./resource');
+const camelKeys = require('camelcase-keys');
+const Request = require('../request');
+const Helpers = require('../helpers');
 
-function Hashtag(session, params) {
-  Resource.apply(this, arguments);
+class Hashtag extends Resource {
+  parseParams(json) {
+    const hash = camelKeys(json);
+    hash.mediaCount = parseInt(json.media_count);
+    if (_.isObject(hash.id)) hash.id = hash.id.toString();
+    return hash;
+  }
+
+  static search(session, query) {
+    return session
+      .getAccountId()
+      .then(id => {
+        const rankToken = Helpers.buildRankToken(id);
+        return new Request(session)
+          .setMethod('GET')
+          .setResource('hashtagsSearch', {
+            query,
+            rankToken,
+          })
+          .send();
+      })
+      .then(data =>
+        _.map(data.results, hashtag => new Hashtag(session, hashtag)),
+      );
+  }
+
+  static related(session, tag) {
+    return new Request(session)
+      .setMethod('GET')
+      .setResource('hashtagsRelated', {
+        tag,
+        visited: `[{"id":"${tag}","type":"hashtag"}]`,
+        related_types: '["hashtag"]',
+      })
+      .send()
+      .then(data =>
+        _.map(data.related, hashtag => new Hashtag(session, hashtag)),
+      );
+  }
+
+  static info(session, tag) {
+    return new Request(session)
+      .setMethod('GET')
+      .setResource('hashtagsInfo', {
+        tag,
+      })
+      .send()
+      .then(hashtag => new Hashtag(session, hashtag));
+  }
 }
 
-util.inherits(Hashtag, Resource);
 module.exports = Hashtag;
-
-var Request = require('../request');
-var Helpers = require('../helpers');
-
-Hashtag.prototype.parseParams = function(json) {
-  var hash = camelKeys(json);
-  hash.mediaCount = parseInt(json.media_count);
-  if (_.isObject(hash.id)) hash.id = hash.id.toString();
-  return hash;
-};
-
-Hashtag.search = function(session, query) {
-  return session
-    .getAccountId()
-    .then(function(id) {
-      var rankToken = Helpers.buildRankToken(id);
-      return new Request(session)
-        .setMethod('GET')
-        .setResource('hashtagsSearch', {
-          query: query,
-          rankToken: rankToken,
-        })
-        .send();
-    })
-    .then(function(data) {
-      return _.map(data.results, function(hashtag) {
-        return new Hashtag(session, hashtag);
-      });
-    });
-};
-
-Hashtag.related = function(session, tag) {
-  return new Request(session)
-    .setMethod('GET')
-    .setResource('hashtagsRelated', {
-      tag: tag,
-      visited: `[{"id":"${tag}","type":"hashtag"}]`,
-      related_types: '["hashtag"]',
-    })
-    .send()
-    .then(function(data) {
-      return _.map(data.related, function(hashtag) {
-        return new Hashtag(session, hashtag);
-      });
-    });
-};
-
-Hashtag.info = function(session, tag) {
-  return new Request(session)
-    .setMethod('GET')
-    .setResource('hashtagsInfo', {
-      tag: tag,
-    })
-    .send()
-    .then(function(hashtag) {
-      return new Hashtag(session, hashtag);
-    });
-};

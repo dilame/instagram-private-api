@@ -130,7 +130,8 @@ class Request {
       return this;
     }
     _.each(data, (val, key) => {
-      data[key] = val && val.toString && !_.isObject(val) ? val.toString() : val;
+      data[key] =
+        val && val.toString && !_.isObject(val) ? val.toString() : val;
     });
     this._request.data = override
       ? data
@@ -271,7 +272,7 @@ class Request {
     return Promise.resolve(options);
   }
 
-// If you need to perform loging or something like that!
+  // If you need to perform loging or something like that!
 
   parseMiddleware(response) {
     if (
@@ -307,12 +308,16 @@ class Request {
       );
     if (json.error_type === 'sentry_block')
       throw new Exceptions.SentryBlockError(json);
+
+    if (response.statusCode === 429) throw new Exceptions.RequestsLimitError();
     if (
-      response.statusCode === 429 ||
-      (_.isString(json.message) &&
-        json.message.toLowerCase().includes('too many requests'))
+      _.isString(json.message) &&
+      json.message.toLowerCase().includes('too many requests')
     )
       throw new Exceptions.RequestsLimitError();
+    if (json.message === 'Please wait a few minutes before you try again.')
+      throw new Exceptions.RequestsLimitError();
+
     if (
       _.isString(json.message) &&
       json.message.toLowerCase().includes('not authorized to view user')

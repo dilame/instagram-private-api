@@ -1,4 +1,4 @@
-var _ = require('lodash');
+const _ = require('lodash');
 const EXPERIMENTS = require('./experiments.json');
 
 const ROUTES = {
@@ -132,8 +132,8 @@ const PRIVATE_KEY = {
 const TLD = 'instagram.com';
 const HOSTNAME = 'i.instagram.com';
 const WEB_HOSTNAME = 'www.instagram.com';
-const HOST = 'https://' + HOSTNAME + '/';
-const WEBHOST = 'https://' + WEB_HOSTNAME + '/';
+const HOST = `https://${HOSTNAME}/`;
+const WEBHOST = `https://${WEB_HOSTNAME}/`;
 
 const HEADERS = {
   FB_ANALYTICS_APPLICATION_ID: '567067343352427',
@@ -142,17 +142,17 @@ const HEADERS = {
 };
 
 module.exports = {
-  ROUTES: ROUTES,
-  HEADERS: HEADERS,
-  WEB_ROUTES: WEB_ROUTES,
-  HOSTNAME: HOSTNAME,
-  WEB_HOSTNAME: WEB_HOSTNAME,
-  HOST: HOST,
-  WEBHOST: WEBHOST,
-  TLD: TLD,
-  API_ENDPOINT: HOST + 'api/v1/',
-  EXPERIMENTS: EXPERIMENTS,
-  PRIVATE_KEY: PRIVATE_KEY,
+  ROUTES,
+  HEADERS,
+  WEB_ROUTES,
+  HOSTNAME,
+  WEB_HOSTNAME,
+  HOST,
+  WEBHOST,
+  TLD,
+  API_ENDPOINT: `${HOST}api/v1/`,
+  EXPERIMENTS,
+  PRIVATE_KEY,
   instagramAgentTemplate: _.template(
     'Instagram <%= version %> Android (<%= agent %>)',
   ),

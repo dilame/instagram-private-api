@@ -1,30 +1,27 @@
-var util = require('util');
-var FileCookieStore = require('tough-cookie-file-store');
-var path = require('path');
-var fs = require('fs');
-var _ = require('lodash');
-var Helpers = require('../helpers');
-var CookieStorage = require('./cookie-storage');
-var CONSTANTS = require('./constants');
+const FileCookieStore = require('tough-cookie-file-store');
+const path = require('path');
+const fs = require('fs');
+const Helpers = require('../helpers');
+const CookieStorage = require('./cookie-storage');
+const CONSTANTS = require('./constants');
 
-function CookieFileStorage(cookiePath) {
-  cookiePath = path.resolve(cookiePath);
-  Helpers.ensureExistenceOfJSONFilePath(cookiePath);
-  var store = new FileCookieStore(cookiePath);
-  store.__proto__.getAllCookies = function(cb) {
-    store.findCookies(CONSTANTS.HOSTNAME, '/', function(err, cookies) {
-      cookies.sort(function(a, b) {
-        return (a.creationIndex || 0) - (b.creationIndex || 0);
+class CookieFileStorage extends CookieStorage {
+  constructor(cookiePath) {
+    cookiePath = path.resolve(cookiePath);
+    Helpers.ensureExistenceOfJSONFilePath(cookiePath);
+    const store = new FileCookieStore(cookiePath);
+    store.__proto__.getAllCookies = cb => {
+      store.findCookies(CONSTANTS.HOSTNAME, '/', (err, cookies) => {
+        cookies.sort((a, b) => (a.creationIndex || 0) - (b.creationIndex || 0));
+        cb(null, cookies);
       });
-      cb(null, cookies);
-    });
-  };
-  CookieStorage.call(this, store);
+    };
+    super(store);
+  }
+
+  destroy() {
+    fs.unlinkSync(this.storage.filePath);
+  }
 }
 
-util.inherits(CookieFileStorage, CookieStorage);
 module.exports = CookieFileStorage;
-
-CookieFileStorage.prototype.destroy = function() {
-  fs.unlinkSync(this.storage.filePath);
-};

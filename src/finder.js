@@ -1,7 +1,7 @@
 'use strict';
 
-var USERNAMETOFIND;
-var COMMENTTOFIND;
+let USERNAMETOFIND;
+let COMMENTTOFIND;
 
 const Client = require('./v1');
 const path = require('path');
@@ -39,7 +39,7 @@ function main(usernameToFind, commentToFind, postUrl) {
 
     MediaComments = new Client.Feed.MediaComments(session, mediaId);
 
-    loop(function(id) {
+    loop(id => {
       if (id instanceof Error) reject(id);
       else resolve(id);
     });
@@ -54,7 +54,7 @@ async function loop(cb) {
     cb(new Error('Could not find desired comment'));
   }
 
-  var result = process(Comments);
+  const result = process(Comments);
 
   if (result) {
     return cb(result);

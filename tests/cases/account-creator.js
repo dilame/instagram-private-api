@@ -1,3 +1,4 @@
+const should = require('should');
 const { V1: Client, Device } = require('../../dist');
 const _ = require('lodash');
 

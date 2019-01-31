@@ -1,4 +1,4 @@
-var InstagramV1 = {};
+const InstagramV1 = {};
 
 InstagramV1.CONSTANTS = require('./v1/constants');
 InstagramV1.routes = require('./v1/routes');
@@ -31,7 +31,7 @@ InstagramV1.discover = require('./v1/discover');
 InstagramV1.Save = require('./v1/save');
 InstagramV1.search = require('./v1/search');
 
-var creator = require('./v1/account-creator');
+const creator = require('./v1/account-creator');
 InstagramV1.AccountCreator = creator.AccountCreator;
 InstagramV1.AccountPhoneCreator = creator.AccountPhoneCreator;
 InstagramV1.AccountEmailCreator = creator.AccountEmailCreator;
@@ -56,7 +56,7 @@ InstagramV1.Feed.StoryViewers = require('./v1/feeds/story-viewers');
 
 InstagramV1.Web = {};
 InstagramV1.Web.Request = require('./v1/web/web-request');
-var challenge = require('./v1/web/challenge');
+const challenge = require('./v1/web/challenge');
 InstagramV1.Web.Challenge = challenge.Challenge;
 InstagramV1.Web.NotImplementedChallenge = challenge.NotImplementedChallenge;
 InstagramV1.Web.EmailVerificationChallenge =

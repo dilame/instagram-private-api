@@ -1,3 +1,4 @@
+require('should');
 const { V1: Client, Device } = require('../dist');
 const mkdirp = require('mkdirp');
 const support = require('./support');
