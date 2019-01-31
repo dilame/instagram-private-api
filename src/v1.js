@@ -1,4 +1,3 @@
-
 var InstagramV1 = {};
 
 InstagramV1.CONSTANTS = require('./v1/constants');
@@ -8,7 +7,7 @@ InstagramV1.Device = require('./v1/device');
 InstagramV1.CookieStorage = require('./v1/cookie-storage');
 InstagramV1.CookieFileStorage = require('./v1/cookie-file-storage');
 InstagramV1.CookieMemoryStorage = require('./v1/cookie-memory-storage');
-InstagramV1.Exceptions = require("./v1/exceptions");
+InstagramV1.Exceptions = require('./v1/exceptions');
 InstagramV1.prunedJson = require('./v1/json-pruned');
 InstagramV1.Resource = require('./v1/resource');
 
@@ -60,8 +59,9 @@ InstagramV1.Web.Request = require('./v1/web/web-request');
 var challenge = require('./v1/web/challenge');
 InstagramV1.Web.Challenge = challenge.Challenge;
 InstagramV1.Web.NotImplementedChallenge = challenge.NotImplementedChallenge;
-InstagramV1.Web.EmailVerificationChallenge = challenge.EmailVerificationChallenge;
-InstagramV1.Web.PhoneVerificationChallenge = challenge.PhoneVerificationChallenge;
-
+InstagramV1.Web.EmailVerificationChallenge =
+  challenge.EmailVerificationChallenge;
+InstagramV1.Web.PhoneVerificationChallenge =
+  challenge.PhoneVerificationChallenge;
 
 module.exports = InstagramV1;

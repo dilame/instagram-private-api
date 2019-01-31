@@ -14,8 +14,12 @@ export class Device {
   build: string;
   chance: any;
   md5: string;
-  appUserAgentTemplate = _.template('Instagram <%= version %> Android (<%= agent %>)');
-  webUserAgentTemplate = _.template('Mozilla/5.0 (Linux; Android <%= release %>; <%= model %> Build/<%= build %>; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/70.0.3538.110 Mobile Safari/537.36 <%= instagramAgent %>');
+  appUserAgentTemplate = _.template(
+    'Instagram <%= version %> Android (<%= agent %>)',
+  );
+  webUserAgentTemplate = _.template(
+    'Mozilla/5.0 (Linux; Android <%= release %>; <%= model %> Build/<%= build %>; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/70.0.3538.110 Mobile Safari/537.36 <%= instagramAgent %>',
+  );
   id: string;
   private payload: IDevicePayload;
 
@@ -24,7 +28,10 @@ export class Device {
     const chance = new Chance(this.username);
     this.chance = chance;
     this.deviceString = chance.pickone(devices);
-    const id = chance.string({ pool: 'abcdefghijklmnopqrstuvwxyz0123456789', length: 16 });
+    const id = chance.string({
+      pool: 'abcdefghijklmnopqrstuvwxyz0123456789',
+      length: 16,
+    });
     this.id = `android-${id}`;
 
     const deviceParts = this.deviceString.split(';');
@@ -33,14 +40,20 @@ export class Device {
     const model = deviceParts[4];
 
     this.payload = {
-      android_version, android_release, manufacturer, model,
+      android_version,
+      android_release,
+      manufacturer,
+      model,
     };
     this.android_version = android_version;
     this.android_release = android_release;
     this.build = chance.pickone(builds);
     this.model = model;
     // md5 emulation for backward-compatibility. Will be removed later
-    this.md5 = chance.string({ pool: 'abcdefghijklmnopqrstuvwxyz0123456789', length: 32 });
+    this.md5 = chance.string({
+      pool: 'abcdefghijklmnopqrstuvwxyz0123456789',
+      length: 32,
+    });
   }
 
   _language = 'en_US';
@@ -55,7 +68,11 @@ export class Device {
 
   userAgent(version: string): string {
     return this.appUserAgentTemplate({
-      agent: [this.deviceString, this.language, CONSTANTS.PRIVATE_KEY.VERSION_CODE].join('; '),
+      agent: [
+        this.deviceString,
+        this.language,
+        CONSTANTS.PRIVATE_KEY.VERSION_CODE,
+      ].join('; '),
       version: version || CONSTANTS.PRIVATE_KEY.APP_VERSION,
     });
   }

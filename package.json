@@ -55,6 +55,7 @@
     "mkdirp": "^0.5.1",
     "mocha": "^5.2.0",
     "node-resemble-js": "0.0.5",
+    "prettier": "1.16.2",
     "should": "^8.3.1",
     "should-sinon": "0.0.5",
     "sinon": "^1.17.3",
