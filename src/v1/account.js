@@ -7,10 +7,6 @@ const camelKeys = require('camelcase-keys');
 const Exceptions = require('./exceptions');
 
 class Account extends Resource {
-  constructor(...args) {
-    super(...args);
-  }
-
   parseParams(json) {
     const hash = camelKeys(json);
     hash.picture = json.profile_pic_url;
