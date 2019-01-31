@@ -1,14 +1,14 @@
 {
   "name": "instagram-private-api",
   "description": "Instagram private API wrapper for full access to instagram",
-  "version": "0.7.1",
+  "version": "0.8.0",
   "main": "dist/index.js",
   "files": [
     "dist"
   ],
   "license": "MIT",
   "engines": {
-    "node": "7.6.0"
+    "node": "8.0.0"
   },
   "bugs": {
     "url": "https://github.com/huttarichard/instagram-private-api/issues",
