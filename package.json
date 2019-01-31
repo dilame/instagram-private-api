@@ -27,6 +27,7 @@
   "dependencies": {
     "@types/chance": "^1.0.1",
     "@types/lodash": "^4.14.120",
+    "@types/node": "^10.12.20",
     "bluebird": "^3.5.2",
     "camelcase-keys": "^4.2.0",
     "chance": "^1.0.18",

@@ -11,7 +11,7 @@ InstagramV1.Exceptions = require('./v1/exceptions');
 InstagramV1.prunedJson = require('./v1/json-pruned');
 InstagramV1.Resource = require('./v1/resource');
 
-InstagramV1.Request = require('./v1/request');
+InstagramV1.Request = require('./request');
 InstagramV1.Session = require('./v1/session');
 InstagramV1.Account = require('./v1/account');
 InstagramV1.Media = require('./v1/media');

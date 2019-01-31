@@ -12,7 +12,7 @@ util.inherits(StoryViewers, FeedBase);
 
 module.exports = StoryViewers;
 var Media = require('../media');
-var Request = require('../request');
+var Request = require('../../request');
 var Account = require('../account');
 
 StoryViewers.prototype.get = function() {

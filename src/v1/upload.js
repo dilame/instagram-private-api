@@ -13,7 +13,7 @@ util.inherits(Upload, Resource);
 
 module.exports = Upload;
 var Exceptions = require('./exceptions');
-var Request = require('./request');
+var Request = require('../request');
 
 Upload.prototype.parseParams = function(json) {
   var hash = camelKeys(json);

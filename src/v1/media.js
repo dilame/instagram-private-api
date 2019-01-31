@@ -14,7 +14,7 @@ function Media(session, params) {
 util.inherits(Media, Resource);
 
 module.exports = Media;
-var Request = require('./request');
+var Request = require('../request');
 var Comment = require('./comment');
 var Account = require('./account');
 var Location = require('./location');

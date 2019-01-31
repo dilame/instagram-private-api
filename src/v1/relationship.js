@@ -8,7 +8,7 @@ function Relationship(session, params) {
 
 util.inherits(Relationship, Resource);
 module.exports = Relationship;
-var Request = require('./request');
+var Request = require('../request');
 var Account = require('./account');
 var Exceptions = require('./exceptions');
 

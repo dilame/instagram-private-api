@@ -16,7 +16,7 @@ function InstagramResource(session, params) {
 util.inherits(InstagramResource, EventEmitter);
 module.exports = InstagramResource;
 
-var Request = require('./request');
+var Request = require('../request');
 
 Object.defineProperty(InstagramResource.prototype, 'params', {
   get: function() {

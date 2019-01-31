@@ -11,7 +11,7 @@ util.inherits(Internal, Resource);
 
 module.exports = Internal;
 var Exceptions = require('./exceptions');
-var Request = require('./request');
+var Request = require('../request');
 var LoginExperiments = require('./login-experiments.json');
 
 Internal.readMsisdnHeader = function(session) {

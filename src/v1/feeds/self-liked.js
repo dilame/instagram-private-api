@@ -11,7 +11,7 @@ util.inherits(SelfLikedFeed, FeedBase);
 
 module.exports = SelfLikedFeed;
 var Media = require('../media');
-var Request = require('../request');
+var Request = require('../../request');
 
 SelfLikedFeed.prototype.get = function() {
   var that = this;

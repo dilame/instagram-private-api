@@ -11,7 +11,7 @@ util.inherits(ThreadItemsFeed, FeedBase);
 
 module.exports = ThreadItemsFeed;
 var ThreadItem = require('../thread-item');
-var Request = require('../request');
+var Request = require('../../request');
 
 ThreadItemsFeed.prototype.get = function() {
   var that = this;

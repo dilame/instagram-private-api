@@ -11,7 +11,7 @@ util.inherits(LocationMediaFeed, FeedBase);
 
 module.exports = LocationMediaFeed;
 var Media = require('../media');
-var Request = require('../request');
+var Request = require('../../request');
 var Helpers = require('../../helpers');
 var Exceptions = require('../exceptions');
 

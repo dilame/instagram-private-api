@@ -1,4 +1,4 @@
-var Request = require('./request');
+var Request = require('../request');
 var Helpers = require('../helpers');
 var _ = require('lodash');
 var Media = require('./media');

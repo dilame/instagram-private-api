@@ -11,7 +11,7 @@ function Comment(session, params) {
 util.inherits(Comment, Resource);
 module.exports = Comment;
 
-var Request = require('./request');
+var Request = require('../request');
 var Account = require('./account');
 var Media = require('./media');
 

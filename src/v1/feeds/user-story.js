@@ -1,5 +1,5 @@
 var _ = require('lodash');
-var Request = require('../request');
+var Request = require('../../request');
 var Media = require('../media');
 
 function UserStory(session, userIds) {

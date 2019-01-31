@@ -9,7 +9,7 @@ function Save(session, params) {
 module.exports = Save;
 util.inherits(Save, Resource);
 
-var Request = require('./request');
+var Request = require('../request');
 
 Save.prototype.parseParams = function(json) {
   return json || {};

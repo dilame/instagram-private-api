@@ -11,7 +11,7 @@ util.inherits(SavedFeed, FeedBase);
 
 module.exports = SavedFeed;
 var Media = require('../media');
-var Request = require('../request');
+var Request = require('../../request');
 
 SavedFeed.prototype.get = function() {
   var that = this;

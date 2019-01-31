@@ -11,7 +11,7 @@ util.inherits(InboxPendingFeed, FeedBase);
 
 module.exports = InboxPendingFeed;
 var Thread = require('../thread');
-var Request = require('../request');
+var Request = require('../../request');
 
 InboxPendingFeed.prototype.getPendingRequestsTotal = function() {
   return this.pendingRequestsTotal;

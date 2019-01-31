@@ -9,7 +9,7 @@ function Like(session, params) {
 module.exports = Like;
 util.inherits(Like, Resource);
 
-var Request = require('./request');
+var Request = require('../request');
 
 Like.prototype.parseParams = function(json) {
   return json || {};

@@ -10,7 +10,7 @@ function Hashtag(session, params) {
 util.inherits(Hashtag, Resource);
 module.exports = Hashtag;
 
-var Request = require('./request');
+var Request = require('../request');
 var Helpers = require('../helpers');
 
 Hashtag.prototype.parseParams = function(json) {

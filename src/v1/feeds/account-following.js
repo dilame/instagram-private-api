@@ -12,7 +12,7 @@ function AccountFollowingFeed(session, accountId, limit) {
 util.inherits(AccountFollowingFeed, FeedBase);
 
 module.exports = AccountFollowingFeed;
-var Request = require('../request');
+var Request = require('../../request');
 var Helpers = require('../../helpers');
 var Account = require('../account');
 

@@ -11,7 +11,7 @@ function MediaCommentsFeed(session, mediaId) {
 util.inherits(MediaCommentsFeed, FeedBase);
 
 module.exports = MediaCommentsFeed;
-var Request = require('../request');
+var Request = require('../../request');
 var Comment = require('../comment');
 
 MediaCommentsFeed.prototype.setCursor = function(cursor) {

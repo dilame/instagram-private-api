@@ -11,7 +11,7 @@ function AccountFollowersFeed(session, accountId, limit) {
 util.inherits(AccountFollowersFeed, FeedBase);
 
 module.exports = AccountFollowersFeed;
-var Request = require('../request');
+var Request = require('../../request');
 var Account = require('../account');
 
 AccountFollowersFeed.prototype.get = function() {

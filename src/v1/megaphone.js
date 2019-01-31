@@ -7,7 +7,7 @@ function Megaphone() {
 }
 
 util.inherits(Megaphone, Resource);
-var Request = require('./request');
+var Request = require('../request');
 
 module.exports = Megaphone;
 var Exceptions = require('./exceptions');

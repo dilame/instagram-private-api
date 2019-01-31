@@ -11,7 +11,7 @@ util.inherits(QE, Resource);
 
 module.exports = QE;
 var Exceptions = require('./exceptions');
-var Request = require('./request');
+var Request = require('../request');
 
 // Lets fake this experiment bullshit
 QE.sync = function(session) {
