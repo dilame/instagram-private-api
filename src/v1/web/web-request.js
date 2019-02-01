@@ -1,7 +1,7 @@
 const _ = require('lodash');
 const Request = require('../../request');
 const routes = require('../routes');
-const CONSTANTS = require('../constants');
+const CONSTANTS = require('../../constants/constants');
 const Exceptions = require('../exceptions');
 
 class WebRequest extends Request {

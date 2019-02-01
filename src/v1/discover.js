@@ -1,7 +1,6 @@
 const Request = require('../request');
 const Helpers = require('../helpers');
 const _ = require('lodash');
-const Media = require('./media');
 const Account = require('./account');
 
 module.exports = (session, inSingup) =>

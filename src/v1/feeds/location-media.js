@@ -1,6 +1,6 @@
 const _ = require('lodash');
 const FeedBase = require('./feed-base');
-const Media = require('../media');
+const Media = require('../media').Media;
 const Request = require('../../request');
 const Helpers = require('../../helpers');
 const Exceptions = require('../exceptions');

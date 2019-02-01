@@ -10,7 +10,7 @@ const Location = require('./location');
 const Exceptions = require('./exceptions');
 const camelKeys = require('camelcase-keys');
 
-class Media extends Resource {
+export class Media extends Resource {
   parseParams(json) {
     const hash = camelKeys(json);
     const that = this;
@@ -444,5 +444,3 @@ class Media extends Resource {
     });
   }
 }
-
-module.exports = Media;

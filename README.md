@@ -15,8 +15,10 @@ Community is taking care of development and new features. Thanks to: @IvanMMM @S
 
 ----
 
-**Installation**
-
+###Work In Progress
+Now I'm rewriting this library to TypeScript, sometimes it's impossible to keep backwards compatibility.
+Any help is highly appreciated. Feel free to send PRs.
+### Installation
 
 You can install this by using npm:
 ```

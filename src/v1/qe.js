@@ -1,6 +1,6 @@
 const _ = require('lodash');
 const Resource = require('./resource');
-const CONSTANTS = require('./constants');
+const CONSTANTS = require('../constants/constants');
 const Request = require('../request');
 
 class QE extends Resource {

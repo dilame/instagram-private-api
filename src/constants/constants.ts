@@ -1,7 +1,9 @@
-const _ = require('lodash');
-const EXPERIMENTS = require('./experiments.json');
+import * as _ from 'lodash';
+export import EXPERIMENTS = require('./experiments.json');
+export import LOGIN_EXPERIMENTS = require('./login-experiments.json');
+export import SUPPORTED_CAPABILITIES = require('./supported-capabilities.json');
 
-const ROUTES = {
+export const ROUTES = {
   follow: 'friendships/create/<%= id %>/',
   unfollow: 'friendships/destroy/<%= id %>/',
   expose: 'qe/expose/',
@@ -116,47 +118,35 @@ const ROUTES = {
   storyTray: 'feed/reels_tray/',
 };
 
-const WEB_ROUTES = {
+export const WEB_ROUTES = {
   challengeReset: 'challenge/reset/',
   challenge: 'challenge/',
   userInfo: '<%= id %>/',
 };
 
-const PRIVATE_KEY = {
+export const PRIVATE_KEY = {
   SIG_KEY: '19ce5f445dbfd9d29c59dc2a78c616a7fc090a8e018b9267bc4240a30244c53b',
   SIG_VERSION: '4',
   APP_VERSION: '76.0.0.15.395',
   VERSION_CODE: '138226743',
 };
 
-const TLD = 'instagram.com';
-const HOSTNAME = 'i.instagram.com';
-const WEB_HOSTNAME = 'www.instagram.com';
-const HOST = `https://${HOSTNAME}/`;
-const WEBHOST = `https://${WEB_HOSTNAME}/`;
+export const TLD = 'instagram.com';
+export const HOSTNAME = 'i.instagram.com';
+export const WEB_HOSTNAME = 'www.instagram.com';
+export const HOST = `https://${HOSTNAME}/`;
+export const WEBHOST = `https://${WEB_HOSTNAME}/`;
+export const API_ENDPOINT = `${HOST}api/v1/`;
 
-const HEADERS = {
+export const HEADERS = {
   FB_ANALYTICS_APPLICATION_ID: '567067343352427',
   X_IG_Connection_Type: 'WIFI',
   X_IG_Capabilities: '3brTPw==',
 };
 
-module.exports = {
-  ROUTES,
-  HEADERS,
-  WEB_ROUTES,
-  HOSTNAME,
-  WEB_HOSTNAME,
-  HOST,
-  WEBHOST,
-  TLD,
-  API_ENDPOINT: `${HOST}api/v1/`,
-  EXPERIMENTS,
-  PRIVATE_KEY,
-  instagramAgentTemplate: _.template(
-    'Instagram <%= version %> Android (<%= agent %>)',
-  ),
-  instagramAgentWebTemplate: _.template(
-    'Mozilla/5.0 (Linux; Android <%= release %>; <%= model %> Build/<%= build %>; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/70.0.3538.110 Mobile Safari/537.36 <%= instagramAgent %>',
-  ),
-};
+export const instagramAgentTemplate = _.template(
+  'Instagram <%= version %> Android (<%= agent %>)',
+);
+export const instagramAgentWebTemplate = _.template(
+  'Mozilla/5.0 (Linux; Android <%= release %>; <%= model %> Build/<%= build %>; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/70.0.3538.110 Mobile Safari/537.36 <%= instagramAgent %>',
+);

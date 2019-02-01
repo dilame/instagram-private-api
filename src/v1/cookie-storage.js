@@ -1,5 +1,5 @@
 const Promise = require('bluebird');
-const CONSTANTS = require('./constants');
+const CONSTANTS = require('../constants/constants');
 const _ = require('lodash');
 const Exceptions = require('./exceptions');
 

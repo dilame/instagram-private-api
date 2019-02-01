@@ -1,18 +1,18 @@
 import * as _ from 'lodash';
 import * as Chance from 'chance';
 import * as Exceptions from './v1/exceptions';
-import * as CONSTANTS from './v1/constants';
+import * as CONSTANTS from './constants/constants';
 import * as Helpers from './helpers';
 import * as Bluebird from 'bluebird';
 import { Device } from './devices/device';
 import CookieStorage = require('./v1/cookie-storage');
 import Account = require('./v1/account');
 import Request = require('./request');
-import Internal = require('./v1/internal');
 import Timeline = require('./v1/feeds/timeline-feed');
 import Inbox = require('./v1/feeds/inbox');
 import Relationship = require('./v1/relationship');
-import Story = require('./v1/feeds/story-tray');
+import { Internal } from './v1/internal';
+import { StoryTrayFeed } from './v1/feeds/story-tray-feed';
 
 class Session {
   private jar: any;
@@ -164,7 +164,7 @@ class Session {
     // Later we should also include requests made after a full re-login.
     return Promise.all([
       new Timeline(this).get(),
-      new Story(this).get(),
+      new StoryTrayFeed(this).get(),
       new Inbox(this).get(),
       Relationship.getBootstrapUsers(this),
       Internal.getRankedRecipients(this, 'reshare'),

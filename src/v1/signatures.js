@@ -2,7 +2,7 @@ const _ = require('lodash');
 const Promise = require('bluebird');
 const Exceptions = require('./exceptions');
 const hmac = require('crypto-js/hmac-sha256');
-const CONSTANTS = require('./constants');
+const CONSTANTS = require('../constants/constants');
 const pruned = require('./json-pruned');
 
 exports.sign = payload => {

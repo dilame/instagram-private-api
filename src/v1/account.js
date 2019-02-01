@@ -1,4 +1,3 @@
-const util = require('util');
 const _ = require('lodash');
 const Resource = require('./resource');
 const Request = require('../request');

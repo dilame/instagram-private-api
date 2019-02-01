@@ -1,7 +1,7 @@
 const _ = require('lodash');
 const util = require('util');
 const FeedBase = require('./feed-base');
-const Media = require('../media');
+const Media = require('../media').Media;
 const Request = require('../../request');
 
 class SavedFeed extends FeedBase {

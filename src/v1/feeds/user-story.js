@@ -1,6 +1,6 @@
 const _ = require('lodash');
 const Request = require('../../request');
-const Media = require('../media');
+const Media = require('../media').Media;
 
 class UserStory {
   constructor(session, userIds) {

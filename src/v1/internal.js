@@ -1,9 +1,9 @@
-const Resource = require('./resource');
-const Request = require('../request');
-const LoginExperiments = require('./login-experiments.json');
+import * as Resource from './resource';
+import * as Request from '../request';
+import { LOGIN_EXPERIMENTS, SUPPORTED_CAPABILITIES } from '../constants/constants';
 
-class Internal extends Resource {
-  static readMsisdnHeader(session) {
+export class Internal extends Resource {
+  static readMsisdnHeader (session) {
     return new Request(session)
       .setMethod('POST')
       .setResource('readMsisdnHeader')
@@ -18,7 +18,7 @@ class Internal extends Resource {
       .send();
   }
 
-  static qeSync(session, preLogin) {
+  static qeSync (session, preLogin) {
     const req = new Request(session)
       .setMethod('POST')
       .setResource('qeSync')
@@ -29,7 +29,7 @@ class Internal extends Resource {
       .setData({})
       .setData({
         id: session.uuid,
-        experiments: LoginExperiments.join(','),
+        experiments: LOGIN_EXPERIMENTS.join(','),
       });
 
     if (!preLogin) {
@@ -47,7 +47,7 @@ class Internal extends Resource {
     }
   }
 
-  static launcherSync(session, preLogin) {
+  static launcherSync (session, preLogin) {
     const req = new Request(session)
       .setMethod('POST')
       .setResource('launcherSync')
@@ -78,7 +78,7 @@ class Internal extends Resource {
     }
   }
 
-  static logAttribution(session) {
+  static logAttribution (session) {
     return new Request(session)
       .setMethod('POST')
       .setResource('logAttribution')
@@ -91,7 +91,7 @@ class Internal extends Resource {
       .send();
   }
 
-  static fetchZeroRatingToken(session) {
+  static fetchZeroRatingToken (session) {
     return new Request(session)
       .setMethod('GET')
       .setResource('zeroRatingToken', {
@@ -104,7 +104,7 @@ class Internal extends Resource {
       .send();
   }
 
-  static setContactPointPrefill(session) {
+  static setContactPointPrefill (session) {
     return new Request(session)
       .setMethod('POST')
       .setResource('contactPointPrefill')
@@ -119,7 +119,7 @@ class Internal extends Resource {
       .send();
   }
 
-  static getRankedRecipients(session, mode) {
+  static getRankedRecipients (session, mode) {
     return new Request(session)
       .setMethod('GET')
       .setResource('getRankedRecipients', {
@@ -131,7 +131,7 @@ class Internal extends Resource {
       .send();
   }
 
-  static getPresences(session) {
+  static getPresences (session) {
     return new Request(session)
       .setMethod('GET')
       .setResource('getPresences')
@@ -139,7 +139,7 @@ class Internal extends Resource {
       .send();
   }
 
-  static getRecentActivityInbox(session) {
+  static getRecentActivityInbox (session) {
     return new Request(session)
       .setMethod('GET')
       .setResource('getRecentActivityInbox')
@@ -147,7 +147,7 @@ class Internal extends Resource {
       .send();
   }
 
-  static getProfileNotice(session) {
+  static getProfileNotice (session) {
     return new Request(session)
       .setMethod('GET')
       .setResource('getProfileNotice')
@@ -155,39 +155,17 @@ class Internal extends Resource {
       .send();
   }
 
-  static getExploreFeed(session) {
-    const supported_capabilities = [
-      {
-        name: 'SUPPORTED_SDK_VERSIONS',
-        value:
-          '9.0,10.0,11.0,12.0,13.0,14.0,15.0,16.0,17.0,18.0,19.0,20.0,21.0,22.0,23.0,24.0,25.0,26.0,27.0,28.0,29.0,30.0,31.0,32.0,33.0,34.0,35.0,36.0,37.0,38.0,39.0,40.0,41.0,42.0,43.0',
-      },
-      {
-        name: 'FACE_TRACKER_VERSION',
-        value: 10,
-      },
-      {
-        name: 'segmentation',
-        value: 'segmentation_enabled',
-      },
-      {
-        name: 'WORLD_TRACKER',
-        value: 'WORLD_TRACKER_ENABLED',
-      },
-    ];
-
+  static getExploreFeed (session) {
     return new Request(session)
       .setMethod('GET')
       .setResource('exploreFeed', {
         is_prefetch: '',
         session_id: session.session_id,
         supported_capabilities_new: encodeURIComponent(
-          JSON.stringify(supported_capabilities),
+          JSON.stringify(SUPPORTED_CAPABILITIES),
         ),
       })
       .setBodyType('form')
       .send();
   }
 }
-
-module.exports = Internal;

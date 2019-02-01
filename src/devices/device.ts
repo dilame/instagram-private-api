@@ -1,7 +1,7 @@
 import * as Chance from 'chance';
 import * as devices from './devices.json';
 import * as builds from './builds.json';
-import * as CONSTANTS from '../v1/constants';
+import * as CONSTANTS from '../constants/constants';
 import * as _ from 'lodash';
 import { IDevicePayload } from './device.interface';
 

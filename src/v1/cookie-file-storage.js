@@ -3,7 +3,7 @@ const path = require('path');
 const fs = require('fs');
 const Helpers = require('../helpers');
 const CookieStorage = require('./cookie-storage');
-const CONSTANTS = require('./constants');
+const CONSTANTS = require('../constants/constants');
 
 class CookieFileStorage extends CookieStorage {
   constructor(cookiePath) {
