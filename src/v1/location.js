@@ -27,17 +27,6 @@ class Location extends Resource {
     );
   }
 
-  parseParams(json) {
-    const hash = camelKeys(json);
-    hash.address = json.location.address;
-    hash.city = json.location.city;
-    hash.state = json.location.state;
-    hash.id = json.location.id || json.location.pk;
-    hash.lat = parseFloat(json.location.lat) || 0;
-    hash.lng = parseFloat(json.location.lng) || 0;
-    return hash;
-  }
-
   static search(session, query) {
     const that = this;
     return session
@@ -55,6 +44,17 @@ class Location extends Resource {
       .then(data =>
         _.map(data.items, location => new Location(session, location)),
       );
+  }
+
+  parseParams(json) {
+    const hash = camelKeys(json);
+    hash.address = json.location.address;
+    hash.city = json.location.city;
+    hash.state = json.location.state;
+    hash.id = json.location.id || json.location.pk;
+    hash.lat = parseFloat(json.location.lat) || 0;
+    hash.lng = parseFloat(json.location.lng) || 0;
+    return hash;
   }
 }
 

@@ -6,28 +6,6 @@ const Request = require('../request');
 const Account = require('./account');
 
 class Comment extends Resource {
-  parseParams(json) {
-    const hash = camelKeys(json);
-    hash.created = json.created_at;
-    hash.status = (json.status || 'unknown').toLowerCase();
-    hash.id = (json.pk || json.id).toString();
-    this.account = new Account(this.session, json.user);
-    return hash;
-  }
-
-  account() {
-    return this.account;
-  }
-
-  getParams() {
-    return _.defaults(
-      {
-        account: this.account.params,
-      },
-      this._params,
-    );
-  }
-
   static create(session, mediaId, text) {
     return new Request(session)
       .setMethod('POST')
@@ -92,6 +70,28 @@ class Comment extends Resource {
       .signPayload()
       .send()
       .then(data => data);
+  }
+
+  parseParams(json) {
+    const hash = camelKeys(json);
+    hash.created = json.created_at;
+    hash.status = (json.status || 'unknown').toLowerCase();
+    hash.id = (json.pk || json.id).toString();
+    this.account = new Account(this.session, json.user);
+    return hash;
+  }
+
+  account() {
+    return this.account;
+  }
+
+  getParams() {
+    return _.defaults(
+      {
+        account: this.account.params,
+      },
+      this._params,
+    );
   }
 }
 

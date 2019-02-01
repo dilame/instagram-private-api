@@ -6,27 +6,12 @@ const camelKeys = require('camelcase-keys');
 const Exceptions = require('./exceptions');
 
 class Account extends Resource {
-  parseParams(json) {
-    const hash = camelKeys(json);
-    hash.picture = json.profile_pic_url;
-    hash.id = (json.pk || json.id || json.instagram_id).toString();
-    return hash;
-  }
-
   static getById(session, id) {
     return new Request(session)
       .setMethod('GET')
       .setResource('userInfo', { id })
       .send()
       .then(data => new Account(session, data.user));
-  }
-
-  update() {
-    const that = this;
-    return Account.getById(this.session, this.id).then(account => {
-      that._params = account.params;
-      return that;
-    });
   }
 
   static search(session, username) {
@@ -78,14 +63,6 @@ class Account extends Resource {
       .then(json => new Account(session, json.user));
   }
 
-  setProfilePicture(streamOrPath) {
-    const that = this;
-    return Account.setProfilePicture(this.session, streamOrPath).then(user => {
-      that._params.picture = user.params.picture;
-      return that;
-    });
-  }
-
   static setPrivacy(session, pri) {
     return new Request(session)
       .setMethod('POST')
@@ -94,14 +71,6 @@ class Account extends Resource {
       .signPayload()
       .send()
       .then(json => new Account(session, json.user));
-  }
-
-  setPrivacy(pri) {
-    const that = this;
-    return Account.setPrivacy(this.session, pri).then(user => {
-      that._params.isPrivate = user.params.isPrivate;
-      return that;
-    });
   }
 
   static editProfile(session, settings) {
@@ -155,6 +124,37 @@ class Account extends Resource {
       .setResource('currentAccount')
       .send()
       .then(json => Account.prototype.parseParams(json.user));
+  }
+
+  parseParams(json) {
+    const hash = camelKeys(json);
+    hash.picture = json.profile_pic_url;
+    hash.id = (json.pk || json.id || json.instagram_id).toString();
+    return hash;
+  }
+
+  update() {
+    const that = this;
+    return Account.getById(this.session, this.id).then(account => {
+      that._params = account.params;
+      return that;
+    });
+  }
+
+  setProfilePicture(streamOrPath) {
+    const that = this;
+    return Account.setProfilePicture(this.session, streamOrPath).then(user => {
+      that._params.picture = user.params.picture;
+      return that;
+    });
+  }
+
+  setPrivacy(pri) {
+    const that = this;
+    return Account.setPrivacy(this.session, pri).then(user => {
+      that._params.isPrivate = user.params.isPrivate;
+      return that;
+    });
   }
 
   editProfile(settings) {

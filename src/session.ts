@@ -5,19 +5,23 @@ import * as CONSTANTS from './constants/constants';
 import * as Helpers from './helpers';
 import * as Bluebird from 'bluebird';
 import { Device } from './devices/device';
+import { Internal } from './v1/internal';
+import { StoryTrayFeed } from './v1/feeds/story-tray-feed';
 import CookieStorage = require('./v1/cookie-storage');
 import Account = require('./v1/account');
 import Request = require('./request');
 import Timeline = require('./v1/feeds/timeline-feed');
 import Inbox = require('./v1/feeds/inbox');
 import Relationship = require('./v1/relationship');
-import { Internal } from './v1/internal';
-import { StoryTrayFeed } from './v1/feeds/story-tray-feed';
 
 class Session {
   private jar: any;
 
-  constructor(public device: Device, public cookieStore: CookieStorage, proxy?: string) {
+  constructor(
+    public device: Device,
+    public cookieStore: CookieStorage,
+    proxy?: string,
+  ) {
     this.jar = Request.jar(cookieStore.store);
     if (_.isString(proxy) && !_.isEmpty(proxy)) this.proxyUrl = proxy;
   }
@@ -43,7 +47,9 @@ class Session {
    * We will update it once an hour
    */
   get session_id(): string {
-    const chance = new Chance(`${this.device.username}${Math.round(Date.now() / 3600000)}`);
+    const chance = new Chance(
+      `${this.device.username}${Math.round(Date.now() / 3600000)}`,
+    );
     return chance.guid();
   }
 
@@ -105,22 +111,24 @@ class Session {
       return session;
     })
       .catch(Exceptions.CheckpointError, async error => {
-          // This situation is not really obvious,
-          // but even if you got checkpoint error (aka captcha or phone)
-          // verification, it is still an valid session unless `sessionid` missing
-          await session.getAccountId()
-            .catch(Exceptions.CookieNotValidError, () => {
-              throw error;
-            });
-          return session;
-        },
-      )
+        // This situation is not really obvious,
+        // but even if you got checkpoint error (aka captcha or phone)
+        // verification, it is still an valid session unless `sessionid` missing
+        await session
+          .getAccountId()
+          .catch(Exceptions.CookieNotValidError, () => {
+            throw error;
+          });
+        return session;
+      })
       .catch(error => {
         if (error.name === 'RequestError' && _.isObject(error.json)) {
           if (error.json.invalid_credentials)
             throw new Exceptions.AuthenticationError(error.message);
           if (error.json.error_type === 'inactive user')
-            throw new Exceptions.AccountBanned(`${error.json.message} ${error.json.help_url}`);
+            throw new Exceptions.AccountBanned(
+              `${error.json.message} ${error.json.help_url}`,
+            );
         }
         throw error;
       });

@@ -8,7 +8,7 @@ import * as Exceptions from './v1/exceptions';
 import * as routes from './v1/routes';
 import * as Helpers from './helpers';
 import * as CONSTANTS from './constants/constants';
-import Session from './session'
+import Session from './session';
 
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 

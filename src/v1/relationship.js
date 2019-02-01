@@ -5,19 +5,6 @@ const Account = require('./account');
 const Exceptions = require('./exceptions');
 
 class Relationship extends Resource {
-  setAccountId(accountId) {
-    this.accountId = parseInt(accountId);
-  }
-
-  getParams() {
-    return _.defaults(
-      {
-        accountId: this.accountId,
-      },
-      this._params,
-    );
-  }
-
   static get(session, accountId) {
     return new Request(session)
       .setMethod('GET')
@@ -46,10 +33,6 @@ class Relationship extends Resource {
       );
   }
 
-  approvePending() {
-    return Relationship.approvePending(this.session, this.accountId);
-  }
-
   static approvePending(session, accountId) {
     return new Request(session)
       .setMethod('POST')
@@ -60,10 +43,6 @@ class Relationship extends Resource {
       .generateUUID()
       .signPayload()
       .send();
-  }
-
-  removeFollower() {
-    return Relationship.removeFollower(this.session, this.accountId);
   }
 
   static removeFollower(session, accountId) {
@@ -182,10 +161,6 @@ class Relationship extends Resource {
       });
   }
 
-  block() {
-    return Relationship.block(this.session, this.accountId);
-  }
-
   static unblock(session, accountId) {
     return new Request(session)
       .setMethod('POST')
@@ -199,6 +174,31 @@ class Relationship extends Resource {
         relationship.setAccountId(accountId);
         return relationship;
       });
+  }
+
+  setAccountId(accountId) {
+    this.accountId = parseInt(accountId);
+  }
+
+  getParams() {
+    return _.defaults(
+      {
+        accountId: this.accountId,
+      },
+      this._params,
+    );
+  }
+
+  approvePending() {
+    return Relationship.approvePending(this.session, this.accountId);
+  }
+
+  removeFollower() {
+    return Relationship.removeFollower(this.session, this.accountId);
+  }
+
+  block() {
+    return Relationship.block(this.session, this.accountId);
   }
 
   unblock() {

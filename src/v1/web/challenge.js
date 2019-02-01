@@ -16,6 +16,30 @@ class Challenge {
     this.apiUrl = error.apiUrl;
   }
 
+  get type() {
+    return this._type;
+  }
+
+  set type(val) {}
+
+  get session() {
+    return this._session;
+  }
+
+  set session(val) {}
+
+  get error() {
+    return this._error;
+  }
+
+  set error(val) {}
+
+  get json() {
+    return this._json;
+  }
+
+  set json(val) {}
+
   static async handleResponse(response, checkpointError, defaultMethod) {
     const session = checkpointError.session;
     let json;
@@ -268,30 +292,6 @@ class Challenge {
         throw error;
       });
   }
-
-  get type() {
-    return this._type;
-  }
-
-  set type(val) {}
-
-  get session() {
-    return this._session;
-  }
-
-  set session(val) {}
-
-  get error() {
-    return this._error;
-  }
-
-  set error(val) {}
-
-  get json() {
-    return this._json;
-  }
-
-  set json(val) {}
 }
 
 exports.Challenge = Challenge;

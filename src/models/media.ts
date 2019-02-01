@@ -28,5 +28,4 @@ export class Media {
   supports_reel_reactions: boolean;
   show_one_tap_fb_share_tooltip: boolean;
   has_shared_to_fb: number;
-
 }

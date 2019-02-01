@@ -5,13 +5,6 @@ const Request = require('../request');
 const Helpers = require('../helpers');
 
 class Hashtag extends Resource {
-  parseParams(json) {
-    const hash = camelKeys(json);
-    hash.mediaCount = parseInt(json.media_count);
-    if (_.isObject(hash.id)) hash.id = hash.id.toString();
-    return hash;
-  }
-
   static search(session, query) {
     return session
       .getAccountId()
@@ -52,6 +45,13 @@ class Hashtag extends Resource {
       })
       .send()
       .then(hashtag => new Hashtag(session, hashtag));
+  }
+
+  parseParams(json) {
+    const hash = camelKeys(json);
+    hash.mediaCount = parseInt(json.media_count);
+    if (_.isObject(hash.id)) hash.id = hash.id.toString();
+    return hash;
   }
 }
 

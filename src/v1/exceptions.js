@@ -7,6 +7,7 @@ function APIError(message) {
   this.name = 'APIError';
   this.message = message || 'Instagram API error was made.';
 }
+
 util.inherits(APIError, Error);
 exports.APIError = APIError;
 
@@ -21,6 +22,7 @@ function NotImplementedError(message) {
   this.name = 'NotImplementedError';
   this.message = message || 'This method is actually not implemented';
 }
+
 util.inherits(NotImplementedError, APIError);
 exports.NotImplementedError = NotImplementedError;
 
@@ -28,6 +30,7 @@ function NotAbleToSignError() {
   this.name = 'NotAbleToSign';
   this.message = "It's not possible to sign request!";
 }
+
 util.inherits(NotAbleToSignError, APIError);
 exports.NotAbleToSignError = NotAbleToSignError;
 
@@ -40,6 +43,7 @@ function RequestError(payload) {
     this.json = payload;
   }
 }
+
 util.inherits(RequestError, APIError);
 exports.RequestError = RequestError;
 
@@ -47,6 +51,7 @@ function AuthenticationError(message) {
   this.name = 'AuthenticationError';
   this.message = message || 'Not possible to authenticate';
 }
+
 util.inherits(AuthenticationError, APIError);
 exports.AuthenticationError = AuthenticationError;
 
@@ -69,6 +74,7 @@ function ActionSpamError(json) {
   this.name = 'ActionSpamError';
   this.message = 'This action was disabled due to block from instagram!';
 }
+
 util.inherits(ActionSpamError, APIError);
 exports.ActionSpamError = ActionSpamError;
 
@@ -119,6 +125,7 @@ function CheckpointError(json, session) {
   this.apiUrl = 'https://i.instagram.com/api/v1' + json.challenge.api_path;
   this.session = session;
 }
+
 util.inherits(CheckpointError, APIError);
 exports.CheckpointError = CheckpointError;
 
@@ -127,6 +134,7 @@ function SentryBlockError(json) {
   this.message = 'Sentry block from instagram';
   this.json = json;
 }
+
 util.inherits(SentryBlockError, APIError);
 exports.SentryBlockError = SentryBlockError;
 
@@ -134,6 +142,7 @@ function OnlyRankedItemsError() {
   this.name = 'OnlyRankedItemsError';
   this.message = 'Tag has only ranked items to show, due to blocked content';
 }
+
 util.inherits(OnlyRankedItemsError, APIError);
 exports.OnlyRankedItemsError = OnlyRankedItemsError;
 
@@ -338,6 +347,7 @@ function TranscodeTimeoutError() {
   this.name = 'TranscodeError';
   this.message = 'Server did not transcoded uploaded video in time';
 }
+
 util.inherits(TranscodeTimeoutError, APIError);
 exports.TranscodeTimeoutError = TranscodeTimeoutError;
 
@@ -345,5 +355,6 @@ function MediaUnavailableError() {
   this.name = 'MediaUnavailableError';
   this.message = 'Media is unavailable';
 }
+
 util.inherits(MediaUnavailableError, APIError);
 exports.MediaUnavailableError = MediaUnavailableError;

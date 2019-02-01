@@ -2,10 +2,6 @@ const Resource = require('./resource');
 const Request = require('../request');
 
 class Save extends Resource {
-  parseParams(json) {
-    return json || {};
-  }
-
   static create(session, mediaId) {
     return new Request(session)
       .setMethod('POST')
@@ -32,6 +28,10 @@ class Save extends Resource {
       .signPayload()
       .send()
       .then(data => new Save(session, {}));
+  }
+
+  parseParams(json) {
+    return json || {};
   }
 }
 

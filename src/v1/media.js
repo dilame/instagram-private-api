@@ -11,62 +11,6 @@ const Exceptions = require('./exceptions');
 const camelKeys = require('camelcase-keys');
 
 export class Media extends Resource {
-  parseParams(json) {
-    const hash = camelKeys(json);
-    const that = this;
-    hash.commentCount = hash.commentsDisabled ? 0 : json.comment_count;
-    hash.webLink = `https://www.instagram.com/p/${json.code}/`;
-    hash.carouselMedia = [];
-    if (_.isObject(json.location)) {
-      const location = _.clone(json.location);
-      location.location = Object.create(json.location);
-      location.title = location.name;
-      location.subtitle = null;
-      this.location = new Location(that.session, location);
-    }
-    if (json.media_type === 2) {
-      hash.video = {
-        versions: json.video_versions,
-        hasAudio: json.has_audio,
-        duration: json.video_duration,
-      };
-    }
-    if (json.media_type === 8 && _.isArray(json.carousel_media)) {
-      hash.carouselMedia = _.map(
-        json.carousel_media,
-        medium => new Media(that.session, medium),
-      );
-    }
-    if (_.isObject(json.caption)) hash.caption = json.caption.text;
-    hash.takenAt = parseInt(json.taken_at) * 1000;
-    if (_.isObject(json.image_versions2)) {
-      hash.images = json.image_versions2.candidates;
-    } else if (_.isObject(json.carousel_media)) {
-      hash.images = json.carousel_media.map(
-        media => media.image_versions2.candidates,
-      );
-    }
-    if (_.isArray(json.video_versions)) hash.videos = json.video_versions;
-    this.previewComments = _.map(
-      json.preview_comments,
-      comment => new Comment(that.session, comment),
-    );
-    // backward compability
-    this.comments = this.previewComments;
-    if (_.isPlainObject(json.user))
-      this.account = new Account(that.session, json.user);
-    return hash;
-  }
-
-  getParams() {
-    return _.extend(this._params, {
-      account: this.account ? this.account.params : {},
-      comments: _.map(this.comments, 'params'),
-      location: this.location ? this.location.params : {},
-      carouselMedia: _.map(this._params.carouselMedia, 'params'),
-    });
-  }
-
   static getById(session, id) {
     return new Request(session)
       .setMethod('GET')
@@ -441,6 +385,62 @@ export class Media extends Resource {
         .generateUUID()
         .signPayload()
         .send();
+    });
+  }
+
+  parseParams(json) {
+    const hash = camelKeys(json);
+    const that = this;
+    hash.commentCount = hash.commentsDisabled ? 0 : json.comment_count;
+    hash.webLink = `https://www.instagram.com/p/${json.code}/`;
+    hash.carouselMedia = [];
+    if (_.isObject(json.location)) {
+      const location = _.clone(json.location);
+      location.location = Object.create(json.location);
+      location.title = location.name;
+      location.subtitle = null;
+      this.location = new Location(that.session, location);
+    }
+    if (json.media_type === 2) {
+      hash.video = {
+        versions: json.video_versions,
+        hasAudio: json.has_audio,
+        duration: json.video_duration,
+      };
+    }
+    if (json.media_type === 8 && _.isArray(json.carousel_media)) {
+      hash.carouselMedia = _.map(
+        json.carousel_media,
+        medium => new Media(that.session, medium),
+      );
+    }
+    if (_.isObject(json.caption)) hash.caption = json.caption.text;
+    hash.takenAt = parseInt(json.taken_at) * 1000;
+    if (_.isObject(json.image_versions2)) {
+      hash.images = json.image_versions2.candidates;
+    } else if (_.isObject(json.carousel_media)) {
+      hash.images = json.carousel_media.map(
+        media => media.image_versions2.candidates,
+      );
+    }
+    if (_.isArray(json.video_versions)) hash.videos = json.video_versions;
+    this.previewComments = _.map(
+      json.preview_comments,
+      comment => new Comment(that.session, comment),
+    );
+    // backward compability
+    this.comments = this.previewComments;
+    if (_.isPlainObject(json.user))
+      this.account = new Account(that.session, json.user);
+    return hash;
+  }
+
+  getParams() {
+    return _.extend(this._params, {
+      account: this.account ? this.account.params : {},
+      comments: _.map(this.comments, 'params'),
+      location: this.location ? this.location.params : {},
+      carouselMedia: _.map(this._params.carouselMedia, 'params'),
     });
   }
 }

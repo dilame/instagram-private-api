@@ -1,4 +1,4 @@
-import {Type} from "class-transformer";
+import { Type } from 'class-transformer';
 import { FriendshipStatus } from './friendship-status';
 
 export class User {

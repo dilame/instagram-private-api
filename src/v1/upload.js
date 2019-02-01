@@ -5,15 +5,6 @@ const camelKeys = require('camelcase-keys');
 const Request = require('../request');
 
 class Upload extends Resource {
-  parseParams(json) {
-    const hash = camelKeys(json);
-    if (json.video_upload_urls && json.video_upload_urls.length) {
-      hash.uploadUrl = json.video_upload_urls[0].url;
-      hash.uploadJob = json.video_upload_urls[0].job;
-    }
-    return hash;
-  }
-
   static photo(session, streamOrPathOrBuffer, uploadId, name, isSidecar) {
     const data = Buffer.isBuffer(streamOrPathOrBuffer)
       ? streamOrPathOrBuffer
@@ -187,6 +178,15 @@ class Upload extends Resource {
     });
 
     return Promise.all(uploadPromises);
+  }
+
+  parseParams(json) {
+    const hash = camelKeys(json);
+    if (json.video_upload_urls && json.video_upload_urls.length) {
+      hash.uploadUrl = json.video_upload_urls[0].url;
+      hash.uploadJob = json.video_upload_urls[0].job;
+    }
+    return hash;
   }
 }
 

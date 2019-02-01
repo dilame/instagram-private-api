@@ -9,149 +9,6 @@ const Request = require('../request');
 const Helpers = require('../helpers');
 
 class Thread extends Resource {
-  parseParams(json) {
-    const hash = camelKeys(json);
-    const that = this;
-    hash.id = json.thread_id;
-    if (_.isObject(json.image_versions2))
-      hash.images = json.image_versions2.candidates;
-    hash.lastActivityAt = parseInt(json.last_activity_at / 1000) || null;
-    hash.muted = !!json.muted;
-    hash.title = json.thread_title;
-    hash.itemsSeenAt = {};
-    _.each(json.last_seen_at || [], (val, key) => {
-      hash.itemsSeenAt[key] = {
-        itemId: val.item_id,
-        timestamp: parseInt(parseInt(val.timestamp) / 1000),
-      };
-    });
-    hash.inviter = new Account(that.session, json.inviter);
-    this.items = _.map(json.items, item => new ThreadItem(that.session, item));
-    this.accounts = _.map(json.users, user => new Account(that.session, user));
-    this.leftUsers = _.map(
-      json.left_users,
-      user => new Account(that.session, user),
-    );
-    return hash;
-  }
-
-  getParams() {
-    const params = _.clone(this._params);
-    params.accounts = _.map(this.accounts, 'params');
-    params.items = _.map(this.items, 'params');
-    params.inviter = params.inviter.params;
-    return params;
-  }
-
-  seen() {
-    const firstItem = _.first(this.items);
-    if (!firstItem) throw new Exceptions.ThreadEmptyError();
-    const that = this;
-    return this.request()
-      .setMethod('POST')
-      .generateUUID()
-      .setResource('threadsSeen', {
-        threadId: that.id,
-        itemId: firstItem.id,
-      })
-      .setData({
-        client_context: Helpers.generateUUID(),
-      })
-      .send()
-      .then(data => ({
-        unseenCount: data.unseen_count,
-        unseenCountTimestamp: parseInt(data.unseenCountTimestamp / 1000),
-      }));
-  }
-
-  approve() {
-    const that = this;
-    return this.request()
-      .setMethod('POST')
-      .generateUUID()
-      .setResource('threadsApprove', {
-        threadId: that.id,
-      })
-      .send();
-  }
-
-  hide() {
-    const that = this;
-    return this.request()
-      .setMethod('POST')
-      .generateUUID()
-      .setResource('threadsHide', {
-        threadId: that.id,
-      })
-      .send();
-  }
-
-  broadcastText(text) {
-    const request = this.request()
-      .setMethod('POST')
-      .generateUUID()
-      .setResource('threadsBrodcastText')
-      .setData({
-        thread_ids: `[${this.id}]`,
-        client_context: Helpers.generateUUID(),
-        text,
-      })
-      .send();
-    return threadsWrapper(this.session, request);
-  }
-
-  broadcastMediaShare(mediaId, text) {
-    const payload = {
-      thread_ids: `[${this.id}]`,
-      media_id: mediaId,
-      client_context: Helpers.generateUUID(),
-    };
-    if (_.isString(text)) payload.text = text;
-    const request = this.request()
-      .setMethod('POST')
-      .generateUUID()
-      .setResource('threadsBrodcastShare')
-      .setData(payload)
-      .send();
-    return threadsWrapper(this.session, request);
-  }
-
-  broadcastProfile(profileId, simpleFormat, text) {
-    const payload = {
-      thread_ids: `[${this.id}]`,
-      simple_format: simpleFormat ? '1' : '0',
-      profile_user_id: profileId,
-      client_context: Helpers.generateUUID(),
-    };
-    if (_.isString(text)) payload.text = text;
-    const request = this.request()
-      .setMethod('POST')
-      .generateUUID()
-      .setResource('threadsBrodcastProfile')
-      .setData(payload)
-      .send();
-    return threadsWrapper(this.session, request);
-  }
-
-  broadcastHashtag(hashtag, simpleFormat, text) {
-    const payload = {
-      thread_ids: `[${this.id}]`,
-      simple_format: simpleFormat ? '1' : '0',
-      hashtag,
-      client_context: Helpers.generateUUID(),
-    };
-    if (_.isString(text)) payload.text = text;
-    const request = this.request()
-      .setMethod('POST')
-      .generateUUID()
-      .setResource('threadsBrodcastHashtag')
-      .setData(payload)
-      .send();
-    return threadsWrapper(this.session, request);
-  }
-
-  // todo configure broadcast /configure location
-
   static approveAll(session) {
     return new Request(session)
       .setMethod('POST')
@@ -282,6 +139,149 @@ class Thread extends Resource {
         recentRecipients: json.recent_recipients,
         expirationInterval: json.expiration_interval,
       }));
+  }
+
+  parseParams(json) {
+    const hash = camelKeys(json);
+    const that = this;
+    hash.id = json.thread_id;
+    if (_.isObject(json.image_versions2))
+      hash.images = json.image_versions2.candidates;
+    hash.lastActivityAt = parseInt(json.last_activity_at / 1000) || null;
+    hash.muted = !!json.muted;
+    hash.title = json.thread_title;
+    hash.itemsSeenAt = {};
+    _.each(json.last_seen_at || [], (val, key) => {
+      hash.itemsSeenAt[key] = {
+        itemId: val.item_id,
+        timestamp: parseInt(parseInt(val.timestamp) / 1000),
+      };
+    });
+    hash.inviter = new Account(that.session, json.inviter);
+    this.items = _.map(json.items, item => new ThreadItem(that.session, item));
+    this.accounts = _.map(json.users, user => new Account(that.session, user));
+    this.leftUsers = _.map(
+      json.left_users,
+      user => new Account(that.session, user),
+    );
+    return hash;
+  }
+
+  // todo configure broadcast /configure location
+
+  getParams() {
+    const params = _.clone(this._params);
+    params.accounts = _.map(this.accounts, 'params');
+    params.items = _.map(this.items, 'params');
+    params.inviter = params.inviter.params;
+    return params;
+  }
+
+  seen() {
+    const firstItem = _.first(this.items);
+    if (!firstItem) throw new Exceptions.ThreadEmptyError();
+    const that = this;
+    return this.request()
+      .setMethod('POST')
+      .generateUUID()
+      .setResource('threadsSeen', {
+        threadId: that.id,
+        itemId: firstItem.id,
+      })
+      .setData({
+        client_context: Helpers.generateUUID(),
+      })
+      .send()
+      .then(data => ({
+        unseenCount: data.unseen_count,
+        unseenCountTimestamp: parseInt(data.unseenCountTimestamp / 1000),
+      }));
+  }
+
+  approve() {
+    const that = this;
+    return this.request()
+      .setMethod('POST')
+      .generateUUID()
+      .setResource('threadsApprove', {
+        threadId: that.id,
+      })
+      .send();
+  }
+
+  hide() {
+    const that = this;
+    return this.request()
+      .setMethod('POST')
+      .generateUUID()
+      .setResource('threadsHide', {
+        threadId: that.id,
+      })
+      .send();
+  }
+
+  broadcastText(text) {
+    const request = this.request()
+      .setMethod('POST')
+      .generateUUID()
+      .setResource('threadsBrodcastText')
+      .setData({
+        thread_ids: `[${this.id}]`,
+        client_context: Helpers.generateUUID(),
+        text,
+      })
+      .send();
+    return threadsWrapper(this.session, request);
+  }
+
+  broadcastMediaShare(mediaId, text) {
+    const payload = {
+      thread_ids: `[${this.id}]`,
+      media_id: mediaId,
+      client_context: Helpers.generateUUID(),
+    };
+    if (_.isString(text)) payload.text = text;
+    const request = this.request()
+      .setMethod('POST')
+      .generateUUID()
+      .setResource('threadsBrodcastShare')
+      .setData(payload)
+      .send();
+    return threadsWrapper(this.session, request);
+  }
+
+  broadcastProfile(profileId, simpleFormat, text) {
+    const payload = {
+      thread_ids: `[${this.id}]`,
+      simple_format: simpleFormat ? '1' : '0',
+      profile_user_id: profileId,
+      client_context: Helpers.generateUUID(),
+    };
+    if (_.isString(text)) payload.text = text;
+    const request = this.request()
+      .setMethod('POST')
+      .generateUUID()
+      .setResource('threadsBrodcastProfile')
+      .setData(payload)
+      .send();
+    return threadsWrapper(this.session, request);
+  }
+
+  broadcastHashtag(hashtag, simpleFormat, text) {
+    const payload = {
+      thread_ids: `[${this.id}]`,
+      simple_format: simpleFormat ? '1' : '0',
+      hashtag,
+      client_context: Helpers.generateUUID(),
+    };
+    if (_.isString(text)) payload.text = text;
+    const request = this.request()
+      .setMethod('POST')
+      .generateUUID()
+      .setResource('threadsBrodcastHashtag')
+      .setData(payload)
+      .send();
+    return threadsWrapper(this.session, request);
   }
 }
 
