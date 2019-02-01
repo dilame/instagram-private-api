@@ -288,7 +288,9 @@ class Request {
       return response;
     }
     try {
-      response.body = JSONbig.parse(response.body);
+      // JSONbig.parse stores big numbers with bignumber.js library
+      // This is a non-standard way, so we need to perform such transformations to get large numbers as strings
+      response.body = JSON.parse(JSON.stringify(JSONbig.parse(response.body)));
       return response;
     } catch (err) {
       throw new Exceptions.ParseError(response, this);
