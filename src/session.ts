@@ -10,7 +10,7 @@ import { StoryTrayFeed } from './v1/feeds/story-tray-feed';
 import CookieStorage = require('./v1/cookie-storage');
 import Account = require('./v1/account');
 import Request = require('./request');
-import Timeline = require('./v1/feeds/timeline-feed');
+import {TimelineFeed } from './v1/feeds/timeline-feed';
 import Inbox = require('./v1/feeds/inbox');
 import Relationship = require('./v1/relationship');
 
@@ -169,7 +169,7 @@ class Session {
     // Right now only requests after closing and re-opening the app are made
     // Later we should also include requests made after a full re-login.
     return Promise.all([
-      new Timeline(this).get(),
+      new TimelineFeed(this).get({}),
       new StoryTrayFeed(this).get(),
       new Inbox(this).get(),
       Relationship.getBootstrapUsers(this),

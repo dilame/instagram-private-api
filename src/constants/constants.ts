@@ -36,7 +36,7 @@ export const ROUTES = {
   userInfo: 'users/<%= id %>/info/',
   userFeed:
     'feed/user/<%= id %>/?<%= maxId ? ("max_id=" + maxId + "&") : "" %>rank_token=<%= rankToken %>',
-  timelineFeed: 'feed/timeline/<%= maxId ? ("?max_id=" + maxId) : "" %>',
+  timelineFeed: 'feed/timeline/',
   tagFeed:
     'feed/tag/<%= encodeURI(tag) %>/?<%= maxId ? ("max_id=" + maxId + "&") : "" %>rank_token=<%= rankToken %>',
   selfLikedFeed: 'feed/liked/<%= maxId ? ("?max_id=" + maxId) : "" %>',

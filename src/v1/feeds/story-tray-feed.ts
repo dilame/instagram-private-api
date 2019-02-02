@@ -1,4 +1,3 @@
-import 'reflect-metadata';
 import { SUPPORTED_CAPABILITIES } from '../../constants/constants';
 import { StoryTray } from '../../models/story-tray';
 import { plainToClass } from 'class-transformer';
