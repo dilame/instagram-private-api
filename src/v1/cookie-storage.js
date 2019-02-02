@@ -15,9 +15,8 @@ class CookieStorage {
   set store(val) {}
 
   getCookieValue(name) {
-    const self = this;
     return new Promise((resolve, reject) => {
-      self.storage.findCookie(CONSTANTS.TLD, '/', name, (err, cookie) => {
+      this.storage.findCookie(CONSTANTS.TLD, '/', name, (err, cookie) => {
         if (err) return reject(err);
         if (!_.isObject(cookie))
           return reject(new Exceptions.CookieNotValidError(name));
@@ -27,17 +26,14 @@ class CookieStorage {
   }
 
   putCookie(cookie) {
-    const args = _.toArray(arguments);
-    const self = this;
     return new Promise((resolve, reject) => {
-      self.storage.putCookie(cookie, resolve);
+      this.storage.putCookie(cookie, resolve);
     });
   }
 
   getCookies() {
-    const self = this;
     return new Promise((resolve, reject) => {
-      self.storage.findCookies(CONSTANTS.TLD, '/', (err, cookies) => {
+      this.storage.findCookies(CONSTANTS.TLD, '/', (err, cookies) => {
         if (err) return reject(err);
         resolve(cookies || []);
       });
@@ -45,7 +41,6 @@ class CookieStorage {
   }
 
   getAccountId() {
-    const self = this;
     return this.getCookieValue('ds_user_id').then(cookie => {
       const id = parseInt(cookie.value);
       if (_.isNumber(id) && !_.isNaN(id)) {
@@ -68,9 +63,8 @@ class CookieStorage {
   }
 
   removeCheckpointStep() {
-    const self = this;
     return new Promise((resolve, reject) => {
-      self.storage.removeCookie(CONSTANTS.TLD, '/', 'checkpoint_step', err => {
+      this.storage.removeCookie(CONSTANTS.TLD, '/', 'checkpoint_step', err => {
         if (err) return reject(err);
         resolve();
       });

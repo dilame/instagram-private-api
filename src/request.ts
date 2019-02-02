@@ -161,7 +161,7 @@ class Request {
 
   generateUUID() {
     this.setData({
-      _uuid: this.session,
+      _uuid: this.session.uuid,
     });
     return this;
   }

@@ -140,9 +140,7 @@ class Session {
   }
 
   getAccountId() {
-    return this.cookieStore
-      .getSessionId()
-      .then(() => this.cookieStore.getAccountId());
+    return this.cookieStore.getAccountId();
   }
 
   setProxy(url) {
