@@ -7,10 +7,10 @@ import * as Bluebird from 'bluebird';
 import { Device } from './devices/device';
 import { Internal } from './v1/internal';
 import { StoryTrayFeed } from './v1/feeds/story-tray-feed';
+import { TimelineFeed } from './v1/feeds/timeline-feed';
 import CookieStorage = require('./v1/cookie-storage');
 import Account = require('./v1/account');
 import Request = require('./request');
-import {TimelineFeed } from './v1/feeds/timeline-feed';
 import Inbox = require('./v1/feeds/inbox');
 import Relationship = require('./v1/relationship');
 
@@ -178,20 +178,21 @@ class Session {
       Internal.getRecentActivityInbox(this),
       Internal.getProfileNotice(this),
       Internal.getExploreFeed(this),
-    ], {concurrency});
+    ], () => true, { concurrency });
   }
 
   preLoginFlow(concurrency = 1) {
     // Only on full re-login.
-    return Bluebird.mapSeries([
+    return Bluebird.map([
       Internal.qeSync(this, true),
       Internal.launcherSync(this, true),
       Internal.logAttribution(this),
       Internal.fetchZeroRatingToken(this),
       Internal.setContactPointPrefill(this),
-    ], {concurrency}).catch(error => {
-      throw new Error(error.message);
-    });
+    ], () => true, { concurrency })
+      .catch(error => {
+        throw new Error(error.message);
+      });
   }
 }
 
