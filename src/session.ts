@@ -165,10 +165,10 @@ class Session {
       });
   }
 
-  loginFlow() {
+  loginFlow(concurrency = 1) {
     // Right now only requests after closing and re-opening the app are made
     // Later we should also include requests made after a full re-login.
-    return Promise.all([
+    return Bluebird.map([
       new TimelineFeed(this).get({}),
       new StoryTrayFeed(this).get(),
       new Inbox(this).get(),
@@ -178,18 +178,18 @@ class Session {
       Internal.getRecentActivityInbox(this),
       Internal.getProfileNotice(this),
       Internal.getExploreFeed(this),
-    ]);
+    ], {concurrency});
   }
 
-  preLoginFlow() {
+  preLoginFlow(concurrency = 1) {
     // Only on full re-login.
-    return Promise.all([
+    return Bluebird.mapSeries([
       Internal.qeSync(this, true),
       Internal.launcherSync(this, true),
       Internal.logAttribution(this),
       Internal.fetchZeroRatingToken(this),
       Internal.setContactPointPrefill(this),
-    ]).catch(error => {
+    ], {concurrency}).catch(error => {
       throw new Error(error.message);
     });
   }
