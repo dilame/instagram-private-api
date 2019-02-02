@@ -2,7 +2,7 @@ const _ = require('lodash');
 const Resource = require('./resource');
 const Request = require('../request');
 const Account = require('./account');
-const Exceptions = require('./exceptions');
+const Exceptions = require('../exceptions');
 
 class Relationship extends Resource {
   static get(session, accountId) {

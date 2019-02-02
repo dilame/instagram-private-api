@@ -3,7 +3,7 @@ const Resource = require('./resource');
 const Request = require('../request');
 const Helpers = require('../helpers');
 const camelKeys = require('camelcase-keys');
-const Exceptions = require('./exceptions');
+const Exceptions = require('../exceptions');
 
 class Account extends Resource {
   static getById(session, id) {

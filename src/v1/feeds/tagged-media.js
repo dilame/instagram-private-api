@@ -3,7 +3,7 @@ const FeedBase = require('./feed-base');
 const Media = require('../media').Media;
 const Request = require('../../request');
 const Helpers = require('../../helpers');
-const Exceptions = require('../exceptions');
+const Exceptions = require('../../exceptions');
 
 class TaggedMediaFeed extends FeedBase {
   constructor(session, tag, limit) {

@@ -1,6 +1,6 @@
 import * as _ from 'lodash';
 import * as Chance from 'chance';
-import * as Exceptions from './v1/exceptions';
+import * as Exceptions from './exceptions';
 import * as CONSTANTS from './constants/constants';
 import * as Helpers from './helpers';
 import * as Bluebird from 'bluebird';

@@ -1,6 +1,6 @@
 const _ = require('lodash');
 const Promise = require('bluebird');
-const Exceptions = require('../exceptions');
+const Exceptions = require('../../exceptions');
 const EventEmitter = require('events').EventEmitter;
 
 class FeedBase extends EventEmitter {

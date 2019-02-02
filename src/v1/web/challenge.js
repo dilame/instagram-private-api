@@ -3,7 +3,7 @@ const Promise = require('bluebird');
 
 const WebRequest = require('./web-request');
 const Request = require('../../request');
-const Exceptions = require('../exceptions');
+const Exceptions = require('../../exceptions');
 
 const SHARED_JSON_REGEXP = /window._sharedData = (.*);<\/script>/i;
 

@@ -1,6 +1,6 @@
 const _ = require('lodash');
 const FeedBase = require('./feed-base');
-const Exceptions = require('../exceptions');
+const Exceptions = require('../../exceptions');
 const Request = require('../../request');
 const Comment = require('../comment');
 

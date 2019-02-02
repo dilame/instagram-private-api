@@ -4,7 +4,7 @@ const camelKeys = require('camelcase-keys');
 const Request = require('../request');
 const Helpers = require('../helpers');
 const Media = require('./media').Media;
-const Exceptions = require('./exceptions');
+const Exceptions = require('../exceptions');
 
 class Location extends Resource {
   static getRankedMedia(session, locationId) {

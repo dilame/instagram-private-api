@@ -4,7 +4,7 @@ import * as request from 'request-promise';
 import * as JSONbig from 'json-bigint';
 import * as ProxyAgent from 'proxy-agent';
 import * as signatures from './v1/signatures';
-import * as Exceptions from './v1/exceptions';
+import * as Exceptions from './exceptions';
 import * as routes from './v1/routes';
 import * as Helpers from './helpers';
 import * as CONSTANTS from './constants/constants';

@@ -7,7 +7,7 @@ const Request = require('../request');
 const Comment = require('./comment');
 const Account = require('./account');
 const Location = require('./location');
-const Exceptions = require('./exceptions');
+const Exceptions = require('../exceptions');
 const camelKeys = require('camelcase-keys');
 
 export class Media extends Resource {

@@ -4,7 +4,7 @@ const Promise = require('bluebird');
 const camelKeys = require('camelcase-keys');
 const Account = require('./account');
 const ThreadItem = require('./thread-item');
-const Exceptions = require('./exceptions');
+const Exceptions = require('../exceptions');
 const Request = require('../request');
 const Helpers = require('../helpers');
 
