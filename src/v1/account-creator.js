@@ -1,48 +1,46 @@
+import { plainToClass } from 'class-transformer';
+import { User } from '../models/user';
+import { Request } from '../request';
+import { Session } from '../session';
+
 const _ = require('lodash');
 const Helpers = require('../helpers');
 const clean = require('underscore.string/clean');
 const Exceptions = require('../exceptions');
 const QE = require('./qe');
-const Relationship = require('./relationship');
+const Relationship = require('./relationship').Relationship;
 const discover = require('./discover');
-const Request = require('../request');
-const Thread = require('./thread');
-const Session = require('../session');
-const Account = require('./account');
 
-class AccountCreator {
-  constructor(session, type) {
-    if (!(session instanceof Session))
-      throw new Error('AccountCreator needs valid session as first argument');
+const Thread = require('./thread');
+
+export class AccountCreator {
+  constructor (session, type) {
+    if (!(session instanceof Session)) throw new Error('AccountCreator needs valid session as first argument');
     this.session = session;
     if (!_.includes(['phone', 'email'], type))
-      throw new Error(
-        'AccountCreator class needs either phone or email as type',
-      );
+      throw new Error('AccountCreator class needs either phone or email as type');
     this.type = type;
   }
 
-  setUsername(username) {
+  setUsername (username) {
     username = username.toLowerCase();
-    if (!username || !/^[a-z0-9\._]{1,50}$/.test(username))
-      throw new Exceptions.InvalidUsername(username);
+    if (!username || !/^[a-z0-9\._]{1,50}$/.test(username)) throw new Exceptions.InvalidUsername(username);
     this.username = username;
     return this;
   }
 
-  setName(name) {
+  setName (name) {
     this.name = name;
     return this;
   }
 
-  setPassword(password) {
-    if (!password || password.length < 6)
-      throw new Exceptions.InvalidPassword();
+  setPassword (password) {
+    if (!password || password.length < 6) throw new Exceptions.InvalidPassword();
     this.password = password;
     return this;
   }
 
-  checkUsername(username) {
+  checkUsername (username) {
     return new Request(this.session)
       .setMethod('POST')
       .setResource('checkUsername')
@@ -51,7 +49,7 @@ class AccountCreator {
       .send();
   }
 
-  usernameSuggestions(username) {
+  usernameSuggestions (username) {
     return new Request(this.session)
       .setMethod('POST')
       .setResource('usernameSuggestions')
@@ -62,15 +60,13 @@ class AccountCreator {
       .send();
   }
 
-  validateUsername() {
+  validateUsername () {
     const username = this.username;
     const self = this;
-    if (!username)
-      return Promise.reject(new Exceptions.InvalidUsername('Empty'));
+    if (!username) return Promise.reject(new Exceptions.InvalidUsername('Empty'));
     return this.checkUsername(username)
       .then(json => {
-        if (!json.available)
-          throw new Exceptions.InvalidUsername(username, json);
+        if (!json.available) throw new Exceptions.InvalidUsername(username, json);
         return true;
       })
       .catch(Exceptions.InvalidUsername, e =>
@@ -81,7 +77,7 @@ class AccountCreator {
       );
   }
 
-  autocomplete(account) {
+  autocomplete (account) {
     const session = this.session;
     return QE.sync(session)
       .then(() => {
@@ -97,15 +93,15 @@ class AccountCreator {
       .spread(account => [account, discover(session, true)]);
   }
 
-  validate() {
+  validate () {
     throw new Error('Please override this method in order to validate account');
   }
 
-  create() {
+  create () {
     throw new Error('Please override this method in order to register account');
   }
 
-  register() {
+  register () {
     const args = _.toArray(arguments);
     const self = this;
     return self
@@ -115,34 +111,29 @@ class AccountCreator {
   }
 }
 
-exports.AccountCreator = AccountCreator;
-
-class AccountPhoneCreator extends AccountCreator {
-  constructor(session) {
+export class AccountPhoneCreator extends AccountCreator {
+  constructor (session) {
     super(session, 'phone');
   }
 
-  setPhone(phone) {
-    if (!phone || !/^([0-9\(\)\/\+ \-]*)$/.test(phone))
-      throw new Exceptions.InvalidPhone(phone);
+  setPhone (phone) {
+    if (!phone || !/^([0-9\(\)\/\+ \-]*)$/.test(phone)) throw new Exceptions.InvalidPhone(phone);
     this.phone = phone;
     return this;
   }
 
-  setPhoneCallback(callback) {
-    if (!_.isFunction(callback))
-      throw new Error('Callback must be function which returns promise');
+  setPhoneCallback (callback) {
+    if (!_.isFunction(callback)) throw new Error('Callback must be function which returns promise');
     this.phoneCallback = callback;
     return this;
   }
 
-  validate() {
-    if (!this.phoneCallback)
-      throw new Error('You must call `setPhoneCallback` and supply callback');
+  validate () {
+    if (!this.phoneCallback) throw new Error('You must call `setPhoneCallback` and supply callback');
     return this.validateUsername();
   }
 
-  create() {
+  create () {
     const that = this;
     return new Request(that.session)
       .setMethod('POST')
@@ -154,11 +145,9 @@ class AccountPhoneCreator extends AccountCreator {
       .send()
       .then(json => that.phoneCallback())
       .then(code => {
-        if (!_.isString(code) && !_.isNumber(code))
-          throw new Exceptions.AccountRegistrationError('Code is invalid');
+        if (!_.isString(code) && !_.isNumber(code)) throw new Exceptions.AccountRegistrationError('Code is invalid');
         code = clean(code.toString().trim()).replace(/\s+/, '');
-        if (code.toString().length !== 6)
-          throw new Error('Code must be 6 digits number');
+        if (code.toString().length !== 6) throw new Error('Code must be 6 digits number');
         return [
           new Request(that.session)
             .setMethod('POST')
@@ -173,11 +162,7 @@ class AccountPhoneCreator extends AccountCreator {
         ];
       })
       .spread((json, code) => {
-        if (!json.verified)
-          throw new Exceptions.AccountRegistrationError(
-            'Code is invalid',
-            json,
-          );
+        if (!json.verified) throw new Exceptions.AccountRegistrationError('Code is invalid', json);
         return new Request(that.session)
           .setMethod('POST')
           .setResource('registrationCreateValidated')
@@ -197,28 +182,24 @@ class AccountPhoneCreator extends AccountCreator {
           .send();
       })
       .then(json => {
-        if (!json.account_created)
-          throw new Exceptions.AccountRegistrationError(null, json);
-        return new Account(that.session, json.created_user);
+        if (!json.account_created) throw new Exceptions.AccountRegistrationError(null, json);
+        return plainToClass(User, json.created_user);
       });
   }
 }
 
-exports.AccountPhoneCreator = AccountPhoneCreator;
-
-class AccountEmailCreator extends AccountCreator {
-  constructor(session) {
+export class AccountEmailCreator extends AccountCreator {
+  constructor (session) {
     super(session, 'email');
   }
 
-  setEmail(email) {
-    if (!email || !Helpers.validateEmail(email))
-      throw new Exceptions.InvalidEmail(email);
+  setEmail (email) {
+    if (!email || !Helpers.validateEmail(email)) throw new Exceptions.InvalidEmail(email);
     this.email = email;
     return this;
   }
 
-  checkEmail() {
+  checkEmail () {
     return new Request(this.session)
       .setMethod('POST')
       .setResource('checkEmail')
@@ -230,21 +211,19 @@ class AccountEmailCreator extends AccountCreator {
       .send();
   }
 
-  validate() {
+  validate () {
     const email = this.email;
     const validateEmail = _.bind(this.checkEmail, this);
-    if (!email || !Helpers.validateEmail(email))
-      return Promise.reject(new Exceptions.InvalidEmail(email));
+    if (!email || !Helpers.validateEmail(email)) return Promise.reject(new Exceptions.InvalidEmail(email));
     return this.validateUsername()
       .then(() => validateEmail())
       .then(json => {
-        if (!json.available || !json.valid)
-          return Promise.reject(new Exceptions.InvalidEmail(email));
+        if (!json.available || !json.valid) return Promise.reject(new Exceptions.InvalidEmail(email));
         return true;
       });
   }
 
-  create() {
+  create () {
     const uuid = Helpers.generateUUID();
     const guid = Helpers.generateUUID();
     const that = this;
@@ -264,11 +243,8 @@ class AccountEmailCreator extends AccountCreator {
       .signPayload()
       .send()
       .then(json => {
-        if (!json.account_created)
-          throw new Exceptions.AccountRegistrationError(null, json);
-        return new Account(that.session, json.created_user);
+        if (!json.account_created) throw new Exceptions.AccountRegistrationError(null, json);
+        return plainToClass(User, json.created_user);
       });
   }
 }
-
-exports.AccountEmailCreator = AccountEmailCreator;

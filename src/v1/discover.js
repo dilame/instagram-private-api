@@ -1,7 +1,9 @@
-const Request = require('../request');
+import { plainToClass } from 'class-transformer';
+import { User } from '../models/user';
+import { Request } from '../request';
+
 const Helpers = require('../helpers');
 const _ = require('lodash');
-const Account = require('./account');
 
 module.exports = (session, inSingup) =>
   new Request(session)
@@ -17,7 +19,7 @@ module.exports = (session, inSingup) =>
     .then(json => {
       const items = _.property('suggested_users.suggestions')(json) || [];
       return _.map(items, item => ({
-        account: new Account(session, item.user),
+        account: plainToClass(User, item.user),
         mediaIds: item.media_ids,
       }));
     });

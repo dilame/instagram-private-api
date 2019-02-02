@@ -6,17 +6,8 @@ const InstagramV1 = require(src);
 async function main() {
   const device = new InstagramV1.Device('smmtooltest');
   const storage = new InstagramV1.CookieMemoryStorage();
-  const session = await InstagramV1.Session.create(
-    device,
-    storage,
-    'login',
-    'pass',
-  );
-  const feed = new InstagramV1.Feed.AccountFollowers(
-    session,
-    '1571836453',
-    100,
-  );
+  const session = await InstagramV1.Session.create(device, storage, 'login', 'pass');
+  const feed = new InstagramV1.Feed.AccountFollowers(session, '1571836453', 100);
 
   /* Optionally you can redefine reducer. By default it looks like this : */
   feed.reduce = (accumulator, items) => accumulator.concat(items);

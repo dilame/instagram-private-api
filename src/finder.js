@@ -10,23 +10,15 @@ const { urlSegmentToInstagramId } = require('instagram-id-to-url-segment');
 
 let MediaComments;
 
-function main(usernameToFind, commentToFind, postUrl) {
+function main (usernameToFind, commentToFind, postUrl) {
   return new Promise(async (resolve, reject) => {
     USERNAMETOFIND = usernameToFind;
     COMMENTTOFIND = commentToFind;
 
-    const Storage = new Client.CookieFileStorage(
-      path.join(__dirname, '/cookies/test.json'),
-    );
+    const Storage = new Client.CookieFileStorage(path.join(__dirname, '/cookies/test.json'));
     const Device = new Client.Device('test');
 
-    const session = await Client.Session.create(
-      Device,
-      Storage,
-      'enp_memes',
-      'ks82jsh87',
-      null,
-    );
+    const session = await Client.Session.create(Device, Storage, 'enp_memes', 'ks82jsh87', null);
 
     let mediaId;
 
@@ -46,7 +38,7 @@ function main(usernameToFind, commentToFind, postUrl) {
   });
 }
 
-async function loop(cb) {
+async function loop (cb) {
   const Comments = await get();
 
   if (!Comments) {
@@ -63,7 +55,7 @@ async function loop(cb) {
   setTimeout(loop, 5000, cb);
 }
 
-async function get() {
+async function get () {
   if (MediaComments.iteration == 0) {
     return await MediaComments.get();
   } else if (MediaComments.moreAvailable) {
@@ -73,7 +65,7 @@ async function get() {
   }
 }
 
-function process(Comments) {
+function process (Comments) {
   for (let idx = 0; idx < Comments.length; idx++) {
     if (Comments[idx]._params.user.username == USERNAMETOFIND) {
       if (Comments[idx]._params.text == COMMENTTOFIND) {

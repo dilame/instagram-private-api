@@ -1,9 +1,9 @@
 import { Media } from '../../models/media';
 import { plainToClass } from 'class-transformer';
-import Request = require('../../request');
-import FeedBase = require('./feed-base');
+import { Request } from '../../request';
+import { BaseFeed } from './_base.feed';
 
-export class UserMediaFeed extends FeedBase {
+export class UserMediaFeed extends BaseFeed {
   constructor(session, public accountId, public limit: number | null = null) {
     super(session);
   }
@@ -23,4 +23,3 @@ export class UserMediaFeed extends FeedBase {
     return plainToClass(Media, data.items);
   }
 }
-

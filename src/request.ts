@@ -8,11 +8,11 @@ import * as Exceptions from './exceptions';
 import * as routes from './v1/routes';
 import * as Helpers from './helpers';
 import * as CONSTANTS from './constants/constants';
-import Session from './session';
+import { Session } from './session';
 
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 
-class Request {
+export class Request {
   static requestClient: any = request.defaults({});
   _signData: boolean;
   _request: any;
@@ -96,8 +96,7 @@ class Request {
   }
 
   static setProxy(proxyUrl) {
-    if (!Helpers.isValidUrl(proxyUrl))
-      throw new Error('`proxyUrl` argument is not an valid url');
+    if (!Helpers.isValidUrl(proxyUrl)) throw new Error('`proxyUrl` argument is not an valid url');
     const object = { agent: new ProxyAgent(proxyUrl) };
     Request.requestClient = request.defaults(object);
   }
@@ -129,20 +128,15 @@ class Request {
       return this;
     }
     _.each(data, (val, key) => {
-      data[key] =
-        val && val.toString && !_.isObject(val) ? val.toString() : val;
+      data[key] = val && val.toString && !_.isObject(val) ? val.toString() : val;
     });
-    this._request.data = override
-      ? data
-      : _.extend(this._request.data, data || {});
+    this._request.data = override ? data : _.extend(this._request.data, data || {});
     return this;
   }
 
   setBodyType(type) {
     if (!_.includes(['form', 'formData', 'json', 'body'], type))
-      throw new Error(
-        '`bodyType` param must be and form, formData, json or body',
-      );
+      throw new Error('`bodyType` param must be and form, formData, json or body');
     this._request.bodyType = type;
     return this;
   }
@@ -153,8 +147,7 @@ class Request {
   }
 
   transform(callback) {
-    if (!_.isFunction(callback))
-      throw new Error('Transform must be an valid function');
+    if (!_.isFunction(callback)) throw new Error('Transform must be an valid function');
     this._transform = callback;
     return this;
   }
@@ -177,8 +170,7 @@ class Request {
   }
 
   setUrl(url) {
-    if (!_.isString(url) || !Helpers.isValidUrl(url))
-      throw new Error('The `url` parameter must be valid url string');
+    if (!_.isString(url) || !Helpers.isValidUrl(url)) throw new Error('The `url` parameter must be valid url string');
     this._url = url;
     return this;
   }
@@ -208,8 +200,7 @@ class Request {
       jar: session.jar,
     });
     if (session.device) this.setDevice(session.device);
-    if (session.proxyUrl)
-      this.setOptions({ agent: new ProxyAgent(session.proxyUrl) });
+    if (session.proxyUrl) this.setOptions({ agent: new ProxyAgent(session.proxyUrl) });
     return this;
   }
 
@@ -274,10 +265,7 @@ class Request {
   // If you need to perform loging or something like that!
 
   parseMiddleware(response) {
-    if (
-      response.req._headers.host === 'upload.instagram.com' &&
-      response.statusCode === 201
-    ) {
+    if (response.req._headers.host === 'upload.instagram.com' && response.statusCode === 201) {
       const loaded = /(\d+)-(\d+)\/(\d+)/.exec(response.body);
       response.body = {
         status: 'ok',
@@ -301,28 +289,17 @@ class Request {
     response = this.parseMiddleware(response);
     const json = response.body;
     if (json.spam) throw new Exceptions.ActionSpamError(json);
-    if (json.message === 'challenge_required')
-      throw new Exceptions.CheckpointError(json, this.session);
+    if (json.message === 'challenge_required') throw new Exceptions.CheckpointError(json, this.session);
     if (json.message === 'login_required')
-      throw new Exceptions.AuthenticationError(
-        'Login required to process this request',
-      );
-    if (json.error_type === 'sentry_block')
-      throw new Exceptions.SentryBlockError(json);
+      throw new Exceptions.AuthenticationError('Login required to process this request');
+    if (json.error_type === 'sentry_block') throw new Exceptions.SentryBlockError(json);
 
     if (response.statusCode === 429) throw new Exceptions.RequestsLimitError();
-    if (
-      _.isString(json.message) &&
-      json.message.toLowerCase().includes('too many requests')
-    )
+    if (_.isString(json.message) && json.message.toLowerCase().includes('too many requests'))
       throw new Exceptions.RequestsLimitError();
-    if (json.message === 'Please wait a few minutes before you try again.')
-      throw new Exceptions.RequestsLimitError();
+    if (json.message === 'Please wait a few minutes before you try again.') throw new Exceptions.RequestsLimitError();
 
-    if (
-      _.isString(json.message) &&
-      json.message.toLowerCase().includes('not authorized to view user')
-    )
+    if (_.isString(json.message) && json.message.toLowerCase().includes('not authorized to view user'))
       throw new Exceptions.PrivateUserError();
     throw new Exceptions.RequestError(json);
   }
@@ -341,12 +318,8 @@ class Request {
       .then(_.bind(this.parseMiddleware, this))
       .then(response => {
         const json = response.body;
-        if (_.isObject(json) && json.status === 'ok')
-          return _.omit(response.body, 'status');
-        if (
-          _.isString(json.message) &&
-          json.message.toLowerCase().includes('transcode timeout')
-        )
+        if (_.isObject(json) && json.status === 'ok') return _.omit(response.body, 'status');
+        if (_.isString(json.message) && json.message.toLowerCase().includes('transcode timeout'))
           throw new Exceptions.TranscodeTimeoutError();
         throw new Exceptions.RequestError(json);
       })
@@ -354,8 +327,7 @@ class Request {
         if (err instanceof Exceptions.APIError) throw err;
         if (!err || !err.response) throw err;
         const response = err.response;
-        if (response.statusCode === 404)
-          throw new Exceptions.NotFoundError(response);
+        if (response.statusCode === 404) throw new Exceptions.NotFoundError(response);
         if (response.statusCode >= 500) {
           if (attemps <= this.attemps) {
             attemps += 1;
@@ -374,5 +346,3 @@ class Request {
       });
   }
 }
-
-export = Request;

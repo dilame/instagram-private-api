@@ -6,7 +6,7 @@ const CookieStorage = require('./cookie-storage');
 const CONSTANTS = require('../constants/constants');
 
 class CookieFileStorage extends CookieStorage {
-  constructor(cookiePath) {
+  constructor (cookiePath) {
     cookiePath = path.resolve(cookiePath);
     Helpers.ensureExistenceOfJSONFilePath(cookiePath);
     const store = new FileCookieStore(cookiePath);
@@ -19,7 +19,7 @@ class CookieFileStorage extends CookieStorage {
     super(store);
   }
 
-  destroy() {
+  destroy () {
     fs.unlinkSync(this.storage.filePath);
   }
 }

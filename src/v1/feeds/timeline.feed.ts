@@ -1,14 +1,15 @@
 import { Media } from '../../models/media';
 import { plainToClass } from 'class-transformer';
 
-const FeedBase = require('./feed-base');
-const Request = require('../../request');
+import { BaseFeed } from './_base.feed';
+
+const { Request } = require('../../request');
 
 interface TimelineFeedGetProps {
-  is_pull_to_refresh?: boolean | null
+  is_pull_to_refresh?: boolean | null;
 }
 
-export class TimelineFeed extends FeedBase {
+export class TimelineFeed extends BaseFeed {
   constructor(session, public limit: number | null = null) {
     super(...arguments);
   }

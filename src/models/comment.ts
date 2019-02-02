@@ -1,8 +1,8 @@
 import { User } from './user';
 import { Type } from 'class-transformer';
-import { BaseModel } from './base-model';
+import { BaseModel } from './_base-model';
 
-export class Comment  extends BaseModel{
+export class Comment extends BaseModel {
   pk: number | string;
   user_id: number;
   text: string;

@@ -21,19 +21,17 @@ const meta = {
   '\\': '\\\\',
 };
 
-function quote(string) {
+function quote (string) {
   escapable.lastIndex = 0;
   return escapable.test(string)
     ? `"${string.replace(escapable, a => {
-        const c = meta[a];
-        return typeof c === 'string'
-          ? c
-          : `\\u${`0000${a.charCodeAt(0).toString(16)}`.slice(-4)}`;
-      })}"`
+      const c = meta[a];
+      return typeof c === 'string' ? c : `\\u${`0000${a.charCodeAt(0).toString(16)}`.slice(-4)}`;
+    })}"`
     : `"${string}"`;
 }
 
-function str(key, holder, depthDecr, arrayMaxLength) {
+function str (key, holder, depthDecr, arrayMaxLength) {
   let // The loop counter.
     i;
 
@@ -46,11 +44,7 @@ function str(key, holder, depthDecr, arrayMaxLength) {
   let length;
   let partial;
   let value = holder[key];
-  if (
-    value &&
-    typeof value === 'object' &&
-    typeof value.toPrunedJSON === 'function'
-  ) {
+  if (value && typeof value === 'object' && typeof value.toPrunedJSON === 'function') {
     value = value.toPrunedJSON(key);
   }
 

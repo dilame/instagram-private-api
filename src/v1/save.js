@@ -1,8 +1,8 @@
 const Resource = require('./resource');
-const Request = require('../request');
+const { Request } = require('../request');
 
 class Save extends Resource {
-  static create(session, mediaId) {
+  static create (session, mediaId) {
     return new Request(session)
       .setMethod('POST')
       .setResource('save', { id: mediaId })
@@ -16,7 +16,7 @@ class Save extends Resource {
       .then(data => new Save(session, {}));
   }
 
-  static destroy(session, mediaId) {
+  static destroy (session, mediaId) {
     return new Request(session)
       .setMethod('POST')
       .setResource('unsave', { id: mediaId })
@@ -30,7 +30,7 @@ class Save extends Resource {
       .then(data => new Save(session, {}));
   }
 
-  parseParams(json) {
+  parseParams (json) {
     return json || {};
   }
 }

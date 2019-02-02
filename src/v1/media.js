@@ -1,17 +1,19 @@
+import { plainToClass } from 'class-transformer';
+import { User } from '../models/user';
+import { Request } from '../request';
+
 const Resource = require('./resource');
 const _ = require('lodash');
 const pruned = require('./json-pruned');
 const request = require('request-promise');
 const Promise = require('bluebird');
-const Request = require('../request');
 const Comment = require('./comment');
-const Account = require('./account');
 const Location = require('./location');
 const Exceptions = require('../exceptions');
 const camelKeys = require('camelcase-keys');
 
 export class Media extends Resource {
-  static getById(session, id) {
+  static getById (session, id) {
     return new Request(session)
       .setMethod('GET')
       .setResource('mediaInfo', { mediaId: id })
@@ -19,7 +21,7 @@ export class Media extends Resource {
       .then(json => new Media(session, json.items[0]));
   }
 
-  static getByUrl(session, url) {
+  static getByUrl (session, url) {
     const self = this;
     return request({
       url: 'https://api.instagram.com/oembed/',
@@ -28,21 +30,20 @@ export class Media extends Resource {
     })
       .then(response => self.getById(session, response.media_id))
       .catch(reason => {
-        if (reason.error === 'No URL Match')
-          throw new Exceptions.NotFoundError('No URL Match');
+        if (reason.error === 'No URL Match') throw new Exceptions.NotFoundError('No URL Match');
         else throw reason;
       });
   }
 
-  static likers(session, mediaId) {
-    return new Request(session)
+  static async likers (session, mediaId) {
+    const data = await new Request(session)
       .setMethod('GET')
       .setResource('mediaLikes', { mediaId })
-      .send()
-      .then(data => _.map(data.users, user => new Account(session, user)));
+      .send();
+    return plainToClass(User, data.users);
   }
 
-  static delete(session, mediaId) {
+  static delete (session, mediaId) {
     return new Request(session)
       .setMethod('POST')
       .setResource('mediaDeletePhoto', { mediaId })
@@ -60,7 +61,7 @@ export class Media extends Resource {
       });
   }
 
-  static edit(session, mediaId, caption, userTags) {
+  static edit (session, mediaId, caption, userTags) {
     const requestPayload = {
       media_id: mediaId,
       caption_text: caption,
@@ -87,9 +88,8 @@ export class Media extends Resource {
       });
   }
 
-  static configurePhoto(session, uploadId, caption, width, height, userTags) {
-    if (_.isEmpty(uploadId))
-      throw new Error('Upload argument must be upload valid upload id');
+  static configurePhoto (session, uploadId, caption, width, height, userTags) {
+    if (_.isEmpty(uploadId)) throw new Error('Upload argument must be upload valid upload id');
     if (!caption) caption = '';
     if (!width) width = 800;
     if (!height) height = 800;
@@ -134,9 +134,8 @@ export class Media extends Resource {
       .then(json => new Media(session, json.media));
   }
 
-  static configurePhotoStory(session, uploadId, width, height) {
-    if (_.isEmpty(uploadId))
-      throw new Error('Upload argument must be upload valid upload id');
+  static configurePhotoStory (session, uploadId, width, height) {
+    if (_.isEmpty(uploadId)) throw new Error('Upload argument must be upload valid upload id');
     if (!width) width = 800;
     if (!height) height = 800;
     const CROP = 1;
@@ -176,7 +175,7 @@ export class Media extends Resource {
       .then(json => new Media(session, json.media));
   }
 
-  static configureVideo(
+  static configureVideo (
     session,
     uploadId,
     caption,
@@ -194,12 +193,8 @@ export class Media extends Resource {
       camera_position = 'unknown',
     } = {},
   ) {
-    if (_.isEmpty(uploadId))
-      throw new Error('Upload argument must be upload valid upload id');
-    if (typeof durationms === 'undefined')
-      throw new Error(
-        'Durationms argument must be upload valid video duration',
-      );
+    if (_.isEmpty(uploadId)) throw new Error('Upload argument must be upload valid upload id');
+    if (typeof durationms === 'undefined') throw new Error('Durationms argument must be upload valid video duration');
     const duration = durationms / 1000;
     if (!caption) caption = '';
     if (!delay || typeof delay != 'number') delay = 6500;
@@ -249,22 +244,12 @@ export class Media extends Resource {
           .then(json => new Media(session, json.media))
           .catch(Exceptions.TranscodeTimeoutError, (
             error, //Well, we just want to repeat our request. Dunno why this is happening and we should not let our users deal with this crap themselves.
-          ) =>
-            Media.configureVideo(session, uploadId, caption, durationms, delay),
-          );
+          ) => Media.configureVideo(session, uploadId, caption, durationms, delay));
       });
   }
 
-  static configurePhotoAlbum(
-    session,
-    uploadId,
-    caption,
-    width,
-    height,
-    userTags,
-  ) {
-    if (_.isEmpty(uploadId))
-      throw new Error('Upload argument must be upload valid upload id');
+  static configurePhotoAlbum (session, uploadId, caption, width, height, userTags) {
+    if (_.isEmpty(uploadId)) throw new Error('Upload argument must be upload valid upload id');
     if (!caption) caption = '';
     if (!width) width = 800;
     if (!height) height = 800;
@@ -291,21 +276,9 @@ export class Media extends Resource {
     return Promise.resolve(payload);
   }
 
-  static configureVideoAlbum(
-    session,
-    uploadId,
-    caption,
-    durationms,
-    delay,
-    width,
-    height,
-  ) {
-    if (_.isEmpty(uploadId))
-      throw new Error('Upload argument must be upload valid upload id');
-    if (typeof durationms === 'undefined')
-      throw new Error(
-        'Durationms argument must be upload valid video duration',
-      );
+  static configureVideoAlbum (session, uploadId, caption, durationms, delay, width, height) {
+    if (_.isEmpty(uploadId)) throw new Error('Upload argument must be upload valid upload id');
+    if (typeof durationms === 'undefined') throw new Error('Durationms argument must be upload valid video duration');
     const duration = durationms / 1000;
     if (!caption) caption = '';
     if (!delay || typeof delay != 'number') delay = 6500;
@@ -337,7 +310,7 @@ export class Media extends Resource {
     });
   }
 
-  static configureAlbum(session, medias, caption, disableComments) {
+  static configureAlbum (session, medias, caption, disableComments) {
     const albumUploadId = new Date().getTime();
 
     caption = caption || '';
@@ -388,7 +361,7 @@ export class Media extends Resource {
     });
   }
 
-  parseParams(json) {
+  parseParams (json) {
     const hash = camelKeys(json);
     const that = this;
     hash.commentCount = hash.commentsDisabled ? 0 : json.comment_count;
@@ -409,33 +382,24 @@ export class Media extends Resource {
       };
     }
     if (json.media_type === 8 && _.isArray(json.carousel_media)) {
-      hash.carouselMedia = _.map(
-        json.carousel_media,
-        medium => new Media(that.session, medium),
-      );
+      hash.carouselMedia = _.map(json.carousel_media, medium => new Media(that.session, medium));
     }
     if (_.isObject(json.caption)) hash.caption = json.caption.text;
     hash.takenAt = parseInt(json.taken_at) * 1000;
     if (_.isObject(json.image_versions2)) {
       hash.images = json.image_versions2.candidates;
     } else if (_.isObject(json.carousel_media)) {
-      hash.images = json.carousel_media.map(
-        media => media.image_versions2.candidates,
-      );
+      hash.images = json.carousel_media.map(media => media.image_versions2.candidates);
     }
     if (_.isArray(json.video_versions)) hash.videos = json.video_versions;
-    this.previewComments = _.map(
-      json.preview_comments,
-      comment => new Comment(that.session, comment),
-    );
+    this.previewComments = _.map(json.preview_comments, comment => new Comment(that.session, comment));
     // backward compability
     this.comments = this.previewComments;
-    if (_.isPlainObject(json.user))
-      this.account = new Account(that.session, json.user);
+    if (_.isPlainObject(json.user)) this.account = plainToClass(User, json.user);
     return hash;
   }
 
-  getParams() {
+  getParams () {
     return _.extend(this._params, {
       account: this.account ? this.account.params : {},
       comments: _.map(this.comments, 'params'),

@@ -1,11 +1,12 @@
-const _ = require('lodash');
-const Resource = require('./resource');
-const Request = require('../request');
-const Account = require('./account');
-const Exceptions = require('../exceptions');
+import { plainToClass } from 'class-transformer';
+import { User } from '../models/user';
+import { Request } from '../request';
+import * as _ from 'lodash';
+import * as Resource from './resource';
+import * as Exceptions from '../exceptions';
 
-class Relationship extends Resource {
-  static get(session, accountId) {
+export class Relationship extends Resource {
+  static get (session, accountId) {
     return new Request(session)
       .setMethod('GET')
       .setResource('friendshipShow', { id: accountId })
@@ -17,7 +18,7 @@ class Relationship extends Resource {
       });
   }
 
-  static pendingFollowers(session) {
+  static pendingFollowers (session) {
     return new Request(session)
       .setMethod('GET')
       .setResource('friendshipPending')
@@ -33,7 +34,7 @@ class Relationship extends Resource {
       );
   }
 
-  static approvePending(session, accountId) {
+  static approvePending (session, accountId) {
     return new Request(session)
       .setMethod('POST')
       .setResource('friendshipPendingApprove', { id: accountId })
@@ -45,7 +46,7 @@ class Relationship extends Resource {
       .send();
   }
 
-  static removeFollower(session, accountId) {
+  static removeFollower (session, accountId) {
     return new Request(session)
       .setMethod('POST')
       .setResource('friendshipRemoveFollower', { id: accountId })
@@ -57,7 +58,7 @@ class Relationship extends Resource {
       .send();
   }
 
-  static getMany(session, accountIds) {
+  static getMany (session, accountIds) {
     return new Request(session)
       .setMethod('POST')
       .generateUUID()
@@ -73,7 +74,7 @@ class Relationship extends Resource {
       );
   }
 
-  static create(session, accountId) {
+  static create (session, accountId) {
     return new Request(session)
       .setMethod('POST')
       .setResource('follow', { id: accountId })
@@ -87,10 +88,7 @@ class Relationship extends Resource {
         return relationship;
       })
       .catch(err => {
-        if (
-          err instanceof Exceptions.RequestError &&
-          err.message.includes('following the max limit')
-        ) {
+        if (err instanceof Exceptions.RequestError && err.message.includes('following the max limit')) {
           throw new Exceptions.TooManyFollowsError();
         } else {
           throw err;
@@ -98,7 +96,7 @@ class Relationship extends Resource {
       });
   }
 
-  static destroy(session, accountId) {
+  static destroy (session, accountId) {
     return new Request(session)
       .setMethod('POST')
       .setResource('unfollow', { id: accountId })
@@ -113,22 +111,19 @@ class Relationship extends Resource {
       });
   }
 
-  static autocompleteUserList(session) {
+  static autocompleteUserList (session) {
     return new Request(session)
       .setMethod('GET')
       .setResource('autocompleteUserList')
       .send()
       .then(json => {
-        json.accounts = _.map(
-          json.users,
-          account => new Account(session, account),
-        );
+        json.accounts = plainToClass(User, json.users);
         json.expires = parseInt(json.expires * 1000);
         return json;
       });
   }
 
-  static getBootstrapUsers(session) {
+  static getBootstrapUsers (session) {
     const surfaces = [
       'coefficient_direct_closed_friends_ranking',
       'coefficient_direct_recipients_ranking_variant_2',
@@ -146,7 +141,7 @@ class Relationship extends Resource {
       .send();
   }
 
-  static block(session, accountId) {
+  static block (session, accountId) {
     return new Request(session)
       .setMethod('POST')
       .setResource('block', { id: accountId })
@@ -161,7 +156,7 @@ class Relationship extends Resource {
       });
   }
 
-  static unblock(session, accountId) {
+  static unblock (session, accountId) {
     return new Request(session)
       .setMethod('POST')
       .setResource('unblock', { id: accountId })
@@ -176,11 +171,11 @@ class Relationship extends Resource {
       });
   }
 
-  setAccountId(accountId) {
+  setAccountId (accountId) {
     this.accountId = parseInt(accountId);
   }
 
-  getParams() {
+  getParams () {
     return _.defaults(
       {
         accountId: this.accountId,
@@ -189,21 +184,19 @@ class Relationship extends Resource {
     );
   }
 
-  approvePending() {
+  approvePending () {
     return Relationship.approvePending(this.session, this.accountId);
   }
 
-  removeFollower() {
+  removeFollower () {
     return Relationship.removeFollower(this.session, this.accountId);
   }
 
-  block() {
+  block () {
     return Relationship.block(this.session, this.accountId);
   }
 
-  unblock() {
+  unblock () {
     return Relationship.unblock(this.session, this.accountId);
   }
 }
-
-module.exports = Relationship;

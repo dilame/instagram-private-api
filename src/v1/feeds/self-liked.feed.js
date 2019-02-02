@@ -1,16 +1,17 @@
 const _ = require('lodash');
-const FeedBase = require('./feed-base');
-const Media = require('../media').Media;
-const Request = require('../../request');
+import { BaseFeed } from './_base.feed';
 
-class SelfLikedFeed extends FeedBase {
-  constructor(session, limit) {
+const Media = require('../media').Media;
+const { Request } = require('../../request');
+
+class SelfLikedFeed extends BaseFeed {
+  constructor (session, limit) {
     super(...arguments);
     this.session = session;
     this.limit = parseInt(limit) || null;
   }
 
-  get() {
+  get () {
     const that = this;
     return new Request(that.session)
       .setMethod('GET')
@@ -19,9 +20,7 @@ class SelfLikedFeed extends FeedBase {
       })
       .send()
       .then(data => {
-        const nextMaxId = data.next_max_id
-          ? data.next_max_id.toString()
-          : data.next_max_id;
+        const nextMaxId = data.next_max_id ? data.next_max_id.toString() : data.next_max_id;
         that.moreAvailable = data.more_available && !!nextMaxId;
         if (that.moreAvailable) that.setCursor(nextMaxId);
         return _.map(data.items, medium => new Media(that.session, medium));

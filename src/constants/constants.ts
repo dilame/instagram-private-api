@@ -34,33 +34,25 @@ export const ROUTES = {
   friendshipPendingApprove: 'friendships/approve/<%= id %>/',
   friendshipRemoveFollower: 'friendships/remove_follower/<%= id %>/',
   userInfo: 'users/<%= id %>/info/',
-  userFeed:
-    'feed/user/<%= id %>/?<%= maxId ? ("max_id=" + maxId) : "" %>',
+  userFeed: 'feed/user/<%= id %>/?<%= maxId ? ("max_id=" + maxId) : "" %>',
   timelineFeed: 'feed/timeline/',
-  tagFeed:
-    'feed/tag/<%= encodeURI(tag) %>/?<%= maxId ? ("max_id=" + maxId + "&") : "" %>rank_token=<%= rankToken %>',
+  tagFeed: 'feed/tag/<%= encodeURI(tag) %>/?<%= maxId ? ("max_id=" + maxId + "&") : "" %>rank_token=<%= rankToken %>',
   selfLikedFeed: 'feed/liked/<%= maxId ? ("?max_id=" + maxId) : "" %>',
-  storyViewers:
-    'media/<%= mediaId %>/list_reel_media_viewer/<%= maxId ? ("?max_id=" + maxId) : "" %>',
-  locationFeed:
-    'feed/location/<%= id %>/?<%= maxId ? ("max_id=" + maxId + "&") : "" %>rank_token=<%= rankToken %>',
+  storyViewers: 'media/<%= mediaId %>/list_reel_media_viewer/<%= maxId ? ("?max_id=" + maxId) : "" %>',
+  locationFeed: 'feed/location/<%= id %>/?<%= maxId ? ("max_id=" + maxId + "&") : "" %>rank_token=<%= rankToken %>',
   followingFeed:
     'friendships/<%= id %>/following/?<%= maxId ? ("max_id=" + maxId + "&") : "" %>rank_token=<%= rankToken %>',
-  followersFeed:
-    'friendships/<%= id %>/followers/<%= maxId ? ("?max_id=" + maxId) : "" %>',
+  followersFeed: 'friendships/<%= id %>/followers/<%= maxId ? ("?max_id=" + maxId) : "" %>',
   savedFeed: 'feed/saved/<%= maxId ? ("?max_id=" + maxId) : "" %>',
 
   topSearch:
     'fbsearch/topsearch/?rank_token=<%= rankToken %>&query=<%= encodeURIComponent(query) %>&context=blended&timezone_offset=10800',
-  accountsSearch:
-    'users/search/?is_typehead=true&q=<%= encodeURIComponent(query) %>&rank_token=<%= rankToken %>',
-  hashtagsSearch:
-    'tags/search/?count=50&q=<%= encodeURIComponent(query) %>&rank_token=<%= rankToken %>',
+  accountsSearch: 'users/search/?is_typehead=true&q=<%= encodeURIComponent(query) %>&rank_token=<%= rankToken %>',
+  hashtagsSearch: 'tags/search/?count=50&q=<%= encodeURIComponent(query) %>&rank_token=<%= rankToken %>',
   hashtagsInfo: 'tags/<%= encodeURI(tag) %>/info',
   hashtagsRelated:
     'tags/<%= encodeURI(tag) %>/related/?visited=<%= encodeURIComponent(visited) %>&related_types=<%= encodeURIComponent(related_types) %>',
-  locationsSearch:
-    'fbsearch/places/?count=50&query=<%= encodeURIComponent(query) %>&rank_token=<%= rankToken %>',
+  locationsSearch: 'fbsearch/places/?count=50&query=<%= encodeURIComponent(query) %>&rank_token=<%= rankToken %>',
   changeProfilePicture: 'accounts/change_profile_picture/',
   mediaConfigure: 'media/configure/',
   mediaConfigureStory: 'media/configure_to_reel/',
@@ -82,20 +74,16 @@ export const ROUTES = {
   discoverAyml: 'discover/ayml/',
   exploreFeed:
     'discover/explore/?is_prefetch=<%=is_prefetch%>&is_from_promote=false&timezone_offset=2&session_id=<%=session_id%>&supported_capabilities_new=<%=supported_capabilities_new%>&max_id=0&module=explore_popular',
-  inbox:
-    'direct_v2/inbox/?persistentBadging=true&use_unified_inbox=true<%= cursor ? ("&cursor=" + cursor) : "" %>',
-  inboxPending:
-    'direct_v2/pending_inbox/<%= maxId ? ("?max_id=" + maxId) : "" %>',
+  inbox: 'direct_v2/inbox/?persistentBadging=true&use_unified_inbox=true<%= cursor ? ("&cursor=" + cursor) : "" %>',
+  inboxPending: 'direct_v2/pending_inbox/<%= maxId ? ("?max_id=" + maxId) : "" %>',
   threads: 'direct_v2/threads/?user_ids=<% JSON.stringify(threads) %>',
-  threadsShow:
-    'direct_v2/threads/<%= threadId %>/<%= cursor ? ("?cursor=" + cursor) : "" %>',
+  threadsShow: 'direct_v2/threads/<%= threadId %>/<%= cursor ? ("?cursor=" + cursor) : "" %>',
   threadsSeen: 'direct_v2/threads/<%= threadId %>/items/<%= itemId %>/seen/',
   threadsApprove: 'direct_v2/threads/<%= threadId %>/approve/',
   threadsHide: 'direct_v2/threads/<%= threadId %>/hide/',
   threadsBrodcastText: 'direct_v2/threads/broadcast/text/',
   threadsBrodcastLink: 'direct_v2/threads/broadcast/link/',
-  threadsBrodcastShare:
-    'direct_v2/threads/broadcast/media_share/?media_type=photo',
+  threadsBrodcastShare: 'direct_v2/threads/broadcast/media_share/?media_type=photo',
   threadsBrodcastProfile: 'direct_v2/threads/broadcast/profile/',
   threadsBrodcastHashtag: 'direct_v2/threads/broadcast/hashtag/',
   threadsBrodcastPhoto: 'direct_v2/threads/broadcast/configure_photo/',
@@ -103,8 +91,7 @@ export const ROUTES = {
   threadsRecentRecipients: 'direct_share/recent_recipients/',
   getRankedRecipients:
     'direct_v2/ranked_recipients/?mode=<%=mode%>&show_threads=<%=show_threads%>&use_unified_inbox=<%=use_unified_inbox%>',
-  autocompleteUserList:
-    'friendships/autocomplete_user_list/?version=2&followinfo=True',
+  autocompleteUserList: 'friendships/autocomplete_user_list/?version=2&followinfo=True',
   getBootstrapUsers: 'scores/bootstrap/users/?surfaces=<%=surfaces%>',
   getPresences: 'direct_v2/get_presence/',
   getRecentActivityInbox: 'news/inbox/',
@@ -144,9 +131,7 @@ export const HEADERS = {
   X_IG_Capabilities: '3brTPw==',
 };
 
-export const instagramAgentTemplate = _.template(
-  'Instagram <%= version %> Android (<%= agent %>)',
-);
+export const instagramAgentTemplate = _.template('Instagram <%= version %> Android (<%= agent %>)');
 export const instagramAgentWebTemplate = _.template(
   'Mozilla/5.0 (Linux; Android <%= release %>; <%= model %> Build/<%= build %>; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/70.0.3538.110 Mobile Safari/537.36 <%= instagramAgent %>',
 );

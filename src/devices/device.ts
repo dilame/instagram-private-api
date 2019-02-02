@@ -6,9 +6,7 @@ import * as _ from 'lodash';
 import { IDevicePayload } from './device.interface';
 
 export class Device {
-  static appUserAgentTemplate = _.template(
-    'Instagram <%= version %> Android (<%= agent %>)',
-  );
+  static appUserAgentTemplate = _.template('Instagram <%= version %> Android (<%= agent %>)');
   static webUserAgentTemplate = _.template(
     'Mozilla/5.0 (Linux; Android <%= release %>; <%= model %> Build/<%= build %>; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/70.0.3538.110 Mobile Safari/537.36 <%= instagramAgent %>',
   );
@@ -67,11 +65,7 @@ export class Device {
 
   userAgent(version: string): string {
     return Device.appUserAgentTemplate({
-      agent: [
-        this.deviceString,
-        this.language,
-        CONSTANTS.PRIVATE_KEY.VERSION_CODE,
-      ].join('; '),
+      agent: [this.deviceString, this.language, CONSTANTS.PRIVATE_KEY.VERSION_CODE].join('; '),
       version: version || CONSTANTS.PRIVATE_KEY.APP_VERSION,
     });
   }

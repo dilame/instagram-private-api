@@ -1,9 +1,9 @@
 import { Type } from 'class-transformer';
 import { User } from './user';
 import { Media } from './media';
-import { BaseModel } from './base-model';
+import { BaseModel } from './_base-model';
 
-export class StoryTray  extends BaseModel{
+export class StoryTray extends BaseModel {
   id: number;
   latest_reel_media: number;
   expiring_at: number;

@@ -16,7 +16,6 @@ export class APIError extends CustomError {
   }
 }
 
-
 export class RequestError extends APIError {
   constructor(public json: any = {}) {
     super(json.message || `It's not possible to make request!`);
@@ -68,9 +67,7 @@ export class ActionSpamError extends APIError {
   getFeedbackMessage() {
     let message = 'No feedback message';
     if (_.isString(this.json.feedback_message)) {
-      const title = _.isString(this.json.feedback_title)
-        ? this.json.feedback_title + ': '
-        : '';
+      const title = _.isString(this.json.feedback_title) ? this.json.feedback_title + ': ' : '';
       message = title + this.json.feedback_message;
     }
     return message;
@@ -92,7 +89,6 @@ export class CheckpointError extends APIError {
 
   get apiUrl() {
     return 'https://i.instagram.com/api/v1' + this.json.challenge.api_path;
-
   }
 }
 
@@ -138,13 +134,11 @@ export class CookieNotValidError extends APIError {
   }
 }
 
-
 export class IGAccountNotFoundError extends APIError {
   constructor() {
     super('Account you are searching for was not found!');
   }
 }
-
 
 export class ThreadEmptyError extends APIError {
   constructor() {
@@ -152,13 +146,11 @@ export class ThreadEmptyError extends APIError {
   }
 }
 
-
 export class AccountInactive extends APIError {
   constructor(public account) {
     super('The account you are trying to propagate is inactive');
   }
 }
-
 
 export class AccountBanned extends APIError {
   constructor(message) {
@@ -166,20 +158,17 @@ export class AccountBanned extends APIError {
   }
 }
 
-
 export class AccountActivityPrivateFeed extends APIError {
   constructor() {
     super('The Account has private feed, account activity not really completed');
   }
 }
 
-
 export class PlaceNotFound extends APIError {
   constructor() {
     super('Place you are searching for not exists!');
   }
 }
-
 
 export class NotPossibleToResolveChallenge extends APIError {
   static CODE = {
@@ -197,13 +186,11 @@ export class NotPossibleToResolveChallenge extends APIError {
   }
 }
 
-
 export class NotPossibleToVerify extends APIError {
   constructor() {
     super('Not possible to verify trough code!');
   }
 }
-
 
 export class NoChallengeRequired extends APIError {
   constructor() {
@@ -211,13 +198,11 @@ export class NoChallengeRequired extends APIError {
   }
 }
 
-
 export class InvalidEmail extends APIError {
   constructor(email, public json) {
     super(`${email} email is not an valid email`);
   }
 }
-
 
 export class InvalidUsername extends APIError {
   constructor(username, public json) {
@@ -225,13 +210,11 @@ export class InvalidUsername extends APIError {
   }
 }
 
-
 export class InvalidPhone extends APIError {
   constructor(phone, public json) {
     super(`${phone} phone is not a valid phone`);
   }
 }
-
 
 export class InvalidPassword extends APIError {
   constructor() {
@@ -239,20 +222,17 @@ export class InvalidPassword extends APIError {
   }
 }
 
-
 export class AccountRegistrationError extends APIError {
   constructor(message, public json) {
     super(message);
   }
 }
 
-
 export class TranscodeTimeoutError extends APIError {
   constructor() {
     super('Server did not transcoded uploaded video in time');
   }
 }
-
 
 export class MediaUnavailableError extends APIError {
   constructor() {

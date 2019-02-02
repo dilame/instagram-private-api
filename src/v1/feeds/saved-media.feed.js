@@ -1,17 +1,17 @@
 const _ = require('lodash');
-const util = require('util');
-const FeedBase = require('./feed-base');
-const Media = require('../media').Media;
-const Request = require('../../request');
+import { BaseFeed } from './_base.feed';
 
-class SavedFeed extends FeedBase {
-  constructor(session, limit) {
+const Media = require('../media').Media;
+const { Request } = require('../../request');
+
+class SavedFeed extends BaseFeed {
+  constructor (session, limit) {
     super(...arguments);
     this.timeout = 10 * 60 * 1000; // 10 minutes
     this.limit = limit;
   }
 
-  get() {
+  get () {
     const that = this;
     return new Request(that.session)
       .setMethod('POST')
@@ -27,10 +27,7 @@ class SavedFeed extends FeedBase {
         if (that.moreAvailable && data.next_max_id) {
           that.setCursor(data.next_max_id);
         }
-        return _.map(
-          data.items,
-          medium => new Media(that.session, medium.media),
-        );
+        return _.map(data.items, medium => new Media(that.session, medium.media));
       });
   }
 }

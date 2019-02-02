@@ -3,8 +3,8 @@ const Promise = require('bluebird');
 const Exceptions = require('../../exceptions');
 const EventEmitter = require('events').EventEmitter;
 
-class FeedBase extends EventEmitter {
-  constructor(session) {
+export class BaseFeed extends EventEmitter {
+  constructor (session) {
     super();
     this.session = session;
     this.allResults = [];
@@ -16,7 +16,7 @@ class FeedBase extends EventEmitter {
     this.parseErrorsMultiplier = 0;
   }
 
-  all(parameters) {
+  all (parameters) {
     const that = this;
     parameters = _.isObject(parameters) ? parameters : {};
     _.defaults(parameters, {
@@ -28,11 +28,7 @@ class FeedBase extends EventEmitter {
     });
     // every N requests we take a pause
     const delay =
-      this.iteration === 0
-        ? 0
-        : this.iteration % parameters.every !== 0
-        ? parameters.delay
-        : parameters.pause;
+      this.iteration === 0 ? 0 : this.iteration % parameters.every !== 0 ? parameters.delay : parameters.pause;
     return (
       Promise.delay(delay)
         .then(this.get.bind(this))
@@ -46,16 +42,12 @@ class FeedBase extends EventEmitter {
           // Every consecutive ParseError makes delay befor new request longer. Otherwise we will never reach the end.
           that.parseErrorsMultiplier++;
           // When delay time is beyond reasonable, throw exception.
-          if (that.parseErrorsMultiplier > parameters.maxErrors)
-            throw new Exceptions.RequestsLimitError();
-          return Promise.resolve([]).delay(
-            parameters.pause * that.parseErrorsMultiplier,
-          );
+          if (that.parseErrorsMultiplier > parameters.maxErrors) throw new Exceptions.RequestsLimitError();
+          return Promise.resolve([]).delay(parameters.pause * that.parseErrorsMultiplier);
         })
         .then(response => {
           const results = response.filter(that.filter).map(that.map);
-          if (_.isFunction(that.reduce))
-            that.allResults = that.reduce(that.allResults, results);
+          if (_.isFunction(that.reduce)) that.allResults = that.reduce(that.allResults, results);
           that.totalCollected += response.length;
 
           that._handleInfinityListBug(response, results);
@@ -63,10 +55,7 @@ class FeedBase extends EventEmitter {
           that.emit('data', results);
           let exceedLimit = false;
 
-          if (
-            (parameters.limit && that.totalCollected > parameters.limit) ||
-            that._stopAll === true
-          )
+          if ((parameters.limit && that.totalCollected > parameters.limit) || that._stopAll === true)
             exceedLimit = true;
 
           if (that.isMoreAvailable() && !exceedLimit) {
@@ -89,7 +78,7 @@ class FeedBase extends EventEmitter {
    * feed.map = follower => follower.id;
    * feed.all();
    * */
-  map(item) {
+  map (item) {
     return item;
   }
 
@@ -101,11 +90,11 @@ class FeedBase extends EventEmitter {
     feed.on('data', results => console.log(feed.allResults)) // here will be total amount of collected items every request.
     console.log( await feed.all() ) // here will be total amount of collected items in the end.
    * */
-  reduce(accumulator, response) {
+  reduce (accumulator, response) {
     return accumulator.concat(response);
   }
 
-  filter() {
+  filter () {
     return true;
   }
 
@@ -115,7 +104,7 @@ class FeedBase extends EventEmitter {
    * And if it is not - we stop collecting.
    * To see this bug try to collect AccountFollowingFeed of id 1571836453 */
 
-  _handleInfinityListBug(response, results) {
+  _handleInfinityListBug (response, results) {
     const that = this;
     /* For RAM economy we can store only 2 last results, not all. So every 2 iterations we release memory  */
     if (this.iteration % 2 === 0) {
@@ -128,28 +117,27 @@ class FeedBase extends EventEmitter {
       that.allResultsMap[result.id] = undefined;
     });
 
-    if (_.keys(this.allResultsMap).length !== this._allResultsLentgh)
-      this.stop();
+    if (_.keys(this.allResultsMap).length !== this._allResultsLentgh) this.stop();
   }
 
   // Stops collecting results with .all() method. Will wait unfinished request.
-  stop() {
+  stop () {
     this._stopAll = true;
   }
 
-  setCursor(cursor) {
+  setCursor (cursor) {
     this.cursor = cursor;
   }
 
-  getCursor() {
+  getCursor () {
     return this.cursor;
   }
 
-  isMoreAvailable() {
+  isMoreAvailable () {
     return !!this.moreAvailable;
   }
 
-  allSafe(parameters, timeout = 10 * 60 * 1000) {
+  allSafe (parameters, timeout = 10 * 60 * 1000) {
     const that = this;
     return this.all(parameters)
       .timeout(timeout || this.timeout)
@@ -159,5 +147,3 @@ class FeedBase extends EventEmitter {
       });
   }
 }
-
-module.exports = FeedBase;

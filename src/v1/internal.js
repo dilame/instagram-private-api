@@ -1,5 +1,5 @@
 import * as Resource from './resource';
-import * as Request from '../request';
+import { Request } from '../request';
 import { LOGIN_EXPERIMENTS, SUPPORTED_CAPABILITIES } from '../constants/constants';
 
 export class Internal extends Resource {
@@ -161,9 +161,7 @@ export class Internal extends Resource {
       .setResource('exploreFeed', {
         is_prefetch: '',
         session_id: session.session_id,
-        supported_capabilities_new: encodeURIComponent(
-          JSON.stringify(SUPPORTED_CAPABILITIES),
-        ),
+        supported_capabilities_new: encodeURIComponent(JSON.stringify(SUPPORTED_CAPABILITIES)),
       })
       .setBodyType('form')
       .send();

@@ -1,11 +1,11 @@
 const _ = require('lodash');
 const Resource = require('./resource');
 const camelKeys = require('camelcase-keys');
-const Request = require('../request');
+const { Request } = require('../request');
 const Helpers = require('../helpers');
 
 class Hashtag extends Resource {
-  static search(session, query) {
+  static search (session, query) {
     return session
       .getAccountId()
       .then(id => {
@@ -18,12 +18,10 @@ class Hashtag extends Resource {
           })
           .send();
       })
-      .then(data =>
-        _.map(data.results, hashtag => new Hashtag(session, hashtag)),
-      );
+      .then(data => _.map(data.results, hashtag => new Hashtag(session, hashtag)));
   }
 
-  static related(session, tag) {
+  static related (session, tag) {
     return new Request(session)
       .setMethod('GET')
       .setResource('hashtagsRelated', {
@@ -32,12 +30,10 @@ class Hashtag extends Resource {
         related_types: '["hashtag"]',
       })
       .send()
-      .then(data =>
-        _.map(data.related, hashtag => new Hashtag(session, hashtag)),
-      );
+      .then(data => _.map(data.related, hashtag => new Hashtag(session, hashtag)));
   }
 
-  static info(session, tag) {
+  static info (session, tag) {
     return new Request(session)
       .setMethod('GET')
       .setResource('hashtagsInfo', {
@@ -47,7 +43,7 @@ class Hashtag extends Resource {
       .then(hashtag => new Hashtag(session, hashtag));
   }
 
-  parseParams(json) {
+  parseParams (json) {
     const hash = camelKeys(json);
     hash.mediaCount = parseInt(json.media_count);
     if (_.isObject(hash.id)) hash.id = hash.id.toString();

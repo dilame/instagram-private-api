@@ -1,6 +1,6 @@
-import { BaseModel } from './base-model';
+import { BaseModel } from './_base-model';
 
-export class Location  extends BaseModel{
+export class Location extends BaseModel {
   pk: string | number;
   name: string;
   address: string;

@@ -1,13 +1,13 @@
 const _ = require('lodash');
 const Resource = require('./resource');
 const camelKeys = require('camelcase-keys');
-const Request = require('../request');
+const { Request } = require('../request');
 const Helpers = require('../helpers');
 const Media = require('./media').Media;
 const Exceptions = require('../exceptions');
 
 class Location extends Resource {
-  static getRankedMedia(session, locationId) {
+  static getRankedMedia (session, locationId) {
     return (
       new Request(session)
         .setMethod('GET')
@@ -17,9 +17,7 @@ class Location extends Resource {
           rankToken: Helpers.generateUUID(),
         })
         .send()
-        .then(data =>
-          _.map(data.ranked_items, medium => new Media(session, medium)),
-        )
+        .then(data => _.map(data.ranked_items, medium => new Media(session, medium)))
         // will throw an error with 500 which turn to parse error
         .catch(Exceptions.ParseError, () => {
           throw new Exceptions.PlaceNotFound();
@@ -27,7 +25,7 @@ class Location extends Resource {
     );
   }
 
-  static search(session, query) {
+  static search (session, query) {
     const that = this;
     return session
       .getAccountId()
@@ -41,12 +39,10 @@ class Location extends Resource {
           })
           .send();
       })
-      .then(data =>
-        _.map(data.items, location => new Location(session, location)),
-      );
+      .then(data => _.map(data.items, location => new Location(session, location)));
   }
 
-  parseParams(json) {
+  parseParams (json) {
     const hash = camelKeys(json);
     hash.address = json.location.address;
     hash.city = json.location.city;

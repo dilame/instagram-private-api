@@ -45,8 +45,7 @@ Helpers.ensureExistenceOfJSONFilePath = path => {
 
 Helpers.resolveDirectoryPath = directory => {
   directory = path.resolve(directory);
-  if (!fs.statSync(directory).isDirectory())
-    throw new Error(`Path \`${directory}\` is not directory!`);
+  if (!fs.statSync(directory).isDirectory()) throw new Error(`Path \`${directory}\` is not directory!`);
   return directory;
 };
 
@@ -59,11 +58,8 @@ Helpers.fileExists = path => {
 };
 
 Helpers.pathToStream = streamOrPath => {
-  const stream = _.isString(streamOrPath)
-    ? fs.createReadStream(path.resolve(streamOrPath))
-    : streamOrPath;
-  if (!isStream(stream))
-    throw new Error('Argument is not posible to convert to stream!');
+  const stream = _.isString(streamOrPath) ? fs.createReadStream(path.resolve(streamOrPath)) : streamOrPath;
+  if (!isStream(stream)) throw new Error('Argument is not posible to convert to stream!');
   return stream;
 };
 
@@ -75,10 +71,9 @@ Helpers.pathToBuffer = bufferOrPath =>
       fs.readFile(path.resolve(bufferOrPath), callback);
     }
 
-    function callback(err, buffer) {
+    function callback (err, buffer) {
       if (err) throw err;
-      if (!Buffer.isBuffer(buffer))
-        throw new Error('Argument is not posible to convert to buffer!');
+      if (!Buffer.isBuffer(buffer)) throw new Error('Argument is not posible to convert to buffer!');
       return resolve(buffer);
     }
   });

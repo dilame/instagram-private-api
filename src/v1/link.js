@@ -1,7 +1,7 @@
 const Resource = require('./resource');
 
 class Link extends Resource {
-  parseParams(json) {
+  parseParams (json) {
     const hash = {};
     hash.text = json.text;
     hash.link = {

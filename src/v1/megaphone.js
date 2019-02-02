@@ -1,9 +1,9 @@
 const _ = require('lodash');
 const Resource = require('./resource');
-const Request = require('../request');
+const { Request } = require('../request');
 
 class Megaphone extends Resource {
-  static log(session, data) {
+  static log (session, data) {
     return new Request(session)
       .setMethod('POST')
       .setResource('megaphoneLog')
@@ -15,7 +15,7 @@ class Megaphone extends Resource {
       );
   }
 
-  static logSeenMainFeed(session) {
+  static logSeenMainFeed (session) {
     return Megaphone.log(session, {
       action: 'seen',
       display_medium: 'main_feed',

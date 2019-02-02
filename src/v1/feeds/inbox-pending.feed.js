@@ -1,20 +1,21 @@
 const _ = require('lodash');
-const FeedBase = require('./feed-base');
-const Thread = require('../thread');
-const Request = require('../../request');
+import { BaseFeed } from './_base.feed';
 
-class InboxPendingFeed extends FeedBase {
-  constructor(session, limit) {
+const Thread = require('../thread');
+const { Request } = require('../../request');
+
+class InboxPendingFeed extends BaseFeed {
+  constructor (session, limit) {
     super(...arguments);
     this.limit = parseInt(limit) || null;
     this.pendingRequestsTotal = null;
   }
 
-  getPendingRequestsTotal() {
+  getPendingRequestsTotal () {
     return this.pendingRequestsTotal;
   }
 
-  get() {
+  get () {
     const that = this;
     return new Request(this.session)
       .setMethod('GET')
@@ -25,12 +26,8 @@ class InboxPendingFeed extends FeedBase {
       .then(json => {
         that.moreAvailable = json.inbox.has_older;
         that.pendingRequestsTotal = json.pending_requests_total;
-        if (that.moreAvailable)
-          that.setCursor(json.inbox.oldest_cursor.toString());
-        return _.map(
-          json.inbox.threads,
-          thread => new Thread(that.session, thread),
-        );
+        if (that.moreAvailable) that.setCursor(json.inbox.oldest_cursor.toString());
+        return _.map(json.inbox.threads, thread => new Thread(that.session, thread));
       });
   }
 }

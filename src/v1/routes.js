@@ -12,13 +12,11 @@ _.each(CONSTANTS.WEB_ROUTES, (val, key) => {
 });
 
 exports.getUrl = (key, data) => {
-  if (!_.isFunction(URLs[key]))
-    throw new Error(`Url with key \`${key}\` is not available`);
+  if (!_.isFunction(URLs[key])) throw new Error(`Url with key \`${key}\` is not available`);
   return CONSTANTS.API_ENDPOINT + URLs[key](data || {});
 };
 
 exports.getWebUrl = (key, data) => {
-  if (!_.isFunction(WEB_URLs[key]))
-    throw new Error(`Web url with key \`${key}\` is not available`);
+  if (!_.isFunction(WEB_URLs[key])) throw new Error(`Web url with key \`${key}\` is not available`);
   return CONSTANTS.WEBHOST + WEB_URLs[key](data || {});
 };

@@ -1,7 +1,9 @@
+import { plainToClass } from 'class-transformer';
+import { User } from '../models/user';
+
 const _ = require('lodash');
 const Resource = require('./resource');
 const camelKeys = require('camelcase-keys');
-const Account = require('./account');
 const Media = require('./media').Media;
 const Location = require('./location');
 const Link = require('./link');
@@ -9,7 +11,7 @@ const Placeholder = require('./placeholder');
 const Hashtag = require('./hashtag');
 
 class ThreadItem extends Resource {
-  parseParams(json) {
+  parseParams (json) {
     const hash = camelKeys(json);
     hash.id = json.item_id || json.id;
     hash.type = json.item_type;
@@ -38,7 +40,7 @@ class ThreadItem extends Resource {
       hash.actionLog = json.action_log;
     }
     if (hash.type === 'profile') {
-      this.profile = new Account(this.session, json.profile);
+      this.profile = plainToClass(User, json.profile);
       hash.profileMediaPreview = _.map(json.preview_medias || [], medium => ({
         id: medium.id.toString(),
         images: medium.image_versions2.candidates,
@@ -60,15 +62,14 @@ class ThreadItem extends Resource {
     return hash;
   }
 
-  getParams() {
+  getParams () {
     const params = _.clone(this._params);
-    if (params.type == 'link') params.link = this.link.params;
-    if (params.type == 'placeholder')
-      params.placeholder = this.placeholder.params;
-    if (params.type == 'mediaShare') params.mediaShare = this.mediaShare.params;
-    if (params.type == 'profile') params.profile = this.profile.params;
-    if (params.type == 'location') params.location = this.location.params;
-    if (params.type == 'hashtag') params.hashtag = this.hashtag.params;
+    if (params.type === 'link') params.link = this.link.params;
+    if (params.type === 'placeholder') params.placeholder = this.placeholder.params;
+    if (params.type === 'mediaShare') params.mediaShare = this.mediaShare.params;
+    if (params.type === 'profile') params.profile = this.profile.params;
+    if (params.type === 'location') params.location = this.location.params;
+    if (params.type === 'hashtag') params.hashtag = this.hashtag.params;
     return params;
   }
 }

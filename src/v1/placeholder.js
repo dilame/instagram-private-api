@@ -1,7 +1,7 @@
 const Resource = require('./resource');
 
 class Placeholder extends Resource {
-  parseParams(json) {
+  parseParams (json) {
     const hash = {};
     hash.is_linked = json.is_linked;
     hash.title = json.title;

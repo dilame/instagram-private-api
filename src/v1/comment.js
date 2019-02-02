@@ -1,12 +1,14 @@
+import { plainToClass } from 'class-transformer';
+import { User } from '../models/user';
+import { Request } from '../request';
+
 const Resource = require('./resource');
 const _ = require('lodash');
 const crypto = require('crypto');
 const camelKeys = require('camelcase-keys');
-const Request = require('../request');
-const Account = require('./account');
 
 class Comment extends Resource {
-  static create(session, mediaId, text) {
+  static create (session, mediaId, text) {
     return new Request(session)
       .setMethod('POST')
       .setResource('comment', { id: mediaId })
@@ -25,7 +27,7 @@ class Comment extends Resource {
       .then(data => new Comment(session, data.comment));
   }
 
-  static delete(session, mediaId, commentId) {
+  static delete (session, mediaId, commentId) {
     return new Request(session)
       .setMethod('POST')
       .setResource('commentDelete', { id: mediaId, commentId })
@@ -43,7 +45,7 @@ class Comment extends Resource {
       .then(data => data);
   }
 
-  static bulkDelete(session, mediaId, commentIds) {
+  static bulkDelete (session, mediaId, commentIds) {
     return new Request(session)
       .setMethod('POST')
       .setResource('commentBulkDelete', { id: mediaId })
@@ -62,7 +64,7 @@ class Comment extends Resource {
       .then(data => data);
   }
 
-  static like(session, commentId) {
+  static like (session, commentId) {
     return new Request(session)
       .setMethod('POST')
       .setResource('commentLike', { id: commentId })
@@ -72,20 +74,20 @@ class Comment extends Resource {
       .then(data => data);
   }
 
-  parseParams(json) {
+  parseParams (json) {
     const hash = camelKeys(json);
     hash.created = json.created_at;
     hash.status = (json.status || 'unknown').toLowerCase();
     hash.id = (json.pk || json.id).toString();
-    this.account = new Account(this.session, json.user);
+    this.account = plainToClass(User, json.user);
     return hash;
   }
 
-  account() {
+  account () {
     return this.account;
   }
 
-  getParams() {
+  getParams () {
     return _.defaults(
       {
         account: this.account.params,

@@ -1,13 +1,12 @@
-const MemoryCookieStore = require('tough-cookie/lib/memstore.js')
-  .MemoryCookieStore;
+const MemoryCookieStore = require('tough-cookie/lib/memstore.js').MemoryCookieStore;
 const CookieStorage = require('./cookie-storage');
 
 class CookieMemoryStorage extends CookieStorage {
-  constructor() {
+  constructor () {
     super(new MemoryCookieStore());
   }
 
-  destroy() {}
+  destroy () {}
 }
 
 module.exports = CookieMemoryStorage;

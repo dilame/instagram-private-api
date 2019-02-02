@@ -1,7 +1,8 @@
-const _ = require('lodash');
-const Request = require('../request');
+import { plainToClass } from 'class-transformer';
+import { User } from '../models/user';
+import { Request } from '../request';
+
 const Helpers = require('../helpers');
-const Account = require('./account');
 const Hashtag = require('./hashtag');
 const Location = require('./location');
 
@@ -19,7 +20,7 @@ module.exports = (session, query) =>
     )
     .then(json => {
       const users = json.users.map(user => ({
-        user: new Account(session, user.user),
+        user: plainToClass(User, user.user),
         position: user.position,
       }));
       const places = json.places.map(place => ({

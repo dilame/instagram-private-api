@@ -6,22 +6,18 @@ import * as Helpers from './helpers';
 import * as Bluebird from 'bluebird';
 import { Device } from './devices/device';
 import { Internal } from './v1/internal';
-import { StoryTrayFeed } from './v1/feeds/story-tray-feed';
-import { TimelineFeed } from './v1/feeds/timeline-feed';
+import { StoryTrayFeed } from './v1/feeds/story-tray.feed';
+import { TimelineFeed } from './v1/feeds/timeline.feed';
+import { Request } from './request';
+import { Account } from './v1/account';
+import { InboxFeed } from './v1/feeds/inbox.feed';
+import { Relationship } from './v1/relationship';
 import CookieStorage = require('./v1/cookie-storage');
-import Account = require('./v1/account');
-import Request = require('./request');
-import Inbox = require('./v1/feeds/inbox');
-import Relationship = require('./v1/relationship');
 
-class Session {
+export class Session {
   private jar: any;
 
-  constructor(
-    public device: Device,
-    public cookieStore: CookieStorage,
-    proxy?: string,
-  ) {
+  constructor(public device: Device, public cookieStore: CookieStorage, proxy?: string) {
     this.jar = Request.jar(cookieStore.store);
     if (_.isString(proxy) && !_.isEmpty(proxy)) this.proxyUrl = proxy;
   }
@@ -33,8 +29,7 @@ class Session {
   }
 
   set proxyUrl(val) {
-    if (!Helpers.isValidUrl(val) && val !== null)
-      throw new Error('`proxyUrl` argument is not an valid url');
+    if (!Helpers.isValidUrl(val) && val !== null) throw new Error('`proxyUrl` argument is not an valid url');
     this._proxyUrl = val;
   }
 
@@ -47,9 +42,7 @@ class Session {
    * We will update it once an hour
    */
   get session_id(): string {
-    const chance = new Chance(
-      `${this.device.username}${Math.round(Date.now() / 3600000)}`,
-    );
+    const chance = new Chance(`${this.device.username}${Math.round(Date.now() / 3600000)}`);
     return chance.guid();
   }
 
@@ -114,21 +107,16 @@ class Session {
         // This situation is not really obvious,
         // but even if you got checkpoint error (aka captcha or phone)
         // verification, it is still an valid session unless `sessionid` missing
-        await session
-          .getAccountId()
-          .catch(Exceptions.CookieNotValidError, () => {
-            throw error;
-          });
+        await session.getAccountId().catch(Exceptions.CookieNotValidError, () => {
+          throw error;
+        });
         return session;
       })
       .catch(error => {
         if (error.name === 'RequestError' && _.isObject(error.json)) {
-          if (error.json.invalid_credentials)
-            throw new Exceptions.AuthenticationError(error.message);
+          if (error.json.invalid_credentials) throw new Exceptions.AuthenticationError(error.message);
           if (error.json.error_type === 'inactive user')
-            throw new Exceptions.AccountBanned(
-              `${error.json.message} ${error.json.help_url}`,
-            );
+            throw new Exceptions.AccountBanned(`${error.json.message} ${error.json.help_url}`);
         }
         throw error;
       });
@@ -168,32 +156,37 @@ class Session {
   loginFlow(concurrency = 1) {
     // Right now only requests after closing and re-opening the app are made
     // Later we should also include requests made after a full re-login.
-    return Bluebird.map([
-      new TimelineFeed(this).get({}),
-      new StoryTrayFeed(this).get(),
-      new Inbox(this).get(),
-      Relationship.getBootstrapUsers(this),
-      Internal.getRankedRecipients(this, 'reshare'),
-      Internal.getPresences(this),
-      Internal.getRecentActivityInbox(this),
-      Internal.getProfileNotice(this),
-      Internal.getExploreFeed(this),
-    ], () => true, { concurrency });
+    return Bluebird.map(
+      [
+        new TimelineFeed(this).get({}),
+        new StoryTrayFeed(this).get(),
+        new InboxFeed(this).get(),
+        Relationship.getBootstrapUsers(this),
+        Internal.getRankedRecipients(this, 'reshare'),
+        Internal.getPresences(this),
+        Internal.getRecentActivityInbox(this),
+        Internal.getProfileNotice(this),
+        Internal.getExploreFeed(this),
+      ],
+      () => true,
+      { concurrency },
+    );
   }
 
   preLoginFlow(concurrency = 1) {
     // Only on full re-login.
-    return Bluebird.map([
-      Internal.qeSync(this, true),
-      Internal.launcherSync(this, true),
-      Internal.logAttribution(this),
-      Internal.fetchZeroRatingToken(this),
-      Internal.setContactPointPrefill(this),
-    ], () => true, { concurrency })
-      .catch(error => {
-        throw new Error(error.message);
-      });
+    return Bluebird.map(
+      [
+        Internal.qeSync(this, true),
+        Internal.launcherSync(this, true),
+        Internal.logAttribution(this),
+        Internal.fetchZeroRatingToken(this),
+        Internal.setContactPointPrefill(this),
+      ],
+      () => true,
+      { concurrency },
+    ).catch(error => {
+      throw new Error(error.message);
+    });
   }
 }
-
-export = Session;

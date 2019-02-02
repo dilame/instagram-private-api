@@ -1,15 +1,17 @@
+import { plainToClass } from 'class-transformer';
+import { User } from '../models/user';
+import { Request } from '../request';
+
 const _ = require('lodash');
 const Resource = require('./resource');
 const Promise = require('bluebird');
 const camelKeys = require('camelcase-keys');
-const Account = require('./account');
 const ThreadItem = require('./thread-item');
 const Exceptions = require('../exceptions');
-const Request = require('../request');
 const Helpers = require('../helpers');
 
 class Thread extends Resource {
-  static approveAll(session) {
+  static approveAll (session) {
     return new Request(session)
       .setMethod('POST')
       .generateUUID()
@@ -17,7 +19,7 @@ class Thread extends Resource {
       .send();
   }
 
-  static getById(session, id, cursor) {
+  static getById (session, id, cursor) {
     if (_.isEmpty(id)) throw new Error('`id` property is required!');
     return new Request(session)
       .setMethod('GET')
@@ -30,7 +32,7 @@ class Thread extends Resource {
       .then(json => new Thread(session, json.thread));
   }
 
-  static configureText(session, users, text) {
+  static configureText (session, users, text) {
     if (!_.isArray(users)) users = [users];
     const link_urls = Helpers.extractUrl(text);
     let endpoint = 'threadsBrodcastText';
@@ -57,7 +59,7 @@ class Thread extends Resource {
     return threadsWrapper(session, request);
   }
 
-  static configurePhoto(session, users, upload_id) {
+  static configurePhoto (session, users, upload_id) {
     if (!_.isArray(users)) users = [users];
 
     const payload = {
@@ -77,7 +79,7 @@ class Thread extends Resource {
     return threadsWrapper(session, request);
   }
 
-  static configureMediaShare(session, users, mediaId, text) {
+  static configureMediaShare (session, users, mediaId, text) {
     if (!_.isArray(users)) users = [users];
     const payload = {
       recipient_users: JSON.stringify([users]),
@@ -94,7 +96,7 @@ class Thread extends Resource {
     return threadsWrapper(session, request);
   }
 
-  static configureProfile(session, users, profileId, simpleFormat, text) {
+  static configureProfile (session, users, profileId, simpleFormat, text) {
     if (!_.isArray(users)) users = [users];
     const payload = {
       recipient_users: JSON.stringify([users]),
@@ -112,7 +114,7 @@ class Thread extends Resource {
     return threadsWrapper(session, request);
   }
 
-  static configureHashtag(session, users, hashtag, simpleFormat, text) {
+  static configureHashtag (session, users, hashtag, simpleFormat, text) {
     if (!_.isArray(users)) users = [users];
     const payload = {
       recipient_users: JSON.stringify([users]),
@@ -130,7 +132,7 @@ class Thread extends Resource {
     return threadsWrapper(session, request);
   }
 
-  static recentRecipients(session) {
+  static recentRecipients (session) {
     return new Request(session)
       .setMethod('GET')
       .setResource('threadsRecentRecipients')
@@ -141,12 +143,11 @@ class Thread extends Resource {
       }));
   }
 
-  parseParams(json) {
+  parseParams (json) {
     const hash = camelKeys(json);
     const that = this;
     hash.id = json.thread_id;
-    if (_.isObject(json.image_versions2))
-      hash.images = json.image_versions2.candidates;
+    if (_.isObject(json.image_versions2)) hash.images = json.image_versions2.candidates;
     hash.lastActivityAt = parseInt(json.last_activity_at / 1000) || null;
     hash.muted = !!json.muted;
     hash.title = json.thread_title;
@@ -157,19 +158,16 @@ class Thread extends Resource {
         timestamp: parseInt(parseInt(val.timestamp) / 1000),
       };
     });
-    hash.inviter = new Account(that.session, json.inviter);
+    hash.inviter = plainToClass(User, json.inviter);
     this.items = _.map(json.items, item => new ThreadItem(that.session, item));
-    this.accounts = _.map(json.users, user => new Account(that.session, user));
-    this.leftUsers = _.map(
-      json.left_users,
-      user => new Account(that.session, user),
-    );
+    this.accounts = plainToClass(User, json.users);
+    this.leftUsers = plainToClass(User, json.left_users);
     return hash;
   }
 
   // todo configure broadcast /configure location
 
-  getParams() {
+  getParams () {
     const params = _.clone(this._params);
     params.accounts = _.map(this.accounts, 'params');
     params.items = _.map(this.items, 'params');
@@ -177,7 +175,7 @@ class Thread extends Resource {
     return params;
   }
 
-  seen() {
+  seen () {
     const firstItem = _.first(this.items);
     if (!firstItem) throw new Exceptions.ThreadEmptyError();
     const that = this;
@@ -198,7 +196,7 @@ class Thread extends Resource {
       }));
   }
 
-  approve() {
+  approve () {
     const that = this;
     return this.request()
       .setMethod('POST')
@@ -209,7 +207,7 @@ class Thread extends Resource {
       .send();
   }
 
-  hide() {
+  hide () {
     const that = this;
     return this.request()
       .setMethod('POST')
@@ -220,7 +218,7 @@ class Thread extends Resource {
       .send();
   }
 
-  broadcastText(text) {
+  broadcastText (text) {
     const request = this.request()
       .setMethod('POST')
       .generateUUID()
@@ -234,7 +232,7 @@ class Thread extends Resource {
     return threadsWrapper(this.session, request);
   }
 
-  broadcastMediaShare(mediaId, text) {
+  broadcastMediaShare (mediaId, text) {
     const payload = {
       thread_ids: `[${this.id}]`,
       media_id: mediaId,
@@ -250,7 +248,7 @@ class Thread extends Resource {
     return threadsWrapper(this.session, request);
   }
 
-  broadcastProfile(profileId, simpleFormat, text) {
+  broadcastProfile (profileId, simpleFormat, text) {
     const payload = {
       thread_ids: `[${this.id}]`,
       simple_format: simpleFormat ? '1' : '0',
@@ -267,7 +265,7 @@ class Thread extends Resource {
     return threadsWrapper(this.session, request);
   }
 
-  broadcastHashtag(hashtag, simpleFormat, text) {
+  broadcastHashtag (hashtag, simpleFormat, text) {
     const payload = {
       thread_ids: `[${this.id}]`,
       simple_format: simpleFormat ? '1' : '0',
@@ -287,15 +285,14 @@ class Thread extends Resource {
 
 module.exports = Thread;
 
-function mapPayload(session, payload) {
+function mapPayload (session, payload) {
   return _.map(payload.threads, thread => new Thread(session, thread));
 }
 
-function threadsWrapper(session, promise) {
+function threadsWrapper (session, promise) {
   return promise.then(json => {
     if (_.isArray(json.threads)) return mapPayload(session, json);
-    if (_.isEmpty(json.thread_id))
-      throw new Error('Not sure how to map an thread!');
+    if (_.isEmpty(json.thread_id)) throw new Error('Not sure how to map an thread!');
     // You cannot fetch thread id inmedietly after configure / broadcast
     return Promise.delay(1000)
       .then(() => Thread.getById(session, json.thread_id))

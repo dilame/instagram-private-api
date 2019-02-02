@@ -1,11 +1,11 @@
 const _ = require('lodash');
 const Resource = require('./resource');
 const CONSTANTS = require('../constants/constants');
-const Request = require('../request');
+const { Request } = require('../request');
 
 class QE extends Resource {
   // Lets fake this experiment bullshit
-  static sync(session) {
+  static sync (session) {
     const random = parseInt(Math.random() * 100) + 1;
     const experiments = _.sampleSize(CONSTANTS.EXPERIMENTS, random);
     return session.getAccountId().then(id =>

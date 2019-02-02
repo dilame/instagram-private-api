@@ -4,7 +4,7 @@ import { Comment } from './comment';
 import { ImageVersion } from './image-version';
 import { Location } from './location';
 import { VideoVersion } from './video-version';
-import { BaseModel } from './base-model';
+import { BaseModel } from './_base-model';
 
 export class Media extends BaseModel {
   taken_at: number;
@@ -83,6 +83,7 @@ export class Media extends BaseModel {
   get webLink() {
     return `https://www.instagram.com/p/${this.code}/`;
   }
+
   // Backward compatibility
   @Expose()
   get account() {

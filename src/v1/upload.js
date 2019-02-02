@@ -2,10 +2,10 @@ const Resource = require('./resource');
 const Helpers = require('../helpers');
 const Promise = require('bluebird');
 const camelKeys = require('camelcase-keys');
-const Request = require('../request');
+const { Request } = require('../request');
 
 class Upload extends Resource {
-  static photo(session, streamOrPathOrBuffer, uploadId, name, isSidecar) {
+  static photo (session, streamOrPathOrBuffer, uploadId, name, isSidecar) {
     const data = Buffer.isBuffer(streamOrPathOrBuffer)
       ? streamOrPathOrBuffer
       : Helpers.pathToStream(streamOrPathOrBuffer);
@@ -51,22 +51,13 @@ class Upload extends Resource {
       .then(json => new Upload(session, json));
   }
 
-  static video(
-    session,
-    videoBufferOrPath,
-    photoStreamOrPath,
-    isSidecar,
-    fields,
-  ) {
+  static video (session, videoBufferOrPath, photoStreamOrPath, isSidecar, fields) {
     //Probably not the best way to upload video, best to use stream not to store full video in memory, but it's the easiest
     const predictedUploadId = new Date().getTime();
     const request = new Request(session);
     return Helpers.pathToBuffer(videoBufferOrPath).then(buffer => {
       const duration = _getVideoDurationMs(buffer);
-      if (duration > 63000)
-        throw new Error(
-          `Video is too long. Maximum: 63. Got: ${duration / 1000}`,
-        );
+      if (duration > 63000) throw new Error(`Video is too long. Maximum: 63. Got: ${duration / 1000}`);
       fields = fields || {};
       fields.upload_id = predictedUploadId;
       if (isSidecar) {
@@ -119,19 +110,15 @@ class Upload extends Resource {
               };
             })
             .then(uploadData =>
-              Upload.photo(
-                session,
-                photoStreamOrPath,
-                uploadData.uploadId,
-                'cover_photo_',
-                isSidecar,
-              ).then(() => uploadData),
+              Upload.photo(session, photoStreamOrPath, uploadData.uploadId, 'cover_photo_', isSidecar).then(
+                () => uploadData,
+              ),
             );
         });
     });
   }
 
-  static album(session, medias, caption, disableComments) {
+  static album (session, medias, caption, disableComments) {
     const uploadPromises = [];
 
     if (medias.length < 2 || medias.length > 10) {
@@ -160,18 +147,15 @@ class Upload extends Resource {
 
       if (media.type === 'photo') {
         uploadPromises.push(
-          Upload.photo(session, media.data, undefined, undefined, true).then(
-            payload =>
-              Promise.resolve(
-                Object.assign({}, { uploadId: payload.params.uploadId }, media),
-              ),
+          Upload.photo(session, media.data, undefined, undefined, true).then(payload =>
+            Promise.resolve(Object.assign({}, { uploadId: payload.params.uploadId }, media)),
           ),
         );
       }
       if (media.type === 'video') {
         uploadPromises.push(
-          Upload.video(session, media.data, media.thumbnail, true).then(
-            payload => Promise.resolve(Object.assign({}, payload, media)),
+          Upload.video(session, media.data, media.thumbnail, true).then(payload =>
+            Promise.resolve(Object.assign({}, payload, media)),
           ),
         );
       }
@@ -180,7 +164,7 @@ class Upload extends Resource {
     return Promise.all(uploadPromises);
   }
 
-  parseParams(json) {
+  parseParams (json) {
     const hash = camelKeys(json);
     if (json.video_upload_urls && json.video_upload_urls.length) {
       hash.uploadUrl = json.video_upload_urls[0].url;
@@ -192,7 +176,7 @@ class Upload extends Resource {
 
 module.exports = Upload;
 
-function _getVideoDurationMs(buffer) {
+function _getVideoDurationMs (buffer) {
   const start = buffer.indexOf(new Buffer('mvhd')) + 17;
   const timeScale = buffer.readUInt32BE(start, 4);
   const duration = buffer.readUInt32BE(start + 4, 4);
@@ -201,15 +185,7 @@ function _getVideoDurationMs(buffer) {
   return movieLength * 1000;
 }
 
-function _sendChunkedRequest(
-  session,
-  url,
-  job,
-  sessionId,
-  buffer,
-  range,
-  isSidecar,
-) {
+function _sendChunkedRequest (session, url, job, sessionId, buffer, range, isSidecar) {
   const headers = {
     job,
     Host: 'upload.instagram.com',
@@ -235,12 +211,11 @@ function _sendChunkedRequest(
     .send();
 }
 
-function _generateSessionId(uploadId) {
+function _generateSessionId (uploadId) {
   let text = `${uploadId || ''}-`;
   const possible = '0123456789';
 
-  for (let i = 0; i < 9; i++)
-    text += possible.charAt(Math.floor(Math.random() * possible.length));
+  for (let i = 0; i < 9; i++) text += possible.charAt(Math.floor(Math.random() * possible.length));
 
   return text;
 }

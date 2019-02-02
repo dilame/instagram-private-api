@@ -1,10 +1,11 @@
 import { SUPPORTED_CAPABILITIES } from '../../constants/constants';
 import { StoryTray } from '../../models/story-tray';
 import { plainToClass } from 'class-transformer';
-import Request = require('../../request');
+import { Request } from '../../request';
 
 export class StoryTrayFeed {
-  constructor(private session) {}
+  constructor(private session) {
+  }
 
   async get() {
     const { tray } = await new Request(this.session)
