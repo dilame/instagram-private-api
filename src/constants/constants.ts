@@ -35,7 +35,7 @@ export const ROUTES = {
   friendshipRemoveFollower: 'friendships/remove_follower/<%= id %>/',
   userInfo: 'users/<%= id %>/info/',
   userFeed:
-    'feed/user/<%= id %>/?<%= maxId ? ("max_id=" + maxId + "&") : "" %>rank_token=<%= rankToken %>',
+    'feed/user/<%= id %>/?<%= maxId ? ("max_id=" + maxId) : "" %>',
   timelineFeed: 'feed/timeline/',
   tagFeed:
     'feed/tag/<%= encodeURI(tag) %>/?<%= maxId ? ("max_id=" + maxId + "&") : "" %>rank_token=<%= rankToken %>',

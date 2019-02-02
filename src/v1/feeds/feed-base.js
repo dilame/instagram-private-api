@@ -149,7 +149,7 @@ class FeedBase extends EventEmitter {
     return !!this.moreAvailable;
   }
 
-  allSafe(parameters, timeout) {
+  allSafe(parameters, timeout = 10 * 60 * 1000) {
     const that = this;
     return this.all(parameters)
       .timeout(timeout || this.timeout)

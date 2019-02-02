@@ -83,6 +83,11 @@ export class Media extends BaseModel {
   get webLink() {
     return `https://www.instagram.com/p/${this.code}/`;
   }
+  // Backward compatibility
+  @Expose()
+  get account() {
+    return this.user;
+  }
 
   @Expose()
   get takenAt() {
