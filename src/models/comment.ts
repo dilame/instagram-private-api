@@ -1,5 +1,5 @@
 import { User } from './user';
-import { Type } from 'class-transformer';
+import { Expose, Type } from 'class-transformer';
 import { BaseModel } from './_base-model';
 
 export class Comment extends BaseModel {
@@ -20,4 +20,9 @@ export class Comment extends BaseModel {
   has_translation: boolean;
   has_liked_comment: boolean;
   comment_like_count: number;
+
+  @Expose()
+  get account() {
+    return this.user;
+  }
 }
