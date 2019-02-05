@@ -34,6 +34,7 @@ export class User extends BaseModel {
   hd_profile_pic_url_info: ImageVersion;
   _id: number | string;
 
+  @Expose()
   get id() {
     return (this.pk || this._id || this.instagram_id).toString();
   }
