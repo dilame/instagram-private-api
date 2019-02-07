@@ -63,14 +63,14 @@ export class Device {
     });
   }
 
-  userAgent(version: string): string {
+  userAgent(version: string = CONSTANTS.PRIVATE_KEY.APP_VERSION): string {
     return Device.appUserAgentTemplate({
       agent: [this.deviceString, this.language, CONSTANTS.PRIVATE_KEY.VERSION_CODE].join('; '),
       version: version || CONSTANTS.PRIVATE_KEY.APP_VERSION,
     });
   }
 
-  userAgentWeb(version: string): string {
+  userAgentWeb(version?: string): string {
     return Device.webUserAgentTemplate({
       instagramAgent: this.userAgent(version),
       release: this.android_release,

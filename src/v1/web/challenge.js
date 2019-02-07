@@ -1,7 +1,7 @@
 const errors = require('request-promise/errors');
 const Promise = require('bluebird');
 
-const WebRequest = require('./web-request');
+const WebRequest = require('./web-request').WebRequest;
 const { Request } = require('../../request');
 const Exceptions = require('../../exceptions');
 
@@ -127,7 +127,6 @@ class Challenge {
       .setMethod('GET')
       .setUrl(checkpointError.url)
       .setHeaders({
-        'User-Agent': session.device.userAgentWeb(),
         Referer: checkpointError.url,
       })
       .send({ followRedirect: true })
@@ -161,7 +160,6 @@ class Challenge {
             .setMethod('POST')
             .setUrl(checkpointError.url)
             .setHeaders({
-              'User-Agent': session.device.userAgentWeb(),
               Referer: checkpointError.url,
               'Content-Type': 'application/x-www-form-urlencoded',
               'X-Instagram-AJAX': 1,

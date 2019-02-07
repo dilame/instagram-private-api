@@ -1,6 +1,6 @@
 import * as _ from 'lodash';
 import { CustomError } from 'ts-custom-error';
-import routes = require('./v1/routes');
+import routes = require('./routes');
 
 // Basic error
 export class APIError extends CustomError {

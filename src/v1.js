@@ -1,8 +1,7 @@
 const InstagramV1 = {};
 
 InstagramV1.CONSTANTS = require('./constants/constants');
-InstagramV1.routes = require('./v1/routes');
-InstagramV1.Signatures = require('./v1/signatures');
+InstagramV1.routes = require('./routes');
 InstagramV1.Device = require('./devices/device').Device;
 InstagramV1.CookieStorage = require('./v1/cookie-storage');
 InstagramV1.CookieFileStorage = require('./v1/cookie-file-storage');
@@ -55,7 +54,7 @@ InstagramV1.Feed.UserStoryFeed = require('./v1/feeds/user-story.feed').UserStory
 InstagramV1.Feed.StoryViewersFeed = require('./v1/feeds/story-viewers.feed').StoryViewersFeed;
 
 InstagramV1.Web = {};
-InstagramV1.Web.Request = require('./v1/web/web-request');
+InstagramV1.Web.Request = require('./v1/web/web-request').WebRequest;
 const challenge = require('./v1/web/challenge');
 InstagramV1.Web.Challenge = challenge.Challenge;
 InstagramV1.Web.NotImplementedChallenge = challenge.NotImplementedChallenge;

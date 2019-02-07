@@ -1,14 +1,15 @@
 import * as _ from 'lodash';
-import * as Promise from 'bluebird';
+import * as Bluebird from 'bluebird';
 import * as request from 'request-promise';
 import * as JSONbig from 'json-bigint';
 import * as ProxyAgent from 'proxy-agent';
-import * as signatures from './v1/signatures';
 import * as Exceptions from './exceptions';
-import * as routes from './v1/routes';
+import * as routes from './routes';
 import * as Helpers from './helpers';
 import * as CONSTANTS from './constants/constants';
 import { Session } from './session';
+import pruned = require('./v1/json-pruned');
+import hmac = require('crypto-js/hmac-sha256');
 
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 
@@ -16,8 +17,8 @@ export class Request {
   static requestClient: any = request.defaults({});
   _signData: boolean;
   _request: any;
-  attemps: number;
-  private _resource: any;
+  attemps = 2;
+  protected _resource: any;
 
   constructor(session?: Session) {
     this._url = null;
@@ -29,8 +30,7 @@ export class Request {
     this._request.options = {
       gzip: true,
     };
-    this._request.headers = _.extend({}, Request.defaultHeaders);
-    this.attemps = 2;
+    this._request.headers = Request.defaultHeaders;
     if (session) {
       this.session = session;
     } else {
@@ -56,7 +56,7 @@ export class Request {
     };
   }
 
-  private _device: any;
+  protected _device: any;
 
   get device() {
     return this._device;
@@ -216,36 +216,34 @@ export class Request {
   }
 
   signData() {
-    const that = this;
-    if (!_.includes(['POST', 'PUT', 'PATCH', 'DELETE'], this._request.method))
+    if (['POST', 'PUT', 'PATCH', 'DELETE'].includes(this._request.method) === false)
       throw new Error('Wrong request method for signing data!');
-    return signatures.sign(this._request.data).then(data => {
-      that.setHeaders({
-        'User-Agent': that.device.userAgent(data.appVersion),
-      });
-      return {
-        signed_body: `${data.signature}.${data.payload}`,
-        ig_sig_key_version: data.sigKeyVersion,
-      };
+
+    const key = CONSTANTS.PRIVATE_KEY;
+    const payload = this._request.data;
+    const json = _.isString(payload) ? payload : pruned(payload);
+    const signature = hmac(json, key.SIG_KEY).toString();
+    this.setHeaders({
+      'User-Agent': this.device.userAgent(key.APP_VERSION),
     });
+    return {
+      signed_body: `${signature}.${json}`,
+      ig_sig_key_version: key.SIG_VERSION,
+    };
   }
 
   _prepareData() {
-    const that = this;
-    return new Promise((resolve, reject) => {
-      if (that._request.method === 'GET') return resolve({});
-      if (that._signData) {
-        that.signData().then(data => {
-          const obj = {};
-          obj[that._request.bodyType] = data;
-          resolve(obj);
-        }, reject);
-      } else {
-        const obj = {};
-        obj[that._request.bodyType] = that._request.data;
-        resolve(obj);
-      }
-    });
+    if (this._request.method === 'GET') return {};
+    if (this._signData) {
+      const data = this.signData();
+      const obj = {};
+      obj[this._request.bodyType] = data;
+      return obj;
+    } else {
+      const obj = {};
+      obj[this._request.bodyType] = this._request.data;
+      return obj;
+    }
   }
 
   _mergeOptions(options) {
@@ -259,7 +257,7 @@ export class Request {
       options || {},
       this._request.options,
     );
-    return Promise.resolve(options);
+    return options;
   }
 
   // If you need to perform loging or something like that!
@@ -305,32 +303,22 @@ export class Request {
   }
 
   send(options = {}, attemps = 0) {
-    return this._mergeOptions(options)
-      .then(opts => [opts, this._prepareData()])
-      .spread((opts, data) => {
-        opts = _.defaults(opts, data);
-        return this._transform(opts);
-      })
-      .then(opts => {
-        options = opts;
-        return Request.requestClient(options);
-      })
-      .then(_.bind(this.parseMiddleware, this))
-      .then(response => {
-        const json = response.body;
-        if (_.isObject(json) && json.status === 'ok') return _.omit(response.body, 'status');
-        if (_.isString(json.message) && json.message.toLowerCase().includes('transcode timeout'))
-          throw new Exceptions.TranscodeTimeoutError();
-        throw new Exceptions.RequestError(json);
-      })
+    return Bluebird.try(async () => {
+      const rawResponse = await this.sendAndGetRaw(options);
+      const parsedResponse = this.parseMiddleware(rawResponse);
+      const json = parsedResponse.body;
+      if (_.isObject(json) && json.status === 'ok') return _.omit(parsedResponse.body, 'status');
+      if (_.isString(json.message) && json.message.toLowerCase().includes('transcode timeout'))
+        throw new Exceptions.TranscodeTimeoutError();
+      throw new Exceptions.RequestError(json);
+    })
       .catch(err => {
         if (err instanceof Exceptions.APIError) throw err;
         if (!err || !err.response) throw err;
         const response = err.response;
         if (response.statusCode === 404) throw new Exceptions.NotFoundError(response);
         if (response.statusCode >= 500) {
-          if (attemps <= this.attemps) {
-            attemps += 1;
+          if (attemps++ <= this.attemps) {
             return this.send(options, attemps);
           } else {
             throw new Exceptions.ParseError(response, this);
@@ -344,5 +332,11 @@ export class Request {
         error = _.defaults(error, { message: 'Fatal internal error!' });
         throw new Exceptions.RequestError(error);
       });
+  }
+
+  sendAndGetRaw(options = {}) {
+    const preparedData = this._prepareData();
+    const requestOptions = this._transform(_.defaults(this._mergeOptions(options), preparedData));
+    return Request.requestClient(requestOptions);
   }
 }
