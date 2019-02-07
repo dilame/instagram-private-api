@@ -3,7 +3,9 @@ import * as devices from './devices.json';
 import * as builds from './builds.json';
 import * as CONSTANTS from '../constants/constants';
 import * as _ from 'lodash';
-import { IDevicePayload } from './device.interface';
+import { IAppCredentials, IDevicePayload } from './device.interface';
+import pruned = require('../v1/json-pruned');
+import hmac = require('crypto-js/hmac-sha256');
 
 export class Device {
   static appUserAgentTemplate = _.template('Instagram <%= version %> Android (<%= agent %>)');
@@ -28,9 +30,10 @@ export class Device {
    */
   adid: string;
   id: string;
+  public credentials: IAppCredentials = CONSTANTS.APP_CREDENTIALS;
   private payload: IDevicePayload;
 
-  constructor(public username: string, public language = 'en_US') {
+  constructor(public username: string) {
     const chance = new Chance(username);
     this.deviceString = chance.pickone(devices);
     const id = chance.string({
@@ -63,16 +66,29 @@ export class Device {
     });
   }
 
-  userAgent(version: string = CONSTANTS.PRIVATE_KEY.APP_VERSION): string {
+  assignCredentials(credentials: Partial<IAppCredentials>): void {
+    this.credentials = Object.assign(this.credentials, credentials);
+  }
+
+  signRequestPayload(payload) {
+    const json = _.isString(payload) ? payload : pruned(payload);
+    const signature = hmac(json, this.credentials.SIG_KEY).toString();
+    return {
+      signed_body: `${signature}.${json}`,
+      ig_sig_key_version: this.credentials.SIG_VERSION,
+    };
+  }
+
+  userAgent(): string {
     return Device.appUserAgentTemplate({
-      agent: [this.deviceString, this.language, CONSTANTS.PRIVATE_KEY.VERSION_CODE].join('; '),
-      version: version || CONSTANTS.PRIVATE_KEY.APP_VERSION,
+      agent: [this.deviceString, this.credentials.LANGUAGE, this.credentials.VERSION_CODE].join('; '),
+      version: this.credentials.VERSION,
     });
   }
 
-  userAgentWeb(version?: string): string {
+  userAgentWeb(): string {
     return Device.webUserAgentTemplate({
-      instagramAgent: this.userAgent(version),
+      instagramAgent: this.userAgent(),
       release: this.android_release,
       model: this.model,
       build: this.build,

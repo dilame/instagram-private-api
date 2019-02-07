@@ -8,19 +8,18 @@ import * as routes from './routes';
 import * as Helpers from './helpers';
 import * as CONSTANTS from './constants/constants';
 import { Session } from './session';
-import pruned = require('./v1/json-pruned');
-import hmac = require('crypto-js/hmac-sha256');
+import { Device } from './devices/device';
 
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 
 export class Request {
   static requestClient: any = request.defaults({});
-  _signData: boolean;
   _request: any;
-  attemps = 2;
   protected _resource: any;
+  private _signData: boolean;
+  private attempts = 2;
 
-  constructor(session?: Session) {
+  constructor(session: Session) {
     this._url = null;
     this._signData = false;
     this._request = {};
@@ -31,11 +30,7 @@ export class Request {
       gzip: true,
     };
     this._request.headers = Request.defaultHeaders;
-    if (session) {
-      this.session = session;
-    } else {
-      this.setData({ _csrftoken: 'missing' });
-    }
+    this.session = session;
   }
 
   static get defaultHeaders() {
@@ -43,7 +38,6 @@ export class Request {
       'X-FB-HTTP-Engine': 'Liger',
       'X-IG-Connection-Type': CONSTANTS.HEADERS.X_IG_Connection_Type,
       'X-IG-Capabilities': CONSTANTS.HEADERS.X_IG_Capabilities,
-      'X-IG-App-ID': CONSTANTS.HEADERS.FB_ANALYTICS_APPLICATION_ID,
       'X-IG-Connection-Speed': `${_.random(1000, 3700)}kbps`,
       'X-IG-Bandwidth-Speed-KBPS': '-1.000',
       'X-IG-Bandwidth-TotalBytes-B': '0',
@@ -56,7 +50,7 @@ export class Request {
     };
   }
 
-  protected _device: any;
+  protected _device: Device;
 
   get device() {
     return this._device;
@@ -76,7 +70,7 @@ export class Request {
     this.setUrl(url);
   }
 
-  private _session;
+  private _session: Session;
 
   get session() {
     return this._session;
@@ -103,10 +97,10 @@ export class Request {
 
   _transform = t => t;
 
-  setOptions(options, override?) {
+  setOptions(options = {}, override?) {
     this._request.options = override
-      ? _.extend(this._request.options, options || {})
-      : _.defaults(this._request.options, options || {});
+      ? _.extend(this._request.options, options)
+      : _.defaults(this._request.options, options);
     return this;
   }
 
@@ -208,6 +202,7 @@ export class Request {
     this._device = device;
     this.setHeaders({
       'User-Agent': device.userAgent(),
+      'X-IG-App-ID': device.credentials.FB_ANALYTICS_APPLICATION_ID,
     });
     this.setData({
       device_id: device.id,
@@ -218,18 +213,7 @@ export class Request {
   signData() {
     if (['POST', 'PUT', 'PATCH', 'DELETE'].includes(this._request.method) === false)
       throw new Error('Wrong request method for signing data!');
-
-    const key = CONSTANTS.PRIVATE_KEY;
-    const payload = this._request.data;
-    const json = _.isString(payload) ? payload : pruned(payload);
-    const signature = hmac(json, key.SIG_KEY).toString();
-    this.setHeaders({
-      'User-Agent': this.device.userAgent(key.APP_VERSION),
-    });
-    return {
-      signed_body: `${signature}.${json}`,
-      ig_sig_key_version: key.SIG_VERSION,
-    };
+    return this.device.signRequestPayload(this._request.data);
   }
 
   _prepareData() {
@@ -259,8 +243,6 @@ export class Request {
     );
     return options;
   }
-
-  // If you need to perform loging or something like that!
 
   parseMiddleware(response) {
     if (response.req._headers.host === 'upload.instagram.com' && response.statusCode === 201) {
@@ -318,7 +300,7 @@ export class Request {
         const response = err.response;
         if (response.statusCode === 404) throw new Exceptions.NotFoundError(response);
         if (response.statusCode >= 500) {
-          if (attemps++ <= this.attemps) {
+          if (attemps++ <= this.attempts) {
             return this.send(options, attemps);
           } else {
             throw new Exceptions.ParseError(response, this);

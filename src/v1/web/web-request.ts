@@ -5,12 +5,13 @@ import * as CONSTANTS from '../../constants/constants';
 import * as routes from '../../routes';
 import { NotFoundError } from '../../exceptions';
 import { Device } from '../..';
+import { Session } from '../../session';
 
 export class WebRequest extends Request {
   private _jsonEndpoint = false;
 
-  constructor(...args) {
-    super(...args);
+  constructor(session: Session) {
+    super(session);
     this._request.headers = _.extend(_.clone(this._request.headers), {
       'Upgrade-Insecure-Requests': '1',
       'Cache-Control': 'no-cache',
