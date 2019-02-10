@@ -202,7 +202,6 @@ class Challenge {
       .setData({
         security_code: code,
       })
-      .removeHeader('x-csrftoken')
       .send({ followRedirect: false })
       .then(response => {
         let json;
