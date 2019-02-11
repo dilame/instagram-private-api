@@ -37,7 +37,6 @@ class MediaCommentsFeed extends BaseFeed {
         if (this.moreAvailable) {
           this.cursorType === 'minId' ? this.setCursor(data.next_min_id) : this.setCursor(data.next_max_id);
         }
-        console.log(data.comments);
         return plainToClass(Comment, data.comments);
       })
       .catch(reason => {
