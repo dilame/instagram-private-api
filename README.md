@@ -212,7 +212,7 @@ The Session class is actually gluing any instance of `CookieStorage` and `Device
 Every request to Instagram must be chained with proper headers and data,
 in order to make endpoints work.
 For example every endpoint requires a proper `User-Agent` header in
-order to verify signature or `X-CSFR-Token` | `_csrftoken` to verify that you
+order to verify signature or `X-CSRF-Token` | `_csrftoken` to verify that you
 are doing request intentionally.
 
 
