@@ -1,4 +1,4 @@
-import { Expose, Type } from 'class-transformer';
+import { Exclude, Expose, Type } from 'class-transformer';
 import { FriendshipStatus } from './friendship-status';
 import { BaseModel } from './_base-model';
 import { ImageVersion } from './image-version';
@@ -32,6 +32,7 @@ export class User extends BaseModel {
   hd_profile_pic_versions: ImageVersion[];
   @Type(() => ImageVersion)
   hd_profile_pic_url_info: ImageVersion;
+  @Exclude()
   _id: number | string;
 
   @Expose()

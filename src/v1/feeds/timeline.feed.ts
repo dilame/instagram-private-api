@@ -10,7 +10,7 @@ interface TimelineFeedGetProps {
 }
 
 export class TimelineFeed extends BaseFeed {
-  constructor(session, public limit: number | null = null) {
+  constructor(session, public limit = Infinity) {
     super(...arguments);
   }
 

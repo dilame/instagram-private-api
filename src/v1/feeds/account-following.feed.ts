@@ -3,10 +3,8 @@ import { User } from '../../models/user';
 import { Request } from '../../request';
 import { BaseFeed } from './_base.feed';
 
-const Helpers = require('../../helpers');
-
 export class AccountFollowingFeed extends BaseFeed {
-  constructor(session, public accountId, public limit = 7500) {
+  constructor(session, public accountId, public limit = Infinity) {
     super(session);
   }
 
@@ -16,7 +14,7 @@ export class AccountFollowingFeed extends BaseFeed {
       .setResource('followingFeed', {
         id: this.accountId,
         maxId: this.getCursor(),
-        rankToken: Helpers.generateUUID(),
+        rankToken: this.rankToken,
       })
       .send();
     this.moreAvailable = !!data.next_max_id;

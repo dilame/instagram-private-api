@@ -1,4 +1,5 @@
 import { BaseModel } from './_base-model';
+import { Type } from 'class-transformer';
 
 export class Location extends BaseModel {
   pk: string | number;
@@ -10,4 +11,6 @@ export class Location extends BaseModel {
   lat: number;
   external_source: string;
   facebook_places_id: string | number;
+  @Type(() => Location)
+  location_dict: Location;
 }

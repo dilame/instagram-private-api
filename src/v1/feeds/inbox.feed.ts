@@ -8,7 +8,7 @@ const Thread = require('../thread');
 export class InboxFeed extends BaseFeed {
   public pendingRequestsTotal: null;
 
-  constructor(session: Session, public limit: number | null = null) {
+  constructor(session: Session, public limit = Infinity) {
     super(session);
   }
 

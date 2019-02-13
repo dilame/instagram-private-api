@@ -4,7 +4,7 @@ import { Request } from '../../request';
 import { BaseFeed } from './_base.feed';
 
 export class UserMediaFeed extends BaseFeed {
-  constructor(session, public accountId, public limit: number | null = null) {
+  constructor(session, public accountId, public limit = Infinity) {
     super(session);
   }
 

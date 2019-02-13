@@ -14,6 +14,7 @@ export class AccountFollowersFeed extends BaseFeed {
       .setResource('followersFeed', {
         id: this.accountId,
         maxId: this.cursor,
+        rankToken: this.rankToken,
       })
       .send();
     this.moreAvailable = !!data.next_max_id;

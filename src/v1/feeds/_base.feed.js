@@ -1,3 +1,5 @@
+import * as Chance from 'chance';
+
 const _ = require('lodash');
 const Promise = require('bluebird');
 const Exceptions = require('../../exceptions');
@@ -14,17 +16,17 @@ export class BaseFeed extends EventEmitter {
     this.iteration = 0;
     // Pause multiplier.
     this.parseErrorsMultiplier = 0;
+    const chance = new Chance();
+    this.rankToken = chance.guid();
   }
 
-  all (parameters) {
-    const that = this;
-    parameters = _.isObject(parameters) ? parameters : {};
+  all (parameters = {}) {
     _.defaults(parameters, {
       delay: 1500,
       every: 200,
       pause: 30000,
       maxErrors: 9,
-      limit: this.limit,
+      limit: this.limit || Infinity,
     });
     // every N requests we take a pause
     const delay =
@@ -34,37 +36,37 @@ export class BaseFeed extends EventEmitter {
         .then(this.get.bind(this))
         .then(results => {
           // reset pause multiplier when we can execute requests again
-          that.parseErrorsMultiplier = 0;
+          this.parseErrorsMultiplier = 0;
           return results;
         })
         // If ParseError, we assume that this is 403 forbidden HTML page, caused by "Too many requests". Just take a pause and retry.
         .catch(Exceptions.ParseError, () => {
           // Every consecutive ParseError makes delay befor new request longer. Otherwise we will never reach the end.
-          that.parseErrorsMultiplier++;
+          this.parseErrorsMultiplier++;
           // When delay time is beyond reasonable, throw exception.
-          if (that.parseErrorsMultiplier > parameters.maxErrors) throw new Exceptions.RequestsLimitError();
-          return Promise.resolve([]).delay(parameters.pause * that.parseErrorsMultiplier);
+          if (this.parseErrorsMultiplier > parameters.maxErrors) throw new Exceptions.RequestsLimitError();
+          return Promise.resolve([]).delay(parameters.pause * this.parseErrorsMultiplier);
         })
         .then(response => {
-          const results = response.filter(that.filter).map(that.map);
-          if (_.isFunction(that.reduce)) that.allResults = that.reduce(that.allResults, results);
-          that.totalCollected += response.length;
+          const results = response.filter(this.filter).map(this.map);
+          if (_.isFunction(this.reduce)) this.allResults = this.reduce(this.allResults, results);
+          this.totalCollected += response.length;
 
-          that._handleInfinityListBug(response, results);
+          this._handleInfinityListBug(response, results);
 
-          that.emit('data', results);
+          this.emit('data', results);
           let exceedLimit = false;
 
-          if ((parameters.limit && that.totalCollected > parameters.limit) || that._stopAll === true)
+          if ((parameters.limit && this.totalCollected > parameters.limit) || this._stopAll === true)
             exceedLimit = true;
 
-          if (that.isMoreAvailable() && !exceedLimit) {
-            that.iteration++;
-            return that.all(parameters);
+          if (this.isMoreAvailable() && !exceedLimit) {
+            this.iteration++;
+            return this.all(parameters);
           } else {
-            that.iteration = 0;
-            that.emit('end', that.allResults);
-            return that.allResults;
+            this.iteration = 0;
+            this.emit('end', this.allResults);
+            return this.allResults;
           }
         })
     );
