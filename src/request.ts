@@ -42,7 +42,6 @@ export class Request {
       'X-IG-Bandwidth-Speed-KBPS': '-1.000',
       'X-IG-Bandwidth-TotalBytes-B': '0',
       'X-IG-Bandwidth-TotalTime-MS': '0',
-      'Accept-Language': 'en-US',
       Host: CONSTANTS.HOSTNAME,
       Accept: '*/*',
       'Accept-Encoding': 'gzip,deflate',
@@ -203,6 +202,7 @@ export class Request {
     this.setHeaders({
       'User-Agent': device.userAgent(),
       'X-IG-App-ID': device.credentials.FB_ANALYTICS_APPLICATION_ID,
+      'Accept-Language': device.credentials.LANGUAGE.replace('_', '-'),
     });
     this.setData({
       device_id: device.id,
