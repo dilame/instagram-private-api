@@ -1,18 +1,18 @@
 import * as _ from 'lodash';
 import * as Chance from 'chance';
 import * as Exceptions from './exceptions';
-import * as CONSTANTS from './constants/constants';
-import * as Helpers from './helpers';
+import * as CONSTANTS from '../constants/constants';
+import * as Helpers from '../helpers';
 import * as Bluebird from 'bluebird';
 import { Device } from './devices/device';
-import { Internal } from './v1/internal';
-import { StoryTrayFeed } from './v1/feeds/story-tray.feed';
-import { TimelineFeed } from './v1/feeds/timeline.feed';
+import { Internal } from '../v1/internal';
+import { StoryTrayFeed } from '../feeds/story-tray.feed';
+import { TimelineFeed } from '../feeds/timeline.feed';
 import { Request } from './request';
-import { Account } from './v1/account';
-import { InboxFeed } from './v1/feeds/inbox.feed';
-import { Relationship } from './v1/relationship';
-import CookieStorage = require('./v1/cookie-storage');
+import { Account } from '../v1/account';
+import { InboxFeed } from '../feeds/inbox.feed';
+import { Relationship } from '../v1/relationship';
+import CookieStorage = require('../v1/cookie-storage');
 
 export class Session {
   private jar: any;

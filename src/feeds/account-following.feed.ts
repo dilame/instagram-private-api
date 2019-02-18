@@ -1,19 +1,19 @@
-import { Request } from '../../request';
 import { plainToClass } from 'class-transformer';
-import { User } from '../../models/user';
+import { User } from '../models/user';
+import { Request } from '../core/request';
 import { AbstractFeed } from './abstract.feed';
 
-export class AccountFollowersFeed extends AbstractFeed<User> {
+export class AccountFollowingFeed extends AbstractFeed<User> {
   constructor(session, public accountId, public limit = Infinity) {
     super(session);
   }
 
-  async get(): Promise<User[]> {
+  async get() {
     const data = await new Request(this.session)
       .setMethod('GET')
-      .setResource('followersFeed', {
+      .setResource('followingFeed', {
         id: this.accountId,
-        maxId: this.cursor,
+        maxId: this.getCursor(),
         rankToken: this.rankToken,
       })
       .send();

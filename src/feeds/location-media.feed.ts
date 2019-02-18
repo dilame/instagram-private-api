@@ -1,9 +1,9 @@
 import * as _ from 'lodash';
 import { plainToClass } from 'class-transformer';
 import { AbstractFeed } from './abstract.feed';
-import { Request } from '../../request';
-import { OnlyRankedItemsError, ParseError, PlaceNotFound } from '../../exceptions';
-import { Media } from '../../models/media';
+import { Request } from '../core/request';
+import { OnlyRankedItemsError, ParseError, PlaceNotFound } from '../core/exceptions';
+import { Media } from '../models/media';
 
 
 export class LocationMediaFeed extends AbstractFeed<Media> {

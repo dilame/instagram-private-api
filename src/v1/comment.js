@@ -1,6 +1,6 @@
 import { plainToClass } from 'class-transformer';
 import { User } from '../models/user';
-import { Request } from '../request';
+import { Request } from '../core/request';
 
 const Resource = require('./resource');
 const _ = require('lodash');

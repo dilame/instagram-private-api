@@ -1,7 +1,7 @@
 import { plainToClass } from 'class-transformer';
 import { AbstractFeed } from './abstract.feed';
-import { Media } from '../../models/media';
-import { Request } from '../../request';
+import { Media } from '../models/media';
+import { Request } from '../core/request';
 
 export class SavedMediaFeed extends AbstractFeed<Media> {
   constructor(session, public limit) {

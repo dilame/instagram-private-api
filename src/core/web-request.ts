@@ -1,11 +1,11 @@
 import * as _ from 'lodash';
 import * as Bluebird from 'bluebird';
-import { Request } from '../../request';
-import * as CONSTANTS from '../../constants/constants';
-import * as routes from '../../routes';
-import { NotFoundError } from '../../exceptions';
-import { Device } from '../..';
-import { Session } from '../../session';
+import { Request } from './request';
+import * as CONSTANTS from '../constants/constants';
+import * as routes from './routes';
+import { NotFoundError } from './exceptions';
+import { Device } from '..';
+import { Session } from './session';
 
 export class WebRequest extends Request {
   private _jsonEndpoint = false;

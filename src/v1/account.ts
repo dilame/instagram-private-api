@@ -1,9 +1,9 @@
 import { plainToClass } from 'class-transformer';
 import { User } from '../models/user';
-import * as Exceptions from '../exceptions';
+import * as Exceptions from '../core/exceptions';
 import * as _ from 'lodash';
-import { Request } from '../request';
-import { Session } from '../session';
+import { Request } from '../core/request';
+import { Session } from '../core/session';
 import Helpers = require('../helpers');
 
 export class Account {

@@ -1,25 +1,26 @@
-import { Media } from '../../models/media';
+import { Request } from '../core/request';
 import { plainToClass } from 'class-transformer';
-import { Request } from '../../request';
+import { User } from '../models/user';
 import { AbstractFeed } from './abstract.feed';
 
-export class UserMediaFeed extends AbstractFeed<Media> {
+export class AccountFollowersFeed extends AbstractFeed<User> {
   constructor(session, public accountId, public limit = Infinity) {
     super(session);
   }
 
-  async get(): Promise<Media[]> {
+  async get(): Promise<User[]> {
     const data = await new Request(this.session)
       .setMethod('GET')
-      .setResource('userFeed', {
+      .setResource('followersFeed', {
         id: this.accountId,
-        maxId: this.getCursor(),
+        maxId: this.cursor,
+        rankToken: this.rankToken,
       })
       .send();
-    this.moreAvailable = data.more_available && !!data.next_max_id;
+    this.moreAvailable = !!data.next_max_id;
     if (this.moreAvailable) {
       this.setCursor(data.next_max_id);
     }
-    return plainToClass(Media, data.items);
+    return plainToClass(User, data.users);
   }
 }

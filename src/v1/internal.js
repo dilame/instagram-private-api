@@ -1,5 +1,5 @@
 import * as Resource from './resource';
-import { Request } from '../request';
+import { Request } from '../core/request';
 import { LOGIN_EXPERIMENTS, SUPPORTED_CAPABILITIES } from '../constants/constants';
 
 export class Internal extends Resource {

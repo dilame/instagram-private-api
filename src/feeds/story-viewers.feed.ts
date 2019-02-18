@@ -1,7 +1,7 @@
 import { AbstractFeed } from './abstract.feed';
-import { Request } from '../../request';
+import { Request } from '../core/request';
 import { plainToClass } from 'class-transformer';
-import { User } from '../../models/user';
+import { User } from '../models/user';
 
 // Only works with the stories of the logged user
 export class StoryViewersFeed extends AbstractFeed<User> {

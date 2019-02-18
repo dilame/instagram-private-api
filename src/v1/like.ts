@@ -1,4 +1,4 @@
-import { Request } from '../request';
+import { Request } from '../core/request';
 import { LikeModuleName } from '../interfaces/like.interface';
 
 export class Like {

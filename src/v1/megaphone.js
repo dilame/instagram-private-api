@@ -1,6 +1,6 @@
 const _ = require('lodash');
 const Resource = require('./resource');
-const { Request } = require('../request');
+const { Request } = require('../core/request');
 
 class Megaphone extends Resource {
   static log (session, data) {

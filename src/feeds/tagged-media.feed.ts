@@ -1,9 +1,9 @@
 import * as _ from 'lodash';
 import { plainToClass } from 'class-transformer';
 import { AbstractFeed } from './abstract.feed';
-import { Media } from '../../models/media';
-import { Request } from '../../request';
-import { OnlyRankedItemsError } from '../../exceptions';
+import { Media } from '../models/media';
+import { Request } from '../core/request';
+import { OnlyRankedItemsError } from '../core/exceptions';
 
 
 export class TaggedMediaFeed extends AbstractFeed<Media> {

@@ -1,9 +1,9 @@
 import { plainToClass } from 'class-transformer';
 import { AbstractFeed } from './abstract.feed';
-import { Session } from '../../session';
-import { Comment } from '../../models/comment';
-import { Request } from '../../request';
-import { MediaUnavailableError } from '../../exceptions';
+import { Session } from '../core/session';
+import { Comment } from '../models/comment';
+import { Request } from '../core/request';
+import { MediaUnavailableError } from '../core/exceptions';
 
 export class MediaCommentsFeed extends AbstractFeed<Comment> {
   cursorType = 'minId';

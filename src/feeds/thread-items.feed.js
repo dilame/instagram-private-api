@@ -2,8 +2,8 @@ const _ = require('lodash');
 const util = require('util');
 import { AbstractFeed } from './abstract.feed';
 
-const ThreadItem = require('../thread-item');
-const { Request } = require('../../request');
+const ThreadItem = require('../v1/thread-item');
+const { Request } = require('../core/request');
 
 class ThreadItemsFeed extends AbstractFeed {
   constructor (session, threadId, limit) {

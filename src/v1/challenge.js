@@ -1,13 +1,13 @@
 const errors = require('request-promise/errors');
 const Promise = require('bluebird');
 
-const WebRequest = require('./web-request').WebRequest;
-const { Request } = require('../../request');
-const Exceptions = require('../../exceptions');
+const { WebRequest } = require('../core/web-request');
+const { Request } = require('../core/request');
+const Exceptions = require('../core/exceptions');
 
 const SHARED_JSON_REGEXP = /window._sharedData = (.*);<\/script>/i;
 
-class Challenge {
+export class Challenge {
   constructor (session, type, error, json) {
     this._json = json;
     this._session = session;
@@ -232,9 +232,7 @@ class Challenge {
   }
 }
 
-exports.Challenge = Challenge;
-
-class PhoneVerificationChallenge extends Challenge {
+export class PhoneVerificationChallenge extends Challenge {
   constructor (session, type, checkpointError, json) {
     super(...arguments);
     this.submitPhone = json.step_name === 'submit_phone';
@@ -271,19 +269,13 @@ class PhoneVerificationChallenge extends Challenge {
   }
 }
 
-exports.PhoneVerificationChallenge = PhoneVerificationChallenge;
+export class EmailVerificationChallenge extends Challenge {}
 
-class EmailVerificationChallenge extends Challenge {}
-
-exports.EmailVerificationChallenge = EmailVerificationChallenge;
-
-class NotImplementedChallenge extends Challenge {
-  constructor (session) {
+export class NotImplementedChallenge extends Challenge {
+  constructor (session, challengeType) {
     super(...arguments);
     throw new Error(
-      'Not implemented, due to missing account for testing, please write me on email `ivan.ivan.90.90@gmail.com`',
+      `Not implemented challenge type: "${challengeType}"`,
     );
   }
 }
-
-exports.NotImplementedChallenge = NotImplementedChallenge;

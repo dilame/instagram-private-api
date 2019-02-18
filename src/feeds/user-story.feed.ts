@@ -1,6 +1,6 @@
-import { Session } from '../../session';
-import { Request } from '../../request';
-import { Media } from '../../models/media';
+import { Session } from '../core/session';
+import { Request } from '../core/request';
+import { Media } from '../models/media';
 import { plainToClass } from 'class-transformer';
 
 export class UserStoryFeed {

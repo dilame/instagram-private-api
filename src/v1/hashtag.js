@@ -1,7 +1,7 @@
 const _ = require('lodash');
 const Resource = require('./resource');
 const camelKeys = require('camelcase-keys');
-const { Request } = require('../request');
+const { Request } = require('../core/request');
 const Helpers = require('../helpers');
 
 class Hashtag extends Resource {

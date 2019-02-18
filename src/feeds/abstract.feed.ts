@@ -1,9 +1,9 @@
 import * as Chance from 'chance';
 import * as _ from 'lodash';
 import * as Bluebird from 'bluebird';
-import { ParseError, RequestsLimitError } from '../../exceptions';
+import { ParseError, RequestsLimitError } from '../core/exceptions';
 import { EventEmitter } from 'events';
-import { Session } from '../../session';
+import { Session } from '../core/session';
 
 export interface IBaseFeedAllOptions {
   delay: number;

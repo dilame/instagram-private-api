@@ -2,7 +2,7 @@ const Resource = require('./resource');
 const Helpers = require('../helpers');
 const Promise = require('bluebird');
 const camelKeys = require('camelcase-keys');
-const { Request } = require('../request');
+const { Request } = require('../core/request');
 
 class Upload extends Resource {
   static photo (session, streamOrPathOrBuffer, uploadId, name, isSidecar) {

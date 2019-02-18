@@ -1,5 +1,5 @@
 const Resource = require('./resource');
-const { Request } = require('../request');
+const { Request } = require('../core/request');
 
 class Save extends Resource {
   static create (session, mediaId) {

@@ -1,11 +1,11 @@
 const EventEmitter = require('events').EventEmitter;
 const _ = require('lodash');
-const { Request } = require('../request');
+const { Request } = require('../core/request');
 
 class InstagramResource extends EventEmitter {
   constructor (session, params) {
     super();
-    const { Session } = require('../session');
+    const { Session } = require('../core/session');
     if (!(session instanceof Session)) throw new Error('Argument `session` is not instace of Session');
     this._session = session;
     this._params = {};

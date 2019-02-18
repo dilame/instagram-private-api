@@ -1,12 +1,12 @@
 import { plainToClass } from 'class-transformer';
 import { User } from '../models/user';
-import { Request } from '../request';
-import { Session } from '../session';
+import { Request } from '../core/request';
+import { Session } from '../core/session';
 
 const _ = require('lodash');
 const Helpers = require('../helpers');
 const clean = require('underscore.string/clean');
-const Exceptions = require('../exceptions');
+const Exceptions = require('../core/exceptions');
 const QE = require('./qe');
 const Relationship = require('./relationship').Relationship;
 const discover = require('./discover');

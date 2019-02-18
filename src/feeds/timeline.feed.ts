@@ -1,7 +1,7 @@
-import { Media } from '../../models/media';
+import { Media } from '../models/media';
 import { plainToClass } from 'class-transformer';
 import { AbstractFeed } from './abstract.feed';
-import { Request } from '../../request';
+import { Request } from '../core/request';
 
 interface TimelineFeedGetProps {
   is_pull_to_refresh?: boolean | null;

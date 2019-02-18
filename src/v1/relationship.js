@@ -1,9 +1,9 @@
 import { plainToClass } from 'class-transformer';
 import { User } from '../models/user';
-import { Request } from '../request';
+import { Request } from '../core/request';
 import * as _ from 'lodash';
 import * as Resource from './resource';
-import * as Exceptions from '../exceptions';
+import * as Exceptions from '../core/exceptions';
 
 export class Relationship extends Resource {
   static get (session, accountId) {

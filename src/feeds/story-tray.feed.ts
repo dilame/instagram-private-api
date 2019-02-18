@@ -1,7 +1,7 @@
-import { SUPPORTED_CAPABILITIES } from '../../constants/constants';
-import { StoryTray } from '../../models/story-tray';
+import { SUPPORTED_CAPABILITIES } from '../constants/constants';
+import { StoryTray } from '../models/story-tray';
 import { plainToClass } from 'class-transformer';
-import { Request } from '../../request';
+import { Request } from '../core/request';
 
 export class StoryTrayFeed {
   constructor(private session) {
