@@ -1,12 +1,12 @@
 import * as _ from 'lodash';
 import { plainToClass } from 'class-transformer';
-import { BaseFeed } from './_base.feed';
+import { AbstractFeed } from './abstract.feed';
 import { Request } from '../../request';
 import { OnlyRankedItemsError, ParseError, PlaceNotFound } from '../../exceptions';
 import { Media } from '../../models/media';
 
 
-export class LocationMediaFeed extends BaseFeed {
+export class LocationMediaFeed extends AbstractFeed<Media> {
   constructor(session, public locationId: string | number, public limit = Infinity) {
     super(session);
   }

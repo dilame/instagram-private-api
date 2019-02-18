@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/huttarichard/instagram-private-api",
   "scripts": {
-    "build": "tsc -p tsconfig.build.json",
+    "build": "tsc -p tsconfig.build.json && tsc -p tsconfig.build.json -d --emitDeclarationOnly --allowJs false",
     "prepare": "npm run build",
     "test": "./node_modules/mocha/bin/mocha --inline-diffs --timeout 1000000 tests/run.js"
   },

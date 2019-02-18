@@ -1,8 +1,8 @@
 import { User } from './user';
 import { Expose, Type } from 'class-transformer';
-import { BaseModel } from './_base-model';
+import { AbstractModel } from './abstract.model';
 
-export class Comment extends BaseModel {
+export class Comment extends AbstractModel {
   pk: number | string;
   user_id: number;
   text: string;

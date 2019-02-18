@@ -1,7 +1,7 @@
-import { BaseModel } from './_base-model';
+import { AbstractModel } from './abstract.model';
 import { Type } from 'class-transformer';
 
-export class Location extends BaseModel {
+export class Location extends AbstractModel {
   pk: string | number;
   name: string;
   address: string;

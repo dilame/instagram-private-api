@@ -1,9 +1,9 @@
 import { Exclude, Expose, Type } from 'class-transformer';
 import { FriendshipStatus } from './friendship-status';
-import { BaseModel } from './_base-model';
+import { AbstractModel } from './abstract.model';
 import { ImageVersion } from './image-version';
 
-export class User extends BaseModel {
+export class User extends AbstractModel {
   pk: number | string;
   instagram_id: number | string;
   username: string;

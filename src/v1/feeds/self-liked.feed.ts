@@ -1,25 +1,24 @@
+import { plainToClass } from 'class-transformer';
 import { AbstractFeed } from './abstract.feed';
 import { Request } from '../../request';
-import { plainToClass } from 'class-transformer';
-import { User } from '../../models/user';
+import { Media } from '../../models/media';
 
-// Only works with the stories of the logged user
-export class StoryViewersFeed extends AbstractFeed<User> {
-  constructor(session, public mediaId) {
+export class SelfLikedFeed extends AbstractFeed<Media> {
+  constructor(session, public limit) {
     super(session);
+    this.limit = parseInt(limit) || null;
   }
 
   async get() {
     const data = await new Request(this.session)
       .setMethod('GET')
-      .setResource('storyViewers', {
-        mediaId: this.mediaId,
+      .setResource('selfLikedFeed', {
         maxId: this.getCursor(),
       })
       .send();
     const nextMaxId = data.next_max_id ? data.next_max_id.toString() : data.next_max_id;
-    this.moreAvailable = !!nextMaxId;
+    this.moreAvailable = data.more_available && !!nextMaxId;
     if (this.moreAvailable) this.setCursor(nextMaxId);
-    return plainToClass(User, data.users);
+    return plainToClass(Media, data.items);
   }
 }

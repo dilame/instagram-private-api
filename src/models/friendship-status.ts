@@ -1,6 +1,6 @@
-import { BaseModel } from './_base-model';
+import { AbstractModel } from './abstract.model';
 
-export class FriendshipStatus extends BaseModel {
+export class FriendshipStatus extends AbstractModel {
   muting: boolean;
   is_muting_reel: boolean;
   following: boolean;

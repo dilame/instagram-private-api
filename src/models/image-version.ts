@@ -1,6 +1,6 @@
-import { BaseModel } from './_base-model';
+import { AbstractModel } from './abstract.model';
 
-export class ImageVersion extends BaseModel {
+export class ImageVersion extends AbstractModel {
   width: number;
   height: number;
   url: string;

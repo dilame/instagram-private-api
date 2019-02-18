@@ -4,9 +4,9 @@ import { Comment } from './comment';
 import { ImageVersion } from './image-version';
 import { Location } from './location';
 import { VideoVersion } from './video-version';
-import { BaseModel } from './_base-model';
+import { AbstractModel } from './abstract.model';
 
-export class Media extends BaseModel {
+export class Media extends AbstractModel {
   taken_at: number;
   pk: string;
   id: string;

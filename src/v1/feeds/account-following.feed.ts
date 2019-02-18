@@ -1,9 +1,9 @@
 import { plainToClass } from 'class-transformer';
 import { User } from '../../models/user';
 import { Request } from '../../request';
-import { BaseFeed } from './_base.feed';
+import { AbstractFeed } from './abstract.feed';
 
-export class AccountFollowingFeed extends BaseFeed {
+export class AccountFollowingFeed extends AbstractFeed<User> {
   constructor(session, public accountId, public limit = Infinity) {
     super(session);
   }

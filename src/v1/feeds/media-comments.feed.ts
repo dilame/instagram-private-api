@@ -1,11 +1,11 @@
 import { plainToClass } from 'class-transformer';
-import { BaseFeed } from './_base.feed';
+import { AbstractFeed } from './abstract.feed';
 import { Session } from '../../session';
 import { Comment } from '../../models/comment';
 import { Request } from '../../request';
 import { MediaUnavailableError } from '../../exceptions';
 
-class MediaCommentsFeed extends BaseFeed {
+export class MediaCommentsFeed extends AbstractFeed<Comment> {
   cursorType = 'minId';
 
   constructor(session: Session, public mediaId) {
@@ -45,5 +45,3 @@ class MediaCommentsFeed extends BaseFeed {
       });
   }
 }
-
-module.exports = MediaCommentsFeed;

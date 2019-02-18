@@ -1,11 +1,11 @@
 import { Session } from '../../session';
-import { BaseFeed } from './_base.feed';
+import { AbstractFeed } from './abstract.feed';
 import { Request } from '../../request';
 
 const _ = require('lodash');
 const Thread = require('../thread');
 
-export class InboxFeed extends BaseFeed {
+export class InboxFeed extends AbstractFeed<any> {
   public pendingRequestsTotal: null;
 
   constructor(session: Session, public limit = Infinity) {

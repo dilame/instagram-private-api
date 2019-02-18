@@ -2,9 +2,9 @@ import { Type } from 'class-transformer';
 import { User } from './user';
 import { Media } from './media';
 import { Location } from './location';
-import { BaseModel } from './_base-model';
+import { AbstractModel } from './abstract.model';
 
-export class StoryTray extends BaseModel {
+export class StoryTray extends AbstractModel {
   id: number;
   latest_reel_media: number;
   expiring_at: number;

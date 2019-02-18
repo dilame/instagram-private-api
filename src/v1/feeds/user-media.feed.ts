@@ -1,9 +1,9 @@
 import { Media } from '../../models/media';
 import { plainToClass } from 'class-transformer';
 import { Request } from '../../request';
-import { BaseFeed } from './_base.feed';
+import { AbstractFeed } from './abstract.feed';
 
-export class UserMediaFeed extends BaseFeed {
+export class UserMediaFeed extends AbstractFeed<Media> {
   constructor(session, public accountId, public limit = Infinity) {
     super(session);
   }

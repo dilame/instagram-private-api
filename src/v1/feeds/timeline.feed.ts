@@ -1,17 +1,15 @@
 import { Media } from '../../models/media';
 import { plainToClass } from 'class-transformer';
-
-import { BaseFeed } from './_base.feed';
-
-const { Request } = require('../../request');
+import { AbstractFeed } from './abstract.feed';
+import { Request } from '../../request';
 
 interface TimelineFeedGetProps {
   is_pull_to_refresh?: boolean | null;
 }
 
-export class TimelineFeed extends BaseFeed {
+export class TimelineFeed extends AbstractFeed<Media> {
   constructor(session, public limit = Infinity) {
-    super(...arguments);
+    super(session);
   }
 
   async get({ is_pull_to_refresh = null }: TimelineFeedGetProps): Promise<Media[]> {
@@ -53,7 +51,7 @@ export class TimelineFeed extends BaseFeed {
         feed_view_info: '',
         seen_posts: '',
         unseen_posts: '',
-        phone_id: this.session.device.phone_id,
+        phone_id: this.session.device.phoneId,
         client_session_id: this.session.session_id,
         battery_level: '100',
         is_charging: '1',
