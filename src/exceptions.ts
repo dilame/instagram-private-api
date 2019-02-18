@@ -146,21 +146,9 @@ export class ThreadEmptyError extends APIError {
   }
 }
 
-export class AccountInactive extends APIError {
-  constructor(public account) {
-    super('The account you are trying to propagate is inactive');
-  }
-}
-
 export class AccountBanned extends APIError {
   constructor(message) {
     super(message);
-  }
-}
-
-export class AccountActivityPrivateFeed extends APIError {
-  constructor() {
-    super('The Account has private feed, account activity not really completed');
   }
 }
 
@@ -186,11 +174,6 @@ export class NotPossibleToResolveChallenge extends APIError {
   }
 }
 
-export class NotPossibleToVerify extends APIError {
-  constructor() {
-    super('Not possible to verify trough code!');
-  }
-}
 
 export class NoChallengeRequired extends APIError {
   constructor() {
