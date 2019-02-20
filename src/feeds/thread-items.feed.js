@@ -1,19 +1,16 @@
-const _ = require('lodash');
-const util = require('util');
 import { AbstractFeed } from './abstract.feed';
+import { Request } from '../core/request';
 
 const ThreadItem = require('../v1/thread-item');
-const { Request } = require('../core/request');
 
-class ThreadItemsFeed extends AbstractFeed {
+export class ThreadItemsFeed extends AbstractFeed {
   constructor (session, threadId, limit) {
-    super(...arguments);
+    super(session);
     this.threadId = threadId;
     this.limit = parseInt(limit) || null;
   }
 
   get () {
-    const that = this;
     return new Request(this.session)
       .setMethod('GET')
       .setResource('threadsShow', {
@@ -22,12 +19,10 @@ class ThreadItemsFeed extends AbstractFeed {
       })
       .send()
       .then(json => {
-        const items = _.map(json.thread.items, item => new ThreadItem(that.session, item));
-        that.moreAvailable = json.thread.has_older;
-        if (that.isMoreAvailable()) that.setCursor(json.thread.oldest_cursor);
+        const items = json.thread.items.map(item => new ThreadItem(this.session, item));
+        this.moreAvailable = json.thread.has_older;
+        if (this.isMoreAvailable()) this.setCursor(json.thread.oldest_cursor);
         return items;
       });
   }
 }
-
-module.exports = ThreadItemsFeed;
