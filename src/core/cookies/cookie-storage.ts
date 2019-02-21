@@ -2,7 +2,7 @@ import * as Bluebird from 'bluebird';
 import { TLD } from '../../constants/constants';
 import * as _ from 'lodash';
 import { CookieNotValidError } from '../exceptions';
-import { Store } from 'tough-cookie';
+import { Store, Cookie } from 'tough-cookie';
 
 export class CookieStorage {
   constructor(public storage: Store) {
@@ -12,7 +12,7 @@ export class CookieStorage {
     return this.storage;
   }
 
-  getCookieValue(name): any {
+  getCookieValue(name): Bluebird<Cookie> {
     return new Bluebird((resolve, reject) => {
       this.storage.findCookie(TLD, '/', name, (err, cookie) => {
         if (err) return reject(err);
@@ -35,7 +35,7 @@ export class CookieStorage {
     });
   }
 
-  getAccountId () {
+  getAccountId (): Bluebird<number> {
     return this.getCookieValue('ds_user_id').then(cookie => {
       const id = parseInt(cookie.value);
       if (_.isNumber(id) && !_.isNaN(id)) {

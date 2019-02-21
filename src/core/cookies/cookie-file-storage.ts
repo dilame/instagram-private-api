@@ -21,6 +21,7 @@ export class CookieFileStorage extends CookieStorage {
   }
 
   destroy () {
+    // @ts-ignore
     fs.unlinkSync(this.storage.filePath);
   }
 

@@ -1,6 +1,5 @@
 import * as _ from 'lodash';
 import * as Chance from 'chance';
-import * as Exceptions from './exceptions';
 import * as CONSTANTS from '../constants/constants';
 import { Helpers } from '../helpers';
 import * as Bluebird from 'bluebird';
@@ -12,6 +11,7 @@ import { Account } from '../v1/account';
 import { Relationship } from '../v1/relationship';
 import { CookieStorage } from './cookies';
 import { CookieJar } from 'tough-cookie';
+import { AccountBannedError, AuthenticationError, CheckpointError, CookieNotValidError } from './exceptions';
 
 export class Session {
   private jar: any;
@@ -64,26 +64,16 @@ export class Session {
     return item ? item.value : 'missing';
   }
 
-  static create(device, storage, username, password, proxy) {
+  static create(device: Device, storage: CookieStorage, username: string, password: string, proxy?: string): Bluebird<Session> {
     const session = new Session(device, storage);
-    if (_.isString(proxy) && !_.isEmpty(proxy)) session.proxyUrl = proxy;
-    return session
-      .getAccountId()
-      .then(
-        () =>
-          // Disabled for the moment
-          // But `loginFlow` should be called every time the user closes an reopen the app.
-          //return session.loginFlow()
-          //    .then(() => session)
-          session,
-      )
-      .catch(Exceptions.CookieNotValidError, () =>
-        // We either not have valid cookes or authentication is not fain!
-        Session.login(session, username, password),
-      );
+    if (!_.isEmpty(proxy)) session.proxyUrl = proxy;
+    return session.getAccountId()
+      .then(() => session)
+      // We either not have valid cookes or authentication is not fain!
+      .catch(CookieNotValidError, () => Session.login(session, username, password));
   }
 
-  static login(session, username, password) {
+  static login(session: Session, username: string, password: string): Bluebird<Session> {
     return Bluebird.try(async () => {
       await session.preLoginFlow();
       await new Request(session)
@@ -94,7 +84,7 @@ export class Session {
           password,
           guid: session.uuid,
           phone_id: session.phone_id,
-          adid: session.adid,
+          adid: session.advertising_id,
           login_attempt_count: 0,
         })
         .signPayload()
@@ -102,20 +92,20 @@ export class Session {
       await session.loginFlow();
       return session;
     })
-      .catch(Exceptions.CheckpointError, async error => {
+      .catch(CheckpointError, async error => {
         // This situation is not really obvious,
         // but even if you got checkpoint error (aka captcha or phone)
         // verification, it is still an valid session unless `sessionid` missing
-        await session.getAccountId().catch(Exceptions.CookieNotValidError, () => {
+        await session.getAccountId().catch(CookieNotValidError, () => {
           throw error;
         });
         return session;
       })
       .catch(error => {
         if (error.name === 'RequestError' && _.isObject(error.json)) {
-          if (error.json.invalid_credentials) throw new Exceptions.AuthenticationError(error.message);
+          if (error.json.invalid_credentials) throw new AuthenticationError(error.message);
           if (error.json.error_type === 'inactive user')
-            throw new Exceptions.AccountBanned(`${error.json.message} ${error.json.help_url}`);
+            throw new AccountBannedError(`${error.json.message} ${error.json.help_url}`);
         }
         throw error;
       });

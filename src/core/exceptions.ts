@@ -146,7 +146,7 @@ export class ThreadEmptyError extends APIError {
   }
 }
 
-export class AccountBanned extends APIError {
+export class AccountBannedError extends APIError {
   constructor(message) {
     super(message);
   }
