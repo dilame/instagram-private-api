@@ -1,10 +1,10 @@
 import { CookieStorage } from './cookie-storage';
+import { HOSTNAME } from '../../constants/constants';
 
 const FileCookieStore = require('tough-cookie-file-store');
 const touch = require('touch');
 const path = require('path');
 const fs = require('fs');
-const CONSTANTS = require('../../constants/constants');
 
 export class CookieFileStorage extends CookieStorage {
   constructor (cookiePath) {
@@ -12,7 +12,7 @@ export class CookieFileStorage extends CookieStorage {
     CookieFileStorage.ensureExistenceOfJSONFilePath(cookiePath);
     const store = new FileCookieStore(cookiePath);
     store.__proto__.getAllCookies = cb => {
-      store.findCookies(CONSTANTS.HOSTNAME, '/', (err, cookies) => {
+      store.findCookies(HOSTNAME, '/', (err, cookies) => {
         cookies.sort((a, b) => (a.creationIndex || 0) - (b.creationIndex || 0));
         cb(null, cookies);
       });

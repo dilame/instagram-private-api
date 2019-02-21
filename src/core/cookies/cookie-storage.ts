@@ -1,38 +1,34 @@
-const Promise = require('bluebird');
-const CONSTANTS = require('../../constants/constants');
-const _ = require('lodash');
-const Exceptions = require('../exceptions');
+import * as Bluebird from 'bluebird';
+import { TLD } from '../../constants/constants';
+import * as _ from 'lodash';
+import { CookieNotValidError } from '../exceptions';
+
 
 export class CookieStorage {
-  constructor (cookieStorage) {
-    this.storage = cookieStorage;
+  constructor(public storage) {
   }
 
   get store () {
     return this.storage;
   }
 
-  set store (val) {}
-
-  getCookieValue (name) {
-    return new Promise((resolve, reject) => {
-      this.storage.findCookie(CONSTANTS.TLD, '/', name, (err, cookie) => {
+  getCookieValue(name): any {
+    return new Bluebird((resolve, reject) => {
+      this.storage.findCookie(TLD, '/', name, (err, cookie) => {
         if (err) return reject(err);
-        if (!_.isObject(cookie)) return reject(new Exceptions.CookieNotValidError(name));
+        if (!_.isObject(cookie)) return reject(new CookieNotValidError(name));
         resolve(cookie);
       });
     });
   }
 
   putCookie (cookie) {
-    return new Promise((resolve, reject) => {
-      this.storage.putCookie(cookie, resolve);
-    });
+    return Bluebird.fromCallback(cb => this.storage.putCookie(cookie, cb));
   }
 
   getCookies () {
-    return new Promise((resolve, reject) => {
-      this.storage.findCookies(CONSTANTS.TLD, '/', (err, cookies) => {
+    return new Bluebird((resolve, reject) => {
+      this.storage.findCookies(TLD, '/', (err, cookies) => {
         if (err) return reject(err);
         resolve(cookies || []);
       });
@@ -45,7 +41,7 @@ export class CookieStorage {
       if (_.isNumber(id) && !_.isNaN(id)) {
         return id;
       } else {
-        throw new Exceptions.CookieNotValidError('ds_user_id');
+        throw new CookieNotValidError('ds_user_id');
       }
     });
   }
@@ -55,13 +51,13 @@ export class CookieStorage {
     return this.getCookieValue('sessionid').then(cookie => {
       const acceptable = cookie.expires instanceof Date && cookie.expires.getTime() > currentTime;
       if (acceptable) return cookie.value;
-      throw new Exceptions.CookieNotValidError('sessionid');
+      throw new CookieNotValidError('sessionid');
     });
   }
 
   removeCheckpointStep () {
-    return new Promise((resolve, reject) => {
-      this.storage.removeCookie(CONSTANTS.TLD, '/', 'checkpoint_step', err => {
+    return new Bluebird((resolve, reject) => {
+      this.storage.removeCookie(TLD, '/', 'checkpoint_step', err => {
         if (err) return reject(err);
         resolve();
       });

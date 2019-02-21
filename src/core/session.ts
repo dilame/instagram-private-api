@@ -10,7 +10,7 @@ import { InboxFeed, StoryTrayFeed, TimelineFeed } from '../feeds';
 import { Request } from './request';
 import { Account } from '../v1/account';
 import { Relationship } from '../v1/relationship';
-import { CookieStorage } from './cookies/cookie-storage';
+import { CookieStorage } from './cookies';
 import { CookieJar } from 'tough-cookie';
 
 export class Session {

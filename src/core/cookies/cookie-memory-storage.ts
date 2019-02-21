@@ -1,4 +1,4 @@
-import {MemoryCookieStore} from 'tough-cookie/lib/memstore'
+import { MemoryCookieStore } from 'tough-cookie/lib/memstore';
 import { CookieStorage } from './cookie-storage';
 
 export class CookieMemoryStorage extends CookieStorage {
