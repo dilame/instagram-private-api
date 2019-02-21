@@ -5,7 +5,7 @@ import { Request, Session, IGAccountNotFoundError, RequestError } from '../core'
 import { Helpers } from '../helpers';
 
 export class Account {
-  static async getById(session: Session, id): Promise<User> {
+  static async getById(session: Session, id: string | number): Promise<User> {
     const data = await new Request(session)
       .setMethod('GET')
       .setResource('userInfo', { id })

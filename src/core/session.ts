@@ -135,8 +135,9 @@ export class Session {
     return this;
   }
 
-  getAccount() {
-    return this.getAccountId().then(id => Account.getById(this, id));
+  async getAccount() {
+    const accountId = await this.getAccountId();
+    return Account.getById(this, accountId);
   }
 
   destroy() {
