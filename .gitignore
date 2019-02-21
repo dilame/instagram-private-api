@@ -6,7 +6,6 @@ tests/tmp/*
 tests/credentials.json
 tests/cookies/*
 php-*
-cookies/
 sandbox.*
 Untitled*
 .idea
