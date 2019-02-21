@@ -5,10 +5,10 @@ import * as JSONbig from 'json-bigint';
 import * as ProxyAgent from 'proxy-agent';
 import * as Exceptions from './exceptions';
 import * as routes from './routes';
-import * as Helpers from '../helpers';
 import * as CONSTANTS from '../constants/constants';
 import { Session } from './session';
 import { Device } from './devices/device';
+import { Helpers } from '../helpers';
 
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 

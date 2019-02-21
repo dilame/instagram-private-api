@@ -1,14 +1,15 @@
+import { CookieStorage } from './cookie-storage';
+
 const FileCookieStore = require('tough-cookie-file-store');
+const touch = require('touch');
 const path = require('path');
 const fs = require('fs');
-const Helpers = require('../helpers');
-const CookieStorage = require('./cookie-storage');
-const CONSTANTS = require('../constants/constants');
+const CONSTANTS = require('../../constants/constants');
 
-class CookieFileStorage extends CookieStorage {
+export class CookieFileStorage extends CookieStorage {
   constructor (cookiePath) {
     cookiePath = path.resolve(cookiePath);
-    Helpers.ensureExistenceOfJSONFilePath(cookiePath);
+    CookieFileStorage.ensureExistenceOfJSONFilePath(cookiePath);
     const store = new FileCookieStore(cookiePath);
     store.__proto__.getAllCookies = cb => {
       store.findCookies(CONSTANTS.HOSTNAME, '/', (err, cookies) => {
@@ -22,6 +23,14 @@ class CookieFileStorage extends CookieStorage {
   destroy () {
     fs.unlinkSync(this.storage.filePath);
   }
-}
 
-module.exports = CookieFileStorage;
+  static ensureExistenceOfJSONFilePath(path){
+    try {
+      touch.sync(path);
+      JSON.parse(fs.readFileSync(path));
+    } catch (e) {
+      fs.unlinkSync(path);
+    }
+    touch.sync(path);
+  }
+}

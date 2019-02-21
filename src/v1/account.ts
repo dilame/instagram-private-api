@@ -1,10 +1,8 @@
+import * as _ from 'lodash';
 import { plainToClass } from 'class-transformer';
 import { User } from '../models/user';
-import * as Exceptions from '../core/exceptions';
-import * as _ from 'lodash';
-import { Request } from '../core/request';
-import { Session } from '../core/session';
-import Helpers = require('../helpers');
+import { Request, Session, IGAccountNotFoundError, RequestError } from '../core';
+import { Helpers } from '../helpers';
 
 export class Account {
   static async getById(session: Session, id): Promise<User> {
@@ -31,7 +29,7 @@ export class Account {
   static async searchForUser(session: Session, username: string): Promise<User> {
     const accounts = await Account.search(session, username);
     const account = accounts.find(account => account.username === username);
-    if (!account) throw new Exceptions.IGAccountNotFoundError();
+    if (!account) throw new IGAccountNotFoundError();
     return account;
   }
 
@@ -93,7 +91,7 @@ export class Account {
       })
       .catch(e => {
         if (e && e.json && e.json.message && _.isArray(e.json.message.errors)) {
-          throw new Exceptions.RequestError({
+          throw new RequestError({
             message: e.json.message.errors.join('. '),
           });
         }

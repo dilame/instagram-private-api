@@ -1,6 +1,6 @@
 import { plainToClass } from 'class-transformer';
 import { AbstractFeed } from './abstract.feed';
-import { Request } from '../core/request';
+import { Request } from '../core';
 import { Media } from '../models/media';
 
 export class SelfLikedFeed extends AbstractFeed<Media> {

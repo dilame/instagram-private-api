@@ -1,6 +1,7 @@
 import { plainToClass } from 'class-transformer';
 import { User } from '../models/user';
 import { Request } from '../core/request';
+import { Helpers } from '../helpers';
 
 const _ = require('lodash');
 const Resource = require('./resource');
@@ -8,7 +9,6 @@ const Promise = require('bluebird');
 const camelKeys = require('camelcase-keys');
 const ThreadItem = require('./thread-item');
 const Exceptions = require('../core/exceptions');
-const Helpers = require('../helpers');
 
 class Thread extends Resource {
   static approveAll (session) {

@@ -1,8 +1,8 @@
 import { plainToClass } from 'class-transformer';
 import { User } from '../models/user';
 import { Request } from '../core/request';
+import { Helpers } from '../helpers';
 
-const Helpers = require('../helpers');
 const _ = require('lodash');
 
 module.exports = (session, inSingup) =>

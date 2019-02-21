@@ -1,9 +1,9 @@
 const Promise = require('bluebird');
-const CONSTANTS = require('../constants/constants');
+const CONSTANTS = require('../../constants/constants');
 const _ = require('lodash');
-const Exceptions = require('../core/exceptions');
+const Exceptions = require('../exceptions');
 
-class CookieStorage {
+export class CookieStorage {
   constructor (cookieStorage) {
     this.storage = cookieStorage;
   }
@@ -72,5 +72,3 @@ class CookieStorage {
     throw new Error('Method destroy is not implemented');
   }
 }
-
-module.exports = CookieStorage;

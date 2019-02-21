@@ -1,10 +1,9 @@
 import { plainToClass } from 'class-transformer';
 import { User } from '../models/user';
-import { Request } from '../core/request';
-import { Session } from '../core/session';
+import { Request, Session } from '../core';
+import { Helpers } from '../helpers';
 
 const _ = require('lodash');
-const Helpers = require('../helpers');
 const clean = require('underscore.string/clean');
 const Exceptions = require('../core/exceptions');
 const QE = require('./qe');
@@ -24,7 +23,7 @@ export class AccountCreator {
 
   setUsername (username) {
     username = username.toLowerCase();
-    if (!username || !/^[a-z0-9\._]{1,50}$/.test(username)) throw new Exceptions.InvalidUsername(username);
+    if (!username || !/^[a-z0-9._]{1,50}$/.test(username)) throw new Exceptions.InvalidUsername(username);
     this.username = username;
     return this;
   }
@@ -117,7 +116,7 @@ export class AccountPhoneCreator extends AccountCreator {
   }
 
   setPhone (phone) {
-    if (!phone || !/^([0-9\(\)\/\+ \-]*)$/.test(phone)) throw new Exceptions.InvalidPhone(phone);
+    if (!phone || !/^([0-9()\/+ \-]*)$/.test(phone)) throw new Exceptions.InvalidPhone(phone);
     this.phone = phone;
     return this;
   }
