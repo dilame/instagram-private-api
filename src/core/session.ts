@@ -180,11 +180,11 @@ export class Session {
     });
   }
 
-  serailizeCookies(): string {
+  serializeCookies(): string {
     return Bluebird.fromCallback(cb => this.jar._jar.serialize(cb));
   }
 
-  async deserailizeCookies(cookies: string) {
+  async deserializeCookies(cookies: string) {
     this.jar._jar = await Bluebird.fromCallback(cb => CookieJar.deserialize(cookies, this.cookieStore.store, cb))
   }
 }
