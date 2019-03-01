@@ -1,9 +1,8 @@
-import * as Resource from './resource';
-import { Request } from '../core/request';
+import { Request, Session } from '../core';
 import { LOGIN_EXPERIMENTS, SUPPORTED_CAPABILITIES } from '../constants/constants';
 
-export class Internal extends Resource {
-  static readMsisdnHeader (session) {
+export class Internal {
+  static readMsisdnHeader (session: Session) {
     return new Request(session)
       .setMethod('POST')
       .setResource('readMsisdnHeader')
@@ -11,14 +10,15 @@ export class Internal extends Resource {
         'X-DEVICE-ID': session.uuid,
       })
       .setData({
-        mobile_subno_usage: 'ig_select_app',
+        mobile_subno_usage: 'default',
+        device_id: session.uuid,
       })
       .setBodyType('form')
       .signPayload()
       .send();
   }
 
-  static qeSync (session, preLogin) {
+  static qeSync (session: Session, preLogin) {
     const req = new Request(session)
       .setMethod('POST')
       .setResource('qeSync')
@@ -47,7 +47,7 @@ export class Internal extends Resource {
     }
   }
 
-  static launcherSync (session, preLogin) {
+  static launcherSync (session: Session, preLogin) {
     const req = new Request(session)
       .setMethod('POST')
       .setResource('launcherSync')
@@ -56,7 +56,7 @@ export class Internal extends Resource {
       })
       .setBodyType('form')
       .setData({
-        configs: '',
+        configs: 'ig_android_felix_release_players',
       });
 
     if (!preLogin) {
@@ -78,7 +78,7 @@ export class Internal extends Resource {
     }
   }
 
-  static logAttribution (session) {
+  static logAttribution (session: Session) {
     return new Request(session)
       .setMethod('POST')
       .setResource('logAttribution')
@@ -91,7 +91,7 @@ export class Internal extends Resource {
       .send();
   }
 
-  static fetchZeroRatingToken (session) {
+  static fetchZeroRatingToken (session: Session) {
     return new Request(session)
       .setMethod('GET')
       .setResource('zeroRatingToken', {
@@ -104,7 +104,7 @@ export class Internal extends Resource {
       .send();
   }
 
-  static setContactPointPrefill (session) {
+  static setContactPointPrefill (session: Session) {
     return new Request(session)
       .setMethod('POST')
       .setResource('contactPointPrefill')
@@ -119,7 +119,7 @@ export class Internal extends Resource {
       .send();
   }
 
-  static getRankedRecipients (session, mode) {
+  static getRankedRecipients (session: Session, mode) {
     return new Request(session)
       .setMethod('GET')
       .setResource('getRankedRecipients', {
@@ -131,7 +131,7 @@ export class Internal extends Resource {
       .send();
   }
 
-  static getPresences (session) {
+  static getPresences (session: Session) {
     return new Request(session)
       .setMethod('GET')
       .setResource('getPresences')
@@ -139,7 +139,7 @@ export class Internal extends Resource {
       .send();
   }
 
-  static getRecentActivityInbox (session) {
+  static getRecentActivityInbox (session: Session) {
     return new Request(session)
       .setMethod('GET')
       .setResource('getRecentActivityInbox')
@@ -147,7 +147,7 @@ export class Internal extends Resource {
       .send();
   }
 
-  static getProfileNotice (session) {
+  static getProfileNotice (session: Session) {
     return new Request(session)
       .setMethod('GET')
       .setResource('getProfileNotice')
@@ -155,7 +155,7 @@ export class Internal extends Resource {
       .send();
   }
 
-  static getExploreFeed (session) {
+  static getExploreFeed (session: Session) {
     return new Request(session)
       .setMethod('GET')
       .setResource('exploreFeed', {
