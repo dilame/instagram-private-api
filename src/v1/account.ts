@@ -28,6 +28,7 @@ export class Account {
   }
 
   static async searchForUser(session: Session, username: string): Promise<User> {
+    username = username.toLowerCase();
     const accounts = await Account.search(session, username);
     const account = accounts.find(account => account.username === username);
     if (!account) throw new IGAccountNotFoundError();
