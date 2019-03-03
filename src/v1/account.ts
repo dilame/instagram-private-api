@@ -1,4 +1,5 @@
 import * as _ from 'lodash';
+import * as Bluebird from 'bluebird';
 import { plainToClass } from 'class-transformer';
 import { User } from '../models/user';
 import { Request, Session, IGAccountNotFoundError, RequestError } from '../core';
@@ -65,7 +66,7 @@ export class Account {
     return plainToClass(User, data.user as User);
   }
 
-  static editProfile(session: Session, settings: any): Promise<User> {
+  static editProfile(session: Session, settings: any): Bluebird<User> {
     settings = _.isObject(settings) ? settings : {};
     if (_.isString(settings.phoneNumber)) settings.phone_number = settings.phoneNumber;
     if (_.isString(settings.fullName)) settings.first_name = settings.fullName;

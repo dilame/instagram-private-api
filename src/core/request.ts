@@ -284,7 +284,7 @@ export class Request {
     throw new Exceptions.RequestError(json);
   }
 
-  send(options = {}, attemps = 0) {
+  send(options = {}, attemps = 0): Bluebird<any> {
     return Bluebird.try(async () => {
       const rawResponse = await this.sendAndGetRaw(options);
       const parsedResponse = this.parseMiddleware(rawResponse);

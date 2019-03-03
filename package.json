@@ -25,6 +25,7 @@
     "test": "./node_modules/mocha/bin/mocha --inline-diffs --timeout 1000000 tests/run.js"
   },
   "dependencies": {
+    "@types/bluebird": "^3.5.26",
     "@types/chance": "^1.0.1",
     "@types/lodash": "^4.14.120",
     "@types/node": "^10.12.20",

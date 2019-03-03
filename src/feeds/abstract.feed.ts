@@ -63,7 +63,7 @@ export abstract class AbstractFeed<T> extends EventEmitter {
           if (this.parseErrorsMultiplier > parameters.maxErrors) throw new RequestsLimitError();
           return Bluebird.resolve([]).delay(parameters.pause * this.parseErrorsMultiplier);
         })
-        .then(response => {
+        .then((response: Array<any>) => {
           const results = response.filter(this.filter).map(this.map);
           if (_.isFunction(this.reduce)) this.allResults = this.reduce(this.allResults, results);
           this.totalCollected += response.length;
