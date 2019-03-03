@@ -1,10 +1,9 @@
-import { Session } from '../core/session';
-import { Request } from '../core/request';
+import { Request, Session } from '../core';
 import { Media } from '../models/media';
 import { plainToClass } from 'class-transformer';
 
 export class UserStoryFeed {
-  constructor(public session: Session, public userIds: string[]) {
+  constructor(public session: Session, public userIds: (string | number)[]) {
   }
 
   async get(): Promise<Media[]> {
@@ -17,6 +16,6 @@ export class UserStoryFeed {
       })
       .signPayload()
       .send();
-    return plainToClass(Media, data.reels[this.userIds].items);
+    return plainToClass(Media, data.reels);
   }
 }
