@@ -94,8 +94,14 @@ export class Media extends Resource {
     if (!width) width = 800;
     if (!height) height = 800;
     if (!userTags) userTags = {};
-    if (!location) location = {};
     const CROP = 1;
+    let geotag_enabled = false
+    if (!location){
+      location = {};
+      geotag_enabled = true
+    }
+    
+    
     return session
       .getAccountId()
       .then(accountId => {
@@ -106,7 +112,7 @@ export class Media extends Resource {
           usertags: JSON.stringify(userTags),
           _uid: accountId.toString(),
           device: session.device.payload,
-          geotag_enabled: true,
+          geotag_enabled: geotag_enabled,
           location: JSON.stringify(location),
           edits: {
             crop_original_size: ['$width', '$height'],
