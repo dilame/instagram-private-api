@@ -95,10 +95,10 @@ export class Media extends Resource {
     if (!height) height = 800;
     if (!userTags) userTags = {};
     const CROP = 1;
-    let geotag_enabled = false
+    let geotag_enabled = true
     if (!location){
       location = {};
-      geotag_enabled = true
+      geotag_enabled = false
     }
     
     
