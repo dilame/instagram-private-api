@@ -290,7 +290,7 @@ export class Request {
     throw new Exceptions.RequestError(json);
   }
 
-  send(options = {}, attemps = 0): Bluebird<any> {
+  send(options = {}, attempts = 0): Bluebird<any> {
     return Bluebird.try(async () => {
       const rawResponse = await this.sendAndGetRaw(options);
       this.session.requestEnd$.next(rawResponse);
@@ -307,8 +307,8 @@ export class Request {
         const response = err.response;
         if (response.statusCode === 404) throw new Exceptions.NotFoundError(response);
         if (response.statusCode >= 500) {
-          if (attemps++ <= this.attempts) {
-            return this.send(options, attemps);
+          if (attempts++ <= this.attempts) {
+            return this.send(options, attempts);
           } else {
             throw new Exceptions.ParseError(response, this);
           }
