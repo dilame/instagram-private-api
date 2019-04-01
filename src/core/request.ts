@@ -8,6 +8,8 @@ import * as CONSTANTS from '../constants/constants';
 import { Session } from './session';
 import { Device } from './devices/device';
 import { Helpers } from '../helpers';
+import { plainToClass } from 'class-transformer';
+import { CheckpointResponse } from '../responses';
 
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 
@@ -269,7 +271,11 @@ export class Request {
     response = this.parseMiddleware(response);
     const json = response.body;
     if (json.spam) throw new Exceptions.ActionSpamError(json);
-    if (json.message === 'challenge_required') throw new Exceptions.CheckpointError(json, this.session);
+    if (json.message === 'challenge_required') {
+      const checkpointResponse = plainToClass(CheckpointResponse, json as CheckpointResponse);
+      this.session.checkpoint$.next(checkpointResponse);
+      throw new Exceptions.CheckpointError(checkpointResponse, this.session);
+    }
     if (json.message === 'login_required')
       throw new Exceptions.AuthenticationError('Login required to process this request');
     if (json.error_type === 'sentry_block') throw new Exceptions.SentryBlockError(json);
@@ -287,6 +293,7 @@ export class Request {
   send(options = {}, attempts = 0): Bluebird<any> {
     return Bluebird.try(async () => {
       const rawResponse = await this.sendAndGetRaw(options);
+      this.session.requestEnd$.next(rawResponse);
       const parsedResponse = this.parseMiddleware(rawResponse);
       const json = parsedResponse.body;
       if (_.isObject(json) && json.status === 'ok') return _.omit(parsedResponse.body, 'status');
