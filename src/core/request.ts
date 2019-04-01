@@ -1,7 +1,6 @@
 import * as _ from 'lodash';
 import * as Bluebird from 'bluebird';
 import * as request from 'request-promise';
-import * as JSONbig from 'json-bigint';
 import * as ProxyAgent from 'proxy-agent';
 import * as Exceptions from './exceptions';
 import * as routes from './routes';
@@ -17,7 +16,7 @@ export class Request {
   _request: any;
   protected _resource: any;
   private _signData: boolean;
-  private attempts = 2;
+  private attempts = 1;
 
   constructor(session: Session) {
     this._url = null;
@@ -256,9 +255,10 @@ export class Request {
       return response;
     }
     try {
-      // JSONbig.parse stores big numbers with bignumber.js library
-      // This is a non-standard way, so we need to perform such transformations to get large numbers as strings
-      response.body = JSON.parse(JSON.stringify(JSONbig.parse(response.body)));
+      // Sometimes we have numbers greater than Number.MAX_SAFE_INTEGER in json response
+      // To handle it we just wrap numbers with length > 15 it double quotes to get strings instead
+      const bigIntToString = /([\[:])?([\d.]{15,})([,}\]])/gi;
+      response.body = JSON.parse(response.body.replace(bigIntToString, `$1"$2"$3`));
       return response;
     } catch (err) {
       throw new Exceptions.ParseError(response, this);
