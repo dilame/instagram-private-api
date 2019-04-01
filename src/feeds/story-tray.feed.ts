@@ -1,5 +1,5 @@
 import { SUPPORTED_CAPABILITIES } from '../constants/constants';
-import { StoryTray } from '../models/story-tray';
+import { StoryTrayResponse } from '../responses/story-tray.response';
 import { plainToClass } from 'class-transformer';
 import { Request } from '../core/request';
 
@@ -19,6 +19,6 @@ export class StoryTrayFeed {
         supported_capabilities_new: JSON.stringify(SUPPORTED_CAPABILITIES),
       })
       .send();
-    return plainToClass(StoryTray, tray);
+    return plainToClass(StoryTrayResponse, tray);
   }
 }
