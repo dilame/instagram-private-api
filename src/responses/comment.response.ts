@@ -1,8 +1,8 @@
-import { User } from './user';
+import { UserResponse } from './user.response';
 import { Expose, Type } from 'class-transformer';
-import { AbstractModel } from './abstract.model';
+import { Response } from './response';
 
-export class Comment extends AbstractModel {
+export class CommentResponse extends Response {
   pk: number | string;
   user_id: number;
   text: string;
@@ -12,8 +12,8 @@ export class Comment extends AbstractModel {
   content_type: string;
   status: string;
   bit_flags: number;
-  @Type(() => User)
-  user: User;
+  @Type(() => UserResponse)
+  user: UserResponse;
   did_report_as_spam: boolean;
   share_enabled: boolean;
   media_id: number | string;

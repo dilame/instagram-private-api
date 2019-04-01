@@ -1,14 +1,14 @@
 import { plainToClass } from 'class-transformer';
 import { AbstractFeed } from './abstract.feed';
-import { Media } from '../models/media';
+import { MediaResponse } from '../responses/media.response';
 import { Request } from '../core/request';
 
-export class SavedMediaFeed extends AbstractFeed<Media> {
+export class SavedMediaFeed extends AbstractFeed<MediaResponse> {
   constructor(session, public limit) {
     super(session);
   }
 
-  async get(): Promise<Media[]> {
+  async get(): Promise<MediaResponse[]> {
     const data = await new Request(this.session)
       .setMethod('POST')
       .setResource('savedFeed', {
@@ -22,7 +22,7 @@ export class SavedMediaFeed extends AbstractFeed<Media> {
     if (this.moreAvailable && data.next_max_id) {
       this.setCursor(data.next_max_id);
     }
-    return plainToClass(Media, data.items.map(i => i.media));
+    return plainToClass(MediaResponse, data.items.map(i => i.media));
   }
 }
 

@@ -1,9 +1,9 @@
 import { plainToClass } from 'class-transformer';
 import { AbstractFeed } from './abstract.feed';
 import { MediaUnavailableError, Request, Session } from '../core';
-import { Comment } from '../models/comment';
+import { CommentResponse } from '../responses/comment.response';
 
-export class MediaCommentsFeed extends AbstractFeed<Comment> {
+export class MediaCommentsFeed extends AbstractFeed<CommentResponse> {
   cursorType = 'minId';
 
   constructor(session: Session, public mediaId) {
@@ -37,6 +37,6 @@ export class MediaCommentsFeed extends AbstractFeed<Comment> {
     if (this.moreAvailable) {
       this.cursorType === 'minId' ? this.setCursor(data.next_min_id) : this.setCursor(data.next_max_id);
     }
-    return plainToClass(Comment, data.comments);
+    return plainToClass(CommentResponse, data.comments);
   }
 }

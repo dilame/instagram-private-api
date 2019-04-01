@@ -1,5 +1,5 @@
 import { plainToClass } from 'class-transformer';
-import { User } from '../models/user';
+import { UserResponse } from '../responses/user.response';
 import { Request } from '../core/request';
 import { Helpers } from '../helpers';
 
@@ -158,10 +158,10 @@ class Thread extends Resource {
         timestamp: parseInt(parseInt(val.timestamp) / 1000),
       };
     });
-    hash.inviter = plainToClass(User, json.inviter);
+    hash.inviter = plainToClass(UserResponse, json.inviter);
     this.items = _.map(json.items, item => new ThreadItem(that.session, item));
-    this.accounts = plainToClass(User, json.users);
-    this.leftUsers = plainToClass(User, json.left_users);
+    this.accounts = plainToClass(UserResponse, json.users);
+    this.leftUsers = plainToClass(UserResponse, json.left_users);
     return hash;
   }
 

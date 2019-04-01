@@ -1,5 +1,5 @@
 import { plainToClass } from 'class-transformer';
-import { User } from '../models/user';
+import { UserResponse } from '../responses/user.response';
 
 const _ = require('lodash');
 const Resource = require('./resource');
@@ -40,7 +40,7 @@ class ThreadItem extends Resource {
       hash.actionLog = json.action_log;
     }
     if (hash.type === 'profile') {
-      this.profile = plainToClass(User, json.profile);
+      this.profile = plainToClass(UserResponse, json.profile);
       hash.profileMediaPreview = _.map(json.preview_medias || [], medium => ({
         id: medium.id.toString(),
         images: medium.image_versions2.candidates,
