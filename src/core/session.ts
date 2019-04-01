@@ -1,3 +1,4 @@
+import { Subject } from 'rxjs';
 import * as _ from 'lodash';
 import * as Chance from 'chance';
 import * as CONSTANTS from '../constants/constants';
@@ -9,7 +10,7 @@ import { InboxFeed, StoryTrayFeed, TimelineFeed } from '../feeds';
 import { Request } from './request';
 import { Account } from '../v1/account';
 import { Relationship } from '../v1/relationship';
-import { CookieStorage } from './cookies';
+import { CookieMemoryStorage, CookieStorage } from './cookies';
 import { CookieJar } from 'tough-cookie';
 import {
   AccountBannedError,
@@ -18,13 +19,17 @@ import {
   CookieNotValidError,
   RequestError,
 } from './exceptions';
+import { CheckpointResponse } from '../responses';
 
 export class Session {
-  private jar: any;
+  public requestEnd$ = new Subject();
+  public checkpoint$ = new Subject<CheckpointResponse>();
   public loginAttemptCount = 0;
-  constructor(public device: Device, public cookieStore: CookieStorage, proxy?: string) {
+  private jar: any;
+
+  constructor(public device: Device, public cookieStore: CookieStorage = new CookieMemoryStorage(), proxy: string = null) {
     this.jar = Request.jar(cookieStore.store);
-    if (_.isString(proxy) && !_.isEmpty(proxy)) this.proxyUrl = proxy;
+    this.proxyUrl = proxy;
   }
 
   private _proxyUrl: string;
@@ -77,14 +82,24 @@ export class Session {
   /**
    *  @deprecated Use Session instance methods for login instead of static
    */
-  static create(device: Device, storage: CookieStorage, username: string, password: string, proxy?: string): Bluebird<Session> {
+  static create(
+    device: Device,
+    storage: CookieStorage,
+    username: string,
+    password: string,
+    proxy?: string,
+  ): Bluebird<Session> {
     const session = new Session(device, storage);
     if (!_.isEmpty(proxy)) session.proxyUrl = proxy;
-    return session.getAccountId()
-      .then(() => session)
-      // We either not have valid cookes or authentication is not fain!
-      .catch(CookieNotValidError, () => Session.login(session, username, password));
+    return (
+      session
+        .getAccountId()
+        .then(() => session)
+        // We either not have valid cookes or authentication is not fain!
+        .catch(CookieNotValidError, () => Session.login(session, username, password))
+    );
   }
+
   /**
    *  @deprecated Use Session instance methods for login instead of static
    */
@@ -95,7 +110,7 @@ export class Session {
       // Call login flow after returning the result
       _.defer(async () => await session.loginFlow());
       return session;
-    })
+    });
   }
 
   setDevice(device: Device) {
@@ -146,15 +161,14 @@ export class Session {
       })
       .signPayload()
       .send()
-      .tap(() => this.loginAttemptCount = 0)
+      .tap(() => (this.loginAttemptCount = 0))
       .catch(CheckpointError, async error => {
         // This situation is not really obvious,
         // but even if you got checkpoint error (aka captcha or phone)
         // verification, it is still an valid session unless `sessionid` missing
-        await this.getAccountId()
-          .catch(CookieNotValidError, () => {
-            throw error;
-          });
+        await this.getAccountId().catch(CookieNotValidError, () => {
+          throw error;
+        });
         return this;
       })
       .catch(RequestError, error => {
@@ -210,6 +224,6 @@ export class Session {
   }
 
   async deserializeCookies(cookies: string) {
-    this.jar._jar = await Bluebird.fromCallback(cb => CookieJar.deserialize(cookies, this.cookieStore.store, cb))
+    this.jar._jar = await Bluebird.fromCallback(cb => CookieJar.deserialize(cookies, this.cookieStore.store, cb));
   }
 }
