@@ -1,6 +1,8 @@
 import * as _ from 'lodash';
 import { CustomError } from 'ts-custom-error';
 import routes = require('./routes');
+import { CheckpointResponse } from '../responses';
+import { Session } from './session';
 
 // Basic error
 export class APIError extends CustomError {
@@ -75,15 +77,14 @@ export class ActionSpamError extends APIError {
 }
 
 export class CheckpointError extends APIError {
-  constructor(public json, public session) {
+  constructor(public json: CheckpointResponse, public session: Session) {
     super('Instagram call checkpoint for this action!');
   }
 
   get url() {
-    const json = this.json;
-    if (_.isString(json.checkpoint_url)) return json.checkpoint_url;
-    if (_.isObject(json.checkpoint) && _.isString(json.checkpoint.url)) return json.checkpoint.url;
-    if (_.isObject(json.challenge) && _.isString(json.challenge.url)) return json.challenge.url;
+    if (_.isObject(this.json.challenge) && _.isString(this.json.challenge.url)) {
+      return this.json.challenge.url;
+    }
     return routes.getWebUrl('challenge');
   }
 

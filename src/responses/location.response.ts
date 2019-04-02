@@ -1,7 +1,7 @@
-import { AbstractModel } from './abstract.model';
+import { InstagramResponse } from './instagram.response';
 import { Type } from 'class-transformer';
 
-export class Location extends AbstractModel {
+export class LocationResponse extends InstagramResponse {
   pk: string | number;
   name: string;
   address: string;
@@ -11,6 +11,6 @@ export class Location extends AbstractModel {
   lat: number;
   external_source: string;
   facebook_places_id: string | number;
-  @Type(() => Location)
-  location_dict: Location;
+  @Type(() => LocationResponse)
+  location_dict: LocationResponse;
 }

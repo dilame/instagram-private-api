@@ -1,5 +1,5 @@
 import { plainToClass } from 'class-transformer';
-import { User } from '../models/user';
+import { UserResponse } from '../responses/user.response';
 import { Request } from '../core/request';
 import { Helpers } from '../helpers';
 
@@ -20,7 +20,7 @@ export default (session, query) =>
     )
     .then(json => {
       const users = json.users.map(user => ({
-        user: plainToClass(User, user.user),
+        user: plainToClass(UserResponse, user.user),
         position: user.position,
       }));
       const places = json.places.map(place => ({

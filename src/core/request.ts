@@ -1,7 +1,6 @@
 import * as _ from 'lodash';
 import * as Bluebird from 'bluebird';
 import * as request from 'request-promise';
-import * as JSONbig from 'json-bigint';
 import * as ProxyAgent from 'proxy-agent';
 import * as Exceptions from './exceptions';
 import * as routes from './routes';
@@ -9,6 +8,8 @@ import * as CONSTANTS from '../constants/constants';
 import { Session } from './session';
 import { Device } from './devices/device';
 import { Helpers } from '../helpers';
+import { plainToClass } from 'class-transformer';
+import { CheckpointResponse } from '../responses';
 
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 
@@ -17,7 +18,7 @@ export class Request {
   _request: any;
   protected _resource: any;
   private _signData: boolean;
-  private attempts = 2;
+  private attempts = 1;
 
   constructor(session: Session) {
     this._url = null;
@@ -256,9 +257,10 @@ export class Request {
       return response;
     }
     try {
-      // JSONbig.parse stores big numbers with bignumber.js library
-      // This is a non-standard way, so we need to perform such transformations to get large numbers as strings
-      response.body = JSON.parse(JSON.stringify(JSONbig.parse(response.body)));
+      // Sometimes we have numbers greater than Number.MAX_SAFE_INTEGER in json response
+      // To handle it we just wrap numbers with length > 15 it double quotes to get strings instead
+      const bigIntToString = /([\[:])?([\d.]{15,})([,}\]])/gi;
+      response.body = JSON.parse(response.body.replace(bigIntToString, `$1"$2"$3`));
       return response;
     } catch (err) {
       throw new Exceptions.ParseError(response, this);
@@ -269,7 +271,11 @@ export class Request {
     response = this.parseMiddleware(response);
     const json = response.body;
     if (json.spam) throw new Exceptions.ActionSpamError(json);
-    if (json.message === 'challenge_required') throw new Exceptions.CheckpointError(json, this.session);
+    if (json.message === 'challenge_required') {
+      const checkpointResponse = plainToClass(CheckpointResponse, json as CheckpointResponse);
+      this.session.checkpoint$.next(checkpointResponse);
+      throw new Exceptions.CheckpointError(checkpointResponse, this.session);
+    }
     if (json.message === 'login_required')
       throw new Exceptions.AuthenticationError('Login required to process this request');
     if (json.error_type === 'sentry_block') throw new Exceptions.SentryBlockError(json);
@@ -287,6 +293,7 @@ export class Request {
   send(options = {}, attempts = 0): Bluebird<any> {
     return Bluebird.try(async () => {
       const rawResponse = await this.sendAndGetRaw(options);
+      this.session.requestEnd$.next(rawResponse);
       const parsedResponse = this.parseMiddleware(rawResponse);
       const json = parsedResponse.body;
       if (_.isObject(json) && json.status === 'ok') return _.omit(parsedResponse.body, 'status');

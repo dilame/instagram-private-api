@@ -1,5 +1,5 @@
 import { plainToClass } from 'class-transformer';
-import { User } from '../models/user';
+import { UserResponse } from '../responses/user.response';
 import { Request, Session } from '../core';
 import { Helpers } from '../helpers';
 
@@ -192,7 +192,7 @@ export class AccountPhoneCreator extends AccountCreator {
       })
       .then(json => {
         if (!json.account_created) throw new Exceptions.AccountRegistrationError(null, json);
-        return plainToClass(User, json.created_user);
+        return plainToClass(UserResponse, json.created_user);
       });
   }
 }
@@ -253,7 +253,7 @@ export class AccountEmailCreator extends AccountCreator {
       .send()
       .then(json => {
         if (!json.account_created) throw new Exceptions.AccountRegistrationError(null, json);
-        return plainToClass(User, json.created_user);
+        return plainToClass(UserResponse, json.created_user);
       });
   }
 }

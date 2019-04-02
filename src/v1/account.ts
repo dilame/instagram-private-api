@@ -1,20 +1,20 @@
 import * as _ from 'lodash';
 import * as Bluebird from 'bluebird';
 import { plainToClass } from 'class-transformer';
-import { User } from '../models/user';
+import { UserResponse } from '../responses/user.response';
 import { Request, Session, IGAccountNotFoundError, RequestError } from '../core';
 import { Helpers } from '../helpers';
 
 export class Account {
-  static async getById(session: Session, id: string | number): Promise<User> {
+  static async getById(session: Session, id: string | number): Promise<UserResponse> {
     const data = await new Request(session)
       .setMethod('GET')
       .setResource('userInfo', { id })
       .send();
-    return plainToClass(User, data.user as User);
+    return plainToClass(UserResponse, data.user as UserResponse);
   }
 
-  static async search(session: Session, username: string): Promise<User[]> {
+  static async search(session: Session, username: string): Promise<UserResponse[]> {
     const uid = await session.getAccountId();
     const rankToken = Helpers.buildRankToken(uid);
     const data = await new Request(session)
@@ -24,10 +24,10 @@ export class Account {
         rankToken,
       })
       .send();
-    return plainToClass(User, data.users);
+    return plainToClass(UserResponse, data.users);
   }
 
-  static async searchForUser(session: Session, username: string): Promise<User> {
+  static async searchForUser(session: Session, username: string): Promise<UserResponse> {
     username = username.toLowerCase();
     const accounts = await Account.search(session, username);
     const account = accounts.find(account => account.username === username);
@@ -35,7 +35,7 @@ export class Account {
     return account;
   }
 
-  static async setProfilePicture(session: Session, streamOrPath: any): Promise<User> {
+  static async setProfilePicture(session: Session, streamOrPath: any): Promise<UserResponse> {
     const stream = Helpers.pathToStream(streamOrPath);
     const request = new Request(session);
     const data = await request
@@ -54,20 +54,20 @@ export class Account {
         return opts;
       })
       .send();
-    return plainToClass(User, data.user as User);
+    return plainToClass(UserResponse, data.user as UserResponse);
   }
 
-  static async setPrivacy(session: Session, pri: boolean | number | string): Promise<User> {
+  static async setPrivacy(session: Session, pri: boolean | number | string): Promise<UserResponse> {
     const data = await new Request(session)
       .setMethod('POST')
       .setResource(pri ? 'setAccountPrivate' : 'setAccountPublic')
       .generateUUID()
       .signPayload()
       .send();
-    return plainToClass(User, data.user as User);
+    return plainToClass(UserResponse, data.user as UserResponse);
   }
 
-  static editProfile(session: Session, settings: any): Bluebird<User> {
+  static editProfile(session: Session, settings: any): Bluebird<UserResponse> {
     settings = _.isObject(settings) ? settings : {};
     if (_.isString(settings.phoneNumber)) settings.phone_number = settings.phoneNumber;
     if (_.isString(settings.fullName)) settings.first_name = settings.fullName;
@@ -88,7 +88,7 @@ export class Account {
           .send(),
       )
       .then(json => {
-        const account = plainToClass(User, json.user as User);
+        const account = plainToClass(UserResponse, json.user as UserResponse);
         return this.getById(session, account.id);
       })
       .catch(e => {
@@ -101,11 +101,11 @@ export class Account {
       });
   }
 
-  static async showProfile(session: Session): Promise<User> {
+  static async showProfile(session: Session): Promise<UserResponse> {
     const data = await new Request(session)
       .setMethod('GET')
       .setResource('currentAccount')
       .send();
-    return plainToClass(User, data.user as User);
+    return plainToClass(UserResponse, data.user as UserResponse);
   }
 }

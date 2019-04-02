@@ -1,9 +1,9 @@
 import { Exclude, Expose, Type } from 'class-transformer';
-import { FriendshipStatus } from './friendship-status';
-import { AbstractModel } from './abstract.model';
-import { ImageVersion } from './image-version';
+import { FriendshipStatusResponse } from './friendship-status.response';
+import { InstagramResponse } from './instagram.response';
+import { ImageVersionResponse } from './image-version.response';
 
-export class User extends AbstractModel {
+export class UserResponse extends InstagramResponse {
   pk: number | string;
   instagram_id: number | string;
   username: string;
@@ -98,12 +98,12 @@ export class User extends AbstractModel {
   recently_bestied_by_count: number;
   auto_expand_chaining: boolean;
   highlight_reshare_disabled: boolean;
-  @Type(() => FriendshipStatus)
-  friendship_status: FriendshipStatus;
-  @Type(() => ImageVersion)
-  hd_profile_pic_versions: ImageVersion[];
-  @Type(() => ImageVersion)
-  hd_profile_pic_url_info: ImageVersion;
+  @Type(() => FriendshipStatusResponse)
+  friendship_status: FriendshipStatusResponse;
+  @Type(() => ImageVersionResponse)
+  hd_profile_pic_versions: ImageVersionResponse[];
+  @Type(() => ImageVersionResponse)
+  hd_profile_pic_url_info: ImageVersionResponse;
   @Exclude()
   _id: number | string;
 

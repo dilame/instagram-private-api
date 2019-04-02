@@ -3,15 +3,15 @@ import { plainToClass } from 'class-transformer';
 import { AbstractFeed } from './abstract.feed';
 import { Request } from '../core/request';
 import { OnlyRankedItemsError, ParseError, PlaceNotFound } from '../core/exceptions';
-import { Media } from '../models/media';
+import { MediaResponse } from '../responses/media.response';
 
 
-export class LocationMediaFeed extends AbstractFeed<Media> {
+export class LocationMediaFeed extends AbstractFeed<MediaResponse> {
   constructor(session, public locationId: string | number, public limit = Infinity) {
     super(session);
   }
 
-  async get(): Promise<Media[]> {
+  async get(): Promise<MediaResponse[]> {
     const data = await new Request(this.session)
       .setMethod('GET')
       .setResource('locationFeed', {
@@ -28,6 +28,6 @@ export class LocationMediaFeed extends AbstractFeed<Media> {
     if (!this.moreAvailable && !_.isEmpty(data.ranked_items) && !this.getCursor())
       throw new OnlyRankedItemsError();
     if (this.moreAvailable) this.setCursor(data.next_max_id);
-    return plainToClass(Media, data.items);
+    return plainToClass(MediaResponse, data.items);
   }
 }

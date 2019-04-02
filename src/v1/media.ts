@@ -3,7 +3,7 @@ const Promise = require('bluebird');
 const _ = require('lodash');
 
 import { plainToClass } from 'class-transformer';
-import { User } from '../models/user';
+import { UserResponse } from '../responses/user.response';
 import { Request } from '../core/request';
 import Resource  from './resource';
 import pruned  from './json-pruned';
@@ -41,7 +41,7 @@ export class Media extends Resource {
       .setMethod('GET')
       .setResource('mediaLikes', { mediaId })
       .send();
-    return plainToClass(User, data.users);
+    return plainToClass(UserResponse, data.users);
   }
 
   static delete (session, mediaId) {
@@ -404,7 +404,7 @@ export class Media extends Resource {
     this.previewComments = _.map(json.preview_comments, comment => new Comment(that.session, comment));
     // backward compability
     this.comments = this.previewComments;
-    if (_.isPlainObject(json.user)) this.account = plainToClass(User, json.user);
+    if (_.isPlainObject(json.user)) this.account = plainToClass(UserResponse, json.user);
     return hash;
   }
 
