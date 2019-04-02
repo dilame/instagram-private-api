@@ -1,5 +1,5 @@
 import { plainToClass } from 'class-transformer';
-import { User } from '../models/user';
+import { UserResponse } from '../responses/user.response';
 import { Request } from '../core/request';
 
 const Resource = require('./resource');
@@ -79,7 +79,7 @@ class Comment extends Resource {
     hash.created = json.created_at;
     hash.status = (json.status || 'unknown').toLowerCase();
     hash.id = (json.pk || json.id).toString();
-    this.account = plainToClass(User, json.user);
+    this.account = plainToClass(UserResponse, json.user);
     return hash;
   }
 

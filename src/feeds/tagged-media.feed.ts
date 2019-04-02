@@ -1,12 +1,12 @@
 import * as _ from 'lodash';
 import { plainToClass } from 'class-transformer';
 import { AbstractFeed } from './abstract.feed';
-import { Media } from '../models/media';
+import { MediaResponse } from '../responses/media.response';
 import { Request } from '../core/request';
 import { OnlyRankedItemsError } from '../core/exceptions';
 
 
-export class TaggedMediaFeed extends AbstractFeed<Media> {
+export class TaggedMediaFeed extends AbstractFeed<MediaResponse> {
   constructor(session, public tag: string, public limit = Infinity) {
     super(session);
   }
@@ -25,16 +25,16 @@ export class TaggedMediaFeed extends AbstractFeed<Media> {
     return data;
   }
 
-  async get(): Promise<Media[]> {
+  async get(): Promise<MediaResponse[]> {
     const data = await this.getRawResponse();
     if (!this.moreAvailable && !_.isEmpty(data.ranked_items) && !this.getCursor())
       throw new OnlyRankedItemsError();
-    return plainToClass(Media, data.items);
+    return plainToClass(MediaResponse, data.items);
   }
 
-  async getRankedItems(): Promise<Media[]> {
+  async getRankedItems(): Promise<MediaResponse[]> {
     const data = await this.getRawResponse();
-    return plainToClass(Media, data.ranked_items);
+    return plainToClass(MediaResponse, data.ranked_items);
   }
 }
 

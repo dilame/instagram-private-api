@@ -1,10 +1,10 @@
 import { AbstractFeed } from './abstract.feed';
 import { Request } from '../core/request';
 import { plainToClass } from 'class-transformer';
-import { User } from '../models/user';
+import { UserResponse } from '../responses/user.response';
 
 // Only works with the stories of the logged user
-export class StoryViewersFeed extends AbstractFeed<User> {
+export class StoryViewersFeed extends AbstractFeed<UserResponse> {
   constructor(session, public mediaId) {
     super(session);
   }
@@ -20,6 +20,6 @@ export class StoryViewersFeed extends AbstractFeed<User> {
     const nextMaxId = data.next_max_id ? data.next_max_id.toString() : data.next_max_id;
     this.moreAvailable = !!nextMaxId;
     if (this.moreAvailable) this.setCursor(nextMaxId);
-    return plainToClass(User, data.users);
+    return plainToClass(UserResponse, data.users);
   }
 }

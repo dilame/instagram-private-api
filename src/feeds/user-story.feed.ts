@@ -1,12 +1,12 @@
 import { Request, Session } from '../core';
-import { Media } from '../models/media';
+import { MediaResponse } from '../responses/media.response';
 import { plainToClass } from 'class-transformer';
 
 export class UserStoryFeed {
   constructor(public session: Session, public userIds: (string | number)[]) {
   }
 
-  async get(): Promise<Media[]> {
+  async get(): Promise<MediaResponse[]> {
     const data = await new Request(this.session)
       .setMethod('POST')
       .setResource('userStory')
@@ -16,6 +16,6 @@ export class UserStoryFeed {
       })
       .signPayload()
       .send();
-    return plainToClass(Media, data.reels);
+    return plainToClass(MediaResponse, data.reels);
   }
 }

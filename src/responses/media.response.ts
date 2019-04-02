@@ -1,12 +1,12 @@
 import { Expose, Transform, Type } from 'class-transformer';
-import { User } from './user';
-import { Comment } from './comment';
-import { ImageVersion } from './image-version';
-import { Location } from './location';
-import { VideoVersion } from './video-version';
-import { AbstractModel } from './abstract.model';
+import { UserResponse } from './user.response';
+import { CommentResponse } from './comment.response';
+import { ImageVersionResponse } from './image-version.response';
+import { LocationResponse } from './location.response';
+import { VideoVersionResponse } from './video-version.response';
+import { InstagramResponse } from './instagram.response';
 
-export class Media extends AbstractModel {
+export class MediaResponse extends InstagramResponse {
   taken_at: number;
   pk: string;
   id: string;
@@ -21,20 +21,20 @@ export class Media extends AbstractModel {
   comment_threading_enabled: boolean;
   has_more_comments: boolean;
   max_num_visible_preview_comments: number;
-  @Type(() => Comment)
-  preview_comments: Comment[];
+  @Type(() => CommentResponse)
+  preview_comments: CommentResponse[];
   can_view_more_preview_comments: number;
   comment_count: number;
   inline_composer_display_condition: string;
   inline_composer_imp_trigger_time: number;
   carousel_media_count?: number;
-  @Type(() => Media)
-  carousel_media: Media[];
-  @Type(() => ImageVersion)
+  @Type(() => MediaResponse)
+  carousel_media: MediaResponse[];
+  @Type(() => ImageVersionResponse)
   @Transform(image_versions2 => image_versions2.candidates, { toClassOnly: true })
-  image_versions2: ImageVersion[];
-  @Type(() => VideoVersion)
-  video_versions: VideoVersion[];
+  image_versions2: ImageVersionResponse[];
+  @Type(() => VideoVersionResponse)
+  video_versions: VideoVersionResponse[];
   has_audio: boolean;
   video_duration: number;
   force_overlay: boolean;
@@ -42,22 +42,22 @@ export class Media extends AbstractModel {
   overlay_text: string;
   overlay_title: string;
   overlay_subtitle: string;
-  @Type(() => Location)
-  location: Location;
+  @Type(() => LocationResponse)
+  location: LocationResponse;
   lng: number;
   lat: number;
   caption_position: number;
   is_reel_media: boolean;
-  @Type(() => User)
-  user: User;
-  @Type(() => Comment)
-  caption: Comment | string | null;
+  @Type(() => UserResponse)
+  user: UserResponse;
+  @Type(() => CommentResponse)
+  caption: CommentResponse | string | null;
   caption_is_edited: boolean;
   like_count: number;
   has_liked: boolean;
   top_likers: string[];
-  @Type(() => User)
-  likers: User[];
+  @Type(() => UserResponse)
+  likers: UserResponse[];
   direct_reply_to_author_enabled: boolean;
   photo_of_you: boolean;
   can_viewer_save: boolean;

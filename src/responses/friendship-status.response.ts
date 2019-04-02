@@ -1,6 +1,6 @@
-import { AbstractModel } from './abstract.model';
+import { InstagramResponse } from './instagram.response';
 
-export class FriendshipStatus extends AbstractModel {
+export class FriendshipStatusResponse extends InstagramResponse {
   muting: boolean;
   is_muting_reel: boolean;
   following: boolean;

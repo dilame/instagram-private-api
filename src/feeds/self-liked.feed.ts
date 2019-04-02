@@ -1,9 +1,9 @@
 import { plainToClass } from 'class-transformer';
 import { AbstractFeed } from './abstract.feed';
 import { Request } from '../core';
-import { Media } from '../models/media';
+import { MediaResponse } from '../responses/media.response';
 
-export class SelfLikedFeed extends AbstractFeed<Media> {
+export class SelfLikedFeed extends AbstractFeed<MediaResponse> {
   constructor(session, public limit) {
     super(session);
     this.limit = parseInt(limit) || null;
@@ -19,6 +19,6 @@ export class SelfLikedFeed extends AbstractFeed<Media> {
     const nextMaxId = data.next_max_id ? data.next_max_id.toString() : data.next_max_id;
     this.moreAvailable = data.more_available && !!nextMaxId;
     if (this.moreAvailable) this.setCursor(nextMaxId);
-    return plainToClass(Media, data.items);
+    return plainToClass(MediaResponse, data.items);
   }
 }

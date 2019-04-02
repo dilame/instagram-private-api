@@ -1,5 +1,5 @@
 import { plainToClass } from 'class-transformer';
-import { User } from '../models/user';
+import { UserResponse } from '../responses/user.response';
 import { Request } from '../core/request';
 import { Helpers } from '../helpers';
 
@@ -19,7 +19,7 @@ module.exports = (session, inSingup) =>
     .then(json => {
       const items = _.property('suggested_users.suggestions')(json) || [];
       return _.map(items, item => ({
-        account: plainToClass(User, item.user),
+        account: plainToClass(UserResponse, item.user),
         mediaIds: item.media_ids,
       }));
     });

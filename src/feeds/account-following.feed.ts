@@ -1,9 +1,9 @@
 import { plainToClass } from 'class-transformer';
-import { User } from '../models/user';
+import { UserResponse } from '../responses/user.response';
 import { Request } from '../core/request';
 import { AbstractFeed } from './abstract.feed';
 
-export class AccountFollowingFeed extends AbstractFeed<User> {
+export class AccountFollowingFeed extends AbstractFeed<UserResponse> {
   constructor(session, public accountId, public limit = Infinity) {
     super(session);
   }
@@ -21,6 +21,6 @@ export class AccountFollowingFeed extends AbstractFeed<User> {
     if (this.moreAvailable) {
       this.setCursor(data.next_max_id);
     }
-    return plainToClass(User, data.users);
+    return plainToClass(UserResponse, data.users);
   }
 }

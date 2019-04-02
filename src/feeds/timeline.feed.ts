@@ -1,4 +1,4 @@
-import { Media } from '../models/media';
+import { MediaResponse } from '../responses/media.response';
 import { plainToClass } from 'class-transformer';
 import { AbstractFeed } from './abstract.feed';
 import { Request } from '../core/request';
@@ -7,12 +7,12 @@ interface TimelineFeedGetProps {
   is_pull_to_refresh?: boolean | null;
 }
 
-export class TimelineFeed extends AbstractFeed<Media> {
+export class TimelineFeed extends AbstractFeed<MediaResponse> {
   constructor(session, public limit = Infinity) {
     super(session);
   }
 
-  async get({ is_pull_to_refresh = null }: TimelineFeedGetProps): Promise<Media[]> {
+  async get({ is_pull_to_refresh = null }: TimelineFeedGetProps): Promise<MediaResponse[]> {
     const max_id = this.getCursor();
     let extra = {
       is_pull_to_refresh: '0',
@@ -68,6 +68,6 @@ export class TimelineFeed extends AbstractFeed<Media> {
     this.moreAvailable = data.more_available;
     const medias = data.feed_items.filter(m => m.media_or_ad).map(m => m.media_or_ad);
     if (this.moreAvailable) this.setCursor(data.next_max_id);
-    return plainToClass(Media, medias);
+    return plainToClass(MediaResponse, medias);
   }
 }

@@ -1,5 +1,5 @@
 import { plainToClass } from 'class-transformer';
-import { User } from '../models/user';
+import { UserResponse } from '../responses/user.response';
 import { Request } from '../core/request';
 import * as _ from 'lodash';
 import * as Resource from './resource';
@@ -117,7 +117,7 @@ export class Relationship extends Resource {
       .setResource('autocompleteUserList')
       .send()
       .then(json => {
-        json.accounts = plainToClass(User, json.users);
+        json.accounts = plainToClass(UserResponse, json.users);
         json.expires = parseInt(json.expires * 1000);
         return json;
       });
