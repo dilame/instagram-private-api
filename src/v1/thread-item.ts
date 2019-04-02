@@ -1,20 +1,16 @@
+import * as _ from 'lodash';
+import * as camelKeys from 'camelcase-keys';
 import { plainToClass } from 'class-transformer';
-import { UserResponse } from '../responses/user.response';
-
-const _ = require('lodash');
-const camelKeys = require('camelcase-keys');
-
-import { plainToClass } from 'class-transformer';
-import { User } from '../models/user';
-import Resource  from './resource';
-import {Media} from './media';
-import Location  from './location';
-import Link  from './link';
-import Placeholder  from './placeholder';
-import Hashtag  from './hashtag';
+import { UserResponse } from '../responses';
+import Resource from './resource';
+import { Media } from './media';
+import Location from './location';
+import Link from './link';
+import Placeholder from './placeholder';
+import Hashtag from './hashtag';
 
 class ThreadItem extends Resource {
-  parseParams (json) {
+  parseParams(json) {
     const hash = camelKeys(json);
     hash.id = json.item_id || json.id;
     hash.type = json.item_type;
@@ -65,7 +61,7 @@ class ThreadItem extends Resource {
     return hash;
   }
 
-  getParams () {
+  getParams() {
     const params = _.clone(this._params);
     if (params.type === 'link') params.link = this.link.params;
     if (params.type === 'placeholder') params.placeholder = this.placeholder.params;
