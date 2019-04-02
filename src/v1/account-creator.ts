@@ -1,5 +1,5 @@
 import { plainToClass } from 'class-transformer';
-import { UserResponse } from '../responses/user.response';
+import { UserResponse } from '../responses';
 import { Request, Session } from '../core';
 import { Helpers } from '../helpers';
 
@@ -102,11 +102,11 @@ export class AccountCreator {
       .spread(account => [account, discover(session, true)]);
   }
 
-  validate () {
+  async validate () {
     throw new Error('Please override this method in order to validate account');
   }
 
-  create () {
+  create (...args) {
     throw new Error('Please override this method in order to register account');
   }
 
