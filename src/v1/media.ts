@@ -89,14 +89,20 @@ export class Media extends Resource {
       });
   }
 
-  static configurePhoto (session, uploadId, caption, width, height, userTags) {
+  static configurePhoto (session, uploadId, caption, width, height, userTags, location) {
     if (_.isEmpty(uploadId)) throw new Error('Upload argument must be upload valid upload id');
     if (!caption) caption = '';
     if (!width) width = 800;
     if (!height) height = 800;
     if (!userTags) userTags = {};
-
     const CROP = 1;
+    let geotag_enabled = true
+    if (!location){
+      location = {};
+      geotag_enabled = false
+    }
+    
+    
     return session
       .getAccountId()
       .then(accountId => {
@@ -107,6 +113,8 @@ export class Media extends Resource {
           usertags: JSON.stringify(userTags),
           _uid: accountId.toString(),
           device: session.device.payload,
+          geotag_enabled: geotag_enabled,
+          location: JSON.stringify(location),
           edits: {
             crop_original_size: ['$width', '$height'],
             crop_center: ['$zero', '$negativeZero'],

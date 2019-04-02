@@ -37,7 +37,7 @@ export class Device {
     const chance = new Chance(username);
     this.deviceString = chance.pickone(devices);
     const id = chance.string({
-      pool: 'abcdefghijklmnopqrstuvwxyz0123456789',
+      pool: 'abcdef0123456789',
       length: 16,
     });
     this.id = `android-${id}`;
