@@ -4,8 +4,6 @@ const mkdirp = require('mkdirp');
 const support = require('./support');
 const _ = require('lodash');
 const fs = require('fs');
-const imageDiff = require('image-diff');
-const rp = require('request-promise');
 let session;
 let credentials; // [username, password, proxy]
 
@@ -213,55 +211,6 @@ describe('Sessions', () => {
         });
     });
 
-    it('should not be problem to upload profile picture', done => {
-      const device = new Client.Device(credentials[0]);
-      const storage = new Client.CookieMemoryStorage();
-      const catPath = `${__dirname}/cat.jpg`;
-      const catTmpPath = `${__dirname}/tmp/downloaded.jpg`;
-      const promise = Client.Session.create(
-        device,
-        storage,
-        credentials[0],
-        credentials[1],
-        credentials[2],
-      );
-      promise
-        .then(sessionInstance => {
-          sessionInstance.should.be.instanceOf(Client.Session);
-          return Client.Account.setProfilePicture(session, catPath);
-        })
-        .then(account => {
-          account.should.be.instanceOf(Client.Account);
-          const picture = account.params.picture;
-          return [rp.get(picture, { encoding: 'binary' }), account];
-        })
-        .spread(picture => {
-          fs.writeFileSync(
-            `${__dirname}/tmp/downloaded.jpg`,
-            picture,
-            'binary',
-          );
-          return new Promise((res, rej) => {
-            imageDiff.getFullResult(
-              {
-                actualImage: catTmpPath,
-                expectedImage: catPath,
-              },
-              (err, diff) => {
-                if (err) return rej(err);
-                return res(diff);
-              },
-            );
-          });
-        })
-        .then(diff => {
-          diff.percentage.should.be.below(0.1);
-          done();
-        })
-        .catch(reason => {
-          done(reason);
-        });
-    });
   });
 
   describe('Feeds', () => {
