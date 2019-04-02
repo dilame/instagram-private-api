@@ -6,7 +6,7 @@ const { Request } = require('../core/request');
 class QE extends Resource {
   // Lets fake this experiment bullshit
   static sync (session) {
-    const random = parseInt(Math.random() * 100) + 1;
+    const random = parseInt(`${Math.random() * 100}`) + 1;
     const experiments = _.sampleSize(CONSTANTS.EXPERIMENTS, random);
     return session.getAccountId().then(id =>
       new Request(session)
@@ -24,4 +24,4 @@ class QE extends Resource {
   }
 }
 
-module.exports = QE;
+export default QE;

@@ -3,14 +3,16 @@ import { Request } from '../core/request';
 
 const ThreadItem = require('../v1/thread-item');
 
-export class ThreadItemsFeed extends AbstractFeed {
+export class ThreadItemsFeed extends AbstractFeed<any> {
+  threadId: any;
+
   constructor (session, threadId, limit) {
     super(session);
     this.threadId = threadId;
     this.limit = parseInt(limit) || null;
   }
 
-  get () {
+  get (): any {
     return new Request(this.session)
       .setMethod('GET')
       .setResource('threadsShow', {

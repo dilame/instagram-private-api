@@ -1,13 +1,19 @@
 const errors = require('request-promise/errors');
 const Promise = require('bluebird');
 
-const { WebRequest } = require('../core/web-request');
-const { Request } = require('../core/request');
-const Exceptions = require('../core/exceptions');
+import { WebRequest } from '../core/web-request';
+import { Request } from '../core/request';
+import * as Exceptions from '../core/exceptions';
 
 const SHARED_JSON_REGEXP = /window._sharedData = (.*);<\/script>/i;
 
 export class Challenge {
+  _json: any;
+  _session: any;
+  _type: any;
+  _error: any;
+  apiUrl: any;
+
   constructor (session, type, error, json) {
     this._json = json;
     this._session = session;
@@ -233,6 +239,8 @@ export class Challenge {
 }
 
 export class PhoneVerificationChallenge extends Challenge {
+  submitPhone: any;
+
   constructor (session, type, checkpointError, json) {
     super(...arguments);
     this.submitPhone = json.step_name === 'submit_phone';

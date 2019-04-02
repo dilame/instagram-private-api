@@ -43,4 +43,4 @@ class InstagramResource extends EventEmitter {
   }
 }
 
-module.exports = InstagramResource;
+export default InstagramResource;

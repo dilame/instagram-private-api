@@ -1,4 +1,4 @@
-const InstagramV1 = {};
+const InstagramV1: any = {};
 
 InstagramV1.CONSTANTS = require('./constants/constants');
 InstagramV1.routes = require('./core/routes');
@@ -61,4 +61,4 @@ InstagramV1.Web.NotImplementedChallenge = challenge.NotImplementedChallenge;
 InstagramV1.Web.EmailVerificationChallenge = challenge.EmailVerificationChallenge;
 InstagramV1.Web.PhoneVerificationChallenge = challenge.PhoneVerificationChallenge;
 
-module.exports = InstagramV1;
+export default InstagramV1;

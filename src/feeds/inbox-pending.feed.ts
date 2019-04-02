@@ -4,7 +4,8 @@ import { Request } from '../core/request';
 const Thread = require('../v1/thread');
 
 
-export class InboxPendingFeed extends AbstractFeed {
+export class InboxPendingFeed extends AbstractFeed<any> {
+  pendingRequestsTotal: any;
   constructor (session, limit) {
     super(session);
     this.limit = parseInt(limit) || null;
@@ -15,7 +16,7 @@ export class InboxPendingFeed extends AbstractFeed {
     return this.pendingRequestsTotal;
   }
 
-  get () {
+  get (): any {
     const that = this;
     return new Request(this.session)
       .setMethod('GET')

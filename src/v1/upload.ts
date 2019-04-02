@@ -1,7 +1,7 @@
 import { Request } from '../core/request';
 import { Helpers } from '../helpers';
 
-const Resource = require('./resource');
+import Resource from './resource';
 const Promise = require('bluebird');
 const camelKeys = require('camelcase-keys');
 
@@ -52,7 +52,7 @@ class Upload extends Resource {
       .then(json => new Upload(session, json));
   }
 
-  static video (session, videoBufferOrPath, photoStreamOrPath, isSidecar, fields) {
+  static video (session, videoBufferOrPath, photoStreamOrPath, isSidecar, fields?) {
     //Probably not the best way to upload video, best to use stream not to store full video in memory, but it's the easiest
     const predictedUploadId = new Date().getTime();
     const request = new Request(session);
@@ -141,7 +141,7 @@ class Upload extends Resource {
           throw new Error('Thumbnail not specified.');
         }
       }
-      const aspect_ratio = (media.size[0] / media.size[1]).toFixed(2);
+      const aspect_ratio = parseInt((media.size[0] / media.size[1]).toFixed(2));
       if (aspect_ratio < 0.8 || aspect_ratio > 1.91) {
         throw new Error('Invalid media aspect ratio.');
       }
@@ -175,7 +175,7 @@ class Upload extends Resource {
   }
 }
 
-module.exports = Upload;
+export default Upload;
 
 function _getVideoDurationMs (buffer) {
   const start = buffer.indexOf(new Buffer('mvhd')) + 17;

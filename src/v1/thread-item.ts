@@ -1,14 +1,14 @@
+const _ = require('lodash');
+const camelKeys = require('camelcase-keys');
+
 import { plainToClass } from 'class-transformer';
 import { User } from '../models/user';
-
-const _ = require('lodash');
-const Resource = require('./resource');
-const camelKeys = require('camelcase-keys');
-const Media = require('./media').Media;
-const Location = require('./location');
-const Link = require('./link');
-const Placeholder = require('./placeholder');
-const Hashtag = require('./hashtag');
+import Resource  from './resource';
+import {Media} from './media';
+import Location  from './location';
+import Link  from './link';
+import Placeholder  from './placeholder';
+import Hashtag  from './hashtag';
 
 class ThreadItem extends Resource {
   parseParams (json) {
@@ -58,7 +58,7 @@ class ThreadItem extends Resource {
       this.hashtag = new Hashtag(this.session, json.hashtag);
     }
     hash.accountId = json.user_id;
-    hash.created = parseInt(json.timestamp / 1000);
+    hash.created = parseInt(`${json.timestamp / 1000}`);
     return hash;
   }
 
@@ -74,4 +74,4 @@ class ThreadItem extends Resource {
   }
 }
 
-module.exports = ThreadItem;
+export default ThreadItem;

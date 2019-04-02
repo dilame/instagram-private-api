@@ -4,11 +4,11 @@ import { Request } from '../core/request';
 import { Helpers } from '../helpers';
 
 const _ = require('lodash');
-const Resource = require('./resource');
+import Resource from './resource';
 const Promise = require('bluebird');
 const camelKeys = require('camelcase-keys');
-const ThreadItem = require('./thread-item');
-const Exceptions = require('../core/exceptions');
+import ThreadItem from './thread-item';
+import * as Exceptions from '../core/exceptions';
 
 class Thread extends Resource {
   static approveAll (session) {
@@ -19,7 +19,7 @@ class Thread extends Resource {
       .send();
   }
 
-  static getById (session, id, cursor) {
+  static getById (session, id, cursor?) {
     if (_.isEmpty(id)) throw new Error('`id` property is required!');
     return new Request(session)
       .setMethod('GET')
@@ -37,7 +37,7 @@ class Thread extends Resource {
     const link_urls = Helpers.extractUrl(text);
     let endpoint = 'threadsBrodcastText';
 
-    const payload = {
+    const payload: any = {
       recipient_users: JSON.stringify([users]),
       client_context: Helpers.generateUUID(),
     };
@@ -81,7 +81,7 @@ class Thread extends Resource {
 
   static configureMediaShare (session, users, mediaId, text) {
     if (!_.isArray(users)) users = [users];
-    const payload = {
+    const payload: any = {
       recipient_users: JSON.stringify([users]),
       client_context: Helpers.generateUUID(),
       media_id: mediaId,
@@ -98,7 +98,7 @@ class Thread extends Resource {
 
   static configureProfile (session, users, profileId, simpleFormat, text) {
     if (!_.isArray(users)) users = [users];
-    const payload = {
+    const payload: any = {
       recipient_users: JSON.stringify([users]),
       simple_format: simpleFormat ? '1' : '0',
       profile_user_id: profileId,
@@ -116,7 +116,7 @@ class Thread extends Resource {
 
   static configureHashtag (session, users, hashtag, simpleFormat, text) {
     if (!_.isArray(users)) users = [users];
-    const payload = {
+    const payload: any = {
       recipient_users: JSON.stringify([users]),
       simple_format: simpleFormat ? '1' : '0',
       hashtag,
@@ -148,14 +148,14 @@ class Thread extends Resource {
     const that = this;
     hash.id = json.thread_id;
     if (_.isObject(json.image_versions2)) hash.images = json.image_versions2.candidates;
-    hash.lastActivityAt = parseInt(json.last_activity_at / 1000) || null;
+    hash.lastActivityAt = parseInt(`${json.last_activity_at / 1000}`) || null;
     hash.muted = !!json.muted;
     hash.title = json.thread_title;
     hash.itemsSeenAt = {};
     _.each(json.last_seen_at || [], (val, key) => {
       hash.itemsSeenAt[key] = {
         itemId: val.item_id,
-        timestamp: parseInt(parseInt(val.timestamp) / 1000),
+        timestamp: parseInt(`${parseInt(`${val.timestamp}`) / 1000}`),
       };
     });
     hash.inviter = plainToClass(User, json.inviter);
@@ -192,7 +192,7 @@ class Thread extends Resource {
       .send()
       .then(data => ({
         unseenCount: data.unseen_count,
-        unseenCountTimestamp: parseInt(data.unseenCountTimestamp / 1000),
+        unseenCountTimestamp: parseInt(`${data.unseenCountTimestamp / 1000}`),
       }));
   }
 
@@ -233,7 +233,7 @@ class Thread extends Resource {
   }
 
   broadcastMediaShare (mediaId, text) {
-    const payload = {
+    const payload: any = {
       thread_ids: `[${this.id}]`,
       media_id: mediaId,
       client_context: Helpers.generateUUID(),
@@ -249,7 +249,7 @@ class Thread extends Resource {
   }
 
   broadcastProfile (profileId, simpleFormat, text) {
-    const payload = {
+    const payload: any = {
       thread_ids: `[${this.id}]`,
       simple_format: simpleFormat ? '1' : '0',
       profile_user_id: profileId,
@@ -266,7 +266,7 @@ class Thread extends Resource {
   }
 
   broadcastHashtag (hashtag, simpleFormat, text) {
-    const payload = {
+    const payload: any = {
       thread_ids: `[${this.id}]`,
       simple_format: simpleFormat ? '1' : '0',
       hashtag,
@@ -283,7 +283,7 @@ class Thread extends Resource {
   }
 }
 
-module.exports = Thread;
+export default Thread;
 
 function mapPayload (session, payload) {
   return _.map(payload.threads, thread => new Thread(session, thread));

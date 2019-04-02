@@ -1,8 +1,8 @@
 import { Request } from '../core/request';
 import { Helpers } from '../helpers';
+import Resource from './resource';
 
 const _ = require('lodash');
-const Resource = require('./resource');
 const camelKeys = require('camelcase-keys');
 
 class Hashtag extends Resource {
@@ -52,4 +52,4 @@ class Hashtag extends Resource {
   }
 }
 
-module.exports = Hashtag;
+export default Hashtag;

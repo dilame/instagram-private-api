@@ -6,7 +6,7 @@ import { Helpers } from '../helpers';
 const Hashtag = require('./hashtag');
 const Location = require('./location');
 
-module.exports = (session, query) =>
+export default (session, query) =>
   session
     .getAccountId()
     .then(id =>

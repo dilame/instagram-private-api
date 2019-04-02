@@ -24,4 +24,4 @@ class Megaphone extends Resource {
   }
 }
 
-module.exports = Megaphone;
+export default Megaphone;

@@ -2,7 +2,10 @@ language: node_js
 node_js:
   - "6"
   - "7"
-script: echo "npm test temporarily disabled"
+script: 
+  - npm
+  - npm typecheck
+
 deploy:
   provider: npm
   email: huttarichard@gmail.com

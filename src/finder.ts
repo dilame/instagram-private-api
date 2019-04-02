@@ -77,7 +77,7 @@ function process (Comments) {
   return false;
 }
 
-module.exports = main;
+export default main;
 
 // https://www.instagram.com/p/BjU_XzGAQaW/?taken-by=kennethaharris
 // 1789333664312657558

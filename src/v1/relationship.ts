@@ -2,7 +2,7 @@ import { plainToClass } from 'class-transformer';
 import { User } from '../models/user';
 import { Request } from '../core/request';
 import * as _ from 'lodash';
-import * as Resource from './resource';
+import Resource from './resource';
 import * as Exceptions from '../core/exceptions';
 
 export class Relationship extends Resource {
@@ -116,9 +116,9 @@ export class Relationship extends Resource {
       .setMethod('GET')
       .setResource('autocompleteUserList')
       .send()
-      .then(json => {
+      .then((json) => {
         json.accounts = plainToClass(User, json.users);
-        json.expires = parseInt(json.expires * 1000);
+        json.expires = parseInt(`${json.expires * 1000}`);
         return json;
       });
   }

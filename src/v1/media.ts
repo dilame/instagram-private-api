@@ -1,15 +1,16 @@
+const request = require('request-promise');
+const Promise = require('bluebird');
+const _ = require('lodash');
+
 import { plainToClass } from 'class-transformer';
 import { User } from '../models/user';
 import { Request } from '../core/request';
+import Resource  from './resource';
+import pruned  from './json-pruned';
 
-const Resource = require('./resource');
-const _ = require('lodash');
-const pruned = require('./json-pruned');
-const request = require('request-promise');
-const Promise = require('bluebird');
-const Comment = require('./comment');
-const Location = require('./location');
-const Exceptions = require('../core/exceptions');
+import Comment from './comment';
+import Location from './location';
+import * as Exceptions  from '../core/exceptions';
 const camelKeys = require('camelcase-keys');
 
 export class Media extends Resource {
@@ -62,7 +63,7 @@ export class Media extends Resource {
   }
 
   static edit (session, mediaId, caption, userTags) {
-    const requestPayload = {
+    const requestPayload: any = {
       media_id: mediaId,
       caption_text: caption,
     };

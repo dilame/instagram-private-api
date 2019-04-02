@@ -1,8 +1,8 @@
-const Resource = require('./resource');
+import Resource from './resource';
 
 class Link extends Resource {
   parseParams (json) {
-    const hash = {};
+    const hash: any = {};
     hash.text = json.text;
     hash.link = {
       url: json.link_context.link_url,
@@ -16,4 +16,4 @@ class Link extends Resource {
   }
 }
 
-module.exports = Link;
+export default Link;

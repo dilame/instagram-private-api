@@ -1,7 +1,7 @@
 import { Helpers } from '../helpers';
 
 const _ = require('lodash');
-const Resource = require('./resource');
+import Resource from './resource';
 const camelKeys = require('camelcase-keys');
 const { Request } = require('../core/request');
 const Media = require('./media').Media;
@@ -55,4 +55,4 @@ class Location extends Resource {
   }
 }
 
-module.exports = Location;
+export default Location;

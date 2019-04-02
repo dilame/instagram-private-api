@@ -2,7 +2,7 @@ import { plainToClass } from 'class-transformer';
 import { User } from '../models/user';
 import { Request } from '../core/request';
 
-const Resource = require('./resource');
+import Resource from './resource';
 const _ = require('lodash');
 const crypto = require('crypto');
 const camelKeys = require('camelcase-keys');
@@ -83,9 +83,9 @@ class Comment extends Resource {
     return hash;
   }
 
-  account () {
-    return this.account;
-  }
+  // account () {
+  //   return this.account;
+  // }
 
   getParams () {
     return _.defaults(
@@ -97,4 +97,4 @@ class Comment extends Resource {
   }
 }
 
-module.exports = Comment;
+export default Comment;

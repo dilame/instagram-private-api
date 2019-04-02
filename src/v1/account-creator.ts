@@ -6,13 +6,23 @@ import { Helpers } from '../helpers';
 const _ = require('lodash');
 const clean = require('underscore.string/clean');
 const Exceptions = require('../core/exceptions');
-const QE = require('./qe');
-const Relationship = require('./relationship').Relationship;
-const discover = require('./discover');
 
-const Thread = require('./thread');
+import QE from './qe';
+import {Relationship} from './relationship';
+import discover from './discover';
+
+import Thread from './thread';
 
 export class AccountCreator {
+  session: any;
+  type: any;
+  username: any;
+  name: any;
+  password: any;
+  phone: any;
+  phoneCallback: any;
+  email: any;
+
   constructor (session, type) {
     if (!(session instanceof Session)) throw new Error('AccountCreator needs valid session as first argument');
     this.session = session;

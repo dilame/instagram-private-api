@@ -1,5 +1,5 @@
-const Resource = require('./resource');
-const { Request } = require('../core/request');
+import Resource from './resource';
+import {Request} from '../core/request';
 
 class Save extends Resource {
   static create (session, mediaId) {
@@ -35,4 +35,4 @@ class Save extends Resource {
   }
 }
 
-module.exports = Save;
+export default Save;
