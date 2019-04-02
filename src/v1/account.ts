@@ -67,7 +67,7 @@ export class Account {
     return plainToClass(UserResponse, data.user as UserResponse);
   }
 
-  static editProfile(session: Session, settings: any): Bluebird<UserResponse> {
+  static editProfile(session: Session, settings: any): any {
     settings = _.isObject(settings) ? settings : {};
     if (_.isString(settings.phoneNumber)) settings.phone_number = settings.phoneNumber;
     if (_.isString(settings.fullName)) settings.first_name = settings.fullName;

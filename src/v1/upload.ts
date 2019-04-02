@@ -6,7 +6,7 @@ const Promise = require('bluebird');
 const camelKeys = require('camelcase-keys');
 
 class Upload extends Resource {
-  static photo (session, streamOrPathOrBuffer, uploadId, name, isSidecar) {
+  static async photo (session, streamOrPathOrBuffer, uploadId, name, isSidecar) {
     const data = Buffer.isBuffer(streamOrPathOrBuffer)
       ? streamOrPathOrBuffer
       : Helpers.pathToStream(streamOrPathOrBuffer);
@@ -56,7 +56,7 @@ class Upload extends Resource {
     //Probably not the best way to upload video, best to use stream not to store full video in memory, but it's the easiest
     const predictedUploadId = new Date().getTime();
     const request = new Request(session);
-    return Helpers.pathToBuffer(videoBufferOrPath).then(buffer => {
+    return Helpers.pathToBuffer(videoBufferOrPath).then((buffer: any) => {
       const duration = _getVideoDurationMs(buffer);
       if (duration > 63000) throw new Error(`Video is too long. Maximum: 63. Got: ${duration / 1000}`);
       fields = fields || {};
@@ -82,7 +82,7 @@ class Upload extends Resource {
           //Uploading video to url
           const sessionId = _generateSessionId(uploadData.params.uploadId);
           const chunkLength = 204800;
-          const chunks = [];
+          const chunks: any = [];
           chunks.push({
             data: buffer.slice(0, chunkLength),
             range: `bytes ${0}-${chunkLength - 1}/${buffer.length}`,
@@ -119,8 +119,8 @@ class Upload extends Resource {
     });
   }
 
-  static album (session, medias, caption, disableComments) {
-    const uploadPromises = [];
+  static album (session, medias, caption, disableComments): any {
+    const uploadPromises: any = [];
 
     if (medias.length < 2 || medias.length > 10) {
       throw new Error('Invalid album size');

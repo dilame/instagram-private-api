@@ -12,7 +12,7 @@ export class CookieStorage {
     return this.storage;
   }
 
-  getCookieValue(name): Bluebird<Cookie> {
+  getCookieValue(name): Bluebird<any> {
     return new Bluebird((resolve, reject) => {
       this.storage.findCookie(TLD, '/', name, (err, cookie) => {
         if (err) return reject(err);

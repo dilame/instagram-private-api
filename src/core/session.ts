@@ -33,7 +33,7 @@ export class Session {
     this.proxyUrl = proxy;
   }
 
-  private _proxyUrl: string;
+  private _proxyUrl?: string;
 
   get proxyUrl() {
     return this._proxyUrl;
