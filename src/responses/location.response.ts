@@ -1,7 +1,7 @@
-import { Response } from './response';
+import { InstagramResponse } from './instagram.response';
 import { Type } from 'class-transformer';
 
-export class LocationResponse extends Response {
+export class LocationResponse extends InstagramResponse {
   pk: string | number;
   name: string;
   address: string;

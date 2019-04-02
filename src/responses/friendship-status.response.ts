@@ -1,6 +1,6 @@
-import { Response } from './response';
+import { InstagramResponse } from './instagram.response';
 
-export class FriendshipStatusResponse extends Response {
+export class FriendshipStatusResponse extends InstagramResponse {
   muting: boolean;
   is_muting_reel: boolean;
   following: boolean;

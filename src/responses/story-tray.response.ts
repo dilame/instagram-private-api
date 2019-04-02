@@ -2,9 +2,9 @@ import { Type } from 'class-transformer';
 import { UserResponse } from './user.response';
 import { MediaResponse } from './media.response';
 import { LocationResponse } from './location.response';
-import { Response } from './response';
+import { InstagramResponse } from './instagram.response';
 
-export class StoryTrayResponse extends Response {
+export class StoryTrayResponse extends InstagramResponse {
   id: number;
   latest_reel_media: number;
   expiring_at: number;

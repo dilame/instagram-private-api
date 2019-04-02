@@ -1,8 +1,8 @@
 import { UserResponse } from './user.response';
 import { Expose, Type } from 'class-transformer';
-import { Response } from './response';
+import { InstagramResponse } from './instagram.response';
 
-export class CommentResponse extends Response {
+export class CommentResponse extends InstagramResponse {
   pk: number | string;
   user_id: number;
   text: string;

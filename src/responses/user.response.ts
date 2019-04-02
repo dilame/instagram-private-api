@@ -1,9 +1,9 @@
 import { Exclude, Expose, Type } from 'class-transformer';
 import { FriendshipStatusResponse } from './friendship-status.response';
-import { Response } from './response';
+import { InstagramResponse } from './instagram.response';
 import { ImageVersionResponse } from './image-version.response';
 
-export class UserResponse extends Response {
+export class UserResponse extends InstagramResponse {
   pk: number | string;
   instagram_id: number | string;
   username: string;

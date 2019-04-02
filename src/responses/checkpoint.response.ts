@@ -1,4 +1,5 @@
 import { Type } from 'class-transformer';
+import { InstagramResponse } from './instagram.response';
 
 class Challenge {
   url: string;
@@ -9,7 +10,7 @@ class Challenge {
   native_flow: boolean;
 }
 
-export class CheckpointResponse {
+export class CheckpointResponse extends InstagramResponse{
   message: string;
   @Type(() => Challenge)
   challenge: Challenge;

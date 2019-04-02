@@ -1,3 +1,4 @@
+export * from './challenge.response'
 export * from './checkpoint.response'
 export * from './comment.response'
 export * from './friendship-status.response'

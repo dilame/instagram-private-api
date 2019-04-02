@@ -19,11 +19,12 @@ import {
   CookieNotValidError,
   RequestError,
 } from './exceptions';
-import { CheckpointResponse } from '../responses';
+import { ChallengeResponse, CheckpointResponse } from '../responses';
 
 export class Session {
   public requestEnd$ = new Subject();
   public checkpoint$ = new Subject<CheckpointResponse>();
+  public challenge$ = new Subject<ChallengeResponse | null>();
   public loginAttemptCount = 0;
   private jar: any;
 

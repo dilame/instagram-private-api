@@ -4,9 +4,9 @@ import { CommentResponse } from './comment.response';
 import { ImageVersionResponse } from './image-version.response';
 import { LocationResponse } from './location.response';
 import { VideoVersionResponse } from './video-version.response';
-import { Response } from './response';
+import { InstagramResponse } from './instagram.response';
 
-export class MediaResponse extends Response {
+export class MediaResponse extends InstagramResponse {
   taken_at: number;
   pk: string;
   id: string;

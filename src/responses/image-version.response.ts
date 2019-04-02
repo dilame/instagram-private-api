@@ -1,6 +1,6 @@
-import { Response } from './response';
+import { InstagramResponse } from './instagram.response';
 
-export class ImageVersionResponse extends Response {
+export class ImageVersionResponse extends InstagramResponse {
   width: number;
   height: number;
   url: string;
