@@ -49,7 +49,7 @@ export class AccountCreator {
     return this;
   }
 
-  checkUsername (username) {
+  checkUsername (username): any {
     return new Request(this.session)
       .setMethod('POST')
       .setResource('checkUsername')
@@ -58,7 +58,7 @@ export class AccountCreator {
       .send();
   }
 
-  usernameSuggestions (username) {
+  usernameSuggestions (username): any {
     return new Request(this.session)
       .setMethod('POST')
       .setResource('usernameSuggestions')
@@ -137,12 +137,12 @@ export class AccountPhoneCreator extends AccountCreator {
     return this;
   }
 
-  validate () {
+  validate (): any {
     if (!this.phoneCallback) throw new Error('You must call `setPhoneCallback` and supply callback');
     return this.validateUsername();
   }
 
-  create () {
+  create (): any {
     const that = this;
     return new Request(that.session)
       .setMethod('POST')
@@ -208,7 +208,7 @@ export class AccountEmailCreator extends AccountCreator {
     return this;
   }
 
-  checkEmail () {
+  checkEmail (): any {
     return new Request(this.session)
       .setMethod('POST')
       .setResource('checkEmail')
@@ -232,7 +232,7 @@ export class AccountEmailCreator extends AccountCreator {
       });
   }
 
-  create () {
+  create (): any {
     const uuid = Helpers.generateUUID();
     const guid = Helpers.generateUUID();
     const that = this;

@@ -5,7 +5,7 @@ import { WebRequest } from '../core/web-request';
 import { Request } from '../core/request';
 import * as Exceptions from '../core/exceptions';
 
-const SHARED_JSON_REGEXP = /window._sharedData = (.*);<\/script>/i;
+const SHARED_JSON_REGEXP: any = /window._sharedData = (.*);<\/script>/i;
 
 export class Challenge {
   _json: any;
@@ -186,7 +186,7 @@ export class Challenge {
     }
   }
 
-  static reset (checkpointError) {
+  static reset (checkpointError): any {
     const session = checkpointError.session;
 
     return new Request(session)
@@ -280,7 +280,7 @@ export class PhoneVerificationChallenge extends Challenge {
 export class EmailVerificationChallenge extends Challenge {}
 
 export class NotImplementedChallenge extends Challenge {
-  constructor (session, challengeType) {
+  constructor (session, challengeType, a, b) {
     super(...arguments);
     throw new Error(
       `Not implemented challenge type: "${challengeType}"`,

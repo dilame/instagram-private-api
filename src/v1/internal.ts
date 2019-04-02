@@ -19,7 +19,7 @@ export class Internal {
       .send();
   }
 
-  static qeSync (session: Session, preLogin): Bluebird<any> {
+  static qeSync (session: Session, preLogin): any {
     const req = new Request(session)
       .setMethod('POST')
       .setResource('qeSync')
@@ -48,7 +48,7 @@ export class Internal {
     }
   }
 
-  static launcherSync (session: Session, preLogin): Bluebird<any> {
+  static launcherSync (session: Session, preLogin): any {
     const req = new Request(session)
       .setMethod('POST')
       .setResource('launcherSync')

@@ -11,7 +11,7 @@ import ThreadItem from './thread-item';
 import * as Exceptions from '../core/exceptions';
 
 class Thread extends Resource {
-  static approveAll (session) {
+  static approveAll (session): any {
     return new Request(session)
       .setMethod('POST')
       .generateUUID()
@@ -19,7 +19,7 @@ class Thread extends Resource {
       .send();
   }
 
-  static getById (session, id, cursor?) {
+  static getById (session, id, cursor?): any {
     if (_.isEmpty(id)) throw new Error('`id` property is required!');
     return new Request(session)
       .setMethod('GET')
@@ -132,7 +132,7 @@ class Thread extends Resource {
     return threadsWrapper(session, request);
   }
 
-  static recentRecipients (session) {
+  static recentRecipients (session): any {
     return new Request(session)
       .setMethod('GET')
       .setResource('threadsRecentRecipients')

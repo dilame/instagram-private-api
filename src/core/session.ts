@@ -27,7 +27,7 @@ export class Session {
     if (_.isString(proxy) && !_.isEmpty(proxy)) this.proxyUrl = proxy;
   }
 
-  private _proxyUrl: string;
+  private _proxyUrl?: string;
 
   get proxyUrl() {
     return this._proxyUrl;
