@@ -1,7 +1,7 @@
 {
   "name": "instagram-private-api",
   "description": "Instagram private API wrapper for full access to instagram",
-  "version": "0.9.1",
+  "version": "0.9.2",
   "main": "dist/index.js",
   "files": [
     "dist"
