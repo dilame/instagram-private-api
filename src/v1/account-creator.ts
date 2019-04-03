@@ -5,7 +5,7 @@ import { Helpers } from '../helpers';
 
 const _ = require('lodash');
 const clean = require('underscore.string/clean');
-const Exceptions = require('../core/exceptions');
+import * as Exceptions from '../core/exceptions';
 
 import QE from './qe';
 import {Relationship} from './relationship';

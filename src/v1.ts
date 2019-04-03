@@ -1,64 +1,113 @@
-const InstagramV1: any = {};
+import * as CONSTANTS from './constants/constants';
+import * as routes from './core/routes';
+import {Device} from './core/devices/device';
+import {CookieStorage} from './core/cookies/cookie-storage';
+import {CookieFileStorage} from './core/cookies/cookie-file-storage';
+import {CookieMemoryStorage} from './core/cookies/cookie-memory-storage';
+import * as Exceptions from './core/exceptions';
+import prunedJson from './v1/json-pruned';
+import Resource from './v1/resource';
 
-InstagramV1.CONSTANTS = require('./constants/constants');
-InstagramV1.routes = require('./core/routes');
-InstagramV1.Device = require('./core/devices/device').Device;
-InstagramV1.CookieStorage = require('./core/cookies/cookie-storage').CookieStorage;
-InstagramV1.CookieFileStorage = require('./core/cookies/cookie-file-storage').CookieFileStorage;
-InstagramV1.CookieMemoryStorage = require('./core/cookies/cookie-memory-storage').CookieMemoryStorage;
-InstagramV1.Exceptions = require('./core/exceptions');
-InstagramV1.prunedJson = require('./v1/json-pruned');
-InstagramV1.Resource = require('./v1/resource');
+import {Request} from './core/request';
+import {Session} from './core/session';
+import {Account} from './v1/account';
+import {Media} from './v1/media';
+import {Like} from './v1/like';
+import Comment from './v1/comment';
+import Hashtag from './v1/hashtag';
+import Link from './v1/link';
+import Placeholder from './v1/placeholder';
+import Location from './v1/location';
+import {Relationship} from './v1/relationship';
+import Thread from './v1/thread';
+import ThreadItem from './v1/thread-item';
+import QE from './v1/qe';
+import {Internal} from './v1/internal';
+import Upload from './v1/upload';
+import discover from './v1/discover';
+import Save from './v1/save';
+import search from './v1/search';
 
-InstagramV1.Request = require('./core/request').Request;
-InstagramV1.Session = require('./core/session').Session;
-InstagramV1.Account = require('./v1/account').Account;
-InstagramV1.Media = require('./v1/media').Media;
-InstagramV1.Like = require('./v1/like').Like;
-InstagramV1.Comment = require('./v1/comment');
-InstagramV1.Hashtag = require('./v1/hashtag');
-InstagramV1.Link = require('./v1/link');
-InstagramV1.Placeholder = require('./v1/placeholder');
-InstagramV1.Location = require('./v1/location');
-InstagramV1.Relationship = require('./v1/relationship').Relationship;
-InstagramV1.Thread = require('./v1/thread');
-InstagramV1.ThreadItem = require('./v1/thread-item');
-InstagramV1.QE = require('./v1/qe');
-InstagramV1.Internal = require('./v1/internal').Internal;
-InstagramV1.Upload = require('./v1/upload');
-InstagramV1.discover = require('./v1/discover');
-InstagramV1.Save = require('./v1/save');
-InstagramV1.search = require('./v1/search');
+import {AccountCreator, AccountPhoneCreator, AccountEmailCreator} from './v1/account-creator';
 
-const creator = require('./v1/account-creator');
-InstagramV1.AccountCreator = creator.AccountCreator;
-InstagramV1.AccountPhoneCreator = creator.AccountPhoneCreator;
-InstagramV1.AccountEmailCreator = creator.AccountEmailCreator;
+import {AccountFollowersFeed as AccountFollowers} from './feeds/account-followers.feed';
+import {AccountFollowingFeed as AccountFollowing} from './feeds/account-following.feed';
+import {InboxFeed as Inbox} from './feeds/inbox.feed';
+import {InboxPendingFeed as InboxPending} from './feeds/inbox-pending.feed';
+import {LocationMediaFeed as LocationMedia} from './feeds/location-media.feed';
+import {TaggedMediaFeed as TaggedMedia} from './feeds/tagged-media.feed';
+import {ThreadItemsFeed as ThreadItems} from './feeds/thread-items.feed';
+import {TimelineFeed as Timeline} from './feeds/timeline.feed';
+import {UserMediaFeed as UserMedia} from './feeds/user-media.feed';
+import {SelfLikedFeed as SelfLiked} from './feeds/self-liked.feed';
+import {MediaCommentsFeed as MediaComments} from './feeds/media-comments.feed';
+import {SavedMediaFeed as SavedMedia} from './feeds/saved-media.feed';
+import { StoryTrayFeed } from './feeds/story-tray.feed';
+import { UserStoryFeed } from './feeds/user-story.feed';
+import { StoryViewersFeed } from './feeds/story-viewers.feed';
 
-InstagramV1.Feed = {};
-InstagramV1.Feed.AccountFollowers = require('./feeds/account-followers.feed').AccountFollowersFeed;
-InstagramV1.Feed.AccountFollowing = require('./feeds/account-following.feed').AccountFollowingFeed;
-InstagramV1.Feed.Inbox = require('./feeds/inbox.feed').InboxFeed;
-InstagramV1.Feed.InboxPending = require('./feeds/inbox-pending.feed').InboxPendingFeed;
-InstagramV1.Feed.LocationMedia = require('./feeds/location-media.feed').LocationMediaFeed;
-InstagramV1.Feed.TaggedMedia = require('./feeds/tagged-media.feed').TaggedMediaFeed;
-InstagramV1.Feed.TagMedia = InstagramV1.Feed.TaggedMedia; // Alias but deprecated
-InstagramV1.Feed.ThreadItems = require('./feeds/thread-items.feed').ThreadItemsFeed;
-InstagramV1.Feed.Timeline = require('./feeds/timeline.feed').TimelineFeed;
-InstagramV1.Feed.UserMedia = require('./feeds/user-media.feed').UserMediaFeed;
-InstagramV1.Feed.SelfLiked = require('./feeds/self-liked.feed').SelfLikedFeed;
-InstagramV1.Feed.MediaComments = require('./feeds/media-comments.feed').MediaCommentsFeed;
-InstagramV1.Feed.SavedMedia = require('./feeds/saved-media.feed').SavedMediaFeed;
-InstagramV1.Feed.StoryTrayFeed = require('./feeds/story-tray.feed').StoryTrayFeed;
-InstagramV1.Feed.UserStoryFeed = require('./feeds/user-story.feed').UserStoryFeed;
-InstagramV1.Feed.StoryViewersFeed = require('./feeds/story-viewers.feed').StoryViewersFeed;
+import {WebRequest} from './core/web-request';
+import {Challenge, NotImplementedChallenge, EmailVerificationChallenge, PhoneVerificationChallenge} from './v1/challenge';
 
-InstagramV1.Web = {};
-InstagramV1.Web.Request = require('./core/web-request').WebRequest;
-const challenge = require('./v1/challenge');
-InstagramV1.Web.Challenge = challenge.Challenge;
-InstagramV1.Web.NotImplementedChallenge = challenge.NotImplementedChallenge;
-InstagramV1.Web.EmailVerificationChallenge = challenge.EmailVerificationChallenge;
-InstagramV1.Web.PhoneVerificationChallenge = challenge.PhoneVerificationChallenge;
+const Feed = {
+  AccountFollowers,
+  AccountFollowing,
+  Inbox,
+  InboxPending,
+  LocationMedia,
+  TaggedMedia,
+  ThreadItems,
+  Timeline,
+  UserMedia,
+  SelfLiked,
+  MediaComments,
+  SavedMedia,
+  TagMedia: TaggedMedia, // Alias but deprecated
+  StoryTrayFeed,
+  UserStoryFeed,
+  StoryViewersFeed,
+};
+const Web = {
+  Request: WebRequest,
+  Challenge,
+  NotImplementedChallenge,
+  EmailVerificationChallenge,
+  PhoneVerificationChallenge
+};
+const InstagramV1 = {
+  CONSTANTS,
+  routes,
+  Device,
+  CookieStorage,
+  CookieFileStorage,
+  CookieMemoryStorage,
+  Exceptions,
+  prunedJson,
+  Resource,
+  Request,
+  Session,
+  Account,
+  Media,
+  Like,
+  Comment,
+  Hashtag,
+  Link,
+  Placeholder,
+  Location,
+  Relationship,
+  Thread,
+  ThreadItem,
+  QE,
+  Internal,
+  Upload,
+  discover,
+  Save,
+  search,
+  AccountCreator,
+  AccountPhoneCreator,
+  AccountEmailCreator,
+  Feed,
+  Web
+};
 
 export default InstagramV1;

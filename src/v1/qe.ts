@@ -1,7 +1,7 @@
 const _ = require('lodash');
-const Resource = require('./resource');
-const CONSTANTS = require('../constants/constants');
-const { Request } = require('../core/request');
+import Resource  from './resource';
+import * as CONSTANTS  from '../constants/constants';
+import { Request } from '../core/request';
 
 class QE extends Resource {
   // Lets fake this experiment bullshit

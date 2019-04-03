@@ -1,7 +1,6 @@
 import { AbstractFeed } from './abstract.feed';
 import { Request } from '../core/request';
-
-const ThreadItem = require('../v1/thread-item');
+import ThreadItem from '../v1/thread-item';
 
 export class ThreadItemsFeed extends AbstractFeed<any> {
   threadId: any;

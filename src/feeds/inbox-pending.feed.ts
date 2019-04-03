@@ -1,7 +1,6 @@
 import { AbstractFeed } from './abstract.feed';
 import { Request } from '../core/request';
-
-const Thread = require('../v1/thread');
+import Thread from '../v1/thread';
 
 
 export class InboxPendingFeed extends AbstractFeed<any> {

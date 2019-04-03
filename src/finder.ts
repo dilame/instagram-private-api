@@ -3,7 +3,7 @@
 let USERNAMETOFIND;
 let COMMENTTOFIND;
 
-const Client = require('./v1');
+import Client from './v1';
 const path = require('path');
 
 const { urlSegmentToInstagramId } = require('instagram-id-to-url-segment');

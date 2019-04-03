@@ -24,7 +24,7 @@
     "build": "rm -rf dist && tsc -p tsconfig.build.json",
     "typecheck": "tsc -p tsconfig.build.json --noEmit",
     "prepare": "npm run build",
-    "test": "./node_modules/mocha/bin/mocha --inline-diffs --timeout 1000000 tests/run.js"
+    "test": "mocha --inline-diffs --timeout 1000000 tests/run.js"
   },
   "dependencies": {
     "@types/bluebird": "^3.5.26",
