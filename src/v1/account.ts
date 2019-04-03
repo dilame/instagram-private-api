@@ -1,5 +1,4 @@
 import * as _ from 'lodash';
-import * as Bluebird from 'bluebird';
 import { plainToClass } from 'class-transformer';
 import { UserResponse } from '../responses/user.response';
 import { Request, Session, IGAccountNotFoundError, RequestError } from '../core';

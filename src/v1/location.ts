@@ -27,7 +27,6 @@ class Location extends Resource {
   }
 
   static search (session, query) {
-    const that = this;
     return session
       .getAccountId()
       .then(id => {

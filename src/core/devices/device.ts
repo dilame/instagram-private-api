@@ -31,6 +31,7 @@ export class Device {
   adid: string;
   id: string;
   public credentials: IAppCredentials = CONSTANTS.APP_CREDENTIALS;
+  // @ts-ignore
   private payload: IDevicePayload;
 
   constructor(public username: string) {
@@ -49,6 +50,7 @@ export class Device {
     const [manufacturer] = deviceParts[3].split('/');
     const model = deviceParts[4];
 
+    // TODO: seems like nobody is actually using this value, should we remove it?
     this.payload = {
       android_version,
       android_release,

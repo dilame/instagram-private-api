@@ -16,6 +16,7 @@
     "outDir": "./dist",
     "baseUrl": "./",
     "allowJs": false,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "noUnusedLocals": true
   }
 }

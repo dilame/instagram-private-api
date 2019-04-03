@@ -2,7 +2,7 @@ import * as Bluebird from 'bluebird';
 import { TLD } from '../../constants/constants';
 import * as _ from 'lodash';
 import { CookieNotValidError } from '../exceptions';
-import { Store, Cookie } from 'tough-cookie';
+import { Store } from 'tough-cookie';
 
 export class CookieStorage {
   constructor(public storage: Store) {
