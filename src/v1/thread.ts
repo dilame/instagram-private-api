@@ -5,7 +5,7 @@ import { Helpers } from '../helpers';
 
 const _ = require('lodash');
 import Resource from './resource';
-const Promise = require('bluebird');
+import * as Bluebird from 'bluebird'
 const camelKeys = require('camelcase-keys');
 import ThreadItem from './thread-item';
 import * as Exceptions from '../core/exceptions';
@@ -294,7 +294,7 @@ function threadsWrapper (session, promise) {
     if (_.isArray(json.threads)) return mapPayload(session, json);
     if (_.isEmpty(json.thread_id)) throw new Error('Not sure how to map an thread!');
     // You cannot fetch thread id inmedietly after configure / broadcast
-    return Promise.delay(1000)
+    return Bluebird.delay(1000)
       .then(() => Thread.getById(session, json.thread_id))
       .then(thread => [thread]);
   });

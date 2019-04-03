@@ -1,6 +1,6 @@
 const EventEmitter = require('events').EventEmitter;
 const _ = require('lodash');
-const { Request } = require('../core/request');
+import { Request } from '../core/request';
 
 class InstagramResource extends EventEmitter {
   constructor (session, params) {

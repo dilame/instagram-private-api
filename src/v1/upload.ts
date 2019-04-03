@@ -2,7 +2,7 @@ import { Request } from '../core/request';
 import { Helpers } from '../helpers';
 
 import Resource from './resource';
-const Promise = require('bluebird');
+import * as Bluebird from 'bluebird';
 const camelKeys = require('camelcase-keys');
 
 class Upload extends Resource {
@@ -91,7 +91,7 @@ class Upload extends Resource {
             data: buffer.slice(chunkLength, buffer.length),
             range: `bytes ${chunkLength}-${buffer.length - 1}/${buffer.length}`,
           });
-          return Promise.mapSeries(chunks, (chunk, i) =>
+          return Bluebird.mapSeries<any, any>(chunks, (chunk, i) =>
             _sendChunkedRequest(
               session,
               uploadData.params.uploadUrl,

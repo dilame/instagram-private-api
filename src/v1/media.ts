@@ -1,5 +1,5 @@
 const request = require('request-promise');
-const Promise = require('bluebird');
+import * as Bluebird from 'bluebird'
 const _ = require('lodash');
 
 import { plainToClass } from 'class-transformer';
@@ -207,7 +207,7 @@ export class Media extends Resource {
     const duration = durationms / 1000;
     if (!caption) caption = '';
     if (!delay || typeof delay != 'number') delay = 6500;
-    return Promise.delay(delay)
+    return Bluebird.delay(delay)
       .then(() => session.getAccountId())
       .then(accountId => {
         const payload = pruned({
@@ -291,7 +291,7 @@ export class Media extends Resource {
     const duration = durationms / 1000;
     if (!caption) caption = '';
     if (!delay || typeof delay != 'number') delay = 6500;
-    return Promise.delay(delay).then(() => {
+    return Bluebird.delay(delay).then(() => {
       const payload = {
         filter_type: '0',
         source_type: '3',
@@ -325,7 +325,7 @@ export class Media extends Resource {
     caption = caption || '';
     disableComments = disableComments || false;
 
-    return Promise.mapSeries(medias, media => {
+    return Bluebird.mapSeries<any, any>(medias, (media) => {
       if (media.type === 'photo') {
         return Media.configurePhotoAlbum(
           session,
