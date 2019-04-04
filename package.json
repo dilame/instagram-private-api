@@ -22,6 +22,7 @@
   "homepage": "https://github.com/huttarichard/instagram-private-api",
   "scripts": {
     "build": "rm -rf dist && tsc -p tsconfig.build.json",
+    "format": "prettier --write \"src/**/*.ts\"",
     "typecheck": "tsc -p tsconfig.build.json --noEmit",
     "prepare": "npm run build",
     "test": "mocha --inline-diffs --timeout 1000000 tests/run.js"
