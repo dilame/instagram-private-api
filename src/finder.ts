@@ -22,7 +22,7 @@ export function main (usernameToFind, commentToFind, postUrl) {
 
     let mediaId;
 
-    const re = /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/;
+    const re = /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_+.~#?&//=]*)/;
 
     if (postUrl.match(re)) {
       mediaId = postUrl.split('/')[4];

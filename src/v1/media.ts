@@ -126,11 +126,11 @@ export class Media extends Resource {
             source_height: height,
           },
         });
-        payload = payload.replace(/\"\$width\"/gi, width.toFixed(1));
-        payload = payload.replace(/\"\$height\"/gi, height.toFixed(1));
-        payload = payload.replace(/\"\$zero\"/gi, (0).toFixed(1));
-        payload = payload.replace(/\"\$negativeZero\"/gi, `-${(0).toFixed(1)}`);
-        payload = payload.replace(/\"\$crop\"/gi, CROP.toFixed(1));
+        payload = payload.replace(/"\$width"/gi, width.toFixed(1));
+        payload = payload.replace(/"\$height"/gi, height.toFixed(1));
+        payload = payload.replace(/"\$zero"/gi, (0).toFixed(1));
+        payload = payload.replace(/"\$negativeZero"/gi, `-${(0).toFixed(1)}`);
+        payload = payload.replace(/"\$crop"/gi, CROP.toFixed(1));
 
         return new Request(session)
           .setMethod('POST')
@@ -167,11 +167,11 @@ export class Media extends Resource {
             source_height: height,
           },
         });
-        payload = payload.replace(/\"\$width\"/gi, width.toFixed(1));
-        payload = payload.replace(/\"\$height\"/gi, height.toFixed(1));
-        payload = payload.replace(/\"\$zero\"/gi, (0).toFixed(1));
-        payload = payload.replace(/\"\$negativeZero\"/gi, `-${(0).toFixed(1)}`);
-        payload = payload.replace(/\"\$crop\"/gi, CROP.toFixed(1));
+        payload = payload.replace(/"\$width"/gi, width.toFixed(1));
+        payload = payload.replace(/"\$height"/gi, height.toFixed(1));
+        payload = payload.replace(/"\$zero"/gi, (0).toFixed(1));
+        payload = payload.replace(/"\$negativeZero"/gi, `-${(0).toFixed(1)}`);
+        payload = payload.replace(/"\$crop"/gi, CROP.toFixed(1));
 
         return new Request(session)
           .setMethod('POST')
