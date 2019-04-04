@@ -2,9 +2,9 @@ import { MemoryCookieStore } from 'tough-cookie/lib/memstore';
 import { CookieStorage } from './cookie-storage';
 
 export class CookieMemoryStorage extends CookieStorage {
-  constructor () {
+  constructor() {
     super(new MemoryCookieStore());
   }
 
-  destroy () {}
+  destroy() {}
 }

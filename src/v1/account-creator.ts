@@ -1,19 +1,29 @@
 import { plainToClass } from 'class-transformer';
-import { UserResponse } from '../responses/user.response';
+import { UserResponse } from '../responses';
 import { Request, Session } from '../core';
 import { Helpers } from '../helpers';
+import * as Exceptions from '../core/exceptions';
+
+import { QE } from './qe';
+import { Relationship } from './relationship';
+import { discover } from './discover';
+
+import { Thread } from './thread';
 
 const _ = require('lodash');
 const clean = require('underscore.string/clean');
-const Exceptions = require('../core/exceptions');
-const QE = require('./qe');
-const Relationship = require('./relationship').Relationship;
-const discover = require('./discover');
-
-const Thread = require('./thread');
 
 export class AccountCreator {
-  constructor (session, type) {
+  session: any;
+  type: any;
+  username: any;
+  name: any;
+  password: any;
+  phone: any;
+  phoneCallback: any;
+  email: any;
+
+  constructor(session, type) {
     if (!(session instanceof Session)) throw new Error('AccountCreator needs valid session as first argument');
     this.session = session;
     if (!_.includes(['phone', 'email'], type))
@@ -21,25 +31,25 @@ export class AccountCreator {
     this.type = type;
   }
 
-  setUsername (username) {
+  setUsername(username) {
     username = username.toLowerCase();
     if (!username || !/^[a-z0-9._]{1,50}$/.test(username)) throw new Exceptions.InvalidUsername(username);
     this.username = username;
     return this;
   }
 
-  setName (name) {
+  setName(name) {
     this.name = name;
     return this;
   }
 
-  setPassword (password) {
+  setPassword(password) {
     if (!password || password.length < 6) throw new Exceptions.InvalidPassword();
     this.password = password;
     return this;
   }
 
-  checkUsername (username) {
+  checkUsername(username): any {
     return new Request(this.session)
       .setMethod('POST')
       .setResource('checkUsername')
@@ -48,7 +58,7 @@ export class AccountCreator {
       .send();
   }
 
-  usernameSuggestions (username) {
+  usernameSuggestions(username): any {
     return new Request(this.session)
       .setMethod('POST')
       .setResource('usernameSuggestions')
@@ -59,7 +69,7 @@ export class AccountCreator {
       .send();
   }
 
-  validateUsername () {
+  validateUsername() {
     const username = this.username;
     const self = this;
     if (!username) return Promise.reject(new Exceptions.InvalidUsername('Empty'));
@@ -76,7 +86,7 @@ export class AccountCreator {
       );
   }
 
-  autocomplete (account) {
+  autocomplete(account) {
     const session = this.session;
     return QE.sync(session)
       .then(() => {
@@ -92,15 +102,15 @@ export class AccountCreator {
       .spread(account => [account, discover(session, true)]);
   }
 
-  validate () {
+  async validate() {
     throw new Error('Please override this method in order to validate account');
   }
 
-  create () {
+  create(...args) {
     throw new Error('Please override this method in order to register account');
   }
 
-  register () {
+  register() {
     const args = _.toArray(arguments);
     const self = this;
     return self
@@ -111,28 +121,28 @@ export class AccountCreator {
 }
 
 export class AccountPhoneCreator extends AccountCreator {
-  constructor (session) {
+  constructor(session) {
     super(session, 'phone');
   }
 
-  setPhone (phone) {
+  setPhone(phone) {
     if (!phone || !/^([0-9()\/+ \-]*)$/.test(phone)) throw new Exceptions.InvalidPhone(phone);
     this.phone = phone;
     return this;
   }
 
-  setPhoneCallback (callback) {
+  setPhoneCallback(callback) {
     if (!_.isFunction(callback)) throw new Error('Callback must be function which returns promise');
     this.phoneCallback = callback;
     return this;
   }
 
-  validate () {
+  validate(): any {
     if (!this.phoneCallback) throw new Error('You must call `setPhoneCallback` and supply callback');
     return this.validateUsername();
   }
 
-  create () {
+  create(): any {
     const that = this;
     return new Request(that.session)
       .setMethod('POST')
@@ -188,17 +198,17 @@ export class AccountPhoneCreator extends AccountCreator {
 }
 
 export class AccountEmailCreator extends AccountCreator {
-  constructor (session) {
+  constructor(session) {
     super(session, 'email');
   }
 
-  setEmail (email) {
+  setEmail(email) {
     if (!email || !Helpers.validateEmail(email)) throw new Exceptions.InvalidEmail(email);
     this.email = email;
     return this;
   }
 
-  checkEmail () {
+  checkEmail(): any {
     return new Request(this.session)
       .setMethod('POST')
       .setResource('checkEmail')
@@ -210,7 +220,7 @@ export class AccountEmailCreator extends AccountCreator {
       .send();
   }
 
-  validate () {
+  validate() {
     const email = this.email;
     const validateEmail = _.bind(this.checkEmail, this);
     if (!email || !Helpers.validateEmail(email)) return Promise.reject(new Exceptions.InvalidEmail(email));
@@ -222,7 +232,7 @@ export class AccountEmailCreator extends AccountCreator {
       });
   }
 
-  create () {
+  create(): any {
     const uuid = Helpers.generateUUID();
     const guid = Helpers.generateUUID();
     const that = this;

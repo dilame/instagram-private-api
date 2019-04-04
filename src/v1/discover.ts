@@ -5,7 +5,7 @@ import { Helpers } from '../helpers';
 
 const _ = require('lodash');
 
-module.exports = (session, inSingup) =>
+export const discover = (session, inSingup) =>
   new Request(session)
     .setMethod('POST')
     .setResource('discoverAyml')

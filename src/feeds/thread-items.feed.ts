@@ -1,16 +1,17 @@
 import { AbstractFeed } from './abstract.feed';
 import { Request } from '../core/request';
+import { ThreadItem } from '../v1/thread-item';
 
-const ThreadItem = require('../v1/thread-item');
+export class ThreadItemsFeed extends AbstractFeed<any> {
+  threadId: any;
 
-export class ThreadItemsFeed extends AbstractFeed {
-  constructor (session, threadId, limit) {
+  constructor(session, threadId, limit) {
     super(session);
     this.threadId = threadId;
     this.limit = parseInt(limit) || null;
   }
 
-  get () {
+  get(): any {
     return new Request(this.session)
       .setMethod('GET')
       .setResource('threadsShow', {

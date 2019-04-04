@@ -25,4 +25,3 @@ export class SavedMediaFeed extends AbstractFeed<MediaResponse> {
     return plainToClass(MediaResponse, data.items.map(i => i.media));
   }
 }
-

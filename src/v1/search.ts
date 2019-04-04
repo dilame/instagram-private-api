@@ -3,10 +3,10 @@ import { UserResponse } from '../responses/user.response';
 import { Request } from '../core/request';
 import { Helpers } from '../helpers';
 
-const Hashtag = require('./hashtag');
-const Location = require('./location');
+import { Hashtag } from './hashtag';
+import { Location } from './location';
 
-module.exports = (session, query) =>
+export const search = (session, query) =>
   session
     .getAccountId()
     .then(id =>

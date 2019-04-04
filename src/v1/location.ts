@@ -1,14 +1,14 @@
-import { Helpers } from '../helpers';
-
 const _ = require('lodash');
-const Resource = require('./resource');
 const camelKeys = require('camelcase-keys');
-const { Request } = require('../core/request');
-const Media = require('./media').Media;
-const Exceptions = require('../core/exceptions');
 
-class Location extends Resource {
-  static getRankedMedia (session, locationId) {
+import { Helpers } from '../helpers';
+import { InstagramResource as Resource } from './resource';
+import { Request } from '../core/request';
+import { Media } from './media';
+import * as Exceptions from '../core/exceptions';
+
+export class Location extends Resource {
+  static getRankedMedia(session, locationId) {
     return (
       new Request(session)
         .setMethod('GET')
@@ -26,8 +26,7 @@ class Location extends Resource {
     );
   }
 
-  static search (session, query) {
-    const that = this;
+  static search(session, query) {
     return session
       .getAccountId()
       .then(id => {
@@ -43,7 +42,7 @@ class Location extends Resource {
       .then(data => _.map(data.items, location => new Location(session, location)));
   }
 
-  parseParams (json) {
+  parseParams(json) {
     const hash = camelKeys(json);
     hash.address = json.location.address;
     hash.city = json.location.city;
@@ -54,5 +53,3 @@ class Location extends Resource {
     return hash;
   }
 }
-
-module.exports = Location;

@@ -34,16 +34,19 @@ export abstract class AbstractFeed<T> extends EventEmitter {
     this.rankToken = chance.guid();
   }
 
-  abstract async get(...parameters: any[]): Promise<T[]>
+  abstract async get(...parameters: any[]): Promise<T[]>;
 
   all(parameters: Partial<IBaseFeedAllOptions> = {}) {
-    parameters = Object.assign({
-      delay: 1500,
-      every: 200,
-      pause: 30000,
-      maxErrors: 9,
-      limit: this.limit || Infinity,
-    }, parameters);
+    parameters = Object.assign(
+      {
+        delay: 1500,
+        every: 200,
+        pause: 30000,
+        maxErrors: 9,
+        limit: this.limit || Infinity,
+      },
+      parameters,
+    );
     // every N requests we take a pause
     const delay =
       this.iteration === 0 ? 0 : this.iteration % parameters.every !== 0 ? parameters.delay : parameters.pause;

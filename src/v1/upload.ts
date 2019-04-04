@@ -1,12 +1,13 @@
 import { Request } from '../core/request';
 import { Helpers } from '../helpers';
 
-const Resource = require('./resource');
-const Promise = require('bluebird');
+import { InstagramResource as Resource } from './resource';
+import * as Bluebird from 'bluebird';
+
 const camelKeys = require('camelcase-keys');
 
-class Upload extends Resource {
-  static photo (session, streamOrPathOrBuffer, uploadId, name, isSidecar) {
+export class Upload extends Resource {
+  static async photo(session, streamOrPathOrBuffer, uploadId, name, isSidecar) {
     const data = Buffer.isBuffer(streamOrPathOrBuffer)
       ? streamOrPathOrBuffer
       : Helpers.pathToStream(streamOrPathOrBuffer);
@@ -52,11 +53,11 @@ class Upload extends Resource {
       .then(json => new Upload(session, json));
   }
 
-  static video (session, videoBufferOrPath, photoStreamOrPath, isSidecar, fields) {
+  static video(session, videoBufferOrPath, photoStreamOrPath, isSidecar, fields?) {
     //Probably not the best way to upload video, best to use stream not to store full video in memory, but it's the easiest
     const predictedUploadId = new Date().getTime();
     const request = new Request(session);
-    return Helpers.pathToBuffer(videoBufferOrPath).then(buffer => {
+    return Helpers.pathToBuffer(videoBufferOrPath).then((buffer: any) => {
       const duration = _getVideoDurationMs(buffer);
       if (duration > 63000) throw new Error(`Video is too long. Maximum: 63. Got: ${duration / 1000}`);
       fields = fields || {};
@@ -82,7 +83,7 @@ class Upload extends Resource {
           //Uploading video to url
           const sessionId = _generateSessionId(uploadData.params.uploadId);
           const chunkLength = 204800;
-          const chunks = [];
+          const chunks: any = [];
           chunks.push({
             data: buffer.slice(0, chunkLength),
             range: `bytes ${0}-${chunkLength - 1}/${buffer.length}`,
@@ -91,7 +92,7 @@ class Upload extends Resource {
             data: buffer.slice(chunkLength, buffer.length),
             range: `bytes ${chunkLength}-${buffer.length - 1}/${buffer.length}`,
           });
-          return Promise.mapSeries(chunks, (chunk, i) =>
+          return Bluebird.mapSeries<any, any>(chunks, (chunk, i) =>
             _sendChunkedRequest(
               session,
               uploadData.params.uploadUrl,
@@ -119,8 +120,8 @@ class Upload extends Resource {
     });
   }
 
-  static album (session, medias, caption, disableComments) {
-    const uploadPromises = [];
+  static album(session, medias, caption, disableComments): any {
+    const uploadPromises: any = [];
 
     if (medias.length < 2 || medias.length > 10) {
       throw new Error('Invalid album size');
@@ -141,7 +142,7 @@ class Upload extends Resource {
           throw new Error('Thumbnail not specified.');
         }
       }
-      const aspect_ratio = (media.size[0] / media.size[1]).toFixed(2);
+      const aspect_ratio = parseInt((media.size[0] / media.size[1]).toFixed(2));
       if (aspect_ratio < 0.8 || aspect_ratio > 1.91) {
         throw new Error('Invalid media aspect ratio.');
       }
@@ -165,7 +166,7 @@ class Upload extends Resource {
     return Promise.all(uploadPromises);
   }
 
-  parseParams (json) {
+  parseParams(json) {
     const hash = camelKeys(json);
     if (json.video_upload_urls && json.video_upload_urls.length) {
       hash.uploadUrl = json.video_upload_urls[0].url;
@@ -175,9 +176,7 @@ class Upload extends Resource {
   }
 }
 
-module.exports = Upload;
-
-function _getVideoDurationMs (buffer) {
+function _getVideoDurationMs(buffer) {
   const start = buffer.indexOf(new Buffer('mvhd')) + 17;
   const timeScale = buffer.readUInt32BE(start, 4);
   const duration = buffer.readUInt32BE(start + 4, 4);
@@ -186,7 +185,7 @@ function _getVideoDurationMs (buffer) {
   return movieLength * 1000;
 }
 
-function _sendChunkedRequest (session, url, job, sessionId, buffer, range, isSidecar) {
+function _sendChunkedRequest(session, url, job, sessionId, buffer, range, isSidecar) {
   const headers = {
     job,
     Host: 'upload.instagram.com',
@@ -212,7 +211,7 @@ function _sendChunkedRequest (session, url, job, sessionId, buffer, range, isSid
     .send();
 }
 
-function _generateSessionId (uploadId) {
+function _generateSessionId(uploadId) {
   let text = `${uploadId || ''}-`;
   const possible = '0123456789';
 

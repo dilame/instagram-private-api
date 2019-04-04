@@ -102,7 +102,7 @@ describe('`Device` class', () => {
   });
 
   it('should not be problem to get userAgent', () => {
-    const yellowstone = /^Instagram\s[0-9\.]*\sAndroid\s\(18\/4.0.4\;\s424dpi\;\s1080x1920\;\sGoogle\;\sYellowstone\;\syellowstone\;\sen_US\)$/;
+    const yellowstone = /^Instagram\s[0-9.]*\sAndroid\s\(18\/4.0.4;\s424dpi;\s1080x1920;\sGoogle;\sYellowstone;\syellowstone;\sen_US\)$/;
     device1.userAgent().should.match(yellowstone);
   });
 });

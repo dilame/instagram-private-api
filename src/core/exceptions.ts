@@ -1,6 +1,6 @@
 import * as _ from 'lodash';
 import { CustomError } from 'ts-custom-error';
-import routes = require('./routes');
+import * as routes from './routes';
 import { CheckpointResponse } from '../responses';
 import { Session } from './session';
 
@@ -175,7 +175,6 @@ export class NotPossibleToResolveChallenge extends APIError {
   }
 }
 
-
 export class NoChallengeRequired extends APIError {
   constructor() {
     super('No challenge is required to use account!');
@@ -183,19 +182,19 @@ export class NoChallengeRequired extends APIError {
 }
 
 export class InvalidEmail extends APIError {
-  constructor(email, public json) {
+  constructor(email, public json?) {
     super(`${email} email is not an valid email`);
   }
 }
 
 export class InvalidUsername extends APIError {
-  constructor(username, public json) {
+  constructor(username, public json?) {
     super(`${username} username is not an valid username`);
   }
 }
 
 export class InvalidPhone extends APIError {
-  constructor(phone, public json) {
+  constructor(phone, public json?) {
     super(`${phone} phone is not a valid phone`);
   }
 }
@@ -207,7 +206,7 @@ export class InvalidPassword extends APIError {
 }
 
 export class AccountRegistrationError extends APIError {
-  constructor(message, public json) {
+  constructor(message, public json?) {
     super(message);
   }
 }

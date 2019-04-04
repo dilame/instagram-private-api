@@ -4,11 +4,10 @@ const DEFAULT_MAX_DEPTH = 6;
 const DEFAULT_ARRAY_MAX_LENGTH = 50;
 let seen; // Same variable used for all stringifications
 
-Date.prototype.toPrunedJSON = Date.prototype.toJSON;
-String.prototype.toPrunedJSON = String.prototype.toJSON;
+(Date as any).prototype.toPrunedJSON = Date.prototype.toJSON;
+(String as any).prototype.toPrunedJSON = (String as any).prototype.toJSON;
 
-const cx = /[\u0000\u00ad\u0600-\u0604\u070f\u17b4\u17b5\u200c-\u200f\u2028-\u202f\u2060-\u206f\ufeff\ufff0-\uffff]/g;
-const escapable = /[\\\"\x00-\x1f\x7f-\x9f\u00ad\u0600-\u0604\u070f\u17b4\u17b5\u200c-\u200f\u2028-\u202f\u2060-\u206f\ufeff\ufff0-\uffff]/g;
+const escapable = /[\\"\x00-\x1f\x7f-\x9f\u00ad\u0600-\u0604\u070f\u17b4\u17b5\u200c-\u200f\u2028-\u202f\u2060-\u206f\ufeff\ufff0-\uffff]/g;
 
 const meta = {
   // table of character substitutions
@@ -21,17 +20,17 @@ const meta = {
   '\\': '\\\\',
 };
 
-function quote (string) {
+function quote(string) {
   escapable.lastIndex = 0;
   return escapable.test(string)
     ? `"${string.replace(escapable, a => {
-      const c = meta[a];
-      return typeof c === 'string' ? c : `\\u${`0000${a.charCodeAt(0).toString(16)}`.slice(-4)}`;
-    })}"`
+        const c = meta[a];
+        return typeof c === 'string' ? c : `\\u${`0000${a.charCodeAt(0).toString(16)}`.slice(-4)}`;
+      })}"`
     : `"${string}"`;
 }
 
-function str (key, holder, depthDecr, arrayMaxLength) {
+function str(key, holder, depthDecr, arrayMaxLength) {
   let // The loop counter.
     i;
 
@@ -54,7 +53,7 @@ function str (key, holder, depthDecr, arrayMaxLength) {
     case 'number':
       return isFinite(value) ? String(value) : 'null';
     case 'boolean':
-    case 'null':
+    case 'null' as any:
       return String(value);
     case 'object':
       if (!value) {
@@ -88,7 +87,7 @@ function str (key, holder, depthDecr, arrayMaxLength) {
   }
 }
 
-module.exports = (value, depthDecr, arrayMaxLength) => {
+export const pruned = (value, depthDecr?, arrayMaxLength?) => {
   seen = [];
   depthDecr = depthDecr || DEFAULT_MAX_DEPTH;
   arrayMaxLength = arrayMaxLength || DEFAULT_ARRAY_MAX_LENGTH;

@@ -26,14 +26,14 @@ export class UserResponse extends InstagramResponse {
   biography: string;
   external_url: string;
   external_lynx_url: string;
-  can_link_entities_in_bio:boolean;
+  can_link_entities_in_bio: boolean;
   can_boost_post: boolean;
   can_see_organic_insights: boolean;
   show_insights_terms: boolean;
   can_convert_to_business: boolean;
   can_create_sponsor_tags: boolean;
   can_be_tagged_as_sponsor: boolean;
-  total_igtv_videos:number;
+  total_igtv_videos: number;
   total_ar_effects: number;
   is_profile_action_needed: boolean;
   usertags_count: number;

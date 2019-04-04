@@ -1,17 +1,16 @@
+import * as _ from 'lodash';
+import * as camelKeys from 'camelcase-keys';
 import { plainToClass } from 'class-transformer';
-import { UserResponse } from '../responses/user.response';
+import { UserResponse } from '../responses';
+import { InstagramResource as Resource } from './resource';
+import { Media } from './media';
+import { Location } from './location';
+import { Link } from './link';
+import { Placeholder } from './placeholder';
+import { Hashtag } from './hashtag';
 
-const _ = require('lodash');
-const Resource = require('./resource');
-const camelKeys = require('camelcase-keys');
-const Media = require('./media').Media;
-const Location = require('./location');
-const Link = require('./link');
-const Placeholder = require('./placeholder');
-const Hashtag = require('./hashtag');
-
-class ThreadItem extends Resource {
-  parseParams (json) {
+export class ThreadItem extends Resource {
+  parseParams(json) {
     const hash = camelKeys(json);
     hash.id = json.item_id || json.id;
     hash.type = json.item_type;
@@ -58,11 +57,11 @@ class ThreadItem extends Resource {
       this.hashtag = new Hashtag(this.session, json.hashtag);
     }
     hash.accountId = json.user_id;
-    hash.created = parseInt(json.timestamp / 1000);
+    hash.created = parseInt(`${json.timestamp / 1000}`);
     return hash;
   }
 
-  getParams () {
+  getParams() {
     const params = _.clone(this._params);
     if (params.type === 'link') params.link = this.link.params;
     if (params.type === 'placeholder') params.placeholder = this.placeholder.params;
@@ -73,5 +72,3 @@ class ThreadItem extends Resource {
     return params;
   }
 }
-
-module.exports = ThreadItem;

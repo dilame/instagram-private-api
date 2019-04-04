@@ -1,31 +1,31 @@
 const EventEmitter = require('events').EventEmitter;
 const _ = require('lodash');
-const { Request } = require('../core/request');
+import { Request } from '../core/request';
+import { Session } from '../core/session';
 
-class InstagramResource extends EventEmitter {
-  constructor (session, params) {
+export class InstagramResource extends EventEmitter {
+  constructor(session, params) {
     super();
-    const { Session } = require('../core/session');
     if (!(session instanceof Session)) throw new Error('Argument `session` is not instace of Session');
     this._session = session;
     this._params = {};
     this.setParams(_.isObject(params) ? params : {});
   }
 
-  get params () {
+  get params() {
     return this.getParams();
   }
 
-  get session () {
+  get session() {
     return this._session;
   }
 
-  parseParams (params) {
+  parseParams(params) {
     // Override this to parse instagram shit
     return params;
   }
 
-  setParams (params) {
+  setParams(params) {
     if (!_.isObject(params)) throw new Error('Method `setParams` must have valid argument');
     params = this.parseParams(params);
     if (!_.isObject(params)) throw new Error('Method `parseParams` must return object');
@@ -34,13 +34,11 @@ class InstagramResource extends EventEmitter {
     return this;
   }
 
-  getParams () {
+  getParams() {
     return this._params;
   }
 
-  request () {
+  request() {
     return new Request(this._session);
   }
 }
-
-module.exports = InstagramResource;

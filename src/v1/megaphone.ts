@@ -1,9 +1,9 @@
 const _ = require('lodash');
-const Resource = require('./resource');
-const { Request } = require('../core/request');
+import { InstagramResource as Resource } from './resource';
+import { Request } from '../core/request';
 
-class Megaphone extends Resource {
-  static log (session, data) {
+export class Megaphone extends Resource {
+  static log(session, data) {
     return new Request(session)
       .setMethod('POST')
       .setResource('megaphoneLog')
@@ -15,7 +15,7 @@ class Megaphone extends Resource {
       );
   }
 
-  static logSeenMainFeed (session) {
+  static logSeenMainFeed(session) {
     return Megaphone.log(session, {
       action: 'seen',
       display_medium: 'main_feed',
@@ -23,5 +23,3 @@ class Megaphone extends Resource {
     });
   }
 }
-
-module.exports = Megaphone;

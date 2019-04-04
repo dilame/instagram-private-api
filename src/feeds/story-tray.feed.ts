@@ -4,8 +4,7 @@ import { plainToClass } from 'class-transformer';
 import { Request } from '../core/request';
 
 export class StoryTrayFeed {
-  constructor(private session) {
-  }
+  constructor(private session) {}
 
   async get() {
     const { tray } = await new Request(this.session)

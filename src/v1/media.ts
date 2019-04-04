@@ -1,19 +1,22 @@
+import { Request, Session } from '../core';
+import * as Bluebird from 'bluebird';
 import { plainToClass } from 'class-transformer';
-import { UserResponse } from '../responses/user.response';
-import { Request } from '../core/request';
+import { UserResponse } from '../responses';
+import { InstagramResource as Resource } from './resource';
+import { pruned } from './json-pruned';
 
-const Resource = require('./resource');
-const _ = require('lodash');
-const pruned = require('./json-pruned');
+import { Comment } from './comment';
+import { Location } from './location';
+import * as Exceptions from '../core/exceptions';
+
 const request = require('request-promise');
-const Promise = require('bluebird');
-const Comment = require('./comment');
-const Location = require('./location');
-const Exceptions = require('../core/exceptions');
+
+const _ = require('lodash');
+
 const camelKeys = require('camelcase-keys');
 
 export class Media extends Resource {
-  static getById (session, id) {
+  static getById(session, id) {
     return new Request(session)
       .setMethod('GET')
       .setResource('mediaInfo', { mediaId: id })
@@ -21,7 +24,7 @@ export class Media extends Resource {
       .then(json => new Media(session, json.items[0]));
   }
 
-  static getByUrl (session, url) {
+  static getByUrl(session, url) {
     const self = this;
     return request({
       url: 'https://api.instagram.com/oembed/',
@@ -35,7 +38,7 @@ export class Media extends Resource {
       });
   }
 
-  static async likers (session, mediaId) {
+  static async likers(session, mediaId) {
     const data = await new Request(session)
       .setMethod('GET')
       .setResource('mediaLikes', { mediaId })
@@ -43,7 +46,7 @@ export class Media extends Resource {
     return plainToClass(UserResponse, data.users);
   }
 
-  static delete (session, mediaId) {
+  static delete(session, mediaId) {
     return new Request(session)
       .setMethod('POST')
       .setResource('mediaDeletePhoto', { mediaId })
@@ -61,8 +64,8 @@ export class Media extends Resource {
       });
   }
 
-  static edit (session, mediaId, caption, userTags) {
-    const requestPayload = {
+  static edit(session, mediaId, caption, userTags) {
+    const requestPayload: any = {
       media_id: mediaId,
       caption_text: caption,
     };
@@ -88,20 +91,19 @@ export class Media extends Resource {
       });
   }
 
-  static configurePhoto (session, uploadId, caption, width, height, userTags, location) {
+  static configurePhoto(session: Session, uploadId, caption, width, height, userTags, location) {
     if (_.isEmpty(uploadId)) throw new Error('Upload argument must be upload valid upload id');
     if (!caption) caption = '';
     if (!width) width = 800;
     if (!height) height = 800;
     if (!userTags) userTags = {};
     const CROP = 1;
-    let geotag_enabled = true
-    if (!location){
+    let geotag_enabled = true;
+    if (!location) {
       location = {};
-      geotag_enabled = false
+      geotag_enabled = false;
     }
-    
-    
+
     return session
       .getAccountId()
       .then(accountId => {
@@ -124,11 +126,11 @@ export class Media extends Resource {
             source_height: height,
           },
         });
-        payload = payload.replace(/\"\$width\"/gi, width.toFixed(1));
-        payload = payload.replace(/\"\$height\"/gi, height.toFixed(1));
-        payload = payload.replace(/\"\$zero\"/gi, (0).toFixed(1));
-        payload = payload.replace(/\"\$negativeZero\"/gi, `-${(0).toFixed(1)}`);
-        payload = payload.replace(/\"\$crop\"/gi, CROP.toFixed(1));
+        payload = payload.replace(/"\$width"/gi, width.toFixed(1));
+        payload = payload.replace(/"\$height"/gi, height.toFixed(1));
+        payload = payload.replace(/"\$zero"/gi, (0).toFixed(1));
+        payload = payload.replace(/"\$negativeZero"/gi, `-${(0).toFixed(1)}`);
+        payload = payload.replace(/"\$crop"/gi, CROP.toFixed(1));
 
         return new Request(session)
           .setMethod('POST')
@@ -142,7 +144,7 @@ export class Media extends Resource {
       .then(json => new Media(session, json.media));
   }
 
-  static configurePhotoStory (session, uploadId, width, height) {
+  static configurePhotoStory(session: Session, uploadId, width, height) {
     if (_.isEmpty(uploadId)) throw new Error('Upload argument must be upload valid upload id');
     if (!width) width = 800;
     if (!height) height = 800;
@@ -165,11 +167,11 @@ export class Media extends Resource {
             source_height: height,
           },
         });
-        payload = payload.replace(/\"\$width\"/gi, width.toFixed(1));
-        payload = payload.replace(/\"\$height\"/gi, height.toFixed(1));
-        payload = payload.replace(/\"\$zero\"/gi, (0).toFixed(1));
-        payload = payload.replace(/\"\$negativeZero\"/gi, `-${(0).toFixed(1)}`);
-        payload = payload.replace(/\"\$crop\"/gi, CROP.toFixed(1));
+        payload = payload.replace(/"\$width"/gi, width.toFixed(1));
+        payload = payload.replace(/"\$height"/gi, height.toFixed(1));
+        payload = payload.replace(/"\$zero"/gi, (0).toFixed(1));
+        payload = payload.replace(/"\$negativeZero"/gi, `-${(0).toFixed(1)}`);
+        payload = payload.replace(/"\$crop"/gi, CROP.toFixed(1));
 
         return new Request(session)
           .setMethod('POST')
@@ -183,7 +185,7 @@ export class Media extends Resource {
       .then(json => new Media(session, json.media));
   }
 
-  static configureVideo (
+  static configureVideo(
     session,
     uploadId,
     caption,
@@ -206,7 +208,7 @@ export class Media extends Resource {
     const duration = durationms / 1000;
     if (!caption) caption = '';
     if (!delay || typeof delay != 'number') delay = 6500;
-    return Promise.delay(delay)
+    return Bluebird.delay(delay)
       .then(() => session.getAccountId())
       .then(accountId => {
         const payload = pruned({
@@ -256,7 +258,7 @@ export class Media extends Resource {
       });
   }
 
-  static configurePhotoAlbum (session, uploadId, caption, width, height, userTags) {
+  static configurePhotoAlbum(session: Session, uploadId, caption, width, height, userTags) {
     if (_.isEmpty(uploadId)) throw new Error('Upload argument must be upload valid upload id');
     if (!caption) caption = '';
     if (!width) width = 800;
@@ -284,13 +286,13 @@ export class Media extends Resource {
     return Promise.resolve(payload);
   }
 
-  static configureVideoAlbum (session, uploadId, caption, durationms, delay, width, height) {
+  static configureVideoAlbum(session: Session, uploadId, caption, durationms, delay, width, height) {
     if (_.isEmpty(uploadId)) throw new Error('Upload argument must be upload valid upload id');
     if (typeof durationms === 'undefined') throw new Error('Durationms argument must be upload valid video duration');
     const duration = durationms / 1000;
     if (!caption) caption = '';
     if (!delay || typeof delay != 'number') delay = 6500;
-    return Promise.delay(delay).then(() => {
+    return Bluebird.delay(delay).then(() => {
       const payload = {
         filter_type: '0',
         source_type: '3',
@@ -318,13 +320,13 @@ export class Media extends Resource {
     });
   }
 
-  static configureAlbum (session, medias, caption, disableComments) {
+  static configureAlbum(session, medias, caption, disableComments) {
     const albumUploadId = new Date().getTime();
 
     caption = caption || '';
     disableComments = disableComments || false;
 
-    return Promise.mapSeries(medias, media => {
+    return Bluebird.mapSeries<any, any>(medias, media => {
       if (media.type === 'photo') {
         return Media.configurePhotoAlbum(
           session,
@@ -369,7 +371,7 @@ export class Media extends Resource {
     });
   }
 
-  parseParams (json) {
+  parseParams(json) {
     const hash = camelKeys(json);
     const that = this;
     hash.commentCount = hash.commentsDisabled ? 0 : json.comment_count;
@@ -407,7 +409,7 @@ export class Media extends Resource {
     return hash;
   }
 
-  getParams () {
+  getParams() {
     return _.extend(this._params, {
       account: this.account ? this.account.params : {},
       comments: _.map(this.comments, 'params'),

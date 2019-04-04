@@ -28,12 +28,16 @@ export class Session {
   public loginAttemptCount = 0;
   private jar: any;
 
-  constructor(public device: Device, public cookieStore: CookieStorage = new CookieMemoryStorage(), proxy: string = null) {
+  constructor(
+    public device: Device,
+    public cookieStore: CookieStorage = new CookieMemoryStorage(),
+    proxy: string = null,
+  ) {
     this.jar = Request.jar(cookieStore.store);
     this.proxyUrl = proxy;
   }
 
-  private _proxyUrl: string;
+  private _proxyUrl?: string;
 
   get proxyUrl() {
     return this._proxyUrl;
