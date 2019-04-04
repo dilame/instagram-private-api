@@ -170,18 +170,73 @@ export class Relationship extends Resource {
         return relationship;
       });
   }
-
-  setAccountId (accountId) {
+  static mutePosts(session, accountId) {
+    return new request_1.Request(session)
+      .setMethod('POST')
+      .setResource('mutePosts', { id: accountId })
+      .generateUUID()
+      .setData({ target_posts_author_id: accountId })
+      .signPayload()
+      .send()
+      .then(data => {
+        const relationship = new Relationship(session, data.friendship_status);
+        relationship.setAccountId(accountId);
+        return relationship;
+      });
+  }
+  static unmutePosts(session, accountId) {
+    return new request_1.Request(session)
+      .setMethod('POST')
+      .setResource('unmutePosts', { id: accountId })
+      .generateUUID()
+      .setData({ target_posts_author_id: accountId })
+      .signPayload()
+      .send()
+      .then(data => {
+        const relationship = new Relationship(session, data.friendship_status);
+        relationship.setAccountId(accountId);
+        return relationship;
+      });
+  }
+  static muteStory(session, accountId) {
+    return new request_1.Request(session)
+      .setMethod('POST')
+      .setResource('muteStory', { id: accountId })
+      .generateUUID()
+      .setData({ target_reel_author_id: accountId })
+      .signPayload()
+      .send()
+      .then(data => {
+        const relationship = new Relationship(session, data.friendship_status);
+        relationship.setAccountId(accountId);
+        return relationship;
+      });
+  }
+  static unmuteStory(session, accountId) {
+    return new request_1.Request(session)
+      .setMethod('POST')
+      .setResource('unmuteStory', { id: accountId })
+      .generateUUID()
+      .setData({ target_reel_author_id: accountId })
+      .signPayload()
+      .send()
+      .then(data => {
+        const relationship = new Relationship(session, data.friendship_status);
+        relationship.setAccountId(accountId);
+        return relationship;
+      });
+  }
+  setAccountId(accountId) {
     this.accountId = parseInt(accountId);
   }
-
-  getParams () {
-    return _.defaults(
-      {
-        accountId: this.accountId,
-      },
-      this._params,
-    );
+  setMuted(muted) {
+    this.muted = !!muted;
+  }
+  getParams() {
+    return _.defaults({
+                        accountId: this.accountId,
+                        muted: this.muted
+                      }, this._params);
   }
 
   approvePending () {
@@ -199,4 +254,18 @@ export class Relationship extends Resource {
   unblock () {
     return Relationship.unblock(this.session, this.accountId);
   }
+  muteStory() {
+    return Relationship.muteStory(this.session, this.accountId);
+  }
+  unmuteStory() {
+    return Relationship.unmuteStory(this.session, this.accountId);
+  }
+  mutePosts() {
+    return Relationship.mutePosts(this.session, this.accountId);
+  }
+  unmutePosts() {
+    return Relationship.unmutePosts(this.session, this.accountId);
+  }
 }
+exports.Relationship = Relationship;
+//# sourceMappingURL=relationship.js.map

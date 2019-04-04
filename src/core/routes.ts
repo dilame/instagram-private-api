@@ -101,6 +101,10 @@ export const ROUTES = {
   unsave: 'media/<%= id %>/unsave/',
   userStory: 'feed/reels_media/',
   storyTray: 'feed/reels_tray/',
+  mutePosts: 'friendships/mute_posts_or_story_from_follow/',
+  unmutePosts: 'friendships/unmute_posts_or_story_from_follow/',
+  muteStory: 'friendships/mute_posts_or_story_from_follow/',
+  unmuteStory: 'friendships/unmute_posts_or_story_from_follow/',
 };
 
 export const WEB_ROUTES = {
