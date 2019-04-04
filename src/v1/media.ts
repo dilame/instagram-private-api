@@ -1,10 +1,11 @@
+import { Session, Request } from '../core';
+
 const request = require('request-promise');
 import * as Bluebird from 'bluebird'
 const _ = require('lodash');
 
 import { plainToClass } from 'class-transformer';
-import { UserResponse } from '../responses/user.response';
-import { Request } from '../core/request';
+import { UserResponse } from '../responses';
 import {InstagramResource as Resource}  from './resource';
 import {pruned} from './json-pruned';
 
@@ -89,7 +90,7 @@ export class Media extends Resource {
       });
   }
 
-  static configurePhoto (session, uploadId, caption, width, height, userTags, location) {
+  static configurePhoto (session: Session, uploadId, caption, width, height, userTags, location) {
     if (_.isEmpty(uploadId)) throw new Error('Upload argument must be upload valid upload id');
     if (!caption) caption = '';
     if (!width) width = 800;
@@ -143,7 +144,7 @@ export class Media extends Resource {
       .then(json => new Media(session, json.media));
   }
 
-  static configurePhotoStory (session, uploadId, width, height) {
+  static configurePhotoStory (session: Session, uploadId, width, height) {
     if (_.isEmpty(uploadId)) throw new Error('Upload argument must be upload valid upload id');
     if (!width) width = 800;
     if (!height) height = 800;
@@ -257,7 +258,7 @@ export class Media extends Resource {
       });
   }
 
-  static configurePhotoAlbum (session, uploadId, caption, width, height, userTags) {
+  static configurePhotoAlbum (session: Session, uploadId, caption, width, height, userTags) {
     if (_.isEmpty(uploadId)) throw new Error('Upload argument must be upload valid upload id');
     if (!caption) caption = '';
     if (!width) width = 800;
@@ -285,7 +286,7 @@ export class Media extends Resource {
     return Promise.resolve(payload);
   }
 
-  static configureVideoAlbum (session, uploadId, caption, durationms, delay, width, height) {
+  static configureVideoAlbum (session: Session, uploadId, caption, durationms, delay, width, height) {
     if (_.isEmpty(uploadId)) throw new Error('Upload argument must be upload valid upload id');
     if (typeof durationms === 'undefined') throw new Error('Durationms argument must be upload valid video duration');
     const duration = durationms / 1000;
