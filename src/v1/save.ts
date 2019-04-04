@@ -1,7 +1,7 @@
-import Resource from './resource';
+import {InstagramResource as Resource} from './resource';
 import {Request} from '../core/request';
 
-class Save extends Resource {
+export class Save extends Resource {
   static create (session, mediaId) {
     return new Request(session)
       .setMethod('POST')
@@ -34,5 +34,3 @@ class Save extends Resource {
     return json || {};
   }
 }
-
-export default Save;

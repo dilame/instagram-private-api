@@ -5,11 +5,11 @@ const _ = require('lodash');
 import { plainToClass } from 'class-transformer';
 import { UserResponse } from '../responses/user.response';
 import { Request } from '../core/request';
-import Resource  from './resource';
-import pruned  from './json-pruned';
+import {InstagramResource as Resource}  from './resource';
+import {pruned} from './json-pruned';
 
-import Comment from './comment';
-import Location from './location';
+import {Comment} from './comment';
+import {Location} from './location';
 import * as Exceptions  from '../core/exceptions';
 const camelKeys = require('camelcase-keys');
 

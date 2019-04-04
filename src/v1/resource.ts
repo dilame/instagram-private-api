@@ -3,7 +3,7 @@ const _ = require('lodash');
 import { Request } from '../core/request';
 import { Session } from '../core/session';
 
-class InstagramResource extends EventEmitter {
+export class InstagramResource extends EventEmitter {
   constructor (session, params) {
     super();
     if (!(session instanceof Session)) throw new Error('Argument `session` is not instace of Session');
@@ -42,5 +42,3 @@ class InstagramResource extends EventEmitter {
     return new Request(this._session);
   }
 }
-
-export default InstagramResource;

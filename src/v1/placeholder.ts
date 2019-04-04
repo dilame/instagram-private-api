@@ -1,6 +1,6 @@
-import Resource from './resource';
+import {InstagramResource as Resource} from './resource';
 
-class Placeholder extends Resource {
+export class Placeholder extends Resource {
   parseParams (json) {
     const hash: any = {};
     hash.is_linked = json.is_linked;
@@ -9,5 +9,3 @@ class Placeholder extends Resource {
     return hash;
   }
 }
-
-export default Placeholder;

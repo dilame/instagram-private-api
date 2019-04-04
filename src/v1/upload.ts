@@ -1,11 +1,11 @@
 import { Request } from '../core/request';
 import { Helpers } from '../helpers';
 
-import Resource from './resource';
+import {InstagramResource as Resource} from './resource';
 import * as Bluebird from 'bluebird';
 const camelKeys = require('camelcase-keys');
 
-class Upload extends Resource {
+export class Upload extends Resource {
   static async photo (session, streamOrPathOrBuffer, uploadId, name, isSidecar) {
     const data = Buffer.isBuffer(streamOrPathOrBuffer)
       ? streamOrPathOrBuffer
@@ -174,8 +174,6 @@ class Upload extends Resource {
     return hash;
   }
 }
-
-export default Upload;
 
 function _getVideoDurationMs (buffer) {
   const start = buffer.indexOf(new Buffer('mvhd')) + 17;

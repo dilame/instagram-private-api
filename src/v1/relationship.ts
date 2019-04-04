@@ -2,7 +2,7 @@ import { plainToClass } from 'class-transformer';
 import { UserResponse } from '../responses/user.response';
 import { Request } from '../core/request';
 import * as _ from 'lodash';
-import Resource from './resource';
+import {InstagramResource as Resource} from './resource';
 import * as Exceptions from '../core/exceptions';
 
 export class Relationship extends Resource {

@@ -2,12 +2,12 @@ import { plainToClass } from 'class-transformer';
 import { UserResponse } from '../responses/user.response';
 import { Request } from '../core/request';
 
-import Resource from './resource';
+import {InstagramResource as Resource} from './resource';
 const _ = require('lodash');
 const crypto = require('crypto');
 const camelKeys = require('camelcase-keys');
 
-class Comment extends Resource {
+export class Comment extends Resource {
   static create (session, mediaId, text) {
     return new Request(session)
       .setMethod('POST')
@@ -96,5 +96,3 @@ class Comment extends Resource {
     );
   }
 }
-
-export default Comment;

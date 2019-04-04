@@ -10,7 +10,7 @@ const { urlSegmentToInstagramId } = require('instagram-id-to-url-segment');
 
 let MediaComments;
 
-function main (usernameToFind, commentToFind, postUrl) {
+export function main (usernameToFind, commentToFind, postUrl) {
   return new Promise(async (resolve, reject) => {
     USERNAMETOFIND = usernameToFind;
     COMMENTTOFIND = commentToFind;
@@ -77,7 +77,6 @@ function process (Comments) {
   return false;
 }
 
-export default main;
 
 // https://www.instagram.com/p/BjU_XzGAQaW/?taken-by=kennethaharris
 // 1789333664312657558

@@ -4,13 +4,13 @@ import { Request } from '../core/request';
 import { Helpers } from '../helpers';
 
 const _ = require('lodash');
-import Resource from './resource';
+import {InstagramResource as Resource} from './resource';
 import * as Bluebird from 'bluebird'
 const camelKeys = require('camelcase-keys');
-import ThreadItem from './thread-item';
+import {ThreadItem} from './thread-item';
 import * as Exceptions from '../core/exceptions';
 
-class Thread extends Resource {
+export class Thread extends Resource {
   static approveAll (session): any {
     return new Request(session)
       .setMethod('POST')
@@ -282,8 +282,6 @@ class Thread extends Resource {
     return threadsWrapper(this.session, request);
   }
 }
-
-export default Thread;
 
 function mapPayload (session, payload) {
   return _.map(payload.threads, thread => new Thread(session, thread));

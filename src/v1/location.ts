@@ -1,13 +1,13 @@
-import { Helpers } from '../helpers';
-
 const _ = require('lodash');
-import Resource from './resource';
 const camelKeys = require('camelcase-keys');
+
+import { Helpers } from '../helpers';
+import {InstagramResource as Resource} from './resource';
 import { Request } from '../core/request';
 import {Media} from './media';
 import * as Exceptions from '../core/exceptions';
 
-class Location extends Resource {
+export class Location extends Resource {
   static getRankedMedia (session, locationId) {
     return (
       new Request(session)
@@ -53,5 +53,3 @@ class Location extends Resource {
     return hash;
   }
 }
-
-export default Location;

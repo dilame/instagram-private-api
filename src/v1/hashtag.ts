@@ -1,11 +1,11 @@
-import { Request } from '../core/request';
-import { Helpers } from '../helpers';
-import Resource from './resource';
-
 const _ = require('lodash');
 const camelKeys = require('camelcase-keys');
 
-class Hashtag extends Resource {
+import { Request } from '../core/request';
+import { Helpers } from '../helpers';
+import {InstagramResource as Resource} from './resource';
+
+export class Hashtag extends Resource {
   static search (session, query) {
     return session
       .getAccountId()
@@ -51,5 +51,3 @@ class Hashtag extends Resource {
     return hash;
   }
 }
-
-export default Hashtag;

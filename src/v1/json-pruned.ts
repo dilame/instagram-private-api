@@ -87,7 +87,7 @@ function str (key, holder, depthDecr, arrayMaxLength) {
   }
 }
 
-export default (value, depthDecr?, arrayMaxLength?) => {
+export const pruned = (value, depthDecr?, arrayMaxLength?) => {
   seen = [];
   depthDecr = depthDecr || DEFAULT_MAX_DEPTH;
   arrayMaxLength = arrayMaxLength || DEFAULT_ARRAY_MAX_LENGTH;

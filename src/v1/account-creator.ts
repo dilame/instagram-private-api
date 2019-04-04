@@ -7,11 +7,11 @@ const _ = require('lodash');
 const clean = require('underscore.string/clean');
 import * as Exceptions from '../core/exceptions';
 
-import QE from './qe';
+import {QE} from './qe';
 import {Relationship} from './relationship';
-import discover from './discover';
+import {discover} from './discover';
 
-import Thread from './thread';
+import {Thread} from './thread';
 
 export class AccountCreator {
   session: any;

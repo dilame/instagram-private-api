@@ -4,7 +4,7 @@ import * as builds from './builds.json';
 import * as CONSTANTS from '../../constants/constants';
 import * as _ from 'lodash';
 import { IAppCredentials, IDevicePayload } from './device.interface';
-import pruned from '../../v1/json-pruned';
+import {pruned} from '../../v1/json-pruned';
 import hmac = require('crypto-js/hmac-sha256');
 
 export class Device {
