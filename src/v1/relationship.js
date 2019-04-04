@@ -171,7 +171,7 @@ export class Relationship extends Resource {
       });
   }
   static mutePosts(session, accountId) {
-    return new request_1.Request(session)
+    return new Request(session)
       .setMethod('POST')
       .setResource('mutePosts', { id: accountId })
       .generateUUID()
@@ -185,7 +185,7 @@ export class Relationship extends Resource {
       });
   }
   static unmutePosts(session, accountId) {
-    return new request_1.Request(session)
+    return new Request(session)
       .setMethod('POST')
       .setResource('unmutePosts', { id: accountId })
       .generateUUID()
@@ -199,7 +199,7 @@ export class Relationship extends Resource {
       });
   }
   static muteStory(session, accountId) {
-    return new request_1.Request(session)
+    return new Request(session)
       .setMethod('POST')
       .setResource('muteStory', { id: accountId })
       .generateUUID()
@@ -213,7 +213,7 @@ export class Relationship extends Resource {
       });
   }
   static unmuteStory(session, accountId) {
-    return new request_1.Request(session)
+    return new Request(session)
       .setMethod('POST')
       .setResource('unmuteStory', { id: accountId })
       .generateUUID()
