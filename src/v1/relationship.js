@@ -267,5 +267,3 @@ export class Relationship extends Resource {
     return Relationship.unmutePosts(this.session, this.accountId);
   }
 }
-exports.Relationship = Relationship;
-//# sourceMappingURL=relationship.js.map
