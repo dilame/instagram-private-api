@@ -2,13 +2,13 @@ const _ = require('lodash');
 const camelKeys = require('camelcase-keys');
 
 import { Helpers } from '../helpers';
-import {InstagramResource as Resource} from './resource';
+import { InstagramResource as Resource } from './resource';
 import { Request } from '../core/request';
-import {Media} from './media';
+import { Media } from './media';
 import * as Exceptions from '../core/exceptions';
 
 export class Location extends Resource {
-  static getRankedMedia (session, locationId) {
+  static getRankedMedia(session, locationId) {
     return (
       new Request(session)
         .setMethod('GET')
@@ -26,7 +26,7 @@ export class Location extends Resource {
     );
   }
 
-  static search (session, query) {
+  static search(session, query) {
     return session
       .getAccountId()
       .then(id => {
@@ -42,7 +42,7 @@ export class Location extends Resource {
       .then(data => _.map(data.items, location => new Location(session, location)));
   }
 
-  parseParams (json) {
+  parseParams(json) {
     const hash = camelKeys(json);
     hash.address = json.location.address;
     hash.city = json.location.city;

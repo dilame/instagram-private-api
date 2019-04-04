@@ -5,7 +5,6 @@ import { MediaResponse } from '../responses/media.response';
 import { Request } from '../core/request';
 import { OnlyRankedItemsError } from '../core/exceptions';
 
-
 export class TaggedMediaFeed extends AbstractFeed<MediaResponse> {
   constructor(session, public tag: string, public limit = Infinity) {
     super(session);
@@ -27,8 +26,7 @@ export class TaggedMediaFeed extends AbstractFeed<MediaResponse> {
 
   async get(): Promise<MediaResponse[]> {
     const data = await this.getRawResponse();
-    if (!this.moreAvailable && !_.isEmpty(data.ranked_items) && !this.getCursor())
-      throw new OnlyRankedItemsError();
+    if (!this.moreAvailable && !_.isEmpty(data.ranked_items) && !this.getCursor()) throw new OnlyRankedItemsError();
     return plainToClass(MediaResponse, data.items);
   }
 
@@ -37,4 +35,3 @@ export class TaggedMediaFeed extends AbstractFeed<MediaResponse> {
     return plainToClass(MediaResponse, data.ranked_items);
   }
 }
-

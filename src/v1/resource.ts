@@ -4,7 +4,7 @@ import { Request } from '../core/request';
 import { Session } from '../core/session';
 
 export class InstagramResource extends EventEmitter {
-  constructor (session, params) {
+  constructor(session, params) {
     super();
     if (!(session instanceof Session)) throw new Error('Argument `session` is not instace of Session');
     this._session = session;
@@ -12,20 +12,20 @@ export class InstagramResource extends EventEmitter {
     this.setParams(_.isObject(params) ? params : {});
   }
 
-  get params () {
+  get params() {
     return this.getParams();
   }
 
-  get session () {
+  get session() {
     return this._session;
   }
 
-  parseParams (params) {
+  parseParams(params) {
     // Override this to parse instagram shit
     return params;
   }
 
-  setParams (params) {
+  setParams(params) {
     if (!_.isObject(params)) throw new Error('Method `setParams` must have valid argument');
     params = this.parseParams(params);
     if (!_.isObject(params)) throw new Error('Method `parseParams` must return object');
@@ -34,11 +34,11 @@ export class InstagramResource extends EventEmitter {
     return this;
   }
 
-  getParams () {
+  getParams() {
     return this._params;
   }
 
-  request () {
+  request() {
     return new Request(this._session);
   }
 }

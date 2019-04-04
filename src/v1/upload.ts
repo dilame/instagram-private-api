@@ -1,12 +1,13 @@
 import { Request } from '../core/request';
 import { Helpers } from '../helpers';
 
-import {InstagramResource as Resource} from './resource';
+import { InstagramResource as Resource } from './resource';
 import * as Bluebird from 'bluebird';
+
 const camelKeys = require('camelcase-keys');
 
 export class Upload extends Resource {
-  static async photo (session, streamOrPathOrBuffer, uploadId, name, isSidecar) {
+  static async photo(session, streamOrPathOrBuffer, uploadId, name, isSidecar) {
     const data = Buffer.isBuffer(streamOrPathOrBuffer)
       ? streamOrPathOrBuffer
       : Helpers.pathToStream(streamOrPathOrBuffer);
@@ -52,7 +53,7 @@ export class Upload extends Resource {
       .then(json => new Upload(session, json));
   }
 
-  static video (session, videoBufferOrPath, photoStreamOrPath, isSidecar, fields?) {
+  static video(session, videoBufferOrPath, photoStreamOrPath, isSidecar, fields?) {
     //Probably not the best way to upload video, best to use stream not to store full video in memory, but it's the easiest
     const predictedUploadId = new Date().getTime();
     const request = new Request(session);
@@ -119,7 +120,7 @@ export class Upload extends Resource {
     });
   }
 
-  static album (session, medias, caption, disableComments): any {
+  static album(session, medias, caption, disableComments): any {
     const uploadPromises: any = [];
 
     if (medias.length < 2 || medias.length > 10) {
@@ -165,7 +166,7 @@ export class Upload extends Resource {
     return Promise.all(uploadPromises);
   }
 
-  parseParams (json) {
+  parseParams(json) {
     const hash = camelKeys(json);
     if (json.video_upload_urls && json.video_upload_urls.length) {
       hash.uploadUrl = json.video_upload_urls[0].url;
@@ -175,7 +176,7 @@ export class Upload extends Resource {
   }
 }
 
-function _getVideoDurationMs (buffer) {
+function _getVideoDurationMs(buffer) {
   const start = buffer.indexOf(new Buffer('mvhd')) + 17;
   const timeScale = buffer.readUInt32BE(start, 4);
   const duration = buffer.readUInt32BE(start + 4, 4);
@@ -184,7 +185,7 @@ function _getVideoDurationMs (buffer) {
   return movieLength * 1000;
 }
 
-function _sendChunkedRequest (session, url, job, sessionId, buffer, range, isSidecar) {
+function _sendChunkedRequest(session, url, job, sessionId, buffer, range, isSidecar) {
   const headers = {
     job,
     Host: 'upload.instagram.com',
@@ -210,7 +211,7 @@ function _sendChunkedRequest (session, url, job, sessionId, buffer, range, isSid
     .send();
 }
 
-function _generateSessionId (uploadId) {
+function _generateSessionId(uploadId) {
   let text = `${uploadId || ''}-`;
   const possible = '0123456789';
 

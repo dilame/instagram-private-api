@@ -3,10 +3,10 @@ const camelKeys = require('camelcase-keys');
 
 import { Request } from '../core/request';
 import { Helpers } from '../helpers';
-import {InstagramResource as Resource} from './resource';
+import { InstagramResource as Resource } from './resource';
 
 export class Hashtag extends Resource {
-  static search (session, query) {
+  static search(session, query) {
     return session
       .getAccountId()
       .then(id => {
@@ -22,7 +22,7 @@ export class Hashtag extends Resource {
       .then(data => _.map(data.results, hashtag => new Hashtag(session, hashtag)));
   }
 
-  static related (session, tag) {
+  static related(session, tag) {
     return new Request(session)
       .setMethod('GET')
       .setResource('hashtagsRelated', {
@@ -34,7 +34,7 @@ export class Hashtag extends Resource {
       .then(data => _.map(data.related, hashtag => new Hashtag(session, hashtag)));
   }
 
-  static info (session, tag) {
+  static info(session, tag) {
     return new Request(session)
       .setMethod('GET')
       .setResource('hashtagsInfo', {
@@ -44,7 +44,7 @@ export class Hashtag extends Resource {
       .then(hashtag => new Hashtag(session, hashtag));
   }
 
-  parseParams (json) {
+  parseParams(json) {
     const hash = camelKeys(json);
     hash.mediaCount = parseInt(json.media_count);
     if (_.isObject(hash.id)) hash.id = hash.id.toString();

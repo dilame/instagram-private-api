@@ -2,12 +2,12 @@ import * as _ from 'lodash';
 import * as camelKeys from 'camelcase-keys';
 import { plainToClass } from 'class-transformer';
 import { UserResponse } from '../responses';
-import {InstagramResource as Resource} from './resource';
+import { InstagramResource as Resource } from './resource';
 import { Media } from './media';
-import {Location} from './location';
-import {Link} from './link';
-import {Placeholder} from './placeholder';
-import {Hashtag} from './hashtag';
+import { Location } from './location';
+import { Link } from './link';
+import { Placeholder } from './placeholder';
+import { Hashtag } from './hashtag';
 
 export class ThreadItem extends Resource {
   parseParams(json) {

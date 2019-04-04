@@ -1,7 +1,7 @@
 import * as _ from 'lodash';
 import { plainToClass } from 'class-transformer';
 import { UserResponse } from '../responses/user.response';
-import { Request, Session, IGAccountNotFoundError, RequestError } from '../core';
+import { IGAccountNotFoundError, Request, RequestError, Session } from '../core';
 import { Helpers } from '../helpers';
 
 export class Account {

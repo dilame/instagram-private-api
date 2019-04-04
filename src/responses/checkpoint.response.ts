@@ -10,11 +10,10 @@ class Challenge {
   native_flow: boolean;
 }
 
-export class CheckpointResponse extends InstagramResponse{
+export class CheckpointResponse extends InstagramResponse {
   message: string;
   @Type(() => Challenge)
   challenge: Challenge;
   status: string;
   error_type: string;
 }
-

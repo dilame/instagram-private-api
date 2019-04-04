@@ -1,21 +1,22 @@
-import { Session, Request } from '../core';
-
-const request = require('request-promise');
-import * as Bluebird from 'bluebird'
-const _ = require('lodash');
-
+import { Request, Session } from '../core';
+import * as Bluebird from 'bluebird';
 import { plainToClass } from 'class-transformer';
 import { UserResponse } from '../responses';
-import {InstagramResource as Resource}  from './resource';
-import {pruned} from './json-pruned';
+import { InstagramResource as Resource } from './resource';
+import { pruned } from './json-pruned';
 
-import {Comment} from './comment';
-import {Location} from './location';
-import * as Exceptions  from '../core/exceptions';
+import { Comment } from './comment';
+import { Location } from './location';
+import * as Exceptions from '../core/exceptions';
+
+const request = require('request-promise');
+
+const _ = require('lodash');
+
 const camelKeys = require('camelcase-keys');
 
 export class Media extends Resource {
-  static getById (session, id) {
+  static getById(session, id) {
     return new Request(session)
       .setMethod('GET')
       .setResource('mediaInfo', { mediaId: id })
@@ -23,7 +24,7 @@ export class Media extends Resource {
       .then(json => new Media(session, json.items[0]));
   }
 
-  static getByUrl (session, url) {
+  static getByUrl(session, url) {
     const self = this;
     return request({
       url: 'https://api.instagram.com/oembed/',
@@ -37,7 +38,7 @@ export class Media extends Resource {
       });
   }
 
-  static async likers (session, mediaId) {
+  static async likers(session, mediaId) {
     const data = await new Request(session)
       .setMethod('GET')
       .setResource('mediaLikes', { mediaId })
@@ -45,7 +46,7 @@ export class Media extends Resource {
     return plainToClass(UserResponse, data.users);
   }
 
-  static delete (session, mediaId) {
+  static delete(session, mediaId) {
     return new Request(session)
       .setMethod('POST')
       .setResource('mediaDeletePhoto', { mediaId })
@@ -63,7 +64,7 @@ export class Media extends Resource {
       });
   }
 
-  static edit (session, mediaId, caption, userTags) {
+  static edit(session, mediaId, caption, userTags) {
     const requestPayload: any = {
       media_id: mediaId,
       caption_text: caption,
@@ -90,20 +91,19 @@ export class Media extends Resource {
       });
   }
 
-  static configurePhoto (session: Session, uploadId, caption, width, height, userTags, location) {
+  static configurePhoto(session: Session, uploadId, caption, width, height, userTags, location) {
     if (_.isEmpty(uploadId)) throw new Error('Upload argument must be upload valid upload id');
     if (!caption) caption = '';
     if (!width) width = 800;
     if (!height) height = 800;
     if (!userTags) userTags = {};
     const CROP = 1;
-    let geotag_enabled = true
-    if (!location){
+    let geotag_enabled = true;
+    if (!location) {
       location = {};
-      geotag_enabled = false
+      geotag_enabled = false;
     }
-    
-    
+
     return session
       .getAccountId()
       .then(accountId => {
@@ -144,7 +144,7 @@ export class Media extends Resource {
       .then(json => new Media(session, json.media));
   }
 
-  static configurePhotoStory (session: Session, uploadId, width, height) {
+  static configurePhotoStory(session: Session, uploadId, width, height) {
     if (_.isEmpty(uploadId)) throw new Error('Upload argument must be upload valid upload id');
     if (!width) width = 800;
     if (!height) height = 800;
@@ -185,7 +185,7 @@ export class Media extends Resource {
       .then(json => new Media(session, json.media));
   }
 
-  static configureVideo (
+  static configureVideo(
     session,
     uploadId,
     caption,
@@ -258,7 +258,7 @@ export class Media extends Resource {
       });
   }
 
-  static configurePhotoAlbum (session: Session, uploadId, caption, width, height, userTags) {
+  static configurePhotoAlbum(session: Session, uploadId, caption, width, height, userTags) {
     if (_.isEmpty(uploadId)) throw new Error('Upload argument must be upload valid upload id');
     if (!caption) caption = '';
     if (!width) width = 800;
@@ -286,7 +286,7 @@ export class Media extends Resource {
     return Promise.resolve(payload);
   }
 
-  static configureVideoAlbum (session: Session, uploadId, caption, durationms, delay, width, height) {
+  static configureVideoAlbum(session: Session, uploadId, caption, durationms, delay, width, height) {
     if (_.isEmpty(uploadId)) throw new Error('Upload argument must be upload valid upload id');
     if (typeof durationms === 'undefined') throw new Error('Durationms argument must be upload valid video duration');
     const duration = durationms / 1000;
@@ -320,13 +320,13 @@ export class Media extends Resource {
     });
   }
 
-  static configureAlbum (session, medias, caption, disableComments) {
+  static configureAlbum(session, medias, caption, disableComments) {
     const albumUploadId = new Date().getTime();
 
     caption = caption || '';
     disableComments = disableComments || false;
 
-    return Bluebird.mapSeries<any, any>(medias, (media) => {
+    return Bluebird.mapSeries<any, any>(medias, media => {
       if (media.type === 'photo') {
         return Media.configurePhotoAlbum(
           session,
@@ -371,7 +371,7 @@ export class Media extends Resource {
     });
   }
 
-  parseParams (json) {
+  parseParams(json) {
     const hash = camelKeys(json);
     const that = this;
     hash.commentCount = hash.commentsDisabled ? 0 : json.comment_count;
@@ -409,7 +409,7 @@ export class Media extends Resource {
     return hash;
   }
 
-  getParams () {
+  getParams() {
     return _.extend(this._params, {
       account: this.account ? this.account.params : {},
       comments: _.map(this.comments, 'params'),

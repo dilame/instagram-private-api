@@ -175,7 +175,6 @@ export class NotPossibleToResolveChallenge extends APIError {
   }
 }
 
-
 export class NoChallengeRequired extends APIError {
   constructor() {
     super('No challenge is required to use account!');

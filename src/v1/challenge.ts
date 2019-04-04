@@ -18,8 +18,7 @@ export class Challenge {
     protected readonly session: Session,
     protected readonly error: CheckpointError,
     protected readonly json,
-  ) {
-  }
+  ) {}
 
   static async handleResponse(response, checkpointError: CheckpointError, defaultMethod: ChallengeMethod) {
     const session = checkpointError.session;
@@ -92,7 +91,7 @@ export class Challenge {
           .setUrl(
             `https://i.instagram.com/api/v1${checkpointError.json.challenge.api_path}?guid=${
               checkpointError.session.device.uuid
-              }&device_id=${checkpointError.session.device.id}`,
+            }&device_id=${checkpointError.session.device.id}`,
           )
           .send({ followRedirect: true });
       }
@@ -213,6 +212,7 @@ export class PhoneVerificationChallenge extends Challenge {
   get submitPhone() {
     return this.json.step_name === 'submit_phone';
   }
+
   //Confirming phone number.
   //We need to return PhoneVerificationChallenge that can be able to request code.
   //So, if we need to submit phone number first - let's do it. If not - just return current PhoneVerificationChallenge;

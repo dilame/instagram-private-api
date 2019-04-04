@@ -3,8 +3,7 @@ import { MediaResponse } from '../responses/media.response';
 import { plainToClass } from 'class-transformer';
 
 export class UserStoryFeed {
-  constructor(public session: Session, public userIds: (string | number)[]) {
-  }
+  constructor(public session: Session, public userIds: (string | number)[]) {}
 
   async get(): Promise<MediaResponse[]> {
     const data = await new Request(this.session)

@@ -3,7 +3,7 @@ import { Request, Session } from '../core';
 import { LOGIN_EXPERIMENTS, SUPPORTED_CAPABILITIES } from '../constants/constants';
 
 export class Internal {
-  static readMsisdnHeader (session: Session): Bluebird<any> {
+  static readMsisdnHeader(session: Session): Bluebird<any> {
     return new Request(session)
       .setMethod('POST')
       .setResource('readMsisdnHeader')
@@ -19,7 +19,7 @@ export class Internal {
       .send();
   }
 
-  static qeSync (session: Session, preLogin): any {
+  static qeSync(session: Session, preLogin): any {
     const req = new Request(session)
       .setMethod('POST')
       .setResource('qeSync')
@@ -48,7 +48,7 @@ export class Internal {
     }
   }
 
-  static launcherSync (session: Session, preLogin): any {
+  static launcherSync(session: Session, preLogin): any {
     const req = new Request(session)
       .setMethod('POST')
       .setResource('launcherSync')
@@ -79,7 +79,7 @@ export class Internal {
     }
   }
 
-  static logAttribution (session: Session): Bluebird<any> {
+  static logAttribution(session: Session): Bluebird<any> {
     return new Request(session)
       .setMethod('POST')
       .setResource('logAttribution')
@@ -92,7 +92,7 @@ export class Internal {
       .send();
   }
 
-  static fetchZeroRatingToken (session: Session): Bluebird<any> {
+  static fetchZeroRatingToken(session: Session): Bluebird<any> {
     return new Request(session)
       .setMethod('GET')
       .setResource('zeroRatingToken', {
@@ -105,7 +105,7 @@ export class Internal {
       .send();
   }
 
-  static setContactPointPrefill (session: Session): Bluebird<any> {
+  static setContactPointPrefill(session: Session): Bluebird<any> {
     return new Request(session)
       .setMethod('POST')
       .setResource('contactPointPrefill')
@@ -120,7 +120,7 @@ export class Internal {
       .send();
   }
 
-  static getRankedRecipients (session: Session, mode): Bluebird<any> {
+  static getRankedRecipients(session: Session, mode): Bluebird<any> {
     return new Request(session)
       .setMethod('GET')
       .setResource('getRankedRecipients', {
@@ -132,7 +132,7 @@ export class Internal {
       .send();
   }
 
-  static getPresences (session: Session): Bluebird<any> {
+  static getPresences(session: Session): Bluebird<any> {
     return new Request(session)
       .setMethod('GET')
       .setResource('getPresences')
@@ -140,7 +140,7 @@ export class Internal {
       .send();
   }
 
-  static getRecentActivityInbox (session: Session): Bluebird<any> {
+  static getRecentActivityInbox(session: Session): Bluebird<any> {
     return new Request(session)
       .setMethod('GET')
       .setResource('getRecentActivityInbox')
@@ -148,7 +148,7 @@ export class Internal {
       .send();
   }
 
-  static getProfileNotice (session: Session): Bluebird<any> {
+  static getProfileNotice(session: Session): Bluebird<any> {
     return new Request(session)
       .setMethod('GET')
       .setResource('getProfileNotice')
@@ -156,7 +156,7 @@ export class Internal {
       .send();
   }
 
-  static getExploreFeed (session: Session): Bluebird<any> {
+  static getExploreFeed(session: Session): Bluebird<any> {
     return new Request(session)
       .setMethod('GET')
       .setResource('exploreFeed', {

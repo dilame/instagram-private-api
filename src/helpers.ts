@@ -8,7 +8,7 @@ export class Helpers {
   static isValidUrl = validUrl.isUri;
   static emailTester = /^[-!#$%&'*+\/0-9=?A-Z^_a-z{|}~](\.?[-!#$%&'*+\/0-9=?A-Z^_a-z`{|}~])*@[a-zA-Z0-9](-?\.?[a-zA-Z0-9])*\.[a-zA-Z](-?[a-zA-Z0-9])+$/;
 
-  static validateEmail (email) {
+  static validateEmail(email) {
     if (!email) return false;
     if (email.length > 254) return false;
     const valid = Helpers.emailTester.test(email);
@@ -19,7 +19,7 @@ export class Helpers {
     return !domainParts.some(part => part.length > 63);
   }
 
-  static generateUUID () {
+  static generateUUID() {
     return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'
       .replace(/[xy]/g, c => {
         const r = (Math.random() * 16) | 0;
@@ -29,15 +29,17 @@ export class Helpers {
       .toLowerCase();
   }
 
-  static buildRankToken (accountId) { return `${accountId}_${Helpers.generateUUID()}`; }
+  static buildRankToken(accountId) {
+    return `${accountId}_${Helpers.generateUUID()}`;
+  }
 
-  static pathToStream (streamOrPath) {
+  static pathToStream(streamOrPath) {
     const stream = _.isString(streamOrPath) ? fs.createReadStream(path.resolve(streamOrPath)) : streamOrPath;
     if (!isStream(stream)) throw new Error('Argument is not posible to convert to stream!');
     return stream;
   }
 
-  static pathToBuffer (bufferOrPath) {
+  static pathToBuffer(bufferOrPath) {
     return new Promise(resolve => {
       if (!_.isString(bufferOrPath)) {
         return callback(null, bufferOrPath);
@@ -45,7 +47,7 @@ export class Helpers {
         fs.readFile(path.resolve(bufferOrPath), callback);
       }
 
-      function callback (err, buffer) {
+      function callback(err, buffer) {
         if (err) throw err;
         if (!Buffer.isBuffer(buffer)) throw new Error('Argument is not posible to convert to buffer!');
         return resolve(buffer);
@@ -53,7 +55,7 @@ export class Helpers {
     });
   }
 
-  static extractUrl (text) {
+  static extractUrl(text) {
     return text.match(
       /((?:https:\/\/)|(?:http:\/\/)|(?:www\.))?([a-zA-Z0-9\-.]+\.[a-zA-Z]{2,3}(?:\??)[a-zA-Z0-9\-._?,'\/\\+&%$#=~]+)/g,
     );

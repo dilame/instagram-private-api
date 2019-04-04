@@ -4,13 +4,14 @@ let USERNAMETOFIND;
 let COMMENTTOFIND;
 
 import Client from './v1';
+
 const path = require('path');
 
 const { urlSegmentToInstagramId } = require('instagram-id-to-url-segment');
 
 let MediaComments;
 
-export function main (usernameToFind, commentToFind, postUrl) {
+export function main(usernameToFind, commentToFind, postUrl) {
   return new Promise(async (resolve, reject) => {
     USERNAMETOFIND = usernameToFind;
     COMMENTTOFIND = commentToFind;
@@ -38,7 +39,7 @@ export function main (usernameToFind, commentToFind, postUrl) {
   });
 }
 
-async function loop (cb) {
+async function loop(cb) {
   const Comments = await get();
 
   if (!Comments) {
@@ -55,7 +56,7 @@ async function loop (cb) {
   setTimeout(loop, 5000, cb);
 }
 
-async function get () {
+async function get() {
   if (MediaComments.iteration == 0) {
     return await MediaComments.get();
   } else if (MediaComments.moreAvailable) {
@@ -65,7 +66,7 @@ async function get () {
   }
 }
 
-function process (Comments) {
+function process(Comments) {
   for (let idx = 0; idx < Comments.length; idx++) {
     if (Comments[idx]._params.user.username == USERNAMETOFIND) {
       if (Comments[idx]._params.text == COMMENTTOFIND) {
@@ -76,7 +77,6 @@ function process (Comments) {
 
   return false;
 }
-
 
 // https://www.instagram.com/p/BjU_XzGAQaW/?taken-by=kennethaharris
 // 1789333664312657558

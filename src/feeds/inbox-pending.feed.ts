@@ -1,21 +1,21 @@
 import { AbstractFeed } from './abstract.feed';
 import { Request } from '../core/request';
-import {Thread} from '../v1/thread';
-
+import { Thread } from '../v1/thread';
 
 export class InboxPendingFeed extends AbstractFeed<any> {
   pendingRequestsTotal: any;
-  constructor (session, limit) {
+
+  constructor(session, limit) {
     super(session);
     this.limit = parseInt(limit) || null;
     this.pendingRequestsTotal = null;
   }
 
-  getPendingRequestsTotal () {
+  getPendingRequestsTotal() {
     return this.pendingRequestsTotal;
   }
 
-  get (): any {
+  get(): any {
     const that = this;
     return new Request(this.session)
       .setMethod('GET')
@@ -31,4 +31,3 @@ export class InboxPendingFeed extends AbstractFeed<any> {
       });
   }
 }
-

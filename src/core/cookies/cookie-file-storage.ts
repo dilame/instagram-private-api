@@ -7,7 +7,7 @@ const path = require('path');
 const fs = require('fs');
 
 export class CookieFileStorage extends CookieStorage {
-  constructor (cookiePath) {
+  constructor(cookiePath) {
     cookiePath = path.resolve(cookiePath);
     CookieFileStorage.ensureExistenceOfJSONFilePath(cookiePath);
     const store = new FileCookieStore(cookiePath);
@@ -20,12 +20,7 @@ export class CookieFileStorage extends CookieStorage {
     super(store);
   }
 
-  destroy () {
-    // @ts-ignore
-    fs.unlinkSync(this.storage.filePath);
-  }
-
-  static ensureExistenceOfJSONFilePath(path){
+  static ensureExistenceOfJSONFilePath(path) {
     try {
       touch.sync(path);
       JSON.parse(fs.readFileSync(path));
@@ -33,5 +28,10 @@ export class CookieFileStorage extends CookieStorage {
       fs.unlinkSync(path);
     }
     touch.sync(path);
+  }
+
+  destroy() {
+    // @ts-ignore
+    fs.unlinkSync(this.storage.filePath);
   }
 }

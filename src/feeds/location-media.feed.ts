@@ -5,7 +5,6 @@ import { Request } from '../core/request';
 import { OnlyRankedItemsError, ParseError, PlaceNotFound } from '../core/exceptions';
 import { MediaResponse } from '../responses/media.response';
 
-
 export class LocationMediaFeed extends AbstractFeed<MediaResponse> {
   constructor(session, public locationId: string | number, public limit = Infinity) {
     super(session);
@@ -25,8 +24,7 @@ export class LocationMediaFeed extends AbstractFeed<MediaResponse> {
         throw new PlaceNotFound();
       });
     this.moreAvailable = data.more_available && !!data.next_max_id;
-    if (!this.moreAvailable && !_.isEmpty(data.ranked_items) && !this.getCursor())
-      throw new OnlyRankedItemsError();
+    if (!this.moreAvailable && !_.isEmpty(data.ranked_items) && !this.getCursor()) throw new OnlyRankedItemsError();
     if (this.moreAvailable) this.setCursor(data.next_max_id);
     return plainToClass(MediaResponse, data.items);
   }

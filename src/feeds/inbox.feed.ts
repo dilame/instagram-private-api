@@ -1,6 +1,6 @@
 import { Request, Session } from '../core';
 import { AbstractFeed } from './abstract.feed';
-import {Thread} from '../v1/thread';
+import { Thread } from '../v1/thread';
 
 export class InboxFeed extends AbstractFeed<any> {
   public pendingRequestsTotal: null;

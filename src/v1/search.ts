@@ -3,8 +3,8 @@ import { UserResponse } from '../responses/user.response';
 import { Request } from '../core/request';
 import { Helpers } from '../helpers';
 
-import {Hashtag} from './hashtag';
-import {Location} from './location';
+import { Hashtag } from './hashtag';
+import { Location } from './location';
 
 export const search = (session, query) =>
   session

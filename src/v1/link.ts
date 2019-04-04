@@ -1,7 +1,7 @@
-import {InstagramResource as Resource} from './resource';
+import { InstagramResource as Resource } from './resource';
 
 export class Link extends Resource {
-  parseParams (json) {
+  parseParams(json) {
     const hash: any = {};
     hash.text = json.text;
     hash.link = {
