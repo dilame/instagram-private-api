@@ -4,8 +4,6 @@ const mkdirp = require('mkdirp');
 const support = require('./support');
 const _ = require('lodash');
 const fs = require('fs');
-const imageDiff = require('image-diff');
-const rp = require('request-promise');
 let session;
 let credentials; // [username, password, proxy]
 
@@ -56,14 +54,8 @@ describe('Sessions', () => {
   it('should not be problem to create sessions', async done => {
     const device = new Device({ username: credentials[0] });
     const storage = new Client.CookieMemoryStorage();
-    try{
-      const session = await Client.Session.create(
-        device,
-        storage,
-        credentials[0],
-        credentials[1],
-        credentials[2],
-      );
+    try {
+      const session = await Client.Session.create(device, storage, credentials[0], credentials[1], credentials[2]);
       module.exports.session = session;
       console.log(session);
       session.should.be.instanceOf(Client.Session);
@@ -71,7 +63,6 @@ describe('Sessions', () => {
     } catch (e) {
       done(e);
     }
-
   });
 
   describe('Basics', () => {
@@ -119,14 +110,12 @@ describe('Sessions', () => {
     });
 
     it('should not be problem to get media likers', done => {
-      Client.Media.likers(session, '1317759032287303554_25025320').then(
-        likers => {
-          _.each(likers, liker => {
-            liker.should.be.instanceOf(Client.Account);
-          });
-          done();
-        },
-      );
+      Client.Media.likers(session, '1317759032287303554_25025320').then(likers => {
+        _.each(likers, liker => {
+          liker.should.be.instanceOf(Client.Account);
+        });
+        done();
+      });
     });
 
     it('should be able to block user', done => {
@@ -146,7 +135,7 @@ describe('Sessions', () => {
     });
 
     it('should not be problem to access media location property', done => {
-      function shouldBeValidLocation (location) {
+      function shouldBeValidLocation(location) {
         location.params.should.have.property('title');
         location.params.should.have.property('id');
         location.should.have.property('id');
@@ -155,10 +144,7 @@ describe('Sessions', () => {
       Client.Location.search(session, 'New York')
         .then(locations => {
           _.each(locations, shouldBeValidLocation);
-          const locationFeed = new Client.Feed.LocationMedia(
-            session,
-            _.first(locations).id,
-          );
+          const locationFeed = new Client.Feed.LocationMedia(session, _.first(locations).id);
           return locationFeed.get();
         })
         .then(media => {
@@ -195,13 +181,7 @@ describe('Sessions', () => {
     it('should not be problem to use in memory cookies', done => {
       const device = new Client.Device(credentials[0]);
       const storage = new Client.CookieMemoryStorage();
-      const promise = Client.Session.create(
-        device,
-        storage,
-        credentials[0],
-        credentials[1],
-        credentials[2],
-      );
+      const promise = Client.Session.create(device, storage, credentials[0], credentials[1], credentials[2]);
       promise
         .then(sessionInstance => {
           sessionInstance.should.be.instanceOf(Client.Session);
@@ -210,56 +190,6 @@ describe('Sessions', () => {
         .then(account => {
           account.should.be.instanceOf(Client.Account);
           done();
-        });
-    });
-
-    it('should not be problem to upload profile picture', done => {
-      const device = new Client.Device(credentials[0]);
-      const storage = new Client.CookieMemoryStorage();
-      const catPath = `${__dirname}/cat.jpg`;
-      const catTmpPath = `${__dirname}/tmp/downloaded.jpg`;
-      const promise = Client.Session.create(
-        device,
-        storage,
-        credentials[0],
-        credentials[1],
-        credentials[2],
-      );
-      promise
-        .then(sessionInstance => {
-          sessionInstance.should.be.instanceOf(Client.Session);
-          return Client.Account.setProfilePicture(session, catPath);
-        })
-        .then(account => {
-          account.should.be.instanceOf(Client.Account);
-          const picture = account.params.picture;
-          return [rp.get(picture, { encoding: 'binary' }), account];
-        })
-        .spread(picture => {
-          fs.writeFileSync(
-            `${__dirname}/tmp/downloaded.jpg`,
-            picture,
-            'binary',
-          );
-          return new Promise((res, rej) => {
-            imageDiff.getFullResult(
-              {
-                actualImage: catTmpPath,
-                expectedImage: catPath,
-              },
-              (err, diff) => {
-                if (err) return rej(err);
-                return res(diff);
-              },
-            );
-          });
-        })
-        .then(diff => {
-          diff.percentage.should.be.below(0.1);
-          done();
-        })
-        .catch(reason => {
-          done(reason);
         });
     });
   });

@@ -259,7 +259,7 @@ export class Request {
     try {
       // Sometimes we have numbers greater than Number.MAX_SAFE_INTEGER in json response
       // To handle it we just wrap numbers with length > 15 it double quotes to get strings instead
-      const bigIntToString = /([\[:])?([\d.]{15,})([,}\]])/gi;
+      const bigIntToString = /([\[:])?(-?[\d.]{15,})(\s*?[,}\]])/gi;
       response.body = JSON.parse(response.body.replace(bigIntToString, `$1"$2"$3`));
       return response;
     } catch (err) {
