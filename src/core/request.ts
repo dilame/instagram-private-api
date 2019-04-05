@@ -290,7 +290,7 @@ export class Request {
     throw new Exceptions.RequestError(json);
   }
 
-  send(options = {}, attempts = 0): Bluebird<any> {
+  send(options = {}, attempts = 0): any {
     return Bluebird.try(async () => {
       const rawResponse = await this.sendAndGetRaw(options);
       this.session.requestEnd$.next(rawResponse);
