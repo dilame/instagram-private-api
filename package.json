@@ -77,6 +77,6 @@
     "sinon": "^1.17.3",
     "tmp": "0.0.28",
     "ts-node": "^8.0.2",
-    "typescript": "^3.2.4"
+    "typescript": "^3.4.1"
   }
 }
