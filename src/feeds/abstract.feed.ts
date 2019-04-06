@@ -1,9 +1,9 @@
 import * as Chance from 'chance';
 import * as _ from 'lodash';
 import * as Bluebird from 'bluebird';
-import { ParseError, RequestsLimitError } from '../core/exceptions';
+import { ParseError, RequestsLimitError } from '../exceptions';
 import { EventEmitter } from 'events';
-import { Session } from '../core/session';
+import { IgApiClient } from '../client';
 
 export interface IBaseFeedAllOptions {
   delay: number;
@@ -22,13 +22,13 @@ export abstract class AbstractFeed<T> extends EventEmitter {
   // Pause multiplier.
   parseErrorsMultiplier = 0;
   public rankToken: string;
-  limit: number;
+  limit: number = Infinity;
   _stopAll: boolean = false;
   public timeout: number;
   private allResultsMap: any;
   private _allResultsLentgh: number;
 
-  protected constructor(public session: Session) {
+  constructor(public client: IgApiClient) {
     super();
     const chance = new Chance();
     this.rankToken = chance.guid();
@@ -159,11 +159,10 @@ export abstract class AbstractFeed<T> extends EventEmitter {
   }
 
   allSafe(parameters, timeout = 10 * 60 * 1000) {
-    const that = this;
     return this.all(parameters)
       .timeout(timeout || this.timeout)
       .catch(Bluebird.TimeoutError, reason => {
-        that.stop();
+        this.stop();
         throw reason;
       });
   }

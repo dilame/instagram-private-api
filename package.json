@@ -12,17 +12,18 @@
     "node": ">=8.0.0"
   },
   "bugs": {
-    "url": "https://github.com/huttarichard/instagram-private-api/issues",
-    "email": "huttarichard@gmail.com"
+    "url": "https://github.com/dilame/instagram-private-api/issues",
+    "email": "dilame.nickolson@gmail.com"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/huttarichard/instagram-private-api.git"
+    "url": "https://github.com/dilame/instagram-private-api.git"
   },
-  "homepage": "https://github.com/huttarichard/instagram-private-api",
+  "homepage": "https://github.com/dilame/instagram-private-api",
   "scripts": {
     "build": "rm -rf dist && tsc -p tsconfig.build.json",
     "format": "prettier --write \"src/**/*.ts\"",
+    "lint": "tslint -p tsconfig.json -c tslint.json",
     "typecheck": "tsc -p tsconfig.build.json --noEmit",
     "prepare": "npm run build",
     "test": "mocha --inline-diffs --timeout 1000000 tests/run.js"
@@ -77,6 +78,7 @@
     "sinon": "^1.17.3",
     "tmp": "0.0.28",
     "ts-node": "^8.0.2",
+    "tslint": "^5.15.0",
     "typescript": "^3.4.1"
   }
 }

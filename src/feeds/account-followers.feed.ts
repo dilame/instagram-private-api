@@ -1,26 +1,17 @@
-import { Request } from '../core/request';
 import { plainToClass } from 'class-transformer';
-import { UserResponse } from '../responses/user.response';
 import { AbstractFeed } from './abstract.feed';
+import { AccountFollowerResponse } from '../responses/feeds/account-follower.response';
 
-export class AccountFollowersFeed extends AbstractFeed<UserResponse> {
-  constructor(session, public accountId, public limit = Infinity) {
-    super(session);
-  }
-
-  async get(): Promise<UserResponse[]> {
-    const data = await new Request(this.session)
-      .setMethod('GET')
-      .setResource('followersFeed', {
-        id: this.accountId,
-        maxId: this.cursor,
-        rankToken: this.rankToken,
-      })
-      .send();
-    this.moreAvailable = !!data.next_max_id;
+export class AccountFollowersFeed extends AbstractFeed<AccountFollowerResponse> {
+  id: number | string;
+  async get(): Promise<AccountFollowerResponse[]> {
+    const { body } = await this.client.request.send({
+      url: `/api/v1/friendships/${this.id}/followers/${this.cursor ? `?max_id=${this.cursor}` : ''}`,
+    });
+    this.moreAvailable = !!body.next_max_id;
     if (this.moreAvailable) {
-      this.setCursor(data.next_max_id);
+      this.setCursor(body.next_max_id);
     }
-    return plainToClass(UserResponse, data.users);
+    return plainToClass(AccountFollowerResponse, body.users);
   }
 }

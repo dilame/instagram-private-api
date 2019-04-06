@@ -1,8 +1,7 @@
 import * as _ from 'lodash';
 import { CustomError } from 'ts-custom-error';
-import * as routes from './routes';
-import { CheckpointResponse } from '../responses';
-import { Session } from './session';
+import * as routes from './core/routes';
+import { CheckpointResponse } from './responses';
 
 // Basic error
 export class APIError extends CustomError {
@@ -31,13 +30,8 @@ export class AuthenticationError extends APIError {
 }
 
 export class ParseError extends APIError {
-  constructor(public response, public request) {
+  constructor(public body: string) {
     super('Not possible to parse API response');
-    this.response = response;
-  }
-
-  getUrl() {
-    return this.request.url;
   }
 }
 
@@ -77,7 +71,7 @@ export class ActionSpamError extends APIError {
 }
 
 export class CheckpointError extends APIError {
-  constructor(public json: CheckpointResponse, public session: Session) {
+  constructor(public json: CheckpointResponse) {
     super('Instagram call checkpoint for this action!');
   }
 
