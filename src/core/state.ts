@@ -3,7 +3,7 @@ import * as devices from '../samples/devices.json';
 import * as builds from '../samples/builds.json';
 import * as loginExperiments from '../samples/login-experiments.json';
 import * as experiments from '../samples/experiments.json';
-import { MemoryCookieStore, Cookie } from 'tough-cookie';
+import { MemoryCookieStore, Cookie, CookieJar } from 'tough-cookie';
 import { jar } from 'request';
 import * as CONSTANTS from './constants';
 import * as _ from 'lodash';
@@ -73,6 +73,9 @@ export class State {
   public async extractCookieAccountId(): Promise<number | string> {
     const cookie = await this.extractCookie('ds_user_id');
     return cookie.value;
+  }
+  public async deserializeCookieJar(cookies: string) {
+    this.cookieJar['_jar'] = await Bluebird.fromCallback(cb => CookieJar.deserialize(cookies, this.cookieStore, cb));
   }
 
   public generateDevice(seed: string): void {
