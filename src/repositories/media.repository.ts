@@ -17,7 +17,7 @@ export class MediaRepository extends InstagramRepository {
 
     return this.client.request.send({
       url: `/api/v1/media/${options.mediaId}/${options.action}/`,
-      // method: 'POST',
+      method: 'POST',
       form: {
         ...signedFormData,
         d: options.d,
