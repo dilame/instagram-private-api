@@ -1,10 +1,14 @@
 import * as Chance from 'chance';
-import * as devices from './devices/devices.json';
-import * as builds from './devices/builds.json';
-import { MemoryCookieStore } from 'tough-cookie';
+import * as devices from '../samples/devices.json';
+import * as builds from '../samples/builds.json';
+import * as loginExperiments from '../samples/login-experiments.json';
+import * as experiments from '../samples/experiments.json';
+import { MemoryCookieStore, Cookie } from 'tough-cookie';
 import { jar } from 'request';
-import * as CONSTANTS from '../constants/constants';
+import * as CONSTANTS from './constants';
 import * as _ from 'lodash';
+import * as Bluebird from 'bluebird';
+import { TLD } from './constants';
 
 export class State {
   signatureKey: string = '19ce5f445dbfd9d29c59dc2a78c616a7fc090a8e018b9267bc4240a30244c53b';
@@ -12,6 +16,8 @@ export class State {
   appVersion: string = '76.0.0.15.395';
   appVersionCode: string = '138226743';
   fbAnalyticsApplicationId: string = '567067343352427';
+  loginExperiments: string = loginExperiments.join(',');
+  experiments: string = experiments.join(',');
   language: string = 'en_US';
   deviceString: string;
   build: string;
@@ -28,13 +34,15 @@ export class State {
   adid: string;
   deviceId: string;
   proxyUrl: string;
-  cookieJar = jar(new MemoryCookieStore());
+  cookieStore = new MemoryCookieStore();
+  cookieJar = jar(this.cookieStore);
   get CSRFToken() {
     const cookies = this.cookieJar.getCookies(CONSTANTS.HOST);
     const item = _.find(cookies, { key: 'csrftoken' });
     // @ts-ignore
     return item ? item.value : 'missing';
   }
+
   get appUserAgent() {
     return `Instagram ${this.appVersion} Android (${this.deviceString}; ${this.language}; ${this.appVersionCode})`;
   }
@@ -57,6 +65,14 @@ export class State {
       manufacturer,
       model,
     };
+  }
+  public async extractCookie(name: string): Promise<Cookie> {
+    return Bluebird.fromCallback<Cookie>(cb => this.cookieStore.findCookie(TLD, '/', name, cb));
+  }
+
+  public async extractCookieAccountId(): Promise<number | string> {
+    const cookie = await this.extractCookie('ds_user_id');
+    return cookie.value;
   }
 
   public generateDevice(seed: string): void {

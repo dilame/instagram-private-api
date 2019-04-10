@@ -1,5 +1,5 @@
 import * as _ from 'lodash';
-import { API_ENDPOINT, WEBHOST } from '../constants/constants';
+import { API_ENDPOINT, WEBHOST } from './constants';
 
 export const ROUTES = {
   follow: 'friendships/create/<%= id %>/',

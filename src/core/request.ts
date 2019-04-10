@@ -1,8 +1,8 @@
 import { IgApiClient } from '../client';
-import { random } from 'lodash';
+import { inRange, random } from 'lodash';
 import * as request from 'request-promise';
-import { Options } from 'request';
-import { ActionSpamError, AuthenticationError, CheckpointError, SentryBlockError } from '../exceptions';
+import { Options, Response } from 'request';
+import { ActionSpamError, AuthenticationError, CheckpointError, RequestError, SentryBlockError } from '../exceptions';
 import { plainToClass } from 'class-transformer';
 import { CheckpointResponse } from '../responses';
 import hmac = require('crypto-js/hmac-sha256');
@@ -17,31 +17,40 @@ interface SignedPost {
 export class Request {
   constructor(private client: IgApiClient) {}
 
-  private static requestTransform(body, response, resolveWithFullResponse) {
-    // Sometimes we have numbers greater than Number.MAX_SAFE_INTEGER in json response
-    // To handle it we just wrap numbers with length > 15 it double quotes to get strings instead
-    response.body = JSON.parse(body.replace(/([\[:])?(-?[\d.]{15,})(\s*?[,}\]])/gi, `$1"$2"$3`));
+  private static requestTransform(body, response: Response, resolveWithFullResponse) {
+    try {
+      // Sometimes we have numbers greater than Number.MAX_SAFE_INTEGER in json response
+      // To handle it we just wrap numbers with length > 15 it double quotes to get strings instead
+      response.body = JSON.parse(body.replace(/([\[:])?(-?[\d.]{15,})(\s*?[,}\]])/gi, `$1"$2"$3`));
+    } catch (e) {
+      if (inRange(response.statusCode, 200, 299)) {
+        throw e;
+      }
+    }
     return resolveWithFullResponse ? response : response.body;
   }
 
-  private static errorMiddleware(response) {
+  private static handleError(response: Response) {
     const json = response.body;
     if (json.spam) {
-      throw new ActionSpamError(json);
+      return new ActionSpamError(json);
     }
     if (json.message === 'challenge_required') {
       const checkpointResponse = plainToClass(CheckpointResponse, json as CheckpointResponse);
-      throw new CheckpointError(checkpointResponse);
+      return new CheckpointError(checkpointResponse);
     }
     if (json.message === 'login_required') {
-      throw new AuthenticationError('Login required to process this request');
+      return new AuthenticationError('Login required to process this request');
     }
     if (json.error_type === 'sentry_block') {
-      throw new SentryBlockError(json);
+      return new SentryBlockError(json);
     }
+    return new RequestError(response);
   }
 
-  public async send(userOptions: Options): Promise<any> {
+  public async send<T = any>(
+    userOptions: Options,
+  ): Promise<Pick<Response, Exclude<keyof Response, 'body'>> & { body: T }> {
     const baseOptions = {
       baseUrl: 'https://i.instagram.com/',
       resolveWithFullResponse: true,
@@ -59,7 +68,8 @@ export class Request {
     if (response.body.status === 'ok') {
       return response;
     }
-    return Request.errorMiddleware(response);
+    const error = Request.handleError(response);
+    throw error;
   }
 
   public sign(payload: Payload): string {
@@ -69,7 +79,7 @@ export class Request {
   }
 
   public signPost(payload: Payload): SignedPost {
-    if (typeof payload === 'object') {
+    if (typeof payload === 'object' && !payload._csrftoken) {
       payload._csrftoken = this.client.state.CSRFToken;
     }
     const signed_body = this.sign(payload);

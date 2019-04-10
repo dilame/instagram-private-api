@@ -1,12 +1,10 @@
 import { InstagramRepository } from './repository';
-import { plainToClass } from 'class-transformer';
-import { LoginResponse } from '../responses/login.response';
-import { LOGIN_EXPERIMENTS } from '../constants/constants';
+import { AccountRepositoryLoginResponseRootObject, AccountRepositoryLoginResponseLogged_in_user } from '../responses';
 import Bluebird = require('bluebird');
 
-export class AuthRepository extends InstagramRepository {
-  async login(username: string, password: string): Promise<LoginResponse> {
-    const response = await this.client.request.send({
+export class AccountRepository extends InstagramRepository {
+  async login(username: string, password: string): Promise<AccountRepositoryLoginResponseLogged_in_user> {
+    const response = await this.client.request.send<AccountRepositoryLoginResponseRootObject>({
       method: 'POST',
       url: '/api/v1/accounts/login/',
       form: this.client.request.signPost({
@@ -20,7 +18,7 @@ export class AuthRepository extends InstagramRepository {
         login_attempt_count: 0,
       }),
     });
-    return plainToClass(LoginResponse, response.body.logged_in_user as LoginResponse);
+    return response.body.logged_in_user;
   }
 
   async preLoginFlow(concurrency = 1) {
@@ -83,7 +81,7 @@ export class AuthRepository extends InstagramRepository {
       },
       form: this.client.request.signPost({
         id: this.client.state.uuid,
-        experiments: LOGIN_EXPERIMENTS.join(','),
+        experiments: this.client.state.loginExperiments,
       }),
     });
   }

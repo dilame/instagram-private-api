@@ -2,6 +2,7 @@ import * as _ from 'lodash';
 import { CustomError } from 'ts-custom-error';
 import * as routes from './core/routes';
 import { CheckpointResponse } from './responses';
+import { Response } from 'request';
 
 // Basic error
 export class APIError extends CustomError {
@@ -18,8 +19,12 @@ export class APIError extends CustomError {
 }
 
 export class RequestError extends APIError {
-  constructor(public json: any = {}) {
-    super(json.message || `It's not possible to make request!`);
+  constructor(public response: Response) {
+    super(
+      `${response.request.method} ${response.request.uri.path} - ${response.statusCode} ${
+        response.statusMessage
+      } ${response.body.message || ''}`,
+    );
   }
 }
 

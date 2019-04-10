@@ -1,11 +1,10 @@
-import { plainToClass } from 'class-transformer';
 import { AbstractFeed } from './abstract.feed';
-import { AccountFollowingResponse } from '../responses/feeds/account-following.response';
+import { AccountFollowingFeedResponseRootObject, AccountFollowingFeedResponseUsersItem } from '../responses';
 
-export class AccountFollowingFeed extends AbstractFeed<AccountFollowingResponse> {
+export class AccountFollowingFeed extends AbstractFeed<AccountFollowingFeedResponseUsersItem> {
   id: number | string;
-  async get(): Promise<AccountFollowingResponse[]> {
-    const { body } = await this.client.request.send({
+  async request() {
+    const { body } = await this.client.request.send<AccountFollowingFeedResponseRootObject>({
       url: `/api/v1/friendships/${this.id}/following/?${this.cursor ? `max_id=${this.cursor}&` : ''}rank_token=${
         this.rankToken
       }`,
@@ -14,6 +13,11 @@ export class AccountFollowingFeed extends AbstractFeed<AccountFollowingResponse>
     if (this.moreAvailable) {
       this.setCursor(body.next_max_id);
     }
-    return plainToClass(AccountFollowingResponse, body.users);
+    return body;
+  }
+
+  async items() {
+    const body = await this.request();
+    return body.users;
   }
 }

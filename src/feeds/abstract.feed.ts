@@ -13,7 +13,7 @@ export interface IBaseFeedAllOptions {
   limit: number;
 }
 
-export abstract class AbstractFeed<T> extends EventEmitter {
+export abstract class AbstractFeed<T = any> extends EventEmitter {
   allResults = [];
   totalCollected = 0;
   cursor = null;
@@ -34,7 +34,8 @@ export abstract class AbstractFeed<T> extends EventEmitter {
     this.rankToken = chance.guid();
   }
 
-  abstract async get(...parameters: any[]): Promise<T[]>;
+  abstract async request(...parameters: any[]);
+  abstract async items(...parameters: any[]): Promise<T[]>;
 
   all(parameters: Partial<IBaseFeedAllOptions> = {}) {
     parameters = Object.assign(
@@ -52,7 +53,7 @@ export abstract class AbstractFeed<T> extends EventEmitter {
       this.iteration === 0 ? 0 : this.iteration % parameters.every !== 0 ? parameters.delay : parameters.pause;
     return (
       Bluebird.delay(delay)
-        .then(this.get.bind(this))
+        .then(this.items.bind(this))
         .then(results => {
           // reset pause multiplier when we can execute requests again
           this.parseErrorsMultiplier = 0;

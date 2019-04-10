@@ -1,16 +1,26 @@
 import { IgApiClient } from '../client';
 import { AccountFollowersFeed } from './account-followers.feed';
 import { AccountFollowingFeed } from './account-following.feed';
+import { InboxFeed } from './inbox.feed';
+import { UserFeed } from './user.feed';
 
 export class FeedFactory {
   constructor(private client: IgApiClient) {}
-  public accountFollowersFeed(id: string | number): AccountFollowersFeed {
+  public accountFollowers(id: string | number): AccountFollowersFeed {
     const feed = new AccountFollowersFeed(this.client);
     feed.id = id;
     return feed;
   }
-  public accountFollowingFeed(id: string | number): AccountFollowingFeed {
+  public accountFollowing(id: string | number): AccountFollowingFeed {
     const feed = new AccountFollowingFeed(this.client);
+    feed.id = id;
+    return feed;
+  }
+  public inbox(): InboxFeed {
+    return new InboxFeed(this.client);
+  }
+  public user(id: string | number): UserFeed {
+    const feed = new UserFeed(this.client);
     feed.id = id;
     return feed;
   }
