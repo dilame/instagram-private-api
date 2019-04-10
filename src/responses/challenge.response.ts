@@ -1,6 +1,4 @@
-import { InstagramResponse } from './instagram.response';
-
-export class ChallengeResponse extends InstagramResponse {
+export class ChallengeResponse {
   step_name: string;
   step_data: any;
   user_id: number;
