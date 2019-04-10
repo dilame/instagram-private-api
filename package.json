@@ -26,7 +26,8 @@
     "lint": "tslint -p tsconfig.json -c tslint.json",
     "typecheck": "tsc -p tsconfig.build.json --noEmit",
     "prepare": "npm run build",
-    "test": "mocha --inline-diffs --timeout 1000000 tests/run.js"
+    "test": "mocha --inline-diffs --timeout 1000000 tests/run.js",
+    "generate-interface": "ts-node ./tools/response-to-interface.ts"
   },
   "husky": {
     "hooks": {
@@ -68,6 +69,7 @@
     "gm": "^1.23.1",
     "husky": "^1.3.1",
     "inquirer": "^1.1.2",
+    "json-ts": "^1.6.4",
     "mkdirp": "^0.5.1",
     "mocha": "^5.2.0",
     "node-resemble-js": "0.0.5",
