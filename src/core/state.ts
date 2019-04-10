@@ -79,6 +79,9 @@ export class State {
   public async deserializeCookieJar(cookies: string) {
     this.cookieJar['_jar'] = await Bluebird.fromCallback(cb => CookieJar.deserialize(cookies, this.cookieStore, cb));
   }
+  public async serializeCookieJar(): Promise<string> {
+    return Bluebird.fromCallback(cb => this.cookieJar['_jar'].serialize(cb));
+  }
 
   public generateDevice(seed: string): void {
     const chance = new Chance(seed);
