@@ -3,36 +3,26 @@ import { CustomError } from 'ts-custom-error';
 import * as routes from './core/routes';
 import { CheckpointResponse } from './responses';
 import { Response } from 'request';
+import { LoginRequiredResponse, SpamResponse } from './responses';
 
 // Basic error
 export class APIError extends CustomError {
   constructor(message = 'Instagram API error was made.') {
     super(message);
   }
-
-  serialize() {
-    return {
-      error: this.constructor.name,
-      errorMessage: this.message,
-    };
-  }
 }
 
-export class RequestError extends APIError {
-  constructor(public response: Response) {
+export class RequestError<TBody extends { [x: string]: any } = any> extends APIError {
+  constructor(public response: Pick<Response, Exclude<keyof Response, 'body'>> & { body: TBody }) {
     super(
-      `${response.request.method} ${response.request.uri.path} - ${response.statusCode} ${
-        response.statusMessage
-      } ${response.body.message || ''}`,
+      `${response.body.message || ''}; ${response.request.method} ${response.request.uri.path} - ${
+        response.statusCode
+      } ${response.statusMessage}`,
     );
   }
 }
 
-export class AuthenticationError extends APIError {
-  constructor(message = 'Not possible to authenticate') {
-    super(message);
-  }
-}
+export class AuthenticationError extends RequestError<LoginRequiredResponse> {}
 
 export class ParseError extends APIError {
   constructor(public body: string) {
@@ -40,38 +30,11 @@ export class ParseError extends APIError {
   }
 }
 
-export class ActionSpamError extends APIError {
-  constructor(public json) {
-    super('This action was disabled due to block from instagram!');
-    this.json = json;
-  }
-
-  serialize() {
-    return _.extend(APIError.prototype.serialize.call(this), {
-      errorData: {
-        blockTime: this.getBlockTime(),
-        message: this.getFeedbackMessage(),
-      },
-    });
-  }
-
-  getBlockTime() {
-    if (_.isObject(this.json) && _.isString(this.json.feedback_message)) {
-      const hours = this.json.feedback_message.match(/(\d+)(\s)*hour(s)/);
-      if (!hours || !_.isArray(hours)) return 0;
-      const blockTime = parseInt(hours[1]) * 60 * 60 * 1000;
-      return blockTime + 1000 * 60 * 5;
-    }
-    return 0;
-  }
-
-  getFeedbackMessage() {
-    let message = 'No feedback message';
-    if (_.isString(this.json.feedback_message)) {
-      const title = _.isString(this.json.feedback_title) ? this.json.feedback_title + ': ' : '';
-      message = title + this.json.feedback_message;
-    }
-    return message;
+export class ActionSpamError extends RequestError<SpamResponse> {
+  get expirationDate(): string | null {
+    const date = this.response.body.feedback_message.match(/(\d{4}-\d{2}-\d{2})/);
+    if (date === null) return null;
+    return date[0];
   }
 }
 
@@ -110,11 +73,7 @@ export class NotFoundError extends APIError {
   }
 }
 
-export class PrivateUserError extends APIError {
-  constructor(message = 'User is private and you are not authorized to view his content!') {
-    super(message);
-  }
-}
+export class PrivateUserError extends RequestError {}
 
 export class TooManyFollowsError extends APIError {
   constructor() {

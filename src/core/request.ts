@@ -2,7 +2,14 @@ import { IgApiClient } from '../client';
 import { inRange, random } from 'lodash';
 import * as request from 'request-promise';
 import { Options, Response } from 'request';
-import { ActionSpamError, AuthenticationError, CheckpointError, RequestError, SentryBlockError } from '../exceptions';
+import {
+  ActionSpamError,
+  AuthenticationError,
+  CheckpointError,
+  PrivateUserError,
+  RequestError,
+  SentryBlockError,
+} from '../exceptions';
 import { plainToClass } from 'class-transformer';
 import { CheckpointResponse } from '../responses';
 import hmac = require('crypto-js/hmac-sha256');
@@ -33,14 +40,19 @@ export class Request {
   private static handleError(response: Response) {
     const json = response.body;
     if (json.spam) {
-      return new ActionSpamError(json);
+      return new ActionSpamError(response);
     }
-    if (json.message === 'challenge_required') {
-      const checkpointResponse = plainToClass(CheckpointResponse, json as CheckpointResponse);
-      return new CheckpointError(checkpointResponse);
-    }
-    if (json.message === 'login_required') {
-      return new AuthenticationError('Login required to process this request');
+    if (typeof json.message === 'string') {
+      if (json.message === 'challenge_required') {
+        const checkpointResponse = plainToClass(CheckpointResponse, json as CheckpointResponse);
+        return new CheckpointError(checkpointResponse);
+      }
+      if (json.message === 'login_required') {
+        return new AuthenticationError(response);
+      }
+      if (json.message.toLowerCase() === 'not authorized to view user') {
+        return new PrivateUserError(response);
+      }
     }
     if (json.error_type === 'sentry_block') {
       return new SentryBlockError(json);
