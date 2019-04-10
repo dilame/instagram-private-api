@@ -1,6 +1,4 @@
-import * as _ from 'lodash';
 import { CustomError } from 'ts-custom-error';
-import * as routes from './core/routes';
 import { CheckpointResponse } from './responses';
 import { Response } from 'request';
 import { LoginRequiredResponse, SpamResponse } from './responses';
@@ -38,20 +36,13 @@ export class ActionSpamError extends RequestError<SpamResponse> {
   }
 }
 
-export class CheckpointError extends APIError {
-  constructor(public json: CheckpointResponse) {
-    super('Instagram call checkpoint for this action!');
-  }
-
+export class CheckpointError extends RequestError<CheckpointResponse> {
   get url() {
-    if (_.isObject(this.json.challenge) && _.isString(this.json.challenge.url)) {
-      return this.json.challenge.url;
-    }
-    return routes.getWebUrl('challenge');
+    return this.response.body.challenge.url;
   }
 
   get apiUrl() {
-    return 'https://i.instagram.com/api/v1' + this.json.challenge.api_path;
+    return 'https://i.instagram.com/api/v1' + this.response.body.challenge.api_path;
   }
 }
 

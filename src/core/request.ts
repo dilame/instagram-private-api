@@ -1,7 +1,9 @@
-import { IgApiClient } from '../client';
 import { inRange, random } from 'lodash';
+import { Subject } from 'rxjs';
 import * as request from 'request-promise';
 import { Options, Response } from 'request';
+import hmac = require('crypto-js/hmac-sha256');
+import { IgApiClient } from '../client';
 import {
   ActionSpamError,
   AuthenticationError,
@@ -10,9 +12,6 @@ import {
   RequestError,
   SentryBlockError,
 } from '../exceptions';
-import { plainToClass } from 'class-transformer';
-import { CheckpointResponse } from '../responses';
-import hmac = require('crypto-js/hmac-sha256');
 
 type Payload = { [key: string]: any } | string;
 
@@ -22,6 +21,7 @@ interface SignedPost {
 }
 
 export class Request {
+  end$ = new Subject();
   constructor(private client: IgApiClient) {}
 
   private static requestTransform(body, response: Response, resolveWithFullResponse) {
@@ -37,15 +37,15 @@ export class Request {
     return resolveWithFullResponse ? response : response.body;
   }
 
-  private static handleError(response: Response) {
+  private handleError(response: Response) {
     const json = response.body;
     if (json.spam) {
       return new ActionSpamError(response);
     }
     if (typeof json.message === 'string') {
       if (json.message === 'challenge_required') {
-        const checkpointResponse = plainToClass(CheckpointResponse, json as CheckpointResponse);
-        return new CheckpointError(checkpointResponse);
+        this.client.state.checkpoint = json;
+        return new CheckpointError(response);
       }
       if (json.message === 'login_required') {
         return new AuthenticationError(response);
@@ -80,7 +80,8 @@ export class Request {
     if (response.body.status === 'ok') {
       return response;
     }
-    const error = Request.handleError(response);
+    const error = this.handleError(response);
+    this.end$.next();
     throw error;
   }
 

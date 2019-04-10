@@ -1,14 +1,15 @@
+import * as _ from 'lodash';
+import * as Bluebird from 'bluebird';
 import * as Chance from 'chance';
+import { jar } from 'request';
+import { MemoryCookieStore, Cookie, CookieJar } from 'tough-cookie';
 import * as devices from '../samples/devices.json';
 import * as builds from '../samples/builds.json';
 import * as loginExperiments from '../samples/login-experiments.json';
 import * as experiments from '../samples/experiments.json';
-import { MemoryCookieStore, Cookie, CookieJar } from 'tough-cookie';
-import { jar } from 'request';
 import * as CONSTANTS from './constants';
-import * as _ from 'lodash';
-import * as Bluebird from 'bluebird';
 import { TLD } from './constants';
+import { CheckpointResponse } from '../responses';
 
 export class State {
   signatureKey: string = '19ce5f445dbfd9d29c59dc2a78c616a7fc090a8e018b9267bc4240a30244c53b';
@@ -36,6 +37,7 @@ export class State {
   proxyUrl: string;
   cookieStore = new MemoryCookieStore();
   cookieJar = jar(this.cookieStore);
+  checkpoint: CheckpointResponse = null;
   get CSRFToken() {
     const cookies = this.cookieJar.getCookies(CONSTANTS.HOST);
     const item = _.find(cookies, { key: 'csrftoken' });
