@@ -77,12 +77,11 @@ export class Request {
       headers: this.getDefaultHeaders(userOptions.headers),
     });
     const response = await request(requestOptions);
+    process.nextTick(() => this.end$.next());
     if (response.body.status === 'ok') {
       return response;
     }
-    const error = this.handleError(response);
-    this.end$.next();
-    throw error;
+    throw this.handleError(response);
   }
 
   public sign(payload: Payload): string {
