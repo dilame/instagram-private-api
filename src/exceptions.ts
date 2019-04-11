@@ -1,7 +1,6 @@
 import { CustomError } from 'ts-custom-error';
-import { CheckpointResponse } from './responses';
+import { CheckpointResponse, LoginRequiredResponse, SpamResponse } from './responses';
 import { Response } from 'request';
-import { LoginRequiredResponse, SpamResponse } from './responses';
 
 // Basic error
 export class APIError extends CustomError {
@@ -20,7 +19,7 @@ export class RequestError<TBody extends { [x: string]: any } = any> extends APIE
   }
 }
 
-export class AuthenticationError extends RequestError<LoginRequiredResponse> {}
+export class LoginRequiredError extends RequestError<LoginRequiredResponse> {}
 
 export class ParseError extends APIError {
   constructor(public body: string) {
@@ -31,7 +30,9 @@ export class ParseError extends APIError {
 export class ActionSpamError extends RequestError<SpamResponse> {
   get expirationDate(): string | null {
     const date = this.response.body.feedback_message.match(/(\d{4}-\d{2}-\d{2})/);
-    if (date === null) return null;
+    if (date === null) {
+      return null;
+    }
     return date[0];
   }
 }
@@ -58,11 +59,7 @@ export class OnlyRankedItemsError extends APIError {
   }
 }
 
-export class NotFoundError extends APIError {
-  constructor(public response) {
-    super(`Page wasn't found!`);
-  }
-}
+export class NotFoundError extends RequestError {}
 
 export class PrivateUserError extends RequestError {}
 

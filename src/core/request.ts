@@ -6,8 +6,9 @@ import hmac = require('crypto-js/hmac-sha256');
 import { IgApiClient } from '../client';
 import {
   ActionSpamError,
-  AuthenticationError,
+  LoginRequiredError,
   CheckpointError,
+  NotFoundError,
   PrivateUserError,
   RequestError,
   SentryBlockError,
@@ -42,13 +43,16 @@ export class Request {
     if (json.spam) {
       return new ActionSpamError(response);
     }
+    if (response.statusCode === 404) {
+      return new NotFoundError(response);
+    }
     if (typeof json.message === 'string') {
       if (json.message === 'challenge_required') {
         this.client.state.checkpoint = json;
         return new CheckpointError(response);
       }
       if (json.message === 'login_required') {
-        return new AuthenticationError(response);
+        return new LoginRequiredError(response);
       }
       if (json.message.toLowerCase() === 'not authorized to view user') {
         return new PrivateUserError(response);
