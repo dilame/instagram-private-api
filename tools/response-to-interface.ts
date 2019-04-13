@@ -11,7 +11,7 @@ async function getResponse() {
   ig.state.generateDevice(process.env.IG_USERNAME);
   ig.state.proxyUrl = process.env.IG_PROXY;
   await ig.account.login(process.env.IG_USERNAME, process.env.IG_PASSWORD);
-  return await ig.feed.tag('hello').request();
+  return await ig.feed.location('359545221').request();
 }
 
 (async function createInterface(outputName: string) {
@@ -25,5 +25,5 @@ async function getResponse() {
   console.log('Success');
 })(
   // And pass output name
-  'tag.feed',
+  'location.feed',
 );

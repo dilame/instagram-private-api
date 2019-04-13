@@ -4,6 +4,7 @@ import { AccountFollowingFeed } from './account-following.feed';
 import { InboxFeed } from './inbox.feed';
 import { UserFeed } from './user.feed';
 import { TagFeed } from './tag.feed';
+import { LocationFeed } from './location.feed';
 
 export class FeedFactory {
   constructor(private client: IgApiClient) {}
@@ -28,6 +29,12 @@ export class FeedFactory {
   public tag(tag: string): TagFeed {
     const feed = new TagFeed(this.client);
     feed.tag = tag;
+    return feed;
+  }
+  public location(id: string | number, tab: 'recent' | 'ranked' = 'ranked'): LocationFeed {
+    const feed = new LocationFeed(this.client);
+    feed.id = id;
+    feed.tab = tab;
     return feed;
   }
 }
