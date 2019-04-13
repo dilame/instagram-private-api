@@ -1,6 +1,6 @@
 import { flatten } from 'lodash';
 import { AbstractFeed } from './abstract.feed';
-import { LocationFeedResponseMedia, LocationFeedResponseRootObject } from '../responses/location.feed.response';
+import { LocationFeedResponseMedia, LocationFeedResponseRootObject } from '../responses';
 
 export class LocationFeed extends AbstractFeed<LocationFeedResponseMedia> {
   id: string | number;

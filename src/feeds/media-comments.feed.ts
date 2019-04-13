@@ -1,8 +1,5 @@
 import { AbstractFeed } from './abstract.feed';
-import {
-  MediaCommentsFeedResponseCommentsItem,
-  MediaCommentsFeedResponseRootObject,
-} from '../responses/media-comments.feed.response';
+import { MediaCommentsFeedResponseCommentsItem, MediaCommentsFeedResponseRootObject } from '../responses/';
 
 export class MediaCommentsFeed extends AbstractFeed<MediaCommentsFeedResponseCommentsItem> {
   id: string;
