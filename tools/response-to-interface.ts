@@ -10,8 +10,8 @@ async function getResponse() {
   const ig = new IgApiClient();
   ig.state.generateDevice(process.env.IG_USERNAME);
   ig.state.proxyUrl = process.env.IG_PROXY;
-  const auth = await ig.account.login(process.env.IG_USERNAME, process.env.IG_PASSWORD);
-  return await ig.feed.user(auth.pk).request();
+  await ig.account.login(process.env.IG_USERNAME, process.env.IG_PASSWORD);
+  return await ig.feed.tag('hello').request();
 }
 
 (async function createInterface(outputName: string) {
@@ -25,5 +25,5 @@ async function getResponse() {
   console.log('Success');
 })(
   // And pass output name
-  'user.feed',
+  'tag.feed',
 );

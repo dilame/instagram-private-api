@@ -8,3 +8,4 @@ export * from './user.repository.search.response';
 export * from './user.feed.response';
 export * from './spam.response';
 export * from './login-required.response';
+export * from './tag.feed.response';

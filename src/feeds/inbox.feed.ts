@@ -9,9 +9,12 @@ export class InboxFeed extends AbstractFeed<InboxFeedResponseThreadsItem> {
 
   async request() {
     const { body: json } = await this.client.request.send<InboxFeedResponseRootObject>({
-      url: `/api/v1/direct_v2/inbox/?persistentBadging=true&use_unified_inbox=true${
-        this.getCursor() ? '&cursor=' + this.getCursor() : ''
-      }`,
+      url: `/api/v1/direct_v2/inbox/`,
+      qs: {
+        use_unified_inbox: true,
+        cursor: this.getCursor(),
+        persistentBadging: true,
+      },
     });
     this.moreAvailable = json.inbox.has_older;
     this.pendingRequestsTotal = json.pending_requests_total;

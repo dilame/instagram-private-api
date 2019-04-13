@@ -3,6 +3,7 @@ import { AccountFollowersFeed } from './account-followers.feed';
 import { AccountFollowingFeed } from './account-following.feed';
 import { InboxFeed } from './inbox.feed';
 import { UserFeed } from './user.feed';
+import { TagFeed } from './tag.feed';
 
 export class FeedFactory {
   constructor(private client: IgApiClient) {}
@@ -22,6 +23,11 @@ export class FeedFactory {
   public user(id: string | number): UserFeed {
     const feed = new UserFeed(this.client);
     feed.id = id;
+    return feed;
+  }
+  public tag(tag: string): TagFeed {
+    const feed = new TagFeed(this.client);
+    feed.tag = tag;
     return feed;
   }
 }
