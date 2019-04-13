@@ -44,7 +44,18 @@ export class State {
     // @ts-ignore
     return item ? item.value : 'missing';
   }
-
+  /**
+   * The current application session ID.
+   *
+   * This is a temporary ID which changes in the official app every time the
+   * user closes and re-opens the Instagram application or switches account.
+   *
+   * We will update it once an hour
+   */
+  get sessionId(): string {
+    const chance = new Chance(`${this.deviceId}${Math.round(Date.now() / 3600000)}`);
+    return chance.guid();
+  }
   get appUserAgent() {
     return `Instagram ${this.appVersion} Android (${this.deviceString}; ${this.language}; ${this.appVersionCode})`;
   }
