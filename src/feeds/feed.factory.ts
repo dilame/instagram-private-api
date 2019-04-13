@@ -5,6 +5,7 @@ import { InboxFeed } from './inbox.feed';
 import { UserFeed } from './user.feed';
 import { TagFeed } from './tag.feed';
 import { LocationFeed } from './location.feed';
+import { MediaCommentsFeed } from './media-comments.feed';
 
 export class FeedFactory {
   constructor(private client: IgApiClient) {}
@@ -35,6 +36,11 @@ export class FeedFactory {
     const feed = new LocationFeed(this.client);
     feed.id = id;
     feed.tab = tab;
+    return feed;
+  }
+  public mediaComments(id: string): MediaCommentsFeed {
+    const feed = new MediaCommentsFeed(this.client);
+    feed.id = id;
     return feed;
   }
 }

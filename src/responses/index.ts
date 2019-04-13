@@ -9,3 +9,5 @@ export * from './user.feed.response';
 export * from './spam.response';
 export * from './login-required.response';
 export * from './tag.feed.response';
+export * from './media-comments.feed.response';
+export * from './location.feed.response';
