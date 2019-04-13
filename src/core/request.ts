@@ -1,18 +1,19 @@
-import { inRange, random } from 'lodash';
+import { inRange, random, defaultsDeep } from 'lodash';
 import { Subject } from 'rxjs';
 import * as request from 'request-promise';
 import { Options, Response } from 'request';
 import hmac = require('crypto-js/hmac-sha256');
 import { IgApiClient } from '../client';
 import {
-  ActionSpamError,
-  LoginRequiredError,
-  CheckpointError,
-  NotFoundError,
-  PrivateUserError,
-  RequestError,
-  SentryBlockError,
-} from '../exceptions';
+  IgActionSpamError,
+  IgLoginRequiredError,
+  IgCheckpointError,
+  IgNotFoundError,
+  IgPrivateUserError,
+  IgResponseError,
+  IgSentryBlockError,
+  IgNetworkError,
+} from '../errors';
 
 type Payload = { [key: string]: any } | string;
 
@@ -38,36 +39,36 @@ export class Request {
     return resolveWithFullResponse ? response : response.body;
   }
 
-  private handleError(response: Response) {
+  private handleResponseError(response: Response) {
     const json = response.body;
     if (json.spam) {
-      return new ActionSpamError(response);
+      return new IgActionSpamError(response);
     }
     if (response.statusCode === 404) {
-      return new NotFoundError(response);
+      return new IgNotFoundError(response);
     }
     if (typeof json.message === 'string') {
       if (json.message === 'challenge_required') {
         this.client.state.checkpoint = json;
-        return new CheckpointError(response);
+        return new IgCheckpointError(response);
       }
       if (json.message === 'login_required') {
-        return new LoginRequiredError(response);
+        return new IgLoginRequiredError(response);
       }
       if (json.message.toLowerCase() === 'not authorized to view user') {
-        return new PrivateUserError(response);
+        return new IgPrivateUserError(response);
       }
     }
     if (json.error_type === 'sentry_block') {
-      return new SentryBlockError(json);
+      return new IgSentryBlockError(response);
     }
-    return new RequestError(response);
+    return new IgResponseError(response);
   }
 
   public async send<T = any>(
     userOptions: Options,
   ): Promise<Pick<Response, Exclude<keyof Response, 'body'>> & { body: T }> {
-    const baseOptions = {
+    const options = defaultsDeep(userOptions, {
       baseUrl: 'https://i.instagram.com/',
       resolveWithFullResponse: true,
       proxy: this.client.state.proxyUrl,
@@ -76,16 +77,19 @@ export class Request {
       jar: this.client.state.cookieJar,
       strictSSL: false,
       gzip: true,
-    };
-    const requestOptions = Object.assign(baseOptions, userOptions, {
-      headers: this.getDefaultHeaders(userOptions.headers),
+      headers: this.getDefaultHeaders(),
     });
-    const response = await request(requestOptions);
+    let response;
+    try {
+      response = await request(options);
+    } catch (e) {
+      throw new IgNetworkError(e);
+    }
     process.nextTick(() => this.end$.next());
     if (response.body.status === 'ok') {
       return response;
     }
-    throw this.handleError(response);
+    throw this.handleResponseError(response);
   }
 
   public sign(payload: Payload): string {
@@ -105,7 +109,7 @@ export class Request {
     };
   }
 
-  private getDefaultHeaders(userHeaders = {}) {
+  private getDefaultHeaders() {
     return {
       'X-FB-HTTP-Engine': 'Liger',
       'X-IG-Connection-Type': 'WIFI',
@@ -121,7 +125,6 @@ export class Request {
       'User-Agent': this.client.state.appUserAgent,
       'X-IG-App-ID': this.client.state.fbAnalyticsApplicationId,
       'Accept-Language': this.client.state.language.replace('_', '-'),
-      ...userHeaders,
     };
   }
 }

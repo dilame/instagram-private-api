@@ -1,9 +1,9 @@
 import * as Chance from 'chance';
 import * as _ from 'lodash';
 import * as Bluebird from 'bluebird';
-import { ParseError, RequestsLimitError } from '../exceptions';
 import { EventEmitter } from 'events';
 import { IgApiClient } from '../client';
+import { IgParseError, IgRequestsLimitError } from '../errors';
 
 export interface IBaseFeedAllOptions {
   delay: number;
@@ -60,11 +60,11 @@ export abstract class AbstractFeed<T = any> extends EventEmitter {
           return results;
         })
         // If ParseError, we assume that this is 403 forbidden HTML page, caused by "Too many requests". Just take a pause and retry.
-        .catch(ParseError, () => {
+        .catch(IgParseError, () => {
           // Every consecutive ParseError makes delay befor new request longer. Otherwise we will never reach the end.
           this.parseErrorsMultiplier++;
           // When delay time is beyond reasonable, throw exception.
-          if (this.parseErrorsMultiplier > parameters.maxErrors) throw new RequestsLimitError();
+          if (this.parseErrorsMultiplier > parameters.maxErrors) throw new IgRequestsLimitError();
           return Bluebird.resolve([]).delay(parameters.pause * this.parseErrorsMultiplier);
         })
         .then((response: Array<any>) => {
