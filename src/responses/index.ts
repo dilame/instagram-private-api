@@ -11,3 +11,4 @@ export * from './login-required.response';
 export * from './tag.feed.response';
 export * from './media-comments.feed.response';
 export * from './location.feed.response';
+export * from './media.repository.likers.response';

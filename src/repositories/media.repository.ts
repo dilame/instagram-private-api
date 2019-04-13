@@ -1,6 +1,7 @@
 import { omit } from 'lodash';
 import { InstagramRepository } from './repository';
 import { LikeRequestOptions, MediaLikeOrUnlikeOptions, UnlikeRequestOptions } from '../types/media.like.options';
+import { MediaRepositoryLikersResponseRootObject } from '../responses/media.repository.likers.response';
 
 export class MediaRepository extends InstagramRepository {
   private async likeAction(options: MediaLikeOrUnlikeOptions) {
@@ -35,5 +36,11 @@ export class MediaRepository extends InstagramRepository {
       action: 'unlike',
       ...options,
     });
+  }
+  public async likers(id: string): Promise<MediaRepositoryLikersResponseRootObject> {
+    const { body } = await this.client.request.send<MediaRepositoryLikersResponseRootObject>({
+      url: `/api/v1/media/${id}/likers`,
+    });
+    return body;
   }
 }

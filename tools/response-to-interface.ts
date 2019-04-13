@@ -11,7 +11,7 @@ async function getResponse() {
   ig.state.generateDevice(process.env.IG_USERNAME);
   ig.state.proxyUrl = process.env.IG_PROXY;
   await ig.account.login(process.env.IG_USERNAME, process.env.IG_PASSWORD);
-  return await ig.feed.mediaComments('2021141968701979267_748405510').request();
+  return await ig.media.likers('2021141968701979267_748405510');
 }
 
 (async function createInterface(outputName: string) {
@@ -25,5 +25,5 @@ async function getResponse() {
   console.log('Success');
 })(
   // And pass output name
-  'media-comments.feed',
+  'media.repository.likers',
 );
