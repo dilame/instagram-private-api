@@ -1,19 +1,20 @@
-import { inRange, random, defaultsDeep } from 'lodash';
+import { defaultsDeep, inRange, random } from 'lodash';
 import { Subject } from 'rxjs';
+import { AttemptOptions, retry } from '@lifeomic/attempt';
 import * as request from 'request-promise';
 import { Options, Response } from 'request';
-import hmac = require('crypto-js/hmac-sha256');
 import { IgApiClient } from '../client';
 import {
   IgActionSpamError,
-  IgLoginRequiredError,
   IgCheckpointError,
+  IgLoginRequiredError,
+  IgNetworkError,
   IgNotFoundError,
   IgPrivateUserError,
   IgResponseError,
   IgSentryBlockError,
-  IgNetworkError,
 } from '../errors';
+import hmac = require('crypto-js/hmac-sha256');
 
 type Payload = { [key: string]: any } | string;
 
@@ -24,19 +25,64 @@ interface SignedPost {
 
 export class Request {
   end$ = new Subject();
+  attemptOptions: Partial<AttemptOptions<any>> = {
+    maxAttempts: 1,
+  };
+
   constructor(private client: IgApiClient) {}
 
   private static requestTransform(body, response: Response, resolveWithFullResponse) {
-    try {
-      // Sometimes we have numbers greater than Number.MAX_SAFE_INTEGER in json response
-      // To handle it we just wrap numbers with length > 15 it double quotes to get strings instead
-      response.body = JSON.parse(body.replace(/([\[:])?(-?[\d.]{15,})(\s*?[,}\]])/gi, `$1"$2"$3`));
-    } catch (e) {
-      if (inRange(response.statusCode, 200, 299)) {
-        throw e;
+    if (response.headers['content-type'].startsWith('application/json')) {
+      try {
+        // Sometimes we have numbers greater than Number.MAX_SAFE_INTEGER in json response
+        // To handle it we just wrap numbers with length > 15 it double quotes to get strings instead
+        response.body = JSON.parse(body.replace(/([\[:])?(-?[\d.]{15,})(\s*?[,}\]])/gi, `$1"$2"$3`));
+      } catch (e) {
+        if (inRange(response.statusCode, 200, 299)) {
+          throw e;
+        }
       }
     }
     return resolveWithFullResponse ? response : response.body;
+  }
+
+  public async send<T = any>(
+    userOptions: Options,
+  ): Promise<Pick<Response, Exclude<keyof Response, 'body'>> & { body: T }> {
+    const options = defaultsDeep(userOptions, {
+      baseUrl: 'https://i.instagram.com/',
+      resolveWithFullResponse: true,
+      proxy: this.client.state.proxyUrl,
+      simple: false,
+      transform: Request.requestTransform,
+      jar: this.client.state.cookieJar,
+      strictSSL: false,
+      gzip: true,
+      headers: this.getDefaultHeaders(),
+    });
+    let response = await this.faultTolerantRequest(options);
+    process.nextTick(() => this.end$.next());
+    if (response.body.status === 'ok') {
+      return response;
+    }
+    throw this.handleResponseError(response);
+  }
+
+  public sign(payload: Payload): string {
+    const json = typeof payload === 'object' ? JSON.stringify(payload) : payload;
+    const signature = hmac(json, this.client.state.signatureKey).toString();
+    return `${signature}.${json}`;
+  }
+
+  public signPost(payload: Payload): SignedPost {
+    if (typeof payload === 'object' && !payload._csrftoken) {
+      payload._csrftoken = this.client.state.CSRFToken;
+    }
+    const signed_body = this.sign(payload);
+    return {
+      ig_sig_key_version: this.client.state.signatureVersion,
+      signed_body,
+    };
   }
 
   private handleResponseError(response: Response) {
@@ -65,48 +111,12 @@ export class Request {
     return new IgResponseError(response);
   }
 
-  public async send<T = any>(
-    userOptions: Options,
-  ): Promise<Pick<Response, Exclude<keyof Response, 'body'>> & { body: T }> {
-    const options = defaultsDeep(userOptions, {
-      baseUrl: 'https://i.instagram.com/',
-      resolveWithFullResponse: true,
-      proxy: this.client.state.proxyUrl,
-      simple: false,
-      transform: Request.requestTransform,
-      jar: this.client.state.cookieJar,
-      strictSSL: false,
-      gzip: true,
-      headers: this.getDefaultHeaders(),
-    });
-    let response;
+  private async faultTolerantRequest(options: Options) {
     try {
-      response = await request(options);
-    } catch (e) {
-      throw new IgNetworkError(e);
+      return await retry(async () => request(options), this.attemptOptions);
+    } catch (err) {
+      throw new IgNetworkError(err);
     }
-    process.nextTick(() => this.end$.next());
-    if (response.body.status === 'ok') {
-      return response;
-    }
-    throw this.handleResponseError(response);
-  }
-
-  public sign(payload: Payload): string {
-    const json = typeof payload === 'object' ? JSON.stringify(payload) : payload;
-    const signature = hmac(json, this.client.state.signatureKey).toString();
-    return `${signature}.${json}`;
-  }
-
-  public signPost(payload: Payload): SignedPost {
-    if (typeof payload === 'object' && !payload._csrftoken) {
-      payload._csrftoken = this.client.state.CSRFToken;
-    }
-    const signed_body = this.sign(payload);
-    return {
-      ig_sig_key_version: this.client.state.signatureVersion,
-      signed_body,
-    };
   }
 
   private getDefaultHeaders() {

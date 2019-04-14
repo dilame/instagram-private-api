@@ -35,6 +35,7 @@
     }
   },
   "dependencies": {
+    "@lifeomic/attempt": "^3.0.0",
     "@types/bluebird": "^3.5.26",
     "@types/chance": "^1.0.1",
     "@types/lodash": "^4.14.120",
