@@ -15,6 +15,8 @@ import {
   IgSentryBlockError,
 } from '../errors';
 import hmac = require('crypto-js/hmac-sha256');
+import JSONbigInt = require('json-bigint');
+const JSONbigString = JSONbigInt({ storeAsString: true });
 
 type Payload = { [key: string]: any } | string;
 
@@ -36,7 +38,7 @@ export class Request {
       try {
         // Sometimes we have numbers greater than Number.MAX_SAFE_INTEGER in json response
         // To handle it we just wrap numbers with length > 15 it double quotes to get strings instead
-        response.body = JSON.parse(body.replace(/([\[:])?(-?[\d.]{15,})(\s*?[,}\]])/gi, `$1"$2"$3`));
+        response.body = JSONbigString.parse(body);
       } catch (e) {
         if (inRange(response.statusCode, 200, 299)) {
           throw e;

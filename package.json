@@ -50,6 +50,7 @@
     "instagram-id-to-url-segment": "0.0.0",
     "is-stream": "^1.1.0",
     "js-md5": "^0.3.0",
+    "json-bigint": "^0.3.0",
     "lodash": "^4.17.5",
     "node-cache": "^3.0.0",
     "proxy-agent": "^3.0.3",
