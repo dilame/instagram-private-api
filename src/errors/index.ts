@@ -9,3 +9,5 @@ export * from './ig-parse.error';
 export * from './ig-private-user.error';
 export * from './ig-requests-limit.error';
 export * from './ig-sentry-block.error';
+export * from './ig-no-checkpoint.error';
+export * from './ig-challenge-wrong-code.error';

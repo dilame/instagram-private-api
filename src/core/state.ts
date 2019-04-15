@@ -2,14 +2,15 @@ import * as _ from 'lodash';
 import * as Bluebird from 'bluebird';
 import * as Chance from 'chance';
 import { jar } from 'request';
-import { MemoryCookieStore, Cookie, CookieJar } from 'tough-cookie';
+import { Cookie, CookieJar, MemoryCookieStore } from 'tough-cookie';
 import * as devices from '../samples/devices.json';
 import * as builds from '../samples/builds.json';
 import * as loginExperiments from '../samples/login-experiments.json';
 import * as experiments from '../samples/experiments.json';
 import * as CONSTANTS from './constants';
 import { TLD } from './constants';
-import { CheckpointResponse } from '../responses';
+import { ChallengeStateResponse, CheckpointResponse } from '../responses';
+import { IgNoCheckpointError } from '../errors';
 
 export class State {
   signatureKey: string = '19ce5f445dbfd9d29c59dc2a78c616a7fc090a8e018b9267bc4240a30244c53b';
@@ -38,12 +39,22 @@ export class State {
   cookieStore = new MemoryCookieStore();
   cookieJar = jar(this.cookieStore);
   checkpoint: CheckpointResponse = null;
+  challenge: ChallengeStateResponse = null;
+
   get CSRFToken() {
     const cookies = this.cookieJar.getCookies(CONSTANTS.HOST);
     const item = _.find(cookies, { key: 'csrftoken' });
     // @ts-ignore
     return item ? item.value : 'missing';
   }
+
+  get challengeUrl() {
+    if (!this.checkpoint) {
+      throw new IgNoCheckpointError();
+    }
+    return `/api/v1${this.checkpoint.challenge.api_path}`;
+  }
+
   /**
    * The current application session ID.
    *
@@ -56,9 +67,11 @@ export class State {
     const chance = new Chance(`${this.deviceId}${Math.round(Date.now() / 3600000)}`);
     return chance.guid();
   }
+
   get appUserAgent() {
     return `Instagram ${this.appVersion} Android (${this.deviceString}; ${this.language}; ${this.appVersionCode})`;
   }
+
   get webUserAgent() {
     return `Mozilla/5.0 (Linux; Android ${this.payload.android_release}; ${this.payload.model} Build/${
       this.build
@@ -79,6 +92,7 @@ export class State {
       model,
     };
   }
+
   public async extractCookie(name: string): Promise<Cookie> {
     return Bluebird.fromCallback<Cookie>(cb => this.cookieStore.findCookie(TLD, '/', name, cb));
   }
@@ -87,9 +101,11 @@ export class State {
     const cookie = await this.extractCookie('ds_user_id');
     return cookie.value;
   }
+
   public async deserializeCookieJar(cookies: string) {
     this.cookieJar['_jar'] = await Bluebird.fromCallback(cb => CookieJar.deserialize(cookies, this.cookieStore, cb));
   }
+
   public async serializeCookieJar(): Promise<string> {
     return Bluebird.fromCallback(cb => this.cookieJar['_jar'].serialize(cb));
   }
