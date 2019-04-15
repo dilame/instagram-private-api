@@ -1,11 +1,11 @@
-import { IgApiClient } from '../client';
-import { AccountFollowersFeed } from './account-followers.feed';
-import { AccountFollowingFeed } from './account-following.feed';
-import { InboxFeed } from './inbox.feed';
-import { UserFeed } from './user.feed';
-import { TagFeed } from './tag.feed';
-import { LocationFeed } from './location.feed';
-import { MediaCommentsFeed } from './media-comments.feed';
+import { IgApiClient } from './client';
+import { AccountFollowersFeed } from '../feeds';
+import { AccountFollowingFeed } from '../feeds';
+import { InboxFeed } from '../feeds';
+import { UserFeed } from '../feeds';
+import { TagFeed } from '../feeds';
+import { LocationFeed } from '../feeds';
+import { MediaCommentsFeed } from '../feeds';
 
 export class FeedFactory {
   constructor(private client: IgApiClient) {}

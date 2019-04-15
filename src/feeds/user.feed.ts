@@ -1,7 +1,7 @@
-import { AbstractFeed } from './abstract.feed';
+import { Feed } from '../core/feed';
 import { UserFeedResponseItemsItem, UserFeedResponseRootObject } from '../responses';
 
-export class UserFeed extends AbstractFeed<UserFeedResponseItemsItem> {
+export class UserFeed extends Feed<UserFeedResponseItemsItem> {
   id: number | string;
 
   async request(...parameters) {

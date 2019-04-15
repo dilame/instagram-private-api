@@ -1,7 +1,7 @@
-import { AbstractFeed } from './abstract.feed';
+import { Feed } from '../core/feed';
 import { AccountFollowersFeedResponseRootObject, AccountFollowersFeedResponseUsersItem } from '../responses';
 
-export class AccountFollowersFeed extends AbstractFeed<AccountFollowersFeedResponseUsersItem> {
+export class AccountFollowersFeed extends Feed<AccountFollowersFeedResponseUsersItem> {
   id: number | string;
   async request() {
     const { body } = await this.client.request.send<AccountFollowersFeedResponseRootObject>({

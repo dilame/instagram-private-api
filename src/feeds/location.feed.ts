@@ -1,8 +1,8 @@
 import { flatten } from 'lodash';
-import { AbstractFeed } from './abstract.feed';
+import { Feed } from '../core/feed';
 import { LocationFeedResponseMedia, LocationFeedResponseRootObject } from '../responses';
 
-export class LocationFeed extends AbstractFeed<LocationFeedResponseMedia> {
+export class LocationFeed extends Feed<LocationFeedResponseMedia> {
   id: string | number;
   tab: 'recent' | 'ranked';
   next_page: number;

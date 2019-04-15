@@ -1,8 +1,8 @@
-import { InstagramRepository } from './repository';
+import { Repository } from '../core/repository';
 import { AccountRepositoryLoginResponseRootObject, AccountRepositoryLoginResponseLogged_in_user } from '../responses';
 import Bluebird = require('bluebird');
 
-export class AccountRepository extends InstagramRepository {
+export class AccountRepository extends Repository {
   async login(username: string, password: string): Promise<AccountRepositoryLoginResponseLogged_in_user> {
     const response = await this.client.request.send<AccountRepositoryLoginResponseRootObject>({
       method: 'POST',

@@ -1,7 +1,7 @@
-import { AbstractFeed } from './abstract.feed';
+import { Feed } from '../core/feed';
 import { MediaCommentsFeedResponseCommentsItem, MediaCommentsFeedResponseRootObject } from '../responses/';
 
-export class MediaCommentsFeed extends AbstractFeed<MediaCommentsFeedResponseCommentsItem> {
+export class MediaCommentsFeed extends Feed<MediaCommentsFeedResponseCommentsItem> {
   id: string;
   async request() {
     const { body: json } = await this.client.request.send<MediaCommentsFeedResponseRootObject>({

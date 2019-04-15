@@ -1,7 +1,7 @@
-import { AbstractFeed } from './abstract.feed';
+import { Feed } from '../core/feed';
 import { InboxFeedResponseThreadsItem, InboxFeedResponseRootObject } from '../responses';
 
-export class InboxFeed extends AbstractFeed<InboxFeedResponseThreadsItem> {
+export class InboxFeed extends Feed<InboxFeedResponseThreadsItem> {
   public pendingRequestsTotal: number = null;
   getPendingRequestsTotal() {
     return this.pendingRequestsTotal;

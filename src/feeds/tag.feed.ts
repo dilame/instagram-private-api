@@ -1,7 +1,7 @@
-import { AbstractFeed } from './abstract.feed';
+import { Feed } from '../core/feed';
 import { TagFeedResponseItemsItem, TagFeedResponseRootObject } from '../responses';
 
-export class TagFeed extends AbstractFeed<TagFeedResponseItemsItem> {
+export class TagFeed extends Feed<TagFeedResponseItemsItem> {
   tag: string;
   async request() {
     const { body: json } = await this.client.request.send<TagFeedResponseRootObject>({

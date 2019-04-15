@@ -1,9 +1,9 @@
 import { omit } from 'lodash';
-import { InstagramRepository } from './repository';
+import { Repository } from '../core/repository';
 import { LikeRequestOptions, MediaLikeOrUnlikeOptions, UnlikeRequestOptions } from '../types/media.like.options';
 import { MediaRepositoryLikersResponseRootObject } from '../responses/media.repository.likers.response';
 
-export class MediaRepository extends InstagramRepository {
+export class MediaRepository extends Repository {
   private async likeAction(options: MediaLikeOrUnlikeOptions) {
     const signedFormData = this.client.request.signPost({
       module_name: options.moduleInfo.module_name,

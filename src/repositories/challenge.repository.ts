@@ -1,8 +1,8 @@
-import { InstagramRepository } from './repository';
+import { Repository } from '../core/repository';
 import { ChallengeStateResponse } from '../responses';
 import { IgChallengeWrongCodeError, IgNoCheckpointError, IgResponseError } from '../errors';
 
-export class ChallengeRepository extends InstagramRepository {
+export class ChallengeRepository extends Repository {
   public async state() {
     const { body } = await this.client.request.send<ChallengeStateResponse>({
       url: this.client.state.challengeUrl,
