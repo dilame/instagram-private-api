@@ -5,6 +5,7 @@ import { AccountRepository } from '../repositories/account.repository';
 import { UserRepository } from '../repositories/user.repository';
 import { MediaRepository } from '../repositories/media.repository';
 import { ChallengeRepository } from '../repositories/challenge.repository';
+import { FriendshipRepository } from '../repositories/friendship.repository';
 
 export class IgApiClient {
   public state = new State();
@@ -12,6 +13,7 @@ export class IgApiClient {
   public challenge = new ChallengeRepository(this);
   public account = new AccountRepository(this);
   public user = new UserRepository(this);
+  public friendship = new FriendshipRepository(this);
   public media = new MediaRepository(this);
   public feed = new FeedFactory(this);
 }
