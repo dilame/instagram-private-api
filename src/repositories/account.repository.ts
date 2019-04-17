@@ -6,6 +6,7 @@ import {
   AccountRepositoryLoginResponseRootObject,
 } from '../responses';
 import Bluebird = require('bluebird');
+import { AccountEditProfileOptions } from '../types/account.edit-profile.options';
 
 export class AccountRepository extends Repository {
   public async login(username: string, password: string): Promise<AccountRepositoryLoginResponseLogged_in_user> {
@@ -43,7 +44,34 @@ export class AccountRepository extends Repository {
     });
     return body.user;
   }
-
+  public async setBiography(text: string) {
+    const { body } = await this.client.request.send<AccountRepositoryCurrentUserResponseRootObject>({
+      url: '/api/v1/accounts/set_biography/',
+      method: 'POST',
+      form: this.client.request.signPost({
+        _csrftoken: this.client.state.CSRFToken,
+        _uid: await this.client.state.extractCookieAccountId(),
+        device_id: this.client.state.deviceId,
+        _uuid: this.client.state.uuid,
+        raw_text: text,
+      }),
+    });
+    return body.user;
+  }
+  public async editProfile(options: AccountEditProfileOptions) {
+    const { body } = await this.client.request.send<AccountRepositoryCurrentUserResponseRootObject>({
+      url: '/api/v1/accounts/edit_profile/',
+      method: 'POST',
+      form: this.client.request.signPost({
+        ...options,
+        _csrftoken: this.client.state.CSRFToken,
+        _uid: await this.client.state.extractCookieAccountId(),
+        device_id: this.client.state.deviceId,
+        _uuid: this.client.state.uuid,
+      }),
+    });
+    return body.user;
+  }
   private readMsisdnHeader() {
     return this.client.request.send({
       method: 'POST',
