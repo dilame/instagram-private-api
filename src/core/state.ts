@@ -5,21 +5,28 @@ import { jar } from 'request';
 import { Cookie, CookieJar, MemoryCookieStore } from 'tough-cookie';
 import * as devices from '../samples/devices.json';
 import * as builds from '../samples/builds.json';
-import * as loginExperiments from '../samples/login-experiments.json';
-import * as experiments from '../samples/experiments.json';
 import * as CONSTANTS from './constants';
-import { TLD } from './constants';
+import {
+  APP_VERSION,
+  APP_VERSION_CODE,
+  EXPERIMENTS,
+  FACEBOOK_ANALYTICS_APPLICATION_ID,
+  LOGIN_EXPERIMENTS,
+  SIGNATURE_KEY,
+  SIGNATURE_VERSION,
+  TLD,
+} from './constants';
 import { ChallengeStateResponse, CheckpointResponse } from '../responses';
 import { IgNoCheckpointError } from '../errors';
 
 export class State {
-  signatureKey: string = '19ce5f445dbfd9d29c59dc2a78c616a7fc090a8e018b9267bc4240a30244c53b';
-  signatureVersion: string = '4';
-  appVersion: string = '76.0.0.15.395';
-  appVersionCode: string = '138226743';
-  fbAnalyticsApplicationId: string = '567067343352427';
-  loginExperiments: string = loginExperiments.join(',');
-  experiments: string = experiments.join(',');
+  signatureKey: string = SIGNATURE_KEY;
+  signatureVersion: string = SIGNATURE_VERSION;
+  appVersion: string = APP_VERSION;
+  appVersionCode: string = APP_VERSION_CODE;
+  fbAnalyticsApplicationId: string = FACEBOOK_ANALYTICS_APPLICATION_ID;
+  loginExperiments: string = LOGIN_EXPERIMENTS;
+  experiments: string = EXPERIMENTS;
   language: string = 'en_US';
   deviceString: string;
   build: string;

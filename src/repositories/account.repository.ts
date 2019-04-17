@@ -1,3 +1,4 @@
+import { sample } from 'lodash';
 import { Repository } from '../core/repository';
 import { AccountRepositoryLoginResponseRootObject, AccountRepositoryLoginResponseLogged_in_user } from '../responses';
 import Bluebird = require('bluebird');
@@ -37,7 +38,7 @@ export class AccountRepository extends Repository {
         'X-DEVICE-ID': this.client.state.uuid,
       },
       form: this.client.request.signPost({
-        mobile_subno_usage: 'default',
+        mobile_subno_usage: sample(['default', 'ig_select_app']),
         device_id: this.client.state.uuid,
       }),
     });
@@ -47,9 +48,6 @@ export class AccountRepository extends Repository {
     return this.client.request.send({
       method: 'POST',
       url: '/api/v1/accounts/contact_point_prefill/',
-      headers: {
-        'X-DEVICE-ID': this.client.state.uuid,
-      },
       form: this.client.request.signPost({
         mobile_subno_usage: 'default',
         device_id: this.client.state.uuid,
@@ -61,9 +59,6 @@ export class AccountRepository extends Repository {
     return this.client.request.send({
       method: 'POST',
       url: '/api/v1/launcher/sync/',
-      headers: {
-        'X-DEVICE-ID': this.client.state.uuid,
-      },
       form: this.client.request.signPost({
         id: this.client.state.uuid,
         configs:
