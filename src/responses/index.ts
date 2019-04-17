@@ -13,3 +13,5 @@ export * from './media-comments.feed.response';
 export * from './location.feed.response';
 export * from './media.repository.likers.response';
 export * from './challenge.state.response';
+export * from './friendship.repository.show.response';
+export * from './friendship.repository.change.response';
