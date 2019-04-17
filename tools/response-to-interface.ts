@@ -11,7 +11,7 @@ async function getResponse() {
   ig.state.generateDevice(process.env.IG_USERNAME);
   ig.state.proxyUrl = process.env.IG_PROXY;
   await ig.account.login(process.env.IG_USERNAME, process.env.IG_PASSWORD);
-  return await ig.friendship.create('8159137');
+  return await ig.account.currentUser();
 }
 
 (async function createInterface(outputName: string) {
@@ -25,5 +25,5 @@ async function getResponse() {
   console.log('Success');
 })(
   // And pass output name
-  'friendship.repository.change',
+  'account.repository.current-user',
 );

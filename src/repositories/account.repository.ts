@@ -1,10 +1,14 @@
 import { sample } from 'lodash';
 import { Repository } from '../core/repository';
-import { AccountRepositoryLoginResponseRootObject, AccountRepositoryLoginResponseLogged_in_user } from '../responses';
+import {
+  AccountRepositoryCurrentUserResponseRootObject,
+  AccountRepositoryLoginResponseLogged_in_user,
+  AccountRepositoryLoginResponseRootObject,
+} from '../responses';
 import Bluebird = require('bluebird');
 
 export class AccountRepository extends Repository {
-  async login(username: string, password: string): Promise<AccountRepositoryLoginResponseLogged_in_user> {
+  public async login(username: string, password: string): Promise<AccountRepositoryLoginResponseLogged_in_user> {
     const response = await this.client.request.send<AccountRepositoryLoginResponseRootObject>({
       method: 'POST',
       url: '/api/v1/accounts/login/',
@@ -22,12 +26,22 @@ export class AccountRepository extends Repository {
     return response.body.logged_in_user;
   }
 
-  async preLoginFlow(concurrency = 1) {
+  public async preLoginFlow(concurrency = 1) {
     await Bluebird.map(
       [this.readMsisdnHeader(), this.contactPointPrefill(), this.launcherSync(), this.qeSync()],
       () => true,
       { concurrency },
     );
+  }
+
+  public async currentUser() {
+    const { body } = await this.client.request.send<AccountRepositoryCurrentUserResponseRootObject>({
+      url: '/api/v1/accounts/current_user/',
+      qs: {
+        edit: true,
+      },
+    });
+    return body.user;
   }
 
   private readMsisdnHeader() {
