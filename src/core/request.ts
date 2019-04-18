@@ -34,7 +34,7 @@ export class Request {
   constructor(private client: IgApiClient) {}
 
   private static requestTransform(body, response: Response, resolveWithFullResponse) {
-    if (response.headers['content-type'].startsWith('application/json')) {
+    if (response.headers['content-type'] && response.headers['content-type'].startsWith('application/json')) {
       try {
         // Sometimes we have numbers greater than Number.MAX_SAFE_INTEGER in json response
         // To handle it we just wrap numbers with length > 15 it double quotes to get strings instead
