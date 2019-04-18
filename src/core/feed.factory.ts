@@ -1,7 +1,7 @@
 import { IgApiClient } from './client';
 import { AccountFollowersFeed } from '../feeds';
 import { AccountFollowingFeed } from '../feeds';
-import { InboxFeed } from '../feeds';
+import { DirectInboxFeed } from '../feeds';
 import { UserFeed } from '../feeds';
 import { TagFeed } from '../feeds';
 import { LocationFeed } from '../feeds';
@@ -19,8 +19,8 @@ export class FeedFactory {
     feed.id = id;
     return feed;
   }
-  public inbox(): InboxFeed {
-    return new InboxFeed(this.client);
+  public directInbox(): DirectInboxFeed {
+    return new DirectInboxFeed(this.client);
   }
   public user(id: string | number): UserFeed {
     const feed = new UserFeed(this.client);

@@ -1,4 +1,4 @@
-export interface TagFeedResponseRootObject {
+export interface TagFeedResponse {
   ranked_items: TagFeedResponseRankedItemsItem[];
   items: TagFeedResponseItemsItem[];
   num_results: number;

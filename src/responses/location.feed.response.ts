@@ -1,4 +1,4 @@
-export interface LocationFeedResponseRootObject {
+export interface LocationFeedResponse {
   sections: LocationFeedResponseSectionsItem[];
   more_available: boolean;
   next_page: number;

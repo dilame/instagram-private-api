@@ -1,10 +1,11 @@
 import { Observable } from 'rxjs';
+import { classToPlain, Expose, plainToClassFromExist, serialize } from 'class-transformer';
 import { AttemptOptions, retry } from '@lifeomic/attempt';
 import * as Chance from 'chance';
 import { IgResponseError } from '../errors';
 import { Repository } from './repository';
 
-export abstract class Feed<T = any> extends Repository {
+export abstract class Feed<Response = any, Item = any> extends Repository {
   public attemptOptions: Partial<AttemptOptions<any>> = {
     delay: 60000,
     factor: 1.5,
@@ -13,7 +14,7 @@ export abstract class Feed<T = any> extends Repository {
     maxDelay: 300000,
     jitter: true,
   };
-  public stream$ = new Observable<T[]>(observer => {
+  public stream$ = new Observable<Item[]>(observer => {
     let subscribed = true;
     process.nextTick(async () => {
       do {
@@ -47,24 +48,31 @@ export abstract class Feed<T = any> extends Repository {
     });
     return () => (subscribed = false);
   });
-  protected cursor = null;
-  protected moreAvailable = null;
+  @Expose()
+  protected moreAvailable: boolean;
   protected chance = new Chance();
+  @Expose()
   protected rankToken = this.chance.guid();
 
-  abstract async request();
+  protected abstract set state(response: Response);
 
-  abstract async items(): Promise<T[]>;
+  abstract async request(): Promise<Response>;
 
-  setCursor(cursor) {
-    this.cursor = cursor;
+  abstract async items(): Promise<Array<Item>>;
+
+  public serialize() {
+    return serialize(this, { strategy: 'excludeAll' });
   }
 
-  getCursor() {
-    return this.cursor;
+  public deserialize(data: string): void {
+    plainToClassFromExist(this, JSON.parse(data));
   }
 
-  isMoreAvailable() {
+  public toPlain() {
+    return classToPlain(this, { strategy: 'excludeAll' });
+  }
+
+  public isMoreAvailable() {
     return !!this.moreAvailable;
   }
 }

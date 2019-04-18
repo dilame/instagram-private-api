@@ -1,4 +1,4 @@
-export interface AccountFollowingFeedResponseRootObject {
+export interface AccountFollowingFeedResponse {
   sections: null;
   users: AccountFollowingFeedResponseUsersItem[];
   big_list: boolean;

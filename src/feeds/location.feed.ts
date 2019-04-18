@@ -1,14 +1,27 @@
 import { flatten } from 'lodash';
+import { Expose } from 'class-transformer';
 import { Feed } from '../core/feed';
-import { LocationFeedResponseMedia, LocationFeedResponseRootObject } from '../responses';
+import { LocationFeedResponse, LocationFeedResponseMedia } from '../responses';
 
-export class LocationFeed extends Feed<LocationFeedResponseMedia> {
+export class LocationFeed extends Feed<LocationFeedResponse, LocationFeedResponseMedia> {
   id: string | number;
   tab: 'recent' | 'ranked';
-  next_page: number;
-  next_media_ids: Array<string> = [];
-  async request() {
-    const { body: json } = await this.client.request.send<LocationFeedResponseRootObject>({
+  @Expose()
+  private nextMaxId: string;
+  @Expose()
+  private nextPage: number;
+  @Expose()
+  private nextMediaIds: Array<string> = [];
+
+  protected set state(body: LocationFeedResponse) {
+    this.moreAvailable = body.more_available;
+    this.nextMaxId = body.next_max_id;
+    this.nextPage = body.next_page;
+    this.nextMediaIds = body.next_media_ids;
+  }
+
+  public async request() {
+    const { body } = await this.client.request.send<LocationFeedResponse>({
       url: `/api/v1/locations/${this.id}/sections/`,
       method: 'POST',
       form: {
@@ -16,17 +29,16 @@ export class LocationFeed extends Feed<LocationFeedResponseMedia> {
         tab: this.tab,
         _uuid: this.client.state.uuid,
         session_id: this.client.state.sessionId,
-        page: this.next_page,
-        next_media_ids: this.next_page ? JSON.stringify(this.next_media_ids) : void 0,
+        page: this.nextPage,
+        next_media_ids: this.nextPage ? JSON.stringify(this.nextMediaIds) : void 0,
+        max_id: this.nextMaxId,
       },
     });
-    this.moreAvailable = json.more_available && !!json.next_max_id;
-    this.next_page = json.next_page;
-    this.next_media_ids = json.next_media_ids;
-    if (this.moreAvailable) this.setCursor(json.next_max_id);
-    return json;
+    this.state = body;
+    return body;
   }
-  async items() {
+
+  public async items() {
     const response = await this.request();
     return flatten(response.sections.map(section => section.layout_content.medias.map(medias => medias.media)));
   }

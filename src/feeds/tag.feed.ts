@@ -1,20 +1,29 @@
+import { Expose } from 'class-transformer';
 import { Feed } from '../core/feed';
-import { TagFeedResponseItemsItem, TagFeedResponseRootObject } from '../responses';
+import { TagFeedResponse, TagFeedResponseItemsItem } from '../responses';
 
-export class TagFeed extends Feed<TagFeedResponseItemsItem> {
+export class TagFeed extends Feed<TagFeedResponse, TagFeedResponseItemsItem> {
   tag: string;
+  @Expose()
+  private nextMaxId: string;
+
+  set state(body: TagFeedResponse) {
+    this.moreAvailable = body.more_available;
+    this.nextMaxId = body.next_max_id;
+  }
+
   async request() {
-    const { body: json } = await this.client.request.send<TagFeedResponseRootObject>({
+    const { body } = await this.client.request.send<TagFeedResponse>({
       url: `/api/v1/feed/tag/${encodeURI(this.tag)}/`,
       qs: {
         rank_token: this.rankToken,
-        max_id: this.cursor,
+        max_id: this.nextMaxId,
       },
     });
-    this.moreAvailable = json.more_available && !!json.next_max_id;
-    if (this.moreAvailable) this.setCursor(json.next_max_id);
-    return json;
+    this.state = body;
+    return body;
   }
+
   async items() {
     const response = await this.request();
     return response.ranked_items;

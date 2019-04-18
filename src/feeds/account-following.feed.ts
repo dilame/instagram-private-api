@@ -1,18 +1,26 @@
+import { Expose } from 'class-transformer';
 import { Feed } from '../core/feed';
-import { AccountFollowingFeedResponseRootObject, AccountFollowingFeedResponseUsersItem } from '../responses';
+import { AccountFollowingFeedResponse, AccountFollowingFeedResponseUsersItem } from '../responses';
 
-export class AccountFollowingFeed extends Feed<AccountFollowingFeedResponseUsersItem> {
+export class AccountFollowingFeed extends Feed<AccountFollowingFeedResponse, AccountFollowingFeedResponseUsersItem> {
   id: number | string;
-  async request() {
-    const { body } = await this.client.request.send<AccountFollowingFeedResponseRootObject>({
-      url: `/api/v1/friendships/${this.id}/following/?${this.cursor ? `max_id=${this.cursor}&` : ''}rank_token=${
-        this.rankToken
-      }`,
-    });
+  @Expose()
+  private nextMaxId: string;
+
+  set state(body: AccountFollowingFeedResponse) {
     this.moreAvailable = !!body.next_max_id;
-    if (this.moreAvailable) {
-      this.setCursor(body.next_max_id);
-    }
+    this.nextMaxId = body.next_max_id;
+  }
+
+  async request() {
+    const { body } = await this.client.request.send<AccountFollowingFeedResponse>({
+      url: `/api/v1/friendships/${this.id}/following/`,
+      qs: {
+        rank_token: this.rankToken,
+        max_id: this.nextMaxId,
+      },
+    });
+    this.state = body;
     return body;
   }
 

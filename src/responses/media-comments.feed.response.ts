@@ -1,4 +1,4 @@
-export interface MediaCommentsFeedResponseRootObject {
+export interface MediaCommentsFeedResponse {
   comment_likes_enabled: boolean;
   comments: MediaCommentsFeedResponseCommentsItem[];
   comment_count: number;

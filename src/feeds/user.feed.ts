@@ -1,17 +1,25 @@
+import { Expose } from 'class-transformer';
 import { Feed } from '../core/feed';
-import { UserFeedResponseItemsItem, UserFeedResponseRootObject } from '../responses';
+import { UserFeedResponse, UserFeedResponseItemsItem } from '../responses';
 
-export class UserFeed extends Feed<UserFeedResponseItemsItem> {
+export class UserFeed extends Feed<UserFeedResponse, UserFeedResponseItemsItem> {
   id: number | string;
+  @Expose()
+  private nextMaxId: string;
 
-  async request(...parameters) {
-    const { body } = await this.client.request.send<UserFeedResponseRootObject>({
-      url: `/api/v1/feed/user/${this.id}/${this.cursor ? `?max_id=${this.cursor}` : ''}`,
+  protected set state(body: UserFeedResponse) {
+    this.moreAvailable = body.more_available;
+    this.nextMaxId = body.next_max_id;
+  }
+
+  async request() {
+    const { body } = await this.client.request.send<UserFeedResponse>({
+      url: `/api/v1/feed/user/${this.id}/`,
+      qs: {
+        max_id: this.nextMaxId,
+      },
     });
-    this.moreAvailable = body.more_available && !!body.next_max_id;
-    if (this.moreAvailable) {
-      this.setCursor(body.next_max_id);
-    }
+    this.state = body;
     return body;
   }
 

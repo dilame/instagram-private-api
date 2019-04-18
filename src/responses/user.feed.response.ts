@@ -1,4 +1,4 @@
-export interface UserFeedResponseRootObject {
+export interface UserFeedResponse {
   items: UserFeedResponseItemsItem[];
   num_results: number;
   more_available: boolean;

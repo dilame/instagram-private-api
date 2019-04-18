@@ -1,20 +1,29 @@
+import { Expose } from 'class-transformer';
 import { Feed } from '../core/feed';
-import { MediaCommentsFeedResponseCommentsItem, MediaCommentsFeedResponseRootObject } from '../responses/';
+import { MediaCommentsFeedResponse, MediaCommentsFeedResponseCommentsItem } from '../responses/';
 
-export class MediaCommentsFeed extends Feed<MediaCommentsFeedResponseCommentsItem> {
+export class MediaCommentsFeed extends Feed<MediaCommentsFeedResponse, MediaCommentsFeedResponseCommentsItem> {
   id: string;
+  @Expose()
+  private nextMinId: string;
+
+  set state(body: MediaCommentsFeedResponse) {
+    this.moreAvailable = !!body.next_min_id;
+    this.nextMinId = body.next_min_id;
+  }
+
   async request() {
-    const { body: json } = await this.client.request.send<MediaCommentsFeedResponseRootObject>({
+    const { body } = await this.client.request.send<MediaCommentsFeedResponse>({
       url: `/api/v1/media/${this.id}/comments/`,
       qs: {
         can_support_threading: true,
-        min_id: this.cursor,
+        min_id: this.nextMinId,
       },
     });
-    this.moreAvailable = !!json.next_min_id;
-    if (this.moreAvailable) this.setCursor(json.next_min_id);
-    return json;
+    this.state = body;
+    return body;
   }
+
   async items() {
     const response = await this.request();
     return response.comments;
