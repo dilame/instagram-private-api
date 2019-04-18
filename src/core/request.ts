@@ -16,6 +16,7 @@ import {
 } from '../errors';
 import hmac = require('crypto-js/hmac-sha256');
 import JSONbigInt = require('json-bigint');
+
 const JSONbigString = JSONbigInt({ storeAsString: true });
 
 type Payload = { [key: string]: any } | string;
@@ -34,15 +35,13 @@ export class Request {
   constructor(private client: IgApiClient) {}
 
   private static requestTransform(body, response: Response, resolveWithFullResponse) {
-    if (response.headers['content-type'] && response.headers['content-type'].startsWith('application/json')) {
-      try {
-        // Sometimes we have numbers greater than Number.MAX_SAFE_INTEGER in json response
-        // To handle it we just wrap numbers with length > 15 it double quotes to get strings instead
-        response.body = JSONbigString.parse(body);
-      } catch (e) {
-        if (inRange(response.statusCode, 200, 299)) {
-          throw e;
-        }
+    try {
+      // Sometimes we have numbers greater than Number.MAX_SAFE_INTEGER in json response
+      // To handle it we just wrap numbers with length > 15 it double quotes to get strings instead
+      response.body = JSONbigString.parse(body);
+    } catch (e) {
+      if (inRange(response.statusCode, 200, 299)) {
+        throw e;
       }
     }
     return resolveWithFullResponse ? response : response.body;

@@ -1,7 +1,7 @@
 import 'dotenv/config';
 import { IgApiClient } from '../src';
 import * as Bluebird from 'bluebird';
-import { writeFile } from 'fs';
+import { createReadStream, writeFile } from 'fs';
 import { json2ts } from 'json-ts/dist';
 import { camelCase } from 'lodash';
 
@@ -10,8 +10,11 @@ async function getResponse() {
   const ig = new IgApiClient();
   ig.state.generateDevice(process.env.IG_USERNAME);
   ig.state.proxyUrl = process.env.IG_PROXY;
+  const file = createReadStream('./tools/images/original.jpg');
   await ig.account.login(process.env.IG_USERNAME, process.env.IG_PASSWORD);
-  return await ig.account.currentUser();
+  return await ig.upload.photo({
+    file,
+  });
 }
 
 (async function createInterface(outputName: string) {
@@ -25,5 +28,5 @@ async function getResponse() {
   console.log('Success');
 })(
   // And pass output name
-  'account.repository.current-user',
+  'upload.repository.photo',
 );
