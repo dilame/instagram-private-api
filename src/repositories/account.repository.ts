@@ -1,3 +1,4 @@
+import { ReadStream } from 'fs';
 import { sample } from 'lodash';
 import { Repository } from '../core/repository';
 import {
@@ -71,6 +72,40 @@ export class AccountRepository extends Repository {
       }),
     });
     return body.user;
+  }
+  public async removeProfilePicture(): Promise<AccountRepositoryCurrentUserResponseRootObject> {
+    const { body } = await this.client.request.send<AccountRepositoryCurrentUserResponseRootObject>({
+      url: '/api/v1/accounts/remove_profile_picture/',
+      method: 'POST',
+      form: this.client.request.signPost({
+        _csrftoken: this.client.state.CSRFToken,
+        _uid: await this.client.state.extractCookieAccountId(),
+        _uuid: this.client.state.uuid,
+      }),
+    });
+    return body;
+  }
+  public async changeProfilePicture(stream: ReadStream): Promise<AccountRepositoryCurrentUserResponseRootObject> {
+    const signedParameters = this.client.request.signPost({
+      _csrftoken: this.client.state.CSRFToken,
+      _uid: await this.client.state.extractCookieAccountId(),
+      _uuid: this.client.state.uuid,
+    });
+    const { body } = await this.client.request.send<AccountRepositoryCurrentUserResponseRootObject>({
+      url: '/api/v1/accounts/change_profile_picture/',
+      method: 'POST',
+      formData: {
+        ...signedParameters,
+        profile_pic: {
+          value: stream,
+          options: {
+            filename: 'profile_pic',
+            contentType: 'application/octet-stream',
+          },
+        },
+      },
+    });
+    return body;
   }
   private readMsisdnHeader() {
     return this.client.request.send({
