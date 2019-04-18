@@ -6,6 +6,8 @@ import { UserFeed } from '../feeds';
 import { TagFeed } from '../feeds';
 import { LocationFeed } from '../feeds';
 import { MediaCommentsFeed } from '../feeds';
+import { DirectThreadFeed } from '../feeds/direct-thread.feed';
+import { DirectInboxFeedResponseThreadsItem } from '../responses';
 
 export class FeedFactory {
   constructor(private client: IgApiClient) {}
@@ -21,6 +23,16 @@ export class FeedFactory {
   }
   public directInbox(): DirectInboxFeed {
     return new DirectInboxFeed(this.client);
+  }
+  public directThread(
+    options: Pick<DirectInboxFeedResponseThreadsItem, 'thread_id' | 'oldest_cursor'>,
+    seqId?: number,
+  ): DirectThreadFeed {
+    const feed = new DirectThreadFeed(this.client);
+    feed.id = options.thread_id;
+    feed.cursor = options.oldest_cursor;
+    feed.seqId = seqId;
+    return feed;
   }
   public user(id: string | number): UserFeed {
     const feed = new UserFeed(this.client);

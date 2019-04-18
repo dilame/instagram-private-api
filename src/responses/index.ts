@@ -2,6 +2,7 @@ export * from './checkpoint.response';
 export * from './account-following.feed.response';
 export * from './account-followers.feed.response';
 export * from './direct-inbox.feed.response';
+export * from './direct-thread.feed.response';
 export * from './account.repository.login.response';
 export * from './account.repository.current-user.response';
 export * from './user.repository.info.response';
