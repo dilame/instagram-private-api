@@ -7,6 +7,7 @@ import { MediaRepository } from '../repositories/media.repository';
 import { ChallengeRepository } from '../repositories/challenge.repository';
 import { FriendshipRepository } from '../repositories/friendship.repository';
 import { UploadRepository } from '../repositories/upload.repository';
+import { StoryRepository } from '../repositories/story.repository';
 
 export class IgApiClient {
   public state = new State();
@@ -18,4 +19,5 @@ export class IgApiClient {
   public media = new MediaRepository(this);
   public upload = new UploadRepository(this);
   public feed = new FeedFactory(this);
+  public story = new StoryRepository(this);
 }
