@@ -28,6 +28,7 @@ export class State {
   loginExperiments: string = LOGIN_EXPERIMENTS;
   experiments: string = EXPERIMENTS;
   language: string = 'en_US';
+  timezoneOffset: string = String(new Date().getTimezoneOffset() * -60);
   deviceString: string;
   build: string;
   uuid: string;
@@ -80,14 +81,14 @@ export class State {
   }
 
   get webUserAgent() {
-    return `Mozilla/5.0 (Linux; Android ${this.payload.android_release}; ${this.payload.model} Build/${
+    return `Mozilla/5.0 (Linux; Android ${this.devicePayload.android_release}; ${this.devicePayload.model} Build/${
       this.build
     }; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/70.0.3538.110 Mobile Safari/537.36 ${
       this.appUserAgent
     }`;
   }
 
-  get payload() {
+  get devicePayload() {
     const deviceParts = this.deviceString.split(';');
     const [android_version, android_release] = deviceParts[0].split('/');
     const [manufacturer] = deviceParts[3].split('/');
