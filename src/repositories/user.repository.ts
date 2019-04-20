@@ -5,6 +5,7 @@ import {
   UserRepositorySearchResponseRootObject,
   UserRepositorySearchResponseUsersItem,
 } from '../responses';
+import { IgExactUserNotFoundError } from '../errors/ig-exact-user-not-found-error';
 
 export class UserRepository extends Repository {
   async info(id: string | number): Promise<UserRepositoryInfoResponseUser> {
@@ -28,7 +29,7 @@ export class UserRepository extends Repository {
     username = username.toLowerCase();
     const users = await this.search(username);
     const account = users.find(account => account.username === username);
-    if (!account) return null;
+    if (!account) throw new IgExactUserNotFoundError();
     return account;
   }
   async id(username: string): Promise<number> {
