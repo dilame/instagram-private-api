@@ -1,6 +1,7 @@
-import { Expose } from 'class-transformer';
+import { Expose, plainToClassFromExist } from 'class-transformer';
 import { Feed } from '../core/feed';
 import { DirectInboxFeedResponse, DirectInboxFeedResponseThreadsItem } from '../responses';
+import { DirectThreadRecord } from '../records';
 
 export class DirectInboxFeed extends Feed<DirectInboxFeedResponse, DirectInboxFeedResponseThreadsItem> {
   @Expose()
@@ -11,7 +12,7 @@ export class DirectInboxFeed extends Feed<DirectInboxFeedResponse, DirectInboxFe
   set state(body: DirectInboxFeedResponse) {
     this.moreAvailable = body.inbox.has_older;
     this.seqId = body.seq_id;
-    this.cursor = body.inbox.oldest_cursor.toString();
+    this.cursor = body.inbox.oldest_cursor;
   }
 
   async request() {
@@ -34,5 +35,13 @@ export class DirectInboxFeed extends Feed<DirectInboxFeedResponse, DirectInboxFe
   async items() {
     const response = await this.request();
     return response.inbox.threads;
+  }
+
+  async records(): Promise<Array<DirectThreadRecord>> {
+    const threads = await this.items();
+    return threads.map(thread => {
+      const record = new DirectThreadRecord(this.client);
+      return plainToClassFromExist(record, thread);
+    });
   }
 }

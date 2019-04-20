@@ -66,6 +66,7 @@
     "tough-cookie-file-store": "^1.2.0",
     "ts-custom-error": "^2.2.2",
     "underscore.string": "^3.3.5",
+    "utility-types": "^3.5.0",
     "valid-url": "^1.0.9"
   },
   "devDependencies": {

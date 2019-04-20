@@ -14,7 +14,7 @@ export interface DirectInboxFeedResponseInbox {
   oldest_cursor: string;
   blended_inbox_enabled: boolean;
 }
-export interface DirectInboxFeedResponseThreadsItem {
+export class DirectInboxFeedResponseThreadsItem {
   thread_id: string;
   thread_v2_id: string;
   users: DirectInboxFeedResponseUsersItem[];

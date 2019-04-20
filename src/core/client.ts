@@ -8,6 +8,8 @@ import { ChallengeRepository } from '../repositories/challenge.repository';
 import { FriendshipRepository } from '../repositories/friendship.repository';
 import { UploadRepository } from '../repositories/upload.repository';
 import { PublishService } from '../services/publish.service';
+import { DirectThreadRepository } from '../repositories/direct-thread.repository';
+import { DmService } from '../services/dm.service';
 
 export class IgApiClient {
   public state = new State();
@@ -20,6 +22,8 @@ export class IgApiClient {
   public friendship = new FriendshipRepository(this);
   public media = new MediaRepository(this);
   public upload = new UploadRepository(this);
+  public directThread = new DirectThreadRepository(this);
   /* Services */
   public publish = new PublishService(this);
+  public dm = new DmService(this);
 }
