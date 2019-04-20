@@ -2,7 +2,6 @@ import { random } from 'lodash';
 import { Repository } from '../core/repository';
 import { UploadPhotoOptions } from '../types/upload.photo.options';
 import Chance = require('chance');
-import streamLength = require('stream-length');
 import { UploadRepositoryPhotoResponseRootObject } from '../responses';
 
 export class UploadRepository extends Repository {
@@ -18,7 +17,7 @@ export class UploadRepository extends Repository {
       image_compression: JSON.stringify({ lib_name: 'moz', lib_version: '3.1.m', quality: '70' }),
     };
     const name = `${uploadId}_0_-${random(1000000000, 9999999999)}`;
-    const contentLength = await streamLength(options.file);
+    const contentLength = options.file.byteLength;
     const { body } = await this.client.request.send<UploadRepositoryPhotoResponseRootObject>({
       url: `/rupload_igphoto/${name}`,
       method: 'POST',

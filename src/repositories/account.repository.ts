@@ -59,32 +59,6 @@ export class AccountRepository extends Repository {
     });
     return body.user;
   }
-  public async editProfile(options: AccountEditProfileOptions) {
-    const { body } = await this.client.request.send<AccountRepositoryCurrentUserResponseRootObject>({
-      url: '/api/v1/accounts/edit_profile/',
-      method: 'POST',
-      form: this.client.request.signPost({
-        ...options,
-        _csrftoken: this.client.state.CSRFToken,
-        _uid: await this.client.state.extractCookieAccountId(),
-        device_id: this.client.state.deviceId,
-        _uuid: this.client.state.uuid,
-      }),
-    });
-    return body.user;
-  }
-  public async removeProfilePicture(): Promise<AccountRepositoryCurrentUserResponseRootObject> {
-    const { body } = await this.client.request.send<AccountRepositoryCurrentUserResponseRootObject>({
-      url: '/api/v1/accounts/remove_profile_picture/',
-      method: 'POST',
-      form: this.client.request.signPost({
-        _csrftoken: this.client.state.CSRFToken,
-        _uid: await this.client.state.extractCookieAccountId(),
-        _uuid: this.client.state.uuid,
-      }),
-    });
-    return body;
-  }
   public async changeProfilePicture(stream: ReadStream): Promise<AccountRepositoryCurrentUserResponseRootObject> {
     const signedParameters = this.client.request.signPost({
       _csrftoken: this.client.state.CSRFToken,
@@ -104,6 +78,41 @@ export class AccountRepository extends Repository {
           },
         },
       },
+    });
+    return body;
+  }
+  public async editProfile(options: AccountEditProfileOptions) {
+    const { body } = await this.client.request.send<AccountRepositoryCurrentUserResponseRootObject>({
+      url: '/api/v1/accounts/edit_profile/',
+      method: 'POST',
+      form: this.client.request.signPost({
+        ...options,
+        _csrftoken: this.client.state.CSRFToken,
+        _uid: await this.client.state.extractCookieAccountId(),
+        device_id: this.client.state.deviceId,
+        _uuid: this.client.state.uuid,
+      }),
+    });
+    return body.user;
+  }
+  public async removeProfilePicture() {
+    return this.command('remove_profile_picture');
+  }
+  public async setPrivate() {
+    return this.command('set_private');
+  }
+  public async setPublic() {
+    return this.command('set_public');
+  }
+  private async command(command: string): Promise<AccountRepositoryCurrentUserResponseRootObject> {
+    const { body } = await this.client.request.send<AccountRepositoryCurrentUserResponseRootObject>({
+      url: `/api/v1/accounts/${command}/`,
+      method: 'POST',
+      form: this.client.request.signPost({
+        _csrftoken: this.client.state.CSRFToken,
+        _uid: await this.client.state.extractCookieAccountId(),
+        _uuid: this.client.state.uuid,
+      }),
     });
     return body;
   }
