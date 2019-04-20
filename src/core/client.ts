@@ -9,12 +9,13 @@ import { FriendshipRepository } from '../repositories/friendship.repository';
 import { UploadRepository } from '../repositories/upload.repository';
 import { PublishService } from '../services/publish.service';
 import { DirectThreadRepository } from '../repositories/direct-thread.repository';
-import { DmService } from '../services/dm.service';
+import { EntityFactory } from './entity.factory';
 
 export class IgApiClient {
   public state = new State();
   public request = new Request(this);
   public feed = new FeedFactory(this);
+  public entity = new EntityFactory(this);
   /* Repositories */
   public challenge = new ChallengeRepository(this);
   public account = new AccountRepository(this);
@@ -25,5 +26,4 @@ export class IgApiClient {
   public directThread = new DirectThreadRepository(this);
   /* Services */
   public publish = new PublishService(this);
-  public dm = new DmService(this);
 }

@@ -1,7 +1,7 @@
 import { Expose, plainToClassFromExist } from 'class-transformer';
 import { Feed } from '../core/feed';
 import { DirectInboxFeedResponse, DirectInboxFeedResponseThreadsItem } from '../responses';
-import { DirectThreadRecord } from '../records';
+import { DirectThreadEntity } from '../entities';
 
 export class DirectInboxFeed extends Feed<DirectInboxFeedResponse, DirectInboxFeedResponseThreadsItem> {
   @Expose()
@@ -37,10 +37,10 @@ export class DirectInboxFeed extends Feed<DirectInboxFeedResponse, DirectInboxFe
     return response.inbox.threads;
   }
 
-  async records(): Promise<Array<DirectThreadRecord>> {
+  async records(): Promise<Array<DirectThreadEntity>> {
     const threads = await this.items();
     return threads.map(thread => {
-      const record = new DirectThreadRecord(this.client);
+      const record = new DirectThreadEntity(this.client);
       return plainToClassFromExist(record, thread);
     });
   }

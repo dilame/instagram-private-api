@@ -9,7 +9,7 @@ import { readFileSync } from 'fs';
   await ig.account.login(process.env.IG_USERNAME, process.env.IG_PASSWORD);
   const inboxFeed = ig.feed.directInbox();
   const threads = await inboxFeed.items();
-  const thread = ig.dm.thread(threads[0].thread_id);
+  const thread = ig.entity.directThread(threads[0].thread_id);
   await thread.broadcastPhoto({
     file: readFileSync('./tools/images/original.jpg'),
   });

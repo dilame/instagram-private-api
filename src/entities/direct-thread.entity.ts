@@ -1,7 +1,7 @@
-import { Record } from '../core/record';
+import { Entity } from '../core/entity';
 import { DirectThreadBroadcastPhotoOptions } from '../types/direct-thread.broadcast-photo.options';
 
-export class DirectThreadRecord extends Record {
+export class DirectThreadEntity extends Entity {
   thread_id: string;
   public async broadcastText(text: string) {
     return await this.client.directThread.broadcast({
