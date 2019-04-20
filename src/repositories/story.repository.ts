@@ -1,11 +1,10 @@
 import { Repository } from '../core/repository';
-import { SUPPORTED_CAPABILITIES } from '../core/constants';
+import * as SUPPORTED_CAPABILITIES from '../samples/supported-capabilities.json';
 import {
   StoryRepositoryResponseRootObject,
   StoryRepositoryResponseReels,
   StoryRepositoryResponseItem,
 } from '../responses/story.repository.response';
-import { Reel } from '../types/story.reel';
 
 export class StoryRepository extends Repository {
   async reelsMediaFeed(
@@ -28,10 +27,14 @@ export class StoryRepository extends Repository {
     return body.reels;
   }
 
-  async markSeen(reels: Reel, module: string = 'feed_timeline'): Promise<any> {
-    const { body } = await this.client.request.send<any>({
+  async markSeen(reels: Reel, module: string = 'feed_timeline'): Promise<{ status: string }> {
+    const { body } = await this.client.request.send<{ status: string }>({
       url: `/api/v2/media/seen/`,
       method: 'POST',
+      qs: {
+        reel: 1,
+        live_vod: 0,
+      },
       form: this.client.request.signPost({
         reels,
         container_module: module,
@@ -40,8 +43,6 @@ export class StoryRepository extends Repository {
         live_vods_skipped: [],
         nuxes: [],
         nuxes_skipped: [],
-        reel: 1,
-        live_vod: 0,
         _uuid: this.client.state.uuid,
         _uid: await this.client.state.extractCookieAccountId(),
         _csrftoken: this.client.state.CSRFToken,
@@ -51,7 +52,7 @@ export class StoryRepository extends Repository {
     return body;
   }
 
-  formatReels(items: StoryRepositoryResponseItem[], sourceId: string = null) {
+  formatReels(items: StoryRepositoryResponseItem[], sourceId: string = null): Reel {
     const reels: Reel = {};
     const maxSeenAt: number = Math.floor(Date.now() / 1000); // Get current global UTC timestamp.
     let seenAt: number = maxSeenAt - items.length; // Start seenAt in the past.
@@ -82,4 +83,8 @@ export class StoryRepository extends Repository {
 
     return reels;
   }
+}
+
+interface Reel {
+  [item: string]: [string];
 }
