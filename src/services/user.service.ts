@@ -10,7 +10,7 @@ export class UserService extends UserRepository {
     if (!account) throw new IgExactUserNotFoundError();
     return account;
   }
-  async id(username: string): Promise<number> {
+  async getIdByUsername(username: string): Promise<number> {
     const user = await this.searchExact(username);
     return user.pk;
   }
