@@ -34,6 +34,21 @@ export class ChallengeRepository extends Repository {
     return await this.selectVerifyMethod(choice);
   }
 
+  public async sendPhoneNumber(phoneNumber: string | number) {
+    const { body } = await this.client.request.send<ChallengeStateResponse>({
+      url: this.client.state.challengeUrl,
+      method: 'POST',
+      form: this.client.request.signPost({
+        phone_number: phoneNumber,
+        _csrftoken: this.client.state.CSRFToken,
+        guid: this.client.state.uuid,
+        device_id: this.client.state.deviceId,
+      }),
+    });
+    this.middleware(body);
+    return body;
+  }
+
   public async auto(reset = false): Promise<ChallengeStateResponse> {
     if (!this.client.state.checkpoint) {
       throw new IgNoCheckpointError();
@@ -97,7 +112,8 @@ export class ChallengeRepository extends Repository {
   private middleware(body: ChallengeStateResponse) {
     if (body.action === 'close') {
       this.client.state.challenge = null;
+    } else {
+      this.client.state.challenge = body;
     }
-    this.client.state.challenge = body;
   }
 }
