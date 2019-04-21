@@ -11,3 +11,4 @@ export * from './ig-requests-limit.error';
 export * from './ig-sentry-block.error';
 export * from './ig-no-checkpoint.error';
 export * from './ig-challenge-wrong-code.error';
+export * from './ig-exact-user-not-found-error';
