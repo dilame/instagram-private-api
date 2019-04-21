@@ -17,7 +17,7 @@ export class UserRepository extends Repository {
     const { body } = await this.client.request.send<UserRepositorySearchResponseRootObject>({
       url: `/api/v1/users/search/`,
       qs: {
-        timezone_offset: 10800,
+        timezone_offset: this.client.state.timezoneOffset,
         q: username,
         count: 30,
       },
