@@ -131,4 +131,13 @@ export class State {
     this.adid = chance.guid();
     this.build = chance.pickone(builds);
   }
+
+  public setDevice(device: object): void {
+    this.deviceString = device.deviceString;
+    this.deviceId = device.deviceId;
+    this.uuid = device.uuid;
+    this.phoneId = device.phoneId;
+    this.adid = chance.guid();
+    this.build = chance.pickone(builds);
+  }
 }
