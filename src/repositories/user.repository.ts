@@ -24,15 +24,4 @@ export class UserRepository extends Repository {
     });
     return body.users;
   }
-  async searchExact(username: string): Promise<UserRepositorySearchResponseUsersItem> {
-    username = username.toLowerCase();
-    const users = await this.search(username);
-    const account = users.find(account => account.username === username);
-    if (!account) return null;
-    return account;
-  }
-  async id(username: string): Promise<number> {
-    const user = await this.searchExact(username);
-    return user.pk;
-  }
 }
