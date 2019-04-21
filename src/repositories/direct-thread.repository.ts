@@ -7,7 +7,7 @@ export class DirectThreadRepository extends Repository {
   public async broadcast(options: DirectThreadBroadcastOptions) {
     const mutationToken = new Chance().guid();
     const recipients = options.threadIds || options.userIds;
-    const recipientsType = options.userIds ? 'recipient_users' : 'thread_ids';
+    const recipientsType = options.threadIds ? 'thread_ids' : 'recipient_users';
     const recipientsIds = recipients instanceof Array ? recipients : [recipients];
 
     const { body } = await this.client.request.send<DirectThreadRepositoryBroadcastResponseRootObject>({
@@ -15,7 +15,7 @@ export class DirectThreadRepository extends Repository {
       method: 'POST',
       form: {
         action: 'send_item',
-        [recipientsType]: JSON.stringify(options.userIds ? [recipientsIds] : recipientsIds)
+        [recipientsType]: JSON.stringify(recipientsType === 'thread_ids' ? recipientsIds : [recipientsIds])
         client_context: mutationToken,
         _csrftoken: this.client.state.CSRFToken,
         device_id: this.client.state.deviceId,
