@@ -15,9 +15,22 @@ export class DiscoverRepository extends Repository {
     });
     return body;
   }
+
   async markSuSeen() {
     const { body } = await this.client.request.send({
       url: '/api/v1/discover/mark_su_seen/',
+      method: 'POST',
+      form: this.client.request.sign({
+        _csrftoken: this.client.state.CSRFToken,
+        _uuid: this.client.state.uuid,
+      }),
+    });
+    return body;
+  }
+
+  async profileSuBadge() {
+    const { body } = await this.client.request.send({
+      url: '/api/v1/discover/profile_su_badge/',
       method: 'POST',
       form: this.client.request.sign({
         _csrftoken: this.client.state.CSRFToken,
