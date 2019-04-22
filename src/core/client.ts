@@ -13,6 +13,7 @@ import { UserService } from '../services/user.service';
 import { QeRepository } from '../repositories/qe.repository';
 import { ZrRepository } from '../repositories/zr.repository';
 import { LauncherRepository } from '../repositories/launcher.repository';
+import { DirectRepository } from '../repositories/direct.repository';
 
 export class IgApiClient {
   public state = new State();
@@ -25,6 +26,7 @@ export class IgApiClient {
   public friendship = new FriendshipRepository(this);
   public media = new MediaRepository(this);
   public upload = new UploadRepository(this);
+  public direct = new DirectRepository(this);
   public directThread = new DirectThreadRepository(this);
   public qe = new QeRepository(this);
   public zr = new ZrRepository(this);
