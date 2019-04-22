@@ -1,5 +1,4 @@
 import { ReadStream } from 'fs';
-import { sample } from 'lodash';
 import { Repository } from '../core/repository';
 import {
   AccountRepositoryCurrentUserResponseRootObject,
@@ -19,6 +18,7 @@ export class AccountRepository extends Repository {
         password,
         guid: this.client.state.uuid,
         phone_id: this.client.state.phoneId,
+        _csrftoken: this.client.state.CSRFToken,
         device_id: this.client.state.deviceId,
         adid: this.client.state.adid,
         google_tokens: '[]',
@@ -30,7 +30,7 @@ export class AccountRepository extends Repository {
 
   public async preLoginFlow(concurrency = 1) {
     await Bluebird.map(
-      [this.readMsisdnHeader(), this.contactPointPrefill(), this.launcherSync(), this.qeSync()],
+      [this.readMsisdnHeader(), this.contactPointPrefill(), this.client.launcher.sync(), this.client.qe.sync()],
       () => true,
       { concurrency },
     );
@@ -116,7 +116,7 @@ export class AccountRepository extends Repository {
     });
     return body;
   }
-  private readMsisdnHeader() {
+  public readMsisdnHeader() {
     return this.client.request.send({
       method: 'POST',
       url: '/api/v1/accounts/read_msisdn_header/',
@@ -124,13 +124,23 @@ export class AccountRepository extends Repository {
         'X-DEVICE-ID': this.client.state.uuid,
       },
       form: this.client.request.signPost({
-        mobile_subno_usage: sample(['default', 'ig_select_app']),
+        mobile_subno_usage: 'default',
+        device_id: this.client.state.uuid,
+      }),
+    });
+  }
+  public msisdnHeaderBootstrap() {
+    return this.client.request.send({
+      method: 'POST',
+      url: '/api/v1/accounts/msisdn_header_bootstrap/',
+      form: this.client.request.signPost({
+        mobile_subno_usage: 'ig_select_app',
         device_id: this.client.state.uuid,
       }),
     });
   }
 
-  private contactPointPrefill() {
+  public contactPointPrefill() {
     return this.client.request.send({
       method: 'POST',
       url: '/api/v1/accounts/contact_point_prefill/',
@@ -140,29 +150,14 @@ export class AccountRepository extends Repository {
       }),
     });
   }
-
-  private launcherSync() {
+  public getPrefillCandidates() {
     return this.client.request.send({
       method: 'POST',
-      url: '/api/v1/launcher/sync/',
+      url: '/api/v1/accounts/get_prefill_candidates/',
       form: this.client.request.signPost({
-        id: this.client.state.uuid,
-        configs:
-          'ig_fbns_blocked,ig_android_felix_release_players,ig_user_mismatch_soft_error,ig_android_carrier_signals_killswitch,ig_android_killswitch_perm_direct_ssim,fizz_ig_android,ig_mi_block_expired_events,ig_android_os_version_blocking_config',
-      }),
-    });
-  }
-
-  private qeSync() {
-    return this.client.request.send({
-      method: 'POST',
-      url: '/api/v1/qe/sync/',
-      headers: {
-        'X-DEVICE-ID': this.client.state.uuid,
-      },
-      form: this.client.request.signPost({
-        id: this.client.state.uuid,
-        experiments: this.client.state.loginExperiments,
+        android_device_id: this.client.state.deviceId,
+        usages: '["account_recovery_omnibox"]',
+        device_id: this.client.state.uuid,
       }),
     });
   }

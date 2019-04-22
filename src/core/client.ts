@@ -10,6 +10,9 @@ import { PublishService } from '../services/publish.service';
 import { DirectThreadRepository } from '../repositories/direct-thread.repository';
 import { EntityFactory } from './entity.factory';
 import { UserService } from '../services/user.service';
+import { QeRepository } from '../repositories/qe.repository';
+import { ZrRepository } from '../repositories/zr.repository';
+import { LauncherRepository } from '../repositories/launcher.repository';
 
 export class IgApiClient {
   public state = new State();
@@ -23,6 +26,9 @@ export class IgApiClient {
   public media = new MediaRepository(this);
   public upload = new UploadRepository(this);
   public directThread = new DirectThreadRepository(this);
+  public qe = new QeRepository(this);
+  public zr = new ZrRepository(this);
+  public launcher = new LauncherRepository(this);
   /* Services */
   public user = new UserService(this);
   public publish = new PublishService(this);

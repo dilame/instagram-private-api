@@ -101,6 +101,21 @@ export class State {
     };
   }
 
+  get batteryLevel() {
+    const chance = new Chance(this.deviceId);
+    const percentTime = chance.integer({ min: 200, max: 600 });
+    return 100 - (Math.round(Date.now() / 1000 / percentTime) % 100);
+  }
+
+  get isCharging() {
+    const chance = new Chance(`${this.deviceId}${Math.round(Date.now() / 10800000)}`);
+    return chance.bool();
+  }
+
+  public isExperimentEnabled(experiment) {
+    return this.experiments.includes(experiment);
+  }
+
   public async extractCookie(name: string): Promise<Cookie> {
     return Bluebird.fromCallback<Cookie>(cb => this.cookieStore.findCookie(TLD, '/', name, cb));
   }

@@ -56,7 +56,7 @@ export abstract class Feed<Response = any, Item = any> extends Repository {
 
   protected abstract set state(response: Response);
 
-  abstract async request(): Promise<Response>;
+  abstract async request(...args: Array<any>): Promise<Response>;
 
   abstract async items(): Promise<Array<Item>>;
 

@@ -76,9 +76,6 @@ export class Request {
   }
 
   public signPost(payload: Payload): SignedPost {
-    if (typeof payload === 'object' && !payload._csrftoken) {
-      payload._csrftoken = this.client.state.CSRFToken;
-    }
     const signed_body = this.sign(payload);
     return {
       ig_sig_key_version: this.client.state.signatureVersion,
