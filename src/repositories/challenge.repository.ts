@@ -19,7 +19,7 @@ export class ChallengeRepository extends Repository {
     const { body } = await this.client.request.send<ChallengeStateResponse>({
       url: this.client.state.challengeUrl,
       method: 'POST',
-      form: this.client.request.signPost({
+      form: this.client.request.sign({
         choice,
         _csrftoken: this.client.state.CSRFToken,
         guid: this.client.state.uuid,
@@ -38,7 +38,7 @@ export class ChallengeRepository extends Repository {
     const { body } = await this.client.request.send<ChallengeStateResponse>({
       url: this.client.state.challengeUrl,
       method: 'POST',
-      form: this.client.request.signPost({
+      form: this.client.request.sign({
         phone_number: phoneNumber,
         _csrftoken: this.client.state.CSRFToken,
         guid: this.client.state.uuid,
@@ -77,7 +77,7 @@ export class ChallengeRepository extends Repository {
     const { body } = await this.client.request.send<ChallengeStateResponse>({
       url: this.client.state.challengeUrl.replace('/challenge/', '/challenge/reset/'),
       method: 'POST',
-      form: this.client.request.signPost({
+      form: this.client.request.sign({
         _csrftoken: this.client.state.CSRFToken,
         guid: this.client.state.uuid,
         device_id: this.client.state.deviceId,
@@ -92,7 +92,7 @@ export class ChallengeRepository extends Repository {
       .send<ChallengeStateResponse>({
         url: this.client.state.challengeUrl,
         method: 'POST',
-        form: this.client.request.signPost({
+        form: this.client.request.sign({
           security_code: code,
           _csrftoken: this.client.state.CSRFToken,
           guid: this.client.state.uuid,

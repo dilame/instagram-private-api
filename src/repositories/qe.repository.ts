@@ -25,7 +25,7 @@ export class QeRepository extends Repository {
       headers: {
         'X-DEVICE-ID': this.client.state.uuid,
       },
-      form: this.client.request.signPost(data),
+      form: this.client.request.sign(data),
     });
   }
 }

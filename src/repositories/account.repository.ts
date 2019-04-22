@@ -13,7 +13,7 @@ export class AccountRepository extends Repository {
     const response = await this.client.request.send<AccountRepositoryLoginResponseRootObject>({
       method: 'POST',
       url: '/api/v1/accounts/login/',
-      form: this.client.request.signPost({
+      form: this.client.request.sign({
         username,
         password,
         guid: this.client.state.uuid,
@@ -49,7 +49,7 @@ export class AccountRepository extends Repository {
     const { body } = await this.client.request.send<AccountRepositoryCurrentUserResponseRootObject>({
       url: '/api/v1/accounts/set_biography/',
       method: 'POST',
-      form: this.client.request.signPost({
+      form: this.client.request.sign({
         _csrftoken: this.client.state.CSRFToken,
         _uid: await this.client.state.extractCookieAccountId(),
         device_id: this.client.state.deviceId,
@@ -60,7 +60,7 @@ export class AccountRepository extends Repository {
     return body.user;
   }
   public async changeProfilePicture(stream: ReadStream): Promise<AccountRepositoryCurrentUserResponseRootObject> {
-    const signedParameters = this.client.request.signPost({
+    const signedParameters = this.client.request.sign({
       _csrftoken: this.client.state.CSRFToken,
       _uid: await this.client.state.extractCookieAccountId(),
       _uuid: this.client.state.uuid,
@@ -85,7 +85,7 @@ export class AccountRepository extends Repository {
     const { body } = await this.client.request.send<AccountRepositoryCurrentUserResponseRootObject>({
       url: '/api/v1/accounts/edit_profile/',
       method: 'POST',
-      form: this.client.request.signPost({
+      form: this.client.request.sign({
         ...options,
         _csrftoken: this.client.state.CSRFToken,
         _uid: await this.client.state.extractCookieAccountId(),
@@ -108,7 +108,7 @@ export class AccountRepository extends Repository {
     const { body } = await this.client.request.send<AccountRepositoryCurrentUserResponseRootObject>({
       url: `/api/v1/accounts/${command}/`,
       method: 'POST',
-      form: this.client.request.signPost({
+      form: this.client.request.sign({
         _csrftoken: this.client.state.CSRFToken,
         _uid: await this.client.state.extractCookieAccountId(),
         _uuid: this.client.state.uuid,
@@ -123,7 +123,7 @@ export class AccountRepository extends Repository {
       headers: {
         'X-DEVICE-ID': this.client.state.uuid,
       },
-      form: this.client.request.signPost({
+      form: this.client.request.sign({
         mobile_subno_usage: 'default',
         device_id: this.client.state.uuid,
       }),
@@ -133,7 +133,7 @@ export class AccountRepository extends Repository {
     return this.client.request.send({
       method: 'POST',
       url: '/api/v1/accounts/msisdn_header_bootstrap/',
-      form: this.client.request.signPost({
+      form: this.client.request.sign({
         mobile_subno_usage: 'ig_select_app',
         device_id: this.client.state.uuid,
       }),
@@ -144,7 +144,7 @@ export class AccountRepository extends Repository {
     return this.client.request.send({
       method: 'POST',
       url: '/api/v1/accounts/contact_point_prefill/',
-      form: this.client.request.signPost({
+      form: this.client.request.sign({
         mobile_subno_usage: 'default',
         device_id: this.client.state.uuid,
       }),
@@ -154,7 +154,7 @@ export class AccountRepository extends Repository {
     return this.client.request.send({
       method: 'POST',
       url: '/api/v1/accounts/get_prefill_candidates/',
-      form: this.client.request.signPost({
+      form: this.client.request.sign({
         android_device_id: this.client.state.deviceId,
         usages: '["account_recovery_omnibox"]',
         device_id: this.client.state.uuid,

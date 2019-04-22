@@ -7,7 +7,7 @@ import { MediaConfigureOptions } from '../types/media.configure.options';
 
 export class MediaRepository extends Repository {
   private async likeAction(options: MediaLikeOrUnlikeOptions) {
-    const signedFormData = this.client.request.signPost({
+    const signedFormData = this.client.request.sign({
       module_name: options.moduleInfo.module_name,
       media_id: options.mediaId,
       _csrftoken: this.client.state.CSRFToken,
@@ -53,7 +53,7 @@ export class MediaRepository extends Repository {
       headers: {
         retry_context: JSON.stringify({ num_step_auto_retry: 0, num_reupload: 0, num_step_manual_retry: 0 }),
       },
-      form: this.client.request.signPost({
+      form: this.client.request.sign({
         timezone_offset: this.client.state.timezoneOffset,
         _csrftoken: this.client.state.CSRFToken,
         source_type: options.source_type,
@@ -100,7 +100,7 @@ export class MediaRepository extends Repository {
     this.client.request.send({
       url: '/api/v1/media/configure/',
       method: 'POST',
-      form: this.client.request.signPost(form),
+      form: this.client.request.sign(form),
     });
   }
 }

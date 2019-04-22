@@ -21,7 +21,7 @@ export class FriendshipRepository extends Repository {
     const { body } = await this.client.request.send<FriendshipRepositoryChangeResponseRootObject>({
       url: `/api/v1/friendships/${action}/${id}/`,
       method: 'POST',
-      form: this.client.request.signPost({
+      form: this.client.request.sign({
         _csrftoken: this.client.state.CSRFToken,
         user_id: id,
         radio_type: 'wifi-none',

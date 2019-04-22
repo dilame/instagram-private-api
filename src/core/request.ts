@@ -69,14 +69,14 @@ export class Request {
     throw this.handleResponseError(response);
   }
 
-  public sign(payload: Payload): string {
+  public signBody(payload: Payload): string {
     const json = typeof payload === 'object' ? JSON.stringify(payload) : payload;
     const signature = hmac(json, this.client.state.signatureKey).toString();
     return `${signature}.${json}`;
   }
 
-  public signPost(payload: Payload): SignedPost {
-    const signed_body = this.sign(payload);
+  public sign(payload: Payload): SignedPost {
+    const signed_body = this.signBody(payload);
     return {
       ig_sig_key_version: this.client.state.signatureVersion,
       signed_body,

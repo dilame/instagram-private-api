@@ -5,7 +5,7 @@ export class AttributionRepository extends Repository {
     return this.client.request.send({
       method: 'POST',
       url: '/api/v1/attribution/log_attribution/',
-      form: this.client.request.signPost({
+      form: this.client.request.sign({
         adid: this.client.state.adid,
       }),
     });

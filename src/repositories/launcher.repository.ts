@@ -23,7 +23,7 @@ export class LauncherRepository extends Repository {
     const { body } = await this.client.request.send({
       method: 'POST',
       url: '/api/v1/launcher/sync/',
-      form: this.client.request.signPost(data),
+      form: this.client.request.sign(data),
     });
     return body;
   }
