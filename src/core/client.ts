@@ -10,6 +10,14 @@ import { PublishService } from '../services/publish.service';
 import { DirectThreadRepository } from '../repositories/direct-thread.repository';
 import { EntityFactory } from './entity.factory';
 import { UserService } from '../services/user.service';
+import { QeRepository } from '../repositories/qe.repository';
+import { ZrRepository } from '../repositories/zr.repository';
+import { LauncherRepository } from '../repositories/launcher.repository';
+import { DirectRepository } from '../repositories/direct.repository';
+import { LoomRepository } from '../repositories/loom.repository';
+import { QpRepository } from '../repositories/qp.repository';
+import { CreativesRepository } from '../repositories/creatives.repository';
+import { LinkedAccountRepository } from '../repositories/linked-account.repository';
 
 export class IgApiClient {
   public state = new State();
@@ -22,7 +30,15 @@ export class IgApiClient {
   public friendship = new FriendshipRepository(this);
   public media = new MediaRepository(this);
   public upload = new UploadRepository(this);
+  public direct = new DirectRepository(this);
   public directThread = new DirectThreadRepository(this);
+  public qe = new QeRepository(this);
+  public qp = new QpRepository(this);
+  public zr = new ZrRepository(this);
+  public launcher = new LauncherRepository(this);
+  public loom = new LoomRepository(this);
+  public creatives = new CreativesRepository(this);
+  public linkedAccount = new LinkedAccountRepository(this);
   /* Services */
   public user = new UserService(this);
   public publish = new PublishService(this);

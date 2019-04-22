@@ -11,10 +11,7 @@ async function getResponse() {
   ig.state.generateDevice(process.env.IG_USERNAME);
   ig.state.proxyUrl = process.env.IG_PROXY;
   await ig.account.login(process.env.IG_USERNAME, process.env.IG_PASSWORD);
-  const inboxFeed = ig.feed.directInbox();
-  const inbox1 = await inboxFeed.request();
-  const threadFeed = ig.feed.directThread(inbox1.inbox.threads[0], inbox1.seq_id);
-  return threadFeed.request();
+  return await ig.media.comment({ mediaId: '2025784068423314539_8654924802', text: 'Very cool post' });
 }
 
 (async function createInterface(outputName: string) {
@@ -28,5 +25,5 @@ async function getResponse() {
   console.log('Success');
 })(
   // And pass output name
-  'direct-thread.feed',
+  'media.repository.comment',
 );

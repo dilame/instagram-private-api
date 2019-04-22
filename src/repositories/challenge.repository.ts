@@ -19,7 +19,7 @@ export class ChallengeRepository extends Repository {
     const { body } = await this.client.request.send<ChallengeStateResponse>({
       url: this.client.state.challengeUrl,
       method: 'POST',
-      form: this.client.request.signPost({
+      form: this.client.request.sign({
         choice,
         _csrftoken: this.client.state.CSRFToken,
         guid: this.client.state.uuid,
@@ -32,6 +32,21 @@ export class ChallengeRepository extends Repository {
 
   public async deltaLoginReview(choice: '1' | '0') {
     return await this.selectVerifyMethod(choice);
+  }
+
+  public async sendPhoneNumber(phoneNumber: string | number) {
+    const { body } = await this.client.request.send<ChallengeStateResponse>({
+      url: this.client.state.challengeUrl,
+      method: 'POST',
+      form: this.client.request.sign({
+        phone_number: phoneNumber,
+        _csrftoken: this.client.state.CSRFToken,
+        guid: this.client.state.uuid,
+        device_id: this.client.state.deviceId,
+      }),
+    });
+    this.middleware(body);
+    return body;
   }
 
   public async auto(reset = false): Promise<ChallengeStateResponse> {
@@ -62,7 +77,7 @@ export class ChallengeRepository extends Repository {
     const { body } = await this.client.request.send<ChallengeStateResponse>({
       url: this.client.state.challengeUrl.replace('/challenge/', '/challenge/reset/'),
       method: 'POST',
-      form: this.client.request.signPost({
+      form: this.client.request.sign({
         _csrftoken: this.client.state.CSRFToken,
         guid: this.client.state.uuid,
         device_id: this.client.state.deviceId,
@@ -77,7 +92,7 @@ export class ChallengeRepository extends Repository {
       .send<ChallengeStateResponse>({
         url: this.client.state.challengeUrl,
         method: 'POST',
-        form: this.client.request.signPost({
+        form: this.client.request.sign({
           security_code: code,
           _csrftoken: this.client.state.CSRFToken,
           guid: this.client.state.uuid,
@@ -97,7 +112,8 @@ export class ChallengeRepository extends Repository {
   private middleware(body: ChallengeStateResponse) {
     if (body.action === 'close') {
       this.client.state.challenge = null;
+    } else {
+      this.client.state.challenge = body;
     }
-    this.client.state.challenge = body;
   }
 }

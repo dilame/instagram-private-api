@@ -4,10 +4,13 @@ import { Repository } from '../core/repository';
 import { LikeRequestOptions, MediaLikeOrUnlikeOptions, UnlikeRequestOptions } from '../types/media.like.options';
 import { MediaRepositoryLikersResponseRootObject } from '../responses';
 import { MediaConfigureOptions } from '../types/media.configure.options';
+import { MediaRepositoryBlockedResponse } from '../responses/media.repository.blocked.response';
+import { MediaRepositoryCommentResponse } from '../responses/media.repository.comment.response';
+import Chance = require('chance');
 
 export class MediaRepository extends Repository {
   private async likeAction(options: MediaLikeOrUnlikeOptions) {
-    const signedFormData = this.client.request.signPost({
+    const signedFormData = this.client.request.sign({
       module_name: options.moduleInfo.module_name,
       media_id: options.mediaId,
       _csrftoken: this.client.state.CSRFToken,
@@ -18,7 +21,7 @@ export class MediaRepository extends Repository {
       _uuid: this.client.state.uuid,
     });
 
-    return this.client.request.send({
+    const { body } = await this.client.request.send({
       url: `/api/v1/media/${options.mediaId}/${options.action}/`,
       method: 'POST',
       form: {
@@ -26,6 +29,7 @@ export class MediaRepository extends Repository {
         d: options.d,
       },
     });
+    return body;
   }
   public async like(options: LikeRequestOptions) {
     return this.likeAction({
@@ -39,11 +43,43 @@ export class MediaRepository extends Repository {
       ...options,
     });
   }
+  public async comment({
+    mediaId,
+    text,
+    module = 'self_comments_v2',
+  }: {
+    mediaId: string;
+    text: string;
+    module?: string;
+  }) {
+    const { body } = await this.client.request.send<MediaRepositoryCommentResponse>({
+      url: `/api/v1/media/${mediaId}/comment/`,
+      method: 'POST',
+      form: this.client.request.sign({
+        user_breadcrumb: this.client.request.userBreadcrumb(text.length),
+        idempotence_token: new Chance().guid(),
+        _csrftoken: this.client.state.CSRFToken,
+        radio_type: 'wifi-none',
+        _uid: await this.client.state.extractCookieAccountId(),
+        device_id: this.client.state.deviceId,
+        _uuid: this.client.state.uuid,
+        comment_text: text,
+        containermodule: module,
+      }),
+    });
+    return body.comment;
+  }
   public async likers(id: string): Promise<MediaRepositoryLikersResponseRootObject> {
     const { body } = await this.client.request.send<MediaRepositoryLikersResponseRootObject>({
-      url: `/api/v1/media/${id}/likers`,
+      url: `/api/v1/media/${id}/likers/`,
     });
     return body;
+  }
+  public async blocked() {
+    const { body } = await this.client.request.send<MediaRepositoryBlockedResponse>({
+      url: `/api/v1/media/blocked/`,
+    });
+    return body.media_ids;
   }
 
   public async uploadFinish(options: { upload_id: string; source_type: string }) {
@@ -53,7 +89,7 @@ export class MediaRepository extends Repository {
       headers: {
         retry_context: JSON.stringify({ num_step_auto_retry: 0, num_reupload: 0, num_step_manual_retry: 0 }),
       },
-      form: this.client.request.signPost({
+      form: this.client.request.sign({
         timezone_offset: this.client.state.timezoneOffset,
         _csrftoken: this.client.state.CSRFToken,
         source_type: options.source_type,
@@ -100,7 +136,7 @@ export class MediaRepository extends Repository {
     this.client.request.send({
       url: '/api/v1/media/configure/',
       method: 'POST',
-      form: this.client.request.signPost(form),
+      form: this.client.request.sign(form),
     });
   }
 }

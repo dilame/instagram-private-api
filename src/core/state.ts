@@ -5,10 +5,12 @@ import { jar } from 'request';
 import { Cookie, CookieJar, MemoryCookieStore } from 'tough-cookie';
 import * as devices from '../samples/devices.json';
 import * as builds from '../samples/builds.json';
+import * as supportedCapabilities from '../samples/supported-capabilities.json';
 import * as CONSTANTS from './constants';
 import {
   APP_VERSION,
   APP_VERSION_CODE,
+  BREADCRUMB_KEY,
   EXPERIMENTS,
   FACEBOOK_ANALYTICS_APPLICATION_ID,
   LOGIN_EXPERIMENTS,
@@ -22,11 +24,13 @@ import { IgNoCheckpointError } from '../errors';
 export class State {
   signatureKey: string = SIGNATURE_KEY;
   signatureVersion: string = SIGNATURE_VERSION;
+  userBreadcrumbKey: string = BREADCRUMB_KEY;
   appVersion: string = APP_VERSION;
   appVersionCode: string = APP_VERSION_CODE;
   fbAnalyticsApplicationId: string = FACEBOOK_ANALYTICS_APPLICATION_ID;
   loginExperiments: string = LOGIN_EXPERIMENTS;
   experiments: string = EXPERIMENTS;
+  supportedCapabilities = supportedCapabilities;
   language: string = 'en_US';
   timezoneOffset: string = String(new Date().getTimezoneOffset() * -60);
   deviceString: string;
@@ -99,6 +103,21 @@ export class State {
       manufacturer,
       model,
     };
+  }
+
+  get batteryLevel() {
+    const chance = new Chance(this.deviceId);
+    const percentTime = chance.integer({ min: 200, max: 600 });
+    return 100 - (Math.round(Date.now() / 1000 / percentTime) % 100);
+  }
+
+  get isCharging() {
+    const chance = new Chance(`${this.deviceId}${Math.round(Date.now() / 10800000)}`);
+    return chance.bool();
+  }
+
+  public isExperimentEnabled(experiment) {
+    return this.experiments.includes(experiment);
   }
 
   public async extractCookie(name: string): Promise<Cookie> {
