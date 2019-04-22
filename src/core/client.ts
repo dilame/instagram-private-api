@@ -17,6 +17,7 @@ import { DirectRepository } from '../repositories/direct.repository';
 import { LoomRepository } from '../repositories/loom.repository';
 import { QpRepository } from '../repositories/qp.repository';
 import { CreativesRepository } from '../repositories/creatives.repository';
+import { LinkedAccountRepository } from '../repositories/linked-account.repository';
 
 export class IgApiClient {
   public state = new State();
@@ -37,6 +38,7 @@ export class IgApiClient {
   public launcher = new LauncherRepository(this);
   public loom = new LoomRepository(this);
   public creatives = new CreativesRepository(this);
+  public linkedAccount = new LinkedAccountRepository(this);
   /* Services */
   public user = new UserService(this);
   public publish = new PublishService(this);
