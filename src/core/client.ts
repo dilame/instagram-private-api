@@ -16,6 +16,7 @@ import { LauncherRepository } from '../repositories/launcher.repository';
 import { DirectRepository } from '../repositories/direct.repository';
 import { LoomRepository } from '../repositories/loom.repository';
 import { QpRepository } from '../repositories/qp.repository';
+import { CreativesRepository } from '../repositories/creatives.repository';
 
 export class IgApiClient {
   public state = new State();
@@ -35,6 +36,7 @@ export class IgApiClient {
   public zr = new ZrRepository(this);
   public launcher = new LauncherRepository(this);
   public loom = new LoomRepository(this);
+  public creatives = new CreativesRepository(this);
   /* Services */
   public user = new UserService(this);
   public publish = new PublishService(this);

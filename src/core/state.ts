@@ -5,6 +5,7 @@ import { jar } from 'request';
 import { Cookie, CookieJar, MemoryCookieStore } from 'tough-cookie';
 import * as devices from '../samples/devices.json';
 import * as builds from '../samples/builds.json';
+import * as supportedCapabilities from '../samples/supported-capabilities.json';
 import * as CONSTANTS from './constants';
 import {
   APP_VERSION,
@@ -27,6 +28,7 @@ export class State {
   fbAnalyticsApplicationId: string = FACEBOOK_ANALYTICS_APPLICATION_ID;
   loginExperiments: string = LOGIN_EXPERIMENTS;
   experiments: string = EXPERIMENTS;
+  supportedCapabilities = supportedCapabilities;
   language: string = 'en_US';
   timezoneOffset: string = String(new Date().getTimezoneOffset() * -60);
   deviceString: string;
