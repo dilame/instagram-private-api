@@ -14,6 +14,7 @@ import { QeRepository } from '../repositories/qe.repository';
 import { ZrRepository } from '../repositories/zr.repository';
 import { LauncherRepository } from '../repositories/launcher.repository';
 import { DirectRepository } from '../repositories/direct.repository';
+import { LoomRepository } from '../repositories/loom.repository';
 
 export class IgApiClient {
   public state = new State();
@@ -31,6 +32,7 @@ export class IgApiClient {
   public qe = new QeRepository(this);
   public zr = new ZrRepository(this);
   public launcher = new LauncherRepository(this);
+  public loom = new LoomRepository(this);
   /* Services */
   public user = new UserService(this);
   public publish = new PublishService(this);
