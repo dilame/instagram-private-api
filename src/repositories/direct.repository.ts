@@ -12,4 +12,10 @@ export class DirectRepository extends Repository {
     });
     return body;
   }
+  async getPresence() {
+    const { body } = await this.client.request.send({
+      url: '/api/v1/direct_v2/get_presence/',
+    });
+    return body;
+  }
 }
