@@ -21,7 +21,7 @@ export class DiscoverRepository extends Repository {
       url: '/api/v1/discover/mark_su_seen/',
       method: 'POST',
       form: this.client.request.sign({
-        _csrftoken: this.client.state.CSRFToken,
+        _csrftoken: this.client.state.cookieCsrfToken,
         _uuid: this.client.state.uuid,
       }),
     });
@@ -33,7 +33,7 @@ export class DiscoverRepository extends Repository {
       url: '/api/v1/discover/profile_su_badge/',
       method: 'POST',
       form: this.client.request.sign({
-        _csrftoken: this.client.state.CSRFToken,
+        _csrftoken: this.client.state.cookieCsrfToken,
         _uuid: this.client.state.uuid,
       }),
     });

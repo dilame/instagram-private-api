@@ -22,10 +22,10 @@ export class FriendshipRepository extends Repository {
       url: `/api/v1/friendships/${action}/${id}/`,
       method: 'POST',
       form: this.client.request.sign({
-        _csrftoken: this.client.state.CSRFToken,
+        _csrftoken: this.client.state.cookieCsrfToken,
         user_id: id,
         radio_type: 'wifi-none',
-        _uid: await this.client.state.extractCookieAccountId(),
+        _uid: this.client.state.cookieAccountId,
         device_id: this.client.state.deviceId,
         _uuid: this.client.state.uuid,
         media_id_attribution: mediaIdAttribution,

@@ -68,20 +68,18 @@ export class Request {
     }
     throw this.handleResponseError(response);
   }
-
-  public signBody(payload: Payload): string {
-    const json = typeof payload === 'object' ? JSON.stringify(payload) : payload;
-    const signature = createHmac('sha256', this.client.state.signatureKey)
-      .update(json)
+  public signature(data: string) {
+    return createHmac('sha256', this.client.state.signatureKey)
+      .update(data)
       .digest('hex');
-    return `${signature}.${json}`;
   }
 
   public sign(payload: Payload): SignedPost {
-    const signed_body = this.signBody(payload);
+    const json = typeof payload === 'object' ? JSON.stringify(payload) : payload;
+    const signature = this.signature(json);
     return {
       ig_sig_key_version: this.client.state.signatureVersion,
-      signed_body,
+      signed_body: `${signature}.${json}`,
     };
   }
 

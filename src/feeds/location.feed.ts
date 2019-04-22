@@ -25,7 +25,7 @@ export class LocationFeed extends Feed<LocationFeedResponse, LocationFeedRespons
       url: `/api/v1/locations/${this.id}/sections/`,
       method: 'POST',
       form: {
-        _csrftoken: this.client.state.CSRFToken,
+        _csrftoken: this.client.state.cookieCsrfToken,
         tab: this.tab,
         _uuid: this.client.state.uuid,
         session_id: this.client.state.clientSessionId,

@@ -17,7 +17,7 @@ export class UserRepository extends Repository {
     const { body } = await this.client.request.send({
       url: `/api/v1/users/arlink_download_info/`,
       qs: {
-        version_override: '2.0.2 ',
+        version_override: '2.0.2',
       },
     });
     return body.user;

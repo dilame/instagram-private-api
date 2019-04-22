@@ -11,7 +11,7 @@ import {
   UserFeed,
 } from '../feeds';
 import { DirectInboxFeedResponseThreadsItem } from '../responses';
-import { TimelineFeedReason } from '../types/timeline-feed.reason';
+import { TimelineFeedReason } from '../types/timeline-feed.types';
 
 export class FeedFactory {
   constructor(private client: IgApiClient) {}

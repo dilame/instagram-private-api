@@ -1,25 +1,29 @@
 import { Repository } from '../core/repository';
 
 export class QeRepository extends Repository {
-  public async sync() {
+  public syncExperiments() {
+    return this.sync(this.client.state.experiments);
+  }
+  public async syncLoginExperiments() {
+    return this.sync(this.client.state.loginExperiments);
+  }
+  public async sync(experiments) {
     let data;
-    const uid = await this.client.state.extractCookieAccountId();
-    if (uid) {
+    try {
+      const uid = this.client.state.cookieAccountId;
       data = {
-        _csrftoken: this.client.state.CSRFToken,
+        _csrftoken: this.client.state.cookieCsrfToken,
         id: uid,
         _uid: uid,
         _uuid: this.client.state.uuid,
       };
-    } else {
+    } catch {
       data = {
         id: this.client.state.uuid,
       };
     }
-    data = Object.assign(data, {
-      experiments: this.client.state.loginExperiments,
-    });
-    return this.client.request.send({
+    data = Object.assign(data, { experiments });
+    const { body } = await this.client.request.send({
       method: 'POST',
       url: '/api/v1/qe/sync/',
       headers: {
@@ -27,5 +31,6 @@ export class QeRepository extends Repository {
       },
       form: this.client.request.sign(data),
     });
+    return body;
   }
 }

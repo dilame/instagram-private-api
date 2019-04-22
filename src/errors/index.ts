@@ -1,4 +1,5 @@
 export * from './ig-client.error';
+export * from './ig-cookie-not-found.error';
 export * from './ig-response.error';
 export * from './ig-action-spam.error';
 export * from './ig-checkpoint.error';
