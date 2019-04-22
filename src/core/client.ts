@@ -15,6 +15,7 @@ import { ZrRepository } from '../repositories/zr.repository';
 import { LauncherRepository } from '../repositories/launcher.repository';
 import { DirectRepository } from '../repositories/direct.repository';
 import { LoomRepository } from '../repositories/loom.repository';
+import { QpRepository } from '../repositories/qp.repository';
 
 export class IgApiClient {
   public state = new State();
@@ -30,6 +31,7 @@ export class IgApiClient {
   public direct = new DirectRepository(this);
   public directThread = new DirectThreadRepository(this);
   public qe = new QeRepository(this);
+  public qp = new QpRepository(this);
   public zr = new ZrRepository(this);
   public launcher = new LauncherRepository(this);
   public loom = new LoomRepository(this);
