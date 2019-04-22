@@ -10,6 +10,7 @@ import * as CONSTANTS from './constants';
 import {
   APP_VERSION,
   APP_VERSION_CODE,
+  BREADCRUMB_KEY,
   EXPERIMENTS,
   FACEBOOK_ANALYTICS_APPLICATION_ID,
   LOGIN_EXPERIMENTS,
@@ -23,6 +24,7 @@ import { IgNoCheckpointError } from '../errors';
 export class State {
   signatureKey: string = SIGNATURE_KEY;
   signatureVersion: string = SIGNATURE_VERSION;
+  userBreadcrumbKey: string = BREADCRUMB_KEY;
   appVersion: string = APP_VERSION;
   appVersionCode: string = APP_VERSION_CODE;
   fbAnalyticsApplicationId: string = FACEBOOK_ANALYTICS_APPLICATION_ID;

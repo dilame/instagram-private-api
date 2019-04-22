@@ -1,4 +1,5 @@
 import { defaultsDeep, inRange, random } from 'lodash';
+import { createHmac } from 'crypto';
 import { Subject } from 'rxjs';
 import { AttemptOptions, retry } from '@lifeomic/attempt';
 import * as request from 'request-promise';
@@ -14,7 +15,6 @@ import {
   IgResponseError,
   IgSentryBlockError,
 } from '../errors';
-import hmac = require('crypto-js/hmac-sha256');
 import JSONbigInt = require('json-bigint');
 
 const JSONbigString = JSONbigInt({ storeAsString: true });
@@ -71,7 +71,9 @@ export class Request {
 
   public signBody(payload: Payload): string {
     const json = typeof payload === 'object' ? JSON.stringify(payload) : payload;
-    const signature = hmac(json, this.client.state.signatureKey).toString();
+    const signature = createHmac('sha256', this.client.state.signatureKey)
+      .update(json)
+      .digest('hex');
     return `${signature}.${json}`;
   }
 
@@ -81,6 +83,19 @@ export class Request {
       ig_sig_key_version: this.client.state.signatureVersion,
       signed_body,
     };
+  }
+
+  public userBreadcrumb(size: number) {
+    const term = random(2, 3) * 1000 + size + random(15, 20) * 1000;
+    const textChangeEventCount = Math.round(size / random(2, 3)) || 1;
+    const data = `${size} ${term} ${textChangeEventCount} ${Date.now()}`;
+    const signature = Buffer.from(
+      createHmac('sha256', this.client.state.userBreadcrumbKey)
+        .update(data)
+        .digest('hex'),
+    ).toString('base64');
+    const body = Buffer.from(data).toString('base64');
+    return `${signature}\n${body}\n`;
   }
 
   private handleResponseError(response: Response) {

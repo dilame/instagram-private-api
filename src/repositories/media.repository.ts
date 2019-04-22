@@ -5,6 +5,8 @@ import { LikeRequestOptions, MediaLikeOrUnlikeOptions, UnlikeRequestOptions } fr
 import { MediaRepositoryLikersResponseRootObject } from '../responses';
 import { MediaConfigureOptions } from '../types/media.configure.options';
 import { MediaRepositoryBlockedResponse } from '../responses/media.repository.blocked.response';
+import { MediaRepositoryCommentResponse } from '../responses/media.repository.comment.response';
+import Chance = require('chance');
 
 export class MediaRepository extends Repository {
   private async likeAction(options: MediaLikeOrUnlikeOptions) {
@@ -19,7 +21,7 @@ export class MediaRepository extends Repository {
       _uuid: this.client.state.uuid,
     });
 
-    return this.client.request.send({
+    const { body } = await this.client.request.send({
       url: `/api/v1/media/${options.mediaId}/${options.action}/`,
       method: 'POST',
       form: {
@@ -27,6 +29,7 @@ export class MediaRepository extends Repository {
         d: options.d,
       },
     });
+    return body;
   }
   public async like(options: LikeRequestOptions) {
     return this.likeAction({
@@ -39,6 +42,32 @@ export class MediaRepository extends Repository {
       action: 'unlike',
       ...options,
     });
+  }
+  public async comment({
+    mediaId,
+    text,
+    module = 'self_comments_v2',
+  }: {
+    mediaId: string;
+    text: string;
+    module?: string;
+  }) {
+    const { body } = await this.client.request.send<MediaRepositoryCommentResponse>({
+      url: `/api/v1/media/${mediaId}/comment/`,
+      method: 'POST',
+      form: this.client.request.sign({
+        user_breadcrumb: this.client.request.userBreadcrumb(text.length),
+        idempotence_token: new Chance().guid(),
+        _csrftoken: this.client.state.CSRFToken,
+        radio_type: 'wifi-none',
+        _uid: await this.client.state.extractCookieAccountId(),
+        device_id: this.client.state.deviceId,
+        _uuid: this.client.state.uuid,
+        comment_text: text,
+        containermodule: module,
+      }),
+    });
+    return body.comment;
   }
   public async likers(id: string): Promise<MediaRepositoryLikersResponseRootObject> {
     const { body } = await this.client.request.send<MediaRepositoryLikersResponseRootObject>({
