@@ -5,8 +5,8 @@ import {
   AccountRepositoryLoginResponseLogged_in_user,
   AccountRepositoryLoginResponseRootObject,
 } from '../responses';
-import Bluebird = require('bluebird');
 import { AccountEditProfileOptions } from '../types/account.edit-profile.options';
+import Bluebird = require('bluebird');
 
 export class AccountRepository extends Repository {
   public async login(username: string, password: string): Promise<AccountRepositoryLoginResponseLogged_in_user> {
@@ -45,6 +45,7 @@ export class AccountRepository extends Repository {
     });
     return body.user;
   }
+
   public async setBiography(text: string) {
     const { body } = await this.client.request.send<AccountRepositoryCurrentUserResponseRootObject>({
       url: '/api/v1/accounts/set_biography/',
@@ -59,6 +60,7 @@ export class AccountRepository extends Repository {
     });
     return body.user;
   }
+
   public async changeProfilePicture(stream: ReadStream): Promise<AccountRepositoryCurrentUserResponseRootObject> {
     const signedParameters = this.client.request.sign({
       _csrftoken: this.client.state.CSRFToken,
@@ -81,6 +83,7 @@ export class AccountRepository extends Repository {
     });
     return body;
   }
+
   public async editProfile(options: AccountEditProfileOptions) {
     const { body } = await this.client.request.send<AccountRepositoryCurrentUserResponseRootObject>({
       url: '/api/v1/accounts/edit_profile/',
@@ -95,15 +98,19 @@ export class AccountRepository extends Repository {
     });
     return body.user;
   }
+
   public async removeProfilePicture() {
     return this.command('remove_profile_picture');
   }
+
   public async setPrivate() {
     return this.command('set_private');
   }
+
   public async setPublic() {
     return this.command('set_public');
   }
+
   private async command(command: string): Promise<AccountRepositoryCurrentUserResponseRootObject> {
     const { body } = await this.client.request.send<AccountRepositoryCurrentUserResponseRootObject>({
       url: `/api/v1/accounts/${command}/`,
@@ -116,8 +123,9 @@ export class AccountRepository extends Repository {
     });
     return body;
   }
-  public readMsisdnHeader() {
-    return this.client.request.send({
+
+  public async readMsisdnHeader() {
+    const { body } = await this.client.request.send({
       method: 'POST',
       url: '/api/v1/accounts/read_msisdn_header/',
       headers: {
@@ -128,9 +136,11 @@ export class AccountRepository extends Repository {
         device_id: this.client.state.uuid,
       }),
     });
+    return body;
   }
-  public msisdnHeaderBootstrap() {
-    return this.client.request.send({
+
+  public async msisdnHeaderBootstrap() {
+    const { body } = await this.client.request.send({
       method: 'POST',
       url: '/api/v1/accounts/msisdn_header_bootstrap/',
       form: this.client.request.sign({
@@ -138,10 +148,11 @@ export class AccountRepository extends Repository {
         device_id: this.client.state.uuid,
       }),
     });
+    return body;
   }
 
-  public contactPointPrefill() {
-    return this.client.request.send({
+  public async contactPointPrefill() {
+    const { body } = await this.client.request.send({
       method: 'POST',
       url: '/api/v1/accounts/contact_point_prefill/',
       form: this.client.request.sign({
@@ -149,9 +160,11 @@ export class AccountRepository extends Repository {
         device_id: this.client.state.uuid,
       }),
     });
+    return body;
   }
-  public getPrefillCandidates() {
-    return this.client.request.send({
+
+  public async getPrefillCandidates() {
+    const { body } = await this.client.request.send({
       method: 'POST',
       url: '/api/v1/accounts/get_prefill_candidates/',
       form: this.client.request.sign({
@@ -160,5 +173,22 @@ export class AccountRepository extends Repository {
         device_id: this.client.state.uuid,
       }),
     });
+    return body;
+  }
+
+  public async processContactPointSignals() {
+    const { body } = await this.client.request.send({
+      method: 'POST',
+      url: '/api/v1/accounts/process_contact_point_signals/',
+      form: this.client.request.sign({
+        phone_id: this.client.state.phoneId,
+        _csrftoken: this.client.state.CSRFToken,
+        _uid: await this.client.state.extractCookieAccountId(),
+        device_id: this.client.state.deviceId,
+        _uuid: this.client.state.uuid,
+        google_tokens: '[]',
+      }),
+    });
+    return body;
   }
 }
