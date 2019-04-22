@@ -28,7 +28,7 @@ export class LocationFeed extends Feed<LocationFeedResponse, LocationFeedRespons
         _csrftoken: this.client.state.CSRFToken,
         tab: this.tab,
         _uuid: this.client.state.uuid,
-        session_id: this.client.state.sessionId,
+        session_id: this.client.state.clientSessionId,
         page: this.nextPage,
         next_media_ids: this.nextPage ? JSON.stringify(this.nextMediaIds) : void 0,
         max_id: this.nextMaxId,

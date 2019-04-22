@@ -9,7 +9,7 @@ export class DiscoverRepository extends Repository {
         omit_cover_media: false,
         use_sectional_payload: true,
         timezone_offset: this.client.state.timezoneOffset,
-        session_id: this.client.state.sessionId,
+        session_id: this.client.state.clientSessionId,
         include_fixed_destinations: false,
       },
     });

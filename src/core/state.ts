@@ -52,6 +52,8 @@ export class State {
   cookieJar = jar(this.cookieStore);
   checkpoint: CheckpointResponse = null;
   challenge: ChallengeStateResponse = null;
+  clientSessionIdLifetime: number = 1200000;
+  pigeonSessionIdLifetime: number = 1200000;
 
   get CSRFToken() {
     const cookies = this.cookieJar.getCookies(CONSTANTS.HOST);
@@ -75,9 +77,12 @@ export class State {
    *
    * We will update it once an hour
    */
-  get sessionId(): string {
-    const chance = new Chance(`${this.deviceId}${Math.round(Date.now() / 3600000)}`);
-    return chance.guid();
+  get clientSessionId(): string {
+    return this.generateTemporaryGuid('clientSessionId', this.clientSessionIdLifetime);
+  }
+
+  get pigeonSessionId(): string {
+    return this.generateTemporaryGuid('pigeonSessionId', this.pigeonSessionIdLifetime);
   }
 
   get appUserAgent() {
@@ -149,5 +154,8 @@ export class State {
     this.phoneId = chance.guid();
     this.adid = chance.guid();
     this.build = chance.pickone(builds);
+  }
+  private generateTemporaryGuid(seed: string, lifetime: number) {
+    return new Chance(`${seed}${this.deviceId}${Math.round(Date.now() / lifetime)}`).guid();
   }
 }

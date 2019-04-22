@@ -25,7 +25,7 @@ export class TimelineFeed extends Feed<TimelineFeedResponse, TimelineFeedRespons
       battery_level: this.client.state.batteryLevel,
       timezone_offset: this.client.state.timezoneOffset,
       _csrftoken: this.client.state.CSRFToken,
-      client_session_id: this.client.state.sessionId,
+      client_session_id: this.client.state.clientSessionId,
       device_id: this.client.state.uuid,
       _uuid: this.client.state.uuid,
       is_charging: Number(this.client.state.isCharging),

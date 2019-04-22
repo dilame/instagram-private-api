@@ -134,6 +134,9 @@ export class Request {
 
   private getDefaultHeaders() {
     return {
+      'User-Agent': this.client.state.appUserAgent,
+      'X-Pigeon-Session-Id': this.client.state.pigeonSessionId,
+      'X-Pigeon-Rawclienttime': (Date.now() / 1000).toFixed(3),
       'X-FB-HTTP-Engine': 'Liger',
       'X-IG-Connection-Type': 'WIFI',
       'X-IG-Capabilities': '3brTPw==',
@@ -145,7 +148,6 @@ export class Request {
       Accept: '*/*',
       'Accept-Encoding': 'gzip,deflate',
       Connection: 'Keep-Alive',
-      'User-Agent': this.client.state.appUserAgent,
       'X-IG-App-ID': this.client.state.fbAnalyticsApplicationId,
       'Accept-Language': this.client.state.language.replace('_', '-'),
     };

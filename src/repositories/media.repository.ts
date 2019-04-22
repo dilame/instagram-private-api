@@ -1,11 +1,13 @@
-import { omit, defaultsDeep, random } from 'lodash';
+import { defaultsDeep, omit, random } from 'lodash';
 import { DateTime } from 'luxon';
 import { Repository } from '../core/repository';
 import { LikeRequestOptions, MediaLikeOrUnlikeOptions, UnlikeRequestOptions } from '../types/media.like.options';
-import { MediaRepositoryLikersResponseRootObject } from '../responses';
+import {
+  MediaRepositoryBlockedResponse,
+  MediaRepositoryCommentResponse,
+  MediaRepositoryLikersResponseRootObject,
+} from '../responses';
 import { MediaConfigureOptions } from '../types/media.configure.options';
-import { MediaRepositoryBlockedResponse } from '../responses/media.repository.blocked.response';
-import { MediaRepositoryCommentResponse } from '../responses/media.repository.comment.response';
 import Chance = require('chance');
 
 export class MediaRepository extends Repository {
@@ -119,7 +121,7 @@ export class MediaRepository extends Repository {
       _uid: await this.client.state.extractCookieAccountId(),
       device_id: this.client.state.deviceId,
       _uuid: this.client.state.uuid,
-      creation_logger_session_id: this.client.state.sessionId,
+      creation_logger_session_id: this.client.state.clientSessionId,
       caption: '',
       date_time_original: now,
       software: '1',
