@@ -49,6 +49,12 @@ export class TimelineFeed extends Feed<TimelineFeedResponse, TimelineFeedRespons
     const { body } = await this.client.request.send<TimelineFeedResponse>({
       url: `/api/v1/feed/timeline/`,
       method: 'POST',
+      headers: {
+        'X-Ads-Opt-Out': 0,
+        'X-Google-AD-ID': this.client.state.adid,
+        'X-DEVICE-ID': this.client.state.uuid,
+        'X-FB': 1,
+      },
       form,
     });
     this.state = body;
