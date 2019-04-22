@@ -4,6 +4,7 @@ import { Repository } from '../core/repository';
 import { LikeRequestOptions, MediaLikeOrUnlikeOptions, UnlikeRequestOptions } from '../types/media.like.options';
 import { MediaRepositoryLikersResponseRootObject } from '../responses';
 import { MediaConfigureOptions } from '../types/media.configure.options';
+import { MediaRepositoryBlockedResponse } from '../responses/media.repository.blocked.response';
 
 export class MediaRepository extends Repository {
   private async likeAction(options: MediaLikeOrUnlikeOptions) {
@@ -41,9 +42,15 @@ export class MediaRepository extends Repository {
   }
   public async likers(id: string): Promise<MediaRepositoryLikersResponseRootObject> {
     const { body } = await this.client.request.send<MediaRepositoryLikersResponseRootObject>({
-      url: `/api/v1/media/${id}/likers`,
+      url: `/api/v1/media/${id}/likers/`,
     });
     return body;
+  }
+  public async blocked() {
+    const { body } = await this.client.request.send<MediaRepositoryBlockedResponse>({
+      url: `/api/v1/media/blocked/`,
+    });
+    return body.media_ids;
   }
 
   public async uploadFinish(options: { upload_id: string; source_type: string }) {
