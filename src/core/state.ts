@@ -36,6 +36,9 @@ export class State {
   supportedCapabilities = supportedCapabilities;
   language: string = 'en_US';
   timezoneOffset: string = String(new Date().getTimezoneOffset() * -60);
+  radioType = 'wifi-none';
+  capabilitiesHeader = '3brTPw==';
+  connectionTypeHeader = 'WIFI';
   deviceString: string;
   build: string;
   uuid: string;

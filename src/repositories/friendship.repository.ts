@@ -24,7 +24,7 @@ export class FriendshipRepository extends Repository {
       form: this.client.request.sign({
         _csrftoken: this.client.state.cookieCsrfToken,
         user_id: id,
-        radio_type: 'wifi-none',
+        radio_type: this.client.state.radioType,
         _uid: this.client.state.cookieAccountId,
         device_id: this.client.state.deviceId,
         _uuid: this.client.state.uuid,
