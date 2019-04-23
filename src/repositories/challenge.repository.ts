@@ -65,7 +65,7 @@ export class ChallengeRepository extends Repository {
         return await this.selectVerifyMethod(challenge.step_data.choice);
       }
       case 'delta_login_review': {
-        return await this.deltaLoginReview('1');
+        return await this.deltaLoginReview('0');
       }
       default: {
         return challenge;
