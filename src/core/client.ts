@@ -18,6 +18,10 @@ import { LoomRepository } from '../repositories/loom.repository';
 import { QpRepository } from '../repositories/qp.repository';
 import { CreativesRepository } from '../repositories/creatives.repository';
 import { LinkedAccountRepository } from '../repositories/linked-account.repository';
+import { AttributionRepository } from '../repositories/attribution.repository';
+import { FbsearchRepository } from '../repositories/fbsearch.repository';
+import { SimulateService } from '../services/simulate.service';
+import { DiscoverRepository } from '../repositories/discover.repository';
 
 export class IgApiClient {
   public state = new State();
@@ -38,8 +42,12 @@ export class IgApiClient {
   public launcher = new LauncherRepository(this);
   public loom = new LoomRepository(this);
   public creatives = new CreativesRepository(this);
+  public attribution = new AttributionRepository(this);
   public linkedAccount = new LinkedAccountRepository(this);
+  public fbsearch = new FbsearchRepository(this);
+  public discover = new DiscoverRepository(this);
   /* Services */
   public user = new UserService(this);
   public publish = new PublishService(this);
+  public simulate = new SimulateService(this);
 }

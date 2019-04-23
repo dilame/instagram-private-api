@@ -68,20 +68,18 @@ export class Request {
     }
     throw this.handleResponseError(response);
   }
-
-  public signBody(payload: Payload): string {
-    const json = typeof payload === 'object' ? JSON.stringify(payload) : payload;
-    const signature = createHmac('sha256', this.client.state.signatureKey)
-      .update(json)
+  public signature(data: string) {
+    return createHmac('sha256', this.client.state.signatureKey)
+      .update(data)
       .digest('hex');
-    return `${signature}.${json}`;
   }
 
   public sign(payload: Payload): SignedPost {
-    const signed_body = this.signBody(payload);
+    const json = typeof payload === 'object' ? JSON.stringify(payload) : payload;
+    const signature = this.signature(json);
     return {
       ig_sig_key_version: this.client.state.signatureVersion,
-      signed_body,
+      signed_body: `${signature}.${json}`,
     };
   }
 
@@ -134,9 +132,12 @@ export class Request {
 
   private getDefaultHeaders() {
     return {
+      'User-Agent': this.client.state.appUserAgent,
+      'X-Pigeon-Session-Id': this.client.state.pigeonSessionId,
+      'X-Pigeon-Rawclienttime': (Date.now() / 1000).toFixed(3),
       'X-FB-HTTP-Engine': 'Liger',
-      'X-IG-Connection-Type': 'WIFI',
-      'X-IG-Capabilities': '3brTPw==',
+      'X-IG-Connection-Type': this.client.state.connectionTypeHeader,
+      'X-IG-Capabilities': this.client.state.capabilitiesHeader,
       'X-IG-Connection-Speed': `${random(1000, 3700)}kbps`,
       'X-IG-Bandwidth-Speed-KBPS': '-1.000',
       'X-IG-Bandwidth-TotalBytes-B': '0',
@@ -145,7 +146,6 @@ export class Request {
       Accept: '*/*',
       'Accept-Encoding': 'gzip,deflate',
       Connection: 'Keep-Alive',
-      'User-Agent': this.client.state.appUserAgent,
       'X-IG-App-ID': this.client.state.fbAnalyticsApplicationId,
       'Accept-Language': this.client.state.language.replace('_', '-'),
     };

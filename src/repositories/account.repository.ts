@@ -6,7 +6,6 @@ import {
   AccountRepositoryLoginResponseRootObject,
 } from '../responses';
 import { AccountEditProfileOptions } from '../types/account.edit-profile.options';
-import Bluebird = require('bluebird');
 
 export class AccountRepository extends Repository {
   public async login(username: string, password: string): Promise<AccountRepositoryLoginResponseLogged_in_user> {
@@ -18,7 +17,7 @@ export class AccountRepository extends Repository {
         password,
         guid: this.client.state.uuid,
         phone_id: this.client.state.phoneId,
-        _csrftoken: this.client.state.CSRFToken,
+        _csrftoken: this.client.state.cookieCsrfToken,
         device_id: this.client.state.deviceId,
         adid: this.client.state.adid,
         google_tokens: '[]',
@@ -26,14 +25,6 @@ export class AccountRepository extends Repository {
       }),
     });
     return response.body.logged_in_user;
-  }
-
-  public async preLoginFlow(concurrency = 1) {
-    await Bluebird.map(
-      [this.readMsisdnHeader(), this.contactPointPrefill(), this.client.launcher.sync(), this.client.qe.sync()],
-      () => true,
-      { concurrency },
-    );
   }
 
   public async currentUser() {
@@ -51,8 +42,8 @@ export class AccountRepository extends Repository {
       url: '/api/v1/accounts/set_biography/',
       method: 'POST',
       form: this.client.request.sign({
-        _csrftoken: this.client.state.CSRFToken,
-        _uid: await this.client.state.extractCookieAccountId(),
+        _csrftoken: this.client.state.cookieCsrfToken,
+        _uid: this.client.state.cookieAccountId,
         device_id: this.client.state.deviceId,
         _uuid: this.client.state.uuid,
         raw_text: text,
@@ -63,8 +54,8 @@ export class AccountRepository extends Repository {
 
   public async changeProfilePicture(stream: ReadStream): Promise<AccountRepositoryCurrentUserResponseRootObject> {
     const signedParameters = this.client.request.sign({
-      _csrftoken: this.client.state.CSRFToken,
-      _uid: await this.client.state.extractCookieAccountId(),
+      _csrftoken: this.client.state.cookieCsrfToken,
+      _uid: this.client.state.cookieAccountId,
       _uuid: this.client.state.uuid,
     });
     const { body } = await this.client.request.send<AccountRepositoryCurrentUserResponseRootObject>({
@@ -90,8 +81,8 @@ export class AccountRepository extends Repository {
       method: 'POST',
       form: this.client.request.sign({
         ...options,
-        _csrftoken: this.client.state.CSRFToken,
-        _uid: await this.client.state.extractCookieAccountId(),
+        _csrftoken: this.client.state.cookieCsrfToken,
+        _uid: this.client.state.cookieAccountId,
         device_id: this.client.state.deviceId,
         _uuid: this.client.state.uuid,
       }),
@@ -116,15 +107,15 @@ export class AccountRepository extends Repository {
       url: `/api/v1/accounts/${command}/`,
       method: 'POST',
       form: this.client.request.sign({
-        _csrftoken: this.client.state.CSRFToken,
-        _uid: await this.client.state.extractCookieAccountId(),
+        _csrftoken: this.client.state.cookieCsrfToken,
+        _uid: this.client.state.cookieAccountId,
         _uuid: this.client.state.uuid,
       }),
     });
     return body;
   }
 
-  public async readMsisdnHeader() {
+  public async readMsisdnHeader(usage = 'default') {
     const { body } = await this.client.request.send({
       method: 'POST',
       url: '/api/v1/accounts/read_msisdn_header/',
@@ -132,31 +123,31 @@ export class AccountRepository extends Repository {
         'X-DEVICE-ID': this.client.state.uuid,
       },
       form: this.client.request.sign({
-        mobile_subno_usage: 'default',
+        mobile_subno_usage: usage,
         device_id: this.client.state.uuid,
       }),
     });
     return body;
   }
 
-  public async msisdnHeaderBootstrap() {
+  public async msisdnHeaderBootstrap(usage = 'default') {
     const { body } = await this.client.request.send({
       method: 'POST',
       url: '/api/v1/accounts/msisdn_header_bootstrap/',
       form: this.client.request.sign({
-        mobile_subno_usage: 'ig_select_app',
+        mobile_subno_usage: usage,
         device_id: this.client.state.uuid,
       }),
     });
     return body;
   }
 
-  public async contactPointPrefill() {
+  public async contactPointPrefill(usage = 'default') {
     const { body } = await this.client.request.send({
       method: 'POST',
       url: '/api/v1/accounts/contact_point_prefill/',
       form: this.client.request.sign({
-        mobile_subno_usage: 'default',
+        mobile_subno_usage: usage,
         device_id: this.client.state.uuid,
       }),
     });
@@ -182,8 +173,8 @@ export class AccountRepository extends Repository {
       url: '/api/v1/accounts/process_contact_point_signals/',
       form: this.client.request.sign({
         phone_id: this.client.state.phoneId,
-        _csrftoken: this.client.state.CSRFToken,
-        _uid: await this.client.state.extractCookieAccountId(),
+        _csrftoken: this.client.state.cookieCsrfToken,
+        _uid: this.client.state.cookieAccountId,
         device_id: this.client.state.deviceId,
         _uuid: this.client.state.uuid,
         google_tokens: '[]',

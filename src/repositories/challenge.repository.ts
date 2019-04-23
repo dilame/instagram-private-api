@@ -21,7 +21,7 @@ export class ChallengeRepository extends Repository {
       method: 'POST',
       form: this.client.request.sign({
         choice,
-        _csrftoken: this.client.state.CSRFToken,
+        _csrftoken: this.client.state.cookieCsrfToken,
         guid: this.client.state.uuid,
         device_id: this.client.state.deviceId,
       }),
@@ -40,7 +40,7 @@ export class ChallengeRepository extends Repository {
       method: 'POST',
       form: this.client.request.sign({
         phone_number: phoneNumber,
-        _csrftoken: this.client.state.CSRFToken,
+        _csrftoken: this.client.state.cookieCsrfToken,
         guid: this.client.state.uuid,
         device_id: this.client.state.deviceId,
       }),
@@ -65,7 +65,7 @@ export class ChallengeRepository extends Repository {
         return await this.selectVerifyMethod(challenge.step_data.choice);
       }
       case 'delta_login_review': {
-        return await this.deltaLoginReview('1');
+        return await this.deltaLoginReview('0');
       }
       default: {
         return challenge;
@@ -78,7 +78,7 @@ export class ChallengeRepository extends Repository {
       url: this.client.state.challengeUrl.replace('/challenge/', '/challenge/reset/'),
       method: 'POST',
       form: this.client.request.sign({
-        _csrftoken: this.client.state.CSRFToken,
+        _csrftoken: this.client.state.cookieCsrfToken,
         guid: this.client.state.uuid,
         device_id: this.client.state.deviceId,
       }),
@@ -94,7 +94,7 @@ export class ChallengeRepository extends Repository {
         method: 'POST',
         form: this.client.request.sign({
           security_code: code,
-          _csrftoken: this.client.state.CSRFToken,
+          _csrftoken: this.client.state.cookieCsrfToken,
           guid: this.client.state.uuid,
           device_id: this.client.state.deviceId,
         }),

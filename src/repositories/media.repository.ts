@@ -1,11 +1,13 @@
-import { omit, defaultsDeep, random } from 'lodash';
+import { defaultsDeep, omit, random } from 'lodash';
 import { DateTime } from 'luxon';
 import { Repository } from '../core/repository';
 import { LikeRequestOptions, MediaLikeOrUnlikeOptions, UnlikeRequestOptions } from '../types/media.like.options';
-import { MediaRepositoryLikersResponseRootObject } from '../responses';
+import {
+  MediaRepositoryBlockedResponse,
+  MediaRepositoryCommentResponse,
+  MediaRepositoryLikersResponseRootObject,
+} from '../responses';
 import { MediaConfigureOptions } from '../types/media.configure.options';
-import { MediaRepositoryBlockedResponse } from '../responses/media.repository.blocked.response';
-import { MediaRepositoryCommentResponse } from '../responses/media.repository.comment.response';
 import Chance = require('chance');
 
 export class MediaRepository extends Repository {
@@ -13,10 +15,10 @@ export class MediaRepository extends Repository {
     const signedFormData = this.client.request.sign({
       module_name: options.moduleInfo.module_name,
       media_id: options.mediaId,
-      _csrftoken: this.client.state.CSRFToken,
+      _csrftoken: this.client.state.cookieCsrfToken,
       ...omit(options.moduleInfo, 'module_name'),
-      radio_type: 'wifi-none',
-      _uid: await this.client.state.extractCookieAccountId(),
+      radio_type: this.client.state.radioType,
+      _uid: this.client.state.cookieAccountId,
       device_id: this.client.state.deviceId,
       _uuid: this.client.state.uuid,
     });
@@ -58,9 +60,9 @@ export class MediaRepository extends Repository {
       form: this.client.request.sign({
         user_breadcrumb: this.client.request.userBreadcrumb(text.length),
         idempotence_token: new Chance().guid(),
-        _csrftoken: this.client.state.CSRFToken,
-        radio_type: 'wifi-none',
-        _uid: await this.client.state.extractCookieAccountId(),
+        _csrftoken: this.client.state.cookieCsrfToken,
+        radio_type: this.client.state.radioType,
+        _uid: this.client.state.cookieAccountId,
         device_id: this.client.state.deviceId,
         _uuid: this.client.state.uuid,
         comment_text: text,
@@ -91,9 +93,9 @@ export class MediaRepository extends Repository {
       },
       form: this.client.request.sign({
         timezone_offset: this.client.state.timezoneOffset,
-        _csrftoken: this.client.state.CSRFToken,
+        _csrftoken: this.client.state.cookieCsrfToken,
         source_type: options.source_type,
-        _uid: await this.client.state.extractCookieAccountId(),
+        _uid: this.client.state.cookieAccountId,
         device_id: this.client.state.deviceId,
         _uuid: this.client.state.uuid,
         upload_id: options.upload_id,
@@ -113,13 +115,13 @@ export class MediaRepository extends Repository {
       camera_model: devicePayload.model,
       scene_capture_type: 'standard',
       timezone_offset: this.client.state.timezoneOffset,
-      _csrftoken: this.client.state.CSRFToken,
+      _csrftoken: this.client.state.cookieCsrfToken,
       media_folder: 'Camera',
       source_type: '4',
-      _uid: await this.client.state.extractCookieAccountId(),
+      _uid: this.client.state.cookieAccountId,
       device_id: this.client.state.deviceId,
       _uuid: this.client.state.uuid,
-      creation_logger_session_id: this.client.state.sessionId,
+      creation_logger_session_id: this.client.state.clientSessionId,
       caption: '',
       date_time_original: now,
       software: '1',

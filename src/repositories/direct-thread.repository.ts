@@ -17,7 +17,7 @@ export class DirectThreadRepository extends Repository {
         action: 'send_item',
         [recipientsType]: JSON.stringify(recipientsType === 'thread_ids' ? recipientsIds : [recipientsIds]),
         client_context: mutationToken,
-        _csrftoken: this.client.state.CSRFToken,
+        _csrftoken: this.client.state.cookieCsrfToken,
         device_id: this.client.state.deviceId,
         mutation_token: mutationToken,
         _uuid: this.client.state.uuid,
