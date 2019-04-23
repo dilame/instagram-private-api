@@ -34,12 +34,12 @@ export class ChallengeRepository extends Repository {
     return await this.selectVerifyMethod(choice);
   }
 
-  public async sendPhoneNumber(phoneNumber: string | number) {
+  public async sendPhoneNumber(phoneNumber: string) {
     const { body } = await this.client.request.send<ChallengeStateResponse>({
       url: this.client.state.challengeUrl,
       method: 'POST',
       form: this.client.request.sign({
-        phone_number: phoneNumber,
+        phone_number: String(phoneNumber),
         _csrftoken: this.client.state.cookieCsrfToken,
         guid: this.client.state.uuid,
         device_id: this.client.state.deviceId,
