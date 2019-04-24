@@ -1,3 +1,5 @@
+import { ProfileEntity } from '../entities/profile.entity';
+
 export interface AccountFollowingFeedResponse {
   sections: null;
   users: AccountFollowingFeedResponseUsersItem[];
@@ -6,7 +8,7 @@ export interface AccountFollowingFeedResponse {
   page_size: number;
   status: string;
 }
-export interface AccountFollowingFeedResponseUsersItem {
+export class AccountFollowingFeedResponseUsersItem extends ProfileEntity {
   pk: number;
   username: string;
   full_name: string;

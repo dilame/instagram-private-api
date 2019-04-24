@@ -9,15 +9,15 @@ export class FriendshipRepository extends Repository {
     return body;
   }
 
-  async create(id: string, mediaIdAttribution?: string) {
+  async create(id: string | number, mediaIdAttribution?: string) {
     return this.change('create', id, mediaIdAttribution);
   }
 
-  async destroy(id: string, mediaIdAttribution?: string) {
+  async destroy(id: string | number, mediaIdAttribution?: string) {
     return this.change('destroy', id, mediaIdAttribution);
   }
 
-  private async change(action: string, id: string, mediaIdAttribution?: string) {
+  private async change(action: string, id: string | number, mediaIdAttribution?: string) {
     const { body } = await this.client.request.send<FriendshipRepositoryChangeResponseRootObject>({
       url: `/api/v1/friendships/${action}/${id}/`,
       method: 'POST',
