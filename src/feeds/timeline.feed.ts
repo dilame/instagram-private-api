@@ -14,7 +14,7 @@ export class TimelineFeed extends Feed<TimelineFeedResponse, TimelineFeedRespons
     this.nextMaxId = body.next_max_id;
   }
 
-  async request(options?: TimelineFeedsOptions) {
+  async request(options: TimelineFeedsOptions = {}) {
     let form = {
       is_prefetch: '0',
       feed_view_info: '',
