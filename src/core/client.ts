@@ -22,6 +22,7 @@ import { AttributionRepository } from '../repositories/attribution.repository';
 import { FbsearchRepository } from '../repositories/fbsearch.repository';
 import { SimulateService } from '../services/simulate.service';
 import { DiscoverRepository } from '../repositories/discover.repository';
+import { ConsentRepository } from '../repositories/consent.repository';
 
 export class IgApiClient {
   public state = new State();
@@ -46,6 +47,7 @@ export class IgApiClient {
   public linkedAccount = new LinkedAccountRepository(this);
   public fbsearch = new FbsearchRepository(this);
   public discover = new DiscoverRepository(this);
+  public consent = new ConsentRepository(this);
   /* Services */
   public user = new UserService(this);
   public publish = new PublishService(this);
