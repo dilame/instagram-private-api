@@ -9,6 +9,7 @@
 ---
 
 #Install
+
 From npm
 
 ```
@@ -22,17 +23,21 @@ npm install github:dilame/instagram-private-api
 ```
 
 #Examples
+
 You can find usage examples [here](examples)
 
 #Contribution
+
 If you need features that it not implemented - feel free to implement and create PRs!
 
 Plus we need some documentation, so if you are good in it - you are welcome.
 
 #Useful links
+
 [instagram-id-to-url-segment](https://www.npmjs.com/package/instagram-id-to-url-segment) - convert the image url fragment to the media ID
 
 ##Special thanks
+
 Original author of this library is [Richard Hutta](https://github.com/huttarichard). Thanks to him for starting it.
 
 **End User License Agreement (EULA)**
