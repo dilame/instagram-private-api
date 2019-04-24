@@ -1,9 +1,6 @@
 import 'reflect-metadata';
 
-export * from './core';
+export * from './core/client';
 export * from './feeds';
-export * from './helpers';
-export * from './responses';
-
-// Legacy export. Will be removed in 1.0.0
-export { default as V1 } from './v1';
+export * from './entities';
+export * from './errors';

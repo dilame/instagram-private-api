@@ -1,7 +1,7 @@
 {
   "name": "instagram-private-api",
   "description": "Instagram private API wrapper for full access to instagram",
-  "version": "0.10.1",
+  "version": "1.0.0",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
@@ -12,20 +12,22 @@
     "node": ">=8.0.0"
   },
   "bugs": {
-    "url": "https://github.com/huttarichard/instagram-private-api/issues",
-    "email": "huttarichard@gmail.com"
+    "url": "https://github.com/dilame/instagram-private-api/issues",
+    "email": "dilame.nickolson@gmail.com"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/huttarichard/instagram-private-api.git"
+    "url": "https://github.com/dilame/instagram-private-api.git"
   },
-  "homepage": "https://github.com/huttarichard/instagram-private-api",
+  "homepage": "https://github.com/dilame/instagram-private-api",
   "scripts": {
-    "build": "rm -rf dist && tsc -p tsconfig.build.json",
+    "build": "rimraf dist && tsc -p tsconfig.build.json",
     "format": "prettier --write \"src/**/*.ts\"",
+    "lint": "tslint -p tsconfig.json -c tslint.json",
     "typecheck": "tsc -p tsconfig.build.json --noEmit",
     "prepare": "npm run build",
-    "test": "mocha --inline-diffs --timeout 1000000 tests/run.js"
+    "test": "mocha --inline-diffs --timeout 1000000 tests/run.js",
+    "generate-interface": "ts-node ./tools/response-to-interface.ts"
   },
   "husky": {
     "hooks": {
@@ -33,32 +35,37 @@
     }
   },
   "dependencies": {
+    "@lifeomic/attempt": "^3.0.0",
     "@types/bluebird": "^3.5.26",
-    "@types/chance": "^1.0.1",
-    "@types/lodash": "^4.14.120",
-    "@types/node": "^10.12.20",
+    "@types/chance": "^1.0.2",
+    "@types/lodash": "^4.14.123",
+    "@types/luxon": "^1.12.0",
+    "@types/node": "^10.14.5",
     "@types/request-promise": "^4.1.42",
     "@types/tough-cookie": "^2.3.5",
-    "bluebird": "^3.5.2",
+    "bluebird": "^3.5.4",
     "camelcase-keys": "^4.2.0",
     "chance": "^1.0.18",
     "class-transformer": "^0.2.0",
-    "crypto-js": "^3.1.6",
+    "image-size": "^0.7.3",
     "instagram-id-to-url-segment": "0.0.0",
     "is-stream": "^1.1.0",
     "js-md5": "^0.3.0",
+    "json-bigint": "^0.3.0",
     "lodash": "^4.17.5",
+    "luxon": "^1.12.1",
     "node-cache": "^3.0.0",
-    "proxy-agent": "^3.0.3",
+    "proxy-agent": "^3.1.0",
     "reflect-metadata": "^0.1.13",
     "request": "^2.88.0",
-    "request-promise": "^4.2.2",
+    "request-promise": "^4.2.4",
     "rxjs": "^6.4.0",
     "touch": "^1.0.0",
-    "tough-cookie": "^2.3.3",
+    "tough-cookie": "^2.5.0",
     "tough-cookie-file-store": "^1.2.0",
     "ts-custom-error": "^2.2.2",
     "underscore.string": "^3.3.5",
+    "utility-types": "^3.5.0",
     "valid-url": "^1.0.9"
   },
   "devDependencies": {
@@ -67,16 +74,19 @@
     "gm": "^1.23.1",
     "husky": "^1.3.1",
     "inquirer": "^1.1.2",
+    "json-ts": "^1.6.4",
     "mkdirp": "^0.5.1",
     "mocha": "^5.2.0",
     "node-resemble-js": "0.0.5",
     "prettier": "1.16.2",
     "pretty-quick": "^1.10.0",
+    "rimraf": "^2.6.3",
     "should": "^8.3.1",
     "should-sinon": "0.0.5",
     "sinon": "^1.17.3",
     "tmp": "0.0.28",
-    "ts-node": "^8.0.2",
-    "typescript": "^3.4.1"
+    "ts-node": "^8.1.0",
+    "tslint": "^5.16.0",
+    "typescript": "^3.4.4"
   }
 }

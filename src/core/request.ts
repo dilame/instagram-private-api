@@ -1,331 +1,153 @@
-import * as _ from 'lodash';
-import * as Bluebird from 'bluebird';
+import { defaultsDeep, inRange, random } from 'lodash';
+import { createHmac } from 'crypto';
+import { Subject } from 'rxjs';
+import { AttemptOptions, retry } from '@lifeomic/attempt';
 import * as request from 'request-promise';
-import * as ProxyAgent from 'proxy-agent';
-import * as Exceptions from './exceptions';
-import * as routes from './routes';
-import * as CONSTANTS from '../constants/constants';
-import { Session } from './session';
-import { Device } from './devices/device';
-import { Helpers } from '../helpers';
-import { plainToClass } from 'class-transformer';
-import { CheckpointResponse } from '../responses';
+import { Options, Response } from 'request';
+import { IgApiClient } from './client';
+import {
+  IgActionSpamError,
+  IgCheckpointError,
+  IgLoginRequiredError,
+  IgNetworkError,
+  IgNotFoundError,
+  IgPrivateUserError,
+  IgResponseError,
+  IgSentryBlockError,
+} from '../errors';
+import JSONbigInt = require('json-bigint');
 
-process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
+const JSONbigString = JSONbigInt({ storeAsString: true });
+
+type Payload = { [key: string]: any } | string;
+
+interface SignedPost {
+  signed_body: string;
+  ig_sig_key_version: string;
+}
 
 export class Request {
-  static requestClient: any = request.defaults({});
-  _request: any;
-  protected _resource: any;
-  private _signData: boolean;
-  private attempts = 1;
+  end$ = new Subject();
+  attemptOptions: Partial<AttemptOptions<any>> = {
+    maxAttempts: 1,
+  };
 
-  constructor(session: Session) {
-    this._url = null;
-    this._signData = false;
-    this._request = {};
-    this._request.method = 'GET';
-    this._request.data = {};
-    this._request.bodyType = 'formData';
-    this._request.options = {
-      gzip: true,
-    };
-    this._request.headers = Request.defaultHeaders;
-    this.session = session;
-  }
+  constructor(private client: IgApiClient) {}
 
-  static get defaultHeaders() {
-    return {
-      'X-FB-HTTP-Engine': 'Liger',
-      'X-IG-Connection-Type': CONSTANTS.HEADERS.X_IG_Connection_Type,
-      'X-IG-Capabilities': CONSTANTS.HEADERS.X_IG_Capabilities,
-      'X-IG-Connection-Speed': `${_.random(1000, 3700)}kbps`,
-      'X-IG-Bandwidth-Speed-KBPS': '-1.000',
-      'X-IG-Bandwidth-TotalBytes-B': '0',
-      'X-IG-Bandwidth-TotalTime-MS': '0',
-      Host: CONSTANTS.HOSTNAME,
-      Accept: '*/*',
-      'Accept-Encoding': 'gzip,deflate',
-      Connection: 'Keep-Alive',
-    };
-  }
-
-  protected _device: Device;
-
-  get device() {
-    return this._device;
-  }
-
-  set device(device) {
-    this.setDevice(device);
-  }
-
-  _url: any;
-
-  get url() {
-    return this._url;
-  }
-
-  set url(url) {
-    this.setUrl(url);
-  }
-
-  private _session: Session;
-
-  get session() {
-    return this._session;
-  }
-
-  set session(session) {
-    this.setSession(session);
-  }
-
-  static jar(store) {
-    return request.jar(store);
-  }
-
-  static setTimeout(ms) {
-    const object = { timeout: parseInt(ms) };
-    Request.requestClient = request.defaults(object);
-  }
-
-  static setProxy(proxyUrl) {
-    if (!Helpers.isValidUrl(proxyUrl)) throw new Error('`proxyUrl` argument is not an valid url');
-    const object = { agent: new ProxyAgent(proxyUrl) };
-    Request.requestClient = request.defaults(object);
-  }
-
-  _transform = t => t;
-
-  setOptions(options = {}, override?) {
-    this._request.options = override
-      ? _.extend(this._request.options, options)
-      : _.defaults(this._request.options, options);
-    return this;
-  }
-
-  setMethod(method) {
-    method = method.toUpperCase();
-    if (!_.includes(['POST', 'GET', 'PATCH', 'PUT', 'DELETE'], method))
-      throw new Error(`Method \`${method}\` is not valid method`);
-    this._request.method = method;
-    return this;
-  }
-
-  setData(data, override?) {
-    if (_.isEmpty(data)) {
-      this._request.data = {};
-      return this;
-    }
-    if (_.isString(data)) {
-      this._request.data = data;
-      return this;
-    }
-    _.each(data, (val, key) => {
-      data[key] = val && val.toString && !_.isObject(val) ? val.toString() : val;
-    });
-    this._request.data = override ? data : _.extend(this._request.data, data || {});
-    return this;
-  }
-
-  setBodyType(type) {
-    if (!_.includes(['form', 'formData', 'json', 'body'], type))
-      throw new Error('`bodyType` param must be and form, formData, json or body');
-    this._request.bodyType = type;
-    return this;
-  }
-
-  signPayload() {
-    this._signData = true;
-    return this;
-  }
-
-  transform(callback) {
-    if (!_.isFunction(callback)) throw new Error('Transform must be an valid function');
-    this._transform = callback;
-    return this;
-  }
-
-  generateUUID() {
-    this.setData({
-      _uuid: this.session.uuid,
-    });
-    return this;
-  }
-
-  setHeaders(headers) {
-    this._request.headers = _.extend(this._request.headers, headers || {});
-    return this;
-  }
-
-  removeHeader(name) {
-    delete this._request.headers[name];
-    return this;
-  }
-
-  setUrl(url) {
-    if (!_.isString(url) || !Helpers.isValidUrl(url)) throw new Error('The `url` parameter must be valid url string');
-    this._url = url;
-    return this;
-  }
-
-  setResource(resource, data?) {
-    this._resource = resource;
-    this.setUrl(routes.getUrl(resource, data));
-    return this;
-  }
-
-  setLocalAddress(ipAddress) {
-    this.setOptions({ localAddress: ipAddress }, true);
-    return this;
-  }
-
-  setCSRFToken(token) {
-    this.setData({
-      _csrftoken: token,
-    });
-    return this;
-  }
-
-  setSession(session) {
-    this._session = session;
-    this.setCSRFToken(session.CSRFToken);
-    this.setOptions({
-      jar: session.jar,
-    });
-    if (session.device) this.setDevice(session.device);
-    if (session.proxyUrl) this.setOptions({ agent: new ProxyAgent(session.proxyUrl) });
-    return this;
-  }
-
-  setDevice(device) {
-    this._device = device;
-    this.setHeaders({
-      'User-Agent': device.userAgent(),
-      'X-IG-App-ID': device.credentials.FB_ANALYTICS_APPLICATION_ID,
-      'Accept-Language': device.credentials.LANGUAGE.replace('_', '-'),
-    });
-    this.setData({
-      device_id: device.id,
-    });
-    return this;
-  }
-
-  signData() {
-    if (['POST', 'PUT', 'PATCH', 'DELETE'].includes(this._request.method) === false)
-      throw new Error('Wrong request method for signing data!');
-    return this.device.signRequestPayload(this._request.data);
-  }
-
-  _prepareData() {
-    if (this._request.method === 'GET') return {};
-    if (this._signData) {
-      const data = this.signData();
-      const obj = {};
-      obj[this._request.bodyType] = data;
-      return obj;
-    } else {
-      const obj = {};
-      obj[this._request.bodyType] = this._request.data;
-      return obj;
-    }
-  }
-
-  _mergeOptions(options) {
-    options = _.defaults(
-      {
-        method: this._request.method,
-        url: this.url,
-        resolveWithFullResponse: true,
-        headers: this._request.headers,
-      },
-      options || {},
-      this._request.options,
-    );
-    return options;
-  }
-
-  parseMiddleware(response) {
-    if (response.req._headers.host === 'upload.instagram.com' && response.statusCode === 201) {
-      const loaded = /(\d+)-(\d+)\/(\d+)/.exec(response.body);
-      response.body = {
-        status: 'ok',
-        start: loaded[1],
-        end: loaded[2],
-        total: loaded[3],
-      };
-      return response;
-    }
+  private static requestTransform(body, response: Response, resolveWithFullResponse) {
     try {
       // Sometimes we have numbers greater than Number.MAX_SAFE_INTEGER in json response
       // To handle it we just wrap numbers with length > 15 it double quotes to get strings instead
-      const bigIntToString = /([\[:])?(-?[\d.]{15,})(\s*?[,}\]])/gi;
-      response.body = JSON.parse(response.body.replace(bigIntToString, `$1"$2"$3`));
+      response.body = JSONbigString.parse(body);
+    } catch (e) {
+      if (inRange(response.statusCode, 200, 299)) {
+        throw e;
+      }
+    }
+    return resolveWithFullResponse ? response : response.body;
+  }
+
+  public async send<T = any>(
+    userOptions: Options,
+  ): Promise<Pick<Response, Exclude<keyof Response, 'body'>> & { body: T }> {
+    const options = defaultsDeep(userOptions, {
+      baseUrl: 'https://i.instagram.com/',
+      resolveWithFullResponse: true,
+      proxy: this.client.state.proxyUrl,
+      simple: false,
+      transform: Request.requestTransform,
+      jar: this.client.state.cookieJar,
+      strictSSL: false,
+      gzip: true,
+      headers: this.getDefaultHeaders(),
+    });
+    let response = await this.faultTolerantRequest(options);
+    process.nextTick(() => this.end$.next());
+    if (response.body.status === 'ok') {
       return response;
-    } catch (err) {
-      throw new Exceptions.ParseError(response, this);
     }
+    throw this.handleResponseError(response);
+  }
+  public signature(data: string) {
+    return createHmac('sha256', this.client.state.signatureKey)
+      .update(data)
+      .digest('hex');
   }
 
-  errorMiddleware(response) {
-    response = this.parseMiddleware(response);
+  public sign(payload: Payload): SignedPost {
+    const json = typeof payload === 'object' ? JSON.stringify(payload) : payload;
+    const signature = this.signature(json);
+    return {
+      ig_sig_key_version: this.client.state.signatureVersion,
+      signed_body: `${signature}.${json}`,
+    };
+  }
+
+  public userBreadcrumb(size: number) {
+    const term = random(2, 3) * 1000 + size + random(15, 20) * 1000;
+    const textChangeEventCount = Math.round(size / random(2, 3)) || 1;
+    const data = `${size} ${term} ${textChangeEventCount} ${Date.now()}`;
+    const signature = Buffer.from(
+      createHmac('sha256', this.client.state.userBreadcrumbKey)
+        .update(data)
+        .digest('hex'),
+    ).toString('base64');
+    const body = Buffer.from(data).toString('base64');
+    return `${signature}\n${body}\n`;
+  }
+
+  private handleResponseError(response: Response) {
     const json = response.body;
-    if (json.spam) throw new Exceptions.ActionSpamError(json);
-    if (json.message === 'challenge_required') {
-      const checkpointResponse = plainToClass(CheckpointResponse, json as CheckpointResponse);
-      this.session.checkpoint$.next(checkpointResponse);
-      throw new Exceptions.CheckpointError(checkpointResponse, this.session);
+    if (json.spam) {
+      return new IgActionSpamError(response);
     }
-    if (json.message === 'login_required')
-      throw new Exceptions.AuthenticationError('Login required to process this request');
-    if (json.error_type === 'sentry_block') throw new Exceptions.SentryBlockError(json);
-
-    if (response.statusCode === 429) throw new Exceptions.RequestsLimitError();
-    if (_.isString(json.message) && json.message.toLowerCase().includes('too many requests'))
-      throw new Exceptions.RequestsLimitError();
-    if (json.message === 'Please wait a few minutes before you try again.') throw new Exceptions.RequestsLimitError();
-
-    if (_.isString(json.message) && json.message.toLowerCase().includes('not authorized to view user'))
-      throw new Exceptions.PrivateUserError();
-    throw new Exceptions.RequestError(json);
+    if (response.statusCode === 404) {
+      return new IgNotFoundError(response);
+    }
+    if (typeof json.message === 'string') {
+      if (json.message === 'challenge_required') {
+        this.client.state.checkpoint = json;
+        return new IgCheckpointError(response);
+      }
+      if (json.message === 'login_required') {
+        return new IgLoginRequiredError(response);
+      }
+      if (json.message.toLowerCase() === 'not authorized to view user') {
+        return new IgPrivateUserError(response);
+      }
+    }
+    if (json.error_type === 'sentry_block') {
+      return new IgSentryBlockError(response);
+    }
+    return new IgResponseError(response);
   }
 
-  send(options = {}, attempts = 0): any {
-    return Bluebird.try(async () => {
-      const rawResponse = await this.sendAndGetRaw(options);
-      this.session.requestEnd$.next(rawResponse);
-      const parsedResponse = this.parseMiddleware(rawResponse);
-      const json = parsedResponse.body;
-      if (_.isObject(json) && json.status === 'ok') return _.omit(parsedResponse.body, 'status');
-      if (_.isString(json.message) && json.message.toLowerCase().includes('transcode timeout'))
-        throw new Exceptions.TranscodeTimeoutError();
-      throw new Exceptions.RequestError(json);
-    })
-      .catch(err => {
-        if (err instanceof Exceptions.APIError) throw err;
-        if (!err || !err.response) throw err;
-        const response = err.response;
-        if (response.statusCode === 404) throw new Exceptions.NotFoundError(response);
-        if (response.statusCode >= 500) {
-          if (attempts++ <= this.attempts) {
-            return this.send(options, attempts);
-          } else {
-            throw new Exceptions.ParseError(response, this);
-          }
-        } else {
-          this.errorMiddleware(response);
-        }
-      })
-      .catch(error => {
-        if (error instanceof Exceptions.APIError) throw error;
-        error = _.defaults(error, { message: 'Fatal internal error!' });
-        throw new Exceptions.RequestError(error);
-      });
+  private async faultTolerantRequest(options: Options) {
+    try {
+      return await retry(async () => request(options), this.attemptOptions);
+    } catch (err) {
+      throw new IgNetworkError(err);
+    }
   }
 
-  sendAndGetRaw(options = {}) {
-    const preparedData = this._prepareData();
-    const requestOptions = this._transform(_.defaults(this._mergeOptions(options), preparedData));
-    return Request.requestClient(requestOptions);
+  private getDefaultHeaders() {
+    return {
+      'User-Agent': this.client.state.appUserAgent,
+      'X-Pigeon-Session-Id': this.client.state.pigeonSessionId,
+      'X-Pigeon-Rawclienttime': (Date.now() / 1000).toFixed(3),
+      'X-FB-HTTP-Engine': 'Liger',
+      'X-IG-Connection-Type': this.client.state.connectionTypeHeader,
+      'X-IG-Capabilities': this.client.state.capabilitiesHeader,
+      'X-IG-Connection-Speed': `${random(1000, 3700)}kbps`,
+      'X-IG-Bandwidth-Speed-KBPS': '-1.000',
+      'X-IG-Bandwidth-TotalBytes-B': '0',
+      'X-IG-Bandwidth-TotalTime-MS': '0',
+      Host: 'i.instagram.com',
+      Accept: '*/*',
+      'Accept-Encoding': 'gzip,deflate',
+      Connection: 'Keep-Alive',
+      'X-IG-App-ID': this.client.state.fbAnalyticsApplicationId,
+      'Accept-Language': this.client.state.language.replace('_', '-'),
+    };
   }
 }

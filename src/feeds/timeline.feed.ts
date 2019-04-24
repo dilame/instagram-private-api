@@ -1,73 +1,70 @@
-import { MediaResponse } from '../responses/media.response';
-import { plainToClass } from 'class-transformer';
-import { AbstractFeed } from './abstract.feed';
-import { Request } from '../core/request';
+import { Expose } from 'class-transformer';
+import { sample } from 'lodash';
+import { Feed } from '../core/feed';
+import { TimelineFeedReason, TimelineFeedsOptions } from '../types/timeline-feed.types';
+import { TimelineFeedResponse, TimelineFeedResponseMedia_or_ad } from '../responses';
 
-interface TimelineFeedGetProps {
-  is_pull_to_refresh?: boolean | null;
-}
-
-export class TimelineFeed extends AbstractFeed<MediaResponse> {
-  constructor(session, public limit = Infinity) {
-    super(session);
+export class TimelineFeed extends Feed<TimelineFeedResponse, TimelineFeedResponseMedia_or_ad> {
+  tag: string;
+  @Expose()
+  private nextMaxId: string;
+  public reason: TimelineFeedReason = sample(['pull_to_refresh', 'warm_start_fetch', 'cold_start_fetch']);
+  set state(body) {
+    this.moreAvailable = body.more_available;
+    this.nextMaxId = body.next_max_id;
   }
 
-  async get({ is_pull_to_refresh = null }: TimelineFeedGetProps): Promise<MediaResponse[]> {
-    const max_id = this.getCursor();
-    let extra = {
+  async request(options: TimelineFeedsOptions = {}) {
+    let form = {
+      is_prefetch: '0',
+      feed_view_info: '',
+      seen_posts: '',
+      phone_id: this.client.state.phoneId,
       is_pull_to_refresh: '0',
+      battery_level: this.client.state.batteryLevel,
+      timezone_offset: this.client.state.timezoneOffset,
+      _csrftoken: this.client.state.cookieCsrfToken,
+      client_session_id: this.client.state.clientSessionId,
+      device_id: this.client.state.uuid,
+      _uuid: this.client.state.uuid,
+      is_charging: Number(this.client.state.isCharging),
+      is_async_ads_in_headload_enabled: 0,
+      rti_delivery_backend: 0,
+      is_async_ads_double_request: 0,
+      will_sound_on: 0,
+      is_async_ads_rti: 0,
+      recovered_from_crash: options.recoveredFromCrash,
+      push_disabled: options.pushDisabled,
+      latest_story_pk: options.latestStoryPk,
     };
-    if (max_id) {
-      Object.assign(extra, {
-        max_id,
-        reason: 'pagination',
-      });
-    } else if (is_pull_to_refresh === true) {
-      Object.assign(extra, {
-        reason: 'pull_to_refresh',
-        is_pull_to_refresh: '1',
-      });
-    } else if (is_pull_to_refresh === false) {
-      Object.assign(extra, {
-        reason: 'warm_start_fetch',
+    if (this.nextMaxId) {
+      form = Object.assign(form, {
+        max_id: this.nextMaxId,
+        reason: options.reason || 'pagination',
       });
     } else {
-      Object.assign(extra, {
-        reason: 'cold_start_fetch',
+      form = Object.assign(form, {
+        reason: options.reason || this.reason,
+        is_pull_to_refresh: this.reason === 'pull_to_refresh' ? '1' : '0',
       });
     }
-    const data = await new Request(this.session)
-      .setMethod('POST')
-      .setResource('timelineFeed')
-      .setHeaders({
-        'X-Ads-Opt-Out': '0',
-        'X-Google-AD-ID': this.session.device.adid,
-        'X-DEVICE-ID': this.session.device.uuid,
-      })
-      .setBodyType('form')
-      .generateUUID()
-      .setData({
-        is_prefetch: '0',
-        feed_view_info: '',
-        seen_posts: '',
-        unseen_posts: '',
-        phone_id: this.session.device.phoneId,
-        client_session_id: this.session.session_id,
-        battery_level: '100',
-        is_charging: '1',
-        will_sound_on: '1',
-        is_on_screen: true,
-        timezone_offset: '2',
-        is_async_ads_rti: '0',
-        is_async_ads: '0',
-        is_async_ads_double_request: '0',
-        rti_delivery_backend: '0',
-        ...extra,
-      })
-      .send();
-    this.moreAvailable = data.more_available;
-    const medias = data.feed_items.filter(m => m.media_or_ad).map(m => m.media_or_ad);
-    if (this.moreAvailable) this.setCursor(data.next_max_id);
-    return plainToClass(MediaResponse, medias);
+    const { body } = await this.client.request.send<TimelineFeedResponse>({
+      url: `/api/v1/feed/timeline/`,
+      method: 'POST',
+      headers: {
+        'X-Ads-Opt-Out': 0,
+        'X-Google-AD-ID': this.client.state.adid,
+        'X-DEVICE-ID': this.client.state.uuid,
+        'X-FB': 1,
+      },
+      form,
+    });
+    this.state = body;
+    return body;
+  }
+
+  async items() {
+    const response = await this.request();
+    return response.feed_items.filter(i => i.media_or_ad).map(i => i.media_or_ad);
   }
 }
