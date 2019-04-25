@@ -10,6 +10,17 @@ export class DirectThreadRepository extends Repository {
     const recipientsType = options.threadIds ? 'thread_ids' : 'recipient_users';
     const recipientsIds = recipients instanceof Array ? recipients : [recipients];
 
+    if (options.item === 'text') {
+      const linkUrls = options.form.text.match(/([a-z]+[:.].*?(?=\s))/g);
+      if (linkUrls) {
+        options.item = 'link';
+        options.form = {
+          link_urls: JSON.stringify(linkUrls),
+          link_text: options.form.text
+        };
+      }
+    }
+
     const { body } = await this.client.request.send<DirectThreadRepositoryBroadcastResponseRootObject>({
       url: `/api/v1/direct_v2/threads/broadcast/${options.item}/`,
       method: 'POST',
