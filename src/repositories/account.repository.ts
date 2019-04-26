@@ -89,6 +89,23 @@ export class AccountRepository extends Repository {
     });
     return body.user;
   }
+  
+
+  public async changePassword(oldPassword: string, newPassword: string) {
+    const { body } = await this.client.request.send({
+      url: '/api/v1/accounts/change_password/',
+      method: 'POST',
+      form: this.client.request.sign({
+        _csrftoken: this.client.state.cookieCsrfToken,
+        _uid: this.client.state.cookieAccountId,
+        _uuid: this.client.state.uuid,
+        old_password: oldPassword,
+        new_password1: newPassword,
+        new_password2: newPassword
+      }),
+    });
+    return body;
+  }
 
   public async removeProfilePicture() {
     return this.command('remove_profile_picture');
