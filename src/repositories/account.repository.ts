@@ -175,7 +175,7 @@ export class AccountRepository extends Repository {
         phone_id: this.client.state.phoneId,
         _csrftoken: this.client.state.cookieCsrfToken,
         _uid: this.client.state.cookieAccountId,
-        device_id: this.client.state.deviceId,
+        device_id: this.client.state.uuid,
         _uuid: this.client.state.uuid,
         google_tokens: '[]',
       }),
