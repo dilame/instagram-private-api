@@ -65,7 +65,7 @@ ig.state.proxyUrl = process.env.IG_PROXY;
 
 # Contribution
 
-If you need features that it not implemented - feel free to implement and create PRs!
+If you need features that is not implemented - feel free to implement and create PRs!
 
 Plus we need some documentation, so if you are good in it - you are welcome.
 
@@ -77,7 +77,7 @@ Plus we need some documentation, so if you are good in it - you are welcome.
 
 Original author of this library is [Richard Hutta](https://github.com/huttarichard). Thanks to him for starting it.
 
-**End User License Agreement (EULA)**
+## End User License Agreement (EULA)
 
 1. _You will not use_ this repository for sending mass spam or any other malicious activity
 2. _We / You will not support_ anyone who is violating this EULA conditions
