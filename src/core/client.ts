@@ -9,7 +9,6 @@ import { UploadRepository } from '../repositories/upload.repository';
 import { PublishService } from '../services/publish.service';
 import { DirectThreadRepository } from '../repositories/direct-thread.repository';
 import { EntityFactory } from './entity.factory';
-import { UserService } from '../services/user.service';
 import { QeRepository } from '../repositories/qe.repository';
 import { ZrRepository } from '../repositories/zr.repository';
 import { LauncherRepository } from '../repositories/launcher.repository';
@@ -23,6 +22,7 @@ import { FbsearchRepository } from '../repositories/fbsearch.repository';
 import { SimulateService } from '../services/simulate.service';
 import { DiscoverRepository } from '../repositories/discover.repository';
 import { ConsentRepository } from '../repositories/consent.repository';
+import { UserRepository } from '../repositories/user.repository';
 
 export class IgApiClient {
   public state = new State();
@@ -30,26 +30,26 @@ export class IgApiClient {
   public feed = new FeedFactory(this);
   public entity = new EntityFactory(this);
   /* Repositories */
-  public challenge = new ChallengeRepository(this);
   public account = new AccountRepository(this);
-  public friendship = new FriendshipRepository(this);
-  public media = new MediaRepository(this);
-  public upload = new UploadRepository(this);
+  public attribution = new AttributionRepository(this);
+  public challenge = new ChallengeRepository(this);
+  public consent = new ConsentRepository(this);
+  public creatives = new CreativesRepository(this);
   public direct = new DirectRepository(this);
   public directThread = new DirectThreadRepository(this);
+  public discover = new DiscoverRepository(this);
+  public fbsearch = new FbsearchRepository(this);
+  public friendship = new FriendshipRepository(this);
+  public launcher = new LauncherRepository(this);
+  public linkedAccount = new LinkedAccountRepository(this);
+  public loom = new LoomRepository(this);
+  public media = new MediaRepository(this);
   public qe = new QeRepository(this);
   public qp = new QpRepository(this);
+  public upload = new UploadRepository(this);
+  public user = new UserRepository(this);
   public zr = new ZrRepository(this);
-  public launcher = new LauncherRepository(this);
-  public loom = new LoomRepository(this);
-  public creatives = new CreativesRepository(this);
-  public attribution = new AttributionRepository(this);
-  public linkedAccount = new LinkedAccountRepository(this);
-  public fbsearch = new FbsearchRepository(this);
-  public discover = new DiscoverRepository(this);
-  public consent = new ConsentRepository(this);
   /* Services */
-  public user = new UserService(this);
   public publish = new PublishService(this);
   public simulate = new SimulateService(this);
 }
