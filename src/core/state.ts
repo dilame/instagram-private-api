@@ -157,7 +157,7 @@ export class State {
     this.cookieJar['_jar'] = await Bluebird.fromCallback(cb => CookieJar.deserialize(cookies, this.cookieStore, cb));
   }
 
-  public async serializeCookieJar(): Promise<string> {
+  public async serializeCookieJar(): Promise<CookieJar.Serialized> {
     return Bluebird.fromCallback(cb => this.cookieJar['_jar'].serialize(cb));
   }
 
