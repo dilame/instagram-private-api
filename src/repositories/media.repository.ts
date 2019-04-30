@@ -9,6 +9,7 @@ import {
 } from '../responses';
 import { MediaConfigureOptions } from '../types/media.configure.options';
 import Chance = require('chance');
+import { MediaRepositoryCommentResponseRootObject } from '../responses/media.repository.configure.response';
 
 export class MediaRepository extends Repository {
   public async delete({
@@ -109,7 +110,7 @@ export class MediaRepository extends Repository {
   }
 
   public async uploadFinish(options: { upload_id: string; source_type: string }) {
-    return this.client.request.send({
+    const { body } = await this.client.request.send({
       url: '/api/v1/media/upload_finish/',
       method: 'POST',
       headers: {
@@ -126,9 +127,10 @@ export class MediaRepository extends Repository {
         device: this.client.state.devicePayload,
       }),
     });
+    return body;
   }
 
-  public async configure(options: MediaConfigureOptions) {
+  public async configure(options: MediaConfigureOptions): Promise<MediaRepositoryCommentResponseRootObject> {
     const devicePayload = this.client.state.devicePayload;
     const now = DateTime.local().toFormat('yyyy:mm:dd HH:mm:ss');
     const width = options.width || 1520;
@@ -159,10 +161,11 @@ export class MediaRepository extends Repository {
       extra: { source_width: width, source_height: height },
     });
 
-    this.client.request.send({
+    const { body } = await this.client.request.send<MediaRepositoryCommentResponseRootObject>({
       url: '/api/v1/media/configure/',
       method: 'POST',
       form: this.client.request.sign(form),
     });
+    return body;
   }
 }
