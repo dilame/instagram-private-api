@@ -1,6 +1,6 @@
 import { Repository } from '../core/repository';
 import {
-  FbsearchRepositoryTopsearchFlatResponseListItem,
+  FbsearchRepositoryPlacesResponseRootObject,
   FbsearchRepositoryTopsearchFlatResponseRootObject,
 } from '../responses';
 
@@ -21,7 +21,7 @@ export class FbsearchRepository extends Repository {
     return body;
   }
 
-  async topsearchFlat(query: string): Promise<Array<FbsearchRepositoryTopsearchFlatResponseListItem>> {
+  async topsearchFlat(query: string): Promise<FbsearchRepositoryTopsearchFlatResponseRootObject> {
     const { body } = await this.client.request.send<FbsearchRepositoryTopsearchFlatResponseRootObject>({
       url: '/api/v1/fbsearch/topsearch_flat/',
       qs: {
@@ -31,6 +31,17 @@ export class FbsearchRepository extends Repository {
         context: 'blended',
       },
     });
-    return body.list;
+    return body;
+  }
+  async places(query: string) {
+    const { body } = await this.client.request.send<FbsearchRepositoryPlacesResponseRootObject>({
+      url: '/api/v1/fbsearch/places/',
+      qs: {
+        timezone_offset: this.client.state.timezoneOffset,
+        count: 30,
+        query,
+      },
+    });
+    return body;
   }
 }
