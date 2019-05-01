@@ -20,7 +20,7 @@ import {
   SIGNATURE_VERSION,
 } from './constants';
 import { ChallengeStateResponse, CheckpointResponse } from '../responses';
-import { IgCookieNotFoundError, IgNoCheckpointError } from '../errors';
+import { IgCookieNotFoundError, IgNoCheckpointError, IgUserIdNotFoundError } from '../errors';
 
 export class State {
   signatureKey: string = SIGNATURE_KEY;
@@ -56,8 +56,8 @@ export class State {
   proxyUrl: string;
   cookieStore = new MemoryCookieStore();
   cookieJar = jar(this.cookieStore);
-  checkpoint: CheckpointResponse = null;
-  challenge: ChallengeStateResponse = null;
+  checkpoint: CheckpointResponse | null = null;
+  challenge: ChallengeStateResponse | null = null;
   clientSessionIdLifetime: number = 1200000;
   pigeonSessionIdLifetime: number = 1200000;
 
@@ -151,6 +151,17 @@ export class State {
       throw new IgCookieNotFoundError(key);
     }
     return cookie.value;
+  }
+
+  public extractUserId(): string {
+    try {
+      return this.cookieAccountId;
+    } catch (e) {
+      if (this.challenge === null || !this.challenge.user_id) {
+        throw new IgUserIdNotFoundError();
+      }
+      return String(this.challenge.user_id);
+    }
   }
 
   public async deserializeCookieJar(cookies: string) {
