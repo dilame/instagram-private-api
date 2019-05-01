@@ -24,6 +24,7 @@ import { DiscoverRepository } from '../repositories/discover.repository';
 import { ConsentRepository } from '../repositories/consent.repository';
 import { UserRepository } from '../repositories/user.repository';
 import { TagRepository } from '../repositories/tag.repository';
+import { SearchService } from '../services/search.service';
 
 export class IgApiClient {
   public state = new State();
@@ -53,5 +54,6 @@ export class IgApiClient {
   public zr = new ZrRepository(this);
   /* Services */
   public publish = new PublishService(this);
+  public search = new SearchService(this);
   public simulate = new SimulateService(this);
 }
