@@ -23,6 +23,7 @@ import { SimulateService } from '../services/simulate.service';
 import { DiscoverRepository } from '../repositories/discover.repository';
 import { ConsentRepository } from '../repositories/consent.repository';
 import { UserRepository } from '../repositories/user.repository';
+import { TagRepository } from '../repositories/tag.repository';
 
 export class IgApiClient {
   public state = new State();
@@ -46,6 +47,7 @@ export class IgApiClient {
   public media = new MediaRepository(this);
   public qe = new QeRepository(this);
   public qp = new QpRepository(this);
+  public tag = new TagRepository(this);
   public upload = new UploadRepository(this);
   public user = new UserRepository(this);
   public zr = new ZrRepository(this);
