@@ -11,7 +11,7 @@ async function getResponse() {
   ig.state.generateDevice(process.env.IG_USERNAME);
   ig.state.proxyUrl = process.env.IG_PROXY;
   await ig.account.login(process.env.IG_USERNAME, process.env.IG_PASSWORD);
-  return await ig.media.comment({ mediaId: '2025784068423314539_8654924802', text: 'Very cool post' });
+  return await ig.fbsearch.topsearchFlat('moscow');
 }
 
 (async function createInterface(outputName: string) {
@@ -25,5 +25,5 @@ async function getResponse() {
   console.log('Success');
 })(
   // And pass output name
-  'media.repository.comment',
+  'fbsearch.repository.topsearch-flat',
 );

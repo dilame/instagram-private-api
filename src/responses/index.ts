@@ -7,6 +7,7 @@ export * from './checkpoint.response';
 export * from './direct-inbox.feed.response';
 export * from './direct-thread.feed.response';
 export * from './direct-thread.repository.broadcast.response';
+export * from './fbsearch.repository.topsearch-flat.response';
 export * from './friendship.repository.change.response';
 export * from './friendship.repository.show.response';
 export * from './location.feed.response';
