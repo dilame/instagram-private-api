@@ -21,6 +21,7 @@ export class DirectThreadFeed extends Feed<DirectThreadFeedResponse, DirectThrea
         limit: 10,
       },
     });
+    this.state = body;
     return body;
   }
 
