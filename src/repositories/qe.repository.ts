@@ -10,7 +10,7 @@ export class QeRepository extends Repository {
   public async sync(experiments) {
     let data;
     try {
-      const uid = this.client.state.cookieAccountId;
+      const uid = this.client.state.cookieUserId;
       data = {
         _csrftoken: this.client.state.cookieCsrfToken,
         id: uid,

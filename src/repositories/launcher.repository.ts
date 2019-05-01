@@ -9,7 +9,7 @@ export class LauncherRepository extends Repository {
     });
   }
   public async postLoginSync() {
-    const uid = this.client.state.cookieAccountId;
+    const uid = this.client.state.cookieUserId;
     return this.sync({
       _csrftoken: this.client.state.cookieCsrfToken,
       id: uid,

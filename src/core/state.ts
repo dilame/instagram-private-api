@@ -128,7 +128,7 @@ export class State {
     }
   }
 
-  public get cookieAccountId() {
+  public get cookieUserId() {
     return this.extractCookieValue('ds_user_id');
   }
 
@@ -155,7 +155,7 @@ export class State {
 
   public extractUserId(): string {
     try {
-      return this.cookieAccountId;
+      return this.cookieUserId;
     } catch (e) {
       if (this.challenge === null || !this.challenge.user_id) {
         throw new IgUserIdNotFoundError();

@@ -20,7 +20,7 @@ export class AttributionRepository extends Repository {
         url: '/api/v1/attribution/log_resurrect_attribution/',
         form: this.client.request.sign({
           _csrftoken: this.client.state.cookieCsrfToken,
-          _uid: this.client.state.cookieAccountId,
+          _uid: this.client.state.cookieUserId,
           adid: this.client.state.adid,
           _uuid: this.client.state.uuid,
         }),

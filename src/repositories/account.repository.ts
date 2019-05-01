@@ -43,7 +43,7 @@ export class AccountRepository extends Repository {
       method: 'POST',
       form: this.client.request.sign({
         _csrftoken: this.client.state.cookieCsrfToken,
-        _uid: this.client.state.cookieAccountId,
+        _uid: this.client.state.cookieUserId,
         device_id: this.client.state.deviceId,
         _uuid: this.client.state.uuid,
         raw_text: text,
@@ -55,7 +55,7 @@ export class AccountRepository extends Repository {
   public async changeProfilePicture(stream: ReadStream): Promise<AccountRepositoryCurrentUserResponseRootObject> {
     const signedParameters = this.client.request.sign({
       _csrftoken: this.client.state.cookieCsrfToken,
-      _uid: this.client.state.cookieAccountId,
+      _uid: this.client.state.cookieUserId,
       _uuid: this.client.state.uuid,
     });
     const { body } = await this.client.request.send<AccountRepositoryCurrentUserResponseRootObject>({
@@ -82,14 +82,13 @@ export class AccountRepository extends Repository {
       form: this.client.request.sign({
         ...options,
         _csrftoken: this.client.state.cookieCsrfToken,
-        _uid: this.client.state.cookieAccountId,
+        _uid: this.client.state.cookieUserId,
         device_id: this.client.state.deviceId,
         _uuid: this.client.state.uuid,
       }),
     });
     return body.user;
   }
-  
 
   public async changePassword(oldPassword: string, newPassword: string) {
     const { body } = await this.client.request.send({
@@ -97,11 +96,11 @@ export class AccountRepository extends Repository {
       method: 'POST',
       form: this.client.request.sign({
         _csrftoken: this.client.state.cookieCsrfToken,
-        _uid: this.client.state.cookieAccountId,
+        _uid: this.client.state.cookieUserId,
         _uuid: this.client.state.uuid,
         old_password: oldPassword,
         new_password1: newPassword,
-        new_password2: newPassword
+        new_password2: newPassword,
       }),
     });
     return body;
@@ -125,7 +124,7 @@ export class AccountRepository extends Repository {
       method: 'POST',
       form: this.client.request.sign({
         _csrftoken: this.client.state.cookieCsrfToken,
-        _uid: this.client.state.cookieAccountId,
+        _uid: this.client.state.cookieUserId,
         _uuid: this.client.state.uuid,
       }),
     });
@@ -191,7 +190,7 @@ export class AccountRepository extends Repository {
       form: this.client.request.sign({
         phone_id: this.client.state.phoneId,
         _csrftoken: this.client.state.cookieCsrfToken,
-        _uid: this.client.state.cookieAccountId,
+        _uid: this.client.state.cookieUserId,
         device_id: this.client.state.uuid,
         _uuid: this.client.state.uuid,
         google_tokens: '[]',

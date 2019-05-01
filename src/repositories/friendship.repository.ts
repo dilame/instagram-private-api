@@ -25,7 +25,7 @@ export class FriendshipRepository extends Repository {
         _csrftoken: this.client.state.cookieCsrfToken,
         user_id: id,
         radio_type: this.client.state.radioType,
-        _uid: this.client.state.cookieAccountId,
+        _uid: this.client.state.cookieUserId,
         device_id: this.client.state.deviceId,
         _uuid: this.client.state.uuid,
         media_id_attribution: mediaIdAttribution,
