@@ -14,7 +14,7 @@ export abstract class Feed<Response = any, Item = any> extends Repository {
     maxDelay: 300000,
     jitter: true,
   };
-  public stream$ = new Observable<Item[]>(observer => {
+  public items$ = new Observable<Item[]>(observer => {
     let subscribed = true;
     process.nextTick(async () => {
       do {
