@@ -9,6 +9,7 @@ export class DirectThreadFeed extends Feed<DirectThreadFeedResponse, DirectThrea
   public cursor: string;
   set state(body: DirectThreadFeedResponse) {
     this.cursor = body.thread.oldest_cursor;
+    this.moreAvailable = body.thread.has_older;
   }
   async request() {
     const { body } = await this.client.request.send<DirectThreadFeedResponse>({
