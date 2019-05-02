@@ -31,6 +31,7 @@ export class Request {
   attemptOptions: Partial<AttemptOptions<any>> = {
     maxAttempts: 1,
   };
+  defaults: Partial<Options> = {};
 
   constructor(private client: IgApiClient) {}
 
@@ -50,17 +51,21 @@ export class Request {
   public async send<T = any>(
     userOptions: Options,
   ): Promise<Pick<Response, Exclude<keyof Response, 'body'>> & { body: T }> {
-    const options = defaultsDeep(userOptions, {
-      baseUrl: 'https://i.instagram.com/',
-      resolveWithFullResponse: true,
-      proxy: this.client.state.proxyUrl,
-      simple: false,
-      transform: Request.requestTransform,
-      jar: this.client.state.cookieJar,
-      strictSSL: false,
-      gzip: true,
-      headers: this.getDefaultHeaders(),
-    });
+    const options = defaultsDeep(
+      userOptions,
+      {
+        baseUrl: 'https://i.instagram.com/',
+        resolveWithFullResponse: true,
+        proxy: this.client.state.proxyUrl,
+        simple: false,
+        transform: Request.requestTransform,
+        jar: this.client.state.cookieJar,
+        strictSSL: false,
+        gzip: true,
+        headers: this.getDefaultHeaders(),
+      },
+      this.defaults,
+    );
     let response = await this.faultTolerantRequest(options);
     process.nextTick(() => this.end$.next());
     if (response.body.status === 'ok') {
