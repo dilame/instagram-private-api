@@ -14,12 +14,12 @@ export class StoryRepository extends Repository {
     const { body } = await this.client.request.send<StoryRepositoryResponseRootObject>({
       url: `/api/v1/feed/reels_media/`,
       method: 'POST',
-      form: this.client.request.signPost({
+      form: this.client.request.sign({
         user_ids,
         source,
         _uuid: this.client.state.uuid,
-        _uid: await this.client.state.extractCookieAccountId(),
-        _csrftoken: this.client.state.CSRFToken,
+        _uid: this.client.state.cookieUserId,
+        _csrftoken: this.client.state.cookieCsrfToken,
         device_id: this.client.state.deviceId,
         supported_capabilities_new: JSON.stringify(SUPPORTED_CAPABILITIES),
       }),
@@ -35,7 +35,7 @@ export class StoryRepository extends Repository {
         reel: 1,
         live_vod: 0,
       },
-      form: this.client.request.signPost({
+      form: this.client.request.sign({
         reels,
         container_module: module,
         reel_media_skipped: [],
@@ -44,8 +44,8 @@ export class StoryRepository extends Repository {
         nuxes: [],
         nuxes_skipped: [],
         _uuid: this.client.state.uuid,
-        _uid: await this.client.state.extractCookieAccountId(),
-        _csrftoken: this.client.state.CSRFToken,
+        _uid: this.client.state.cookieUserId,
+        _csrftoken: this.client.state.cookieCsrfToken,
         device_id: this.client.state.deviceId,
       }),
     });
