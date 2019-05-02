@@ -1,4 +1,5 @@
 import { defaultsDeep, inRange, random } from 'lodash';
+import { createHmac } from 'crypto';
 import { Subject } from 'rxjs';
 import { AttemptOptions, retry } from '@lifeomic/attempt';
 import * as request from 'request-promise';
@@ -14,7 +15,6 @@ import {
   IgResponseError,
   IgSentryBlockError,
 } from '../errors';
-import hmac = require('crypto-js/hmac-sha256');
 import JSONbigInt = require('json-bigint');
 
 const JSONbigString = JSONbigInt({ storeAsString: true });
@@ -68,22 +68,32 @@ export class Request {
     }
     throw this.handleResponseError(response);
   }
-
-  public sign(payload: Payload): string {
-    const json = typeof payload === 'object' ? JSON.stringify(payload) : payload;
-    const signature = hmac(json, this.client.state.signatureKey).toString();
-    return `${signature}.${json}`;
+  public signature(data: string) {
+    return createHmac('sha256', this.client.state.signatureKey)
+      .update(data)
+      .digest('hex');
   }
 
-  public signPost(payload: Payload): SignedPost {
-    if (typeof payload === 'object' && !payload._csrftoken) {
-      payload._csrftoken = this.client.state.CSRFToken;
-    }
-    const signed_body = this.sign(payload);
+  public sign(payload: Payload): SignedPost {
+    const json = typeof payload === 'object' ? JSON.stringify(payload) : payload;
+    const signature = this.signature(json);
     return {
       ig_sig_key_version: this.client.state.signatureVersion,
-      signed_body,
+      signed_body: `${signature}.${json}`,
     };
+  }
+
+  public userBreadcrumb(size: number) {
+    const term = random(2, 3) * 1000 + size + random(15, 20) * 1000;
+    const textChangeEventCount = Math.round(size / random(2, 3)) || 1;
+    const data = `${size} ${term} ${textChangeEventCount} ${Date.now()}`;
+    const signature = Buffer.from(
+      createHmac('sha256', this.client.state.userBreadcrumbKey)
+        .update(data)
+        .digest('hex'),
+    ).toString('base64');
+    const body = Buffer.from(data).toString('base64');
+    return `${signature}\n${body}\n`;
   }
 
   private handleResponseError(response: Response) {
@@ -122,20 +132,20 @@ export class Request {
 
   private getDefaultHeaders() {
     return {
-      'X-FB-HTTP-Engine': 'Liger',
-      'X-IG-Connection-Type': 'WIFI',
-      'X-IG-Capabilities': '3brTPw==',
+      'User-Agent': this.client.state.appUserAgent,
+      'X-Pigeon-Session-Id': this.client.state.pigeonSessionId,
+      'X-Pigeon-Rawclienttime': (Date.now() / 1000).toFixed(3),
       'X-IG-Connection-Speed': `${random(1000, 3700)}kbps`,
       'X-IG-Bandwidth-Speed-KBPS': '-1.000',
       'X-IG-Bandwidth-TotalBytes-B': '0',
       'X-IG-Bandwidth-TotalTime-MS': '0',
-      Host: 'i.instagram.com',
-      Accept: '*/*',
-      'Accept-Encoding': 'gzip,deflate',
-      Connection: 'Keep-Alive',
-      'User-Agent': this.client.state.appUserAgent,
+      'X-IG-Connection-Type': this.client.state.connectionTypeHeader,
+      'X-IG-Capabilities': this.client.state.capabilitiesHeader,
       'X-IG-App-ID': this.client.state.fbAnalyticsApplicationId,
       'Accept-Language': this.client.state.language.replace('_', '-'),
+      Host: 'i.instagram.com',
+      'Accept-Encoding': 'gzip',
+      Connection: 'Keep-Alive',
     };
   }
 }

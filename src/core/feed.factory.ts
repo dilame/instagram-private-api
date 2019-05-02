@@ -1,13 +1,17 @@
 import { IgApiClient } from './client';
-import { AccountFollowersFeed } from '../feeds';
-import { AccountFollowingFeed } from '../feeds';
-import { DirectInboxFeed } from '../feeds';
-import { UserFeed } from '../feeds';
-import { TagFeed } from '../feeds';
-import { LocationFeed } from '../feeds';
-import { MediaCommentsFeed } from '../feeds';
-import { DirectThreadFeed } from '../feeds/direct-thread.feed';
+import {
+  AccountFollowersFeed,
+  AccountFollowingFeed,
+  DirectInboxFeed,
+  DirectThreadFeed,
+  LocationFeed,
+  MediaCommentsFeed,
+  TagFeed,
+  TimelineFeed,
+  UserFeed,
+} from '../feeds';
 import { DirectInboxFeedResponseThreadsItem } from '../responses';
+import { TimelineFeedReason } from '../types/timeline-feed.types';
 
 export class FeedFactory {
   constructor(private client: IgApiClient) {}
@@ -53,6 +57,14 @@ export class FeedFactory {
   public mediaComments(id: string): MediaCommentsFeed {
     const feed = new MediaCommentsFeed(this.client);
     feed.id = id;
+    return feed;
+  }
+
+  public timeline(reason?: TimelineFeedReason): TimelineFeed {
+    const feed = new TimelineFeed(this.client);
+    if (reason) {
+      feed.reason = reason;
+    }
     return feed;
   }
 }

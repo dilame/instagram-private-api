@@ -1,12 +1,10 @@
 import { ReadStream } from 'fs';
-import { sample } from 'lodash';
 import { Repository } from '../core/repository';
 import {
   AccountRepositoryCurrentUserResponseRootObject,
   AccountRepositoryLoginResponseLogged_in_user,
   AccountRepositoryLoginResponseRootObject,
 } from '../responses';
-import Bluebird = require('bluebird');
 import { AccountEditProfileOptions } from '../types/account.edit-profile.options';
 
 export class AccountRepository extends Repository {
@@ -14,11 +12,12 @@ export class AccountRepository extends Repository {
     const response = await this.client.request.send<AccountRepositoryLoginResponseRootObject>({
       method: 'POST',
       url: '/api/v1/accounts/login/',
-      form: this.client.request.signPost({
+      form: this.client.request.sign({
         username,
         password,
         guid: this.client.state.uuid,
         phone_id: this.client.state.phoneId,
+        _csrftoken: this.client.state.cookieCsrfToken,
         device_id: this.client.state.deviceId,
         adid: this.client.state.adid,
         google_tokens: '[]',
@@ -26,14 +25,6 @@ export class AccountRepository extends Repository {
       }),
     });
     return response.body.logged_in_user;
-  }
-
-  public async preLoginFlow(concurrency = 1) {
-    await Bluebird.map(
-      [this.readMsisdnHeader(), this.contactPointPrefill(), this.launcherSync(), this.qeSync()],
-      () => true,
-      { concurrency },
-    );
   }
 
   public async currentUser() {
@@ -45,13 +36,14 @@ export class AccountRepository extends Repository {
     });
     return body.user;
   }
+
   public async setBiography(text: string) {
     const { body } = await this.client.request.send<AccountRepositoryCurrentUserResponseRootObject>({
       url: '/api/v1/accounts/set_biography/',
       method: 'POST',
-      form: this.client.request.signPost({
-        _csrftoken: this.client.state.CSRFToken,
-        _uid: await this.client.state.extractCookieAccountId(),
+      form: this.client.request.sign({
+        _csrftoken: this.client.state.cookieCsrfToken,
+        _uid: this.client.state.cookieUserId,
         device_id: this.client.state.deviceId,
         _uuid: this.client.state.uuid,
         raw_text: text,
@@ -59,10 +51,11 @@ export class AccountRepository extends Repository {
     });
     return body.user;
   }
+
   public async changeProfilePicture(stream: ReadStream): Promise<AccountRepositoryCurrentUserResponseRootObject> {
-    const signedParameters = this.client.request.signPost({
-      _csrftoken: this.client.state.CSRFToken,
-      _uid: await this.client.state.extractCookieAccountId(),
+    const signedParameters = this.client.request.sign({
+      _csrftoken: this.client.state.cookieCsrfToken,
+      _uid: this.client.state.cookieUserId,
       _uuid: this.client.state.uuid,
     });
     const { body } = await this.client.request.send<AccountRepositoryCurrentUserResponseRootObject>({
@@ -81,89 +74,128 @@ export class AccountRepository extends Repository {
     });
     return body;
   }
+
   public async editProfile(options: AccountEditProfileOptions) {
     const { body } = await this.client.request.send<AccountRepositoryCurrentUserResponseRootObject>({
       url: '/api/v1/accounts/edit_profile/',
       method: 'POST',
-      form: this.client.request.signPost({
+      form: this.client.request.sign({
         ...options,
-        _csrftoken: this.client.state.CSRFToken,
-        _uid: await this.client.state.extractCookieAccountId(),
+        _csrftoken: this.client.state.cookieCsrfToken,
+        _uid: this.client.state.cookieUserId,
         device_id: this.client.state.deviceId,
         _uuid: this.client.state.uuid,
       }),
     });
     return body.user;
   }
+
+  public async changePassword(oldPassword: string, newPassword: string) {
+    const { body } = await this.client.request.send({
+      url: '/api/v1/accounts/change_password/',
+      method: 'POST',
+      form: this.client.request.sign({
+        _csrftoken: this.client.state.cookieCsrfToken,
+        _uid: this.client.state.cookieUserId,
+        _uuid: this.client.state.uuid,
+        old_password: oldPassword,
+        new_password1: newPassword,
+        new_password2: newPassword,
+      }),
+    });
+    return body;
+  }
+
   public async removeProfilePicture() {
     return this.command('remove_profile_picture');
   }
+
   public async setPrivate() {
     return this.command('set_private');
   }
+
   public async setPublic() {
     return this.command('set_public');
   }
+
   private async command(command: string): Promise<AccountRepositoryCurrentUserResponseRootObject> {
     const { body } = await this.client.request.send<AccountRepositoryCurrentUserResponseRootObject>({
       url: `/api/v1/accounts/${command}/`,
       method: 'POST',
-      form: this.client.request.signPost({
-        _csrftoken: this.client.state.CSRFToken,
-        _uid: await this.client.state.extractCookieAccountId(),
+      form: this.client.request.sign({
+        _csrftoken: this.client.state.cookieCsrfToken,
+        _uid: this.client.state.cookieUserId,
         _uuid: this.client.state.uuid,
       }),
     });
     return body;
   }
-  private readMsisdnHeader() {
-    return this.client.request.send({
+
+  public async readMsisdnHeader(usage = 'default') {
+    const { body } = await this.client.request.send({
       method: 'POST',
       url: '/api/v1/accounts/read_msisdn_header/',
       headers: {
         'X-DEVICE-ID': this.client.state.uuid,
       },
-      form: this.client.request.signPost({
-        mobile_subno_usage: sample(['default', 'ig_select_app']),
+      form: this.client.request.sign({
+        mobile_subno_usage: usage,
         device_id: this.client.state.uuid,
       }),
     });
+    return body;
   }
 
-  private contactPointPrefill() {
-    return this.client.request.send({
+  public async msisdnHeaderBootstrap(usage = 'default') {
+    const { body } = await this.client.request.send({
+      method: 'POST',
+      url: '/api/v1/accounts/msisdn_header_bootstrap/',
+      form: this.client.request.sign({
+        mobile_subno_usage: usage,
+        device_id: this.client.state.uuid,
+      }),
+    });
+    return body;
+  }
+
+  public async contactPointPrefill(usage = 'default') {
+    const { body } = await this.client.request.send({
       method: 'POST',
       url: '/api/v1/accounts/contact_point_prefill/',
-      form: this.client.request.signPost({
-        mobile_subno_usage: 'default',
+      form: this.client.request.sign({
+        mobile_subno_usage: usage,
         device_id: this.client.state.uuid,
       }),
     });
+    return body;
   }
 
-  private launcherSync() {
-    return this.client.request.send({
+  public async getPrefillCandidates() {
+    const { body } = await this.client.request.send({
       method: 'POST',
-      url: '/api/v1/launcher/sync/',
-      form: this.client.request.signPost({
-        id: this.client.state.uuid,
-        configs:
-          'ig_fbns_blocked,ig_android_felix_release_players,ig_user_mismatch_soft_error,ig_android_carrier_signals_killswitch,ig_android_killswitch_perm_direct_ssim,fizz_ig_android,ig_mi_block_expired_events,ig_android_os_version_blocking_config',
+      url: '/api/v1/accounts/get_prefill_candidates/',
+      form: this.client.request.sign({
+        android_device_id: this.client.state.deviceId,
+        usages: '["account_recovery_omnibox"]',
+        device_id: this.client.state.uuid,
       }),
     });
+    return body;
   }
 
-  private qeSync() {
-    return this.client.request.send({
+  public async processContactPointSignals() {
+    const { body } = await this.client.request.send({
       method: 'POST',
-      url: '/api/v1/qe/sync/',
-      headers: {
-        'X-DEVICE-ID': this.client.state.uuid,
-      },
-      form: this.client.request.signPost({
-        id: this.client.state.uuid,
-        experiments: this.client.state.loginExperiments,
+      url: '/api/v1/accounts/process_contact_point_signals/',
+      form: this.client.request.sign({
+        phone_id: this.client.state.phoneId,
+        _csrftoken: this.client.state.cookieCsrfToken,
+        _uid: this.client.state.cookieUserId,
+        device_id: this.client.state.uuid,
+        _uuid: this.client.state.uuid,
+        google_tokens: '[]',
       }),
     });
+    return body;
   }
 }

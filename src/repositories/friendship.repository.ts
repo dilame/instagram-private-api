@@ -9,23 +9,23 @@ export class FriendshipRepository extends Repository {
     return body;
   }
 
-  async create(id: string, mediaIdAttribution?: string) {
+  async create(id: string | number, mediaIdAttribution?: string) {
     return this.change('create', id, mediaIdAttribution);
   }
 
-  async destroy(id: string, mediaIdAttribution?: string) {
+  async destroy(id: string | number, mediaIdAttribution?: string) {
     return this.change('destroy', id, mediaIdAttribution);
   }
 
-  private async change(action: string, id: string, mediaIdAttribution?: string) {
+  private async change(action: string, id: string | number, mediaIdAttribution?: string) {
     const { body } = await this.client.request.send<FriendshipRepositoryChangeResponseRootObject>({
       url: `/api/v1/friendships/${action}/${id}/`,
       method: 'POST',
-      form: this.client.request.signPost({
-        _csrftoken: this.client.state.CSRFToken,
+      form: this.client.request.sign({
+        _csrftoken: this.client.state.cookieCsrfToken,
         user_id: id,
-        radio_type: 'wifi-none',
-        _uid: await this.client.state.extractCookieAccountId(),
+        radio_type: this.client.state.radioType,
+        _uid: this.client.state.cookieUserId,
         device_id: this.client.state.deviceId,
         _uuid: this.client.state.uuid,
         media_id_attribution: mediaIdAttribution,

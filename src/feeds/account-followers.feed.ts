@@ -1,4 +1,4 @@
-import { Expose } from 'class-transformer';
+import { Expose, plainToClassFromExist } from 'class-transformer';
 import { Feed } from '../core/feed';
 import { AccountFollowersFeedResponse, AccountFollowersFeedResponseUsersItem } from '../responses';
 
@@ -25,6 +25,6 @@ export class AccountFollowersFeed extends Feed<AccountFollowersFeedResponse, Acc
 
   async items() {
     const body = await this.request();
-    return body.users;
+    return body.users.map(user => plainToClassFromExist(new AccountFollowersFeedResponseUsersItem(this.client), user));
   }
 }
