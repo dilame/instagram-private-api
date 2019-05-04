@@ -50,7 +50,8 @@
     "request-promise": "^4.2.4",
     "rxjs": "^6.4.0",
     "tough-cookie": "^2.5.0",
-    "ts-custom-error": "^2.2.2"
+    "ts-custom-error": "^2.2.2",
+    "ts-xor": "^1.0.6"
   },
   "devDependencies": {
     "@types/bluebird": "^3.5.26",
@@ -66,7 +67,6 @@
     "pretty-quick": "^1.10.0",
     "rimraf": "^2.6.3",
     "ts-node": "^8.1.0",
-    "ts-xor": "^1.0.6",
     "tslint": "^5.16.0",
     "typescript": "^3.4.4"
   }
