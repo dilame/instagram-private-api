@@ -2,27 +2,45 @@ import { ReadStream } from 'fs';
 import { Repository } from '../core/repository';
 import {
   AccountRepositoryCurrentUserResponseRootObject,
+  AccountRepositoryLoginErrorResponse,
   AccountRepositoryLoginResponseLogged_in_user,
   AccountRepositoryLoginResponseRootObject,
 } from '../responses';
+import { IgLoginBadPasswordError, IgLoginInvalidUserError, IgResponseError } from '../errors';
 import { AccountEditProfileOptions } from '../types/account.edit-profile.options';
+import { IgResponse } from '../types/ig-response';
+import Bluebird = require('bluebird');
 
 export class AccountRepository extends Repository {
   public async login(username: string, password: string): Promise<AccountRepositoryLoginResponseLogged_in_user> {
-    const response = await this.client.request.send<AccountRepositoryLoginResponseRootObject>({
-      method: 'POST',
-      url: '/api/v1/accounts/login/',
-      form: this.client.request.sign({
-        username,
-        password,
-        guid: this.client.state.uuid,
-        phone_id: this.client.state.phoneId,
-        _csrftoken: this.client.state.cookieCsrfToken,
-        device_id: this.client.state.deviceId,
-        adid: this.client.state.adid,
-        google_tokens: '[]',
-        login_attempt_count: 0,
+    const response = await Bluebird.try(() =>
+      this.client.request.send<AccountRepositoryLoginResponseRootObject>({
+        method: 'POST',
+        url: '/api/v1/accounts/login/',
+        form: this.client.request.sign({
+          username,
+          password,
+          guid: this.client.state.uuid,
+          phone_id: this.client.state.phoneId,
+          _csrftoken: this.client.state.cookieCsrfToken,
+          device_id: this.client.state.deviceId,
+          adid: this.client.state.adid,
+          google_tokens: '[]',
+          login_attempt_count: 0,
+        }),
       }),
+    ).catch(IgResponseError, error => {
+      switch (error.response.body.error_type) {
+        case 'bad_password': {
+          throw new IgLoginBadPasswordError(error.response as IgResponse<AccountRepositoryLoginErrorResponse>);
+        }
+        case 'invalid_user': {
+          throw new IgLoginInvalidUserError(error.response as IgResponse<AccountRepositoryLoginErrorResponse>);
+        }
+        default: {
+          throw error;
+        }
+      }
     });
     return response.body.logged_in_user;
   }

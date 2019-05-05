@@ -1,12 +1,12 @@
 import { IgClientError } from './ig-client.error';
-import { Response } from 'request';
+import { IgResponse } from '../types/ig-response';
 
 export class IgResponseError<TBody extends { [x: string]: any } = any> extends IgClientError {
-  constructor(public response: Pick<Response, Exclude<keyof Response, 'body'>> & { body: TBody }) {
+  constructor(public response: IgResponse<TBody>, public text = response.body.message) {
     super(
       `${response.request.method} ${response.request.uri.path} - ${response.statusCode} ${
         response.statusMessage
-      }; ${response.body.message || ''}`,
+      }; ${text || ''}`,
     );
   }
 }
