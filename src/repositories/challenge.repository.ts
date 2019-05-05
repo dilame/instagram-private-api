@@ -111,6 +111,7 @@ export class ChallengeRepository extends Repository {
 
   private middleware(body: ChallengeStateResponse) {
     if (body.action === 'close') {
+      this.client.state.checkpoint = null;
       this.client.state.challenge = null;
     } else {
       this.client.state.challenge = body;

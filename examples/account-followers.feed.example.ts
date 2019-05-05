@@ -21,7 +21,7 @@ import { IgApiClient } from '../src';
   console.log(fourthPageItems);
   // You can use RxJS stream to subscribe to all results in this feed.
   // All the RxJS powerful is beyond this example - you should learn it by yourself.
-  followersFeed.stream$.subscribe(
+  followersFeed.items$.subscribe(
     followers => console.log(followers),
     error => console.error(error),
     () => console.log('Complete!'),

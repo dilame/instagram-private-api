@@ -13,6 +13,7 @@ export * from './friendship.repository.change.response';
 export * from './friendship.repository.show.response';
 export * from './location.feed.response';
 export * from './login-required.response';
+export * from './media.entity.oembed.response';
 export * from './media.repository.blocked.response';
 export * from './media.repository.comment.response';
 export * from './media.repository.likers.response';

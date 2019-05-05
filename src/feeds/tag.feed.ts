@@ -26,6 +26,6 @@ export class TagFeed extends Feed<TagFeedResponse, TagFeedResponseItemsItem> {
 
   async items() {
     const response = await this.request();
-    return response.ranked_items;
+    return response.items;
   }
 }
