@@ -1,5 +1,10 @@
 import { IgApiClient } from './client';
+import { Enumerable } from '../decorators';
 
 export abstract class Repository {
-  constructor(protected client: IgApiClient) {}
+  @Enumerable(false)
+  protected client: IgApiClient;
+  constructor(client: IgApiClient) {
+    this.client = client;
+  }
 }
