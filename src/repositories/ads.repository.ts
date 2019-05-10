@@ -6,7 +6,7 @@ export class AdsRepository extends Repository {
       url: '/api/v1/ads/graphql/',
       method: 'POST',
       qs: {
-        locale: 'en_US',
+        locale: this.client.state.language,
         vc_policy: 'insights_policy',
         surface: 'post',
       },
