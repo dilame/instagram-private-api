@@ -3,6 +3,7 @@ import { Request } from './request';
 import { FeedFactory } from './feed.factory';
 import { AccountRepository } from '../repositories/account.repository';
 import { MediaRepository } from '../repositories/media.repository';
+import { AdsRepository } from '../repositories/ads.repository';
 import { ChallengeRepository } from '../repositories/challenge.repository';
 import { FriendshipRepository } from '../repositories/friendship.repository';
 import { UploadRepository } from '../repositories/upload.repository';
@@ -46,6 +47,7 @@ export class IgApiClient {
   public linkedAccount = new LinkedAccountRepository(this);
   public loom = new LoomRepository(this);
   public media = new MediaRepository(this);
+  public ads = new AdsRepository(this);
   public qe = new QeRepository(this);
   public qp = new QpRepository(this);
   public tag = new TagRepository(this);
