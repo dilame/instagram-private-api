@@ -12,4 +12,8 @@ export class MediaEntity extends Entity {
       },
     });
   }
+
+  public async getInsights(id: string): Promise<any> {
+    return this.client.ads.graphql(id);
+  }
 }

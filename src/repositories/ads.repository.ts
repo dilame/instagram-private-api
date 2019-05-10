@@ -1,7 +1,7 @@
 import { Repository } from '../core/repository';
 
 export class AdsRepository extends Repository {
-  public async getPostInsights(id: string) {
+  public async graphql(id: string) {
     const { body } = await this.client.request.send({
       url: '/api/v1/ads/graphql/?locale=en_US&vc_policy=insights_policy&surface=post',
       method: 'POST',
