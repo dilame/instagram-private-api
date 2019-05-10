@@ -49,7 +49,7 @@ export class Request {
     return resolveWithFullResponse ? response : response.body;
   }
 
-  public async send<T = any>(userOptions: Options): Promise<IgResponse<T>> {
+  public async send<T = any>(userOptions: Options, verifyBodyStatus: boolean = true): Promise<IgResponse<T>> {
     const options = defaultsDeep(
       userOptions,
       {
@@ -67,7 +67,7 @@ export class Request {
     );
     let response = await this.faultTolerantRequest(options);
     process.nextTick(() => this.end$.next());
-    if (response.body.status === 'ok') {
+    if (response.body.status === 'ok' || !verifyBodyStatus) {
       return response;
     }
     throw this.handleResponseError(response);
