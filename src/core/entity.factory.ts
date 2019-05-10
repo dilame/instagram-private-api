@@ -1,5 +1,5 @@
 import { Repository } from './repository';
-import { DirectThreadEntity, ProfileEntity } from '../entities';
+import { DirectThreadEntity, ProfileEntity, MediaEntity } from '../entities';
 
 export class EntityFactory extends Repository {
   public directThread(id: string | string[]): DirectThreadEntity {
@@ -15,5 +15,11 @@ export class EntityFactory extends Repository {
     const thread = new ProfileEntity(this.client);
     thread.pk = pk;
     return thread;
+  }
+
+  public media(id: string): MediaEntity {
+    const media = new MediaEntity(this.client);
+    media.id = id;
+    return media;
   }
 }

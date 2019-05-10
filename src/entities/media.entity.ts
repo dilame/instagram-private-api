@@ -3,6 +3,8 @@ import { Entity } from '../core/entity';
 import { MediaEntityOembedResponse } from '../responses';
 
 export class MediaEntity extends Entity {
+  id: string;
+
   static async oembed(url: string): Promise<MediaEntityOembedResponse> {
     return request({
       url: 'https://api.instagram.com/oembed/',
@@ -13,7 +15,7 @@ export class MediaEntity extends Entity {
     });
   }
 
-  public async getInsights(id: string): Promise<any> {
-    return this.client.ads.graphql(id);
+  public async getInsights(): Promise<any> {
+    return this.client.ads.graphql(this.id);
   }
 }
