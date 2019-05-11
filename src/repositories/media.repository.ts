@@ -14,7 +14,7 @@ import { MediaRepositoryCommentResponseRootObject } from '../responses/media.rep
 
 export class MediaRepository extends Repository {
   public async info(mediaId: string): Promise<MediaInfoResponseRootObject> {
-    const { body } = await this.client.request.send({
+    const { body } = await this.client.request.send<MediaInfoResponseRootObject>({
       url: `/api/v1/media/${mediaId}/info/`,
       method: 'GET',
       form: this.client.request.sign({
