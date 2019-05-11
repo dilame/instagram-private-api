@@ -5,7 +5,7 @@ import { MediaCommentsFeedResponse, MediaCommentsFeedResponseCommentsItem } from
 export class MediaCommentsFeed extends Feed<MediaCommentsFeedResponse, MediaCommentsFeedResponseCommentsItem> {
   id: string;
   @Expose()
-  private nextMinId: string;
+  private nextMaxId: string;
 
   set state(body: MediaCommentsFeedResponse) {
     this.moreAvailable = !!body.next_max_id;
