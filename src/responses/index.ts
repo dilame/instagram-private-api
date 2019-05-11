@@ -27,3 +27,5 @@ export * from './upload.repository.photo.response';
 export * from './user.feed.response';
 export * from './user.repository.info.response';
 export * from './user.repository.search.response';
+export * from './media.info.response';
+

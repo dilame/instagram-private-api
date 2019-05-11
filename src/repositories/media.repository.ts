@@ -6,13 +6,14 @@ import {
   MediaRepositoryBlockedResponse,
   MediaRepositoryCommentResponse,
   MediaRepositoryLikersResponseRootObject,
+  MediaInfoResponseRootObject,
 } from '../responses';
 import { MediaConfigureOptions } from '../types/media.configure.options';
 import Chance = require('chance');
 import { MediaRepositoryCommentResponseRootObject } from '../responses/media.repository.configure.response';
 
 export class MediaRepository extends Repository {
-  public async info(mediaId: string) {
+  public async info(mediaId: string): Promise<MediaInfoResponseRootObject> {
     const { body } = await this.client.request.send({
       url: `/api/v1/media/${mediaId}/info/`,
       method: 'GET',
