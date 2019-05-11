@@ -8,8 +8,8 @@ export class MediaCommentsFeed extends Feed<MediaCommentsFeedResponse, MediaComm
   private nextMinId: string;
 
   set state(body: MediaCommentsFeedResponse) {
-    this.moreAvailable = !!body.next_min_id;
-    this.nextMinId = body.next_min_id;
+    this.moreAvailable = !!body.next_max_id;
+    this.nextMaxId = body.next_max_id;
   }
 
   async request() {
@@ -17,7 +17,7 @@ export class MediaCommentsFeed extends Feed<MediaCommentsFeedResponse, MediaComm
       url: `/api/v1/media/${this.id}/comments/`,
       qs: {
         can_support_threading: true,
-        min_id: this.nextMinId,
+        max_id: this.nextMaxId,
       },
     });
     this.state = body;
