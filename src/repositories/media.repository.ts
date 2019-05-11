@@ -12,6 +12,25 @@ import Chance = require('chance');
 import { MediaRepositoryCommentResponseRootObject } from '../responses/media.repository.configure.response';
 
 export class MediaRepository extends Repository {
+  public async info({
+    mediaId,
+  }: {
+    mediaId: string;
+  }) {
+    const { body } = await this.client.request.send({
+      url: `/api/v1/media/${mediaId}/info/`,
+      method: 'GET',
+      form: this.client.request.sign({
+        igtv_feed_preview: false,
+        media_id: mediaId,
+        _csrftoken: this.client.state.cookieCsrfToken,
+        _uid: this.client.state.cookieUserId,
+        _uuid: this.client.state.uuid,
+      }),
+    });
+    return body;
+  }
+  
   public async delete({
     mediaId,
     mediaType = 'PHOTO',
