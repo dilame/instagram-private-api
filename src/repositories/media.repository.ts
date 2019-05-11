@@ -12,11 +12,7 @@ import Chance = require('chance');
 import { MediaRepositoryCommentResponseRootObject } from '../responses/media.repository.configure.response';
 
 export class MediaRepository extends Repository {
-  public async info({
-    mediaId,
-  }: {
-    mediaId: string;
-  }) {
+  public async info(mediaId: string) {
     const { body } = await this.client.request.send({
       url: `/api/v1/media/${mediaId}/info/`,
       method: 'GET',
@@ -30,7 +26,7 @@ export class MediaRepository extends Repository {
     });
     return body;
   }
-  
+
   public async delete({
     mediaId,
     mediaType = 'PHOTO',
