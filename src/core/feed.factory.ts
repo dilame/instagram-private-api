@@ -6,6 +6,7 @@ import {
   DirectThreadFeed,
   LocationFeed,
   MediaCommentsFeed,
+  SelfLikedFeed,
   TagFeed,
   TimelineFeed,
   UserFeed,
@@ -41,6 +42,10 @@ export class FeedFactory {
   public user(id: string | number): UserFeed {
     const feed = new UserFeed(this.client);
     feed.id = id;
+    return feed;
+  }
+  public likes(): SelfLikedFeed {
+    const feed = new SelfLikedFeed(this.client);
     return feed;
   }
   public tag(tag: string): TagFeed {
