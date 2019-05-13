@@ -1,3 +1,4 @@
+import * as urlRegex from 'url-regex';
 import { Entity } from '../core/entity';
 import { DirectThreadBroadcastPhotoOptions } from '../types/direct-thread.broadcast-photo.options';
 import { DirectThreadBroadcastOptions } from '../types/direct-thread.broadcast.options';
@@ -6,10 +7,23 @@ export class DirectThreadEntity extends Entity {
   threadId: string = null;
   userIds: string[] = null;
   public async broadcastText(text: string) {
+    const urls = text.match(urlRegex({ strict: false }));
+    if (urls instanceof Array) {
+      return this.broadcastLink(text, urls);
+    }
     return await this.broadcast({
       item: 'text',
       form: {
         text,
+      },
+    });
+  }
+  public async broadcastLink(link_text: string, link_urls: string[]) {
+    return await this.broadcast({
+      item: 'link',
+      form: {
+        link_text,
+        link_urls: JSON.stringify(link_urls),
       },
     });
   }

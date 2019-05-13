@@ -1,7 +1,7 @@
 {
   "name": "instagram-private-api",
   "description": "Instagram private API wrapper for full access to instagram",
-  "version": "1.6.2",
+  "version": "1.8.0",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
@@ -51,7 +51,8 @@
     "rxjs": "^6.4.0",
     "tough-cookie": "^2.5.0",
     "ts-custom-error": "^2.2.2",
-    "ts-xor": "^1.0.6"
+    "ts-xor": "^1.0.6",
+    "url-regex": "^5.0.0"
   },
   "devDependencies": {
     "@types/bluebird": "^3.5.26",

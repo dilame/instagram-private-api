@@ -4,6 +4,7 @@ import { AttemptOptions, retry } from '@lifeomic/attempt';
 import * as Chance from 'chance';
 import { IgResponseError } from '../errors';
 import { Repository } from './repository';
+import { Enumerable } from '../decorators';
 
 export abstract class Feed<Response = any, Item = any> extends Repository {
   public attemptOptions: Partial<AttemptOptions<any>> = {
@@ -50,6 +51,7 @@ export abstract class Feed<Response = any, Item = any> extends Repository {
   });
   @Expose()
   protected moreAvailable: boolean;
+  @Enumerable(false)
   protected chance = new Chance();
   @Expose()
   protected rankToken = this.chance.guid();

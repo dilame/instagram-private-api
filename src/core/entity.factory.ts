@@ -1,6 +1,5 @@
 import { Repository } from './repository';
-import { DirectThreadEntity } from '../entities';
-import { ProfileEntity } from '../entities/profile.entity';
+import { DirectThreadEntity, ProfileEntity } from '../entities';
 
 export class EntityFactory extends Repository {
   public directThread(id: string | string[]): DirectThreadEntity {

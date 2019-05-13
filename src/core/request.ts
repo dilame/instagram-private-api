@@ -15,6 +15,7 @@ import {
   IgResponseError,
   IgSentryBlockError,
 } from '../errors';
+import { IgResponse } from '../types/ig-response';
 import JSONbigInt = require('json-bigint');
 
 const JSONbigString = JSONbigInt({ storeAsString: true });
@@ -48,9 +49,7 @@ export class Request {
     return resolveWithFullResponse ? response : response.body;
   }
 
-  public async send<T = any>(
-    userOptions: Options,
-  ): Promise<Pick<Response, Exclude<keyof Response, 'body'>> & { body: T }> {
+  public async send<T = any>(userOptions: Options): Promise<IgResponse<T>> {
     const options = defaultsDeep(
       userOptions,
       {
