@@ -35,6 +35,7 @@ export class State {
   experiments: string = EXPERIMENTS;
   supportedCapabilities = supportedCapabilities;
   language: string = 'en_US';
+  timezone: string = Intl.DateTimeFormat().resolvedOptions().timeZone;
   timezoneOffset: string = String(new Date().getTimezoneOffset() * -60);
   radioType = 'wifi-none';
   capabilitiesHeader = '3brTPw==';
