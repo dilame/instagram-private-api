@@ -16,6 +16,11 @@ export class MediaEntity extends Entity {
   }
 
   public async getInsights(): Promise<any> {
-    return this.client.ads.graphql(this.id);
+    return this.client.ads.graphql('post', '2277548965653663', {
+      query_params: {
+        access_token: '',
+        id: this.id,
+      },
+    });
   }
 }
