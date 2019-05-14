@@ -7,3 +7,4 @@ export * from './media-comments.feed';
 export * from './tag.feed';
 export * from './user.feed';
 export * from './timeline.feed';
+export * from './saved-media.feed';
