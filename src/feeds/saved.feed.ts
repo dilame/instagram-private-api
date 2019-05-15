@@ -1,8 +1,8 @@
 import { Expose } from 'class-transformer';
 import { Feed } from '../core/feed';
-import { SavedFeedResponse, SavedFeedResponseItemsItem } from '../responses';
+import { SavedFeedResponse, SavedFeedResponseMedia } from '../responses';
 
-export class SavedFeed extends Feed<SavedFeedResponse, SavedFeedResponseItemsItem> {
+export class SavedFeed extends Feed<SavedFeedResponse, SavedFeedResponseMedia> {
   @Expose()
   private nextMaxId: string;
 
