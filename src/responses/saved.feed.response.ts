@@ -1,5 +1,5 @@
-export interface SavedMediaFeedResponse {
-  items: SavedMediaFeedResponseItemsItem[];
+export interface SavedFeedResponse {
+  items: SavedFeedResponseItemsItem[];
   num_results: number;
   more_available: boolean;
   auto_load_more_enabled: boolean;
@@ -7,7 +7,7 @@ export interface SavedMediaFeedResponse {
   status: string;
 }
 
-export interface SavedMediaFeedResponseItemsItem {
+export interface SavedFeedResponseItemsItem {
   taken_at: number;
   pk: string;
   id: string;

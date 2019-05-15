@@ -1,12 +1,12 @@
 import { Expose } from 'class-transformer';
 import { Feed } from '../core/feed';
-import { SavedMediaFeedResponse, SavedMediaFeedResponseItemsItem } from '../responses';
+import { SavedFeedResponse, SavedFeedResponseItemsItem } from '../responses';
 
-export class SavedMediaFeed extends Feed<SavedMediaFeedResponse, SavedMediaFeedResponseItemsItem> {
+export class SavedFeed extends Feed<SavedFeedResponse, SavedFeedResponseItemsItem> {
   @Expose()
   private nextMaxId: string;
 
-  set state(body: SavedMediaFeedResponse) {
+  set state(body: SavedFeedResponse) {
     this.moreAvailable = body.more_available;
     this.nextMaxId = body.next_max_id;
   }
@@ -24,9 +24,7 @@ export class SavedMediaFeed extends Feed<SavedMediaFeedResponse, SavedMediaFeedR
   }
 
   async items() {
-    const { items, more_available, next_max_id } = await this.request();
-    this.nextMaxId = next_max_id;
-    this.moreAvailable = more_available;
+    const { items } = await this.request();
     return items;
   }
 }
