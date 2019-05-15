@@ -9,7 +9,7 @@ import {
   TagFeed,
   TimelineFeed,
   UserFeed,
-  SavedMediaFeed,
+  SavedFeed,
 } from '../feeds';
 import { DirectInboxFeedResponseThreadsItem } from '../responses';
 import { TimelineFeedReason } from '../types/timeline-feed.types';
@@ -68,7 +68,7 @@ export class FeedFactory {
     }
     return feed;
   }
-  public saved(): SavedMediaFeed {
-    return new SavedMediaFeed(this.client);
+  public saved(): SavedFeed {
+    return new SavedFeed(this.client);
   }
 }
