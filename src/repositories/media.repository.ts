@@ -184,4 +184,26 @@ export class MediaRepository extends Repository {
     });
     return body;
   }
+
+  public async markReelsSeen(items: array) {
+    const reels = {};
+
+    for (let item of items) {
+      const reelId = `${item.id}_${item.user.pk}`;
+      const seenAt = Date.now() / 1000;
+      reels[reelId] = `${item.taken_at}_${seenAt}`;
+    }
+
+    const { body } = await this.request.send({
+      url: '/api/v1/media/seen/',
+      method: 'POST',
+      form: this.request.sign({
+        _csrftoken: this.state.cookieCsrfToken,
+        _uid: this.state.cookieUserId,
+        _uuid: this.state.uuid,
+        reels
+      })
+    });
+    return body;
+  }
 }
