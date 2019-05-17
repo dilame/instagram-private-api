@@ -6,10 +6,13 @@ export class MediaCommentsFeed extends Feed<MediaCommentsFeedResponse, MediaComm
   id: string;
   @Expose()
   private nextMaxId: string;
+  @Expose()
+  private nextMinId: string;
 
   set state(body: MediaCommentsFeedResponse) {
     this.moreAvailable = !!body.next_max_id;
     this.nextMaxId = body.next_max_id;
+    this.nextMinId = body.next_min_id;
   }
 
   async request() {
@@ -18,6 +21,7 @@ export class MediaCommentsFeed extends Feed<MediaCommentsFeedResponse, MediaComm
       qs: {
         can_support_threading: true,
         max_id: this.nextMaxId,
+        min_id: this.nextMinId,
       },
     });
     this.state = body;
