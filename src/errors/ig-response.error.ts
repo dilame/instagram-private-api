@@ -1,6 +1,6 @@
 import { IgClientError } from './ig-client.error';
-import { IgResponse } from '../types/ig-response';
 import { Enumerable } from '../decorators';
+import { IgResponse } from '../types/common.types';
 
 export class IgResponseError<TBody extends { [x: string]: any } = any> extends IgClientError {
   @Enumerable(false)

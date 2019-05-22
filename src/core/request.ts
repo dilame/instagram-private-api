@@ -15,8 +15,8 @@ import {
   IgResponseError,
   IgSentryBlockError,
 } from '../errors';
-import { IgResponse } from '../types/ig-response';
 import JSONbigInt = require('json-bigint');
+import { IgResponse } from '../types/common.types';
 
 const JSONbigString = JSONbigInt({ storeAsString: true });
 

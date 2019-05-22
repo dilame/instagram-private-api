@@ -8,8 +8,8 @@ import {
 } from '../responses';
 import { IgLoginBadPasswordError, IgLoginInvalidUserError, IgResponseError } from '../errors';
 import { AccountEditProfileOptions } from '../types/account.edit-profile.options';
-import { IgResponse } from '../types/ig-response';
 import Bluebird = require('bluebird');
+import { IgResponse } from '../types/common.types';
 
 export class AccountRepository extends Repository {
   public async login(username: string, password: string): Promise<AccountRepositoryLoginResponseLogged_in_user> {

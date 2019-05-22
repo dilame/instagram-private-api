@@ -6,24 +6,27 @@ import {
   DirectThreadFeed,
   LocationFeed,
   MediaCommentsFeed,
+  ReelsMediaFeed,
+  SavedFeed,
   TagFeed,
   TimelineFeed,
   UserFeed,
-  SavedFeed,
 } from '../feeds';
 import { DirectInboxFeedResponseThreadsItem } from '../responses';
 import { TimelineFeedReason } from '../types/timeline-feed.types';
+import { IgAppModule } from '../types/common.types';
+import { plainToClassFromExist } from 'class-transformer';
 
 export class FeedFactory {
   constructor(private client: IgApiClient) {}
-  public accountFollowers(id: string | number): AccountFollowersFeed {
+  public accountFollowers(id?: string | number): AccountFollowersFeed {
     const feed = new AccountFollowersFeed(this.client);
-    feed.id = id;
+    feed.id = id || this.client.state.cookieUserId;
     return feed;
   }
-  public accountFollowing(id: string | number): AccountFollowingFeed {
+  public accountFollowing(id?: string | number): AccountFollowingFeed {
     const feed = new AccountFollowingFeed(this.client);
-    feed.id = id;
+    feed.id = id || this.client.state.cookieUserId;
     return feed;
   }
   public directInbox(): DirectInboxFeed {
@@ -59,6 +62,10 @@ export class FeedFactory {
     const feed = new MediaCommentsFeed(this.client);
     feed.id = id;
     return feed;
+  }
+
+  public reelsMedia(options: { userIds: Array<number | string>; source?: IgAppModule }): ReelsMediaFeed {
+    return plainToClassFromExist(new ReelsMediaFeed(this.client), options);
   }
 
   public timeline(reason?: TimelineFeedReason): TimelineFeed {
