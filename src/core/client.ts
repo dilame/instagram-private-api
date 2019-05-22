@@ -6,7 +6,6 @@ import { MediaRepository } from '../repositories/media.repository';
 import { ChallengeRepository } from '../repositories/challenge.repository';
 import { FriendshipRepository } from '../repositories/friendship.repository';
 import { UploadRepository } from '../repositories/upload.repository';
-import { StoryRepository } from '../repositories/story.repository';
 import { PublishService } from '../services/publish.service';
 import { DirectThreadRepository } from '../repositories/direct-thread.repository';
 import { EntityFactory } from './entity.factory';
@@ -26,6 +25,7 @@ import { ConsentRepository } from '../repositories/consent.repository';
 import { UserRepository } from '../repositories/user.repository';
 import { TagRepository } from '../repositories/tag.repository';
 import { SearchService } from '../services/search.service';
+import { StoryService } from '../services/story.service';
 
 export class IgApiClient {
   public state = new State();
@@ -51,11 +51,11 @@ export class IgApiClient {
   public qp = new QpRepository(this);
   public tag = new TagRepository(this);
   public upload = new UploadRepository(this);
-  public story = new StoryRepository(this);
   public user = new UserRepository(this);
   public zr = new ZrRepository(this);
   /* Services */
   public publish = new PublishService(this);
   public search = new SearchService(this);
   public simulate = new SimulateService(this);
+  public story = new StoryService(this);
 }

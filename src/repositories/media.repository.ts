@@ -3,14 +3,15 @@ import { DateTime } from 'luxon';
 import { Repository } from '../core/repository';
 import { LikeRequestOptions, MediaLikeOrUnlikeOptions, UnlikeRequestOptions } from '../types/media.like.options';
 import {
+  MediaInfoResponseRootObject,
   MediaRepositoryBlockedResponse,
   MediaRepositoryCommentResponse,
   MediaRepositoryLikersResponseRootObject,
-  MediaInfoResponseRootObject,
 } from '../responses';
 import { MediaConfigureOptions } from '../types/media.configure.options';
-import Chance = require('chance');
 import { MediaRepositoryCommentResponseRootObject } from '../responses/media.repository.configure.response';
+import Chance = require('chance');
+import { IgAppModule } from '../types/common.types';
 
 export class MediaRepository extends Repository {
   public async info(mediaId: string): Promise<MediaInfoResponseRootObject> {
@@ -181,6 +182,37 @@ export class MediaRepository extends Repository {
       url: '/api/v1/media/configure/',
       method: 'POST',
       form: this.client.request.sign(form),
+    });
+    return body;
+  }
+
+  async seen(
+    reels: {
+      [item: string]: [string];
+    },
+    module: IgAppModule = 'feed_timeline',
+  ): Promise<{ status: string }> {
+    const { body } = await this.client.request.send<{ status: string }>({
+      url: `/api/v2/media/seen/`,
+      method: 'POST',
+      qs: {
+        reel: 1,
+        live_vod: 0,
+      },
+      // TODO: gzip
+      form: this.client.request.sign({
+        reels,
+        container_module: module,
+        reel_media_skipped: [],
+        live_vods: [],
+        live_vods_skipped: [],
+        nuxes: [],
+        nuxes_skipped: [],
+        _uuid: this.client.state.uuid,
+        _uid: this.client.state.cookieUserId,
+        _csrftoken: this.client.state.cookieCsrfToken,
+        device_id: this.client.state.deviceId,
+      }),
     });
     return body;
   }

@@ -4,6 +4,7 @@ export * from './direct-inbox.feed';
 export * from './direct-thread.feed';
 export * from './location.feed';
 export * from './media-comments.feed';
+export * from './reels-media.feed';
 export * from './tag.feed';
 export * from './user.feed';
 export * from './timeline.feed';

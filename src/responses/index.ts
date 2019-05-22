@@ -19,6 +19,7 @@ export * from './media.repository.blocked.response';
 export * from './media.repository.comment.response';
 export * from './media.repository.likers.response';
 export * from './media-comments.feed.response';
+export * from './reels-media.feed.response';
 export * from './spam.response';
 export * from './tag.feed.response';
 export * from './tag.repository.search.response';

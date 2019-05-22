@@ -1,11 +1,11 @@
-export interface StoryRepositoryResponseRootObject {
-  reels: StoryRepositoryResponseReels;
+export interface ReelsMediaFeedResponseRootObject {
+  reels: ReelsMediaFeedResponseReels;
   status: string;
 }
-export interface StoryRepositoryResponseReels {
-  [pk: string]: StoryRepositoryResponse;
+export interface ReelsMediaFeedResponseReels {
+  [pk: string]: ReelsMediaFeedResponse;
 }
-export interface StoryRepositoryResponse {
+export interface ReelsMediaFeedResponse {
   id: number;
   latest_reel_media: number;
   expiring_at: number;
@@ -13,29 +13,29 @@ export interface StoryRepositoryResponse {
   can_reply: boolean;
   can_reshare: boolean;
   reel_type: string;
-  user: StoryRepositoryResponseUser;
-  items: StoryRepositoryResponseItem[];
+  user: ReelsMediaFeedResponseUser;
+  items: ReelsMediaFeedResponseItem[];
   prefetch_count: number;
   media_count: number;
 }
-export interface StoryRepositoryResponseUser {
+export interface ReelsMediaFeedResponseUser {
   pk: number;
   username?: string;
   full_name?: string;
   is_private?: boolean;
   profile_pic_url?: string;
   profile_pic_id?: string;
-  friendship_status?: StoryRepositoryResponseFriendshipStatus;
+  friendship_status?: ReelsMediaFeedResponseFriendshipStatus;
   is_verified?: boolean;
 }
-export interface StoryRepositoryResponseFriendshipStatus {
+export interface ReelsMediaFeedResponseFriendshipStatus {
   following: boolean;
   is_private: boolean;
   incoming_request: boolean;
   outgoing_request: boolean;
   is_bestie: boolean;
 }
-export interface StoryRepositoryResponseItem {
+export interface ReelsMediaFeedResponseItem {
   taken_at: number;
   pk: string;
   id: string;
@@ -44,7 +44,7 @@ export interface StoryRepositoryResponseItem {
   code: string;
   client_cache_key: string;
   filter_type: number;
-  image_versions2: StoryRepositoryResponseImageVersions2;
+  image_versions2: ReelsMediaFeedResponseImageVersions2;
   original_width: number;
   original_height: number;
   caption_position: number;
@@ -53,10 +53,10 @@ export interface StoryRepositoryResponseItem {
   video_dash_manifest: string;
   video_codec: string;
   number_of_qualities: number;
-  video_versions: StoryRepositoryResponseVideoVersionsItem[];
+  video_versions: ReelsMediaFeedResponseVideoVersionsItem[];
   has_audio: boolean;
   video_duration: number;
-  user: StoryRepositoryResponseUser;
+  user: ReelsMediaFeedResponseUser;
   caption_is_edited: boolean;
   photo_of_you: boolean;
   caption: null;
@@ -65,31 +65,31 @@ export interface StoryRepositoryResponseItem {
   expiring_at: number;
   can_reshare: boolean;
   can_reply: boolean;
-  reel_mentions?: StoryRepositoryResponseReelMentionsItem[];
+  reel_mentions?: ReelsMediaFeedResponseReelMentionsItem[];
   supports_reel_reactions: boolean;
   show_one_tap_fb_share_tooltip: boolean;
   has_shared_to_fb: number;
   ad_action?: string;
   link_text?: string;
-  story_cta?: StoryRepositoryResponseStoryCtaItem[];
+  story_cta?: ReelsMediaFeedResponseStoryCtaItem[];
   imported_taken_at?: number;
 }
-export interface StoryRepositoryResponseImageVersions2 {
-  candidates: StoryRepositoryResponseCandidatesItem[];
+export interface ReelsMediaFeedResponseImageVersions2 {
+  candidates: ReelsMediaFeedResponseCandidatesItem[];
 }
-export interface StoryRepositoryResponseCandidatesItem {
+export interface ReelsMediaFeedResponseCandidatesItem {
   width: number;
   height: number;
   url: string;
 }
-export interface StoryRepositoryResponseVideoVersionsItem {
+export interface ReelsMediaFeedResponseVideoVersionsItem {
   type: number;
   width: number;
   height: number;
   url: string;
   id: string;
 }
-export interface StoryRepositoryResponseReelMentionsItem {
+export interface ReelsMediaFeedResponseReelMentionsItem {
   x: string;
   y: string;
   z: number;
@@ -98,12 +98,12 @@ export interface StoryRepositoryResponseReelMentionsItem {
   rotation: number;
   is_pinned: number;
   is_hidden: number;
-  user: StoryRepositoryResponseUser;
+  user: ReelsMediaFeedResponseUser;
 }
-export interface StoryRepositoryResponseStoryCtaItem {
-  links: StoryRepositoryResponseLinksItem[];
+export interface ReelsMediaFeedResponseStoryCtaItem {
+  links: ReelsMediaFeedResponseLinksItem[];
 }
-export interface StoryRepositoryResponseLinksItem {
+export interface ReelsMediaFeedResponseLinksItem {
   linkType: number;
   webUri: string;
   androidClass: string;
