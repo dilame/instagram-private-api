@@ -60,6 +60,8 @@ export class State {
   challenge: ChallengeStateResponse | null = null;
   clientSessionIdLifetime: number = 1200000;
   pigeonSessionIdLifetime: number = 1200000;
+  clientSessionIdSalt: string = `${Date.now()}`;
+  pigeonSessionIdSalt: string = `${Date.now()}`;
 
   /**
    * The current application session ID.
@@ -70,11 +72,11 @@ export class State {
    * We will update it once an hour
    */
   public get clientSessionId(): string {
-    return this.generateTemporaryGuid('clientSessionId', this.clientSessionIdLifetime);
+    return this.generateSaltyGuid('clientSessionId', this.clientSessionIdSalt);
   }
 
   public get pigeonSessionId(): string {
-    return this.generateTemporaryGuid('pigeonSessionId', this.pigeonSessionIdLifetime);
+    return this.generateSaltyGuid('pigeonSessionId', this.pigeonSessionIdSalt);
   }
 
   public get appUserAgent() {
@@ -186,7 +188,7 @@ export class State {
     this.build = chance.pickone(builds);
   }
 
-  private generateTemporaryGuid(seed: string, lifetime: number) {
-    return new Chance(`${seed}${this.deviceId}${Math.round(Date.now() / lifetime)}`).guid();
+  private generateSaltyGuid(seed: string, salt: string) {
+    return new Chance(`${seed}${this.deviceId}${salt}`).guid();
   }
 }
