@@ -14,6 +14,7 @@ import {
   IgPrivateUserError,
   IgResponseError,
   IgSentryBlockError,
+  IgRequestsLimitError,
 } from '../errors';
 import JSONbigInt = require('json-bigint');
 import { IgResponse } from '../types/common.types';
@@ -108,6 +109,9 @@ export class Request {
     if (response.statusCode === 404) {
       return new IgNotFoundError(response);
     }
+    if (response.statusCode === 429) {
+      return new IgRequestsLimitError();
+    }
     if (typeof json.message === 'string') {
       if (json.message === 'challenge_required') {
         this.client.state.checkpoint = json;
@@ -118,6 +122,12 @@ export class Request {
       }
       if (json.message.toLowerCase() === 'not authorized to view user') {
         return new IgPrivateUserError(response);
+      }
+      if (json.message.toLowerCase().includes('too many requests')) {
+        return new IgRequestsLimitError();
+      }
+      if (json.message === 'Please wait a few minutes before you try again.') {
+        return new IgRequestsLimitError();
       }
     }
     if (json.error_type === 'sentry_block') {
