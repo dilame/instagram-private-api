@@ -100,7 +100,7 @@ export class ChallengeRepository extends Repository {
         }),
       })
       .catch((error: IgResponseError) => {
-        if (error.response.statusCode === 400 && error.response.body.status === 'fail') {
+        if (error.response && error.response.statusCode === 400 && error.response.body.status === 'fail') {
           throw new IgChallengeWrongCodeError(error.response.body.message);
         }
         throw error;
