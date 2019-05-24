@@ -13,6 +13,7 @@ export interface MediaCommentsFeedResponse {
   quick_response_emojis: MediaCommentsFeedResponseQuickResponseEmojisItem[];
   preview_comments: MediaCommentsFeedResponsePreviewCommentsItem[];
   can_view_more_preview_comments: boolean;
+  next_max_id: string;
   next_min_id: string;
   status: string;
 }
