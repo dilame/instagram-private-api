@@ -65,6 +65,10 @@ export interface UserRepositoryInfoResponseUser {
   auto_expand_chaining: boolean;
   highlight_reshare_disabled: boolean;
   public_email?: string;
+  address_street?: string;
+  category?: string;
+  contact_phone_number?: string;
+  public_phone_country_code?: string;
 }
 export interface UserRepositoryInfoResponseBiography_with_entities {
   raw_text: string;
