@@ -64,6 +64,7 @@ export interface UserRepositoryInfoResponseUser {
   nametag: UserRepositoryInfoResponseNametag;
   auto_expand_chaining: boolean;
   highlight_reshare_disabled: boolean;
+  public_email?: string;
 }
 export interface UserRepositoryInfoResponseBiography_with_entities {
   raw_text: string;
