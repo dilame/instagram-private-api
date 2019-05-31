@@ -2,7 +2,6 @@ export * from './account.repository.current-user.response';
 export * from './account.repository.login.error.response';
 export * from './account.repository.login.response';
 export * from './account-followers.feed.response';
-export * from './account-friendships.feed.response';
 export * from './account-following.feed.response';
 export * from './challenge.state.response';
 export * from './checkpoint.response';

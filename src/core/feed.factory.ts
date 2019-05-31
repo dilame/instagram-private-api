@@ -2,7 +2,6 @@ import { IgApiClient } from './client';
 import {
   AccountFollowersFeed,
   AccountFollowingFeed,
-  AccountFriendshipsFeed,
   DirectInboxFeed,
   DirectThreadFeed,
   LocationFeed,
@@ -27,11 +26,6 @@ export class FeedFactory {
   }
   public accountFollowing(id?: string | number): AccountFollowingFeed {
     const feed = new AccountFollowingFeed(this.client);
-    feed.id = id || this.client.state.cookieUserId;
-    return feed;
-  }
-  public accountPendingFriendships(id?: string | number): AccountFriendshipsFeed {
-    const feed = new AccountFriendshipsFeed(this.client);
     feed.id = id || this.client.state.cookieUserId;
     return feed;
   }
