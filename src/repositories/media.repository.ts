@@ -31,8 +31,8 @@ export class MediaRepository extends Repository {
   
   public async editCaption({ 
     mediaId, 
-    captionText
-  }: : {
+    captionText,
+  }: {
     mediaId: string;
     captionText: string;
   }) {
