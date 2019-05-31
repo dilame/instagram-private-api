@@ -28,6 +28,28 @@ export class MediaRepository extends Repository {
     });
     return body;
   }
+  
+  public async editCaption({ 
+    mediaId, 
+    captionText
+  }: : {
+    mediaId: string;
+    captionText: string;
+  }) {
+    const { body } = await this.client.request.send({
+     url: `/api/v1/media/${mediaId}/edit_media/`,
+     method: 'POST',
+     form: this.client.request.sign({
+       igtv_feed_preview: false,
+       media_id: mediaId,
+       _csrftoken: this.client.state.cookieCsrfToken,
+       _uid: this.client.state.cookieUserId,
+       _uuid: this.client.state.uuid,
+       caption_text: captionText,
+     }),
+    });
+    return body;
+  }
 
   public async delete({
     mediaId,
