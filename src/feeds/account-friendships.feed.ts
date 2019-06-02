@@ -1,22 +1,21 @@
 import { Expose, plainToClassFromExist } from 'class-transformer';
 import { Feed } from '../core/feed';
-import { AccountFriendshipsFeedResponse, AccountFriendshipsFeedResponseUsersItem } from '../responses';
+import { PendingFriendshipsFeedResponse, PendingFriendshipsFeedResponseUsersItem } from '../responses';
 
-export class AccountFriendshipsFeed extends Feed<
-  AccountFriendshipsFeedResponse,
-  AccountFriendshipsFeedResponseUsersItem
+export class PendingFriendshipsFeed extends Feed<
+  PendingFriendshipsFeedResponse,
+  PendingFriendshipsFeedResponseUsersItem
 > {
-  id: number | string;
   @Expose()
   private nextMaxId: string;
 
-  set state(body: AccountFriendshipsFeedResponse) {
+  set state(body: PendingFriendshipsFeedResponse) {
     this.moreAvailable = !!body.next_max_id;
     this.nextMaxId = body.next_max_id;
   }
 
   async request() {
-    const { body } = await this.client.request.send<AccountFriendshipsFeedResponse>({
+    const { body } = await this.client.request.send<PendingFriendshipsFeedResponse>({
       url: `/api/v1/friendships/pending`,
       qs: {
         rank_token: this.rankToken,
@@ -30,7 +29,7 @@ export class AccountFriendshipsFeed extends Feed<
   async items() {
     const body = await this.request();
     return body.users.map(user =>
-      plainToClassFromExist(new AccountFriendshipsFeedResponseUsersItem(this.client), user),
+      plainToClassFromExist(new PendingFriendshipsFeedResponseUsersItem(this.client), user),
     );
   }
 }

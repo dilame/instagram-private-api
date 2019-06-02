@@ -1,14 +1,14 @@
 import { ProfileEntity } from '../entities/profile.entity';
 
-export interface AccountFriendshipsFeedResponse {
+export interface PendingFriendshipsFeedResponse {
   sections: null;
-  users: AccountFriendshipsFeedResponseUsersItem[];
+  users: PendingFriendshipsFeedResponseUsersItem[];
   big_list: boolean;
   next_max_id: null;
   page_size: number;
   status: string;
 }
-export class AccountFriendshipsFeedResponseUsersItem extends ProfileEntity {
+export class PendingFriendshipsFeedResponseUsersItem extends ProfileEntity {
   pk: number;
   username: string;
   full_name: string;
