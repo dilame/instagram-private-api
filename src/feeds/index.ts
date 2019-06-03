@@ -2,7 +2,7 @@ export * from './account-followers.feed';
 export * from './account-following.feed';
 export * from './account-friendships.feed';
 export * from './blocked-users.feed';
-export * from './account-news.feed';
+export * from './news.feed';
 export * from './account-discover.feed';
 export * from './direct-inbox.feed';
 export * from './direct-thread.feed';
