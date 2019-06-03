@@ -24,6 +24,7 @@ import { DiscoverRepository } from '../repositories/discover.repository';
 import { ConsentRepository } from '../repositories/consent.repository';
 import { UserRepository } from '../repositories/user.repository';
 import { TagRepository } from '../repositories/tag.repository';
+import { SavedRepository } from '../repositories/saved.repository';
 import { SearchService } from '../services/search.service';
 import { StoryService } from '../services/story.service';
 
@@ -49,6 +50,7 @@ export class IgApiClient {
   public media = new MediaRepository(this);
   public qe = new QeRepository(this);
   public qp = new QpRepository(this);
+  public saved = new SavedRepository(this);
   public tag = new TagRepository(this);
   public upload = new UploadRepository(this);
   public user = new UserRepository(this);
