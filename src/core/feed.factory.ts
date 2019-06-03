@@ -33,7 +33,7 @@ export class FeedFactory {
     feed.id = id || this.client.state.cookieUserId;
     return feed;
   }
-  public News(): NewsFeed {
+  public news(): NewsFeed {
     const feed = new NewsFeed(this.client);
     return feed;
   }
