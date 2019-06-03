@@ -3,6 +3,9 @@ import {
   AccountFollowersFeed,
   AccountFollowingFeed,
   PendingFriendshipsFeed,
+  BlockedUsersFeed,
+  AccountNewsFeed,
+  AccountDiscoverFeed,
   DirectInboxFeed,
   DirectThreadFeed,
   LocationFeed,
@@ -30,8 +33,20 @@ export class FeedFactory {
     feed.id = id || this.client.state.cookieUserId;
     return feed;
   }
+  public accountNews(): AccountNewsFeed {
+    const feed = new AccountNewsFeed(this.client);
+    return feed;
+  }
+  public accountDiscover(): AccountDiscoverFeed {
+    const feed = new AccountDiscoverFeed(this.client);
+    return feed;
+  }
   public pendingFriendships(): PendingFriendshipsFeed {
     const feed = new PendingFriendshipsFeed(this.client);
+    return feed;
+  }
+  public blockedUsers(): BlockedUsersFeed {
+    const feed = new BlockedUsersFeed(this.client);
     return feed;
   }
   public directInbox(): DirectInboxFeed {

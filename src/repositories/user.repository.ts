@@ -42,6 +42,42 @@ export class UserRepository extends Repository {
     if (!account) throw new IgExactUserNotFoundError();
     return account;
   }
+  async getBusinessDetails(id?: string | number) {
+    id = id || this.client.state.cookieUserId;
+    const { body } = await this.client.request.send({
+      url: `/api/v1/users/${id}/account_details/`,
+    });
+    return body;
+  }
+  async formerUsernames(id?: string | number) {
+    id = id || this.client.state.cookieUserId;
+    const { body } = await this.client.request.send({
+      url: `/api/v1/users/${id}/former_usernames/`,
+    });
+    return body;
+  }
+  async sharedFollowers(id: string | number) {
+    const { body } = await this.client.request.send({
+      url: `/api/v1/users/${id}/shared_follower_accounts/`,
+    });
+    return body;
+  }
+  async report(id: string | number) {
+    const { body } = await this.client.request.send({
+      url: `/api/v1/users/${id}/flag_user/`,
+      method: 'POST',
+      form: {
+        _csrftoken: this.client.state.cookieCsrfToken,
+        _uid: this.client.state.cookieUserId,
+        _uuid: this.client.state.uuid,
+        reason_id: 1,
+        user_id: id,
+        source_name: 'profile',
+        is_spam: true,
+      },
+    });
+    return body;
+  }
   async getIdByUsername(username: string): Promise<number> {
     const user = await this.searchExact(username);
     return user.pk;
