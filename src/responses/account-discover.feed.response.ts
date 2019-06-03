@@ -1,3 +1,5 @@
+import { ProfileEntity } from '../entities/profile.entity';
+
 export interface AccountDiscoverFeedResponseRootObject {
   more_available: boolean;
   max_id: string;
@@ -24,7 +26,7 @@ export interface AccountDiscoverFeedResponseSuggestionsItem {
   is_new_suggestion: boolean;
   uuid: string;
 }
-export interface AccountDiscoverFeedResponseUser {
+export class AccountDiscoverFeedResponseUser extends ProfileEntity {
   pk: string;
   username: string;
   full_name: string;
