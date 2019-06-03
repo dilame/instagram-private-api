@@ -1,18 +1,21 @@
 import { Expose, plainToClassFromExist } from 'class-transformer';
 import { Feed } from '../core/feed';
-import { BlockedUsersFeedResponse, BlockedUsersFeedResponseUsersItem } from '../responses';
+import { BlockedUsersFeedResponseRootObject, BlockedUsersFeedResponseBlockedListItem } from '../responses';
 
-export class BlockedUsersFeed extends Feed<BlockedUsersFeedResponse, BlockedUsersFeedResponseUsersItem> {
+export class BlockedUsersFeed extends Feed<
+  BlockedUsersFeedResponseRootObject,
+  BlockedUsersFeedResponseBlockedListItem
+> {
   @Expose()
   private nextMaxId: string;
 
-  set state(body: BlockedUsersFeedResponse) {
+  set state(body: BlockedUsersFeedResponseRootObject) {
     this.moreAvailable = !!body.next_max_id;
     this.nextMaxId = body.next_max_id;
   }
 
   async request() {
-    const { body } = await this.client.request.send<BlockedUsersFeedResponse>({
+    const { body } = await this.client.request.send<BlockedUsersFeedResponseRootObject>({
       url: `/api/v1/users/blocked_list/`,
       qs: {
         max_id: this.nextMaxId,
@@ -24,6 +27,8 @@ export class BlockedUsersFeed extends Feed<BlockedUsersFeedResponse, BlockedUser
 
   async items() {
     const body = await this.request();
-    return body.users.map(user => plainToClassFromExist(new BlockedUsersFeedResponseUsersItem(this.client), user));
+    return body.blocked_list.map(user =>
+      plainToClassFromExist(new BlockedUsersFeedResponseBlockedListItem(this.client), user),
+    );
   }
 }
