@@ -1,21 +1,20 @@
 import { Expose, plainToClassFromExist } from 'class-transformer';
 import { Feed } from '../core/feed';
-import { AccountNewsFeedResponse, AccountNewsFeedResponseUsersItem } from '../responses';
+import { NewsFeedResponse, NewsFeedResponseUsersItem } from '../responses';
 
-export class AccountNewsFeed extends Feed<AccountNewsFeedResponse, AccountNewsFeedResponseUsersItem> {
+export class NewsFeed extends Feed<NewsFeedResponse, NewsFeedResponseUsersItem> {
   @Expose()
   private nextMaxId: string;
 
-  set state(body: AccountNewsFeedResponse) {
+  set state(body: NewsFeedResponse) {
     this.moreAvailable = !!body.next_max_id;
     this.nextMaxId = body.next_max_id;
   }
 
   async request() {
-    const { body } = await this.client.request.send<AccountNewsFeedResponse>({
+    const { body } = await this.client.request.send<NewsFeedResponse>({
       url: `/api/v1/news`,
       qs: {
-        rank_token: this.rankToken,
         max_id: this.nextMaxId,
       },
     });
@@ -25,6 +24,6 @@ export class AccountNewsFeed extends Feed<AccountNewsFeedResponse, AccountNewsFe
 
   async items() {
     const body = await this.request();
-    return body.users.map(user => plainToClassFromExist(new AccountNewsFeedResponseUsersItem(this.client), user));
+    return body.users.map(user => plainToClassFromExist(new NewsFeedResponseUsersItem(this.client), user));
   }
 }

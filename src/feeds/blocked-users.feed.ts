@@ -15,7 +15,6 @@ export class BlockedUsersFeed extends Feed<BlockedUsersFeedResponse, BlockedUser
     const { body } = await this.client.request.send<BlockedUsersFeedResponse>({
       url: `/api/v1/users/blocked_list/`,
       qs: {
-        rank_token: this.rankToken,
         max_id: this.nextMaxId,
       },
     });

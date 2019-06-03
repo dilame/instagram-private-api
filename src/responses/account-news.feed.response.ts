@@ -1,14 +1,14 @@
 import { ProfileEntity } from '../entities/profile.entity';
 
-export interface AccountNewsFeedResponse {
+export interface NewsFeedResponse {
   sections: null;
-  users: AccountNewsFeedResponseUsersItem[];
+  users: NewsFeedResponseUsersItem[];
   big_list: boolean;
   next_max_id: null;
   page_size: number;
   status: string;
 }
-export class AccountNewsFeedResponseUsersItem extends ProfileEntity {
+export class NewsFeedResponseUsersItem extends ProfileEntity {
   pk: number;
   username: string;
   full_name: string;

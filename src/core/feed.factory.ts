@@ -4,7 +4,7 @@ import {
   AccountFollowingFeed,
   PendingFriendshipsFeed,
   BlockedUsersFeed,
-  AccountNewsFeed,
+  NewsFeed,
   AccountDiscoverFeed,
   DirectInboxFeed,
   DirectThreadFeed,
@@ -33,8 +33,8 @@ export class FeedFactory {
     feed.id = id || this.client.state.cookieUserId;
     return feed;
   }
-  public accountNews(): AccountNewsFeed {
-    const feed = new AccountNewsFeed(this.client);
+  public News(): NewsFeed {
+    const feed = new NewsFeed(this.client);
     return feed;
   }
   public accountDiscover(): AccountDiscoverFeed {
