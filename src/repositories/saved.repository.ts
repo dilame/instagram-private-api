@@ -13,11 +13,12 @@ export class SavedRepository extends Repository {
   }
 
   async unsave(id: string) {
-    await this.client.request.send({
+    const { body } = await this.client.request.send({
         url: '/api/v1/feed/unsave/',
         method: 'POST',
         qs: {
             id,
         },
     });
+  return body
 }
