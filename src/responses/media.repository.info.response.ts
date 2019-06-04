@@ -79,3 +79,7 @@ export interface MediaInfoResponseCaption {
   share_enabled: boolean;
   media_id: string;
 }
+export interface MediaEditResponseRootObject {
+  media: MediaInfoResponseItemsItem;
+  status: string;
+}
