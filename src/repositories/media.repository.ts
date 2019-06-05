@@ -239,4 +239,21 @@ export class MediaRepository extends Repository {
     });
     return body;
   }
+
+  // tip: id = savedFeed.items()[0].media.id
+  public async save(mediaId: string) {
+    const { body } = await this.client.request.send({
+      url: `/api/v1/media/${mediaId}/save/`,
+      method: 'POST',
+    });
+    return body;
+  }
+
+  async unsave(mediaId: string) {
+    const { body } = await this.client.request.send({
+      url: `/api/v1/media/${mediaId}/unsave/`,
+      method: 'POST',
+    });
+    return body;
+  }
 }
