@@ -1,18 +1,18 @@
 import { Expose, plainToClassFromExist } from 'class-transformer';
 import { Feed } from '../core/feed';
-import { AccountDiscoverFeedResponseRootObject, AccountDiscoverFeedResponseUser } from '../responses';
+import { DiscoverFeedResponseRootObject, DiscoverFeedResponseUser } from '../responses';
 
-export class AccountDiscoverFeed extends Feed<AccountDiscoverFeedResponseRootObject, AccountDiscoverFeedResponseUser> {
+export class DiscoverFeed extends Feed<DiscoverFeedResponseRootObject, DiscoverFeedResponseUser> {
   @Expose()
   private nextMaxId: string;
 
-  set state(body: AccountDiscoverFeedResponseRootObject) {
+  set state(body: DiscoverFeedResponseRootObject) {
     this.moreAvailable = !!body.next_max_id;
     this.nextMaxId = body.next_max_id;
   }
 
   async request() {
-    const { body } = await this.client.request.send<AccountDiscoverFeedResponseRootObject>({
+    const { body } = await this.client.request.send<DiscoverFeedResponseRootObject>({
       url: `/api/v1/discover/ayml/`,
       method: 'POST',
       form: {
@@ -31,7 +31,7 @@ export class AccountDiscoverFeed extends Feed<AccountDiscoverFeedResponseRootObj
   async items() {
     const body = await this.request();
     return body.suggested_users.suggestions.map(user =>
-      plainToClassFromExist(new AccountDiscoverFeedResponseUser(this.client), user),
+      plainToClassFromExist(new DiscoverFeedResponseUser(this.client), user),
     );
   }
 }

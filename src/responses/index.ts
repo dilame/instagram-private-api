@@ -4,7 +4,7 @@ export * from './account.repository.login.response';
 export * from './account-followers.feed.response';
 export * from './blocked-users.feed.response';
 export * from './news.feed.response';
-export * from './account-discover.feed.response';
+export * from './discover.feed.response';
 export * from './account-friendships.feed.response';
 export * from './account-following.feed.response';
 export * from './challenge.state.response';

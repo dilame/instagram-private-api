@@ -2,14 +2,14 @@ import { IgApiClient } from './client';
 import {
   AccountFollowersFeed,
   AccountFollowingFeed,
-  PendingFriendshipsFeed,
   BlockedUsersFeed,
-  NewsFeed,
-  AccountDiscoverFeed,
   DirectInboxFeed,
   DirectThreadFeed,
+  DiscoverFeed,
   LocationFeed,
   MediaCommentsFeed,
+  NewsFeed,
+  PendingFriendshipsFeed,
   ReelsMediaFeed,
   SavedFeed,
   TagFeed,
@@ -34,20 +34,16 @@ export class FeedFactory {
     return feed;
   }
   public news(): NewsFeed {
-    const feed = new NewsFeed(this.client);
-    return feed;
+    return new NewsFeed(this.client);
   }
-  public accountDiscover(): AccountDiscoverFeed {
-    const feed = new AccountDiscoverFeed(this.client);
-    return feed;
+  public discover(): DiscoverFeed {
+    return new DiscoverFeed(this.client);
   }
   public pendingFriendships(): PendingFriendshipsFeed {
-    const feed = new PendingFriendshipsFeed(this.client);
-    return feed;
+    return new PendingFriendshipsFeed(this.client);
   }
   public blockedUsers(): BlockedUsersFeed {
-    const feed = new BlockedUsersFeed(this.client);
-    return feed;
+    return new BlockedUsersFeed(this.client);
   }
   public directInbox(): DirectInboxFeed {
     return new DirectInboxFeed(this.client);
