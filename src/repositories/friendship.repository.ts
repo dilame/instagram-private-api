@@ -17,6 +17,18 @@ export class FriendshipRepository extends Repository {
     return this.change('destroy', id, mediaIdAttribution);
   }
 
+  async approve(id: string | number, mediaIdAttribution?: string) {
+    return this.change('approve', id, mediaIdAttribution);
+  }
+
+  async deny(id: string | number, mediaIdAttribution?: string) {
+    return this.change('ignore', id, mediaIdAttribution);
+  }
+
+  async removeFollower(id: string | number) {
+    return this.change('remove_follower', id);
+  }
+
   private async change(action: string, id: string | number, mediaIdAttribution?: string) {
     const { body } = await this.client.request.send<FriendshipRepositoryChangeResponseRootObject>({
       url: `/api/v1/friendships/${action}/${id}/`,

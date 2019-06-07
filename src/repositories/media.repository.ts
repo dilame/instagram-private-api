@@ -3,6 +3,7 @@ import { DateTime } from 'luxon';
 import { Repository } from '../core/repository';
 import { LikeRequestOptions, MediaLikeOrUnlikeOptions, UnlikeRequestOptions } from '../types/media.like.options';
 import {
+  MediaEditResponseRootObject,
   MediaInfoResponseRootObject,
   MediaRepositoryBlockedResponse,
   MediaRepositoryCommentResponse,
@@ -24,6 +25,28 @@ export class MediaRepository extends Repository {
         _csrftoken: this.client.state.cookieCsrfToken,
         _uid: this.client.state.cookieUserId,
         _uuid: this.client.state.uuid,
+      }),
+    });
+    return body;
+  }
+
+  public async editMedia({
+    mediaId,
+    captionText,
+  }: {
+    mediaId: string;
+    captionText: string;
+  }): Promise<MediaEditResponseRootObject> {
+    const { body } = await this.client.request.send({
+      url: `/api/v1/media/${mediaId}/edit_media/`,
+      method: 'POST',
+      form: this.client.request.sign({
+        igtv_feed_preview: false,
+        media_id: mediaId,
+        _csrftoken: this.client.state.cookieCsrfToken,
+        _uid: this.client.state.cookieUserId,
+        _uuid: this.client.state.uuid,
+        caption_text: captionText,
       }),
     });
     return body;
@@ -213,6 +236,23 @@ export class MediaRepository extends Repository {
         _csrftoken: this.client.state.cookieCsrfToken,
         device_id: this.client.state.deviceId,
       }),
+    });
+    return body;
+  }
+
+  // tip: id = savedFeed.items()[0].media.id
+  public async save(mediaId: string) {
+    const { body } = await this.client.request.send({
+      url: `/api/v1/media/${mediaId}/save/`,
+      method: 'POST',
+    });
+    return body;
+  }
+
+  async unsave(mediaId: string) {
+    const { body } = await this.client.request.send({
+      url: `/api/v1/media/${mediaId}/unsave/`,
+      method: 'POST',
     });
     return body;
   }
