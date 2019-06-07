@@ -15,25 +15,30 @@ export class DirectInboxFeed extends Feed<DirectInboxFeedResponse, DirectInboxFe
     this.cursor = body.inbox.oldest_cursor;
   }
 
-  async request() {
+  async request(
+    options = { visual_message_return_type: 'unseen' } /*options: { visual_message_return_type?: string}*/,
+  ) {
     const { body } = await this.client.request.send<DirectInboxFeedResponse>({
       url: `/api/v1/direct_v2/inbox/`,
-      qs: {
-        visual_message_return_type: 'unseen',
-        cursor: this.cursor,
-        direction: this.cursor ? 'older' : void 0,
-        seq_id: this.seqId,
-        thread_message_limit: 10,
-        persistentBadging: true,
-        limit: 20,
-      },
+      qs: Object.assign(
+        {
+          visual_message_return_type: 'unseen',
+          cursor: this.cursor,
+          direction: this.cursor ? 'older' : void 0,
+          seq_id: this.seqId,
+          thread_message_limit: 10,
+          persistentBadging: true,
+          limit: 20,
+        },
+        options,
+      ),
     });
     this.state = body;
     return body;
   }
 
-  async items() {
-    const response = await this.request();
+  async items(options = { visual_message_return_type: 'unseen' }) {
+    const response = await this.request(options);
     return response.inbox.threads;
   }
 
