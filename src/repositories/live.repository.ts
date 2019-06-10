@@ -248,11 +248,6 @@ export class LiveRepository extends Repository {
     return body;
   }
 
-  public getUrlAndKey(info: {upload_url: string, broadcast_id: string}): LiveRtmpSettings {
-    const parts = info.upload_url.split(new RegExp(info.broadcast_id));
-    return { stream_url: parts[0], stream_key: info.broadcast_id + parts[1]};
-  }
-
   public async start(broadcastId: string, sendNotifications: boolean = true): Promise<LiveStartBroadcastResponseRootObject> {
     const { body } = await this.client.request.send<LiveStartBroadcastResponseRootObject>({
       url: `/api/v1/live/${broadcastId}/start/`,
