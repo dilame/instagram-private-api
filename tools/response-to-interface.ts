@@ -39,13 +39,15 @@ async function login() {
     console.log(JSON.stringify(ig.live.getObsSettings(info)));
     await ig.live.startBroadcast(info.broadcast_id, false);
     await ig.live.enableComments(info.broadcast_id);
-    // TODO: await createInterface(ig.live.comment(broadcast_id, 'create interface'), 'live.comment'); / 301-moved
+    // TODO: await createInterface(ig.live.comment(broadcast_id, 'create interface'), 'live.comment'); - 301 moved
+    // TODO: await createInterface(ig.live.unpinComment(info.broadcast_id, comments[0].pk), 'live.unpin-comment'); - 301 moved
+    // TODO: await createInterface(ig.live.createQuestion(info.broadcast_id, 'f'), 'live.create-question'); questions not enabled?!
+    // TODO: await createInterface(ig.live.getLiveQuestions(info.broadcast_id), 'live.live-questions'); - 301 moved
+    // TODO: await createInterface(ig.live.pinComment(info.broadcast_id, comments[0].pk), 'live.pin-comment'); - 301 moved
     setTimeout(async () => {
-      await createInterface(ig.live.getComments(info.broadcast_id), 'live.comments');
-      await ig.live.endBroadcast(info.broadcast_id);
-      await createInterface(ig.live.getFinalViewers(info.broadcast_id), 'live.final-viewers');
-    }, 1 * 60 * 1000);
-  } catch (pogger) {
-    console.error(pogger);
+        await ig.live.endBroadcast(info.broadcast_id);
+    }, 2 * 60 * 1000);
+  } catch (e) {
+    console.error(e);
   }
 })();
