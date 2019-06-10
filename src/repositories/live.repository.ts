@@ -18,7 +18,7 @@ import {
   LiveLikeCountResponseRootObject,
   LiveJoinRequestCountsResponseRootObject,
 } from '../responses';
-import { LiveObsSettings } from 'src/types/live.obs-settings';
+import { LiveRtmpSettings } from 'src/types/live.obs-settings';
 
 export class LiveRepository extends Repository {
 
@@ -248,7 +248,7 @@ export class LiveRepository extends Repository {
     return body;
   }
 
-  public getObsSettings(info: LiveCreateBroadcastResponseRootObject): LiveObsSettings {
+  public getUrlAndKey(info: {upload_url: string, broadcast_id: string}): LiveRtmpSettings {
     const parts = info.upload_url.split(new RegExp(info.broadcast_id));
     return { stream_url: parts[0], stream_key: info.broadcast_id + parts[1]};
   }

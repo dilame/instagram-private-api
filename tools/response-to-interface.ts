@@ -36,7 +36,7 @@ async function login() {
 
   try {
     const info = await ig.live.create({});
-    console.log(JSON.stringify(ig.live.getObsSettings(info)));
+    console.log(JSON.stringify(ig.live.getUrlAndKey(info)));
     await ig.live.start(info.broadcast_id, false);
     await ig.live.unmuteComment(info.broadcast_id);
     // TODO: await createInterface(ig.live.comment(broadcast_id, 'create interface'), 'live.comment'); - 301 moved
