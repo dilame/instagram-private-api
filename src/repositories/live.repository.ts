@@ -1,26 +1,28 @@
 import { Repository } from '../core/repository';
 import Chance = require('chance');
-import { LiveSwitchCommentsResponseRootObject } from '../responses/live.switch-comments.response';
-import { LiveCreateBroadcastResponseRootObject } from '../responses/live.create-broadcast.response';
-import { LiveStartBroadcastResponseRootObject } from '../responses/live.start-broadcast.response';
-import { LiveEndBroadcastResponseRootObject } from '../responses/live.end-broadcast.response';
-import { LiveCommentsResponseRootObject } from '../responses/live.comments.response';
-import { LiveHeartbeatViewerCountResponseRootObject } from '../responses/live.heartbeat-viewer-count.response';
-import { LiveInfoResponseRootObject } from '../responses/live.info.response';
-import { LiveFinalViewersResponseRootObject } from '../responses/live.final-viewers.response';
-import { LiveObsSettings } from '../types/live.obs-settings';
-import { LiveViewerListResponseRootObject } from '../responses/live.viewer-list.response';
-import { LiveShowQuestionResponseRootObject } from '../responses/live.show-question.response';
-import { LiveHideQuestionResponseRootObject } from '../responses/live.hide-question.response';
-import { LiveGetQuestionsResponseRootObject } from '../responses/live.get-questions.response';
-import { LiveWaveResponseRootObject } from '../responses/live.wave.response';
-import { LiveLikeResponseRootObject } from '../responses/live.like.response';
-import { LiveLikeCountResponseRootObject } from '../responses/live.like-count.response';
-import { LiveJoinRequestCountsResponseRootObject } from '../responses/live.join-request-counts.response';
+import {
+  LiveSwitchCommentsResponseRootObject,
+  LiveCreateBroadcastResponseRootObject,
+  LiveStartBroadcastResponseRootObject,
+  LiveEndBroadcastResponseRootObject,
+  LiveCommentsResponseRootObject,
+  LiveHeartbeatViewerCountResponseRootObject,
+  LiveInfoResponseRootObject,
+  LiveFinalViewersResponseRootObject,
+  LiveViewerListResponseRootObject,
+  LiveShowQuestionResponseRootObject,
+  LiveHideQuestionResponseRootObject,
+  LiveGetQuestionsResponseRootObject,
+  LiveWaveResponseRootObject,
+  LiveLikeResponseRootObject,
+  LiveLikeCountResponseRootObject,
+  LiveJoinRequestCountsResponseRootObject,
+} from '../responses';
+import { LiveObsSettings } from 'src/types/live.obs-settings';
 
 export class LiveRepository extends Repository {
 
-  public async disableComments(broadcastId: string): Promise<LiveSwitchCommentsResponseRootObject> {
+  public async muteComment(broadcastId: string): Promise<LiveSwitchCommentsResponseRootObject> {
     const { body } = await this.client.request.send<LiveSwitchCommentsResponseRootObject>({
       url: `/api/v1/live/${broadcastId}/mute_comment/`,
       method: 'POST',
@@ -33,18 +35,27 @@ export class LiveRepository extends Repository {
     return body;
   }
 
-  public async getComments(broadcastId: string, commentsRequested: number = 4, lastCommentTs: string = ''): Promise<LiveCommentsResponseRootObject> {
+  public async getComment({
+    broadcastId,
+    commentsRequested = 4,
+    lastCommentTs = '',
+  }: {
+      broadcastId: string,
+      commentsRequested?: number,
+      lastCommentTs?: string,
+    }): Promise<LiveCommentsResponseRootObject> {
+    const baseUrl = `/api/v1/live/${broadcastId}/get_comment/?num_comments_requested=${commentsRequested}`;
     const { body } = await this.client.request.send<LiveCommentsResponseRootObject>({
       url:
         lastCommentTs === '' ?
-          `/api/v1/live/${broadcastId}/get_comment/?num_comments_requested=${commentsRequested}`
-          : `/api/v1/live/${broadcastId}/get_comment/?last_comment_ts=${lastCommentTs}&num_comments_requested=${commentsRequested}`,
+          baseUrl
+          : baseUrl + `&last_comment_ts=${lastCommentTs}`,
       method: 'GET',
     });
     return body;
   }
 
-  public async getHeartbeatViewerCount(broadcastId: string): Promise<LiveHeartbeatViewerCountResponseRootObject> {
+  public async heartbeatAndGetViewerCount(broadcastId: string): Promise<LiveHeartbeatViewerCountResponseRootObject> {
     const { body } = await this.client.request.send<LiveHeartbeatViewerCountResponseRootObject>({
       url: `/api/v1/live/${broadcastId}/heartbeat_and_get_viewer_count/`,
       form: {
@@ -57,7 +68,7 @@ export class LiveRepository extends Repository {
     return body;
   }
 
-  public async getInfo(broadcastId: string): Promise<LiveInfoResponseRootObject> {
+  public async info(broadcastId: string): Promise<LiveInfoResponseRootObject> {
     const { body } = await this.client.request.send<LiveInfoResponseRootObject>({
       url: `/api/v1/live/${broadcastId}/info/`,
       method: 'GET',
@@ -65,7 +76,7 @@ export class LiveRepository extends Repository {
     return body;
   }
 
-  public async getFinalViewers(broadcastId: string): Promise<LiveFinalViewersResponseRootObject> {
+  public async getFinalViewerList(broadcastId: string): Promise<LiveFinalViewersResponseRootObject> {
     const { body } = await this.client.request.send<LiveFinalViewersResponseRootObject>({
       url: `api/v1/live/${broadcastId}/get_final_viewer_list/`,
       method: 'GET',
@@ -73,7 +84,7 @@ export class LiveRepository extends Repository {
     return body;
   }
 
-  public async enableComments(broadcastId: string): Promise<LiveSwitchCommentsResponseRootObject> {
+  public async unmuteComment(broadcastId: string): Promise<LiveSwitchCommentsResponseRootObject> {
     const { body } = await this.client.request.send<LiveSwitchCommentsResponseRootObject>({
       url: `/api/v1/live/${broadcastId}/unmute_comment/`,
       method: 'POST',
@@ -86,11 +97,15 @@ export class LiveRepository extends Repository {
     return body;
   }
 
-  public async createBroadcast(
-    previewWidth: number = 720,
-    previewHeight: number = 1184,
-    message: string = '',
-  ): Promise<LiveCreateBroadcastResponseRootObject> {
+  public async create({
+    previewHeight = 1184,
+    previewWidth = 720,
+    message = '',
+  }: {
+      previewHeight?: number | string,
+      previewWidth?: number | string,
+      message?: string,
+    }): Promise<LiveCreateBroadcastResponseRootObject> {
     const { body } = await this.client.request.send<LiveCreateBroadcastResponseRootObject>({
       url: '/api/v1/live/create/',
       method: 'POST',
@@ -130,8 +145,8 @@ export class LiveRepository extends Repository {
     return body;
   }
 
-  public async showQuestion(broadcastId: string, questionId: string): Promise<LiveShowQuestionResponseRootObject> {
-    // TODO: not working on client
+  public async activateQuestion(broadcastId: string, questionId: string): Promise<LiveShowQuestionResponseRootObject> {
+    // TODO: not working on client / while using obs -> useless?
     const { body } = await this.client.request.send<LiveShowQuestionResponseRootObject>({
       url: `/api/v1/live/${broadcastId}/question/${questionId}/activate/`,
       method: 'POST',
@@ -143,7 +158,7 @@ export class LiveRepository extends Repository {
     return body;
   }
 
-  public async hideQuestion(broadcastId: string, questionId: string): Promise<LiveHideQuestionResponseRootObject> {
+  public async deactivateQuestion(broadcastId: string, questionId: string): Promise<LiveHideQuestionResponseRootObject> {
     const { body } = await this.client.request.send<LiveHideQuestionResponseRootObject>({
       url: `/api/v1/live/${broadcastId}/question/${questionId}/deactivate/`,
       method: 'POST',
@@ -213,11 +228,17 @@ export class LiveRepository extends Repository {
     return body;
   }
 
-  public async getJoinRequestCounts(
-    broadcastId: string,
-    lastTotalCount: number = 0,
-    lastSeenTs: number = 0,
-    lastFetchTs: number = 0)
+  public async getJoinRequestCounts({
+      broadcastId,
+      lastTotalCount = 0,
+      lastSeenTs = 0,
+      lastFetchTs = 0,
+  }: {
+      broadcastId: string,
+      lastTotalCount: number | string,
+      lastSeenTs: number | string,
+      lastFetchTs: number | string,
+  })
     : Promise<LiveJoinRequestCountsResponseRootObject> {
     const baseUrl = `/api/v1/live/${broadcastId}/get_join_request_counts/`;
     const { body } = await this.client.request.send<LiveJoinRequestCountsResponseRootObject>({
@@ -230,9 +251,9 @@ export class LiveRepository extends Repository {
   public getObsSettings(info: LiveCreateBroadcastResponseRootObject): LiveObsSettings {
     const parts = info.upload_url.split(new RegExp(info.broadcast_id));
     return { stream_url: parts[0], stream_key: info.broadcast_id + parts[1]};
-}
+  }
 
-  public async startBroadcast(broadcastId: string, sendNotifications: boolean): Promise<LiveStartBroadcastResponseRootObject> {
+  public async start(broadcastId: string, sendNotifications: boolean = true): Promise<LiveStartBroadcastResponseRootObject> {
     const { body } = await this.client.request.send<LiveStartBroadcastResponseRootObject>({
       url: `/api/v1/live/${broadcastId}/start/`,
       method: 'POST',
@@ -262,19 +283,16 @@ export class LiveRepository extends Repository {
     return body;
   }
 
-  /* 301 - moved */
-
   public async comment(broadcastId: string, message: string): Promise<any> {
-    // 301 - moved?
     const { body } = await this.client.request.send({
-      url: `/api/v1/live/${broadcastId}/comment`,
+      url: `/api/v1/live/${broadcastId}/comment/`,
       method: 'POST',
       form: this.client.request.sign({
         user_breadcrumb: this.client.request.userBreadcrumb(message.length),
         idempotence_token: new Chance().guid(),
         comment_text: message,
         live_or_vod: '1',
-        offset_to_video_start: ' 0',
+        offset_to_video_start: '0',
         _csrftoken: this.client.state.cookieCsrfToken,
         _uid: this.client.state.cookieUserId,
         _uuid: this.client.state.uuid,
@@ -284,9 +302,8 @@ export class LiveRepository extends Repository {
   }
 
   public async pinComment(broadcastId: string, commentId: string): Promise<any> {
-    // TODO: 301 - moved
     const { body } = await this.client.request.send({
-      url: `/api/v1/live/${broadcastId}/pin_comment`,
+      url: `/api/v1/live/${broadcastId}/pin_comment/`,
       method: 'POST',
       form: this.client.request.sign({
         offset_to_video_start: 0,
@@ -300,9 +317,8 @@ export class LiveRepository extends Repository {
   }
 
   public async unpinComment(broadcastId: string, commentId: string): Promise<any> {
-    // TODO: 301 - moved
     const { body } = await this.client.request.send({
-      url: `/api/v1/live/${broadcastId}/unpin_comment`,
+      url: `/api/v1/live/${broadcastId}/unpin_comment/`,
       method: 'POST',
       form: this.client.request.sign({
         offset_to_video_start: 0,
@@ -316,9 +332,8 @@ export class LiveRepository extends Repository {
   }
 
   public async getLiveQuestions(broadcastId: string): Promise<any> {
-    // TODO: 301 - moved
     const { body } = await this.client.request.send({
-      url: `/api/v1/live/${broadcastId}/questions`,
+      url: `/api/v1/live/${broadcastId}/questions/`,
       method: 'POST',
       form: this.client.request.sign({
         sources: 'story_and_live',

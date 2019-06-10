@@ -35,10 +35,10 @@ async function login() {
   await login();
 
   try {
-    const info = await ig.live.createBroadcast();
+    const info = await ig.live.create({});
     console.log(JSON.stringify(ig.live.getObsSettings(info)));
-    await ig.live.startBroadcast(info.broadcast_id, false);
-    await ig.live.enableComments(info.broadcast_id);
+    await ig.live.start(info.broadcast_id, false);
+    await ig.live.unmuteComment(info.broadcast_id);
     // TODO: await createInterface(ig.live.comment(broadcast_id, 'create interface'), 'live.comment'); - 301 moved
     // TODO: await createInterface(ig.live.unpinComment(info.broadcast_id, comments[0].pk), 'live.unpin-comment'); - 301 moved
     // TODO: await createInterface(ig.live.createQuestion(info.broadcast_id, 'f'), 'live.create-question'); questions not enabled?!
