@@ -4,7 +4,7 @@ import * as Bluebird from 'bluebird';
 import { writeFile } from 'fs';
 import { json2ts } from 'json-ts/dist';
 import { camelCase } from 'lodash';
-import { async } from 'rxjs/internal/scheduler/async';
+// import { async } from 'rxjs/internal/scheduler/async';
 
 const ig = new IgApiClient();
 
@@ -34,13 +34,18 @@ async function login() {
 (async function mainAsync() {
   await login();
 
-  const { broadcast_id } = await createInterface(ig.live.createBroadcast(), 'live.create-broadcast');
-  await createInterface(ig.live.startBroadcast(broadcast_id, false), 'live.start-broadcast');
-  await createInterface(ig.live.enableComments(broadcast_id), 'live.switch-comments');
-  await createInterface(ig.live.comment(broadcast_id, 'create interface'), 'live.comment');
-  await createInterface(ig.live.getComments(broadcast_id), 'live.comments');
-  await createInterface(ig.live.getHeartbeatViewerCount(broadcast_id), 'live.heartbeat-viewer-count');
-  await createInterface(ig.live.getInfo(broadcast_id), 'live.info');
-  await createInterface(ig.live.endBroadcast(broadcast_id), 'live.end-broadcast');
-  await createInterface(ig.live.getFinalViewers(broadcast_id), 'live.final-viewers');
+  try {
+    const info = await ig.live.createBroadcast();
+    console.log(JSON.stringify(ig.live.getObsSettings(info)));
+    await ig.live.startBroadcast(info.broadcast_id, false);
+    await ig.live.enableComments(info.broadcast_id);
+    // TODO: await createInterface(ig.live.comment(broadcast_id, 'create interface'), 'live.comment'); / 301-moved
+    setTimeout(async () => {
+      await createInterface(ig.live.getComments(info.broadcast_id), 'live.comments');
+      await ig.live.endBroadcast(info.broadcast_id);
+      await createInterface(ig.live.getFinalViewers(info.broadcast_id), 'live.final-viewers');
+    }, 1 * 60 * 1000);
+  } catch (pogger) {
+    console.error(pogger);
+  }
 })();
