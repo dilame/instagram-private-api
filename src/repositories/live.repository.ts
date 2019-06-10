@@ -18,7 +18,6 @@ import {
   LiveLikeCountResponseRootObject,
   LiveJoinRequestCountsResponseRootObject,
 } from '../responses';
-import { LiveRtmpSettings } from 'src/types/live.obs-settings';
 
 export class LiveRepository extends Repository {
 
@@ -38,19 +37,20 @@ export class LiveRepository extends Repository {
   public async getComment({
     broadcastId,
     commentsRequested = 4,
-    lastCommentTs = '',
+    lastCommentTs,
   }: {
       broadcastId: string,
       commentsRequested?: number,
-      lastCommentTs?: string,
+      lastCommentTs?: string | number,
     }): Promise<LiveCommentsResponseRootObject> {
-    const baseUrl = `/api/v1/live/${broadcastId}/get_comment/?num_comments_requested=${commentsRequested}`;
     const { body } = await this.client.request.send<LiveCommentsResponseRootObject>({
       url:
-        lastCommentTs === '' ?
-          baseUrl
-          : baseUrl + `&last_comment_ts=${lastCommentTs}`,
+      `/api/v1/live/${broadcastId}/get_comment/`,
       method: 'GET',
+      qs: {
+        num_comments_requested: commentsRequested,
+        last_comment_ts: lastCommentTs || 0,
+      },
     });
     return body;
   }
@@ -206,10 +206,13 @@ export class LiveRepository extends Repository {
     return body;
   }
 
-  public async getLikeCount(broadcastId: string, likeTs: string = ''): Promise<LiveLikeCountResponseRootObject> {
+  public async getLikeCount(broadcastId: string, likeTs: string | number = 0): Promise<LiveLikeCountResponseRootObject> {
     const { body } = await this.client.request.send<LiveLikeCountResponseRootObject>({
-      url: `/api/v1/live/${broadcastId}/get_like_count/` + (likeTs === '' ? '' : `?like_ts=${likeTs}`),
+      url: `/api/v1/live/${broadcastId}/get_like_count/`,
       method: 'GET',
+      qs: {
+        like_ts: likeTs,
+      },
     });
     return body;
   }
@@ -240,10 +243,14 @@ export class LiveRepository extends Repository {
       lastFetchTs: number | string,
   })
     : Promise<LiveJoinRequestCountsResponseRootObject> {
-    const baseUrl = `/api/v1/live/${broadcastId}/get_join_request_counts/`;
     const { body } = await this.client.request.send<LiveJoinRequestCountsResponseRootObject>({
-      url: `${baseUrl}?last_total_count${lastTotalCount}&last_seen_ts=${lastSeenTs}&last_seen_ts${lastFetchTs}`,
+      url: `/api/v1/live/${broadcastId}/get_join_request_counts/`,
       method: 'GET',
+      qs: {
+        last_total_count: lastTotalCount,
+        last_seen_ts: lastSeenTs,
+        last_fetch_ts: lastFetchTs,
+      },
     });
     return body;
   }
