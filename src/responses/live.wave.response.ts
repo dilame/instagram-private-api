@@ -1,3 +1,3 @@
 export interface LiveWaveResponseRootObject {
-    status: string;
+  status: string;
 }

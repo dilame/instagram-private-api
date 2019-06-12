@@ -1,3 +1,3 @@
 export interface LiveHideQuestionResponseRootObject {
-    status: string;
+  status: string;
 }

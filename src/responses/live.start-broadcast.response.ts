@@ -1,4 +1,4 @@
 export interface LiveStartBroadcastResponseRootObject {
-    media_id: string;
-    status: string;
+  media_id: string;
+  status: string;
 }

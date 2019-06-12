@@ -20,7 +20,6 @@ import {
 } from '../responses';
 
 export class LiveRepository extends Repository {
-
   public async muteComment(broadcastId: string): Promise<LiveSwitchCommentsResponseRootObject> {
     const { body } = await this.client.request.send<LiveSwitchCommentsResponseRootObject>({
       url: `/api/v1/live/${broadcastId}/mute_comment/`,
@@ -39,13 +38,12 @@ export class LiveRepository extends Repository {
     commentsRequested = 4,
     lastCommentTs,
   }: {
-      broadcastId: string,
-      commentsRequested?: number,
-      lastCommentTs?: string | number,
-    }): Promise<LiveCommentsResponseRootObject> {
+    broadcastId: string;
+    commentsRequested?: number;
+    lastCommentTs?: string | number;
+  }): Promise<LiveCommentsResponseRootObject> {
     const { body } = await this.client.request.send<LiveCommentsResponseRootObject>({
-      url:
-      `/api/v1/live/${broadcastId}/get_comment/`,
+      url: `/api/v1/live/${broadcastId}/get_comment/`,
       method: 'GET',
       qs: {
         num_comments_requested: commentsRequested,
@@ -102,10 +100,10 @@ export class LiveRepository extends Repository {
     previewWidth = 720,
     message = '',
   }: {
-      previewHeight?: number | string,
-      previewWidth?: number | string,
-      message?: string,
-    }): Promise<LiveCreateBroadcastResponseRootObject> {
+    previewHeight?: number | string;
+    previewWidth?: number | string;
+    message?: string;
+  }): Promise<LiveCreateBroadcastResponseRootObject> {
     const { body } = await this.client.request.send<LiveCreateBroadcastResponseRootObject>({
       url: '/api/v1/live/create/',
       method: 'POST',
@@ -158,7 +156,10 @@ export class LiveRepository extends Repository {
     return body;
   }
 
-  public async deactivateQuestion(broadcastId: string, questionId: string): Promise<LiveHideQuestionResponseRootObject> {
+  public async deactivateQuestion(
+    broadcastId: string,
+    questionId: string,
+  ): Promise<LiveHideQuestionResponseRootObject> {
     const { body } = await this.client.request.send<LiveHideQuestionResponseRootObject>({
       url: `/api/v1/live/${broadcastId}/question/${questionId}/deactivate/`,
       method: 'POST',
@@ -206,7 +207,10 @@ export class LiveRepository extends Repository {
     return body;
   }
 
-  public async getLikeCount(broadcastId: string, likeTs: string | number = 0): Promise<LiveLikeCountResponseRootObject> {
+  public async getLikeCount(
+    broadcastId: string,
+    likeTs: string | number = 0,
+  ): Promise<LiveLikeCountResponseRootObject> {
     const { body } = await this.client.request.send<LiveLikeCountResponseRootObject>({
       url: `/api/v1/live/${broadcastId}/get_like_count/`,
       method: 'GET',
@@ -232,17 +236,16 @@ export class LiveRepository extends Repository {
   }
 
   public async getJoinRequestCounts({
-      broadcastId,
-      lastTotalCount = 0,
-      lastSeenTs = 0,
-      lastFetchTs = 0,
+    broadcastId,
+    lastTotalCount = 0,
+    lastSeenTs = 0,
+    lastFetchTs = 0,
   }: {
-      broadcastId: string,
-      lastTotalCount: number | string,
-      lastSeenTs: number | string,
-      lastFetchTs: number | string,
-  })
-    : Promise<LiveJoinRequestCountsResponseRootObject> {
+    broadcastId: string;
+    lastTotalCount: number | string;
+    lastSeenTs: number | string;
+    lastFetchTs: number | string;
+  }): Promise<LiveJoinRequestCountsResponseRootObject> {
     const { body } = await this.client.request.send<LiveJoinRequestCountsResponseRootObject>({
       url: `/api/v1/live/${broadcastId}/get_join_request_counts/`,
       method: 'GET',
@@ -255,7 +258,10 @@ export class LiveRepository extends Repository {
     return body;
   }
 
-  public async start(broadcastId: string, sendNotifications: boolean = true): Promise<LiveStartBroadcastResponseRootObject> {
+  public async start(
+    broadcastId: string,
+    sendNotifications: boolean = true,
+  ): Promise<LiveStartBroadcastResponseRootObject> {
     const { body } = await this.client.request.send<LiveStartBroadcastResponseRootObject>({
       url: `/api/v1/live/${broadcastId}/start/`,
       method: 'POST',
@@ -343,5 +349,4 @@ export class LiveRepository extends Repository {
     });
     return body;
   }
-
 }

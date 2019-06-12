@@ -1,3 +1,3 @@
 export interface LiveShowQuestionResponseRootObject {
-    status: string;
+  status: string;
 }

@@ -1,3 +1,3 @@
 export interface LiveEndBroadcastResponseRootObject {
-    status: string;
+  status: string;
 }
