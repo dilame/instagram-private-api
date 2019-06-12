@@ -1,0 +1,35 @@
+export interface LiveCreateBroadcastResponseRootObject {
+  broadcast_id: string;
+  upload_url: string;
+  fbvp_tcp_upload_url: string;
+  fbvp_quic_upload_url: string;
+  max_time_in_seconds: number;
+  speed_test_ui_timeout: number;
+  stream_network_speed_test_payload_chunk_size_in_bytes: number;
+  stream_network_speed_test_payload_size_in_bytes: number;
+  stream_network_speed_test_payload_timeout_in_seconds: number;
+  speed_test_minimum_bandwidth_threshold: number;
+  speed_test_retry_max_count: number;
+  speed_test_retry_time_delay: number;
+  disable_speed_test: number;
+  stream_video_allow_b_frames: number;
+  stream_video_width: number;
+  stream_video_bit_rate: number;
+  stream_video_fps: number;
+  stream_audio_bit_rate: number;
+  stream_audio_sample_rate: number;
+  stream_audio_channels: number;
+  heartbeat_interval: number;
+  broadcaster_update_frequency: number;
+  stream_video_adaptive_bitrate_config: string;
+  stream_network_connection_retry_count: number;
+  stream_network_connection_retry_delay_in_seconds: number;
+  connect_with_1rtt: number;
+  allow_resolution_change: number;
+  avc_rtmp_payload: number;
+  pass_thru_enabled: number;
+  live_trace_enabled: number;
+  live_trace_sample_interval_in_seconds: number;
+  live_trace_sampling_source: number;
+  status: string;
+}

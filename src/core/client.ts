@@ -26,6 +26,7 @@ import { UserRepository } from '../repositories/user.repository';
 import { TagRepository } from '../repositories/tag.repository';
 import { SearchService } from '../services/search.service';
 import { StoryService } from '../services/story.service';
+import { LiveRepository } from '../repositories/live.repository';
 
 export class IgApiClient {
   public state = new State();
@@ -53,6 +54,7 @@ export class IgApiClient {
   public upload = new UploadRepository(this);
   public user = new UserRepository(this);
   public zr = new ZrRepository(this);
+  public live = new LiveRepository(this);
   /* Services */
   public publish = new PublishService(this);
   public search = new SearchService(this);
