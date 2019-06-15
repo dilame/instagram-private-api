@@ -58,6 +58,7 @@ export class State {
   cookieJar = jar(this.cookieStore);
   checkpoint: CheckpointResponse | null = null;
   challenge: ChallengeStateResponse | null = null;
+  fixedSessionId: null = null; // to use when we want to pass exact value instead of generating it
   clientSessionIdLifetime: number = 1200000;
   pigeonSessionIdLifetime: number = 1200000;
   clientSessionIdSalt: string = `${Date.now()}`;
@@ -73,6 +74,11 @@ export class State {
    */
   public get clientSessionId(): string {
     return this.generateSaltyGuid('clientSessionId', this.clientSessionIdSalt);
+  }
+
+  // return set session id if it's present
+  public get fixedClientSessionId(): string {
+    return this.fixedSessionId || this.clientSessionId;
   }
 
   public get pigeonSessionId(): string {
