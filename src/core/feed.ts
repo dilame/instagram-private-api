@@ -54,7 +54,7 @@ export abstract class Feed<Response = any, Item = any> extends Repository {
   @Enumerable(false)
   protected chance = new Chance();
   @Expose()
-  protected rankToken = this.chance.guid();
+  protected rankToken = this.chance.guid({ version: 4 });
 
   protected abstract set state(response: Response);
 

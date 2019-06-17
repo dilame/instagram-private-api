@@ -188,13 +188,13 @@ export class State {
       length: 16,
     });
     this.deviceId = `android-${id}`;
-    this.uuid = chance.guid();
-    this.phoneId = chance.guid();
-    this.adid = chance.guid();
+    this.uuid = chance.guid({ version: 4 });
+    this.phoneId = chance.guid({ version: 4 });
+    this.adid = chance.guid({ version: 4 });
     this.build = chance.pickone(builds);
   }
 
   private generateSaltyGuid(seed: string, salt: string) {
-    return new Chance(`${seed}${this.deviceId}${salt}`).guid();
+    return new Chance(`${seed}${this.deviceId}${salt}`).guid({ version: 4 });
   }
 }

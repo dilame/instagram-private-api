@@ -124,7 +124,7 @@ export class MediaRepository extends Repository {
       method: 'POST',
       form: this.client.request.sign({
         user_breadcrumb: this.client.request.userBreadcrumb(text.length),
-        idempotence_token: new Chance().guid(),
+        idempotence_token: new Chance().guid({ version: 4 }),
         _csrftoken: this.client.state.cookieCsrfToken,
         radio_type: this.client.state.radioType,
         _uid: this.client.state.cookieUserId,
