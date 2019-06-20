@@ -25,7 +25,7 @@ export class SimulateService extends Repository {
       () => this.client.attribution.logResurrectAttribution(),
       () => this.client.loom.fetchConfig(),
       () => this.client.linkedAccount.getLinkageStatus(),
-      () => this.client.creatives.writeSupportedCapabilities(),
+      // () => this.client.creatives.writeSupportedCapabilities(),
       // () => this.client.account.processContactPointSignals(),
       () => this.client.feed.timeline().request({ recoveredFromCrash: '1', reason: 'cold_start_fetch' }),
       () => this.client.fbsearch.suggestedSearches('users'),
