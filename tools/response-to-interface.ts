@@ -34,10 +34,4 @@ async function login() {
 
 (async function mainAsync() {
   await login();
-
-  const inboxItems = await ig.feed.directInbox().items();
-  const thread = ig.entity.directThread(inboxItems[0].thread_id);
-  console.log((await thread.broadcastText('fffff loool kranker code tolle api was soll man sagen')));
-  console.log(JSON.stringify(await createInterface(ig.direct.rankedRecipients(), 'direct.repository.ranked-recipients')));
-  console.log(JSON.stringify(await createInterface(ig.direct.getPresence(), 'direct.repository.get-presence')));
 })();
