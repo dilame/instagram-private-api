@@ -1,3 +1,4 @@
+/* tslint:disable:no-console */
 import 'dotenv/config';
 import { IgApiClient } from '../src';
 import * as Bluebird from 'bluebird';
@@ -34,20 +35,9 @@ async function login() {
 (async function mainAsync() {
   await login();
 
-  try {
-    const info = await ig.live.create({});
-    console.log(JSON.stringify(ig.live.getUrlAndKey(info)));
-    await ig.live.start(info.broadcast_id, false);
-    await ig.live.unmuteComment(info.broadcast_id);
-    // TODO: await createInterface(ig.live.comment(broadcast_id, 'create interface'), 'live.comment'); - 301 moved
-    // TODO: await createInterface(ig.live.unpinComment(info.broadcast_id, comments[0].pk), 'live.unpin-comment'); - 301 moved
-    // TODO: await createInterface(ig.live.createQuestion(info.broadcast_id, 'f'), 'live.create-question'); questions not enabled?!
-    // TODO: await createInterface(ig.live.getLiveQuestions(info.broadcast_id), 'live.live-questions'); - 301 moved
-    // TODO: await createInterface(ig.live.pinComment(info.broadcast_id, comments[0].pk), 'live.pin-comment'); - 301 moved
-    setTimeout(async () => {
-        await ig.live.endBroadcast(info.broadcast_id);
-    }, 2 * 60 * 1000);
-  } catch (e) {
-    console.error(e);
-  }
+  const inboxItems = await ig.feed.directInbox().items();
+  const thread = ig.entity.directThread(inboxItems[0].thread_id);
+  console.log((await thread.broadcastText('fffff loool kranker code tolle api was soll man sagen')));
+  console.log(JSON.stringify(await createInterface(ig.direct.rankedRecipients(), 'direct.repository.ranked-recipients')));
+  console.log(JSON.stringify(await createInterface(ig.direct.getPresence(), 'direct.repository.get-presence')));
 })();

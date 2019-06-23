@@ -13,3 +13,4 @@ export * from './saved.feed';
 export * from './tag.feed';
 export * from './timeline.feed';
 export * from './user.feed';
+export * from './direct-pending.feed';

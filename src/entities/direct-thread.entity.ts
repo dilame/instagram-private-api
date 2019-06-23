@@ -1,11 +1,14 @@
+/* tslint:disable:semicolon */
 import * as urlRegex from 'url-regex';
 import { Entity } from '../core/entity';
 import { DirectThreadBroadcastPhotoOptions } from '../types/direct-thread.broadcast-photo.options';
 import { DirectThreadBroadcastOptions } from '../types/direct-thread.broadcast.options';
+import { DirectThreadRepositoryAddUserResponseRootObject, DirectThreadRepositoryUpdateTitleResponseRootObject } from '../responses';
 
 export class DirectThreadEntity extends Entity {
   threadId: string = null;
   userIds: string[] = null;
+
   public async broadcastText(text: string) {
     const urls = text.match(urlRegex({ strict: false }));
     if (urls instanceof Array) {
@@ -18,6 +21,7 @@ export class DirectThreadEntity extends Entity {
       },
     });
   }
+
   public async broadcastLink(link_text: string, link_urls: string[]) {
     return await this.broadcast({
       item: 'link',
@@ -41,6 +45,25 @@ export class DirectThreadEntity extends Entity {
       },
     });
   }
+
+  public updateTitle = async (title: string): Promise<DirectThreadRepositoryUpdateTitleResponseRootObject> =>
+    await this.client.directThread.updateTitle(this.threadId, title);
+
+  public mute = async (): Promise<string> =>
+    await this.client.directThread.mute(this.threadId);
+
+  public unmute = async (): Promise<string> =>
+    await this.client.directThread.unmute(this.threadId);
+
+  public hide = async (): Promise<string> =>
+    await this.client.directThread.hide(this.threadId);
+
+  public leave = async (): Promise<string> =>
+    await this.client.directThread.leave(this.threadId);
+
+  public addUser = async (userIds: string[] | number[]): Promise<DirectThreadRepositoryAddUserResponseRootObject> =>
+    await this.client.directThread.addUser(this.threadId, userIds);
+
   private async broadcast(options: Partial<DirectThreadBroadcastOptions>) {
     if (this.threadId === null && this.userIds === null) {
       throw new Error('DirectThread: No recipients set');
