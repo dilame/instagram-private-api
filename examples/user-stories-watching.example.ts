@@ -15,7 +15,7 @@ import { IgApiClient } from '../src';
   });
   const storyItems = await reelsFeed.items(); // getting reels, see "account-followers.feed.example.ts" if you want to know how to work with feeds
   if (storyItems.length === 0) {// we can check items length and find out if the user does have any story to watch
-    console.log(`${targetUser.username} doesn't have any story`);
+    console.log(`${targetUser.username}'s story is empty`);
     return;
   }
   const seenResult = await ig.story.seen([storyItems[0]]);
