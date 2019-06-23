@@ -62,6 +62,12 @@ ig.state.proxyUrl = process.env.IG_PROXY;
   });
 })();
 ```
+# Documentation
+
+We have auto generated documentation as a temporary solution. This docs was generated with TypeDoc and contains all entities, methods, it can be helpful.
+
+* [Documentation main page](https://realinstadude.github.io/ipapi-docs/)
+* [Client propertries documentation](https://realinstadude.github.io/ipapi-docs/classes/_core_client_.igapiclient.html)
 
 # Contribution
 
