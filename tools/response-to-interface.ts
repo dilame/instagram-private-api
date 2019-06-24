@@ -14,6 +14,7 @@ async function getResponse(request: Promise<any>) {
   return await request;
 }
 
+// @ts-ignore
 async function createInterface(request: Promise<any>, outputName: string) {
   const json = await getResponse(request);
   const camelCasedOutputName = camelCase(outputName);
@@ -34,4 +35,7 @@ async function login() {
 
 (async function mainAsync() {
   await login();
+  const userId = await ig.user.getIdByUsername('nerixyz');
+  const thread = ig.entity.directThread([userId.toString()]);
+  console.log(await thread.broadcastText('Message from node'));
 })();

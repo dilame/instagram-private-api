@@ -22,7 +22,7 @@ export class DirectRepository extends Repository {
     return body;
   }
 
-  async rankedRecipients(mode: 'raven' | 'reshare' = 'raven', query = ''): Promise<DirectRepositoryRankedRecipientsResponseRootObject> {
+  public async rankedRecipients(mode: 'raven' | 'reshare' = 'raven', query = ''): Promise<DirectRepositoryRankedRecipientsResponseRootObject> {
     const { body } = await this.client.request.send<DirectRepositoryRankedRecipientsResponseRootObject>({
       url: '/api/v1/direct_v2/ranked_recipients/',
       method: 'GET',
@@ -35,7 +35,7 @@ export class DirectRepository extends Repository {
     return body;
   }
 
-  async getPresence(): Promise<DirectRepositoryGetPresenceResponseRootObject> {
+  public async getPresence(): Promise<DirectRepositoryGetPresenceResponseRootObject> {
     const { body } = await this.client.request.send<DirectRepositoryGetPresenceResponseRootObject>({
       url: '/api/v1/direct_v2/get_presence/',
       method: 'GET',

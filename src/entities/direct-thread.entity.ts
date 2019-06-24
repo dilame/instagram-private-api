@@ -46,23 +46,29 @@ export class DirectThreadEntity extends Entity {
     });
   }
 
-  public updateTitle = async (title: string): Promise<DirectThreadRepositoryUpdateTitleResponseRootObject> =>
-    await this.client.directThread.updateTitle(this.threadId, title);
+  public async updateTitle(title: string): Promise<DirectThreadRepositoryUpdateTitleResponseRootObject> {
+    return await this.client.directThread.updateTitle(this.threadId, title);
+  }
 
-  public mute = async (): Promise<string> =>
-    await this.client.directThread.mute(this.threadId);
+  public async mute(): Promise<string> {
+    return await this.client.directThread.mute(this.threadId);
+  }
 
-  public unmute = async (): Promise<string> =>
-    await this.client.directThread.unmute(this.threadId);
+  public async unmute(): Promise<string> {
+    return await this.client.directThread.unmute(this.threadId);
+  }
 
-  public hide = async (): Promise<string> =>
-    await this.client.directThread.hide(this.threadId);
+  public async hide(): Promise<string> {
+    return await this.client.directThread.hide(this.threadId);
+  }
 
-  public leave = async (): Promise<string> =>
-    await this.client.directThread.leave(this.threadId);
+  public async leave(): Promise<string> {
+    return await this.client.directThread.leave(this.threadId);
+  }
 
-  public addUser = async (userIds: string[] | number[]): Promise<DirectThreadRepositoryAddUserResponseRootObject> =>
-    await this.client.directThread.addUser(this.threadId, userIds);
+  public async addUser(userIds: string[] | number[]): Promise<DirectThreadRepositoryAddUserResponseRootObject> {
+    return await this.client.directThread.addUser(this.threadId, userIds);
+  }
 
   private async broadcast(options: Partial<DirectThreadBroadcastOptions>) {
     if (this.threadId === null && this.userIds === null) {
