@@ -8,6 +8,7 @@ import { IgApiClient } from './client';
 import {
   IgActionSpamError,
   IgCheckpointError,
+  IgClientError,
   IgLoginRequiredError,
   IgNetworkError,
   IgNotFoundError,
@@ -29,6 +30,7 @@ interface SignedPost {
 
 export class Request {
   end$ = new Subject();
+  error$ = new Subject<IgClientError>();
   attemptOptions: Partial<AttemptOptions<any>> = {
     maxAttempts: 1,
   };
@@ -70,7 +72,9 @@ export class Request {
     if (response.body.status === 'ok') {
       return response;
     }
-    throw this.handleResponseError(response);
+    const error = this.handleResponseError(response);
+    process.nextTick(() => this.error$.next(error));
+    throw error;
   }
   public signature(data: string) {
     return createHmac('sha256', this.client.state.signatureKey)
@@ -100,7 +104,7 @@ export class Request {
     return `${signature}\n${body}\n`;
   }
 
-  private handleResponseError(response: Response) {
+  private handleResponseError(response: Response): IgClientError {
     const json = response.body;
     if (json.spam) {
       return new IgActionSpamError(response);
