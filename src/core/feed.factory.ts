@@ -4,6 +4,7 @@ import {
   AccountFollowingFeed,
   BlockedUsersFeed,
   DirectInboxFeed,
+  DirectPendingInboxFeed,
   DirectThreadFeed,
   DiscoverFeed,
   LocationFeed,
@@ -47,6 +48,10 @@ export class FeedFactory {
   }
   public directInbox(): DirectInboxFeed {
     return new DirectInboxFeed(this.client);
+  }
+
+  public directPending(): DirectPendingInboxFeed {
+    return new DirectPendingInboxFeed(this.client);
   }
   public directThread(
     options: Pick<DirectInboxFeedResponseThreadsItem, 'thread_id' | 'oldest_cursor'>,

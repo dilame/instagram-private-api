@@ -3,7 +3,7 @@ import { Feed } from '../core/feed';
 import { DirectInboxFeedResponse, DirectInboxFeedResponseThreadsItem } from '../responses';
 import { DirectThreadEntity } from '../entities';
 
-export class DirectInboxFeed extends Feed<DirectInboxFeedResponse, DirectInboxFeedResponseThreadsItem> {
+export class DirectPendingInboxFeed extends Feed<DirectInboxFeedResponse, DirectInboxFeedResponseThreadsItem> {
   @Expose()
   private cursor: string;
   @Expose()
@@ -17,7 +17,7 @@ export class DirectInboxFeed extends Feed<DirectInboxFeedResponse, DirectInboxFe
 
   async request() {
     const { body } = await this.client.request.send<DirectInboxFeedResponse>({
-      url: `/api/v1/direct_v2/inbox/`,
+      url: `/api/v1/direct_v2/pending_inbox/`,
       qs: {
         visual_message_return_type: 'unseen',
         cursor: this.cursor,

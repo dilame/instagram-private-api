@@ -3,7 +3,7 @@ export interface DirectInboxFeedResponse {
   seq_id: number;
   snapshot_at_ms: number;
   pending_requests_total: number;
-  most_recent_inviter: DirectInboxFeedResponseMost_recent_inviter;
+  most_recent_inviter: DirectInboxFeedResponseMostRecentInviter;
   status: string;
 }
 export interface DirectInboxFeedResponseInbox {
@@ -40,11 +40,16 @@ export class DirectInboxFeedResponseThreadsItem {
   inviter: DirectInboxFeedResponseInviter;
   has_older: boolean;
   has_newer: boolean;
-  last_seen_at: DirectInboxFeedResponseLast_seen_at;
+  /*
+        last_seen_at: {
+            user_id: { timestamp: string, item_id: string }
+        }
+     */
+  last_seen_at: any;
   newest_cursor: string;
   oldest_cursor: string;
   is_spam: boolean;
-  last_permanent_item: DirectInboxFeedResponseLast_permanent_item;
+  last_permanent_item: DirectInboxFeedResponseLastPermanentItem;
 }
 export interface DirectInboxFeedResponseUsersItem {
   pk: number;
@@ -53,12 +58,13 @@ export interface DirectInboxFeedResponseUsersItem {
   is_private: boolean;
   profile_pic_url: string;
   profile_pic_id?: string;
-  friendship_status: DirectInboxFeedResponseFriendship_status;
+  friendship_status: DirectInboxFeedResponseFriendshipStatus;
   is_verified: boolean;
   has_anonymous_profile_picture: boolean;
   is_directapp_installed: boolean;
 }
-export interface DirectInboxFeedResponseFriendship_status {
+
+export interface DirectInboxFeedResponseFriendshipStatus {
   following: boolean;
   blocking: boolean;
   is_private: boolean;
@@ -74,7 +80,7 @@ export interface DirectInboxFeedResponseItemsItem {
   text?: string;
   link?: DirectInboxFeedResponseLink;
   client_context?: string;
-  reel_share?: DirectInboxFeedResponseReel_share;
+  reel_share?: DirectInboxFeedResponseReelShare;
   profile?: DirectInboxFeedResponseProfile;
   placeholder?: DirectInboxFeedResponsePlaceholder;
 }
@@ -90,13 +96,8 @@ export interface DirectInboxFeedResponseInviter {
   reel_auto_archive?: string;
   allowed_commenter_type?: string;
 }
-export interface DirectInboxFeedResponseLast_seen_at {
-  300687565: {
-    timestamp: string;
-    item_id: string;
-  };
-}
-export interface DirectInboxFeedResponseLast_permanent_item {
+
+export interface DirectInboxFeedResponseLastPermanentItem {
   item_id: string;
   user_id: number;
   timestamp: string;
@@ -104,23 +105,25 @@ export interface DirectInboxFeedResponseLast_permanent_item {
   text?: string;
   link?: DirectInboxFeedResponseLink;
   client_context?: string;
-  reel_share?: DirectInboxFeedResponseReel_share;
+  reel_share?: DirectInboxFeedResponseReelShare;
   profile?: DirectInboxFeedResponseProfile;
   placeholder?: DirectInboxFeedResponsePlaceholder;
 }
 export interface DirectInboxFeedResponseLink {
   text: string;
-  link_context: DirectInboxFeedResponseLink_context;
+  link_context: DirectInboxFeedResponseLinkContext;
   client_context: string;
   mutation_token: string;
 }
-export interface DirectInboxFeedResponseLink_context {
+
+export interface DirectInboxFeedResponseLinkContext {
   link_url: string;
   link_title: string;
   link_summary: string;
   link_image_url: string;
 }
-export interface DirectInboxFeedResponseReel_share {
+
+export interface DirectInboxFeedResponseReelShare {
   text: string;
   type: string;
   reel_owner_id: number;
@@ -157,7 +160,8 @@ export interface DirectInboxFeedResponsePlaceholder {
   title: string;
   message: string;
 }
-export interface DirectInboxFeedResponseMost_recent_inviter {
+
+export interface DirectInboxFeedResponseMostRecentInviter {
   pk: number;
   username: string;
   full_name: string;
