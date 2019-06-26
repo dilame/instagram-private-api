@@ -1,9 +1,7 @@
-/* tslint:disable:semicolon */
 import * as urlRegex from 'url-regex';
 import { Entity } from '../core/entity';
 import { DirectThreadBroadcastPhotoOptions } from '../types/direct-thread.broadcast-photo.options';
 import { DirectThreadBroadcastOptions } from '../types/direct-thread.broadcast.options';
-import { DirectThreadRepositoryAddUserResponseRootObject, DirectThreadRepositoryUpdateTitleResponseRootObject } from '../responses';
 
 export class DirectThreadEntity extends Entity {
   threadId: string = null;
@@ -46,7 +44,7 @@ export class DirectThreadEntity extends Entity {
     });
   }
 
-  public async updateTitle(title: string): Promise<DirectThreadRepositoryUpdateTitleResponseRootObject> {
+  public async updateTitle(title: string) {
     return await this.client.directThread.updateTitle(this.threadId, title);
   }
 
@@ -66,7 +64,7 @@ export class DirectThreadEntity extends Entity {
     return await this.client.directThread.leave(this.threadId);
   }
 
-  public async addUser(userIds: string[] | number[]): Promise<DirectThreadRepositoryAddUserResponseRootObject> {
+  public async addUser(userIds: string[] | number[]) {
     return await this.client.directThread.addUser(this.threadId, userIds);
   }
 

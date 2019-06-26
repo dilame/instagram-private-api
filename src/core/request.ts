@@ -65,7 +65,7 @@ export class Request {
       },
       this.defaults,
     );
-    let response = await this.faultTolerantRequest(options);
+    const response = await this.faultTolerantRequest(options);
     process.nextTick(() => this.end$.next());
     if (response.body.status === 'ok') {
       return response;
@@ -135,6 +135,7 @@ export class Request {
   }
 
   private getDefaultHeaders() {
+    // TODO: unquoted Host and Connection?!
     return {
       'User-Agent': this.client.state.appUserAgent,
       'X-Pigeon-Session-Id': this.client.state.pigeonSessionId,

@@ -35,7 +35,4 @@ async function login() {
 
 (async function mainAsync() {
   await login();
-  const userId = await ig.user.getIdByUsername('nerixyz');
-  const thread = ig.entity.directThread([userId.toString()]);
-  console.log(await thread.broadcastText('Message from node'));
 })();
