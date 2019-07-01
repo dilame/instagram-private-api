@@ -48,19 +48,19 @@ export class DirectThreadEntity extends Entity {
     return await this.client.directThread.updateTitle(this.threadId, title);
   }
 
-  public async mute(): Promise<string> {
+  public async mute() {
     return await this.client.directThread.mute(this.threadId);
   }
 
-  public async unmute(): Promise<string> {
+  public async unmute() {
     return await this.client.directThread.unmute(this.threadId);
   }
 
-  public async hide(): Promise<string> {
+  public async hide() {
     return await this.client.directThread.hide(this.threadId);
   }
 
-  public async leave(): Promise<string> {
+  public async leave() {
     return await this.client.directThread.leave(this.threadId);
   }
 
