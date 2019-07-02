@@ -1,7 +1,8 @@
 /* tslint:disable:no-console */
 import 'dotenv/config';
 import { IgApiClient } from '../src';
-const axios = require('axios'); // axios is used for this example, but you can use any library that you want
+const { get } = require('request'); // request is already declared as an dependency of the library
+const { promisify } = require('util'); // we want to promisify the request, so we could use it with await
 
 (async () => {
   const ig = new IgApiClient();
@@ -11,16 +12,17 @@ const axios = require('axios'); // axios is used for this example, but you can u
   console.log(JSON.stringify(auth));
 
   // getting random square image from internet
-  const imageRequest = await axios.get('https://picsum.photos/800/800', {
-    responseType: 'arraybuffer'
+  const imageRequest = await promisify(get)({ // just calling promisified request.get method
+    url: 'https://picsum.photos/800/800', // random picture with 800x800 size
+    encoding: null // this is required, we could convert body to buffer only with null encoding
   });
   
-  // converting image to buffer
-  const imageBuffer = Buffer.from(imageRequest.data, 'binary');
+  // converting image body to buffer
+  const imageBuffer = Buffer.from(imageRequest.body, 'binary');
 
   const publishResult = await ig.publish.photo({
     file: imageBuffer, // image buffer, you also can specify image from your disk using fs
-    caption: 'Really nice photo from the internet! 🏖️' // nice caption (optional)
+    caption: 'Really nice photo from the internet! 💖' // nice caption (optional)
   });
   
   console.log(publishResult); // publishResult.status should be "ok"
