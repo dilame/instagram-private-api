@@ -1,8 +1,7 @@
 /* tslint:disable:no-console */
 import 'dotenv/config';
 import { IgApiClient } from '../src';
-const { get } = require('request'); // request is already declared as an dependency of the library
-const { promisify } = require('util'); // we want to promisify the request, so we could use it with await
+const { get } = require('request-promise'); // request is already declared as an dependency of the library
 
 (async () => {
   const ig = new IgApiClient();
@@ -12,7 +11,7 @@ const { promisify } = require('util'); // we want to promisify the request, so w
   console.log(JSON.stringify(auth));
 
   // getting random square image from internet
-  const imageRequest = await promisify(get)({ // just calling promisified request.get method
+  const imageRequest = await get({
     url: 'https://picsum.photos/800/800', // random picture with 800x800 size
     encoding: null // this is required, we could convert body to buffer only with null encoding
   });
