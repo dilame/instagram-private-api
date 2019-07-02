@@ -25,7 +25,7 @@ function fakeSave(cookies: string, state) {
       adid: ig.state.adid,
       build: ig.state.build,
     }
-    fakeSave(JSON.stringify(cookies));
+    fakeSave(JSON.stringify(cookies),state);
     // In order to restore session cookies you need this
     await ig.state.deserializeCookieJar(JSON.stringify(cookies));
     ig.state.deviceString = state.deviceString;
