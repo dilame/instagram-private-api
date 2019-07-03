@@ -36,6 +36,8 @@ export * from './live.start-broadcast.response';
 export * from './live.switch-comments.response';
 export * from './live.viewer-list.response';
 export * from './location.feed.response';
+export * from './location.repository.info.response';
+export * from './location.repository.search.response';
 export * from './login-required.response';
 export * from './media.entity.oembed.response';
 export * from './media.repository.blocked.response';

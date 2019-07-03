@@ -2,9 +2,9 @@
 import 'dotenv/config';
 import { IgApiClient } from '../src';
 import * as Bluebird from 'bluebird';
-import { writeFile } from 'fs';
 import { json2ts } from 'json-ts/dist';
 import { camelCase } from 'lodash';
+import { writeFile } from 'fs';
 // import { async } from 'rxjs/internal/scheduler/async';
 
 const ig = new IgApiClient();
@@ -35,4 +35,8 @@ async function login() {
 
 (async function mainAsync() {
   await login();
+
+  console.log(
+    await createInterface(ig.location.info(221272072038243), 'location.repository.info'),
+  );
 })();

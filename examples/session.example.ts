@@ -3,8 +3,8 @@ import { IgApiClient } from '../src';
 
 function fakeSave(cookies: string, state) {
   return {
-    cookies: cookies,
-    state: state,
+    cookies,
+    state,
   };
 }
 
@@ -24,8 +24,8 @@ function fakeSave(cookies: string, state) {
       phoneId: ig.state.phoneId,
       adid: ig.state.adid,
       build: ig.state.build,
-    }
-    fakeSave(JSON.stringify(cookies));
+    };
+    fakeSave(JSON.stringify(cookies), state);
     // In order to restore session cookies you need this
     await ig.state.deserializeCookieJar(JSON.stringify(cookies));
     ig.state.deviceString = state.deviceString;
