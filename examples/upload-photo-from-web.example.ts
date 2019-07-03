@@ -1,7 +1,7 @@
 /* tslint:disable:no-console */
 import 'dotenv/config';
 import { IgApiClient } from '../src';
-const { get } = require('request-promise'); // request is already declared as an dependency of the library
+import { get } from 'request-promise'; // request is already declared as an dependency of the library
 
 (async () => {
   const ig = new IgApiClient();
