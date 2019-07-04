@@ -200,6 +200,12 @@ export class MediaRepository extends Repository {
       },
       extra: { source_width: width, source_height: height },
     });
+    if (form.usertags !== undefined) {
+      form.usertags = JSON.stringify(form.usertags);
+    }
+    if (form.location !== undefined) {
+      form.location = JSON.stringify(form.location);
+    }
 
     const { body } = await this.client.request.send<MediaRepositoryCommentResponseRootObject>({
       url: '/api/v1/media/configure/',
