@@ -30,7 +30,7 @@ export class LocationFeed extends Feed<LocationFeedResponse, LocationFeedRespons
         _uuid: this.client.state.uuid,
         session_id: this.client.state.clientSessionId,
         page: this.nextPage,
-        next_media_ids: this.nextPage ? JSON.stringify(this.nextMediaIds) : void 0,
+        next_media_ids: this.nextPage ? ('string' === typeof this.nextMediaIds ? this.nextMediaIds : JSON.stringify(this.nextMediaIds)) : void 0,
         max_id: this.nextMaxId,
       },
     });
