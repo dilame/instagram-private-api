@@ -7,7 +7,7 @@ import {
   MediaInfoResponseRootObject,
   MediaRepositoryBlockedResponse,
   MediaRepositoryCommentResponse,
-  MediaRepositoryLikersResponseRootObject,
+  MediaRepositoryLikersResponseRootObject, StatusResponse,
 } from '../responses';
 import { MediaConfigureOptions } from '../types/media.configure.options';
 import { MediaRepositoryCommentResponseRootObject } from '../responses/media.repository.configure.response';
@@ -214,8 +214,8 @@ export class MediaRepository extends Repository {
       [item: string]: [string];
     },
     module: IgAppModule = 'feed_timeline',
-  ): Promise<{ status: string }> {
-    const { body } = await this.client.request.send<{ status: string }>({
+  ): Promise<StatusResponse> {
+    const { body } = await this.client.request.send<StatusResponse>({
       url: `/api/v2/media/seen/`,
       method: 'POST',
       qs: {

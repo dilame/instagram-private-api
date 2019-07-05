@@ -6,6 +6,7 @@ import { DirectThreadBroadcastOptions } from '../types/direct-thread.broadcast.o
 export class DirectThreadEntity extends Entity {
   threadId: string = null;
   userIds: string[] = null;
+
   public async broadcastText(text: string) {
     const urls = text.match(urlRegex({ strict: false }));
     if (urls instanceof Array) {
@@ -18,6 +19,7 @@ export class DirectThreadEntity extends Entity {
       },
     });
   }
+
   public async broadcastLink(link_text: string, link_urls: string[]) {
     return await this.broadcast({
       item: 'link',
@@ -41,6 +43,31 @@ export class DirectThreadEntity extends Entity {
       },
     });
   }
+
+  public async updateTitle(title: string) {
+    return await this.client.directThread.updateTitle(this.threadId, title);
+  }
+
+  public async mute() {
+    return await this.client.directThread.mute(this.threadId);
+  }
+
+  public async unmute() {
+    return await this.client.directThread.unmute(this.threadId);
+  }
+
+  public async hide() {
+    return await this.client.directThread.hide(this.threadId);
+  }
+
+  public async leave() {
+    return await this.client.directThread.leave(this.threadId);
+  }
+
+  public async addUser(userIds: string[] | number[]) {
+    return await this.client.directThread.addUser(this.threadId, userIds);
+  }
+
   private async broadcast(options: Partial<DirectThreadBroadcastOptions>) {
     if (this.threadId === null && this.userIds === null) {
       throw new Error('DirectThread: No recipients set');

@@ -4,16 +4,12 @@ import {
   LiveSwitchCommentsResponseRootObject,
   LiveCreateBroadcastResponseRootObject,
   LiveStartBroadcastResponseRootObject,
-  LiveEndBroadcastResponseRootObject,
   LiveCommentsResponseRootObject,
   LiveHeartbeatViewerCountResponseRootObject,
   LiveInfoResponseRootObject,
   LiveFinalViewersResponseRootObject,
   LiveViewerListResponseRootObject,
-  LiveShowQuestionResponseRootObject,
-  LiveHideQuestionResponseRootObject,
   LiveGetQuestionsResponseRootObject,
-  LiveWaveResponseRootObject,
   LiveLikeResponseRootObject,
   LiveLikeCountResponseRootObject,
   LiveJoinRequestCountsResponseRootObject,
@@ -143,9 +139,9 @@ export class LiveRepository extends Repository {
     return body;
   }
 
-  public async activateQuestion(broadcastId: string, questionId: string): Promise<LiveShowQuestionResponseRootObject> {
+  public async activateQuestion(broadcastId: string, questionId: string) {
     // TODO: not working on client / while using obs -> useless?
-    const { body } = await this.client.request.send<LiveShowQuestionResponseRootObject>({
+    const { body } = await this.client.request.send({
       url: `/api/v1/live/${broadcastId}/question/${questionId}/activate/`,
       method: 'POST',
       form: {
@@ -156,11 +152,8 @@ export class LiveRepository extends Repository {
     return body;
   }
 
-  public async deactivateQuestion(
-    broadcastId: string,
-    questionId: string,
-  ): Promise<LiveHideQuestionResponseRootObject> {
-    const { body } = await this.client.request.send<LiveHideQuestionResponseRootObject>({
+  public async deactivateQuestion(broadcastId: string, questionId: string) {
+    const { body } = await this.client.request.send({
       url: `/api/v1/live/${broadcastId}/question/${questionId}/deactivate/`,
       method: 'POST',
       form: {
@@ -179,8 +172,8 @@ export class LiveRepository extends Repository {
     return body;
   }
 
-  public async wave(broadcastId: string, viewerId: string): Promise<LiveWaveResponseRootObject> {
-    const { body } = await this.client.request.send<LiveWaveResponseRootObject>({
+  public async wave(broadcastId: string, viewerId: string) {
+    const { body } = await this.client.request.send({
       url: `/api/v1/live/${broadcastId}/wave/`,
       method: 'POST',
       form: this.client.request.sign({
@@ -274,11 +267,8 @@ export class LiveRepository extends Repository {
     return body;
   }
 
-  public async endBroadcast(
-    broadcastId: string,
-    endAfterCopyrightWarning: boolean = false,
-  ): Promise<LiveEndBroadcastResponseRootObject> {
-    const { body } = await this.client.request.send<LiveEndBroadcastResponseRootObject>({
+  public async endBroadcast(broadcastId: string, endAfterCopyrightWarning: boolean = false) {
+    const { body } = await this.client.request.send({
       url: `/api/v1/live/${broadcastId}/end_broadcast/`,
       method: 'POST',
       form: this.client.request.sign({

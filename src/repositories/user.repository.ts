@@ -38,8 +38,10 @@ export class UserRepository extends Repository {
     username = username.toLowerCase();
     const result = await this.search(username);
     const users = result.users;
-    const account = users.find(account => account.username === username);
-    if (!account) throw new IgExactUserNotFoundError();
+    const account = users.find(user => user.username === username);
+    if (!account) {
+      throw new IgExactUserNotFoundError();
+    }
     return account;
   }
   async accountDetails(id?: string | number) {
