@@ -9,8 +9,8 @@ import {
   MediaRepositoryCommentResponse,
   MediaRepositoryLikersResponseRootObject, StatusResponse,
 } from '../responses';
-import { MediaConfigureOptions } from '../types/media.configure.options';
-import { MediaRepositoryCommentResponseRootObject } from '../responses/media.repository.configure.response';
+import { MediaConfigureOptions, MediaConfigureTimelineOptions } from '../types/media.configure.options';
+import { MediaRepositoryConfigureResponseRootObject } from '../responses/media.repository.configure.response';
 import Chance = require('chance');
 import { IgAppModule } from '../types/common.types';
 
@@ -170,28 +170,19 @@ export class MediaRepository extends Repository {
     return body;
   }
 
-  public async configure(options: MediaConfigureOptions): Promise<MediaRepositoryCommentResponseRootObject> {
-    const devicePayload = this.client.state.devicePayload;
-    const now = DateTime.local().toFormat('yyyy:mm:dd HH:mm:ss');
+  /**
+   * Adds default values to the MediaConfigureOptions
+   * @param options - user submitted options
+   * @param defaults - default values
+   */
+  private applyConfigureDefaults<T extends MediaConfigureOptions>(options: T, defaults: T): T {
     const width = options.width || 1520;
     const height = options.height || 2048;
-
-    const form = defaultsDeep(options, {
-      date_time_digitalized: now,
-      camera_model: devicePayload.model,
-      scene_capture_type: 'standard',
-      timezone_offset: this.client.state.timezoneOffset,
+    const devicePayload = this.client.state.devicePayload;
+    return defaultsDeep(options, {
       _csrftoken: this.client.state.cookieCsrfToken,
-      media_folder: 'Camera',
-      source_type: '4',
       _uid: this.client.state.cookieUserId,
-      device_id: this.client.state.deviceId,
       _uuid: this.client.state.uuid,
-      creation_logger_session_id: this.client.state.clientSessionId,
-      caption: '',
-      date_time_original: now,
-      software: '1',
-      camera_make: devicePayload.manufacturer,
       device: devicePayload,
       edits: {
         crop_original_size: [width, height],
@@ -199,6 +190,40 @@ export class MediaRepository extends Repository {
         crop_zoom: random(1.01, 1.99).toFixed(7),
       },
       extra: { source_width: width, source_height: height },
+
+      ...defaults,
+    });
+  }
+
+  /**
+   * Configures an upload (indicated by {upload_id} in the options) for the timeline
+   * @param options - configuration-options
+   */
+  public async configureTimeline(options: MediaConfigureTimelineOptions): Promise<MediaRepositoryConfigureResponseRootObject> {
+    const devicePayload = this.client.state.devicePayload;
+    const now = DateTime.local().toFormat('yyyy:mm:dd HH:mm:ss');
+    const width = options.width || 1520;
+    const height = options.height || 2048;
+
+    const form = this.applyConfigureDefaults<MediaConfigureTimelineOptions>(options, {
+      width,
+      height,
+
+      upload_id: Date.now().toString(),
+      timezone_offset: this.client.state.timezoneOffset,
+      date_time_original: now,
+      date_time_digitalized: now,
+      caption: '',
+      source_type: '4',
+      media_folder: 'Camera',
+
+      // needed?!
+      camera_model: devicePayload.model,
+      scene_capture_type: 'standard',
+      device_id: this.client.state.deviceId,
+      creation_logger_session_id: this.client.state.clientSessionId,
+      software: '1',
+      camera_make: devicePayload.manufacturer,
     });
     if (form.usertags !== undefined) {
       form.usertags = JSON.stringify(form.usertags);
@@ -207,7 +232,7 @@ export class MediaRepository extends Repository {
       form.location = JSON.stringify(form.location);
     }
 
-    const { body } = await this.client.request.send<MediaRepositoryCommentResponseRootObject>({
+    const { body } = await this.client.request.send<MediaRepositoryConfigureResponseRootObject>({
       url: '/api/v1/media/configure/',
       method: 'POST',
       form: this.client.request.sign(form),

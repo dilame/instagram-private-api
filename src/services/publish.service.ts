@@ -1,7 +1,7 @@
 import { Repository } from '../core/repository';
 import { PostingPhotoOptions } from '../types/posting.photo.options';
 import sizeOf = require('image-size');
-import { MediaConfigureOptions } from '../types/media.configure.options';
+import { MediaConfigureTimelineOptions } from '../types/media.configure.options';
 export class PublishService extends Repository {
   /**
    * Uploads a single photo to the timeline-feed
@@ -12,7 +12,7 @@ export class PublishService extends Repository {
       file: options.file,
     });
     const imageSize = await sizeOf(options.file);
-    const configureOptions: MediaConfigureOptions = {
+    const configureOptions: MediaConfigureTimelineOptions = {
       upload_id: uploadedPhoto.upload_id,
       width: imageSize.width,
       height: imageSize.height,
@@ -38,6 +38,6 @@ export class PublishService extends Repository {
       configureOptions.posting_latitude = lat.toString();
       configureOptions.posting_longitude = lng.toString();
     }
-    return await this.client.media.configure(configureOptions);
+    return await this.client.media.configureTimeline(configureOptions);
   }
 }
