@@ -28,12 +28,12 @@ async function login() {
    * If searchQuery is undefined, you'll get the nearest places to your location
    * this is the same as in the upload (-configure) dialog in the app
    */
-  const locations = await ig.location.search(latitude, longitude, searchQuery);
+  const locations = await ig.search.location(latitude, longitude, searchQuery);
   /**
    * Get the first venue
    * In the real world you would check the returned locations
    */
-  const mediaLocation = locations.venues[0];
+  const mediaLocation = locations[0];
   console.log(mediaLocation);
 
   const publishResult = await ig.publish.photo({
