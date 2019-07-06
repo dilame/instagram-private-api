@@ -21,4 +21,19 @@ export interface MediaConfigureOptions {
     source_width: number;
     source_height: number;
   };
+  geotag_enabled?: string;
+  posting_latitude?: string;
+  posting_longitude?: string;
+  media_latitude?: string;
+  media_longitude?: string;
+  location?: MediaLocation;
+}
+
+export interface MediaLocation {
+  name: string;
+  lat: number;
+  lng: number;
+  address: string;
+  external_source: string;
+  external_id: string;
 }

@@ -2,7 +2,7 @@ import { Repository } from '../core/repository';
 
 export class SearchService extends Repository {
   public async blended(query: string) {
-    let result = await this.client.fbsearch.topsearchFlat(query);
+    const result = await this.client.fbsearch.topsearchFlat(query);
     return result.list;
   }
   public async blendedItems(query: string) {
@@ -20,5 +20,10 @@ export class SearchService extends Repository {
   public async places(query: string) {
     const result = await this.client.fbsearch.places(query);
     return result.items;
+  }
+
+  public async location(latitude: number, longitude: number, query?: string) {
+    const result = await this.client.locationSearch.index(latitude, longitude, query);
+    return result.venues;
   }
 }

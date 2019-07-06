@@ -4,11 +4,11 @@ export interface PostingUsertags {
 
 export interface PostingLocation {
   name: string;
-  address: string;
   lat: number;
   lng: number;
-  external_source: string;
-  facebook_places_id: string;
+  external_id_source: string;
+  external_id: string;
+  address: string;
 }
 
 export interface PostingPhotoOptions {

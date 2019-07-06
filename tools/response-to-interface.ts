@@ -2,10 +2,9 @@
 import 'dotenv/config';
 import { IgApiClient } from '../src';
 import * as Bluebird from 'bluebird';
-import { writeFile } from 'fs';
 import { json2ts } from 'json-ts/dist';
 import { camelCase } from 'lodash';
-// import { async } from 'rxjs/internal/scheduler/async';
+import { writeFile } from 'fs';
 
 const ig = new IgApiClient();
 
