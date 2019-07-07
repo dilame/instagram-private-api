@@ -18,10 +18,10 @@ export class PublishService extends Repository {
       height: imageSize.height,
       caption: options.caption,
     };
-    if (options.usertags !== null) {
+    if (options.usertags !== undefined) {
       configureOptions.usertags = options.usertags;
     }
-    if (options.location !== null) {
+    if (options.location !== undefined) {
       const { lat, lng, external_id_source, external_id, name, address } = options.location;
       configureOptions.location = {
         name,
