@@ -1,4 +1,4 @@
-import { defaultsDeep, omit, random } from 'lodash';
+import { defaultsDeep, omit } from 'lodash';
 import { DateTime } from 'luxon';
 import { Repository } from '../core/repository';
 import { LikeRequestOptions, MediaLikeOrUnlikeOptions, UnlikeRequestOptions } from '../types/media.like.options';
@@ -9,7 +9,7 @@ import {
   MediaRepositoryCommentResponse,
   MediaRepositoryLikersResponseRootObject, StatusResponse,
 } from '../responses';
-import { MediaConfigureOptions, MediaConfigureTimelineOptions } from '../types/media.configure.options';
+import { MediaConfigureOptions, MediaConfigureStoryOptions, MediaConfigureTimelineOptions } from '../types/media.configure.options';
 import { MediaRepositoryConfigureResponseRootObject } from '../responses/media.repository.configure.response';
 import Chance = require('chance');
 import { IgAppModule } from '../types/common.types';
@@ -176,20 +176,20 @@ export class MediaRepository extends Repository {
    * @param defaults - default values
    */
   private applyConfigureDefaults<T extends MediaConfigureOptions>(options: T, defaults: T): T {
-    const width = options.width || 1520;
-    const height = options.height || 2048;
-    const devicePayload = this.client.state.devicePayload;
+    // const width = options.width || 1520;
+    // const height = options.height || 2048;
+    // const devicePayload = this.client.state.devicePayload;
     return defaultsDeep(options, {
       _csrftoken: this.client.state.cookieCsrfToken,
       _uid: this.client.state.cookieUserId,
       _uuid: this.client.state.uuid,
-      device: devicePayload,
+      /*device: devicePayload,
       edits: {
         crop_original_size: [width, height],
         crop_center: [0.0, -0.0],
         crop_zoom: random(1.01, 1.99).toFixed(7),
       },
-      extra: { source_width: width, source_height: height },
+      extra: { source_width: width, source_height: height },*/
 
       ...defaults,
     });
@@ -234,6 +234,34 @@ export class MediaRepository extends Repository {
 
     const { body } = await this.client.request.send<MediaRepositoryConfigureResponseRootObject>({
       url: '/api/v1/media/configure/',
+      method: 'POST',
+      form: this.client.request.sign(form),
+    });
+    return body;
+  }
+
+  public async configureToStory(options: MediaConfigureStoryOptions) {
+    const now = Date.now();
+    const width = options.width || 1520;
+    const height = options.height || 2048;
+    const form = this.applyConfigureDefaults<MediaConfigureStoryOptions>(options, {
+      width,
+      height,
+
+      upload_id: Date.now().toString(),
+      source_type: '3',
+      configure_mode: 1,
+      story_media_creation_date: (now - 100).toString(),
+      client_shared_at: now.toString(),
+      client_timestamp: (now - 10).toString(),
+      camera_position: 'unknown',
+      edits: {},
+      disable_comments: false,
+      caption: 'loool',
+    });
+    console.log(form);
+    const { body } = await this.client.request.send({
+      url: '/api/v1/media/configure_to_story/',
       method: 'POST',
       form: this.client.request.sign(form),
     });

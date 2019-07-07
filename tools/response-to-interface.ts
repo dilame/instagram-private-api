@@ -34,4 +34,9 @@ async function login() {
 
 (async function mainAsync() {
   await login();
+  const path = 'D:\\ShareX\\Screenshots\\NVIDIA_Share_2019-07-05_19-00-56.jpg';
+  const res = await ig.publish.story({
+    file: await Bluebird.fromCallback(cb => readFile(path, cb)),
+  });
+  console.log(res);
 })();

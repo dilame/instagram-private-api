@@ -1,7 +1,7 @@
 import { Repository } from '../core/repository';
 import { PostingPhotoOptions } from '../types/posting.photo.options';
 import sizeOf = require('image-size');
-import { MediaConfigureTimelineOptions } from '../types/media.configure.options';
+import { MediaConfigureStoryOptions, MediaConfigureTimelineOptions } from '../types/media.configure.options';
 export class PublishService extends Repository {
   /**
    * Uploads a single photo to the timeline-feed
@@ -39,5 +39,19 @@ export class PublishService extends Repository {
       configureOptions.posting_longitude = lng.toString();
     }
     return await this.client.media.configureTimeline(configureOptions);
+  }
+
+  public async story(options: { file: Buffer }) {
+    const uploadedPhoto = await this.client.upload.photo({
+      file: options.file,
+    });
+    console.log(uploadedPhoto);
+    const imageSize = await sizeOf(options.file);
+    const configureOptions: MediaConfigureStoryOptions = {
+      upload_id: uploadedPhoto.upload_id,
+      width: imageSize.width,
+      height: imageSize.height,
+    };
+    return await this.client.media.configureToStory(configureOptions);
   }
 }
