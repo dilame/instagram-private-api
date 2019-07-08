@@ -32,6 +32,8 @@ export * from './live.info.response';
 export * from './live.join-request-counts.response';
 export * from './live.like-count.response';
 export * from './live.like.response';
+export * from './live.post-live-viewers.response';
+export * from './live.post-like-count.response';
 export * from './live.start-broadcast.response';
 export * from './live.switch-comments.response';
 export * from './live.viewer-list.response';

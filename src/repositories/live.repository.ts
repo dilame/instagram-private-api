@@ -13,6 +13,8 @@ import {
   LiveLikeResponseRootObject,
   LiveLikeCountResponseRootObject,
   LiveJoinRequestCountsResponseRootObject,
+  PostLiveViewersResponseRootObject,
+  PostLiveLikeCountResponseRootObject,
 } from '../responses';
 
 export class LiveRepository extends Repository {
@@ -74,6 +76,20 @@ export class LiveRepository extends Repository {
     const { body } = await this.client.request.send<LiveFinalViewersResponseRootObject>({
       url: `api/v1/live/${broadcastId}/get_final_viewer_list/`,
       method: 'GET',
+    });
+    return body;
+  }
+
+  public async getPostLiveViewerList(
+    broadcastId: string,
+    maxId: string | null = null,
+  ): Promise<PostLiveViewersResponseRootObject> {
+    const { body } = await this.client.request.send<PostLiveViewersResponseRootObject>({
+      url: `api/v1/live/${broadcastId}/get_post_live_viewer_list/`,
+      method: 'GET',
+      qs: {
+        max_id: maxId || null,
+      },
     });
     return body;
   }
@@ -214,6 +230,22 @@ export class LiveRepository extends Repository {
     return body;
   }
 
+  public async getPostLiveCount(
+    broadcastId: string,
+    startingOffset: number = 0,
+    encodingTag: string = 'instagram_dash_remuxed',
+  ): Promise<PostLiveLikeCountResponseRootObject> {
+    const { body } = await this.client.request.send<PostLiveLikeCountResponseRootObject>({
+      url: `/api/v1/live/${broadcastId}/get_post_like_count/`,
+      method: 'GET',
+      qs: {
+        starting_offset: startingOffset,
+        encoding_tag: encodingTag,
+      },
+    });
+    return body;
+  }
+
   public async resumeBroadcastAfterContentMatch(broadcastId: string): Promise<any> {
     // TODO: test
     const { body } = await this.client.request.send({
@@ -276,6 +308,32 @@ export class LiveRepository extends Repository {
         _uid: this.client.state.cookieUserId,
         _uuid: this.client.state.uuid,
         end_after_copyright_warning: endAfterCopyrightWarning,
+      }),
+    });
+    return body;
+  }
+
+  public async addToPostLive(broadcastId: string) {
+    const { body } = await this.client.request.send({
+      url: `/api/v1/live/${broadcastId}/add_to_post_live/`,
+      method: 'POST',
+      form: this.client.request.sign({
+        _csrftoken: this.client.state.cookieCsrfToken,
+        _uid: this.client.state.cookieUserId,
+        _uuid: this.client.state.uuid,
+      }),
+    });
+    return body;
+  }
+
+  public async deletePostLive(broadcastId: string) {
+    const { body } = await this.client.request.send({
+      url: `/api/v1/live/${broadcastId}/delete_post_live/`,
+      method: 'POST',
+      form: this.client.request.sign({
+        _csrftoken: this.client.state.cookieCsrfToken,
+        _uid: this.client.state.cookieUserId,
+        _uuid: this.client.state.uuid,
       }),
     });
     return body;
