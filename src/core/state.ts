@@ -37,7 +37,7 @@ export class State {
   language: string = 'en_US';
   timezoneOffset: string = String(new Date().getTimezoneOffset() * -60);
   radioType = 'wifi-none';
-  capabilitiesHeader = '3brTvw==';
+  capabilitiesHeader = '3brTPw==';
   connectionTypeHeader = 'WIFI';
   deviceString: string;
   build: string;
