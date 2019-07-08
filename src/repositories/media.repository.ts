@@ -1,4 +1,4 @@
-import { defaultsDeep, omit } from 'lodash';
+import { defaultsDeep, omit, random } from 'lodash';
 import { DateTime } from 'luxon';
 import { Repository } from '../core/repository';
 import { LikeRequestOptions, MediaLikeOrUnlikeOptions, UnlikeRequestOptions } from '../types/media.like.options';
@@ -189,12 +189,6 @@ export class MediaRepository extends Repository {
       _uid: this.client.state.cookieUserId,
       _uuid: this.client.state.uuid,
       device: devicePayload,
-      /*
-      edits: {
-        crop_original_size: [width, height],
-        crop_center: [0.0, -0.0],
-        crop_zoom: random(1.01, 1.99).toFixed(7),
-      }, */
       extra: { source_width: width, source_height: height },
 
       ...defaults,
@@ -222,6 +216,11 @@ export class MediaRepository extends Repository {
       caption: '',
       source_type: '4',
       media_folder: 'Camera',
+      edits: {
+        crop_original_size: [width, height],
+        crop_center: [0.0, -0.0],
+        crop_zoom: random(1.01, 1.99).toFixed(7),
+      },
 
       // needed?!
       camera_model: devicePayload.model,

@@ -7,7 +7,7 @@ export interface MediaConfigureOptions {
   edits?: {
     crop_original_size?: [number, number];
     crop_center?: [number, number];
-    crop_zoom?: number;
+    crop_zoom?: number | string;
   };
   extra?: {
     source_width: number;
