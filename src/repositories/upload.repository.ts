@@ -22,9 +22,9 @@ export class UploadRepository extends Repository {
       url: `/rupload_igphoto/${name}`,
       method: 'POST',
       headers: {
-        X_FB_PHOTO_WATERFALL_ID: this.chance.guid(),
+        'X_FB_PHOTO_WATERFALL_ID': this.chance.guid(),
         'X-Entity-Type': 'image/jpeg',
-        Offset: 0,
+        'Offset': 0,
         'X-Instagram-Rupload-Params': JSON.stringify(ruploadParams),
         'X-Entity-Name': name,
         'X-Entity-Length': contentLength,

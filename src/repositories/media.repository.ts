@@ -31,9 +31,9 @@ export class MediaRepository extends Repository {
   }
 
   public async editMedia({
-    mediaId,
-    captionText,
-  }: {
+                           mediaId,
+                           captionText,
+                         }: {
     mediaId: string;
     captionText: string;
   }): Promise<MediaEditResponseRootObject> {
@@ -53,9 +53,9 @@ export class MediaRepository extends Repository {
   }
 
   public async delete({
-    mediaId,
-    mediaType = 'PHOTO',
-  }: {
+                        mediaId,
+                        mediaType = 'PHOTO',
+                      }: {
     mediaId: string;
     mediaType?: 'PHOTO' | 'VIDEO' | 'CAROUSEL';
   }) {
@@ -98,23 +98,26 @@ export class MediaRepository extends Repository {
     });
     return body;
   }
+
   public async like(options: LikeRequestOptions) {
     return this.likeAction({
       action: 'like',
       ...options,
     });
   }
+
   public async unlike(options: UnlikeRequestOptions) {
     return this.likeAction({
       action: 'unlike',
       ...options,
     });
   }
+
   public async comment({
-    mediaId,
-    text,
-    module = 'self_comments_v2',
-  }: {
+                         mediaId,
+                         text,
+                         module = 'self_comments_v2',
+                       }: {
     mediaId: string;
     text: string;
     module?: string;
@@ -136,12 +139,14 @@ export class MediaRepository extends Repository {
     });
     return body.comment;
   }
+
   public async likers(id: string): Promise<MediaRepositoryLikersResponseRootObject> {
     const { body } = await this.client.request.send<MediaRepositoryLikersResponseRootObject>({
       url: `/api/v1/media/${id}/likers/`,
     });
     return body;
   }
+
   public async blocked() {
     const { body } = await this.client.request.send<MediaRepositoryBlockedResponse>({
       url: `/api/v1/media/blocked/`,
@@ -176,20 +181,21 @@ export class MediaRepository extends Repository {
    * @param defaults - default values
    */
   private applyConfigureDefaults<T extends MediaConfigureOptions>(options: T, defaults: T): T {
-    // const width = options.width || 1520;
-    // const height = options.height || 2048;
-    // const devicePayload = this.client.state.devicePayload;
+    const width = options.width || 1520;
+    const height = options.height || 2048;
+    const devicePayload = this.client.state.devicePayload;
     return defaultsDeep(options, {
       _csrftoken: this.client.state.cookieCsrfToken,
       _uid: this.client.state.cookieUserId,
       _uuid: this.client.state.uuid,
-      /*device: devicePayload,
+      device: devicePayload,
+      /*
       edits: {
         crop_original_size: [width, height],
         crop_center: [0.0, -0.0],
         crop_zoom: random(1.01, 1.99).toFixed(7),
-      },
-      extra: { source_width: width, source_height: height },*/
+      }, */
+      extra: { source_width: width, source_height: height },
 
       ...defaults,
     });
@@ -199,7 +205,7 @@ export class MediaRepository extends Repository {
    * Configures an upload (indicated by {upload_id} in the options) for the timeline
    * @param options - configuration-options
    */
-  public async configureTimeline(options: MediaConfigureTimelineOptions): Promise<MediaRepositoryConfigureResponseRootObject> {
+  public async configure(options: MediaConfigureTimelineOptions): Promise<MediaRepositoryConfigureResponseRootObject> {
     const devicePayload = this.client.state.devicePayload;
     const now = DateTime.local().toFormat('yyyy:mm:dd HH:mm:ss');
     const width = options.width || 1520;
@@ -251,15 +257,46 @@ export class MediaRepository extends Repository {
       upload_id: Date.now().toString(),
       source_type: '3',
       configure_mode: 1,
-      story_media_creation_date: (now - 100).toString(),
-      client_shared_at: now.toString(),
-      client_timestamp: (now - 10).toString(),
-      camera_position: 'unknown',
-      edits: {},
-      disable_comments: false,
-      caption: 'loool',
+      client_shared_at: (now).toString(),
+      edits: {
+        crop_original_size: [width, height],
+        crop_center: [0.0, -0.0],
+        crop_zoom: 1.0,
+      },
     });
-    console.log(form);
+    // make sure source_type = 3
+    form.source_type = '3';
+
+    if (form.configure_mode === 1) {
+      if (form.story_hashtags !== undefined) {
+        form.story_hashtags = JSON.stringify(form.story_hashtags);
+      }
+      if (form.story_locations !== undefined) {
+        form.story_locations = JSON.stringify(form.story_locations);
+      }
+      if (form.reel_mentions !== undefined) {
+        form.reel_mentions = JSON.stringify(form.reel_mentions);
+      }
+      if (form.story_polls !== undefined) {
+        form.story_polls = JSON.stringify(form.story_polls);
+      }
+      if (form.story_sliders !== undefined) {
+        form.story_sliders = JSON.stringify(form.story_sliders);
+      }
+      if (form.story_questions !== undefined) {
+        form.story_questions = JSON.stringify(form.story_questions);
+      }
+      if (form.story_countdowns !== undefined) {
+        form.story_countdowns = JSON.stringify(form.story_countdowns);
+      }
+      if (form.attached_media !== undefined) {
+        form.attached_media = JSON.stringify(form.attached_media);
+      }
+      if (form.story_cta !== undefined) {
+        form.story_cta = JSON.stringify(form.story_cta);
+      }
+    }
+
     const { body } = await this.client.request.send({
       url: '/api/v1/media/configure_to_story/',
       method: 'POST',
