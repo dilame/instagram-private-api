@@ -7,9 +7,14 @@ import {
   MediaInfoResponseRootObject,
   MediaRepositoryBlockedResponse,
   MediaRepositoryCommentResponse,
-  MediaRepositoryLikersResponseRootObject, StatusResponse,
+  MediaRepositoryLikersResponseRootObject,
+  StatusResponse,
 } from '../responses';
-import { MediaConfigureOptions, MediaConfigureStoryOptions, MediaConfigureTimelineOptions } from '../types/media.configure.options';
+import {
+  MediaConfigureOptions,
+  MediaConfigureStoryOptions,
+  MediaConfigureTimelineOptions,
+} from '../types/media.configure.options';
 import { MediaRepositoryConfigureResponseRootObject } from '../responses/media.repository.configure.response';
 import Chance = require('chance');
 import { IgAppModule } from '../types/common.types';
@@ -31,9 +36,9 @@ export class MediaRepository extends Repository {
   }
 
   public async editMedia({
-                           mediaId,
-                           captionText,
-                         }: {
+    mediaId,
+    captionText,
+  }: {
     mediaId: string;
     captionText: string;
   }): Promise<MediaEditResponseRootObject> {
@@ -53,9 +58,9 @@ export class MediaRepository extends Repository {
   }
 
   public async delete({
-                        mediaId,
-                        mediaType = 'PHOTO',
-                      }: {
+    mediaId,
+    mediaType = 'PHOTO',
+  }: {
     mediaId: string;
     mediaType?: 'PHOTO' | 'VIDEO' | 'CAROUSEL';
   }) {
@@ -114,10 +119,10 @@ export class MediaRepository extends Repository {
   }
 
   public async comment({
-                         mediaId,
-                         text,
-                         module = 'self_comments_v2',
-                       }: {
+    mediaId,
+    text,
+    module = 'self_comments_v2',
+  }: {
     mediaId: string;
     text: string;
     module?: string;
@@ -230,10 +235,10 @@ export class MediaRepository extends Repository {
       software: '1',
       camera_make: devicePayload.manufacturer,
     });
-    if (form.usertags !== undefined) {
+    if (typeof form.usertags !== 'undefined') {
       form.usertags = JSON.stringify(form.usertags);
     }
-    if (form.location !== undefined) {
+    if (typeof form.location !== 'undefined') {
       form.location = JSON.stringify(form.location);
     }
 
@@ -256,7 +261,7 @@ export class MediaRepository extends Repository {
       upload_id: Date.now().toString(),
       source_type: '3',
       configure_mode: 1,
-      client_shared_at: (now).toString(),
+      client_shared_at: now.toString(),
       edits: {
         crop_original_size: [width, height],
         crop_center: [0.0, -0.0],
@@ -267,31 +272,31 @@ export class MediaRepository extends Repository {
     form.source_type = '3';
 
     if (form.configure_mode === 1) {
-      if (form.story_hashtags !== undefined) {
+      if (typeof form.story_hashtags !== 'undefined') {
         form.story_hashtags = JSON.stringify(form.story_hashtags);
       }
-      if (form.story_locations !== undefined) {
+      if (typeof form.story_locations !== 'undefined') {
         form.story_locations = JSON.stringify(form.story_locations);
       }
-      if (form.reel_mentions !== undefined) {
+      if (typeof form.reel_mentions !== 'undefined') {
         form.reel_mentions = JSON.stringify(form.reel_mentions);
       }
-      if (form.story_polls !== undefined) {
+      if (typeof form.story_polls !== 'undefined') {
         form.story_polls = JSON.stringify(form.story_polls);
       }
-      if (form.story_sliders !== undefined) {
+      if (typeof form.story_sliders !== 'undefined') {
         form.story_sliders = JSON.stringify(form.story_sliders);
       }
-      if (form.story_questions !== undefined) {
+      if (typeof form.story_questions !== 'undefined') {
         form.story_questions = JSON.stringify(form.story_questions);
       }
-      if (form.story_countdowns !== undefined) {
+      if (typeof form.story_countdowns !== 'undefined') {
         form.story_countdowns = JSON.stringify(form.story_countdowns);
       }
-      if (form.attached_media !== undefined) {
+      if (typeof form.attached_media !== 'undefined') {
         form.attached_media = JSON.stringify(form.attached_media);
       }
-      if (form.story_cta !== undefined) {
+      if (typeof form.story_cta !== 'undefined') {
         form.story_cta = JSON.stringify(form.story_cta);
       }
     }

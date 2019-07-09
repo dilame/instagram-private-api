@@ -19,10 +19,10 @@ export class PublishService extends Repository {
       height: imageSize.height,
       caption: options.caption,
     };
-    if (options.usertags !== undefined) {
+    if (typeof options.usertags !== 'undefined') {
       configureOptions.usertags = options.usertags;
     }
-    if (options.location !== undefined) {
+    if (typeof options.location !== 'undefined') {
       const { lat, lng, external_id_source, external_id, name, address } = options.location;
       configureOptions.location = {
         name,
@@ -39,7 +39,7 @@ export class PublishService extends Repository {
       configureOptions.posting_latitude = lat.toString();
       configureOptions.posting_longitude = lng.toString();
     }
-    return await this.client.media.configureTimeline(configureOptions);
+    return await this.client.media.configure(configureOptions);
   }
 
   public async story(options: PostingStoryOptions) {
@@ -55,12 +55,12 @@ export class PublishService extends Repository {
     };
 
     // check for directThread => no stickers supported
-    if (options.threadIds !== undefined) {
+    if (typeof options.threadIds !== 'undefined') {
       configureOptions.thread_ids = options.threadIds;
       configureOptions.configure_mode = 2;
       return await this.client.media.configureToStory(configureOptions);
     }
-    if (options.recipientUsers !== undefined) {
+    if (typeof options.recipientUsers !== 'undefined') {
       configureOptions.recipient_users = options.recipientUsers;
       configureOptions.configure_mode = 2;
       return await this.client.media.configureToStory(configureOptions);
@@ -71,8 +71,8 @@ export class PublishService extends Repository {
       configureOptions.audience = 'besties';
     }
     // check each sticker and add them
-    if (options.hashtags !== undefined && options.hashtags.length > 0) {
-      if (options.caption === undefined) {
+    if (typeof options.hashtags !== 'undefined' && options.hashtags.length > 0) {
+      if (typeof options.caption === 'undefined') {
         options.caption = '';
       }
       options.hashtags.forEach(hashtag => {
@@ -86,7 +86,7 @@ export class PublishService extends Repository {
       configureOptions.story_hashtags = options.hashtags;
       configureOptions.mas_opt_in = 'NOT_PROMPTED';
     }
-    if (options.location !== undefined) {
+    if (typeof options.location !== 'undefined') {
       const { latitude, longitude } = options.location;
       configureOptions.geotag_enabled = '1';
       configureOptions.posting_latitude = latitude;
@@ -97,8 +97,8 @@ export class PublishService extends Repository {
       configureOptions.story_locations = [options.location.sticker];
       configureOptions.mas_opt_in = 'NOT_PROMPTED';
     }
-    if (options.mentions !== undefined && options.mentions.length > 0) {
-      if (options.caption === undefined) {
+    if (typeof options.mentions !== 'undefined' && options.mentions.length > 0) {
+      if (typeof options.caption === 'undefined') {
         options.caption = '';
       } else {
         options.caption = options.caption.replace(' ', '+') + '+';
@@ -106,31 +106,33 @@ export class PublishService extends Repository {
       configureOptions.reel_mentions = options.mentions;
       configureOptions.mas_opt_in = 'NOT_PROMPTED';
     }
-    if (options.poll !== undefined) {
+    if (typeof options.poll !== 'undefined') {
       configureOptions.story_polls = [options.poll];
       configureOptions.internal_features = 'polling_sticker';
       configureOptions.mas_opt_in = 'NOT_PROMPTED';
     }
-    if (options.slider !== undefined) {
+    if (typeof options.slider !== 'undefined') {
       configureOptions.story_sliders = [options.slider];
       configureOptions.story_sticker_ids = `emoji_slider_${options.slider.emoji}`;
     }
-    if (options.question !== undefined) {
+    if (typeof options.question !== 'undefined') {
       configureOptions.story_questions = [options.question];
       configureOptions.story_sticker_ids = 'question_sticker_ma';
     }
-    if (options.countdown !== undefined) {
+    if (typeof options.countdown !== 'undefined') {
       configureOptions.story_countdowns = [options.countdown];
       configureOptions.story_sticker_ids = 'countdown_sticker_time';
     }
-    if (options.media !== undefined) {
+    if (typeof options.media !== 'undefined') {
       configureOptions.attached_media = [options.media];
       configureOptions.story_sticker_ids = `media_simple_${options.media.media_id}`;
     }
-    if (options.link !== undefined && options.link.length > 0) {
-      configureOptions.story_cta = [{
-        links: [{ webUri: options.link }],
-      }];
+    if (typeof options.link !== 'undefined' && options.link.length > 0) {
+      configureOptions.story_cta = [
+        {
+          links: [{ webUri: options.link }],
+        },
+      ];
     }
 
     return await this.client.media.configureToStory(configureOptions);
