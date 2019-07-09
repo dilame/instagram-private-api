@@ -230,7 +230,7 @@ export class LiveRepository extends Repository {
     return body;
   }
 
-  public async getPostLiveCount(
+  public async getPostLikeCount(
     broadcastId: string,
     startingOffset: number = 0,
     encodingTag: string = 'instagram_dash_remuxed',
