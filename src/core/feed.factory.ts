@@ -46,8 +46,10 @@ export class FeedFactory {
   public blockedUsers(): BlockedUsersFeed {
     return new BlockedUsersFeed(this.client);
   }
-  public directInbox(): DirectInboxFeed {
-    return new DirectInboxFeed(this.client);
+  public directInbox(limit: number = 20): DirectInboxFeed {
+    const feed = new DirectInboxFeed(this.client);
+    feed.limit = limit;
+    return feed;
   }
 
   public directPending(): DirectPendingInboxFeed {
