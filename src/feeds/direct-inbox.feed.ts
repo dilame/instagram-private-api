@@ -4,7 +4,8 @@ import { DirectInboxFeedResponse, DirectInboxFeedResponseThreadsItem } from '../
 import { DirectThreadEntity } from '../entities';
 
 export class DirectInboxFeed extends Feed<DirectInboxFeedResponse, DirectInboxFeedResponseThreadsItem> {
-  limit: number;
+  @Expose()
+  limit: number = 20;
   @Expose()
   private cursor: string;
   @Expose()
@@ -26,7 +27,7 @@ export class DirectInboxFeed extends Feed<DirectInboxFeedResponse, DirectInboxFe
         seq_id: this.seqId,
         thread_message_limit: 10,
         persistentBadging: true,
-        limit: this.limit ? this.limit : 20,
+        limit: this.limit,
       },
     });
     this.state = body;
