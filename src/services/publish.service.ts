@@ -52,6 +52,7 @@ export class PublishService extends Repository {
       width: imageSize.width,
       height: imageSize.height,
       configure_mode: 1,
+      story_sticker_ids: '',
     };
 
     // check for directThread => no stickers supported
@@ -113,19 +114,23 @@ export class PublishService extends Repository {
     }
     if (typeof options.slider !== 'undefined') {
       configureOptions.story_sliders = [options.slider];
-      configureOptions.story_sticker_ids = `emoji_slider_${options.slider.emoji}`;
+      configureOptions.story_sticker_ids += `emoji_slider_${options.slider.emoji},`;
     }
     if (typeof options.question !== 'undefined') {
       configureOptions.story_questions = [options.question];
-      configureOptions.story_sticker_ids = 'question_sticker_ma';
+      configureOptions.story_sticker_ids = 'question_sticker_ma,';
     }
     if (typeof options.countdown !== 'undefined') {
       configureOptions.story_countdowns = [options.countdown];
-      configureOptions.story_sticker_ids = 'countdown_sticker_time';
+      configureOptions.story_sticker_ids += 'countdown_sticker_time,';
     }
     if (typeof options.media !== 'undefined') {
       configureOptions.attached_media = [options.media];
-      configureOptions.story_sticker_ids = `media_simple_${options.media.media_id}`;
+      configureOptions.story_sticker_ids += `media_simple_${options.media.media_id},`;
+    }
+    if (typeof options.chat !== 'undefined') {
+      configureOptions.story_chats = [options.chat];
+      configureOptions.story_sticker_ids += 'chat_sticker_id,';
     }
     if (typeof options.link !== 'undefined' && options.link.length > 0) {
       configureOptions.story_cta = [
@@ -135,6 +140,12 @@ export class PublishService extends Repository {
       ];
     }
 
+    if (configureOptions.story_sticker_ids.length > 0) {
+      configureOptions.story_sticker_ids = configureOptions.story_sticker_ids.substring(
+        0,
+        configureOptions.story_sticker_ids.length - 1,
+      );
+    }
     return await this.client.media.configureToStory(configureOptions);
   }
 }

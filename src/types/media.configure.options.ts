@@ -67,7 +67,7 @@ export interface MediaConfigureStoryOptions extends MediaConfigureOptions {
   caption?: string;
   mas_opt_in?: 'NOT_PROMPTED';
 
-  story_sticker_ids?: string | 'question_sticker_ma' | 'countdown_sticker_time';
+  story_sticker_ids?: string | 'question_sticker_ma' | 'countdown_sticker_time' | 'chat_sticker_id';
 
   // caption has to be set
   story_hashtags?: StoryHashtag[] | string;
@@ -89,8 +89,18 @@ export interface MediaConfigureStoryOptions extends MediaConfigureOptions {
   // story_sticker_ids = 'media_simple_{media_id}'
   attached_media?: [StoryAttachedMedia] | string;
 
+  story_chats?: [StoryChat] | string;
+
   // links are only valid in business accounts
   story_cta?: [StoryCta] | string;
+}
+
+export interface StoryChat extends StorySticker {
+  text: string;
+  start_background_color: string;
+  end_background_color: string;
+  has_started_chat: false;
+  is_sticker: true;
 }
 
 /* range: 0..1 */

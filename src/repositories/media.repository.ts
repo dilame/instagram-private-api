@@ -300,6 +300,9 @@ export class MediaRepository extends Repository {
       if (typeof form.story_cta !== 'undefined') {
         form.story_cta = JSON.stringify(form.story_cta);
       }
+      if (typeof form.story_chats !== 'undefined') {
+        form.story_chats = JSON.stringify(form.story_chats);
+      }
     }
 
     const { body } = await this.client.request.send({

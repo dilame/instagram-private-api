@@ -1,5 +1,6 @@
 import {
   StoryAttachedMedia,
+  StoryChat,
   StoryCountdown,
   StoryHashtag,
   StoryLocation,
@@ -45,6 +46,7 @@ export interface PostingStoryOptions {
   question?: StoryQuestion;
   countdown?: StoryCountdown;
   media?: StoryAttachedMedia;
+  chat?: StoryChat;
   link?: string;
 }
 
