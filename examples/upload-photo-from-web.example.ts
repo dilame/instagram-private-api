@@ -13,16 +13,16 @@ import { get } from 'request-promise'; // request is already declared as an depe
   // getting random square image from internet
   const imageRequest = await get({
     url: 'https://picsum.photos/800/800', // random picture with 800x800 size
-    encoding: null // this is required, we could convert body to buffer only with null encoding
+    encoding: null, // this is required, we could convert body to buffer only with null encoding
   });
-  
+
   // converting image body to buffer
   const imageBuffer = Buffer.from(imageRequest.body, 'binary');
 
   const publishResult = await ig.publish.photo({
     file: imageBuffer, // image buffer, you also can specify image from your disk using fs
-    caption: 'Really nice photo from the internet! 💖' // nice caption (optional)
+    caption: 'Really nice photo from the internet! 💖', // nice caption (optional)
   });
-  
+
   console.log(publishResult); // publishResult.status should be "ok"
 })();
