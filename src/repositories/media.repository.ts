@@ -18,6 +18,7 @@ import {
 import { MediaRepositoryConfigureResponseRootObject } from '../responses/media.repository.configure.response';
 import Chance = require('chance');
 import { IgAppModule } from '../types/common.types';
+import { MediaRepositoryListReelMediaViewerResponseRootObject } from '../responses/media.repository.list-reel-media-viewer.response';
 
 export class MediaRepository extends Repository {
   public async info(mediaId: string): Promise<MediaInfoResponseRootObject> {
@@ -336,6 +337,19 @@ export class MediaRepository extends Repository {
         _csrftoken: this.client.state.cookieCsrfToken,
         device_id: this.client.state.deviceId,
       }),
+    });
+    return body;
+  }
+
+  public async listReelMediaViewer(
+    mediaId: string | number,
+  ): Promise<MediaRepositoryListReelMediaViewerResponseRootObject> {
+    const { body } = await this.client.request.send<MediaRepositoryListReelMediaViewerResponseRootObject>({
+      url: `/api/v1/media/${mediaId}/list_reel_media_viewer`,
+      method: 'GET',
+      qs: {
+        supported_capabilities_new: this.client.state.supportedCapabilities,
+      },
     });
     return body;
   }
