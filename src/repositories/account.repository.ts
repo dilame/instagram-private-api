@@ -5,11 +5,12 @@ import {
   AccountRepositoryLoginErrorResponse,
   AccountRepositoryLoginResponseLogged_in_user,
   AccountRepositoryLoginResponseRootObject,
+  StatusResponse,
 } from '../responses';
 import { IgLoginBadPasswordError, IgLoginInvalidUserError, IgResponseError } from '../errors';
 import { AccountEditProfileOptions } from '../types/account.edit-profile.options';
-import Bluebird = require('bluebird');
 import { IgResponse } from '../types/common.types';
+import Bluebird = require('bluebird');
 
 export class AccountRepository extends Repository {
   public async login(username: string, password: string): Promise<AccountRepositoryLoginResponseLogged_in_user> {
@@ -43,6 +44,21 @@ export class AccountRepository extends Repository {
       }
     });
     return response.body.logged_in_user;
+  }
+
+  public async logout() {
+    const { body } = await this.client.request.send<StatusResponse>({
+      method: 'POST',
+      url: '/api/v1/accounts/logout/',
+      form: this.client.request.sign({
+        guid: this.client.state.uuid,
+        phone_id: this.client.state.phoneId,
+        _csrftoken: this.client.state.cookieCsrfToken,
+        device_id: this.client.state.deviceId,
+        _uuid: this.client.state.uuid,
+      }),
+    });
+    return body;
   }
 
   public async currentUser() {
