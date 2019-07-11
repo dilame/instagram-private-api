@@ -8,6 +8,7 @@ import {
 } from '../responses';
 import { DirectThreadBroadcastOptions } from '../types/direct-thread.broadcast.options';
 import Chance = require('chance');
+import { DirectThreadRepositoryApproveParticipantRequestResponseRootObject } from '../responses/direct-thread.repository.approve-participant-request.response';
 
 export class DirectThreadRepository extends Repository {
   public async approve(threadId: string | number): Promise<StatusResponse> {
@@ -66,6 +67,23 @@ export class DirectThreadRepository extends Repository {
       method: 'POST',
       form: {
         _csrftoken: this.client.state.cookieCsrfToken,
+        _uuid: this.client.state.uuid,
+      },
+    });
+    return body;
+  }
+
+  public async approveParticipantRequests(
+    threadId: string | number,
+    userIds: string[],
+  ): Promise<DirectThreadRepositoryApproveParticipantRequestResponseRootObject> {
+    const { body } = await this.client.request.send<DirectThreadRepositoryApproveParticipantRequestResponseRootObject>({
+      url: `/api/v1/direct_v2/threads/${threadId}/approve_participant_requests/`,
+      method: 'POST',
+      form: {
+        _csrftoken: this.client.state.cookieCsrfToken,
+        user_ids: JSON.stringify(userIds),
+        share_join_chat_story: true,
         _uuid: this.client.state.uuid,
       },
     });

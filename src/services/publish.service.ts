@@ -47,6 +47,7 @@ export class PublishService extends Repository {
       file: options.file,
     });
     const imageSize = await sizeOf(options.file);
+    const storyStickerIds = [];
     const configureOptions: MediaConfigureStoryOptions = {
       upload_id: uploadedPhoto.upload_id,
       width: imageSize.width,
@@ -113,19 +114,23 @@ export class PublishService extends Repository {
     }
     if (typeof options.slider !== 'undefined') {
       configureOptions.story_sliders = [options.slider];
-      configureOptions.story_sticker_ids = `emoji_slider_${options.slider.emoji}`;
+      storyStickerIds.push(`emoji_slider_${options.slider.emoji}`);
     }
     if (typeof options.question !== 'undefined') {
       configureOptions.story_questions = [options.question];
-      configureOptions.story_sticker_ids = 'question_sticker_ma';
+      storyStickerIds.push('question_sticker_ma');
     }
     if (typeof options.countdown !== 'undefined') {
       configureOptions.story_countdowns = [options.countdown];
-      configureOptions.story_sticker_ids = 'countdown_sticker_time';
+      storyStickerIds.push('countdown_sticker_time');
     }
     if (typeof options.media !== 'undefined') {
       configureOptions.attached_media = [options.media];
-      configureOptions.story_sticker_ids = `media_simple_${options.media.media_id}`;
+      storyStickerIds.push(`media_simple_${options.media.media_id}`);
+    }
+    if (typeof options.chat !== 'undefined') {
+      configureOptions.story_chats = [options.chat];
+      storyStickerIds.push('chat_sticker_id');
     }
     if (typeof options.link !== 'undefined' && options.link.length > 0) {
       configureOptions.story_cta = [
@@ -135,6 +140,9 @@ export class PublishService extends Repository {
       ];
     }
 
+    if (configureOptions.story_sticker_ids.length > 0) {
+      configureOptions.story_sticker_ids = storyStickerIds.join(',');
+    }
     return await this.client.media.configureToStory(configureOptions);
   }
 }

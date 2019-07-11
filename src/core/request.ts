@@ -151,6 +151,7 @@ export class Request {
       'X-IG-Connection-Type': this.client.state.connectionTypeHeader,
       'X-IG-Capabilities': this.client.state.capabilitiesHeader,
       'X-IG-App-ID': this.client.state.fbAnalyticsApplicationId,
+      'X-IG-VP9-Capable': true,
       'Accept-Language': this.client.state.language.replace('_', '-'),
       Host: 'i.instagram.com',
       'Accept-Encoding': 'gzip',
