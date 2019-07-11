@@ -47,10 +47,10 @@ async function login() {
   await ig.live.unmuteComment(broadcast_id);
   /**
    * wait 2 seconds until the next request.
-   * in the real world you'd use something like setInterval() instead of setTimeout() / just to simulate a delay
+   * in the real world you'd use something like setInterval() instead of Bluebird.delay() / just to simulate a delay
    */
   // wait 2s
-  await Bluebird.fromCallback(cb => setTimeout(cb, 2 * 1000));
+  await Bluebird.delay(2000);
   // now, we print the next comments
   lastCommentTs = await printComments(broadcast_id, lastCommentTs);
 
