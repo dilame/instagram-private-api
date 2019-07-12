@@ -7,10 +7,17 @@ import {
   AccountRepositoryLoginResponseRootObject,
   StatusResponse,
 } from '../responses';
-import { IgLoginBadPasswordError, IgLoginInvalidUserError, IgResponseError } from '../errors';
+import {
+  IgLoginBadPasswordError,
+  IgLoginInvalidUserError,
+  IgLoginTwoFactorRequiredError,
+  IgResponseError,
+} from '../errors';
 import { AccountEditProfileOptions } from '../types/account.edit-profile.options';
 import { IgResponse } from '../types/common.types';
 import Bluebird = require('bluebird');
+import { AccountTwoFactorLoginOptions } from '../types/account.two-factor-login.options';
+import { defaultsDeep } from 'lodash';
 
 export class AccountRepository extends Repository {
   public async login(username: string, password: string): Promise<AccountRepositoryLoginResponseLogged_in_user> {
@@ -31,6 +38,9 @@ export class AccountRepository extends Repository {
         }),
       }),
     ).catch(IgResponseError, error => {
+      if (error.response.body.two_factor_required) {
+        throw new IgLoginTwoFactorRequiredError(error.response as IgResponse<AccountRepositoryLoginErrorResponse>);
+      }
       switch (error.response.body.error_type) {
         case 'bad_password': {
           throw new IgLoginBadPasswordError(error.response as IgResponse<AccountRepositoryLoginErrorResponse>);
@@ -44,6 +54,30 @@ export class AccountRepository extends Repository {
       }
     });
     return response.body.logged_in_user;
+  }
+
+  public async twoFactorLogin(
+    options: AccountTwoFactorLoginOptions,
+  ): Promise<AccountRepositoryLoginResponseLogged_in_user> {
+    options = defaultsDeep(options, {
+      trustThisDevice: '1',
+      verificationMethod: '1',
+    });
+    const { body } = await this.client.request.send<AccountRepositoryLoginResponseLogged_in_user>({
+      url: '/api/v1/accounts/two_factor_login/',
+      method: 'POST',
+      form: this.client.request.sign({
+        verification_code: options.verificationCode,
+        _csrftoken: this.client.state.cookieCsrfToken,
+        two_factor_identifier: options.twoFactorIdentifier,
+        username: options.username,
+        trust_this_device: options.trustThisDevice,
+        guid: this.client.state.uuid,
+        device_id: this.client.state.deviceId,
+        verification_method: options.verificationMethod,
+      }),
+    });
+    return body;
   }
 
   public async logout() {

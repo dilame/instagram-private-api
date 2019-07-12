@@ -7,6 +7,7 @@ export * from './ig-exact-user-not-found-error';
 export * from './ig-login-bad-password.error';
 export * from './ig-login-invalid-user.error';
 export * from './ig-login-required.error';
+export * from './ig-login-two-factor-required.error';
 export * from './ig-network.error';
 export * from './ig-no-checkpoint.error';
 export * from './ig-not-found.error';
