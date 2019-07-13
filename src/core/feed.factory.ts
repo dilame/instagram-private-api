@@ -21,6 +21,7 @@ import {
   ReelsTrayFeed,
   MusicGenreFeed,
   MusicMoodFeed,
+  UsertagsFeed,
 } from '../feeds';
 import { DirectInboxFeedResponseThreadsItem } from '../responses';
 import { TimelineFeedReason } from '../types/timeline-feed.types';
@@ -146,6 +147,10 @@ export class FeedFactory {
       id,
       product: product || 'story_camera_music_overlay_post_capture',
     });
+  }
+
+  public usertags(id: number | string): UsertagsFeed {
+    return plainToClassFromExist(new UsertagsFeed(this.client), { id });
   }
 
   public saved(): SavedFeed {

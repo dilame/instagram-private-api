@@ -19,3 +19,4 @@ export * from './music-search.feed';
 export * from './music-trending.feed';
 export * from './music-mood.feed';
 export * from './music-genre.feed';
+export * from './usertags.feed';
