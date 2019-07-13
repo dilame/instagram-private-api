@@ -26,6 +26,7 @@ export class MusicMoodFeed extends Feed<MusicMoodFeedResponseRootObject, MusicMo
         browse_session_id: this.client.state.clientSessionId,
       },
     });
+    this.state = body;
     return body;
   }
 

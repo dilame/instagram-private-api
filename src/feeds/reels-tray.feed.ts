@@ -25,6 +25,7 @@ export class ReelsTrayFeed extends Feed<ReelsTrayFeedResponseRootObject, ReelsTr
         _uuid: this.client.state.uuid,
       },
     });
+    this.state = body;
     return body;
   }
 }

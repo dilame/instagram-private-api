@@ -29,6 +29,7 @@ export class MusicSearchFeed extends Feed<MusicSearchFeedResponseRootObject, Mus
         q: this.query,
       },
     });
+    this.state = body;
     return body;
   }
 

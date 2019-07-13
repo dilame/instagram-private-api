@@ -26,6 +26,7 @@ export class MusicGenreFeed extends Feed<MusicGenreFeedResponseRootObject, Music
         browse_session_id: this.client.state.clientSessionId,
       },
     });
+    this.state = body;
     return body;
   }
 

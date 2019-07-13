@@ -25,6 +25,7 @@ export class MusicTrendingFeed extends Feed<MusicTrendingFeedResponseRootObject,
         browse_session_id: this.client.state.clientSessionId,
       },
     });
+    this.state = body;
     return body;
   }
 
