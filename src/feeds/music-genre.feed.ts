@@ -1,12 +1,15 @@
 import { Feed } from '../core/feed';
 import { IgAppModule } from '../types/common.types';
 import { MusicGenreFeedResponseItemsItem, MusicGenreFeedResponseRootObject } from '../responses';
+import { Expose } from 'class-transformer';
 
 export class MusicGenreFeed extends Feed<MusicGenreFeedResponseRootObject, MusicGenreFeedResponseItemsItem> {
+  @Expose()
   protected nextCursor?: string;
-  protected moreAvailable: boolean = true;
 
+  @Expose()
   public product: IgAppModule;
+  @Expose()
   public id: number | string;
 
   async items(): Promise<MusicGenreFeedResponseItemsItem[]> {

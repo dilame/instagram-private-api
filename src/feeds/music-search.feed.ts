@@ -1,13 +1,17 @@
 import { Feed } from '../core/feed';
 import { IgAppModule } from '../types/common.types';
 import { MusicSearchFeedResponseItemsItem, MusicSearchFeedResponseRootObject } from '../responses';
+import { Expose } from 'class-transformer';
 
 export class MusicSearchFeed extends Feed<MusicSearchFeedResponseRootObject, MusicSearchFeedResponseItemsItem> {
+  @Expose()
   protected nextCursor?: string;
-  protected moreAvailable: boolean = true;
 
+  @Expose()
   public product: IgAppModule;
+  @Expose()
   public query: string;
+  @Expose()
   public searchSessionId: string;
 
   async items(): Promise<MusicSearchFeedResponseItemsItem[]> {
