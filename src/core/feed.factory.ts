@@ -9,18 +9,18 @@ import {
   DiscoverFeed,
   LocationFeed,
   MediaCommentsFeed,
+  MusicGenreFeed,
+  MusicMoodFeed,
   MusicSearchFeed,
+  MusicTrendingFeed,
   NewsFeed,
   PendingFriendshipsFeed,
   ReelsMediaFeed,
+  ReelsTrayFeed,
   SavedFeed,
   TagFeed,
   TimelineFeed,
   UserFeed,
-  MusicTrendingFeed,
-  ReelsTrayFeed,
-  MusicGenreFeed,
-  MusicMoodFeed,
   UsertagsFeed,
 } from '../feeds';
 import { DirectInboxFeedResponseThreadsItem } from '../responses';
@@ -108,8 +108,7 @@ export class FeedFactory {
     return plainToClassFromExist(new ReelsMediaFeed(this.client), options);
   }
 
-  public reelsTray(reason?: 'pull_to_refresh' | 'cold_start'): ReelsTrayFeed {
-    reason = reason || 'cold_start';
+  public reelsTray(reason: 'pull_to_refresh' | 'cold_start' = 'cold_start'): ReelsTrayFeed {
     return plainToClassFromExist(new ReelsTrayFeed(this.client), { reason });
   }
 
@@ -121,31 +120,36 @@ export class FeedFactory {
     return feed;
   }
 
-  public musicTrending(product?: IgAppModule): MusicTrendingFeed {
-    product = product || 'story_camera_music_overlay_post_capture';
+  public musicTrending(product: IgAppModule = 'story_camera_music_overlay_post_capture'): MusicTrendingFeed {
     return plainToClassFromExist(new MusicTrendingFeed(this.client), { product });
   }
 
-  public musicSearch(query: string, product?: IgAppModule): MusicSearchFeed {
+  public musicSearch(query: string, product: IgAppModule = 'story_camera_music_overlay_post_capture'): MusicSearchFeed {
     const options = {
       query,
-      product: product || 'story_camera_music_overlay_post_capture',
+      product,
       searchSessionId: new Chance(query).guid(),
     };
     return plainToClassFromExist(new MusicSearchFeed(this.client), options);
   }
 
-  public musicGenre(id: number | string, product?: IgAppModule): MusicGenreFeed {
+  public musicGenre(
+    id: number | string,
+    product: IgAppModule = 'story_camera_music_overlay_post_capture',
+  ): MusicGenreFeed {
     return plainToClassFromExist(new MusicGenreFeed(this.client), {
       id,
-      product: product || 'story_camera_music_overlay_post_capture',
+      product,
     });
   }
 
-  public musicMood(id: number | string, product?: IgAppModule): MusicMoodFeed {
+  public musicMood(
+    id: number | string,
+    product: IgAppModule = 'story_camera_music_overlay_post_capture',
+  ): MusicMoodFeed {
     return plainToClassFromExist(new MusicMoodFeed(this.client), {
       id,
-      product: product || 'story_camera_music_overlay_post_capture',
+      product,
     });
   }
 
