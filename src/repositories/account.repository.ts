@@ -5,6 +5,7 @@ import {
   AccountRepositoryLoginErrorResponse,
   AccountRepositoryLoginResponseLogged_in_user,
   AccountRepositoryLoginResponseRootObject,
+  SpamResponse,
   StatusResponse,
 } from '../responses';
 import {
@@ -15,9 +16,10 @@ import {
 } from '../errors';
 import { AccountEditProfileOptions } from '../types/account.edit-profile.options';
 import { IgResponse } from '../types/common.types';
-import Bluebird = require('bluebird');
 import { AccountTwoFactorLoginOptions } from '../types/account.two-factor-login.options';
 import { defaultsDeep } from 'lodash';
+import { IgSignupBlockError } from '../errors/ig-signup-block.error';
+import Bluebird = require('bluebird');
 
 export class AccountRepository extends Repository {
   public async login(username: string, password: string): Promise<AccountRepositoryLoginResponseLogged_in_user> {
@@ -91,6 +93,39 @@ export class AccountRepository extends Repository {
         device_id: this.client.state.deviceId,
         _uuid: this.client.state.uuid,
       }),
+    });
+    return body;
+  }
+
+  async create({ username, password, email, first_name }) {
+    const { body } = await Bluebird.try(() =>
+      this.client.request.send({
+        method: 'POST',
+        url: '/api/v1/accounts/create/',
+        form: this.client.request.sign({
+          username,
+          password,
+          email,
+          first_name,
+          guid: this.client.state.uuid,
+          device_id: this.client.state.deviceId,
+          _csrftoken: this.client.state.cookieCsrfToken,
+          force_sign_up_code: '',
+          qs_stamp: '',
+          waterfall_id: this.client.state.uuid,
+          sn_nonce: '',
+          sn_result: '',
+        }),
+      }),
+    ).catch(IgResponseError, error => {
+      switch (error.response.body.error_type) {
+        case 'signup_block': {
+          throw new IgSignupBlockError(error.response as IgResponse<SpamResponse>);
+        }
+        default: {
+          throw error;
+        }
+      }
     });
     return body;
   }
