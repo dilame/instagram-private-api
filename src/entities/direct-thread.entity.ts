@@ -44,6 +44,22 @@ export class DirectThreadEntity extends Entity {
     });
   }
 
+  public async broadcastStory(file: Buffer) {
+    if (this.threadId === null) {
+      return await this.client.publish.story({
+        file,
+        threadIds: [this.threadId],
+      });
+    }
+    if (this.userIds === null) {
+      return await this.client.publish.story({
+        file,
+        recipientUsers: this.userIds,
+      });
+    }
+    throw new Error('DirectThread: No recipients set');
+  }
+
   public async updateTitle(title: string) {
     return await this.client.directThread.updateTitle(this.threadId, title);
   }

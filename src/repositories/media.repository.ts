@@ -7,12 +7,18 @@ import {
   MediaInfoResponseRootObject,
   MediaRepositoryBlockedResponse,
   MediaRepositoryCommentResponse,
-  MediaRepositoryLikersResponseRootObject, StatusResponse,
+  MediaRepositoryLikersResponseRootObject,
+  StatusResponse,
 } from '../responses';
-import { MediaConfigureOptions } from '../types/media.configure.options';
-import { MediaRepositoryCommentResponseRootObject } from '../responses/media.repository.configure.response';
+import {
+  MediaConfigureOptions,
+  MediaConfigureStoryOptions,
+  MediaConfigureTimelineOptions,
+} from '../types/media.configure.options';
+import { MediaRepositoryConfigureResponseRootObject } from '../responses/media.repository.configure.response';
 import Chance = require('chance');
 import { IgAppModule } from '../types/common.types';
+import { MediaRepositoryListReelMediaViewerResponseRootObject } from '../responses/media.repository.list-reel-media-viewer.response';
 
 export class MediaRepository extends Repository {
   public async info(mediaId: string): Promise<MediaInfoResponseRootObject> {
@@ -98,18 +104,21 @@ export class MediaRepository extends Repository {
     });
     return body;
   }
+
   public async like(options: LikeRequestOptions) {
     return this.likeAction({
       action: 'like',
       ...options,
     });
   }
+
   public async unlike(options: UnlikeRequestOptions) {
     return this.likeAction({
       action: 'unlike',
       ...options,
     });
   }
+
   public async comment({
     mediaId,
     text,
@@ -136,12 +145,14 @@ export class MediaRepository extends Repository {
     });
     return body.comment;
   }
+
   public async likers(id: string): Promise<MediaRepositoryLikersResponseRootObject> {
     const { body } = await this.client.request.send<MediaRepositoryLikersResponseRootObject>({
       url: `/api/v1/media/${id}/likers/`,
     });
     return body;
   }
+
   public async blocked() {
     const { body } = await this.client.request.send<MediaRepositoryBlockedResponse>({
       url: `/api/v1/media/blocked/`,
@@ -170,39 +181,132 @@ export class MediaRepository extends Repository {
     return body;
   }
 
-  public async configure(options: MediaConfigureOptions): Promise<MediaRepositoryCommentResponseRootObject> {
+  /**
+   * Adds default values to the MediaConfigureOptions
+   * @param options - user submitted options
+   * @param defaults - default values
+   */
+  private applyConfigureDefaults<T extends MediaConfigureOptions>(options: T, defaults: T): T {
+    const width = options.width || 1520;
+    const height = options.height || 2048;
+    const devicePayload = this.client.state.devicePayload;
+    return defaultsDeep(options, {
+      _csrftoken: this.client.state.cookieCsrfToken,
+      _uid: this.client.state.cookieUserId,
+      _uuid: this.client.state.uuid,
+      device: devicePayload,
+      extra: { source_width: width, source_height: height },
+
+      ...defaults,
+    });
+  }
+
+  /**
+   * Configures an upload (indicated by {upload_id} in the options) for the timeline
+   * @param options - configuration-options
+   */
+  public async configure(options: MediaConfigureTimelineOptions): Promise<MediaRepositoryConfigureResponseRootObject> {
     const devicePayload = this.client.state.devicePayload;
     const now = DateTime.local().toFormat('yyyy:mm:dd HH:mm:ss');
     const width = options.width || 1520;
     const height = options.height || 2048;
 
-    const form = defaultsDeep(options, {
-      date_time_digitalized: now,
-      camera_model: devicePayload.model,
-      scene_capture_type: 'standard',
+    const form = this.applyConfigureDefaults<MediaConfigureTimelineOptions>(options, {
+      width,
+      height,
+
+      upload_id: Date.now().toString(),
       timezone_offset: this.client.state.timezoneOffset,
-      _csrftoken: this.client.state.cookieCsrfToken,
-      media_folder: 'Camera',
-      source_type: '4',
-      _uid: this.client.state.cookieUserId,
-      device_id: this.client.state.deviceId,
-      _uuid: this.client.state.uuid,
-      creation_logger_session_id: this.client.state.clientSessionId,
-      caption: '',
       date_time_original: now,
-      software: '1',
-      camera_make: devicePayload.manufacturer,
-      device: devicePayload,
+      date_time_digitalized: now,
+      caption: '',
+      source_type: '4',
+      media_folder: 'Camera',
       edits: {
         crop_original_size: [width, height],
         crop_center: [0.0, -0.0],
         crop_zoom: random(1.01, 1.99).toFixed(7),
       },
-      extra: { source_width: width, source_height: height },
-    });
 
-    const { body } = await this.client.request.send<MediaRepositoryCommentResponseRootObject>({
+      // needed?!
+      camera_model: devicePayload.model,
+      scene_capture_type: 'standard',
+      device_id: this.client.state.deviceId,
+      creation_logger_session_id: this.client.state.clientSessionId,
+      software: '1',
+      camera_make: devicePayload.manufacturer,
+    });
+    if (typeof form.usertags !== 'undefined') {
+      form.usertags = JSON.stringify(form.usertags);
+    }
+    if (typeof form.location !== 'undefined') {
+      form.location = JSON.stringify(form.location);
+    }
+
+    const { body } = await this.client.request.send<MediaRepositoryConfigureResponseRootObject>({
       url: '/api/v1/media/configure/',
+      method: 'POST',
+      form: this.client.request.sign(form),
+    });
+    return body;
+  }
+
+  public async configureToStory(options: MediaConfigureStoryOptions) {
+    const now = Date.now();
+    const width = options.width || 1520;
+    const height = options.height || 2048;
+    const form = this.applyConfigureDefaults<MediaConfigureStoryOptions>(options, {
+      width,
+      height,
+
+      upload_id: Date.now().toString(),
+      source_type: '3',
+      configure_mode: 1,
+      client_shared_at: now.toString(),
+      edits: {
+        crop_original_size: [width, height],
+        crop_center: [0.0, -0.0],
+        crop_zoom: 1.0,
+      },
+    });
+    // make sure source_type = 3
+    form.source_type = '3';
+
+    if (form.configure_mode === 1) {
+      if (typeof form.story_hashtags !== 'undefined') {
+        form.story_hashtags = JSON.stringify(form.story_hashtags);
+      }
+      if (typeof form.story_locations !== 'undefined') {
+        form.story_locations = JSON.stringify(form.story_locations);
+      }
+      if (typeof form.reel_mentions !== 'undefined') {
+        form.reel_mentions = JSON.stringify(form.reel_mentions);
+      }
+      if (typeof form.story_polls !== 'undefined') {
+        form.story_polls = JSON.stringify(form.story_polls);
+      }
+      if (typeof form.story_sliders !== 'undefined') {
+        form.story_sliders = JSON.stringify(form.story_sliders);
+      }
+      if (typeof form.story_questions !== 'undefined') {
+        form.story_questions = JSON.stringify(form.story_questions);
+      }
+      if (typeof form.story_countdowns !== 'undefined') {
+        form.story_countdowns = JSON.stringify(form.story_countdowns);
+      }
+      if (typeof form.attached_media !== 'undefined') {
+        form.attached_media = JSON.stringify(form.attached_media);
+      }
+      if (typeof form.story_cta !== 'undefined') {
+        form.story_cta = JSON.stringify(form.story_cta);
+      }
+      if (typeof form.story_chats !== 'undefined') {
+        form.story_chats = JSON.stringify(form.story_chats);
+      }
+    }
+
+    const { body } = await this.client.request.send({
+      url: '/api/v1/media/configure_to_story/',
       method: 'POST',
       form: this.client.request.sign(form),
     });
@@ -236,6 +340,19 @@ export class MediaRepository extends Repository {
         _csrftoken: this.client.state.cookieCsrfToken,
         device_id: this.client.state.deviceId,
       }),
+    });
+    return body;
+  }
+
+  public async listReelMediaViewer(
+    mediaId: string | number,
+  ): Promise<MediaRepositoryListReelMediaViewerResponseRootObject> {
+    const { body } = await this.client.request.send<MediaRepositoryListReelMediaViewerResponseRootObject>({
+      url: `/api/v1/media/${mediaId}/list_reel_media_viewer`,
+      method: 'GET',
+      qs: {
+        supported_capabilities_new: this.client.state.supportedCapabilities,
+      },
     });
     return body;
   }

@@ -3,13 +3,14 @@ import {
   DirectThreadRepositoryAddUserResponseRootObject,
   DirectThreadRepositoryBroadcastResponseRootObject,
   DirectThreadRepositoryGetByParticipantsResponseRootObject,
-  DirectThreadRepositoryUpdateTitleResponseRootObject, StatusResponse,
+  DirectThreadRepositoryUpdateTitleResponseRootObject,
+  StatusResponse,
 } from '../responses';
 import { DirectThreadBroadcastOptions } from '../types/direct-thread.broadcast.options';
 import Chance = require('chance');
+import { DirectThreadRepositoryApproveParticipantRequestResponseRootObject } from '../responses/direct-thread.repository.approve-participant-request.response';
 
 export class DirectThreadRepository extends Repository {
-
   public async approve(threadId: string | number): Promise<StatusResponse> {
     const { body } = await this.client.request.send<StatusResponse>({
       url: `/api/v1/direct_v2/threads/${threadId}/approve/`,
@@ -72,8 +73,27 @@ export class DirectThreadRepository extends Repository {
     return body;
   }
 
+  public async approveParticipantRequests(
+    threadId: string | number,
+    userIds: string[],
+  ): Promise<DirectThreadRepositoryApproveParticipantRequestResponseRootObject> {
+    const { body } = await this.client.request.send<DirectThreadRepositoryApproveParticipantRequestResponseRootObject>({
+      url: `/api/v1/direct_v2/threads/${threadId}/approve_participant_requests/`,
+      method: 'POST',
+      form: {
+        _csrftoken: this.client.state.cookieCsrfToken,
+        user_ids: JSON.stringify(userIds),
+        share_join_chat_story: true,
+        _uuid: this.client.state.uuid,
+      },
+    });
+    return body;
+  }
+
   // move to direct-repo?
-  public async getByParticipants(recipientUsers: string[] | number[]): Promise<DirectThreadRepositoryGetByParticipantsResponseRootObject> {
+  public async getByParticipants(
+    recipientUsers: string[] | number[],
+  ): Promise<DirectThreadRepositoryGetByParticipantsResponseRootObject> {
     const { body } = await this.client.request.send<DirectThreadRepositoryGetByParticipantsResponseRootObject>({
       url: '/api/v1/direct_v2/threads/get_by_participants/',
       method: 'GET',
@@ -84,7 +104,10 @@ export class DirectThreadRepository extends Repository {
     return body;
   }
 
-  public async updateTitle(threadId: string | number, title: string): Promise<DirectThreadRepositoryUpdateTitleResponseRootObject> {
+  public async updateTitle(
+    threadId: string | number,
+    title: string,
+  ): Promise<DirectThreadRepositoryUpdateTitleResponseRootObject> {
     const { body } = await this.client.request.send<DirectThreadRepositoryUpdateTitleResponseRootObject>({
       url: `/api/v1/direct_v2/threads/${threadId}/update_title/`,
       method: 'POST',
@@ -121,7 +144,10 @@ export class DirectThreadRepository extends Repository {
     return body;
   }
 
-  public async addUser(threadId: string | number, userIds: string[] | number[]): Promise<DirectThreadRepositoryAddUserResponseRootObject> {
+  public async addUser(
+    threadId: string | number,
+    userIds: string[] | number[],
+  ): Promise<DirectThreadRepositoryAddUserResponseRootObject> {
     const { body } = await this.client.request.send<DirectThreadRepositoryAddUserResponseRootObject>({
       url: `/api/v1/direct_v2/threads/${threadId}/add_user/`,
       method: 'POST',

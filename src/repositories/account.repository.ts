@@ -5,11 +5,21 @@ import {
   AccountRepositoryLoginErrorResponse,
   AccountRepositoryLoginResponseLogged_in_user,
   AccountRepositoryLoginResponseRootObject,
+  SpamResponse,
+  StatusResponse,
 } from '../responses';
-import { IgLoginBadPasswordError, IgLoginInvalidUserError, IgResponseError } from '../errors';
+import {
+  IgLoginBadPasswordError,
+  IgLoginInvalidUserError,
+  IgLoginTwoFactorRequiredError,
+  IgResponseError,
+} from '../errors';
 import { AccountEditProfileOptions } from '../types/account.edit-profile.options';
-import Bluebird = require('bluebird');
 import { IgResponse } from '../types/common.types';
+import { AccountTwoFactorLoginOptions } from '../types/account.two-factor-login.options';
+import { defaultsDeep } from 'lodash';
+import { IgSignupBlockError } from '../errors/ig-signup-block.error';
+import Bluebird = require('bluebird');
 
 export class AccountRepository extends Repository {
   public async login(username: string, password: string): Promise<AccountRepositoryLoginResponseLogged_in_user> {
@@ -30,6 +40,9 @@ export class AccountRepository extends Repository {
         }),
       }),
     ).catch(IgResponseError, error => {
+      if (error.response.body.two_factor_required) {
+        throw new IgLoginTwoFactorRequiredError(error.response as IgResponse<AccountRepositoryLoginErrorResponse>);
+      }
       switch (error.response.body.error_type) {
         case 'bad_password': {
           throw new IgLoginBadPasswordError(error.response as IgResponse<AccountRepositoryLoginErrorResponse>);
@@ -43,6 +56,78 @@ export class AccountRepository extends Repository {
       }
     });
     return response.body.logged_in_user;
+  }
+
+  public async twoFactorLogin(
+    options: AccountTwoFactorLoginOptions,
+  ): Promise<AccountRepositoryLoginResponseLogged_in_user> {
+    options = defaultsDeep(options, {
+      trustThisDevice: '1',
+      verificationMethod: '1',
+    });
+    const { body } = await this.client.request.send<AccountRepositoryLoginResponseLogged_in_user>({
+      url: '/api/v1/accounts/two_factor_login/',
+      method: 'POST',
+      form: this.client.request.sign({
+        verification_code: options.verificationCode,
+        _csrftoken: this.client.state.cookieCsrfToken,
+        two_factor_identifier: options.twoFactorIdentifier,
+        username: options.username,
+        trust_this_device: options.trustThisDevice,
+        guid: this.client.state.uuid,
+        device_id: this.client.state.deviceId,
+        verification_method: options.verificationMethod,
+      }),
+    });
+    return body;
+  }
+
+  public async logout() {
+    const { body } = await this.client.request.send<StatusResponse>({
+      method: 'POST',
+      url: '/api/v1/accounts/logout/',
+      form: this.client.request.sign({
+        guid: this.client.state.uuid,
+        phone_id: this.client.state.phoneId,
+        _csrftoken: this.client.state.cookieCsrfToken,
+        device_id: this.client.state.deviceId,
+        _uuid: this.client.state.uuid,
+      }),
+    });
+    return body;
+  }
+
+  async create({ username, password, email, first_name }) {
+    const { body } = await Bluebird.try(() =>
+      this.client.request.send({
+        method: 'POST',
+        url: '/api/v1/accounts/create/',
+        form: this.client.request.sign({
+          username,
+          password,
+          email,
+          first_name,
+          guid: this.client.state.uuid,
+          device_id: this.client.state.deviceId,
+          _csrftoken: this.client.state.cookieCsrfToken,
+          force_sign_up_code: '',
+          qs_stamp: '',
+          waterfall_id: this.client.state.uuid,
+          sn_nonce: '',
+          sn_result: '',
+        }),
+      }),
+    ).catch(IgResponseError, error => {
+      switch (error.response.body.error_type) {
+        case 'signup_block': {
+          throw new IgSignupBlockError(error.response as IgResponse<SpamResponse>);
+        }
+        default: {
+          throw error;
+        }
+      }
+    });
+    return body;
   }
 
   public async currentUser() {

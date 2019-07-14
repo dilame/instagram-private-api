@@ -2,10 +2,9 @@
 import 'dotenv/config';
 import { IgApiClient } from '../src';
 import * as Bluebird from 'bluebird';
-import { writeFile } from 'fs';
 import { json2ts } from 'json-ts/dist';
 import { camelCase } from 'lodash';
-// import { async } from 'rxjs/internal/scheduler/async';
+import { writeFile } from 'fs';
 
 const ig = new IgApiClient();
 
@@ -30,7 +29,7 @@ async function createInterface(request: Promise<any>, outputName: string) {
 async function login() {
   ig.state.generateDevice(process.env.IG_USERNAME);
   ig.state.proxyUrl = process.env.IG_PROXY;
-  await ig.account.login(process.env.IG_USERNAME, process.env.IG_PASSWORD);
+  return await ig.account.login(process.env.IG_USERNAME, process.env.IG_PASSWORD);
 }
 
 (async function mainAsync() {
