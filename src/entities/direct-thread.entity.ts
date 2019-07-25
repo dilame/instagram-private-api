@@ -84,6 +84,10 @@ export class DirectThreadEntity extends Entity {
     return await this.client.directThread.addUser(this.threadId, userIds);
   }
 
+  public async markItemSeen(threadItemId: string) {
+    return await this.client.directThread.markItemSeen(this.threadId, threadItemId);
+  }
+
   private async broadcast(options: Partial<DirectThreadBroadcastOptions>) {
     if (this.threadId === null && this.userIds === null) {
       throw new Error('DirectThread: No recipients set');
