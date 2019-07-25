@@ -1,18 +1,5 @@
 import { Repository } from '../core/repository';
-
-export interface StoryServiceSeenInputItems {
-  id: string;
-  taken_at: number;
-  user: {
-    pk: number;
-  };
-}
-
-export interface StoryServiceSeenInputReels {
-  items: StoryServiceSeenInputItems[];
-}
-
-type StoryServiceInput = StoryServiceSeenInputItems[] | StoryServiceSeenInputReels;
+import { StoryServiceInput, StoryServiceSeenInputItems, StoryServiceSeenInputReels } from '../types';
 
 export class StoryService extends Repository {
   seen(input: StoryServiceInput, sourceId: string = null) {
