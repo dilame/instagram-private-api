@@ -81,8 +81,11 @@ Plus we need some documentation, so if you are good in it - you are welcome.
 
 ## Special thanks
 
-* [Richard Hutta](https://github.com/huttarichard), original author of this library. Thanks to him for starting it.
-* [Nerixyz](https://github.com/Nerixyz), for writing a huge amount of code for this library.
+- [Richard Hutta](https://github.com/huttarichard), original author of this library. Thanks to him for starting it.
+
+## Thanks to contributors
+
+- [Nerixyz](https://github.com/Nerixyz), for writing a huge amount of code for this library.
 
 ## End User License Agreement (EULA)
 
