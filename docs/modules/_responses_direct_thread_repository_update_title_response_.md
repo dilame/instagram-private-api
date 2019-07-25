@@ -1,0 +1,20 @@
+> **[instagram-private-api](../README.md)**
+
+[Globals](../README.md) / ["responses/direct-thread.repository.update-title.response"](_responses_direct_thread_repository_update_title_response_.md) /
+
+# External module: "responses/direct-thread.repository.update-title.response"
+
+## Index
+
+### Interfaces
+
+* [DirectThreadRepositoryUpdateTitleResponseActionLog](../interfaces/_responses_direct_thread_repository_update_title_response_.directthreadrepositoryupdatetitleresponseactionlog.md)
+* [DirectThreadRepositoryUpdateTitleResponseBoldItem](../interfaces/_responses_direct_thread_repository_update_title_response_.directthreadrepositoryupdatetitleresponsebolditem.md)
+* [DirectThreadRepositoryUpdateTitleResponseFriendshipStatus](../interfaces/_responses_direct_thread_repository_update_title_response_.directthreadrepositoryupdatetitleresponsefriendshipstatus.md)
+* [DirectThreadRepositoryUpdateTitleResponseInviter](../interfaces/_responses_direct_thread_repository_update_title_response_.directthreadrepositoryupdatetitleresponseinviter.md)
+* [DirectThreadRepositoryUpdateTitleResponseItemsItem](../interfaces/_responses_direct_thread_repository_update_title_response_.directthreadrepositoryupdatetitleresponseitemsitem.md)
+* [DirectThreadRepositoryUpdateTitleResponseLastPermanentItem](../interfaces/_responses_direct_thread_repository_update_title_response_.directthreadrepositoryupdatetitleresponselastpermanentitem.md)
+* [DirectThreadRepositoryUpdateTitleResponseRootObject](../interfaces/_responses_direct_thread_repository_update_title_response_.directthreadrepositoryupdatetitleresponserootobject.md)
+* [DirectThreadRepositoryUpdateTitleResponseTextAttributesItem](../interfaces/_responses_direct_thread_repository_update_title_response_.directthreadrepositoryupdatetitleresponsetextattributesitem.md)
+* [DirectThreadRepositoryUpdateTitleResponseThread](../interfaces/_responses_direct_thread_repository_update_title_response_.directthreadrepositoryupdatetitleresponsethread.md)
+* [DirectThreadRepositoryUpdateTitleResponseUsersItem](../interfaces/_responses_direct_thread_repository_update_title_response_.directthreadrepositoryupdatetitleresponseusersitem.md)
