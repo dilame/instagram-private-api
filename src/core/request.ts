@@ -117,7 +117,7 @@ export class Request {
         this.client.state.checkpoint = json;
         return new IgCheckpointError(response);
       }
-      if (json.message === 'login_required') {
+      if (['user_has_logged_out', 'login_required'].includes(json.message)) {
         return new IgLoginRequiredError(response);
       }
       if (json.message.toLowerCase() === 'not authorized to view user') {
