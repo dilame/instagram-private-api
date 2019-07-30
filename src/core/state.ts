@@ -100,8 +100,8 @@ export class State {
   public get resolution() {
     let res = this.deviceString.split('; ')[2].split('x');
     return {
-      height: res[0],
-      width: res[1]
+      height: res[1],
+      width: res[0]
     }
   }
 
@@ -122,24 +122,22 @@ export class State {
   }
 
   public get fbUserAgent() {
-    let density = Math.round(this.dpi / 160);
     let resolution = this.resolution;
     
     let props = {
-      'FBAN': 'Instagram',
+      'FBAN': 'InstagramForAndroid',
       'FBAV': this.appVersion,
       'FBBV': this.appVersionCode,
-      'FBDM': `{density=${density}.0,width=${resolution.width},height=${resolution.height}}`,
+      'FBDM': `{density=4.0,width=${resolution.width},height=${resolution.height}}`,
       'FBLC': this.language,
-      'FBCR': '', // We don't have cellular.
-      'FBMF': this.escapeFbString(this.deviceManufacturer),
-      'FBBD': this.escapeFbString(this.deviceManufacturer), // we don't have brands in device_strings
+      'FBCR': '',
+      'FBMF': this.deviceManufacturer.toUpperCase(),
+      'FBBD': this.deviceManufacturer.toUpperCase(),
       'FBPN': 'com.instagram.android',
-      'FBDV': this.escapeFbString(this.deviceModel),
-      'FBSV': this.escapeFbString(this.deviceAndroidRelease),
-      'FBLR': 0, // android.hardware.ram.low
-      'FBBK': 1, // Const (at least in 10.12.0).
-      'FBCA': this.escapeFbString('armeabi-v7a:armeabi')
+      'FBDV': this.deviceModel.toUpperCase(),
+      'FBSV': '7.0',
+      'FBBK': 1,
+      'FBCA': 'armeabi-v7a:armeabi'
     };
 
     let result = '';
@@ -201,21 +199,6 @@ export class State {
 
   public isExperimentEnabled(experiment) {
     return this.experiments.includes(experiment);
-  }
-
-  public escapeFbString(source: string): string {
-    let result = '';
-    for (let i = 0; i < source.length; i++) {
-      let char = source.charAt(i);
-      if (char === '&') {
-        char = '&amp;';
-      } else if (char < ' ' || char > '~') {
-        char = `&#${char.charCodeAt(0)};`;
-      }
-      result += char;
-    }
-    result = result.replace(/\/;/g, '-').replace(/;/g, '-');
-    return result;
   }
 
   public extractCookie(key: string): Cookie | null {
