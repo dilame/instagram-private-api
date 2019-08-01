@@ -8,6 +8,12 @@ import {
   PostingStoryOptions,
 } from '../types';
 import { PostingVideoOptions } from '../types/posting.video.options';
+import {
+  PostingAlbumItem,
+  PostingAlbumOptions,
+  PostingAlbumPhotoItem,
+  PostingAlbumVideoItem,
+} from '../types/posting.album.options';
 
 export class PublishService extends Repository {
   /**
@@ -49,7 +55,7 @@ export class PublishService extends Repository {
   }
 
   public async video(options: PostingVideoOptions) {
-    const uploadId = Date.now();
+    const uploadId = Date.now().toString();
     const videoInfo = PublishService.getVideoInfo(options.video);
     await this.client.upload.video({
       video: options.video,
@@ -96,6 +102,63 @@ export class PublishService extends Repository {
     }
 
     return await this.client.media.configureVideo(configureOptions);
+  }
+
+  public async album(options: PostingAlbumOptions) {
+    const isPhoto = (arg: PostingAlbumItem): arg is PostingAlbumPhotoItem =>
+      (arg as PostingAlbumPhotoItem).file !== undefined;
+    const isVideo = (arg: PostingAlbumItem): arg is PostingAlbumVideoItem =>
+      (arg as PostingAlbumVideoItem).video !== undefined;
+
+    for (const item of options.items) {
+      if (isPhoto(item)) {
+        const uploadedPhoto = await this.client.upload.photo({
+          file: item.file,
+          uploadId: item.uploadId,
+          isSidecar: true,
+        });
+        const { width, height } = await sizeOf(item.file);
+        item.width = width;
+        item.height = height;
+        item.uploadId = uploadedPhoto.upload_id;
+      } else if (isVideo(item)) {
+        item.videoInfo = PublishService.getVideoInfo(item.video);
+        item.uploadId = Date.now().toString();
+        await this.client.upload.video({
+          video: item.video,
+          uploadId: item.uploadId,
+          isSidecar: true,
+          ...item.videoInfo,
+        });
+        await this.client.upload.photo({
+          file: item.coverImage,
+          uploadId: item.uploadId,
+          isSidecar: true,
+        });
+      }
+    }
+
+    return await this.client.media.configureSidecar({
+      caption: options.caption,
+      children_metadata: options.items.map(item => {
+        if (isVideo(item)) {
+          return {
+            upload_id: item.uploadId,
+            width: item.videoInfo.width,
+            height: item.videoInfo.height,
+            length: item.videoInfo.duration,
+            usertags: item.usertags,
+          };
+        } else if (isPhoto(item)) {
+          return {
+            upload_id: item.uploadId,
+            width: item.width,
+            height: item.height,
+            usertags: item.usertags,
+          };
+        }
+      }),
+    });
   }
 
   public async story(options: PostingStoryOptions) {

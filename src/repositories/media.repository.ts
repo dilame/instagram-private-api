@@ -1,4 +1,4 @@
-import { defaultsDeep, omit, random } from 'lodash';
+import { defaultsDeep, omit } from 'lodash';
 import { DateTime } from 'luxon';
 import { Repository } from '../core/repository';
 import { LikeRequestOptions, MediaLikeOrUnlikeOptions, UnlikeRequestOptions } from '../types/media.like.options';
@@ -20,6 +20,11 @@ import {
 import { MediaRepositoryConfigureResponseRootObject } from '../responses/media.repository.configure.response';
 import Chance = require('chance');
 import { IgAppModule } from '../types';
+import {
+  MediaConfigureSidecarItem,
+  MediaConfigureSidecarOptions,
+  MediaConfigureSidecarVideoItem,
+} from '../types/media.configure-sidecar.options';
 
 export class MediaRepository extends Repository {
   public async info(mediaId: string): Promise<MediaInfoResponseRootObject> {
@@ -226,7 +231,7 @@ export class MediaRepository extends Repository {
       edits: {
         crop_original_size: [width, height],
         crop_center: [0.0, -0.0],
-        crop_zoom: random(1.01, 1.99).toFixed(7),
+        crop_zoom: 1.0,
       },
 
       // needed?!
@@ -346,6 +351,72 @@ export class MediaRepository extends Repository {
       url: '/api/v1/media/configure_to_story/',
       method: 'POST',
       form: this.client.request.sign(form),
+    });
+    return body;
+  }
+
+  public async configureSidecar(options: MediaConfigureSidecarOptions) {
+    const isVideo = (arg: MediaConfigureSidecarItem): arg is MediaConfigureSidecarVideoItem =>
+      (arg as MediaConfigureSidecarVideoItem).length !== undefined;
+
+    const devicePayload = this.client.state.devicePayload;
+    const sidecarId = options.upload_id || Date.now().toString();
+    const now = DateTime.local().toFormat('yyyy:mm:dd HH:mm:ss');
+    options = defaultsDeep(options, {
+      _csrftoken: this.client.state.cookieCsrfToken,
+      _uid: this.client.state.cookieUserId,
+      _uuid: this.client.state.uuid,
+      timezone_offset: '0',
+      source_type: '4',
+      device_id: this.client.state.deviceId,
+      caption: '',
+      client_sidecar_id: sidecarId,
+      upload_id: sidecarId,
+      device: devicePayload,
+    });
+    options.children_metadata = options.children_metadata.map(item => {
+      const { width, height } = item;
+      item = defaultsDeep(item, {
+        timezone_offset: '0',
+        caption: null,
+        source_type: '4',
+        extra: { source_width: width, source_height: height },
+        edits: { crop_original_size: [width, height], crop_center: [0.0, -0.0], crop_zoom: 1.0 },
+        device: devicePayload,
+      });
+      if (typeof item.extra !== 'string') {
+        item.extra = JSON.stringify(item.extra);
+      }
+      if (typeof item.edits !== 'string') {
+        item.edits = JSON.stringify(item.edits);
+      }
+      if (typeof item.device !== 'string') {
+        item.device = JSON.stringify(item.device);
+      }
+      if (item.usertags && typeof item.usertags !== 'string') {
+        item.usertags = JSON.stringify(item.usertags);
+      }
+      if (isVideo(item)) {
+        item = defaultsDeep(item, {
+          filter_type: '0',
+          video_result: '',
+          date_time_original: now,
+          audio_muted: 'false',
+          clips: [{ length: item.length, source_type: '4' }],
+          poster_frame_index: '0',
+        });
+        const clips = item as MediaConfigureSidecarVideoItem;
+        if (typeof clips !== 'string') {
+          (item as MediaConfigureSidecarVideoItem).clips = JSON.stringify(clips);
+        }
+      }
+      return item;
+    });
+
+    const { body } = await this.client.request.send({
+      url: '/api/v1/media/configure_sidecar/',
+      method: 'POST',
+      form: this.client.request.sign(options),
     });
     return body;
   }

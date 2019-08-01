@@ -8,7 +8,7 @@ import {
   StoryPoll,
   StoryQuestion,
   StorySlider,
-} from './media.configure.options';
+} from './media.configure-story.options';
 import { PostingLocation, PostingUsertags } from './posting.options';
 
 export interface PostingPhotoOptions {

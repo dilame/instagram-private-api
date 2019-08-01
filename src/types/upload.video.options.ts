@@ -1,7 +1,8 @@
 export interface UploadVideoOptions {
   video: Buffer;
-  uploadId?: number;
+  uploadId?: string;
   duration: number;
   width: number;
   height: number;
+  isSidecar?: boolean;
 }
