@@ -1,7 +1,6 @@
 import { defaultsDeep, omit } from 'lodash';
 import { DateTime } from 'luxon';
 import { Repository } from '../core/repository';
-import { LikeRequestOptions, MediaLikeOrUnlikeOptions, UnlikeRequestOptions } from '../types/media.like.options';
 import {
   MediaEditResponseRootObject,
   MediaInfoResponseRootObject,
@@ -12,19 +11,22 @@ import {
   MediaRepositoryListReelMediaViewerResponseRootObject,
 } from '../responses';
 import {
+  IgAppModule,
+  LikeRequestOptions,
+  MediaLikeOrUnlikeOptions,
+  UnlikeRequestOptions,
   MediaConfigureOptions,
-  MediaConfigureStoryOptions,
+  MediaConfigureStoryBaseOptions,
+  MediaConfigureStoryPhotoOptions,
+  MediaConfigureStoryVideoOptions,
   MediaConfigureTimelineOptions,
+  MediaConfigureSidecarItem,
+  MediaConfigureSidecarOptions,
+  MediaConfigureSidecarVideoItem,
   MediaConfigureTimelineVideoOptions,
 } from '../types';
 import { MediaRepositoryConfigureResponseRootObject } from '../responses/media.repository.configure.response';
 import Chance = require('chance');
-import { IgAppModule } from '../types';
-import {
-  MediaConfigureSidecarItem,
-  MediaConfigureSidecarOptions,
-  MediaConfigureSidecarVideoItem,
-} from '../types/media.configure-sidecar.options';
 
 export class MediaRepository extends Repository {
   public async info(mediaId: string): Promise<MediaInfoResponseRootObject> {
@@ -293,17 +295,50 @@ export class MediaRepository extends Repository {
     return body;
   }
 
-  public async configureToStory(options: MediaConfigureStoryOptions) {
+  private static stringifyStoryStickers(form: MediaConfigureStoryBaseOptions) {
+    if (typeof form.story_hashtags !== 'undefined') {
+      form.story_hashtags = JSON.stringify(form.story_hashtags);
+    }
+    if (typeof form.story_locations !== 'undefined') {
+      form.story_locations = JSON.stringify(form.story_locations);
+    }
+    if (typeof form.reel_mentions !== 'undefined') {
+      form.reel_mentions = JSON.stringify(form.reel_mentions);
+    }
+    if (typeof form.story_polls !== 'undefined') {
+      form.story_polls = JSON.stringify(form.story_polls);
+    }
+    if (typeof form.story_sliders !== 'undefined') {
+      form.story_sliders = JSON.stringify(form.story_sliders);
+    }
+    if (typeof form.story_questions !== 'undefined') {
+      form.story_questions = JSON.stringify(form.story_questions);
+    }
+    if (typeof form.story_countdowns !== 'undefined') {
+      form.story_countdowns = JSON.stringify(form.story_countdowns);
+    }
+    if (typeof form.attached_media !== 'undefined') {
+      form.attached_media = JSON.stringify(form.attached_media);
+    }
+    if (typeof form.story_cta !== 'undefined') {
+      form.story_cta = JSON.stringify(form.story_cta);
+    }
+    if (typeof form.story_chats !== 'undefined') {
+      form.story_chats = JSON.stringify(form.story_chats);
+    }
+  }
+
+  public async configureToStory(options: MediaConfigureStoryPhotoOptions) {
     const now = Date.now();
     const width = options.width || 1520;
     const height = options.height || 2048;
-    const form = this.applyConfigureDefaults<MediaConfigureStoryOptions>(options, {
+    const form = this.applyConfigureDefaults<MediaConfigureStoryPhotoOptions>(options, {
       width,
       height,
 
       upload_id: Date.now().toString(),
       source_type: '3',
-      configure_mode: 1,
+      configure_mode: '1',
       client_shared_at: now.toString(),
       edits: {
         crop_original_size: [width, height],
@@ -314,42 +349,62 @@ export class MediaRepository extends Repository {
     // make sure source_type = 3
     form.source_type = '3';
 
-    if (form.configure_mode === 1) {
-      if (typeof form.story_hashtags !== 'undefined') {
-        form.story_hashtags = JSON.stringify(form.story_hashtags);
-      }
-      if (typeof form.story_locations !== 'undefined') {
-        form.story_locations = JSON.stringify(form.story_locations);
-      }
-      if (typeof form.reel_mentions !== 'undefined') {
-        form.reel_mentions = JSON.stringify(form.reel_mentions);
-      }
-      if (typeof form.story_polls !== 'undefined') {
-        form.story_polls = JSON.stringify(form.story_polls);
-      }
-      if (typeof form.story_sliders !== 'undefined') {
-        form.story_sliders = JSON.stringify(form.story_sliders);
-      }
-      if (typeof form.story_questions !== 'undefined') {
-        form.story_questions = JSON.stringify(form.story_questions);
-      }
-      if (typeof form.story_countdowns !== 'undefined') {
-        form.story_countdowns = JSON.stringify(form.story_countdowns);
-      }
-      if (typeof form.attached_media !== 'undefined') {
-        form.attached_media = JSON.stringify(form.attached_media);
-      }
-      if (typeof form.story_cta !== 'undefined') {
-        form.story_cta = JSON.stringify(form.story_cta);
-      }
-      if (typeof form.story_chats !== 'undefined') {
-        form.story_chats = JSON.stringify(form.story_chats);
-      }
+    if (form.configure_mode === '1') {
+      MediaRepository.stringifyStoryStickers(form);
     }
 
     const { body } = await this.client.request.send({
       url: '/api/v1/media/configure_to_story/',
       method: 'POST',
+      form: this.client.request.sign(form),
+    });
+    return body;
+  }
+
+  public async configureToStoryVideo(options: MediaConfigureStoryVideoOptions) {
+    const now = Date.now();
+    const devicePayload = this.client.state.devicePayload;
+    const form = defaultsDeep(options, {
+      supported_capabilities_new: JSON.stringify(this.client.state.supportedCapabilities),
+      timezone_offset: '0',
+      _csrftoken: this.client.state.cookieCsrfToken,
+      client_shared_at: now.toString(),
+      configure_mode: '1',
+      source_type: '3',
+      video_result: '',
+      _uid: this.client.state.cookieUserId,
+      date_time_original:
+        DateTime.local()
+          .toISO()
+          .replace(/[-:]/g, '') + 'Z',
+      device_id: this.client.state.deviceId,
+      _uuid: this.client.state.uuid,
+      device: devicePayload,
+      clips: [
+        {
+          length: options.length,
+          source_type: '3',
+        },
+      ],
+      extra: {
+        source_width: options.width,
+        source_height: options.height,
+      },
+      audio_muted: false,
+      poster_frame_index: 0,
+    });
+    // make sure source_type = 3
+    form.source_type = '3';
+
+    if (form.configure_mode === '1') {
+      MediaRepository.stringifyStoryStickers(form);
+    }
+    const { body } = await this.client.request.send({
+      url: '/api/v1/media/configure_to_story/',
+      method: 'POST',
+      qs: {
+        video: '1',
+      },
       form: this.client.request.sign(form),
     });
     return body;

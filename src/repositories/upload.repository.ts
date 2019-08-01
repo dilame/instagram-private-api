@@ -62,6 +62,9 @@ export class UploadRepository extends Repository {
     if (options.isSidecar) {
       ruploadParams.is_sidecar = '1';
     }
+    if (options.forAlbum) {
+      ruploadParams.for_album = '1';
+    }
 
     const { body } = await this.client.request.send({
       url: `/rupload_igvideo/${name}/`,

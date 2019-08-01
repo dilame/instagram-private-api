@@ -5,4 +5,5 @@ export interface UploadVideoOptions {
   width: number;
   height: number;
   isSidecar?: boolean;
+  forAlbum?: boolean;
 }

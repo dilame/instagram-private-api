@@ -2,8 +2,9 @@ import { PostingUsertags } from './posting.options';
 import { MediaLocation } from './media.configure.options';
 
 export interface MediaConfigureVideoOptions {
+  upload_id: string;
   length: number;
-  clips: Array<{ length: number; source_type: string }>;
+  clips?: Array<{ length: number; source_type: string }>;
   audio_muted?: boolean;
   poster_frame_index?: number;
 

@@ -1,11 +1,12 @@
 import { MediaConfigureOptions } from './media.configure.options';
+import { MediaConfigureVideoOptions } from './media.configure-video.options';
 
-export interface MediaConfigureStoryOptions extends MediaConfigureOptions {
+export interface MediaConfigureStoryBaseOptions {
   story_media_creation_date?: string;
   client_shared_at?: string;
   audience?: 'besties';
   // 1 = story-reel, 2 = direct-story (does not support stickers)
-  configure_mode: 1 | 2;
+  configure_mode: '1' | '2';
   camera_position?: string;
   thread_ids?: string[];
   recipient_users?: string[];
@@ -19,6 +20,11 @@ export interface MediaConfigureStoryOptions extends MediaConfigureOptions {
   story_hashtags?: StoryHashtag[] | string;
   // if this is set, the geotag has to be set!
   story_locations?: [StoryLocation] | string;
+  geotag_enabled?: '1' | '0';
+  posting_latitude?: string;
+  posting_longitude?: string;
+  media_latitude?: string;
+  media_longitude?: string;
   // caption has to be set
   reel_mentions?: StoryMention[] | string;
 
@@ -40,6 +46,10 @@ export interface MediaConfigureStoryOptions extends MediaConfigureOptions {
   // links are only valid in business accounts
   story_cta?: [StoryCta] | string;
 }
+
+export interface MediaConfigureStoryPhotoOptions extends MediaConfigureOptions, MediaConfigureStoryBaseOptions {}
+
+export interface MediaConfigureStoryVideoOptions extends MediaConfigureVideoOptions, MediaConfigureStoryBaseOptions {}
 
 export interface StoryChat extends StorySticker {
   text: string;

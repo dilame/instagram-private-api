@@ -1,4 +1,4 @@
-import { PostingLocation, PostingUsertags } from './posting.options';
+import { PostingLocation, PostingStoryOptions, PostingUsertags } from './posting.options';
 
 export interface PostingVideoOptions {
   video: Buffer;
@@ -6,4 +6,9 @@ export interface PostingVideoOptions {
   caption?: string;
   usertags?: PostingUsertags;
   location?: PostingLocation;
+}
+
+export interface PostingStoryVideoOptions extends PostingStoryOptions {
+  video: Buffer;
+  coverImage: Buffer;
 }

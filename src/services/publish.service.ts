@@ -1,19 +1,19 @@
 import { Repository } from '../core/repository';
 import sizeOf = require('image-size');
 import {
-  MediaConfigureStoryOptions,
   MediaConfigureTimelineOptions,
   MediaConfigureTimelineVideoOptions,
   PostingPhotoOptions,
-  PostingStoryOptions,
-} from '../types';
-import { PostingVideoOptions } from '../types/posting.video.options';
-import {
+  PostingStoryPhotoOptions,
+  PostingVideoOptions,
   PostingAlbumItem,
   PostingAlbumOptions,
   PostingAlbumPhotoItem,
   PostingAlbumVideoItem,
-} from '../types/posting.album.options';
+  PostingStoryVideoOptions,
+  MediaConfigureStoryBaseOptions,
+} from '../types';
+import { PostingStoryOptions } from '../types/posting.options';
 
 export class PublishService extends Repository {
   /**
@@ -161,29 +161,75 @@ export class PublishService extends Repository {
     });
   }
 
-  public async story(options: PostingStoryOptions) {
-    const uploadedPhoto = await this.client.upload.photo({
-      file: options.file,
-    });
+  private async uploadAndConfigureStoryPhoto(
+    options: PostingStoryPhotoOptions,
+    configureOptions: MediaConfigureStoryBaseOptions,
+  ) {
+    const uploadId = Date.now().toString();
     const imageSize = await sizeOf(options.file);
-    const storyStickerIds = [];
-    const configureOptions: MediaConfigureStoryOptions = {
-      upload_id: uploadedPhoto.upload_id,
+    await this.client.upload.photo({
+      file: options.file,
+      uploadId,
+    });
+    return await this.client.media.configureToStory({
+      ...configureOptions,
+      upload_id: uploadId,
       width: imageSize.width,
       height: imageSize.height,
-      configure_mode: 1,
+    });
+  }
+
+  private async uploadAndConfigureStoryVideo(
+    options: PostingStoryVideoOptions,
+    configureOptions: MediaConfigureStoryBaseOptions,
+  ) {
+    const uploadId = Date.now().toString();
+    const videoInfo = PublishService.getVideoInfo(options.video);
+    await this.client.upload.video({
+      video: options.video,
+      uploadId,
+      forAlbum: true,
+      ...videoInfo,
+    });
+    await this.client.upload.photo({
+      file: options.coverImage,
+      uploadId,
+    });
+    return await this.client.media.configureToStoryVideo({
+      upload_id: uploadId,
+      length: videoInfo.duration / 1000.0,
+      width: videoInfo.width,
+      height: videoInfo.height,
+      ...configureOptions,
+    });
+  }
+
+  public async story(options: PostingStoryPhotoOptions | PostingStoryVideoOptions) {
+    const isPhoto = (arg: PostingStoryOptions): arg is PostingStoryPhotoOptions =>
+      (arg as PostingStoryPhotoOptions).file !== undefined;
+
+    const storyStickerIds = [];
+    const configureOptions: MediaConfigureStoryBaseOptions = {
+      configure_mode: '1',
     };
 
+    const uploadAndConfigure = () =>
+      isPhoto(options)
+        ? this.uploadAndConfigureStoryPhoto(options, configureOptions)
+        : this.uploadAndConfigureStoryVideo(options, configureOptions);
+
     // check for directThread => no stickers supported
-    if (typeof options.threadIds !== 'undefined') {
-      configureOptions.thread_ids = options.threadIds;
-      configureOptions.configure_mode = 2;
-      return await this.client.media.configureToStory(configureOptions);
-    }
-    if (typeof options.recipientUsers !== 'undefined') {
-      configureOptions.recipient_users = options.recipientUsers;
-      configureOptions.configure_mode = 2;
-      return await this.client.media.configureToStory(configureOptions);
+    const threadIds = typeof options.threadIds !== 'undefined';
+    const recipients = typeof options.recipientUsers !== 'undefined';
+    if (recipients || threadIds) {
+      configureOptions.configure_mode = '2';
+      if (recipients) {
+        configureOptions.recipient_users = options.recipientUsers;
+      }
+      if (threadIds) {
+        configureOptions.thread_ids = options.threadIds;
+      }
+      return await uploadAndConfigure();
     }
 
     // story goes to story-feed
@@ -262,7 +308,7 @@ export class PublishService extends Repository {
     if (storyStickerIds.length > 0) {
       configureOptions.story_sticker_ids = storyStickerIds.join(',');
     }
-    return await this.client.media.configureToStory(configureOptions);
+    return await uploadAndConfigure();
   }
 
   /**
