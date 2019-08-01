@@ -3,6 +3,7 @@ import { createHmac } from 'crypto';
 import { Subject } from 'rxjs';
 import { AttemptOptions, retry } from '@lifeomic/attempt';
 import * as request from 'request-promise';
+import * as SocksProxyAgent from 'socks-proxy-agent';
 import { Options, Response } from 'request';
 import { IgApiClient } from './client';
 import {
@@ -52,7 +53,7 @@ export class Request {
   }
 
   public async send<T = any>(userOptions: Options): Promise<IgResponse<T>> {
-    const options = defaultsDeep(
+    var options = defaultsDeep(
       userOptions,
       {
         baseUrl: 'https://i.instagram.com/',
@@ -67,6 +68,13 @@ export class Request {
       },
       this.defaults,
     );
+
+    // handle socks proxy
+    if (options.proxy.startsWith('socks')){
+      options.agent = new SocksProxyAgent(options.proxy);
+      delete options.proxy;
+    }
+
     const response = await this.faultTolerantRequest(options);
     process.nextTick(() => this.end$.next());
     if (response.body.status === 'ok') {
