@@ -196,7 +196,7 @@ export class PublishService extends Repository {
       ];
     }
 
-    if (configureOptions.story_sticker_ids.length > 0) {
+    if (storyStickerIds.length > 0) {
       configureOptions.story_sticker_ids = storyStickerIds.join(',');
     }
     return await this.client.media.configureToStory(configureOptions);
