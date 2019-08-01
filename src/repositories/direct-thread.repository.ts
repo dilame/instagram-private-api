@@ -185,7 +185,25 @@ export class DirectThreadRepository extends Repository {
     return body;
   }
 
-  public async broadcast(options: DirectThreadBroadcastOptions): Promise<DirectThreadRepositoryBroadcastResponseRootObject> {
+  public async markItemSeen(threadId: string, threadItemId: string) {
+    const { body } = await this.client.request.send<StatusResponse>({
+      url: `/api/v1/direct_v2/threads/${threadId}/items/${threadItemId}/seen/`,
+      method: 'POST',
+      form: {
+        _csrftoken: this.client.state.cookieCsrfToken,
+        _uuid: this.client.state.uuid,
+        use_unified_inbox: true,
+        action: 'mark_seen',
+        thread_id: threadId,
+        item_id: threadItemId,
+      },
+    });
+    return body;
+  }
+
+  public async broadcast(
+    options: DirectThreadBroadcastOptions,
+  ): Promise<DirectThreadRepositoryBroadcastResponseRootObject> {
     const mutationToken = new Chance().guid({ version: 4 });
     const recipients = options.threadIds || options.userIds;
     const recipientsType = options.threadIds ? 'thread_ids' : 'recipient_users';
