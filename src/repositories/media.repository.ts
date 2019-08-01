@@ -9,16 +9,17 @@ import {
   MediaRepositoryCommentResponse,
   MediaRepositoryLikersResponseRootObject,
   StatusResponse,
+  MediaRepositoryListReelMediaViewerResponseRootObject,
 } from '../responses';
 import {
   MediaConfigureOptions,
   MediaConfigureStoryOptions,
   MediaConfigureTimelineOptions,
-} from '../types/media.configure.options';
+  MediaConfigureTimelineVideoOptions,
+} from '../types';
 import { MediaRepositoryConfigureResponseRootObject } from '../responses/media.repository.configure.response';
 import Chance = require('chance');
-import { IgAppModule } from '../types/common.types';
-import { MediaRepositoryListReelMediaViewerResponseRootObject } from '../responses/media.repository.list-reel-media-viewer.response';
+import { IgAppModule } from '../types';
 
 export class MediaRepository extends Repository {
   public async info(mediaId: string): Promise<MediaInfoResponseRootObject> {
@@ -186,7 +187,7 @@ export class MediaRepository extends Repository {
    * @param options - user submitted options
    * @param defaults - default values
    */
-  private applyConfigureDefaults<T extends MediaConfigureOptions>(options: T, defaults: T): T {
+  private applyConfigureDefaults<T extends MediaConfigureOptions>(options: T, defaults: Partial<T>): T {
     const width = options.width || 1520;
     const height = options.height || 2048;
     const devicePayload = this.client.state.devicePayload;
@@ -246,6 +247,42 @@ export class MediaRepository extends Repository {
     const { body } = await this.client.request.send<MediaRepositoryConfigureResponseRootObject>({
       url: '/api/v1/media/configure/',
       method: 'POST',
+      form: this.client.request.sign(form),
+    });
+    return body;
+  }
+
+  public async configureVideo(options: MediaConfigureTimelineVideoOptions) {
+    const now = DateTime.local().toFormat('yyyy:mm:dd HH:mm:ss');
+
+    const form = this.applyConfigureDefaults<MediaConfigureTimelineVideoOptions>(options, {
+      width: options.width,
+      height: options.height,
+
+      upload_id: Date.now().toString(),
+      timezone_offset: this.client.state.timezoneOffset,
+      date_time_original: now,
+      caption: '',
+      source_type: '4',
+      device_id: this.client.state.deviceId,
+      filter_type: '0',
+      audio_muted: false,
+      poster_frame_index: 0,
+    });
+
+    if (typeof form.usertags !== 'undefined') {
+      form.usertags = JSON.stringify(form.usertags);
+    }
+    if (typeof form.location !== 'undefined') {
+      form.location = JSON.stringify(form.location);
+    }
+
+    const { body } = await this.client.request.send<MediaRepositoryConfigureResponseRootObject>({
+      url: '/api/v1/media/configure/',
+      method: 'POST',
+      qs: {
+        video: '1',
+      },
       form: this.client.request.sign(form),
     });
     return body;
