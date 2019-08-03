@@ -66,4 +66,9 @@ export class IgApiClient {
   public search = new SearchService(this);
   public simulate = new SimulateService(this);
   public story = new StoryService(this);
+
+  public destroy() {
+    this.request.error$.complete();
+    this.request.end$.complete();
+  }
 }
