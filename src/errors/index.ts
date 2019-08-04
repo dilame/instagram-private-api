@@ -20,3 +20,5 @@ export * from './ig-no-checkpoint.error';
 export * from './ig-challenge-wrong-code.error';
 export * from './ig-exact-user-not-found-error';
 export * from './ig-user-id-not-found.error';
+export * from './ig-upload-video-error';
+export * from './ig-configure-video-error';
