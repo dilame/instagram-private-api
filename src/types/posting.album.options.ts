@@ -19,4 +19,5 @@ export interface PostingAlbumVideoItem extends PostingAlbumItem {
   video: Buffer;
   coverImage: Buffer;
   videoInfo?: { duration: number; width: number; height: number };
+  transcodeDelay?: number;
 }

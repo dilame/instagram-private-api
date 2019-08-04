@@ -6,9 +6,11 @@ export interface PostingVideoOptions {
   caption?: string;
   usertags?: PostingUsertags;
   location?: PostingLocation;
+  transcodeDelay?: number;
 }
 
 export interface PostingStoryVideoOptions extends PostingStoryOptions {
   video: Buffer;
   coverImage: Buffer;
+  transcodeDelay?: number;
 }
