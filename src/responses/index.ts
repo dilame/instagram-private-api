@@ -69,3 +69,4 @@ export * from './music-search.feed.response';
 export * from './music-genre.feed.response';
 export * from './music-mood.feed.response';
 export * from './usertags.feed.response';
+export * from './news.repository.inbox.response';
