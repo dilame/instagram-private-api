@@ -3,9 +3,7 @@ import { IgResponse } from '../types';
 import { UploadRepositoryVideoResponseRootObject } from '../responses';
 
 export class IgUploadVideoError extends IgResponseError {
-  public videoInfo;
-  constructor(response: IgResponse<UploadRepositoryVideoResponseRootObject>, videoInfo) {
+  constructor(response: IgResponse<UploadRepositoryVideoResponseRootObject>, public videoInfo) {
     super(response);
-    this.videoInfo = videoInfo;
   }
 }
