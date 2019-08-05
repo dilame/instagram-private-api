@@ -57,6 +57,7 @@ export * from './user.feed.response';
 export * from './user.repository.info.response';
 export * from './user.repository.search.response';
 export * from './media.repository.info.response';
+export * from './media.repository.configure.response';
 export * from './media.repository.configure-sidecar.response';
 export * from './media.repository.configure-video.response';
 export * from './saved.feed.response';
