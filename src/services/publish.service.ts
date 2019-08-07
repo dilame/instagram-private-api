@@ -12,8 +12,12 @@ import {
   PostingAlbumVideoItem,
   PostingStoryVideoOptions,
   MediaConfigureStoryBaseOptions,
+  IgResponse,
 } from '../types';
 import { PostingStoryOptions } from '../types/posting.options';
+import Bluebird = require('bluebird');
+import { IgConfigureVideoError, IgResponseError, IgUploadVideoError } from '../errors';
+import { UploadRepositoryVideoResponseRootObject } from '../responses';
 
 export class PublishService extends Repository {
   /**
@@ -54,18 +58,45 @@ export class PublishService extends Repository {
     return await this.client.media.configure(configureOptions);
   }
 
+  /**
+   * The current way of handling the 202 - Accepted; Transcode pending -error
+   * @param videoInfo The video info for debugging reasons
+   * @param transcodeDelayInMs The delay for instagram to transcode the video
+   */
+  private catchTranscodeError(videoInfo, transcodeDelayInMs: number) {
+    return async error => {
+      if (error.response.statusCode === 202) {
+        return await Bluebird.delay(transcodeDelayInMs);
+      } else {
+        throw new IgUploadVideoError(error.response as IgResponse<UploadRepositoryVideoResponseRootObject>, videoInfo);
+      }
+    };
+  }
+
   public async video(options: PostingVideoOptions) {
     const uploadId = Date.now().toString();
     const videoInfo = PublishService.getVideoInfo(options.video);
-    await this.client.upload.video({
-      video: options.video,
-      uploadId,
-      ...videoInfo,
+    await Bluebird.try(() =>
+      this.client.upload.video({
+        video: options.video,
+        uploadId,
+        ...videoInfo,
+      }),
+    ).catch(IgResponseError, error => {
+      throw new IgUploadVideoError(error.response as IgResponse<UploadRepositoryVideoResponseRootObject>, videoInfo);
     });
     await this.client.upload.photo({
       file: options.coverImage,
       uploadId: uploadId.toString(),
     });
+
+    await Bluebird.try(() =>
+      this.client.media.uploadFinish({
+        upload_id: uploadId,
+        source_type: '4',
+        video: { length: videoInfo.duration / 1000.0 },
+      }),
+    ).catch(IgResponseError, this.catchTranscodeError(videoInfo, options.transcodeDelay || 5000));
 
     const configureOptions: MediaConfigureTimelineVideoOptions = {
       upload_id: uploadId.toString(),
@@ -101,7 +132,15 @@ export class PublishService extends Repository {
       configureOptions.posting_longitude = lng.toString();
     }
 
-    return await this.client.media.configureVideo(configureOptions);
+    return await Bluebird.try(() => this.client.media.configureVideo(configureOptions)).catch(
+      IgResponseError,
+      error => {
+        throw new IgConfigureVideoError(
+          error.response as IgResponse<UploadRepositoryVideoResponseRootObject>,
+          videoInfo,
+        );
+      },
+    );
   }
 
   public async album(options: PostingAlbumOptions) {
@@ -124,17 +163,31 @@ export class PublishService extends Repository {
       } else if (isVideo(item)) {
         item.videoInfo = PublishService.getVideoInfo(item.video);
         item.uploadId = Date.now().toString();
-        await this.client.upload.video({
-          video: item.video,
-          uploadId: item.uploadId,
-          isSidecar: true,
-          ...item.videoInfo,
+        await Bluebird.try(() =>
+          this.client.upload.video({
+            video: item.video,
+            uploadId: item.uploadId,
+            isSidecar: true,
+            ...item.videoInfo,
+          }),
+        ).catch(IgResponseError, error => {
+          throw new IgConfigureVideoError(
+            error.response as IgResponse<UploadRepositoryVideoResponseRootObject>,
+            item.videoInfo,
+          );
         });
         await this.client.upload.photo({
           file: item.coverImage,
           uploadId: item.uploadId,
           isSidecar: true,
         });
+        await Bluebird.try(() =>
+          this.client.media.uploadFinish({
+            upload_id: item.uploadId,
+            source_type: '4',
+            video: { length: item.videoInfo.duration / 1000.0 },
+          }),
+        ).catch(IgResponseError, this.catchTranscodeError(item.videoInfo, item.transcodeDelay));
       }
     }
 
@@ -185,22 +238,37 @@ export class PublishService extends Repository {
   ) {
     const uploadId = Date.now().toString();
     const videoInfo = PublishService.getVideoInfo(options.video);
-    await this.client.upload.video({
-      video: options.video,
-      uploadId,
-      forAlbum: true,
-      ...videoInfo,
+    await Bluebird.try(() =>
+      this.client.upload.video({
+        video: options.video,
+        uploadId,
+        forAlbum: true,
+        ...videoInfo,
+      }),
+    ).catch(IgResponseError, error => {
+      throw new IgConfigureVideoError(error.response as IgResponse<UploadRepositoryVideoResponseRootObject>, videoInfo);
     });
     await this.client.upload.photo({
       file: options.coverImage,
       uploadId,
     });
-    return await this.client.media.configureToStoryVideo({
-      upload_id: uploadId,
-      length: videoInfo.duration / 1000.0,
-      width: videoInfo.width,
-      height: videoInfo.height,
-      ...configureOptions,
+    await Bluebird.try(() =>
+      this.client.media.uploadFinish({
+        upload_id: uploadId,
+        source_type: '3',
+        video: { length: videoInfo.duration / 1000.0 },
+      }),
+    ).catch(IgResponseError, this.catchTranscodeError(videoInfo, options.transcodeDelay));
+    return await Bluebird.try(() =>
+      this.client.media.configureToStoryVideo({
+        upload_id: uploadId,
+        length: videoInfo.duration / 1000.0,
+        width: videoInfo.width,
+        height: videoInfo.height,
+        ...configureOptions,
+      }),
+    ).catch(IgResponseError, error => {
+      throw new IgConfigureVideoError(error.response as IgResponse<UploadRepositoryVideoResponseRootObject>, videoInfo);
     });
   }
 
@@ -322,7 +390,7 @@ export class PublishService extends Repository {
     const width = PublishService.read16(buffer, ['moov', 'trak', 'stbl', 'avc1'], 24);
     const height = PublishService.read16(buffer, ['moov', 'trak', 'stbl', 'avc1'], 26);
     return {
-      duration: (length / timescale) * 1000,
+      duration: Math.floor((length / timescale) * 1000.0),
       width,
       height,
     };

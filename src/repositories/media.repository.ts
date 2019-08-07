@@ -168,7 +168,23 @@ export class MediaRepository extends Repository {
     return body.media_ids;
   }
 
-  public async uploadFinish(options: { upload_id: string; source_type: string }) {
+  public async uploadFinish(options: {
+    upload_id: string;
+    source_type: string;
+    video?: {
+      length: number;
+      clips?: Array<{ length: number; source_type: string }>;
+      poster_frame_index?: number;
+      audio_muted?: boolean;
+    };
+  }) {
+    if (options.video) {
+      options.video = defaultsDeep(options.video, {
+        clips: [{ length: options.video.length, source_type: options.source_type }],
+        poster_frame_index: 0,
+        audio_muted: false,
+      });
+    }
     const { body } = await this.client.request.send({
       url: '/api/v1/media/upload_finish/',
       method: 'POST',
@@ -184,7 +200,9 @@ export class MediaRepository extends Repository {
         _uuid: this.client.state.uuid,
         upload_id: options.upload_id,
         device: this.client.state.devicePayload,
+        ...options.video,
       }),
+      qs: options.video ? { video: '1' } : {},
     });
     return body;
   }
