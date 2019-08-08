@@ -6,45 +6,45 @@
 
 ## Hierarchy
 
-- **MediaRepositoryListReelMediaViewerResponseCandidatesItem**
+* **MediaRepositoryListReelMediaViewerResponseCandidatesItem**
 
 ## Index
 
 ### Properties
 
-- [estimated_scans_sizes](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponsecandidatesitem.md#estimated_scans_sizes)
-- [height](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponsecandidatesitem.md#height)
-- [url](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponsecandidatesitem.md#url)
-- [width](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponsecandidatesitem.md#width)
+* [estimated_scans_sizes](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponsecandidatesitem.md#estimated_scans_sizes)
+* [height](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponsecandidatesitem.md#height)
+* [url](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponsecandidatesitem.md#url)
+* [width](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponsecandidatesitem.md#width)
 
 ## Properties
 
-### estimated_scans_sizes
+###  estimated_scans_sizes
 
-• **estimated_scans_sizes**: _number[]_
+• **estimated_scans_sizes**: *number[]*
 
-_Defined in [responses/media.repository.list-reel-media-viewer.response.ts:73](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/media.repository.list-reel-media-viewer.response.ts#L73)_
+*Defined in [responses/media.repository.list-reel-media-viewer.response.ts:73](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/media.repository.list-reel-media-viewer.response.ts#L73)*
 
----
+___
 
-### height
+###  height
 
-• **height**: _number_
+• **height**: *number*
 
-_Defined in [responses/media.repository.list-reel-media-viewer.response.ts:71](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/media.repository.list-reel-media-viewer.response.ts#L71)_
+*Defined in [responses/media.repository.list-reel-media-viewer.response.ts:71](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/media.repository.list-reel-media-viewer.response.ts#L71)*
 
----
+___
 
-### url
+###  url
 
-• **url**: _string_
+• **url**: *string*
 
-_Defined in [responses/media.repository.list-reel-media-viewer.response.ts:72](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/media.repository.list-reel-media-viewer.response.ts#L72)_
+*Defined in [responses/media.repository.list-reel-media-viewer.response.ts:72](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/media.repository.list-reel-media-viewer.response.ts#L72)*
 
----
+___
 
-### width
+###  width
 
-• **width**: _number_
+• **width**: *number*
 
-_Defined in [responses/media.repository.list-reel-media-viewer.response.ts:70](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/media.repository.list-reel-media-viewer.response.ts#L70)_
+*Defined in [responses/media.repository.list-reel-media-viewer.response.ts:70](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/media.repository.list-reel-media-viewer.response.ts#L70)*

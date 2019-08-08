@@ -6,45 +6,45 @@
 
 ## Hierarchy
 
-- **BlockedUsersFeedResponseRootObject**
+* **BlockedUsersFeedResponseRootObject**
 
 ## Index
 
 ### Properties
 
-- [blocked_list](_responses_blocked_users_feed_response_.blockedusersfeedresponserootobject.md#blocked_list)
-- [next_max_id](_responses_blocked_users_feed_response_.blockedusersfeedresponserootobject.md#next_max_id)
-- [page_size](_responses_blocked_users_feed_response_.blockedusersfeedresponserootobject.md#page_size)
-- [status](_responses_blocked_users_feed_response_.blockedusersfeedresponserootobject.md#status)
+* [blocked_list](_responses_blocked_users_feed_response_.blockedusersfeedresponserootobject.md#blocked_list)
+* [next_max_id](_responses_blocked_users_feed_response_.blockedusersfeedresponserootobject.md#next_max_id)
+* [page_size](_responses_blocked_users_feed_response_.blockedusersfeedresponserootobject.md#page_size)
+* [status](_responses_blocked_users_feed_response_.blockedusersfeedresponserootobject.md#status)
 
 ## Properties
 
-### blocked_list
+###  blocked_list
 
-• **blocked_list**: _[BlockedUsersFeedResponseBlockedListItem](../classes/\_responses_blocked_users_feed_response_.blockedusersfeedresponseblockedlistitem.md)[]\_
+• **blocked_list**: *[BlockedUsersFeedResponseBlockedListItem](../classes/_responses_blocked_users_feed_response_.blockedusersfeedresponseblockedlistitem.md)[]*
 
-_Defined in [responses/blocked-users.feed.response.ts:4](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/blocked-users.feed.response.ts#L4)_
+*Defined in [responses/blocked-users.feed.response.ts:4](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/blocked-users.feed.response.ts#L4)*
 
----
+___
 
-### next_max_id
+###  next_max_id
 
-• **next_max_id**: _string_
+• **next_max_id**: *string*
 
-_Defined in [responses/blocked-users.feed.response.ts:5](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/blocked-users.feed.response.ts#L5)_
+*Defined in [responses/blocked-users.feed.response.ts:5](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/blocked-users.feed.response.ts#L5)*
 
----
+___
 
-### page_size
+###  page_size
 
-• **page_size**: _number_
+• **page_size**: *number*
 
-_Defined in [responses/blocked-users.feed.response.ts:6](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/blocked-users.feed.response.ts#L6)_
+*Defined in [responses/blocked-users.feed.response.ts:6](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/blocked-users.feed.response.ts#L6)*
 
----
+___
 
-### status
+###  status
 
-• **status**: _string_
+• **status**: *string*
 
-_Defined in [responses/blocked-users.feed.response.ts:7](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/blocked-users.feed.response.ts#L7)_
+*Defined in [responses/blocked-users.feed.response.ts:7](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/blocked-users.feed.response.ts#L7)*

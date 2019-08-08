@@ -100,6 +100,7 @@ export class PublishService extends Repository {
 
     const configureOptions: MediaConfigureTimelineVideoOptions = {
       upload_id: uploadId.toString(),
+      caption: options.caption,
       length: videoInfo.duration / 1000.0,
       width: videoInfo.width,
       height: videoInfo.height,

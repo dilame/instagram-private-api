@@ -6,45 +6,45 @@
 
 ## Hierarchy
 
-- **UsertagsFeedResponseInItem**
+* **UsertagsFeedResponseInItem**
 
 ## Index
 
 ### Properties
 
-- [duration_in_video_in_sec](_responses_usertags_feed_response_.usertagsfeedresponseinitem.md#duration_in_video_in_sec)
-- [position](_responses_usertags_feed_response_.usertagsfeedresponseinitem.md#position)
-- [start_time_in_video_in_sec](_responses_usertags_feed_response_.usertagsfeedresponseinitem.md#start_time_in_video_in_sec)
-- [user](_responses_usertags_feed_response_.usertagsfeedresponseinitem.md#user)
+* [duration_in_video_in_sec](_responses_usertags_feed_response_.usertagsfeedresponseinitem.md#duration_in_video_in_sec)
+* [position](_responses_usertags_feed_response_.usertagsfeedresponseinitem.md#position)
+* [start_time_in_video_in_sec](_responses_usertags_feed_response_.usertagsfeedresponseinitem.md#start_time_in_video_in_sec)
+* [user](_responses_usertags_feed_response_.usertagsfeedresponseinitem.md#user)
 
 ## Properties
 
-### duration_in_video_in_sec
+###  duration_in_video_in_sec
 
-• **duration_in_video_in_sec**: _null_
+• **duration_in_video_in_sec**: *null*
 
-_Defined in [responses/usertags.feed.response.ts:102](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/usertags.feed.response.ts#L102)_
+*Defined in [responses/usertags.feed.response.ts:102](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/usertags.feed.response.ts#L102)*
 
----
+___
 
-### position
+###  position
 
-• **position**: _number[] | string | number[]_
+• **position**: *number[] | string | number[]*
 
-_Defined in [responses/usertags.feed.response.ts:100](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/usertags.feed.response.ts#L100)_
+*Defined in [responses/usertags.feed.response.ts:100](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/usertags.feed.response.ts#L100)*
 
----
+___
 
-### start_time_in_video_in_sec
+###  start_time_in_video_in_sec
 
-• **start_time_in_video_in_sec**: _null_
+• **start_time_in_video_in_sec**: *null*
 
-_Defined in [responses/usertags.feed.response.ts:101](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/usertags.feed.response.ts#L101)_
+*Defined in [responses/usertags.feed.response.ts:101](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/usertags.feed.response.ts#L101)*
 
----
+___
 
-### user
+###  user
 
-• **user**: _[UsertagsFeedResponseUser](\_responses_usertags_feed_response_.usertagsfeedresponseuser.md)\_
+• **user**: *[UsertagsFeedResponseUser](_responses_usertags_feed_response_.usertagsfeedresponseuser.md)*
 
-_Defined in [responses/usertags.feed.response.ts:99](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/usertags.feed.response.ts#L99)_
+*Defined in [responses/usertags.feed.response.ts:99](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/usertags.feed.response.ts#L99)*

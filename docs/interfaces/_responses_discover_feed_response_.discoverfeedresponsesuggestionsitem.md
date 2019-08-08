@@ -6,126 +6,126 @@
 
 ## Hierarchy
 
-- **DiscoverFeedResponseSuggestionsItem**
+* **DiscoverFeedResponseSuggestionsItem**
 
 ## Index
 
 ### Properties
 
-- [algorithm](_responses_discover_feed_response_.discoverfeedresponsesuggestionsitem.md#algorithm)
-- [caption](_responses_discover_feed_response_.discoverfeedresponsesuggestionsitem.md#caption)
-- [followed_by](_responses_discover_feed_response_.discoverfeedresponsesuggestionsitem.md#followed_by)
-- [icon](_responses_discover_feed_response_.discoverfeedresponsesuggestionsitem.md#icon)
-- [is_new_suggestion](_responses_discover_feed_response_.discoverfeedresponsesuggestionsitem.md#is_new_suggestion)
-- [large_urls](_responses_discover_feed_response_.discoverfeedresponsesuggestionsitem.md#large_urls)
-- [media_ids](_responses_discover_feed_response_.discoverfeedresponsesuggestionsitem.md#media_ids)
-- [media_infos](_responses_discover_feed_response_.discoverfeedresponsesuggestionsitem.md#media_infos)
-- [social_context](_responses_discover_feed_response_.discoverfeedresponsesuggestionsitem.md#social_context)
-- [thumbnail_urls](_responses_discover_feed_response_.discoverfeedresponsesuggestionsitem.md#thumbnail_urls)
-- [user](_responses_discover_feed_response_.discoverfeedresponsesuggestionsitem.md#user)
-- [uuid](_responses_discover_feed_response_.discoverfeedresponsesuggestionsitem.md#uuid)
-- [value](_responses_discover_feed_response_.discoverfeedresponsesuggestionsitem.md#value)
+* [algorithm](_responses_discover_feed_response_.discoverfeedresponsesuggestionsitem.md#algorithm)
+* [caption](_responses_discover_feed_response_.discoverfeedresponsesuggestionsitem.md#caption)
+* [followed_by](_responses_discover_feed_response_.discoverfeedresponsesuggestionsitem.md#followed_by)
+* [icon](_responses_discover_feed_response_.discoverfeedresponsesuggestionsitem.md#icon)
+* [is_new_suggestion](_responses_discover_feed_response_.discoverfeedresponsesuggestionsitem.md#is_new_suggestion)
+* [large_urls](_responses_discover_feed_response_.discoverfeedresponsesuggestionsitem.md#large_urls)
+* [media_ids](_responses_discover_feed_response_.discoverfeedresponsesuggestionsitem.md#media_ids)
+* [media_infos](_responses_discover_feed_response_.discoverfeedresponsesuggestionsitem.md#media_infos)
+* [social_context](_responses_discover_feed_response_.discoverfeedresponsesuggestionsitem.md#social_context)
+* [thumbnail_urls](_responses_discover_feed_response_.discoverfeedresponsesuggestionsitem.md#thumbnail_urls)
+* [user](_responses_discover_feed_response_.discoverfeedresponsesuggestionsitem.md#user)
+* [uuid](_responses_discover_feed_response_.discoverfeedresponsesuggestionsitem.md#uuid)
+* [value](_responses_discover_feed_response_.discoverfeedresponsesuggestionsitem.md#value)
 
 ## Properties
 
-### algorithm
+###  algorithm
 
-• **algorithm**: _string_
+• **algorithm**: *string*
 
-_Defined in [responses/discover.feed.response.ts:16](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/discover.feed.response.ts#L16)_
+*Defined in [responses/discover.feed.response.ts:16](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/discover.feed.response.ts#L16)*
 
----
+___
 
-### caption
+###  caption
 
-• **caption**: _string_
+• **caption**: *string*
 
-_Defined in [responses/discover.feed.response.ts:19](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/discover.feed.response.ts#L19)_
+*Defined in [responses/discover.feed.response.ts:19](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/discover.feed.response.ts#L19)*
 
----
+___
 
-### followed_by
+###  followed_by
 
-• **followed_by**: _boolean_
+• **followed_by**: *boolean*
 
-_Defined in [responses/discover.feed.response.ts:25](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/discover.feed.response.ts#L25)_
+*Defined in [responses/discover.feed.response.ts:25](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/discover.feed.response.ts#L25)*
 
----
+___
 
-### icon
+###  icon
 
-• **icon**: _string_
+• **icon**: *string*
 
-_Defined in [responses/discover.feed.response.ts:18](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/discover.feed.response.ts#L18)_
+*Defined in [responses/discover.feed.response.ts:18](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/discover.feed.response.ts#L18)*
 
----
+___
 
-### is_new_suggestion
+###  is_new_suggestion
 
-• **is_new_suggestion**: _boolean_
+• **is_new_suggestion**: *boolean*
 
-_Defined in [responses/discover.feed.response.ts:26](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/discover.feed.response.ts#L26)_
+*Defined in [responses/discover.feed.response.ts:26](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/discover.feed.response.ts#L26)*
 
----
+___
 
-### large_urls
+###  large_urls
 
-• **large_urls**: _any[]_
+• **large_urls**: *any[]*
 
-_Defined in [responses/discover.feed.response.ts:22](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/discover.feed.response.ts#L22)_
+*Defined in [responses/discover.feed.response.ts:22](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/discover.feed.response.ts#L22)*
 
----
+___
 
-### media_ids
+###  media_ids
 
-• **media_ids**: _any[]_
+• **media_ids**: *any[]*
 
-_Defined in [responses/discover.feed.response.ts:20](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/discover.feed.response.ts#L20)_
+*Defined in [responses/discover.feed.response.ts:20](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/discover.feed.response.ts#L20)*
 
----
+___
 
-### media_infos
+###  media_infos
 
-• **media_infos**: _any[]_
+• **media_infos**: *any[]*
 
-_Defined in [responses/discover.feed.response.ts:23](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/discover.feed.response.ts#L23)_
+*Defined in [responses/discover.feed.response.ts:23](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/discover.feed.response.ts#L23)*
 
----
+___
 
-### social_context
+###  social_context
 
-• **social_context**: _string_
+• **social_context**: *string*
 
-_Defined in [responses/discover.feed.response.ts:17](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/discover.feed.response.ts#L17)_
+*Defined in [responses/discover.feed.response.ts:17](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/discover.feed.response.ts#L17)*
 
----
+___
 
-### thumbnail_urls
+###  thumbnail_urls
 
-• **thumbnail_urls**: _any[]_
+• **thumbnail_urls**: *any[]*
 
-_Defined in [responses/discover.feed.response.ts:21](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/discover.feed.response.ts#L21)_
+*Defined in [responses/discover.feed.response.ts:21](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/discover.feed.response.ts#L21)*
 
----
+___
 
-### user
+###  user
 
-• **user**: _[DiscoverFeedResponseUser](../classes/\_responses_discover_feed_response_.discoverfeedresponseuser.md)\_
+• **user**: *[DiscoverFeedResponseUser](../classes/_responses_discover_feed_response_.discoverfeedresponseuser.md)*
 
-_Defined in [responses/discover.feed.response.ts:15](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/discover.feed.response.ts#L15)_
+*Defined in [responses/discover.feed.response.ts:15](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/discover.feed.response.ts#L15)*
 
----
+___
 
-### uuid
+###  uuid
 
-• **uuid**: _string_
+• **uuid**: *string*
 
-_Defined in [responses/discover.feed.response.ts:27](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/discover.feed.response.ts#L27)_
+*Defined in [responses/discover.feed.response.ts:27](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/discover.feed.response.ts#L27)*
 
----
+___
 
-### value
+###  value
 
-• **value**: _number_
+• **value**: *number*
 
-_Defined in [responses/discover.feed.response.ts:24](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/discover.feed.response.ts#L24)_
+*Defined in [responses/discover.feed.response.ts:24](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/discover.feed.response.ts#L24)*

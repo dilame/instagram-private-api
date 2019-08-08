@@ -20,4 +20,4 @@
 
 Ƭ **TimelineFeedReason**: *"pagination" | "pull_to_refresh" | "warm_start_fetch" | "cold_start_fetch"*
 
-*Defined in [types/timeline-feed.types.ts:1](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/types/timeline-feed.types.ts#L1)*
+*Defined in [types/timeline-feed.types.ts:1](https://github.com/dilame/instagram-private-api/blob/01eb399/src/types/timeline-feed.types.ts#L1)*

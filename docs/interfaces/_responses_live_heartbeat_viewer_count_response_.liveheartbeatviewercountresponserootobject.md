@@ -6,72 +6,72 @@
 
 ## Hierarchy
 
-- **LiveHeartbeatViewerCountResponseRootObject**
+* **LiveHeartbeatViewerCountResponseRootObject**
 
 ## Index
 
 ### Properties
 
-- [broadcast_status](_responses_live_heartbeat_viewer_count_response_.liveheartbeatviewercountresponserootobject.md#broadcast_status)
-- [cobroadcaster_ids](_responses_live_heartbeat_viewer_count_response_.liveheartbeatviewercountresponserootobject.md#cobroadcaster_ids)
-- [is_top_live_eligible](_responses_live_heartbeat_viewer_count_response_.liveheartbeatviewercountresponserootobject.md#is_top_live_eligible)
-- [offset_to_video_start](_responses_live_heartbeat_viewer_count_response_.liveheartbeatviewercountresponserootobject.md#offset_to_video_start)
-- [status](_responses_live_heartbeat_viewer_count_response_.liveheartbeatviewercountresponserootobject.md#status)
-- [total_unique_viewer_count](_responses_live_heartbeat_viewer_count_response_.liveheartbeatviewercountresponserootobject.md#total_unique_viewer_count)
-- [viewer_count](_responses_live_heartbeat_viewer_count_response_.liveheartbeatviewercountresponserootobject.md#viewer_count)
+* [broadcast_status](_responses_live_heartbeat_viewer_count_response_.liveheartbeatviewercountresponserootobject.md#broadcast_status)
+* [cobroadcaster_ids](_responses_live_heartbeat_viewer_count_response_.liveheartbeatviewercountresponserootobject.md#cobroadcaster_ids)
+* [is_top_live_eligible](_responses_live_heartbeat_viewer_count_response_.liveheartbeatviewercountresponserootobject.md#is_top_live_eligible)
+* [offset_to_video_start](_responses_live_heartbeat_viewer_count_response_.liveheartbeatviewercountresponserootobject.md#offset_to_video_start)
+* [status](_responses_live_heartbeat_viewer_count_response_.liveheartbeatviewercountresponserootobject.md#status)
+* [total_unique_viewer_count](_responses_live_heartbeat_viewer_count_response_.liveheartbeatviewercountresponserootobject.md#total_unique_viewer_count)
+* [viewer_count](_responses_live_heartbeat_viewer_count_response_.liveheartbeatviewercountresponserootobject.md#viewer_count)
 
 ## Properties
 
-### broadcast_status
+###  broadcast_status
 
-• **broadcast_status**: _string_
+• **broadcast_status**: *string*
 
-_Defined in [responses/live.heartbeat-viewer-count.response.ts:3](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/live.heartbeat-viewer-count.response.ts#L3)_
+*Defined in [responses/live.heartbeat-viewer-count.response.ts:3](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/live.heartbeat-viewer-count.response.ts#L3)*
 
----
+___
 
-### cobroadcaster_ids
+###  cobroadcaster_ids
 
-• **cobroadcaster_ids**: _any[]_
+• **cobroadcaster_ids**: *any[]*
 
-_Defined in [responses/live.heartbeat-viewer-count.response.ts:4](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/live.heartbeat-viewer-count.response.ts#L4)_
+*Defined in [responses/live.heartbeat-viewer-count.response.ts:4](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/live.heartbeat-viewer-count.response.ts#L4)*
 
----
+___
 
-### is_top_live_eligible
+###  is_top_live_eligible
 
-• **is_top_live_eligible**: _number_
+• **is_top_live_eligible**: *number*
 
-_Defined in [responses/live.heartbeat-viewer-count.response.ts:7](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/live.heartbeat-viewer-count.response.ts#L7)_
+*Defined in [responses/live.heartbeat-viewer-count.response.ts:7](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/live.heartbeat-viewer-count.response.ts#L7)*
 
----
+___
 
-### offset_to_video_start
+###  offset_to_video_start
 
-• **offset_to_video_start**: _number_
+• **offset_to_video_start**: *number*
 
-_Defined in [responses/live.heartbeat-viewer-count.response.ts:5](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/live.heartbeat-viewer-count.response.ts#L5)_
+*Defined in [responses/live.heartbeat-viewer-count.response.ts:5](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/live.heartbeat-viewer-count.response.ts#L5)*
 
----
+___
 
-### status
+###  status
 
-• **status**: _string_
+• **status**: *string*
 
-_Defined in [responses/live.heartbeat-viewer-count.response.ts:8](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/live.heartbeat-viewer-count.response.ts#L8)_
+*Defined in [responses/live.heartbeat-viewer-count.response.ts:8](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/live.heartbeat-viewer-count.response.ts#L8)*
 
----
+___
 
-### total_unique_viewer_count
+###  total_unique_viewer_count
 
-• **total_unique_viewer_count**: _number_
+• **total_unique_viewer_count**: *number*
 
-_Defined in [responses/live.heartbeat-viewer-count.response.ts:6](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/live.heartbeat-viewer-count.response.ts#L6)_
+*Defined in [responses/live.heartbeat-viewer-count.response.ts:6](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/live.heartbeat-viewer-count.response.ts#L6)*
 
----
+___
 
-### viewer_count
+###  viewer_count
 
-• **viewer_count**: _number_
+• **viewer_count**: *number*
 
-_Defined in [responses/live.heartbeat-viewer-count.response.ts:2](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/live.heartbeat-viewer-count.response.ts#L2)_
+*Defined in [responses/live.heartbeat-viewer-count.response.ts:2](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/live.heartbeat-viewer-count.response.ts#L2)*

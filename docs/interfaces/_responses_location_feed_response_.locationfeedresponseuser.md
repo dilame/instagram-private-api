@@ -6,108 +6,108 @@
 
 ## Hierarchy
 
-- **LocationFeedResponseUser**
+* **LocationFeedResponseUser**
 
 ## Index
 
 ### Properties
 
-- [friendship_status](_responses_location_feed_response_.locationfeedresponseuser.md#optional-friendship_status)
-- [full_name](_responses_location_feed_response_.locationfeedresponseuser.md#full_name)
-- [has_anonymous_profile_picture](_responses_location_feed_response_.locationfeedresponseuser.md#optional-has_anonymous_profile_picture)
-- [is_favorite](_responses_location_feed_response_.locationfeedresponseuser.md#optional-is_favorite)
-- [is_private](_responses_location_feed_response_.locationfeedresponseuser.md#is_private)
-- [is_unpublished](_responses_location_feed_response_.locationfeedresponseuser.md#optional-is_unpublished)
-- [is_verified](_responses_location_feed_response_.locationfeedresponseuser.md#optional-is_verified)
-- [pk](_responses_location_feed_response_.locationfeedresponseuser.md#pk)
-- [profile_pic_id](_responses_location_feed_response_.locationfeedresponseuser.md#optional-profile_pic_id)
-- [profile_pic_url](_responses_location_feed_response_.locationfeedresponseuser.md#profile_pic_url)
-- [username](_responses_location_feed_response_.locationfeedresponseuser.md#username)
+* [friendship_status](_responses_location_feed_response_.locationfeedresponseuser.md#optional-friendship_status)
+* [full_name](_responses_location_feed_response_.locationfeedresponseuser.md#full_name)
+* [has_anonymous_profile_picture](_responses_location_feed_response_.locationfeedresponseuser.md#optional-has_anonymous_profile_picture)
+* [is_favorite](_responses_location_feed_response_.locationfeedresponseuser.md#optional-is_favorite)
+* [is_private](_responses_location_feed_response_.locationfeedresponseuser.md#is_private)
+* [is_unpublished](_responses_location_feed_response_.locationfeedresponseuser.md#optional-is_unpublished)
+* [is_verified](_responses_location_feed_response_.locationfeedresponseuser.md#optional-is_verified)
+* [pk](_responses_location_feed_response_.locationfeedresponseuser.md#pk)
+* [profile_pic_id](_responses_location_feed_response_.locationfeedresponseuser.md#optional-profile_pic_id)
+* [profile_pic_url](_responses_location_feed_response_.locationfeedresponseuser.md#profile_pic_url)
+* [username](_responses_location_feed_response_.locationfeedresponseuser.md#username)
 
 ## Properties
 
 ### `Optional` friendship_status
 
-• **friendship_status**? : _[LocationFeedResponseFriendship_status](\_responses_location_feed_response_.locationfeedresponsefriendship*status.md)*
+• **friendship_status**? : *[LocationFeedResponseFriendship_status](_responses_location_feed_response_.locationfeedresponsefriendship_status.md)*
 
-_Defined in [responses/location.feed.response.ts:93](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/location.feed.response.ts#L93)_
+*Defined in [responses/location.feed.response.ts:93](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/location.feed.response.ts#L93)*
 
----
+___
 
-### full_name
+###  full_name
 
-• **full_name**: _string_
+• **full_name**: *string*
 
-_Defined in [responses/location.feed.response.ts:88](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/location.feed.response.ts#L88)_
+*Defined in [responses/location.feed.response.ts:88](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/location.feed.response.ts#L88)*
 
----
+___
 
 ### `Optional` has_anonymous_profile_picture
 
-• **has_anonymous_profile_picture**? : _boolean_
+• **has_anonymous_profile_picture**? : *boolean*
 
-_Defined in [responses/location.feed.response.ts:94](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/location.feed.response.ts#L94)_
+*Defined in [responses/location.feed.response.ts:94](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/location.feed.response.ts#L94)*
 
----
+___
 
 ### `Optional` is_favorite
 
-• **is_favorite**? : _boolean_
+• **is_favorite**? : *boolean*
 
-_Defined in [responses/location.feed.response.ts:96](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/location.feed.response.ts#L96)_
+*Defined in [responses/location.feed.response.ts:96](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/location.feed.response.ts#L96)*
 
----
+___
 
-### is_private
+###  is_private
 
-• **is_private**: _boolean_
+• **is_private**: *boolean*
 
-_Defined in [responses/location.feed.response.ts:89](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/location.feed.response.ts#L89)_
+*Defined in [responses/location.feed.response.ts:89](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/location.feed.response.ts#L89)*
 
----
+___
 
 ### `Optional` is_unpublished
 
-• **is_unpublished**? : _boolean_
+• **is_unpublished**? : *boolean*
 
-_Defined in [responses/location.feed.response.ts:95](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/location.feed.response.ts#L95)_
+*Defined in [responses/location.feed.response.ts:95](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/location.feed.response.ts#L95)*
 
----
+___
 
 ### `Optional` is_verified
 
-• **is_verified**? : _boolean_
+• **is_verified**? : *boolean*
 
-_Defined in [responses/location.feed.response.ts:92](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/location.feed.response.ts#L92)_
+*Defined in [responses/location.feed.response.ts:92](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/location.feed.response.ts#L92)*
 
----
+___
 
-### pk
+###  pk
 
-• **pk**: _number_
+• **pk**: *number*
 
-_Defined in [responses/location.feed.response.ts:86](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/location.feed.response.ts#L86)_
+*Defined in [responses/location.feed.response.ts:86](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/location.feed.response.ts#L86)*
 
----
+___
 
 ### `Optional` profile_pic_id
 
-• **profile_pic_id**? : _string_
+• **profile_pic_id**? : *string*
 
-_Defined in [responses/location.feed.response.ts:91](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/location.feed.response.ts#L91)_
+*Defined in [responses/location.feed.response.ts:91](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/location.feed.response.ts#L91)*
 
----
+___
 
-### profile_pic_url
+###  profile_pic_url
 
-• **profile_pic_url**: _string_
+• **profile_pic_url**: *string*
 
-_Defined in [responses/location.feed.response.ts:90](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/location.feed.response.ts#L90)_
+*Defined in [responses/location.feed.response.ts:90](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/location.feed.response.ts#L90)*
 
----
+___
 
-### username
+###  username
 
-• **username**: _string_
+• **username**: *string*
 
-_Defined in [responses/location.feed.response.ts:87](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/location.feed.response.ts#L87)_
+*Defined in [responses/location.feed.response.ts:87](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/location.feed.response.ts#L87)*

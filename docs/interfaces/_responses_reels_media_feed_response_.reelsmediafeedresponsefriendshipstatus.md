@@ -6,54 +6,54 @@
 
 ## Hierarchy
 
-- **ReelsMediaFeedResponseFriendshipStatus**
+* **ReelsMediaFeedResponseFriendshipStatus**
 
 ## Index
 
 ### Properties
 
-- [following](_responses_reels_media_feed_response_.reelsmediafeedresponsefriendshipstatus.md#following)
-- [incoming_request](_responses_reels_media_feed_response_.reelsmediafeedresponsefriendshipstatus.md#incoming_request)
-- [is_bestie](_responses_reels_media_feed_response_.reelsmediafeedresponsefriendshipstatus.md#is_bestie)
-- [is_private](_responses_reels_media_feed_response_.reelsmediafeedresponsefriendshipstatus.md#is_private)
-- [outgoing_request](_responses_reels_media_feed_response_.reelsmediafeedresponsefriendshipstatus.md#outgoing_request)
+* [following](_responses_reels_media_feed_response_.reelsmediafeedresponsefriendshipstatus.md#following)
+* [incoming_request](_responses_reels_media_feed_response_.reelsmediafeedresponsefriendshipstatus.md#incoming_request)
+* [is_bestie](_responses_reels_media_feed_response_.reelsmediafeedresponsefriendshipstatus.md#is_bestie)
+* [is_private](_responses_reels_media_feed_response_.reelsmediafeedresponsefriendshipstatus.md#is_private)
+* [outgoing_request](_responses_reels_media_feed_response_.reelsmediafeedresponsefriendshipstatus.md#outgoing_request)
 
 ## Properties
 
-### following
+###  following
 
-• **following**: _boolean_
+• **following**: *boolean*
 
-_Defined in [responses/reels-media.feed.response.ts:32](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/reels-media.feed.response.ts#L32)_
+*Defined in [responses/reels-media.feed.response.ts:32](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-media.feed.response.ts#L32)*
 
----
+___
 
-### incoming_request
+###  incoming_request
 
-• **incoming_request**: _boolean_
+• **incoming_request**: *boolean*
 
-_Defined in [responses/reels-media.feed.response.ts:34](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/reels-media.feed.response.ts#L34)_
+*Defined in [responses/reels-media.feed.response.ts:34](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-media.feed.response.ts#L34)*
 
----
+___
 
-### is_bestie
+###  is_bestie
 
-• **is_bestie**: _boolean_
+• **is_bestie**: *boolean*
 
-_Defined in [responses/reels-media.feed.response.ts:36](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/reels-media.feed.response.ts#L36)_
+*Defined in [responses/reels-media.feed.response.ts:36](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-media.feed.response.ts#L36)*
 
----
+___
 
-### is_private
+###  is_private
 
-• **is_private**: _boolean_
+• **is_private**: *boolean*
 
-_Defined in [responses/reels-media.feed.response.ts:33](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/reels-media.feed.response.ts#L33)_
+*Defined in [responses/reels-media.feed.response.ts:33](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-media.feed.response.ts#L33)*
 
----
+___
 
-### outgoing_request
+###  outgoing_request
 
-• **outgoing_request**: _boolean_
+• **outgoing_request**: *boolean*
 
-_Defined in [responses/reels-media.feed.response.ts:35](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/reels-media.feed.response.ts#L35)_
+*Defined in [responses/reels-media.feed.response.ts:35](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-media.feed.response.ts#L35)*

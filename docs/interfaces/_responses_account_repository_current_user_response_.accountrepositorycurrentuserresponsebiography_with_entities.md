@@ -6,27 +6,27 @@
 
 ## Hierarchy
 
-- **AccountRepositoryCurrentUserResponseBiography_with_entities**
+* **AccountRepositoryCurrentUserResponseBiography_with_entities**
 
 ## Index
 
 ### Properties
 
-- [entities](_responses_account_repository_current_user_response_.accountrepositorycurrentuserresponsebiography_with_entities.md#entities)
-- [raw_text](_responses_account_repository_current_user_response_.accountrepositorycurrentuserresponsebiography_with_entities.md#raw_text)
+* [entities](_responses_account_repository_current_user_response_.accountrepositorycurrentuserresponsebiography_with_entities.md#entities)
+* [raw_text](_responses_account_repository_current_user_response_.accountrepositorycurrentuserresponsebiography_with_entities.md#raw_text)
 
 ## Properties
 
-### entities
+###  entities
 
-• **entities**: _any[]_
+• **entities**: *any[]*
 
-_Defined in [responses/account.repository.current-user.response.ts:33](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/account.repository.current-user.response.ts#L33)_
+*Defined in [responses/account.repository.current-user.response.ts:33](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/account.repository.current-user.response.ts#L33)*
 
----
+___
 
-### raw_text
+###  raw_text
 
-• **raw_text**: _string_
+• **raw_text**: *string*
 
-_Defined in [responses/account.repository.current-user.response.ts:32](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/account.repository.current-user.response.ts#L32)_
+*Defined in [responses/account.repository.current-user.response.ts:32](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/account.repository.current-user.response.ts#L32)*

@@ -6,63 +6,63 @@
 
 ## Hierarchy
 
-- **DirectInboxFeedResponseInbox**
+* **DirectInboxFeedResponseInbox**
 
 ## Index
 
 ### Properties
 
-- [blended_inbox_enabled](_responses_direct_inbox_feed_response_.directinboxfeedresponseinbox.md#blended_inbox_enabled)
-- [has_older](_responses_direct_inbox_feed_response_.directinboxfeedresponseinbox.md#has_older)
-- [oldest_cursor](_responses_direct_inbox_feed_response_.directinboxfeedresponseinbox.md#oldest_cursor)
-- [threads](_responses_direct_inbox_feed_response_.directinboxfeedresponseinbox.md#threads)
-- [unseen_count](_responses_direct_inbox_feed_response_.directinboxfeedresponseinbox.md#unseen_count)
-- [unseen_count_ts](_responses_direct_inbox_feed_response_.directinboxfeedresponseinbox.md#unseen_count_ts)
+* [blended_inbox_enabled](_responses_direct_inbox_feed_response_.directinboxfeedresponseinbox.md#blended_inbox_enabled)
+* [has_older](_responses_direct_inbox_feed_response_.directinboxfeedresponseinbox.md#has_older)
+* [oldest_cursor](_responses_direct_inbox_feed_response_.directinboxfeedresponseinbox.md#oldest_cursor)
+* [threads](_responses_direct_inbox_feed_response_.directinboxfeedresponseinbox.md#threads)
+* [unseen_count](_responses_direct_inbox_feed_response_.directinboxfeedresponseinbox.md#unseen_count)
+* [unseen_count_ts](_responses_direct_inbox_feed_response_.directinboxfeedresponseinbox.md#unseen_count_ts)
 
 ## Properties
 
-### blended_inbox_enabled
+###  blended_inbox_enabled
 
-• **blended_inbox_enabled**: _boolean_
+• **blended_inbox_enabled**: *boolean*
 
-_Defined in [responses/direct-inbox.feed.response.ts:15](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-inbox.feed.response.ts#L15)_
+*Defined in [responses/direct-inbox.feed.response.ts:15](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-inbox.feed.response.ts#L15)*
 
----
+___
 
-### has_older
+###  has_older
 
-• **has_older**: _boolean_
+• **has_older**: *boolean*
 
-_Defined in [responses/direct-inbox.feed.response.ts:11](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-inbox.feed.response.ts#L11)_
+*Defined in [responses/direct-inbox.feed.response.ts:11](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-inbox.feed.response.ts#L11)*
 
----
+___
 
-### oldest_cursor
+###  oldest_cursor
 
-• **oldest_cursor**: _string_
+• **oldest_cursor**: *string*
 
-_Defined in [responses/direct-inbox.feed.response.ts:14](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-inbox.feed.response.ts#L14)_
+*Defined in [responses/direct-inbox.feed.response.ts:14](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-inbox.feed.response.ts#L14)*
 
----
+___
 
-### threads
+###  threads
 
-• **threads**: _[DirectInboxFeedResponseThreadsItem](../classes/\_responses_direct_inbox_feed_response_.directinboxfeedresponsethreadsitem.md)[]\_
+• **threads**: *[DirectInboxFeedResponseThreadsItem](../classes/_responses_direct_inbox_feed_response_.directinboxfeedresponsethreadsitem.md)[]*
 
-_Defined in [responses/direct-inbox.feed.response.ts:10](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-inbox.feed.response.ts#L10)_
+*Defined in [responses/direct-inbox.feed.response.ts:10](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-inbox.feed.response.ts#L10)*
 
----
+___
 
-### unseen_count
+###  unseen_count
 
-• **unseen_count**: _number_
+• **unseen_count**: *number*
 
-_Defined in [responses/direct-inbox.feed.response.ts:12](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-inbox.feed.response.ts#L12)_
+*Defined in [responses/direct-inbox.feed.response.ts:12](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-inbox.feed.response.ts#L12)*
 
----
+___
 
-### unseen_count_ts
+###  unseen_count_ts
 
-• **unseen_count_ts**: _string_
+• **unseen_count_ts**: *string*
 
-_Defined in [responses/direct-inbox.feed.response.ts:13](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-inbox.feed.response.ts#L13)_
+*Defined in [responses/direct-inbox.feed.response.ts:13](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-inbox.feed.response.ts#L13)*

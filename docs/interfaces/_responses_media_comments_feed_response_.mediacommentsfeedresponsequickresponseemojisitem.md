@@ -6,18 +6,18 @@
 
 ## Hierarchy
 
-- **MediaCommentsFeedResponseQuickResponseEmojisItem**
+* **MediaCommentsFeedResponseQuickResponseEmojisItem**
 
 ## Index
 
 ### Properties
 
-- [unicode](_responses_media_comments_feed_response_.mediacommentsfeedresponsequickresponseemojisitem.md#unicode)
+* [unicode](_responses_media_comments_feed_response_.mediacommentsfeedresponsequickresponseemojisitem.md#unicode)
 
 ## Properties
 
-### unicode
+###  unicode
 
-• **unicode**: _string_
+• **unicode**: *string*
 
-_Defined in [responses/media-comments.feed.response.ts:93](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/media-comments.feed.response.ts#L93)_
+*Defined in [responses/media-comments.feed.response.ts:93](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/media-comments.feed.response.ts#L93)*

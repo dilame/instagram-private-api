@@ -6,27 +6,27 @@
 
 ## Hierarchy
 
-- **MediaEditResponseRootObject**
+* **MediaEditResponseRootObject**
 
 ## Index
 
 ### Properties
 
-- [media](_responses_media_repository_info_response_.mediaeditresponserootobject.md#media)
-- [status](_responses_media_repository_info_response_.mediaeditresponserootobject.md#status)
+* [media](_responses_media_repository_info_response_.mediaeditresponserootobject.md#media)
+* [status](_responses_media_repository_info_response_.mediaeditresponserootobject.md#status)
 
 ## Properties
 
-### media
+###  media
 
-• **media**: _[MediaInfoResponseItemsItem](\_responses_media_repository_info_response_.mediainforesponseitemsitem.md)\_
+• **media**: *[MediaInfoResponseItemsItem](_responses_media_repository_info_response_.mediainforesponseitemsitem.md)*
 
-_Defined in [responses/media.repository.info.response.ts:83](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/media.repository.info.response.ts#L83)_
+*Defined in [responses/media.repository.info.response.ts:83](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/media.repository.info.response.ts#L83)*
 
----
+___
 
-### status
+###  status
 
-• **status**: _string_
+• **status**: *string*
 
-_Defined in [responses/media.repository.info.response.ts:84](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/media.repository.info.response.ts#L84)_
+*Defined in [responses/media.repository.info.response.ts:84](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/media.repository.info.response.ts#L84)*

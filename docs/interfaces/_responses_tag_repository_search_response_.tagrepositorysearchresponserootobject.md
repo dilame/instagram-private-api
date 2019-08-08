@@ -6,45 +6,45 @@
 
 ## Hierarchy
 
-- **TagRepositorySearchResponseRootObject**
+* **TagRepositorySearchResponseRootObject**
 
 ## Index
 
 ### Properties
 
-- [has_more](_responses_tag_repository_search_response_.tagrepositorysearchresponserootobject.md#has_more)
-- [rank_token](_responses_tag_repository_search_response_.tagrepositorysearchresponserootobject.md#rank_token)
-- [results](_responses_tag_repository_search_response_.tagrepositorysearchresponserootobject.md#results)
-- [status](_responses_tag_repository_search_response_.tagrepositorysearchresponserootobject.md#status)
+* [has_more](_responses_tag_repository_search_response_.tagrepositorysearchresponserootobject.md#has_more)
+* [rank_token](_responses_tag_repository_search_response_.tagrepositorysearchresponserootobject.md#rank_token)
+* [results](_responses_tag_repository_search_response_.tagrepositorysearchresponserootobject.md#results)
+* [status](_responses_tag_repository_search_response_.tagrepositorysearchresponserootobject.md#status)
 
 ## Properties
 
-### has_more
+###  has_more
 
-• **has_more**: _boolean_
+• **has_more**: *boolean*
 
-_Defined in [responses/tag.repository.search.response.ts:3](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/tag.repository.search.response.ts#L3)_
+*Defined in [responses/tag.repository.search.response.ts:3](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/tag.repository.search.response.ts#L3)*
 
----
+___
 
-### rank_token
+###  rank_token
 
-• **rank_token**: _string_
+• **rank_token**: *string*
 
-_Defined in [responses/tag.repository.search.response.ts:4](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/tag.repository.search.response.ts#L4)_
+*Defined in [responses/tag.repository.search.response.ts:4](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/tag.repository.search.response.ts#L4)*
 
----
+___
 
-### results
+###  results
 
-• **results**: _[TagRepositorySearchResponseResultsItem](\_responses_tag_repository_search_response_.tagrepositorysearchresponseresultsitem.md)[]\_
+• **results**: *[TagRepositorySearchResponseResultsItem](_responses_tag_repository_search_response_.tagrepositorysearchresponseresultsitem.md)[]*
 
-_Defined in [responses/tag.repository.search.response.ts:2](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/tag.repository.search.response.ts#L2)_
+*Defined in [responses/tag.repository.search.response.ts:2](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/tag.repository.search.response.ts#L2)*
 
----
+___
 
-### status
+###  status
 
-• **status**: _string_
+• **status**: *string*
 
-_Defined in [responses/tag.repository.search.response.ts:5](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/tag.repository.search.response.ts#L5)_
+*Defined in [responses/tag.repository.search.response.ts:5](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/tag.repository.search.response.ts#L5)*

@@ -6,36 +6,36 @@
 
 ## Hierarchy
 
-- **AccountRepositoryCurrentUserResponseHd_profile_pic_url_info**
+* **AccountRepositoryCurrentUserResponseHd_profile_pic_url_info**
 
 ## Index
 
 ### Properties
 
-- [height](_responses_account_repository_current_user_response_.accountrepositorycurrentuserresponsehd_profile_pic_url_info.md#height)
-- [url](_responses_account_repository_current_user_response_.accountrepositorycurrentuserresponsehd_profile_pic_url_info.md#url)
-- [width](_responses_account_repository_current_user_response_.accountrepositorycurrentuserresponsehd_profile_pic_url_info.md#width)
+* [height](_responses_account_repository_current_user_response_.accountrepositorycurrentuserresponsehd_profile_pic_url_info.md#height)
+* [url](_responses_account_repository_current_user_response_.accountrepositorycurrentuserresponsehd_profile_pic_url_info.md#url)
+* [width](_responses_account_repository_current_user_response_.accountrepositorycurrentuserresponsehd_profile_pic_url_info.md#width)
 
 ## Properties
 
-### height
+###  height
 
-• **height**: _number_
+• **height**: *number*
 
-_Defined in [responses/account.repository.current-user.response.ts:43](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/account.repository.current-user.response.ts#L43)_
+*Defined in [responses/account.repository.current-user.response.ts:43](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/account.repository.current-user.response.ts#L43)*
 
----
+___
 
-### url
+###  url
 
-• **url**: _string_
+• **url**: *string*
 
-_Defined in [responses/account.repository.current-user.response.ts:41](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/account.repository.current-user.response.ts#L41)_
+*Defined in [responses/account.repository.current-user.response.ts:41](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/account.repository.current-user.response.ts#L41)*
 
----
+___
 
-### width
+###  width
 
-• **width**: _number_
+• **width**: *number*
 
-_Defined in [responses/account.repository.current-user.response.ts:42](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/account.repository.current-user.response.ts#L42)_
+*Defined in [responses/account.repository.current-user.response.ts:42](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/account.repository.current-user.response.ts#L42)*

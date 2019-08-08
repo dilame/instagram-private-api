@@ -6,54 +6,54 @@
 
 ## Hierarchy
 
-- **FbsearchRepositoryPlacesResponseItemsItem**
+* **FbsearchRepositoryPlacesResponseItemsItem**
 
 ## Index
 
 ### Properties
 
-- [header_media](_responses_fbsearch_repository_places_response_.fbsearchrepositoryplacesresponseitemsitem.md#header_media)
-- [location](_responses_fbsearch_repository_places_response_.fbsearchrepositoryplacesresponseitemsitem.md#location)
-- [media_bundles](_responses_fbsearch_repository_places_response_.fbsearchrepositoryplacesresponseitemsitem.md#media_bundles)
-- [subtitle](_responses_fbsearch_repository_places_response_.fbsearchrepositoryplacesresponseitemsitem.md#subtitle)
-- [title](_responses_fbsearch_repository_places_response_.fbsearchrepositoryplacesresponseitemsitem.md#title)
+* [header_media](_responses_fbsearch_repository_places_response_.fbsearchrepositoryplacesresponseitemsitem.md#header_media)
+* [location](_responses_fbsearch_repository_places_response_.fbsearchrepositoryplacesresponseitemsitem.md#location)
+* [media_bundles](_responses_fbsearch_repository_places_response_.fbsearchrepositoryplacesresponseitemsitem.md#media_bundles)
+* [subtitle](_responses_fbsearch_repository_places_response_.fbsearchrepositoryplacesresponseitemsitem.md#subtitle)
+* [title](_responses_fbsearch_repository_places_response_.fbsearchrepositoryplacesresponseitemsitem.md#title)
 
 ## Properties
 
-### header_media
+###  header_media
 
-• **header_media**: _[FbsearchRepositoryPlacesResponseHeader_media](\_responses_fbsearch_repository_places_response_.fbsearchrepositoryplacesresponseheader*media.md)*
+• **header_media**: *[FbsearchRepositoryPlacesResponseHeader_media](_responses_fbsearch_repository_places_response_.fbsearchrepositoryplacesresponseheader_media.md)*
 
-_Defined in [responses/fbsearch.repository.places.response.ts:12](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/fbsearch.repository.places.response.ts#L12)_
+*Defined in [responses/fbsearch.repository.places.response.ts:12](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/fbsearch.repository.places.response.ts#L12)*
 
----
+___
 
-### location
+###  location
 
-• **location**: _[FbsearchRepositoryPlacesResponseLocation](\_responses_fbsearch_repository_places_response_.fbsearchrepositoryplacesresponselocation.md)\_
+• **location**: *[FbsearchRepositoryPlacesResponseLocation](_responses_fbsearch_repository_places_response_.fbsearchrepositoryplacesresponselocation.md)*
 
-_Defined in [responses/fbsearch.repository.places.response.ts:8](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/fbsearch.repository.places.response.ts#L8)_
+*Defined in [responses/fbsearch.repository.places.response.ts:8](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/fbsearch.repository.places.response.ts#L8)*
 
----
+___
 
-### media_bundles
+###  media_bundles
 
-• **media_bundles**: _any[]_
+• **media_bundles**: *any[]*
 
-_Defined in [responses/fbsearch.repository.places.response.ts:11](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/fbsearch.repository.places.response.ts#L11)_
+*Defined in [responses/fbsearch.repository.places.response.ts:11](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/fbsearch.repository.places.response.ts#L11)*
 
----
+___
 
-### subtitle
+###  subtitle
 
-• **subtitle**: _string_
+• **subtitle**: *string*
 
-_Defined in [responses/fbsearch.repository.places.response.ts:10](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/fbsearch.repository.places.response.ts#L10)_
+*Defined in [responses/fbsearch.repository.places.response.ts:10](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/fbsearch.repository.places.response.ts#L10)*
 
----
+___
 
-### title
+###  title
 
-• **title**: _string_
+• **title**: *string*
 
-_Defined in [responses/fbsearch.repository.places.response.ts:9](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/fbsearch.repository.places.response.ts#L9)_
+*Defined in [responses/fbsearch.repository.places.response.ts:9](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/fbsearch.repository.places.response.ts#L9)*

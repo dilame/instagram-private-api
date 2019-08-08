@@ -6,36 +6,36 @@
 
 ## Hierarchy
 
-- **MusicRepositoryGenresResponseGenre**
+* **MusicRepositoryGenresResponseGenre**
 
 ## Index
 
 ### Properties
 
-- [cover_artwork_uri](_responses_music_repository_genres_response_.musicrepositorygenresresponsegenre.md#cover_artwork_uri)
-- [id](_responses_music_repository_genres_response_.musicrepositorygenresresponsegenre.md#id)
-- [name](_responses_music_repository_genres_response_.musicrepositorygenresresponsegenre.md#name)
+* [cover_artwork_uri](_responses_music_repository_genres_response_.musicrepositorygenresresponsegenre.md#cover_artwork_uri)
+* [id](_responses_music_repository_genres_response_.musicrepositorygenresresponsegenre.md#id)
+* [name](_responses_music_repository_genres_response_.musicrepositorygenresresponsegenre.md#name)
 
 ## Properties
 
-### cover_artwork_uri
+###  cover_artwork_uri
 
-• **cover_artwork_uri**: _string_
+• **cover_artwork_uri**: *string*
 
-_Defined in [responses/music.repository.genres.response.ts:11](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/music.repository.genres.response.ts#L11)_
+*Defined in [responses/music.repository.genres.response.ts:11](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/music.repository.genres.response.ts#L11)*
 
----
+___
 
-### id
+###  id
 
-• **id**: _string_
+• **id**: *string*
 
-_Defined in [responses/music.repository.genres.response.ts:9](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/music.repository.genres.response.ts#L9)_
+*Defined in [responses/music.repository.genres.response.ts:9](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/music.repository.genres.response.ts#L9)*
 
----
+___
 
-### name
+###  name
 
-• **name**: _string_
+• **name**: *string*
 
-_Defined in [responses/music.repository.genres.response.ts:10](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/music.repository.genres.response.ts#L10)_
+*Defined in [responses/music.repository.genres.response.ts:10](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/music.repository.genres.response.ts#L10)*

@@ -6,72 +6,72 @@
 
 ## Hierarchy
 
-- **LocationRepositorySearchResponseVenuesItem**
+* **LocationRepositorySearchResponseVenuesItem**
 
 ## Index
 
 ### Properties
 
-- [address](_responses_location_repository_search_response_.locationrepositorysearchresponsevenuesitem.md#address)
-- [external_id](_responses_location_repository_search_response_.locationrepositorysearchresponsevenuesitem.md#external_id)
-- [external_id_source](_responses_location_repository_search_response_.locationrepositorysearchresponsevenuesitem.md#external_id_source)
-- [lat](_responses_location_repository_search_response_.locationrepositorysearchresponsevenuesitem.md#lat)
-- [lng](_responses_location_repository_search_response_.locationrepositorysearchresponsevenuesitem.md#lng)
-- [minimum_age](_responses_location_repository_search_response_.locationrepositorysearchresponsevenuesitem.md#minimum_age)
-- [name](_responses_location_repository_search_response_.locationrepositorysearchresponsevenuesitem.md#name)
+* [address](_responses_location_repository_search_response_.locationrepositorysearchresponsevenuesitem.md#address)
+* [external_id](_responses_location_repository_search_response_.locationrepositorysearchresponsevenuesitem.md#external_id)
+* [external_id_source](_responses_location_repository_search_response_.locationrepositorysearchresponsevenuesitem.md#external_id_source)
+* [lat](_responses_location_repository_search_response_.locationrepositorysearchresponsevenuesitem.md#lat)
+* [lng](_responses_location_repository_search_response_.locationrepositorysearchresponsevenuesitem.md#lng)
+* [minimum_age](_responses_location_repository_search_response_.locationrepositorysearchresponsevenuesitem.md#minimum_age)
+* [name](_responses_location_repository_search_response_.locationrepositorysearchresponsevenuesitem.md#name)
 
 ## Properties
 
-### address
+###  address
 
-• **address**: _string_
+• **address**: *string*
 
-_Defined in [responses/location.repository.search.response.ts:15](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/location.repository.search.response.ts#L15)_
+*Defined in [responses/location.repository.search.response.ts:15](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/location.repository.search.response.ts#L15)*
 
----
+___
 
-### external_id
+###  external_id
 
-• **external_id**: _string_
+• **external_id**: *string*
 
-_Defined in [responses/location.repository.search.response.ts:11](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/location.repository.search.response.ts#L11)_
+*Defined in [responses/location.repository.search.response.ts:11](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/location.repository.search.response.ts#L11)*
 
----
+___
 
-### external_id_source
+###  external_id_source
 
-• **external_id_source**: _string_
+• **external_id_source**: *string*
 
-_Defined in [responses/location.repository.search.response.ts:12](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/location.repository.search.response.ts#L12)_
+*Defined in [responses/location.repository.search.response.ts:12](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/location.repository.search.response.ts#L12)*
 
----
+___
 
-### lat
+###  lat
 
-• **lat**: _number_
+• **lat**: *number*
 
-_Defined in [responses/location.repository.search.response.ts:13](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/location.repository.search.response.ts#L13)_
+*Defined in [responses/location.repository.search.response.ts:13](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/location.repository.search.response.ts#L13)*
 
----
+___
 
-### lng
+###  lng
 
-• **lng**: _number_
+• **lng**: *number*
 
-_Defined in [responses/location.repository.search.response.ts:14](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/location.repository.search.response.ts#L14)_
+*Defined in [responses/location.repository.search.response.ts:14](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/location.repository.search.response.ts#L14)*
 
----
+___
 
-### minimum_age
+###  minimum_age
 
-• **minimum_age**: _number_
+• **minimum_age**: *number*
 
-_Defined in [responses/location.repository.search.response.ts:16](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/location.repository.search.response.ts#L16)_
+*Defined in [responses/location.repository.search.response.ts:16](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/location.repository.search.response.ts#L16)*
 
----
+___
 
-### name
+###  name
 
-• **name**: _string_
+• **name**: *string*
 
-_Defined in [responses/location.repository.search.response.ts:10](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/location.repository.search.response.ts#L10)_
+*Defined in [responses/location.repository.search.response.ts:10](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/location.repository.search.response.ts#L10)*

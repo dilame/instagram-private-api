@@ -6,44 +6,44 @@
 
 ## Hierarchy
 
-- [Repository](_core_repository_.repository.md)
+* [Repository](_core_repository_.repository.md)
 
-  - **LoomRepository**
+  * **LoomRepository**
 
 ## Index
 
 ### Constructors
 
-- [constructor](_repositories_loom_repository_.loomrepository.md#constructor)
+* [constructor](_repositories_loom_repository_.loomrepository.md#constructor)
 
 ### Methods
 
-- [fetchConfig](_repositories_loom_repository_.loomrepository.md#fetchconfig)
+* [fetchConfig](_repositories_loom_repository_.loomrepository.md#fetchconfig)
 
 ## Constructors
 
-### constructor
+###  constructor
 
-\+ **new LoomRepository**(`client`: [IgApiClient](_core_client_.igapiclient.md)): _[LoomRepository](\_repositories_loom_repository_.loomrepository.md)\_
+\+ **new LoomRepository**(`client`: [IgApiClient](_core_client_.igapiclient.md)): *[LoomRepository](_repositories_loom_repository_.loomrepository.md)*
 
-_Inherited from [Repository](\_core_repository_.repository.md).[constructor](_core_repository_.repository.md#constructor)\_
+*Inherited from [Repository](_core_repository_.repository.md).[constructor](_core_repository_.repository.md#constructor)*
 
-_Defined in [core/repository.ts:6](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/repository.ts#L6)_
+*Defined in [core/repository.ts:6](https://github.com/dilame/instagram-private-api/blob/01eb399/src/core/repository.ts#L6)*
 
 **Parameters:**
 
-| Name     | Type                                        |
-| -------- | ------------------------------------------- |
-| `client` | [IgApiClient](_core_client_.igapiclient.md) |
+Name | Type |
+------ | ------ |
+`client` | [IgApiClient](_core_client_.igapiclient.md) |
 
-**Returns:** _[LoomRepository](\_repositories_loom_repository_.loomrepository.md)\_
+**Returns:** *[LoomRepository](_repositories_loom_repository_.loomrepository.md)*
 
 ## Methods
 
-### fetchConfig
+###  fetchConfig
 
-▸ **fetchConfig**(): _`Promise<any>`_
+▸ **fetchConfig**(): *`Promise<any>`*
 
-_Defined in [repositories/loom.repository.ts:4](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/repositories/loom.repository.ts#L4)_
+*Defined in [repositories/loom.repository.ts:4](https://github.com/dilame/instagram-private-api/blob/01eb399/src/repositories/loom.repository.ts#L4)*
 
-**Returns:** _`Promise<any>`_
+**Returns:** *`Promise<any>`*

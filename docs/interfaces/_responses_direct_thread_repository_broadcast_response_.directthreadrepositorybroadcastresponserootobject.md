@@ -6,45 +6,45 @@
 
 ## Hierarchy
 
-- **DirectThreadRepositoryBroadcastResponseRootObject**
+* **DirectThreadRepositoryBroadcastResponseRootObject**
 
 ## Index
 
 ### Properties
 
-- [action](_responses_direct_thread_repository_broadcast_response_.directthreadrepositorybroadcastresponserootobject.md#action)
-- [payload](_responses_direct_thread_repository_broadcast_response_.directthreadrepositorybroadcastresponserootobject.md#payload)
-- [status](_responses_direct_thread_repository_broadcast_response_.directthreadrepositorybroadcastresponserootobject.md#status)
-- [status_code](_responses_direct_thread_repository_broadcast_response_.directthreadrepositorybroadcastresponserootobject.md#status_code)
+* [action](_responses_direct_thread_repository_broadcast_response_.directthreadrepositorybroadcastresponserootobject.md#action)
+* [payload](_responses_direct_thread_repository_broadcast_response_.directthreadrepositorybroadcastresponserootobject.md#payload)
+* [status](_responses_direct_thread_repository_broadcast_response_.directthreadrepositorybroadcastresponserootobject.md#status)
+* [status_code](_responses_direct_thread_repository_broadcast_response_.directthreadrepositorybroadcastresponserootobject.md#status_code)
 
 ## Properties
 
-### action
+###  action
 
-• **action**: _string_
+• **action**: *string*
 
-_Defined in [responses/direct-thread.repository.broadcast.response.ts:2](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.repository.broadcast.response.ts#L2)_
+*Defined in [responses/direct-thread.repository.broadcast.response.ts:2](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-thread.repository.broadcast.response.ts#L2)*
 
----
+___
 
-### payload
+###  payload
 
-• **payload**: _[DirectThreadRepositoryBroadcastResponsePayload](\_responses_direct_thread_repository_broadcast_response_.directthreadrepositorybroadcastresponsepayload.md)\_
+• **payload**: *[DirectThreadRepositoryBroadcastResponsePayload](_responses_direct_thread_repository_broadcast_response_.directthreadrepositorybroadcastresponsepayload.md)*
 
-_Defined in [responses/direct-thread.repository.broadcast.response.ts:4](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.repository.broadcast.response.ts#L4)_
+*Defined in [responses/direct-thread.repository.broadcast.response.ts:4](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-thread.repository.broadcast.response.ts#L4)*
 
----
+___
 
-### status
+###  status
 
-• **status**: _string_
+• **status**: *string*
 
-_Defined in [responses/direct-thread.repository.broadcast.response.ts:5](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.repository.broadcast.response.ts#L5)_
+*Defined in [responses/direct-thread.repository.broadcast.response.ts:5](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-thread.repository.broadcast.response.ts#L5)*
 
----
+___
 
-### status_code
+###  status_code
 
-• **status_code**: _string_
+• **status_code**: *string*
 
-_Defined in [responses/direct-thread.repository.broadcast.response.ts:3](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.repository.broadcast.response.ts#L3)_
+*Defined in [responses/direct-thread.repository.broadcast.response.ts:3](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-thread.repository.broadcast.response.ts#L3)*

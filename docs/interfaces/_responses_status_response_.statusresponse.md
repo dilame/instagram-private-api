@@ -6,22 +6,22 @@
 
 ## Hierarchy
 
-- **StatusResponse**
+* **StatusResponse**
 
-  - [LocationRepositoryInfoResponseRootObject](_responses_location_repository_info_response_.locationrepositoryinforesponserootobject.md)
+  * [LocationRepositoryInfoResponseRootObject](_responses_location_repository_info_response_.locationrepositoryinforesponserootobject.md)
 
-  - [LocationRepositorySearchResponseRootObject](_responses_location_repository_search_response_.locationrepositorysearchresponserootobject.md)
+  * [LocationRepositorySearchResponseRootObject](_responses_location_repository_search_response_.locationrepositorysearchresponserootobject.md)
 
 ## Index
 
 ### Properties
 
-- [status](_responses_status_response_.statusresponse.md#status)
+* [status](_responses_status_response_.statusresponse.md#status)
 
 ## Properties
 
-### status
+###  status
 
-• **status**: _string_
+• **status**: *string*
 
-_Defined in [responses/status.response.ts:2](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/status.response.ts#L2)_
+*Defined in [responses/status.response.ts:2](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/status.response.ts#L2)*

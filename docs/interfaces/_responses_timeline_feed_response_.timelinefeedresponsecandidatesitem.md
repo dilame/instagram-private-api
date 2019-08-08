@@ -6,36 +6,36 @@
 
 ## Hierarchy
 
-- **TimelineFeedResponseCandidatesItem**
+* **TimelineFeedResponseCandidatesItem**
 
 ## Index
 
 ### Properties
 
-- [height](_responses_timeline_feed_response_.timelinefeedresponsecandidatesitem.md#height)
-- [url](_responses_timeline_feed_response_.timelinefeedresponsecandidatesitem.md#url)
-- [width](_responses_timeline_feed_response_.timelinefeedresponsecandidatesitem.md#width)
+* [height](_responses_timeline_feed_response_.timelinefeedresponsecandidatesitem.md#height)
+* [url](_responses_timeline_feed_response_.timelinefeedresponsecandidatesitem.md#url)
+* [width](_responses_timeline_feed_response_.timelinefeedresponsecandidatesitem.md#width)
 
 ## Properties
 
-### height
+###  height
 
-• **height**: _number_
+• **height**: *number*
 
-_Defined in [responses/timeline.feed.response.ts:104](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/timeline.feed.response.ts#L104)_
+*Defined in [responses/timeline.feed.response.ts:104](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/timeline.feed.response.ts#L104)*
 
----
+___
 
-### url
+###  url
 
-• **url**: _string_
+• **url**: *string*
 
-_Defined in [responses/timeline.feed.response.ts:105](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/timeline.feed.response.ts#L105)_
+*Defined in [responses/timeline.feed.response.ts:105](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/timeline.feed.response.ts#L105)*
 
----
+___
 
-### width
+###  width
 
-• **width**: _number_
+• **width**: *number*
 
-_Defined in [responses/timeline.feed.response.ts:103](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/timeline.feed.response.ts#L103)_
+*Defined in [responses/timeline.feed.response.ts:103](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/timeline.feed.response.ts#L103)*

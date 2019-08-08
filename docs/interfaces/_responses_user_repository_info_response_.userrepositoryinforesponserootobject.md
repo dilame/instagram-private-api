@@ -6,27 +6,27 @@
 
 ## Hierarchy
 
-- **UserRepositoryInfoResponseRootObject**
+* **UserRepositoryInfoResponseRootObject**
 
 ## Index
 
 ### Properties
 
-- [status](_responses_user_repository_info_response_.userrepositoryinforesponserootobject.md#status)
-- [user](_responses_user_repository_info_response_.userrepositoryinforesponserootobject.md#user)
+* [status](_responses_user_repository_info_response_.userrepositoryinforesponserootobject.md#status)
+* [user](_responses_user_repository_info_response_.userrepositoryinforesponserootobject.md#user)
 
 ## Properties
 
-### status
+###  status
 
-• **status**: _string_
+• **status**: *string*
 
-_Defined in [responses/user.repository.info.response.ts:3](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/user.repository.info.response.ts#L3)_
+*Defined in [responses/user.repository.info.response.ts:3](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/user.repository.info.response.ts#L3)*
 
----
+___
 
-### user
+###  user
 
-• **user**: _[UserRepositoryInfoResponseUser](\_responses_user_repository_info_response_.userrepositoryinforesponseuser.md)\_
+• **user**: *[UserRepositoryInfoResponseUser](_responses_user_repository_info_response_.userrepositoryinforesponseuser.md)*
 
-_Defined in [responses/user.repository.info.response.ts:2](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/user.repository.info.response.ts#L2)_
+*Defined in [responses/user.repository.info.response.ts:2](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/user.repository.info.response.ts#L2)*

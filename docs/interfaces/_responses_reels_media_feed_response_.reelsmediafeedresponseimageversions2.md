@@ -6,18 +6,18 @@
 
 ## Hierarchy
 
-- **ReelsMediaFeedResponseImageVersions2**
+* **ReelsMediaFeedResponseImageVersions2**
 
 ## Index
 
 ### Properties
 
-- [candidates](_responses_reels_media_feed_response_.reelsmediafeedresponseimageversions2.md#candidates)
+* [candidates](_responses_reels_media_feed_response_.reelsmediafeedresponseimageversions2.md#candidates)
 
 ## Properties
 
-### candidates
+###  candidates
 
-• **candidates**: _[ReelsMediaFeedResponseCandidatesItem](\_responses_reels_media_feed_response_.reelsmediafeedresponsecandidatesitem.md)[]\_
+• **candidates**: *[ReelsMediaFeedResponseCandidatesItem](_responses_reels_media_feed_response_.reelsmediafeedresponsecandidatesitem.md)[]*
 
-_Defined in [responses/reels-media.feed.response.ts:78](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/reels-media.feed.response.ts#L78)_
+*Defined in [responses/reels-media.feed.response.ts:78](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-media.feed.response.ts#L78)*

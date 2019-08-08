@@ -6,18 +6,18 @@
 
 ## Hierarchy
 
-- **MusicRepositoryGenresResponseItemsItem**
+* **MusicRepositoryGenresResponseItemsItem**
 
 ## Index
 
 ### Properties
 
-- [genre](_responses_music_repository_genres_response_.musicrepositorygenresresponseitemsitem.md#genre)
+* [genre](_responses_music_repository_genres_response_.musicrepositorygenresresponseitemsitem.md#genre)
 
 ## Properties
 
-### genre
+###  genre
 
-• **genre**: _[MusicRepositoryGenresResponseGenre](\_responses_music_repository_genres_response_.musicrepositorygenresresponsegenre.md)\_
+• **genre**: *[MusicRepositoryGenresResponseGenre](_responses_music_repository_genres_response_.musicrepositorygenresresponsegenre.md)*
 
-_Defined in [responses/music.repository.genres.response.ts:6](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/music.repository.genres.response.ts#L6)_
+*Defined in [responses/music.repository.genres.response.ts:6](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/music.repository.genres.response.ts#L6)*

@@ -6,81 +6,81 @@
 
 ## Hierarchy
 
-- **DirectInboxFeedResponseProfile**
+* **DirectInboxFeedResponseProfile**
 
 ## Index
 
 ### Properties
 
-- [full_name](_responses_direct_inbox_feed_response_.directinboxfeedresponseprofile.md#full_name)
-- [has_anonymous_profile_picture](_responses_direct_inbox_feed_response_.directinboxfeedresponseprofile.md#has_anonymous_profile_picture)
-- [is_private](_responses_direct_inbox_feed_response_.directinboxfeedresponseprofile.md#is_private)
-- [is_verified](_responses_direct_inbox_feed_response_.directinboxfeedresponseprofile.md#is_verified)
-- [pk](_responses_direct_inbox_feed_response_.directinboxfeedresponseprofile.md#pk)
-- [profile_pic_id](_responses_direct_inbox_feed_response_.directinboxfeedresponseprofile.md#profile_pic_id)
-- [profile_pic_url](_responses_direct_inbox_feed_response_.directinboxfeedresponseprofile.md#profile_pic_url)
-- [username](_responses_direct_inbox_feed_response_.directinboxfeedresponseprofile.md#username)
+* [full_name](_responses_direct_inbox_feed_response_.directinboxfeedresponseprofile.md#full_name)
+* [has_anonymous_profile_picture](_responses_direct_inbox_feed_response_.directinboxfeedresponseprofile.md#has_anonymous_profile_picture)
+* [is_private](_responses_direct_inbox_feed_response_.directinboxfeedresponseprofile.md#is_private)
+* [is_verified](_responses_direct_inbox_feed_response_.directinboxfeedresponseprofile.md#is_verified)
+* [pk](_responses_direct_inbox_feed_response_.directinboxfeedresponseprofile.md#pk)
+* [profile_pic_id](_responses_direct_inbox_feed_response_.directinboxfeedresponseprofile.md#profile_pic_id)
+* [profile_pic_url](_responses_direct_inbox_feed_response_.directinboxfeedresponseprofile.md#profile_pic_url)
+* [username](_responses_direct_inbox_feed_response_.directinboxfeedresponseprofile.md#username)
 
 ## Properties
 
-### full_name
+###  full_name
 
-• **full_name**: _string_
+• **full_name**: *string*
 
-_Defined in [responses/direct-inbox.feed.response.ts:151](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-inbox.feed.response.ts#L151)_
+*Defined in [responses/direct-inbox.feed.response.ts:151](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-inbox.feed.response.ts#L151)*
 
----
+___
 
-### has_anonymous_profile_picture
+###  has_anonymous_profile_picture
 
-• **has_anonymous_profile_picture**: _boolean_
+• **has_anonymous_profile_picture**: *boolean*
 
-_Defined in [responses/direct-inbox.feed.response.ts:156](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-inbox.feed.response.ts#L156)_
+*Defined in [responses/direct-inbox.feed.response.ts:156](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-inbox.feed.response.ts#L156)*
 
----
+___
 
-### is_private
+###  is_private
 
-• **is_private**: _boolean_
+• **is_private**: *boolean*
 
-_Defined in [responses/direct-inbox.feed.response.ts:152](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-inbox.feed.response.ts#L152)_
+*Defined in [responses/direct-inbox.feed.response.ts:152](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-inbox.feed.response.ts#L152)*
 
----
+___
 
-### is_verified
+###  is_verified
 
-• **is_verified**: _boolean_
+• **is_verified**: *boolean*
 
-_Defined in [responses/direct-inbox.feed.response.ts:155](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-inbox.feed.response.ts#L155)_
+*Defined in [responses/direct-inbox.feed.response.ts:155](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-inbox.feed.response.ts#L155)*
 
----
+___
 
-### pk
+###  pk
 
-• **pk**: _number_
+• **pk**: *number*
 
-_Defined in [responses/direct-inbox.feed.response.ts:149](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-inbox.feed.response.ts#L149)_
+*Defined in [responses/direct-inbox.feed.response.ts:149](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-inbox.feed.response.ts#L149)*
 
----
+___
 
-### profile_pic_id
+###  profile_pic_id
 
-• **profile_pic_id**: _string_
+• **profile_pic_id**: *string*
 
-_Defined in [responses/direct-inbox.feed.response.ts:154](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-inbox.feed.response.ts#L154)_
+*Defined in [responses/direct-inbox.feed.response.ts:154](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-inbox.feed.response.ts#L154)*
 
----
+___
 
-### profile_pic_url
+###  profile_pic_url
 
-• **profile_pic_url**: _string_
+• **profile_pic_url**: *string*
 
-_Defined in [responses/direct-inbox.feed.response.ts:153](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-inbox.feed.response.ts#L153)_
+*Defined in [responses/direct-inbox.feed.response.ts:153](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-inbox.feed.response.ts#L153)*
 
----
+___
 
-### username
+###  username
 
-• **username**: _string_
+• **username**: *string*
 
-_Defined in [responses/direct-inbox.feed.response.ts:150](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-inbox.feed.response.ts#L150)_
+*Defined in [responses/direct-inbox.feed.response.ts:150](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-inbox.feed.response.ts#L150)*

@@ -6,30 +6,72 @@
 
 ## Hierarchy
 
-- [IgClientError](_errors_ig_client_error_.igclienterror.md)
+  * [IgClientError](_errors_ig_client_error_.igclienterror.md)
 
-- **IgChallengeWrongCodeError**
+  * **IgChallengeWrongCodeError**
 
 ## Index
 
 ### Constructors
 
-- [constructor](_errors_ig_challenge_wrong_code_error_.igchallengewrongcodeerror.md#constructor)
+* [constructor](_errors_ig_challenge_wrong_code_error_.igchallengewrongcodeerror.md#constructor)
+
+### Properties
+
+* [message](_errors_ig_challenge_wrong_code_error_.igchallengewrongcodeerror.md#message)
+* [name](_errors_ig_challenge_wrong_code_error_.igchallengewrongcodeerror.md#name)
+* [stack](_errors_ig_challenge_wrong_code_error_.igchallengewrongcodeerror.md#optional-stack)
 
 ## Constructors
 
-### constructor
+###  constructor
 
-\+ **new IgChallengeWrongCodeError**(`message`: string): _[IgChallengeWrongCodeError](\_errors_ig_challenge_wrong_code_error_.igchallengewrongcodeerror.md)\_
+\+ **new IgChallengeWrongCodeError**(`message`: string): *[IgChallengeWrongCodeError](_errors_ig_challenge_wrong_code_error_.igchallengewrongcodeerror.md)*
 
-_Inherited from [IgClientError](\_errors_ig_client_error_.igclienterror.md).[constructor](_errors_ig_client_error_.igclienterror.md#constructor)\_
+*Inherited from [IgClientError](_errors_ig_client_error_.igclienterror.md).[constructor](_errors_ig_client_error_.igclienterror.md#constructor)*
 
-_Defined in [errors/ig-client.error.ts:3](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/errors/ig-client.error.ts#L3)_
+*Overrides void*
+
+*Defined in [errors/ig-client.error.ts:3](https://github.com/dilame/instagram-private-api/blob/01eb399/src/errors/ig-client.error.ts#L3)*
 
 **Parameters:**
 
-| Name      | Type   | Default                         |
-| --------- | ------ | ------------------------------- |
-| `message` | string | "Instagram API error was made." |
+Name | Type | Default |
+------ | ------ | ------ |
+`message` | string | "Instagram API error was made." |
 
-**Returns:** _[IgChallengeWrongCodeError](\_errors_ig_challenge_wrong_code_error_.igchallengewrongcodeerror.md)\_
+**Returns:** *[IgChallengeWrongCodeError](_errors_ig_challenge_wrong_code_error_.igchallengewrongcodeerror.md)*
+
+## Properties
+
+###  message
+
+• **message**: *string*
+
+*Inherited from void*
+
+Defined in /Users/bowzee/WebstormProjects/instagram-private-api/node_modules/typedoc/node_modules/typescript/lib/lib.es5.d.ts:964
+
+___
+
+###  name
+
+• **name**: *string*
+
+*Inherited from void*
+
+*Overrides void*
+
+Defined in /Users/bowzee/WebstormProjects/instagram-private-api/node_modules/ts-custom-error/dist/custom-error.d.ts:2
+
+___
+
+### `Optional` stack
+
+• **stack**? : *string*
+
+*Inherited from void*
+
+*Overrides void*
+
+Defined in /Users/bowzee/WebstormProjects/instagram-private-api/node_modules/typedoc/node_modules/typescript/lib/lib.es5.d.ts:965

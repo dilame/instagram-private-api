@@ -6,18 +6,18 @@
 
 ## Hierarchy
 
-- **DirectThreadRepositoryApproveParticipantRequestResponseFb_user_tags**
+* **DirectThreadRepositoryApproveParticipantRequestResponseFb_user_tags**
 
 ## Index
 
 ### Properties
 
-- [in](_responses_direct_thread_repository_approve_participant_request_response_.directthreadrepositoryapproveparticipantrequestresponsefb_user_tags.md#in)
+* [in](_responses_direct_thread_repository_approve_participant_request_response_.directthreadrepositoryapproveparticipantrequestresponsefb_user_tags.md#in)
 
 ## Properties
 
-### in
+###  in
 
-• **in**: _any[]_
+• **in**: *any[]*
 
-_Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:138](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.repository.approve-participant-request.response.ts#L138)_
+*Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:138](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-thread.repository.approve-participant-request.response.ts#L138)*

@@ -6,268 +6,286 @@
 
 ## Hierarchy
 
-- [Repository](_core_repository_.repository.md)
+* [Repository](_core_repository_.repository.md)
 
-  - **DirectThreadRepository**
+  * **DirectThreadRepository**
 
 ## Index
 
 ### Constructors
 
-- [constructor](_repositories_direct_thread_repository_.directthreadrepository.md#constructor)
+* [constructor](_repositories_direct_thread_repository_.directthreadrepository.md#constructor)
 
 ### Methods
 
-- [addUser](_repositories_direct_thread_repository_.directthreadrepository.md#adduser)
-- [approve](_repositories_direct_thread_repository_.directthreadrepository.md#approve)
-- [approveMultiple](_repositories_direct_thread_repository_.directthreadrepository.md#approvemultiple)
-- [approveParticipantRequests](_repositories_direct_thread_repository_.directthreadrepository.md#approveparticipantrequests)
-- [broadcast](_repositories_direct_thread_repository_.directthreadrepository.md#broadcast)
-- [decline](_repositories_direct_thread_repository_.directthreadrepository.md#decline)
-- [declineAll](_repositories_direct_thread_repository_.directthreadrepository.md#declineall)
-- [declineMultiple](_repositories_direct_thread_repository_.directthreadrepository.md#declinemultiple)
-- [getByParticipants](_repositories_direct_thread_repository_.directthreadrepository.md#getbyparticipants)
-- [hide](_repositories_direct_thread_repository_.directthreadrepository.md#hide)
-- [leave](_repositories_direct_thread_repository_.directthreadrepository.md#leave)
-- [mute](_repositories_direct_thread_repository_.directthreadrepository.md#mute)
-- [unmute](_repositories_direct_thread_repository_.directthreadrepository.md#unmute)
-- [updateTitle](_repositories_direct_thread_repository_.directthreadrepository.md#updatetitle)
+* [addUser](_repositories_direct_thread_repository_.directthreadrepository.md#adduser)
+* [approve](_repositories_direct_thread_repository_.directthreadrepository.md#approve)
+* [approveMultiple](_repositories_direct_thread_repository_.directthreadrepository.md#approvemultiple)
+* [approveParticipantRequests](_repositories_direct_thread_repository_.directthreadrepository.md#approveparticipantrequests)
+* [broadcast](_repositories_direct_thread_repository_.directthreadrepository.md#broadcast)
+* [decline](_repositories_direct_thread_repository_.directthreadrepository.md#decline)
+* [declineAll](_repositories_direct_thread_repository_.directthreadrepository.md#declineall)
+* [declineMultiple](_repositories_direct_thread_repository_.directthreadrepository.md#declinemultiple)
+* [getByParticipants](_repositories_direct_thread_repository_.directthreadrepository.md#getbyparticipants)
+* [hide](_repositories_direct_thread_repository_.directthreadrepository.md#hide)
+* [leave](_repositories_direct_thread_repository_.directthreadrepository.md#leave)
+* [markItemSeen](_repositories_direct_thread_repository_.directthreadrepository.md#markitemseen)
+* [mute](_repositories_direct_thread_repository_.directthreadrepository.md#mute)
+* [unmute](_repositories_direct_thread_repository_.directthreadrepository.md#unmute)
+* [updateTitle](_repositories_direct_thread_repository_.directthreadrepository.md#updatetitle)
 
 ## Constructors
 
-### constructor
+###  constructor
 
-\+ **new DirectThreadRepository**(`client`: [IgApiClient](_core_client_.igapiclient.md)): _[DirectThreadRepository](\_repositories_direct_thread_repository_.directthreadrepository.md)\_
+\+ **new DirectThreadRepository**(`client`: [IgApiClient](_core_client_.igapiclient.md)): *[DirectThreadRepository](_repositories_direct_thread_repository_.directthreadrepository.md)*
 
-_Inherited from [Repository](\_core_repository_.repository.md).[constructor](_core_repository_.repository.md#constructor)\_
+*Inherited from [Repository](_core_repository_.repository.md).[constructor](_core_repository_.repository.md#constructor)*
 
-_Defined in [core/repository.ts:6](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/repository.ts#L6)_
+*Defined in [core/repository.ts:6](https://github.com/dilame/instagram-private-api/blob/01eb399/src/core/repository.ts#L6)*
 
 **Parameters:**
 
-| Name     | Type                                        |
-| -------- | ------------------------------------------- |
-| `client` | [IgApiClient](_core_client_.igapiclient.md) |
+Name | Type |
+------ | ------ |
+`client` | [IgApiClient](_core_client_.igapiclient.md) |
 
-**Returns:** _[DirectThreadRepository](\_repositories_direct_thread_repository_.directthreadrepository.md)\_
+**Returns:** *[DirectThreadRepository](_repositories_direct_thread_repository_.directthreadrepository.md)*
 
 ## Methods
 
-### addUser
+###  addUser
 
-▸ **addUser**(`threadId`: string | number, `userIds`: string[] | number[]): _`Promise<DirectThreadRepositoryAddUserResponseRootObject>`_
+▸ **addUser**(`threadId`: string | number, `userIds`: string[] | number[]): *`Promise<DirectThreadRepositoryAddUserResponseRootObject>`*
 
-_Defined in [repositories/direct-thread.repository.ts:147](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/repositories/direct-thread.repository.ts#L147)_
-
-**Parameters:**
-
-| Name       | Type                 |
-| ---------- | -------------------- |
-| `threadId` | string \| number     |
-| `userIds`  | string[] \| number[] |
-
-**Returns:** _`Promise<DirectThreadRepositoryAddUserResponseRootObject>`_
-
----
-
-### approve
-
-▸ **approve**(`threadId`: string | number): _`Promise<StatusResponse>`_
-
-_Defined in [repositories/direct-thread.repository.ts:14](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/repositories/direct-thread.repository.ts#L14)_
+*Defined in [repositories/direct-thread.repository.ts:147](https://github.com/dilame/instagram-private-api/blob/01eb399/src/repositories/direct-thread.repository.ts#L147)*
 
 **Parameters:**
 
-| Name       | Type             |
-| ---------- | ---------------- |
-| `threadId` | string \| number |
+Name | Type |
+------ | ------ |
+`threadId` | string \| number |
+`userIds` | string[] \| number[] |
 
-**Returns:** _`Promise<StatusResponse>`_
+**Returns:** *`Promise<DirectThreadRepositoryAddUserResponseRootObject>`*
 
----
+___
 
-### approveMultiple
+###  approve
 
-▸ **approveMultiple**(`threadIds`: string[] | number[]): _`Promise<StatusResponse>`_
+▸ **approve**(`threadId`: string | number): *`Promise<StatusResponse>`*
 
-_Defined in [repositories/direct-thread.repository.ts:26](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/repositories/direct-thread.repository.ts#L26)_
-
-**Parameters:**
-
-| Name        | Type                 |
-| ----------- | -------------------- |
-| `threadIds` | string[] \| number[] |
-
-**Returns:** _`Promise<StatusResponse>`_
-
----
-
-### approveParticipantRequests
-
-▸ **approveParticipantRequests**(`threadId`: string | number, `userIds`: string[]): _`Promise<DirectThreadRepositoryApproveParticipantRequestResponseRootObject>`_
-
-_Defined in [repositories/direct-thread.repository.ts:76](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/repositories/direct-thread.repository.ts#L76)_
+*Defined in [repositories/direct-thread.repository.ts:14](https://github.com/dilame/instagram-private-api/blob/01eb399/src/repositories/direct-thread.repository.ts#L14)*
 
 **Parameters:**
 
-| Name       | Type             |
-| ---------- | ---------------- |
-| `threadId` | string \| number |
-| `userIds`  | string[]         |
+Name | Type |
+------ | ------ |
+`threadId` | string \| number |
 
-**Returns:** _`Promise<DirectThreadRepositoryApproveParticipantRequestResponseRootObject>`_
+**Returns:** *`Promise<StatusResponse>`*
 
----
+___
 
-### broadcast
+###  approveMultiple
 
-▸ **broadcast**(`options`: [DirectThreadBroadcastOptions](../modules/_types_direct_thread_broadcast_options_.md#directthreadbroadcastoptions)): _`Promise<DirectThreadRepositoryBroadcastResponseRootObject>`_
+▸ **approveMultiple**(`threadIds`: string[] | number[]): *`Promise<StatusResponse>`*
 
-_Defined in [repositories/direct-thread.repository.ts:188](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/repositories/direct-thread.repository.ts#L188)_
-
-**Parameters:**
-
-| Name      | Type                                                                                                               |
-| --------- | ------------------------------------------------------------------------------------------------------------------ |
-| `options` | [DirectThreadBroadcastOptions](../modules/_types_direct_thread_broadcast_options_.md#directthreadbroadcastoptions) |
-
-**Returns:** _`Promise<DirectThreadRepositoryBroadcastResponseRootObject>`_
-
----
-
-### decline
-
-▸ **decline**(`threadId`: string | number): _`Promise<StatusResponse>`_
-
-_Defined in [repositories/direct-thread.repository.ts:39](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/repositories/direct-thread.repository.ts#L39)_
+*Defined in [repositories/direct-thread.repository.ts:26](https://github.com/dilame/instagram-private-api/blob/01eb399/src/repositories/direct-thread.repository.ts#L26)*
 
 **Parameters:**
 
-| Name       | Type             |
-| ---------- | ---------------- |
-| `threadId` | string \| number |
+Name | Type |
+------ | ------ |
+`threadIds` | string[] \| number[] |
 
-**Returns:** _`Promise<StatusResponse>`_
+**Returns:** *`Promise<StatusResponse>`*
 
----
+___
 
-### declineAll
+###  approveParticipantRequests
 
-▸ **declineAll**(): _`Promise<StatusResponse>`_
+▸ **approveParticipantRequests**(`threadId`: string | number, `userIds`: string[]): *`Promise<DirectThreadRepositoryApproveParticipantRequestResponseRootObject>`*
 
-_Defined in [repositories/direct-thread.repository.ts:64](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/repositories/direct-thread.repository.ts#L64)_
-
-**Returns:** _`Promise<StatusResponse>`_
-
----
-
-### declineMultiple
-
-▸ **declineMultiple**(`threadIds`: string[] | number[]): _`Promise<StatusResponse>`_
-
-_Defined in [repositories/direct-thread.repository.ts:51](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/repositories/direct-thread.repository.ts#L51)_
+*Defined in [repositories/direct-thread.repository.ts:76](https://github.com/dilame/instagram-private-api/blob/01eb399/src/repositories/direct-thread.repository.ts#L76)*
 
 **Parameters:**
 
-| Name        | Type                 |
-| ----------- | -------------------- |
-| `threadIds` | string[] \| number[] |
+Name | Type |
+------ | ------ |
+`threadId` | string \| number |
+`userIds` | string[] |
 
-**Returns:** _`Promise<StatusResponse>`_
+**Returns:** *`Promise<DirectThreadRepositoryApproveParticipantRequestResponseRootObject>`*
 
----
+___
 
-### getByParticipants
+###  broadcast
 
-▸ **getByParticipants**(`recipientUsers`: string[] | number[]): _`Promise<DirectThreadRepositoryGetByParticipantsResponseRootObject>`_
+▸ **broadcast**(`options`: [DirectThreadBroadcastOptions](../modules/_types_direct_thread_broadcast_options_.md#directthreadbroadcastoptions)): *`Promise<DirectThreadRepositoryBroadcastResponseRootObject>`*
 
-_Defined in [repositories/direct-thread.repository.ts:94](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/repositories/direct-thread.repository.ts#L94)_
-
-**Parameters:**
-
-| Name             | Type                 |
-| ---------------- | -------------------- |
-| `recipientUsers` | string[] \| number[] |
-
-**Returns:** _`Promise<DirectThreadRepositoryGetByParticipantsResponseRootObject>`_
-
----
-
-### hide
-
-▸ **hide**(`threadId`: string): _`Promise<StatusResponse>`_
-
-_Defined in [repositories/direct-thread.repository.ts:175](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/repositories/direct-thread.repository.ts#L175)_
+*Defined in [repositories/direct-thread.repository.ts:204](https://github.com/dilame/instagram-private-api/blob/01eb399/src/repositories/direct-thread.repository.ts#L204)*
 
 **Parameters:**
 
-| Name       | Type   |
-| ---------- | ------ |
-| `threadId` | string |
+Name | Type |
+------ | ------ |
+`options` | [DirectThreadBroadcastOptions](../modules/_types_direct_thread_broadcast_options_.md#directthreadbroadcastoptions) |
 
-**Returns:** _`Promise<StatusResponse>`_
+**Returns:** *`Promise<DirectThreadRepositoryBroadcastResponseRootObject>`*
 
----
+___
 
-### leave
+###  decline
 
-▸ **leave**(`threadId`: string): _`Promise<StatusResponse>`_
+▸ **decline**(`threadId`: string | number): *`Promise<StatusResponse>`*
 
-_Defined in [repositories/direct-thread.repository.ts:163](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/repositories/direct-thread.repository.ts#L163)_
-
-**Parameters:**
-
-| Name       | Type   |
-| ---------- | ------ |
-| `threadId` | string |
-
-**Returns:** _`Promise<StatusResponse>`_
-
----
-
-### mute
-
-▸ **mute**(`threadId`: string | number): _`Promise<StatusResponse>`_
-
-_Defined in [repositories/direct-thread.repository.ts:123](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/repositories/direct-thread.repository.ts#L123)_
+*Defined in [repositories/direct-thread.repository.ts:39](https://github.com/dilame/instagram-private-api/blob/01eb399/src/repositories/direct-thread.repository.ts#L39)*
 
 **Parameters:**
 
-| Name       | Type             |
-| ---------- | ---------------- |
-| `threadId` | string \| number |
+Name | Type |
+------ | ------ |
+`threadId` | string \| number |
 
-**Returns:** _`Promise<StatusResponse>`_
+**Returns:** *`Promise<StatusResponse>`*
 
----
+___
 
-### unmute
+###  declineAll
 
-▸ **unmute**(`threadId`: string | number): _`Promise<StatusResponse>`_
+▸ **declineAll**(): *`Promise<StatusResponse>`*
 
-_Defined in [repositories/direct-thread.repository.ts:135](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/repositories/direct-thread.repository.ts#L135)_
+*Defined in [repositories/direct-thread.repository.ts:64](https://github.com/dilame/instagram-private-api/blob/01eb399/src/repositories/direct-thread.repository.ts#L64)*
 
-**Parameters:**
+**Returns:** *`Promise<StatusResponse>`*
 
-| Name       | Type             |
-| ---------- | ---------------- |
-| `threadId` | string \| number |
+___
 
-**Returns:** _`Promise<StatusResponse>`_
+###  declineMultiple
 
----
+▸ **declineMultiple**(`threadIds`: string[] | number[]): *`Promise<StatusResponse>`*
 
-### updateTitle
-
-▸ **updateTitle**(`threadId`: string | number, `title`: string): _`Promise<DirectThreadRepositoryUpdateTitleResponseRootObject>`_
-
-_Defined in [repositories/direct-thread.repository.ts:107](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/repositories/direct-thread.repository.ts#L107)_
+*Defined in [repositories/direct-thread.repository.ts:51](https://github.com/dilame/instagram-private-api/blob/01eb399/src/repositories/direct-thread.repository.ts#L51)*
 
 **Parameters:**
 
-| Name       | Type             |
-| ---------- | ---------------- |
-| `threadId` | string \| number |
-| `title`    | string           |
+Name | Type |
+------ | ------ |
+`threadIds` | string[] \| number[] |
 
-**Returns:** _`Promise<DirectThreadRepositoryUpdateTitleResponseRootObject>`_
+**Returns:** *`Promise<StatusResponse>`*
+
+___
+
+###  getByParticipants
+
+▸ **getByParticipants**(`recipientUsers`: string[] | number[]): *`Promise<DirectThreadRepositoryGetByParticipantsResponseRootObject>`*
+
+*Defined in [repositories/direct-thread.repository.ts:94](https://github.com/dilame/instagram-private-api/blob/01eb399/src/repositories/direct-thread.repository.ts#L94)*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`recipientUsers` | string[] \| number[] |
+
+**Returns:** *`Promise<DirectThreadRepositoryGetByParticipantsResponseRootObject>`*
+
+___
+
+###  hide
+
+▸ **hide**(`threadId`: string): *`Promise<StatusResponse>`*
+
+*Defined in [repositories/direct-thread.repository.ts:175](https://github.com/dilame/instagram-private-api/blob/01eb399/src/repositories/direct-thread.repository.ts#L175)*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`threadId` | string |
+
+**Returns:** *`Promise<StatusResponse>`*
+
+___
+
+###  leave
+
+▸ **leave**(`threadId`: string): *`Promise<StatusResponse>`*
+
+*Defined in [repositories/direct-thread.repository.ts:163](https://github.com/dilame/instagram-private-api/blob/01eb399/src/repositories/direct-thread.repository.ts#L163)*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`threadId` | string |
+
+**Returns:** *`Promise<StatusResponse>`*
+
+___
+
+###  markItemSeen
+
+▸ **markItemSeen**(`threadId`: string, `threadItemId`: string): *`Promise<StatusResponse>`*
+
+*Defined in [repositories/direct-thread.repository.ts:188](https://github.com/dilame/instagram-private-api/blob/01eb399/src/repositories/direct-thread.repository.ts#L188)*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`threadId` | string |
+`threadItemId` | string |
+
+**Returns:** *`Promise<StatusResponse>`*
+
+___
+
+###  mute
+
+▸ **mute**(`threadId`: string | number): *`Promise<StatusResponse>`*
+
+*Defined in [repositories/direct-thread.repository.ts:123](https://github.com/dilame/instagram-private-api/blob/01eb399/src/repositories/direct-thread.repository.ts#L123)*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`threadId` | string \| number |
+
+**Returns:** *`Promise<StatusResponse>`*
+
+___
+
+###  unmute
+
+▸ **unmute**(`threadId`: string | number): *`Promise<StatusResponse>`*
+
+*Defined in [repositories/direct-thread.repository.ts:135](https://github.com/dilame/instagram-private-api/blob/01eb399/src/repositories/direct-thread.repository.ts#L135)*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`threadId` | string \| number |
+
+**Returns:** *`Promise<StatusResponse>`*
+
+___
+
+###  updateTitle
+
+▸ **updateTitle**(`threadId`: string | number, `title`: string): *`Promise<DirectThreadRepositoryUpdateTitleResponseRootObject>`*
+
+*Defined in [repositories/direct-thread.repository.ts:107](https://github.com/dilame/instagram-private-api/blob/01eb399/src/repositories/direct-thread.repository.ts#L107)*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`threadId` | string \| number |
+`title` | string |
+
+**Returns:** *`Promise<DirectThreadRepositoryUpdateTitleResponseRootObject>`*

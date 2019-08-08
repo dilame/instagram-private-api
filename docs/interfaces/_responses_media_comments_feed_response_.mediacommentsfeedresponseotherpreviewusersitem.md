@@ -6,27 +6,27 @@
 
 ## Hierarchy
 
-- **MediaCommentsFeedResponseOtherPreviewUsersItem**
+* **MediaCommentsFeedResponseOtherPreviewUsersItem**
 
 ## Index
 
 ### Properties
 
-- [id](_responses_media_comments_feed_response_.mediacommentsfeedresponseotherpreviewusersitem.md#id)
-- [profile_pic_url](_responses_media_comments_feed_response_.mediacommentsfeedresponseotherpreviewusersitem.md#profile_pic_url)
+* [id](_responses_media_comments_feed_response_.mediacommentsfeedresponseotherpreviewusersitem.md#id)
+* [profile_pic_url](_responses_media_comments_feed_response_.mediacommentsfeedresponseotherpreviewusersitem.md#profile_pic_url)
 
 ## Properties
 
-### id
+###  id
 
-• **id**: _number_
+• **id**: *number*
 
-_Defined in [responses/media-comments.feed.response.ts:74](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/media-comments.feed.response.ts#L74)_
+*Defined in [responses/media-comments.feed.response.ts:74](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/media-comments.feed.response.ts#L74)*
 
----
+___
 
-### profile_pic_url
+###  profile_pic_url
 
-• **profile_pic_url**: _string_
+• **profile_pic_url**: *string*
 
-_Defined in [responses/media-comments.feed.response.ts:75](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/media-comments.feed.response.ts#L75)_
+*Defined in [responses/media-comments.feed.response.ts:75](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/media-comments.feed.response.ts#L75)*

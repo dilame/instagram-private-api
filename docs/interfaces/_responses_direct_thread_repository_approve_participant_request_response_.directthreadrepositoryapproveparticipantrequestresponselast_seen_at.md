@@ -6,4 +6,4 @@
 
 ## Hierarchy
 
-- **DirectThreadRepositoryApproveParticipantRequestResponseLast_seen_at**
+* **DirectThreadRepositoryApproveParticipantRequestResponseLast_seen_at**

@@ -1,7 +1,6 @@
 const TypeDoc = require('typedoc');
 
 const app = new TypeDoc.Application({
-  module: 'none',
   experimentalDecorators: true,
   ignoreCompilerErrors: true,
   logger: 'none',
@@ -10,8 +9,11 @@ const app = new TypeDoc.Application({
   excludePrivate: true,
   excludeProtected: true,
   excludeNotExported: true,
+  target: 'ES6',
+  tsconfig: './tsconfig.js'
 });
 
 const project = app.convert(app.expandInputFiles(['src']));
 
-if (project) app.generateDocs(project, 'docs');
+if (project)
+  app.generateDocs(project, 'docs');

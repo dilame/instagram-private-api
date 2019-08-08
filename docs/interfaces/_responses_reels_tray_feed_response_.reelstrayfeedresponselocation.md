@@ -6,90 +6,90 @@
 
 ## Hierarchy
 
-- **ReelsTrayFeedResponseLocation**
+* **ReelsTrayFeedResponseLocation**
 
 ## Index
 
 ### Properties
 
-- [address](_responses_reels_tray_feed_response_.reelstrayfeedresponselocation.md#address)
-- [city](_responses_reels_tray_feed_response_.reelstrayfeedresponselocation.md#city)
-- [external_source](_responses_reels_tray_feed_response_.reelstrayfeedresponselocation.md#external_source)
-- [facebook_places_id](_responses_reels_tray_feed_response_.reelstrayfeedresponselocation.md#facebook_places_id)
-- [lat](_responses_reels_tray_feed_response_.reelstrayfeedresponselocation.md#lat)
-- [lng](_responses_reels_tray_feed_response_.reelstrayfeedresponselocation.md#lng)
-- [name](_responses_reels_tray_feed_response_.reelstrayfeedresponselocation.md#name)
-- [pk](_responses_reels_tray_feed_response_.reelstrayfeedresponselocation.md#pk)
-- [short_name](_responses_reels_tray_feed_response_.reelstrayfeedresponselocation.md#short_name)
+* [address](_responses_reels_tray_feed_response_.reelstrayfeedresponselocation.md#address)
+* [city](_responses_reels_tray_feed_response_.reelstrayfeedresponselocation.md#city)
+* [external_source](_responses_reels_tray_feed_response_.reelstrayfeedresponselocation.md#external_source)
+* [facebook_places_id](_responses_reels_tray_feed_response_.reelstrayfeedresponselocation.md#facebook_places_id)
+* [lat](_responses_reels_tray_feed_response_.reelstrayfeedresponselocation.md#lat)
+* [lng](_responses_reels_tray_feed_response_.reelstrayfeedresponselocation.md#lng)
+* [name](_responses_reels_tray_feed_response_.reelstrayfeedresponselocation.md#name)
+* [pk](_responses_reels_tray_feed_response_.reelstrayfeedresponselocation.md#pk)
+* [short_name](_responses_reels_tray_feed_response_.reelstrayfeedresponselocation.md#short_name)
 
 ## Properties
 
-### address
+###  address
 
-• **address**: _string_
+• **address**: *string*
 
-_Defined in [responses/reels-tray.feed.response.ts:149](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/reels-tray.feed.response.ts#L149)_
+*Defined in [responses/reels-tray.feed.response.ts:149](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-tray.feed.response.ts#L149)*
 
----
+___
 
-### city
+###  city
 
-• **city**: _string_
+• **city**: *string*
 
-_Defined in [responses/reels-tray.feed.response.ts:150](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/reels-tray.feed.response.ts#L150)_
+*Defined in [responses/reels-tray.feed.response.ts:150](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-tray.feed.response.ts#L150)*
 
----
+___
 
-### external_source
+###  external_source
 
-• **external_source**: _string_
+• **external_source**: *string*
 
-_Defined in [responses/reels-tray.feed.response.ts:154](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/reels-tray.feed.response.ts#L154)_
+*Defined in [responses/reels-tray.feed.response.ts:154](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-tray.feed.response.ts#L154)*
 
----
+___
 
-### facebook_places_id
+###  facebook_places_id
 
-• **facebook_places_id**: _number_
+• **facebook_places_id**: *number*
 
-_Defined in [responses/reels-tray.feed.response.ts:155](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/reels-tray.feed.response.ts#L155)_
+*Defined in [responses/reels-tray.feed.response.ts:155](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-tray.feed.response.ts#L155)*
 
----
+___
 
-### lat
+###  lat
 
-• **lat**: _number_
+• **lat**: *number*
 
-_Defined in [responses/reels-tray.feed.response.ts:153](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/reels-tray.feed.response.ts#L153)_
+*Defined in [responses/reels-tray.feed.response.ts:153](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-tray.feed.response.ts#L153)*
 
----
+___
 
-### lng
+###  lng
 
-• **lng**: _number_
+• **lng**: *number*
 
-_Defined in [responses/reels-tray.feed.response.ts:152](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/reels-tray.feed.response.ts#L152)_
+*Defined in [responses/reels-tray.feed.response.ts:152](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-tray.feed.response.ts#L152)*
 
----
+___
 
-### name
+###  name
 
-• **name**: _string_
+• **name**: *string*
 
-_Defined in [responses/reels-tray.feed.response.ts:148](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/reels-tray.feed.response.ts#L148)_
+*Defined in [responses/reels-tray.feed.response.ts:148](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-tray.feed.response.ts#L148)*
 
----
+___
 
-### pk
+###  pk
 
-• **pk**: _number_
+• **pk**: *number*
 
-_Defined in [responses/reels-tray.feed.response.ts:147](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/reels-tray.feed.response.ts#L147)_
+*Defined in [responses/reels-tray.feed.response.ts:147](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-tray.feed.response.ts#L147)*
 
----
+___
 
-### short_name
+###  short_name
 
-• **short_name**: _string_
+• **short_name**: *string*
 
-_Defined in [responses/reels-tray.feed.response.ts:151](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/reels-tray.feed.response.ts#L151)_
+*Defined in [responses/reels-tray.feed.response.ts:151](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-tray.feed.response.ts#L151)*

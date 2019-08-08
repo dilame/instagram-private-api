@@ -6,45 +6,45 @@
 
 ## Hierarchy
 
-- **LocationFeedResponseSectionsItem**
+* **LocationFeedResponseSectionsItem**
 
 ## Index
 
 ### Properties
 
-- [explore_item_info](_responses_location_feed_response_.locationfeedresponsesectionsitem.md#explore_item_info)
-- [feed_type](_responses_location_feed_response_.locationfeedresponsesectionsitem.md#feed_type)
-- [layout_content](_responses_location_feed_response_.locationfeedresponsesectionsitem.md#layout_content)
-- [layout_type](_responses_location_feed_response_.locationfeedresponsesectionsitem.md#layout_type)
+* [explore_item_info](_responses_location_feed_response_.locationfeedresponsesectionsitem.md#explore_item_info)
+* [feed_type](_responses_location_feed_response_.locationfeedresponsesectionsitem.md#feed_type)
+* [layout_content](_responses_location_feed_response_.locationfeedresponsesectionsitem.md#layout_content)
+* [layout_type](_responses_location_feed_response_.locationfeedresponsesectionsitem.md#layout_type)
 
 ## Properties
 
-### explore_item_info
+###  explore_item_info
 
-• **explore_item_info**: _[LocationFeedResponseExplore_item_info](\_responses_location_feed_response_.locationfeedresponseexplore*item_info.md)*
+• **explore_item_info**: *[LocationFeedResponseExplore_item_info](_responses_location_feed_response_.locationfeedresponseexplore_item_info.md)*
 
-_Defined in [responses/location.feed.response.ts:13](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/location.feed.response.ts#L13)_
+*Defined in [responses/location.feed.response.ts:13](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/location.feed.response.ts#L13)*
 
----
+___
 
-### feed_type
+###  feed_type
 
-• **feed_type**: _string_
+• **feed_type**: *string*
 
-_Defined in [responses/location.feed.response.ts:12](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/location.feed.response.ts#L12)_
+*Defined in [responses/location.feed.response.ts:12](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/location.feed.response.ts#L12)*
 
----
+___
 
-### layout_content
+###  layout_content
 
-• **layout_content**: _[LocationFeedResponseLayout_content](\_responses_location_feed_response_.locationfeedresponselayout*content.md)*
+• **layout_content**: *[LocationFeedResponseLayout_content](_responses_location_feed_response_.locationfeedresponselayout_content.md)*
 
-_Defined in [responses/location.feed.response.ts:11](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/location.feed.response.ts#L11)_
+*Defined in [responses/location.feed.response.ts:11](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/location.feed.response.ts#L11)*
 
----
+___
 
-### layout_type
+###  layout_type
 
-• **layout_type**: _string_
+• **layout_type**: *string*
 
-_Defined in [responses/location.feed.response.ts:10](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/location.feed.response.ts#L10)_
+*Defined in [responses/location.feed.response.ts:10](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/location.feed.response.ts#L10)*

@@ -6,27 +6,27 @@
 
 ## Hierarchy
 
-- **MusicRepositoryGenresResponseRootObject**
+* **MusicRepositoryGenresResponseRootObject**
 
 ## Index
 
 ### Properties
 
-- [items](_responses_music_repository_genres_response_.musicrepositorygenresresponserootobject.md#items)
-- [status](_responses_music_repository_genres_response_.musicrepositorygenresresponserootobject.md#status)
+* [items](_responses_music_repository_genres_response_.musicrepositorygenresresponserootobject.md#items)
+* [status](_responses_music_repository_genres_response_.musicrepositorygenresresponserootobject.md#status)
 
 ## Properties
 
-### items
+###  items
 
-• **items**: _[MusicRepositoryGenresResponseItemsItem](\_responses_music_repository_genres_response_.musicrepositorygenresresponseitemsitem.md)[]\_
+• **items**: *[MusicRepositoryGenresResponseItemsItem](_responses_music_repository_genres_response_.musicrepositorygenresresponseitemsitem.md)[]*
 
-_Defined in [responses/music.repository.genres.response.ts:2](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/music.repository.genres.response.ts#L2)_
+*Defined in [responses/music.repository.genres.response.ts:2](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/music.repository.genres.response.ts#L2)*
 
----
+___
 
-### status
+###  status
 
-• **status**: _string_
+• **status**: *string*
 
-_Defined in [responses/music.repository.genres.response.ts:3](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/music.repository.genres.response.ts#L3)_
+*Defined in [responses/music.repository.genres.response.ts:3](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/music.repository.genres.response.ts#L3)*

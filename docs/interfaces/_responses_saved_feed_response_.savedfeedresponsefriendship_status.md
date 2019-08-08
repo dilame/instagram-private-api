@@ -6,45 +6,45 @@
 
 ## Hierarchy
 
-- **SavedFeedResponseFriendship_status**
+* **SavedFeedResponseFriendship_status**
 
 ## Index
 
 ### Properties
 
-- [following](_responses_saved_feed_response_.savedfeedresponsefriendship_status.md#following)
-- [is_bestie](_responses_saved_feed_response_.savedfeedresponsefriendship_status.md#is_bestie)
-- [is_restricted](_responses_saved_feed_response_.savedfeedresponsefriendship_status.md#is_restricted)
-- [outgoing_request](_responses_saved_feed_response_.savedfeedresponsefriendship_status.md#outgoing_request)
+* [following](_responses_saved_feed_response_.savedfeedresponsefriendship_status.md#following)
+* [is_bestie](_responses_saved_feed_response_.savedfeedresponsefriendship_status.md#is_bestie)
+* [is_restricted](_responses_saved_feed_response_.savedfeedresponsefriendship_status.md#is_restricted)
+* [outgoing_request](_responses_saved_feed_response_.savedfeedresponsefriendship_status.md#outgoing_request)
 
 ## Properties
 
-### following
+###  following
 
-• **following**: _boolean_
+• **following**: *boolean*
 
-_Defined in [responses/saved.feed.response.ts:106](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/saved.feed.response.ts#L106)_
+*Defined in [responses/saved.feed.response.ts:87](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/saved.feed.response.ts#L87)*
 
----
+___
 
-### is_bestie
+###  is_bestie
 
-• **is_bestie**: _boolean_
+• **is_bestie**: *boolean*
 
-_Defined in [responses/saved.feed.response.ts:108](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/saved.feed.response.ts#L108)_
+*Defined in [responses/saved.feed.response.ts:89](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/saved.feed.response.ts#L89)*
 
----
+___
 
-### is_restricted
+###  is_restricted
 
-• **is_restricted**: _boolean_
+• **is_restricted**: *boolean*
 
-_Defined in [responses/saved.feed.response.ts:109](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/saved.feed.response.ts#L109)_
+*Defined in [responses/saved.feed.response.ts:90](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/saved.feed.response.ts#L90)*
 
----
+___
 
-### outgoing_request
+###  outgoing_request
 
-• **outgoing_request**: _boolean_
+• **outgoing_request**: *boolean*
 
-_Defined in [responses/saved.feed.response.ts:107](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/saved.feed.response.ts#L107)_
+*Defined in [responses/saved.feed.response.ts:88](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/saved.feed.response.ts#L88)*

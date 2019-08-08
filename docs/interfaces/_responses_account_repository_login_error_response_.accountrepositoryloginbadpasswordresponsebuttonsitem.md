@@ -6,27 +6,27 @@
 
 ## Hierarchy
 
-- **AccountRepositoryLoginBadPasswordResponseButtonsItem**
+* **AccountRepositoryLoginBadPasswordResponseButtonsItem**
 
 ## Index
 
 ### Properties
 
-- [action](_responses_account_repository_login_error_response_.accountrepositoryloginbadpasswordresponsebuttonsitem.md#action)
-- [title](_responses_account_repository_login_error_response_.accountrepositoryloginbadpasswordresponsebuttonsitem.md#title)
+* [action](_responses_account_repository_login_error_response_.accountrepositoryloginbadpasswordresponsebuttonsitem.md#action)
+* [title](_responses_account_repository_login_error_response_.accountrepositoryloginbadpasswordresponsebuttonsitem.md#title)
 
 ## Properties
 
-### action
+###  action
 
-• **action**: _string_
+• **action**: *string*
 
-_Defined in [responses/account.repository.login.error.response.ts:32](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/account.repository.login.error.response.ts#L32)_
+*Defined in [responses/account.repository.login.error.response.ts:32](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/account.repository.login.error.response.ts#L32)*
 
----
+___
 
-### title
+###  title
 
-• **title**: _string_
+• **title**: *string*
 
-_Defined in [responses/account.repository.login.error.response.ts:31](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/account.repository.login.error.response.ts#L31)_
+*Defined in [responses/account.repository.login.error.response.ts:31](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/account.repository.login.error.response.ts#L31)*

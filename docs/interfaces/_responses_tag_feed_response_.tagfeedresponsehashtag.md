@@ -6,27 +6,27 @@
 
 ## Hierarchy
 
-- **TagFeedResponseHashtag**
+* **TagFeedResponseHashtag**
 
 ## Index
 
 ### Properties
 
-- [id](_responses_tag_feed_response_.tagfeedresponsehashtag.md#id)
-- [name](_responses_tag_feed_response_.tagfeedresponsehashtag.md#name)
+* [id](_responses_tag_feed_response_.tagfeedresponsehashtag.md#id)
+* [name](_responses_tag_feed_response_.tagfeedresponsehashtag.md#name)
 
 ## Properties
 
-### id
+###  id
 
-• **id**: _string_
+• **id**: *string*
 
-_Defined in [responses/tag.feed.response.ts:256](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/tag.feed.response.ts#L256)_
+*Defined in [responses/tag.feed.response.ts:256](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/tag.feed.response.ts#L256)*
 
----
+___
 
-### name
+###  name
 
-• **name**: _string_
+• **name**: *string*
 
-_Defined in [responses/tag.feed.response.ts:255](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/tag.feed.response.ts#L255)_
+*Defined in [responses/tag.feed.response.ts:255](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/tag.feed.response.ts#L255)*

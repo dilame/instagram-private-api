@@ -6,297 +6,320 @@
 
 ## Hierarchy
 
-- **IgApiClient**
+* **IgApiClient**
 
 ## Index
 
 ### Properties
 
-- [account](_core_client_.igapiclient.md#account)
-- [attribution](_core_client_.igapiclient.md#attribution)
-- [challenge](_core_client_.igapiclient.md#challenge)
-- [consent](_core_client_.igapiclient.md#consent)
-- [creatives](_core_client_.igapiclient.md#creatives)
-- [direct](_core_client_.igapiclient.md#direct)
-- [directThread](_core_client_.igapiclient.md#directthread)
-- [discover](_core_client_.igapiclient.md#discover)
-- [entity](_core_client_.igapiclient.md#entity)
-- [fbsearch](_core_client_.igapiclient.md#fbsearch)
-- [feed](_core_client_.igapiclient.md#feed)
-- [friendship](_core_client_.igapiclient.md#friendship)
-- [launcher](_core_client_.igapiclient.md#launcher)
-- [linkedAccount](_core_client_.igapiclient.md#linkedaccount)
-- [live](_core_client_.igapiclient.md#live)
-- [location](_core_client_.igapiclient.md#location)
-- [locationSearch](_core_client_.igapiclient.md#locationsearch)
-- [loom](_core_client_.igapiclient.md#loom)
-- [media](_core_client_.igapiclient.md#media)
-- [music](_core_client_.igapiclient.md#music)
-- [publish](_core_client_.igapiclient.md#publish)
-- [qe](_core_client_.igapiclient.md#qe)
-- [qp](_core_client_.igapiclient.md#qp)
-- [request](_core_client_.igapiclient.md#request)
-- [search](_core_client_.igapiclient.md#search)
-- [simulate](_core_client_.igapiclient.md#simulate)
-- [state](_core_client_.igapiclient.md#state)
-- [story](_core_client_.igapiclient.md#story)
-- [tag](_core_client_.igapiclient.md#tag)
-- [upload](_core_client_.igapiclient.md#upload)
-- [user](_core_client_.igapiclient.md#user)
-- [zr](_core_client_.igapiclient.md#zr)
+* [account](_core_client_.igapiclient.md#account)
+* [attribution](_core_client_.igapiclient.md#attribution)
+* [challenge](_core_client_.igapiclient.md#challenge)
+* [consent](_core_client_.igapiclient.md#consent)
+* [creatives](_core_client_.igapiclient.md#creatives)
+* [direct](_core_client_.igapiclient.md#direct)
+* [directThread](_core_client_.igapiclient.md#directthread)
+* [discover](_core_client_.igapiclient.md#discover)
+* [entity](_core_client_.igapiclient.md#entity)
+* [fbsearch](_core_client_.igapiclient.md#fbsearch)
+* [feed](_core_client_.igapiclient.md#feed)
+* [friendship](_core_client_.igapiclient.md#friendship)
+* [launcher](_core_client_.igapiclient.md#launcher)
+* [linkedAccount](_core_client_.igapiclient.md#linkedaccount)
+* [live](_core_client_.igapiclient.md#live)
+* [location](_core_client_.igapiclient.md#location)
+* [locationSearch](_core_client_.igapiclient.md#locationsearch)
+* [loom](_core_client_.igapiclient.md#loom)
+* [media](_core_client_.igapiclient.md#media)
+* [music](_core_client_.igapiclient.md#music)
+* [news](_core_client_.igapiclient.md#news)
+* [publish](_core_client_.igapiclient.md#publish)
+* [qe](_core_client_.igapiclient.md#qe)
+* [qp](_core_client_.igapiclient.md#qp)
+* [request](_core_client_.igapiclient.md#request)
+* [search](_core_client_.igapiclient.md#search)
+* [simulate](_core_client_.igapiclient.md#simulate)
+* [state](_core_client_.igapiclient.md#state)
+* [story](_core_client_.igapiclient.md#story)
+* [tag](_core_client_.igapiclient.md#tag)
+* [upload](_core_client_.igapiclient.md#upload)
+* [user](_core_client_.igapiclient.md#user)
+* [zr](_core_client_.igapiclient.md#zr)
+
+### Methods
+
+* [destroy](_core_client_.igapiclient.md#destroy)
 
 ## Properties
 
-### account
+###  account
 
-• **account**: _[AccountRepository](\_repositories_account_repository_.accountrepository.md)\_ = new AccountRepository(this)
+• **account**: *[AccountRepository](_repositories_account_repository_.accountrepository.md)* =  new AccountRepository(this)
 
-_Defined in [core/client.ts:40](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/client.ts#L40)_
+*Defined in [core/client.ts:41](https://github.com/dilame/instagram-private-api/blob/01eb399/src/core/client.ts#L41)*
 
----
+___
 
-### attribution
+###  attribution
 
-• **attribution**: _[AttributionRepository](\_repositories_attribution_repository_.attributionrepository.md)\_ = new AttributionRepository(this)
+• **attribution**: *[AttributionRepository](_repositories_attribution_repository_.attributionrepository.md)* =  new AttributionRepository(this)
 
-_Defined in [core/client.ts:41](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/client.ts#L41)_
+*Defined in [core/client.ts:42](https://github.com/dilame/instagram-private-api/blob/01eb399/src/core/client.ts#L42)*
 
----
+___
 
-### challenge
+###  challenge
 
-• **challenge**: _[ChallengeRepository](\_repositories_challenge_repository_.challengerepository.md)\_ = new ChallengeRepository(this)
+• **challenge**: *[ChallengeRepository](_repositories_challenge_repository_.challengerepository.md)* =  new ChallengeRepository(this)
 
-_Defined in [core/client.ts:42](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/client.ts#L42)_
+*Defined in [core/client.ts:43](https://github.com/dilame/instagram-private-api/blob/01eb399/src/core/client.ts#L43)*
 
----
+___
 
-### consent
+###  consent
 
-• **consent**: _[ConsentRepository](\_repositories_consent_repository_.consentrepository.md)\_ = new ConsentRepository(this)
+• **consent**: *[ConsentRepository](_repositories_consent_repository_.consentrepository.md)* =  new ConsentRepository(this)
 
-_Defined in [core/client.ts:43](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/client.ts#L43)_
+*Defined in [core/client.ts:44](https://github.com/dilame/instagram-private-api/blob/01eb399/src/core/client.ts#L44)*
 
----
+___
 
-### creatives
+###  creatives
 
-• **creatives**: _[CreativesRepository](\_repositories_creatives_repository_.creativesrepository.md)\_ = new CreativesRepository(this)
+• **creatives**: *[CreativesRepository](_repositories_creatives_repository_.creativesrepository.md)* =  new CreativesRepository(this)
 
-_Defined in [core/client.ts:44](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/client.ts#L44)_
+*Defined in [core/client.ts:45](https://github.com/dilame/instagram-private-api/blob/01eb399/src/core/client.ts#L45)*
 
----
+___
 
-### direct
+###  direct
 
-• **direct**: _[DirectRepository](\_repositories_direct_repository_.directrepository.md)\_ = new DirectRepository(this)
+• **direct**: *[DirectRepository](_repositories_direct_repository_.directrepository.md)* =  new DirectRepository(this)
 
-_Defined in [core/client.ts:45](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/client.ts#L45)_
+*Defined in [core/client.ts:46](https://github.com/dilame/instagram-private-api/blob/01eb399/src/core/client.ts#L46)*
 
----
+___
 
-### directThread
+###  directThread
 
-• **directThread**: _[DirectThreadRepository](\_repositories_direct_thread_repository_.directthreadrepository.md)\_ = new DirectThreadRepository(this)
+• **directThread**: *[DirectThreadRepository](_repositories_direct_thread_repository_.directthreadrepository.md)* =  new DirectThreadRepository(this)
 
-_Defined in [core/client.ts:46](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/client.ts#L46)_
+*Defined in [core/client.ts:47](https://github.com/dilame/instagram-private-api/blob/01eb399/src/core/client.ts#L47)*
 
----
+___
 
-### discover
+###  discover
 
-• **discover**: _[DiscoverRepository](\_repositories_discover_repository_.discoverrepository.md)\_ = new DiscoverRepository(this)
+• **discover**: *[DiscoverRepository](_repositories_discover_repository_.discoverrepository.md)* =  new DiscoverRepository(this)
 
-_Defined in [core/client.ts:47](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/client.ts#L47)_
+*Defined in [core/client.ts:48](https://github.com/dilame/instagram-private-api/blob/01eb399/src/core/client.ts#L48)*
 
----
+___
 
-### entity
+###  entity
 
-• **entity**: _[EntityFactory](\_core_entity_factory_.entityfactory.md)\_ = new EntityFactory(this)
+• **entity**: *[EntityFactory](_core_entity_factory_.entityfactory.md)* =  new EntityFactory(this)
 
-_Defined in [core/client.ts:38](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/client.ts#L38)_
+*Defined in [core/client.ts:39](https://github.com/dilame/instagram-private-api/blob/01eb399/src/core/client.ts#L39)*
 
----
+___
 
-### fbsearch
+###  fbsearch
 
-• **fbsearch**: _[FbsearchRepository](\_repositories_fbsearch_repository_.fbsearchrepository.md)\_ = new FbsearchRepository(this)
+• **fbsearch**: *[FbsearchRepository](_repositories_fbsearch_repository_.fbsearchrepository.md)* =  new FbsearchRepository(this)
 
-_Defined in [core/client.ts:48](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/client.ts#L48)_
+*Defined in [core/client.ts:49](https://github.com/dilame/instagram-private-api/blob/01eb399/src/core/client.ts#L49)*
 
----
+___
 
-### feed
+###  feed
 
-• **feed**: _[FeedFactory](\_core_feed_factory_.feedfactory.md)\_ = new FeedFactory(this)
+• **feed**: *[FeedFactory](_core_feed_factory_.feedfactory.md)* =  new FeedFactory(this)
 
-_Defined in [core/client.ts:37](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/client.ts#L37)_
+*Defined in [core/client.ts:38](https://github.com/dilame/instagram-private-api/blob/01eb399/src/core/client.ts#L38)*
 
----
+___
 
-### friendship
+###  friendship
 
-• **friendship**: _[FriendshipRepository](\_repositories_friendship_repository_.friendshiprepository.md)\_ = new FriendshipRepository(this)
+• **friendship**: *[FriendshipRepository](_repositories_friendship_repository_.friendshiprepository.md)* =  new FriendshipRepository(this)
 
-_Defined in [core/client.ts:49](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/client.ts#L49)_
+*Defined in [core/client.ts:50](https://github.com/dilame/instagram-private-api/blob/01eb399/src/core/client.ts#L50)*
 
----
+___
 
-### launcher
+###  launcher
 
-• **launcher**: _[LauncherRepository](\_repositories_launcher_repository_.launcherrepository.md)\_ = new LauncherRepository(this)
+• **launcher**: *[LauncherRepository](_repositories_launcher_repository_.launcherrepository.md)* =  new LauncherRepository(this)
 
-_Defined in [core/client.ts:50](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/client.ts#L50)_
+*Defined in [core/client.ts:51](https://github.com/dilame/instagram-private-api/blob/01eb399/src/core/client.ts#L51)*
 
----
+___
 
-### linkedAccount
+###  linkedAccount
 
-• **linkedAccount**: _[LinkedAccountRepository](\_repositories_linked_account_repository_.linkedaccountrepository.md)\_ = new LinkedAccountRepository(this)
+• **linkedAccount**: *[LinkedAccountRepository](_repositories_linked_account_repository_.linkedaccountrepository.md)* =  new LinkedAccountRepository(this)
 
-_Defined in [core/client.ts:51](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/client.ts#L51)_
+*Defined in [core/client.ts:52](https://github.com/dilame/instagram-private-api/blob/01eb399/src/core/client.ts#L52)*
 
----
+___
 
-### live
+###  live
 
-• **live**: _[LiveRepository](\_repositories_live_repository_.liverepository.md)\_ = new LiveRepository(this)
+• **live**: *[LiveRepository](_repositories_live_repository_.liverepository.md)* =  new LiveRepository(this)
 
-_Defined in [core/client.ts:60](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/client.ts#L60)_
+*Defined in [core/client.ts:61](https://github.com/dilame/instagram-private-api/blob/01eb399/src/core/client.ts#L61)*
 
----
+___
 
-### location
+###  location
 
-• **location**: _[LocationRepository](\_repositories_location_repository_.locationrepository.md)\_ = new LocationRepository(this)
+• **location**: *[LocationRepository](_repositories_location_repository_.locationrepository.md)* =  new LocationRepository(this)
 
-_Defined in [core/client.ts:61](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/client.ts#L61)_
+*Defined in [core/client.ts:62](https://github.com/dilame/instagram-private-api/blob/01eb399/src/core/client.ts#L62)*
 
----
+___
 
-### locationSearch
+###  locationSearch
 
-• **locationSearch**: _[LocationSearch](\_repositories_location_search_repository_.locationsearch.md)\_ = new LocationSearch(this)
+• **locationSearch**: *[LocationSearch](_repositories_location_search_repository_.locationsearch.md)* =  new LocationSearch(this)
 
-_Defined in [core/client.ts:62](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/client.ts#L62)_
+*Defined in [core/client.ts:63](https://github.com/dilame/instagram-private-api/blob/01eb399/src/core/client.ts#L63)*
 
----
+___
 
-### loom
+###  loom
 
-• **loom**: _[LoomRepository](\_repositories_loom_repository_.loomrepository.md)\_ = new LoomRepository(this)
+• **loom**: *[LoomRepository](_repositories_loom_repository_.loomrepository.md)* =  new LoomRepository(this)
 
-_Defined in [core/client.ts:52](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/client.ts#L52)_
+*Defined in [core/client.ts:53](https://github.com/dilame/instagram-private-api/blob/01eb399/src/core/client.ts#L53)*
 
----
+___
 
-### media
+###  media
 
-• **media**: _[MediaRepository](\_repositories_media_repository_.mediarepository.md)\_ = new MediaRepository(this)
+• **media**: *[MediaRepository](_repositories_media_repository_.mediarepository.md)* =  new MediaRepository(this)
 
-_Defined in [core/client.ts:53](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/client.ts#L53)_
+*Defined in [core/client.ts:54](https://github.com/dilame/instagram-private-api/blob/01eb399/src/core/client.ts#L54)*
 
----
+___
 
-### music
+###  music
 
-• **music**: _[MusicRepository](\_repositories_music_repository_.musicrepository.md)\_ = new MusicRepository(this)
+• **music**: *[MusicRepository](_repositories_music_repository_.musicrepository.md)* =  new MusicRepository(this)
 
-_Defined in [core/client.ts:63](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/client.ts#L63)_
+*Defined in [core/client.ts:64](https://github.com/dilame/instagram-private-api/blob/01eb399/src/core/client.ts#L64)*
 
----
+___
 
-### publish
+###  news
 
-• **publish**: _[PublishService](\_services_publish_service_.publishservice.md)\_ = new PublishService(this)
+• **news**: *[NewsRepository](_repositories_news_repository_.newsrepository.md)* =  new NewsRepository(this)
 
-_Defined in [core/client.ts:65](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/client.ts#L65)_
+*Defined in [core/client.ts:65](https://github.com/dilame/instagram-private-api/blob/01eb399/src/core/client.ts#L65)*
 
----
+___
 
-### qe
+###  publish
 
-• **qe**: _[QeRepository](\_repositories_qe_repository_.qerepository.md)\_ = new QeRepository(this)
+• **publish**: *[PublishService](_services_publish_service_.publishservice.md)* =  new PublishService(this)
 
-_Defined in [core/client.ts:54](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/client.ts#L54)_
+*Defined in [core/client.ts:67](https://github.com/dilame/instagram-private-api/blob/01eb399/src/core/client.ts#L67)*
 
----
+___
 
-### qp
+###  qe
 
-• **qp**: _[QpRepository](\_repositories_qp_repository_.qprepository.md)\_ = new QpRepository(this)
+• **qe**: *[QeRepository](_repositories_qe_repository_.qerepository.md)* =  new QeRepository(this)
 
-_Defined in [core/client.ts:55](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/client.ts#L55)_
+*Defined in [core/client.ts:55](https://github.com/dilame/instagram-private-api/blob/01eb399/src/core/client.ts#L55)*
 
----
+___
 
-### request
+###  qp
 
-• **request**: _[Request](\_core_request_.request.md)\_ = new Request(this)
+• **qp**: *[QpRepository](_repositories_qp_repository_.qprepository.md)* =  new QpRepository(this)
 
-_Defined in [core/client.ts:36](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/client.ts#L36)_
+*Defined in [core/client.ts:56](https://github.com/dilame/instagram-private-api/blob/01eb399/src/core/client.ts#L56)*
 
----
+___
 
-### search
+###  request
 
-• **search**: _[SearchService](\_services_search_service_.searchservice.md)\_ = new SearchService(this)
+• **request**: *[Request](_core_request_.request.md)* =  new Request(this)
 
-_Defined in [core/client.ts:66](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/client.ts#L66)_
+*Defined in [core/client.ts:37](https://github.com/dilame/instagram-private-api/blob/01eb399/src/core/client.ts#L37)*
 
----
+___
 
-### simulate
+###  search
 
-• **simulate**: _[SimulateService](\_services_simulate_service_.simulateservice.md)\_ = new SimulateService(this)
+• **search**: *[SearchService](_services_search_service_.searchservice.md)* =  new SearchService(this)
 
-_Defined in [core/client.ts:67](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/client.ts#L67)_
+*Defined in [core/client.ts:68](https://github.com/dilame/instagram-private-api/blob/01eb399/src/core/client.ts#L68)*
 
----
+___
 
-### state
+###  simulate
 
-• **state**: _[State](\_core_state_.state.md)\_ = new State()
+• **simulate**: *[SimulateService](_services_simulate_service_.simulateservice.md)* =  new SimulateService(this)
 
-_Defined in [core/client.ts:35](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/client.ts#L35)_
+*Defined in [core/client.ts:69](https://github.com/dilame/instagram-private-api/blob/01eb399/src/core/client.ts#L69)*
 
----
+___
 
-### story
+###  state
 
-• **story**: _[StoryService](\_services_story_service_.storyservice.md)\_ = new StoryService(this)
+• **state**: *[State](_core_state_.state.md)* =  new State()
 
-_Defined in [core/client.ts:68](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/client.ts#L68)_
+*Defined in [core/client.ts:36](https://github.com/dilame/instagram-private-api/blob/01eb399/src/core/client.ts#L36)*
 
----
+___
 
-### tag
+###  story
 
-• **tag**: _[TagRepository](\_repositories_tag_repository_.tagrepository.md)\_ = new TagRepository(this)
+• **story**: *[StoryService](_services_story_service_.storyservice.md)* =  new StoryService(this)
 
-_Defined in [core/client.ts:56](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/client.ts#L56)_
+*Defined in [core/client.ts:70](https://github.com/dilame/instagram-private-api/blob/01eb399/src/core/client.ts#L70)*
 
----
+___
 
-### upload
+###  tag
 
-• **upload**: _[UploadRepository](\_repositories_upload_repository_.uploadrepository.md)\_ = new UploadRepository(this)
+• **tag**: *[TagRepository](_repositories_tag_repository_.tagrepository.md)* =  new TagRepository(this)
 
-_Defined in [core/client.ts:57](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/client.ts#L57)_
+*Defined in [core/client.ts:57](https://github.com/dilame/instagram-private-api/blob/01eb399/src/core/client.ts#L57)*
 
----
+___
 
-### user
+###  upload
 
-• **user**: _[UserRepository](\_repositories_user_repository_.userrepository.md)\_ = new UserRepository(this)
+• **upload**: *[UploadRepository](_repositories_upload_repository_.uploadrepository.md)* =  new UploadRepository(this)
 
-_Defined in [core/client.ts:58](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/client.ts#L58)_
+*Defined in [core/client.ts:58](https://github.com/dilame/instagram-private-api/blob/01eb399/src/core/client.ts#L58)*
 
----
+___
 
-### zr
+###  user
 
-• **zr**: _[ZrRepository](\_repositories_zr_repository_.zrrepository.md)\_ = new ZrRepository(this)
+• **user**: *[UserRepository](_repositories_user_repository_.userrepository.md)* =  new UserRepository(this)
 
-_Defined in [core/client.ts:59](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/client.ts#L59)_
+*Defined in [core/client.ts:59](https://github.com/dilame/instagram-private-api/blob/01eb399/src/core/client.ts#L59)*
+
+___
+
+###  zr
+
+• **zr**: *[ZrRepository](_repositories_zr_repository_.zrrepository.md)* =  new ZrRepository(this)
+
+*Defined in [core/client.ts:60](https://github.com/dilame/instagram-private-api/blob/01eb399/src/core/client.ts#L60)*
+
+## Methods
+
+###  destroy
+
+▸ **destroy**(): *void*
+
+*Defined in [core/client.ts:72](https://github.com/dilame/instagram-private-api/blob/01eb399/src/core/client.ts#L72)*
+
+**Returns:** *void*

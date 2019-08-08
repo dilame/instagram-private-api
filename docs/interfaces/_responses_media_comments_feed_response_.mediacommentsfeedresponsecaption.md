@@ -6,126 +6,126 @@
 
 ## Hierarchy
 
-- **MediaCommentsFeedResponseCaption**
+* **MediaCommentsFeedResponseCaption**
 
 ## Index
 
 ### Properties
 
-- [bit_flags](_responses_media_comments_feed_response_.mediacommentsfeedresponsecaption.md#bit_flags)
-- [content_type](_responses_media_comments_feed_response_.mediacommentsfeedresponsecaption.md#content_type)
-- [created_at](_responses_media_comments_feed_response_.mediacommentsfeedresponsecaption.md#created_at)
-- [created_at_utc](_responses_media_comments_feed_response_.mediacommentsfeedresponsecaption.md#created_at_utc)
-- [did_report_as_spam](_responses_media_comments_feed_response_.mediacommentsfeedresponsecaption.md#did_report_as_spam)
-- [has_translation](_responses_media_comments_feed_response_.mediacommentsfeedresponsecaption.md#has_translation)
-- [pk](_responses_media_comments_feed_response_.mediacommentsfeedresponsecaption.md#pk)
-- [share_enabled](_responses_media_comments_feed_response_.mediacommentsfeedresponsecaption.md#share_enabled)
-- [status](_responses_media_comments_feed_response_.mediacommentsfeedresponsecaption.md#status)
-- [text](_responses_media_comments_feed_response_.mediacommentsfeedresponsecaption.md#text)
-- [type](_responses_media_comments_feed_response_.mediacommentsfeedresponsecaption.md#type)
-- [user](_responses_media_comments_feed_response_.mediacommentsfeedresponsecaption.md#user)
-- [user_id](_responses_media_comments_feed_response_.mediacommentsfeedresponsecaption.md#user_id)
+* [bit_flags](_responses_media_comments_feed_response_.mediacommentsfeedresponsecaption.md#bit_flags)
+* [content_type](_responses_media_comments_feed_response_.mediacommentsfeedresponsecaption.md#content_type)
+* [created_at](_responses_media_comments_feed_response_.mediacommentsfeedresponsecaption.md#created_at)
+* [created_at_utc](_responses_media_comments_feed_response_.mediacommentsfeedresponsecaption.md#created_at_utc)
+* [did_report_as_spam](_responses_media_comments_feed_response_.mediacommentsfeedresponsecaption.md#did_report_as_spam)
+* [has_translation](_responses_media_comments_feed_response_.mediacommentsfeedresponsecaption.md#has_translation)
+* [pk](_responses_media_comments_feed_response_.mediacommentsfeedresponsecaption.md#pk)
+* [share_enabled](_responses_media_comments_feed_response_.mediacommentsfeedresponsecaption.md#share_enabled)
+* [status](_responses_media_comments_feed_response_.mediacommentsfeedresponsecaption.md#status)
+* [text](_responses_media_comments_feed_response_.mediacommentsfeedresponsecaption.md#text)
+* [type](_responses_media_comments_feed_response_.mediacommentsfeedresponsecaption.md#type)
+* [user](_responses_media_comments_feed_response_.mediacommentsfeedresponsecaption.md#user)
+* [user_id](_responses_media_comments_feed_response_.mediacommentsfeedresponsecaption.md#user_id)
 
 ## Properties
 
-### bit_flags
+###  bit_flags
 
-• **bit_flags**: _number_
+• **bit_flags**: *number*
 
-_Defined in [responses/media-comments.feed.response.ts:86](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/media-comments.feed.response.ts#L86)_
+*Defined in [responses/media-comments.feed.response.ts:86](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/media-comments.feed.response.ts#L86)*
 
----
+___
 
-### content_type
+###  content_type
 
-• **content_type**: _string_
+• **content_type**: *string*
 
-_Defined in [responses/media-comments.feed.response.ts:84](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/media-comments.feed.response.ts#L84)_
+*Defined in [responses/media-comments.feed.response.ts:84](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/media-comments.feed.response.ts#L84)*
 
----
+___
 
-### created_at
+###  created_at
 
-• **created_at**: _number_
+• **created_at**: *number*
 
-_Defined in [responses/media-comments.feed.response.ts:82](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/media-comments.feed.response.ts#L82)_
+*Defined in [responses/media-comments.feed.response.ts:82](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/media-comments.feed.response.ts#L82)*
 
----
+___
 
-### created_at_utc
+###  created_at_utc
 
-• **created_at_utc**: _number_
+• **created_at_utc**: *number*
 
-_Defined in [responses/media-comments.feed.response.ts:83](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/media-comments.feed.response.ts#L83)_
+*Defined in [responses/media-comments.feed.response.ts:83](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/media-comments.feed.response.ts#L83)*
 
----
+___
 
-### did_report_as_spam
+###  did_report_as_spam
 
-• **did_report_as_spam**: _boolean_
+• **did_report_as_spam**: *boolean*
 
-_Defined in [responses/media-comments.feed.response.ts:88](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/media-comments.feed.response.ts#L88)_
+*Defined in [responses/media-comments.feed.response.ts:88](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/media-comments.feed.response.ts#L88)*
 
----
+___
 
-### has_translation
+###  has_translation
 
-• **has_translation**: _boolean_
+• **has_translation**: *boolean*
 
-_Defined in [responses/media-comments.feed.response.ts:90](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/media-comments.feed.response.ts#L90)_
+*Defined in [responses/media-comments.feed.response.ts:90](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/media-comments.feed.response.ts#L90)*
 
----
+___
 
-### pk
+###  pk
 
-• **pk**: _string_
+• **pk**: *string*
 
-_Defined in [responses/media-comments.feed.response.ts:78](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/media-comments.feed.response.ts#L78)_
+*Defined in [responses/media-comments.feed.response.ts:78](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/media-comments.feed.response.ts#L78)*
 
----
+___
 
-### share_enabled
+###  share_enabled
 
-• **share_enabled**: _boolean_
+• **share_enabled**: *boolean*
 
-_Defined in [responses/media-comments.feed.response.ts:89](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/media-comments.feed.response.ts#L89)_
+*Defined in [responses/media-comments.feed.response.ts:89](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/media-comments.feed.response.ts#L89)*
 
----
+___
 
-### status
+###  status
 
-• **status**: _string_
+• **status**: *string*
 
-_Defined in [responses/media-comments.feed.response.ts:85](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/media-comments.feed.response.ts#L85)_
+*Defined in [responses/media-comments.feed.response.ts:85](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/media-comments.feed.response.ts#L85)*
 
----
+___
 
-### text
+###  text
 
-• **text**: _string_
+• **text**: *string*
 
-_Defined in [responses/media-comments.feed.response.ts:80](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/media-comments.feed.response.ts#L80)_
+*Defined in [responses/media-comments.feed.response.ts:80](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/media-comments.feed.response.ts#L80)*
 
----
+___
 
-### type
+###  type
 
-• **type**: _number_
+• **type**: *number*
 
-_Defined in [responses/media-comments.feed.response.ts:81](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/media-comments.feed.response.ts#L81)_
+*Defined in [responses/media-comments.feed.response.ts:81](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/media-comments.feed.response.ts#L81)*
 
----
+___
 
-### user
+###  user
 
-• **user**: _[MediaCommentsFeedResponseUser](\_responses_media_comments_feed_response_.mediacommentsfeedresponseuser.md)\_
+• **user**: *[MediaCommentsFeedResponseUser](_responses_media_comments_feed_response_.mediacommentsfeedresponseuser.md)*
 
-_Defined in [responses/media-comments.feed.response.ts:87](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/media-comments.feed.response.ts#L87)_
+*Defined in [responses/media-comments.feed.response.ts:87](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/media-comments.feed.response.ts#L87)*
 
----
+___
 
-### user_id
+###  user_id
 
-• **user_id**: _number_
+• **user_id**: *number*
 
-_Defined in [responses/media-comments.feed.response.ts:79](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/media-comments.feed.response.ts#L79)_
+*Defined in [responses/media-comments.feed.response.ts:79](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/media-comments.feed.response.ts#L79)*

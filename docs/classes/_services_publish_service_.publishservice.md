@@ -6,69 +6,124 @@
 
 ## Hierarchy
 
-- [Repository](_core_repository_.repository.md)
+* [Repository](_core_repository_.repository.md)
 
-  - **PublishService**
+  * **PublishService**
 
 ## Index
 
 ### Constructors
 
-- [constructor](_services_publish_service_.publishservice.md#constructor)
+* [constructor](_services_publish_service_.publishservice.md#constructor)
 
 ### Methods
 
-- [photo](_services_publish_service_.publishservice.md#photo)
-- [story](_services_publish_service_.publishservice.md#story)
+* [album](_services_publish_service_.publishservice.md#album)
+* [photo](_services_publish_service_.publishservice.md#photo)
+* [story](_services_publish_service_.publishservice.md#story)
+* [video](_services_publish_service_.publishservice.md#video)
+* [getVideoInfo](_services_publish_service_.publishservice.md#static-getvideoinfo)
 
 ## Constructors
 
-### constructor
+###  constructor
 
-\+ **new PublishService**(`client`: [IgApiClient](_core_client_.igapiclient.md)): _[PublishService](\_services_publish_service_.publishservice.md)\_
+\+ **new PublishService**(`client`: [IgApiClient](_core_client_.igapiclient.md)): *[PublishService](_services_publish_service_.publishservice.md)*
 
-_Inherited from [Repository](\_core_repository_.repository.md).[constructor](_core_repository_.repository.md#constructor)\_
+*Inherited from [Repository](_core_repository_.repository.md).[constructor](_core_repository_.repository.md#constructor)*
 
-_Defined in [core/repository.ts:6](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/repository.ts#L6)_
+*Defined in [core/repository.ts:6](https://github.com/dilame/instagram-private-api/blob/01eb399/src/core/repository.ts#L6)*
 
 **Parameters:**
 
-| Name     | Type                                        |
-| -------- | ------------------------------------------- |
-| `client` | [IgApiClient](_core_client_.igapiclient.md) |
+Name | Type |
+------ | ------ |
+`client` | [IgApiClient](_core_client_.igapiclient.md) |
 
-**Returns:** _[PublishService](\_services_publish_service_.publishservice.md)\_
+**Returns:** *[PublishService](_services_publish_service_.publishservice.md)*
 
 ## Methods
 
-### photo
+###  album
 
-▸ **photo**(`options`: [PostingPhotoOptions](../interfaces/_types_posting_photo_options_.postingphotooptions.md)): _`Promise<MediaRepositoryConfigureResponseRootObject>`_
+▸ **album**(`options`: [PostingAlbumOptions](../interfaces/_types_posting_album_options_.postingalbumoptions.md)): *`Promise<any>`*
 
-_Defined in [services/publish.service.ts:11](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/services/publish.service.ts#L11)_
+*Defined in [services/publish.service.ts:147](https://github.com/dilame/instagram-private-api/blob/01eb399/src/services/publish.service.ts#L147)*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`options` | [PostingAlbumOptions](../interfaces/_types_posting_album_options_.postingalbumoptions.md) |
+
+**Returns:** *`Promise<any>`*
+
+___
+
+###  photo
+
+▸ **photo**(`options`: [PostingPhotoOptions](../interfaces/_types_posting_photo_options_.postingphotooptions.md)): *`Promise<MediaRepositoryConfigureResponseRootObject>`*
+
+*Defined in [services/publish.service.ts:27](https://github.com/dilame/instagram-private-api/blob/01eb399/src/services/publish.service.ts#L27)*
 
 Uploads a single photo to the timeline-feed
 
 **Parameters:**
 
-| Name      | Type                                                                                      | Description                                    |
-| --------- | ----------------------------------------------------------------------------------------- | ---------------------------------------------- |
-| `options` | [PostingPhotoOptions](../interfaces/_types_posting_photo_options_.postingphotooptions.md) | the options, containing caption and image-data |
+Name | Type | Description |
+------ | ------ | ------ |
+`options` | [PostingPhotoOptions](../interfaces/_types_posting_photo_options_.postingphotooptions.md) | the options, containing caption and image-data  |
 
-**Returns:** _`Promise<MediaRepositoryConfigureResponseRootObject>`_
+**Returns:** *`Promise<MediaRepositoryConfigureResponseRootObject>`*
 
----
+___
 
-### story
+###  story
 
-▸ **story**(`options`: [PostingStoryOptions](../interfaces/_types_posting_photo_options_.postingstoryoptions.md)): _`Promise<any>`_
+▸ **story**(`options`: [PostingStoryPhotoOptions](../interfaces/_types_posting_photo_options_.postingstoryphotooptions.md) | [PostingStoryVideoOptions](../interfaces/_types_posting_video_options_.postingstoryvideooptions.md)): *`Promise<any>`*
 
-_Defined in [services/publish.service.ts:45](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/services/publish.service.ts#L45)_
+*Defined in [services/publish.service.ts:276](https://github.com/dilame/instagram-private-api/blob/01eb399/src/services/publish.service.ts#L276)*
 
 **Parameters:**
 
-| Name      | Type                                                                                      |
-| --------- | ----------------------------------------------------------------------------------------- |
-| `options` | [PostingStoryOptions](../interfaces/_types_posting_photo_options_.postingstoryoptions.md) |
+Name | Type |
+------ | ------ |
+`options` | [PostingStoryPhotoOptions](../interfaces/_types_posting_photo_options_.postingstoryphotooptions.md) \| [PostingStoryVideoOptions](../interfaces/_types_posting_video_options_.postingstoryvideooptions.md) |
 
-**Returns:** _`Promise<any>`_
+**Returns:** *`Promise<any>`*
+
+___
+
+###  video
+
+▸ **video**(`options`: [PostingVideoOptions](../interfaces/_types_posting_video_options_.postingvideooptions.md)): *`Promise<MediaRepositoryConfigureResponseRootObject>`*
+
+*Defined in [services/publish.service.ts:76](https://github.com/dilame/instagram-private-api/blob/01eb399/src/services/publish.service.ts#L76)*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`options` | [PostingVideoOptions](../interfaces/_types_posting_video_options_.postingvideooptions.md) |
+
+**Returns:** *`Promise<MediaRepositoryConfigureResponseRootObject>`*
+
+___
+
+### `Static` getVideoInfo
+
+▸ **getVideoInfo**(`buffer`: `Buffer`): *object*
+
+*Defined in [services/publish.service.ts:388](https://github.com/dilame/instagram-private-api/blob/01eb399/src/services/publish.service.ts#L388)*
+
+Gets duration in ms, width and height info for a video in the mp4 container
+
+**Parameters:**
+
+Name | Type | Description |
+------ | ------ | ------ |
+`buffer` | `Buffer` | Buffer, containing the video-file |
+
+**Returns:** *object*
+
+duration in ms, width and height in px

@@ -6,108 +6,108 @@
 
 ## Hierarchy
 
-- **TimelineFeedResponseHeadline**
+* **TimelineFeedResponseHeadline**
 
 ## Index
 
 ### Properties
 
-- [bit_flags](_responses_timeline_feed_response_.timelinefeedresponseheadline.md#bit_flags)
-- [content_type](_responses_timeline_feed_response_.timelinefeedresponseheadline.md#content_type)
-- [created_at](_responses_timeline_feed_response_.timelinefeedresponseheadline.md#created_at)
-- [created_at_utc](_responses_timeline_feed_response_.timelinefeedresponseheadline.md#created_at_utc)
-- [media_id](_responses_timeline_feed_response_.timelinefeedresponseheadline.md#media_id)
-- [pk](_responses_timeline_feed_response_.timelinefeedresponseheadline.md#pk)
-- [status](_responses_timeline_feed_response_.timelinefeedresponseheadline.md#status)
-- [text](_responses_timeline_feed_response_.timelinefeedresponseheadline.md#text)
-- [type](_responses_timeline_feed_response_.timelinefeedresponseheadline.md#type)
-- [user](_responses_timeline_feed_response_.timelinefeedresponseheadline.md#user)
-- [user_id](_responses_timeline_feed_response_.timelinefeedresponseheadline.md#user_id)
+* [bit_flags](_responses_timeline_feed_response_.timelinefeedresponseheadline.md#bit_flags)
+* [content_type](_responses_timeline_feed_response_.timelinefeedresponseheadline.md#content_type)
+* [created_at](_responses_timeline_feed_response_.timelinefeedresponseheadline.md#created_at)
+* [created_at_utc](_responses_timeline_feed_response_.timelinefeedresponseheadline.md#created_at_utc)
+* [media_id](_responses_timeline_feed_response_.timelinefeedresponseheadline.md#media_id)
+* [pk](_responses_timeline_feed_response_.timelinefeedresponseheadline.md#pk)
+* [status](_responses_timeline_feed_response_.timelinefeedresponseheadline.md#status)
+* [text](_responses_timeline_feed_response_.timelinefeedresponseheadline.md#text)
+* [type](_responses_timeline_feed_response_.timelinefeedresponseheadline.md#type)
+* [user](_responses_timeline_feed_response_.timelinefeedresponseheadline.md#user)
+* [user_id](_responses_timeline_feed_response_.timelinefeedresponseheadline.md#user_id)
 
 ## Properties
 
-### bit_flags
+###  bit_flags
 
-• **bit_flags**: _number_
+• **bit_flags**: *number*
 
-_Defined in [responses/timeline.feed.response.ts:246](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/timeline.feed.response.ts#L246)_
+*Defined in [responses/timeline.feed.response.ts:246](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/timeline.feed.response.ts#L246)*
 
----
+___
 
-### content_type
+###  content_type
 
-• **content_type**: _string_
+• **content_type**: *string*
 
-_Defined in [responses/timeline.feed.response.ts:237](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/timeline.feed.response.ts#L237)_
+*Defined in [responses/timeline.feed.response.ts:237](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/timeline.feed.response.ts#L237)*
 
----
+___
 
-### created_at
+###  created_at
 
-• **created_at**: _number_
+• **created_at**: *number*
 
-_Defined in [responses/timeline.feed.response.ts:243](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/timeline.feed.response.ts#L243)_
+*Defined in [responses/timeline.feed.response.ts:243](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/timeline.feed.response.ts#L243)*
 
----
+___
 
-### created_at_utc
+###  created_at_utc
 
-• **created_at_utc**: _number_
+• **created_at_utc**: *number*
 
-_Defined in [responses/timeline.feed.response.ts:244](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/timeline.feed.response.ts#L244)_
+*Defined in [responses/timeline.feed.response.ts:244](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/timeline.feed.response.ts#L244)*
 
----
+___
 
-### media_id
+###  media_id
 
-• **media_id**: _string_
+• **media_id**: *string*
 
-_Defined in [responses/timeline.feed.response.ts:245](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/timeline.feed.response.ts#L245)_
+*Defined in [responses/timeline.feed.response.ts:245](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/timeline.feed.response.ts#L245)*
 
----
+___
 
-### pk
+###  pk
 
-• **pk**: _string_
+• **pk**: *string*
 
-_Defined in [responses/timeline.feed.response.ts:240](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/timeline.feed.response.ts#L240)_
+*Defined in [responses/timeline.feed.response.ts:240](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/timeline.feed.response.ts#L240)*
 
----
+___
 
-### status
+###  status
 
-• **status**: _string_
+• **status**: *string*
 
-_Defined in [responses/timeline.feed.response.ts:247](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/timeline.feed.response.ts#L247)_
+*Defined in [responses/timeline.feed.response.ts:247](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/timeline.feed.response.ts#L247)*
 
----
+___
 
-### text
+###  text
 
-• **text**: _string_
+• **text**: *string*
 
-_Defined in [responses/timeline.feed.response.ts:241](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/timeline.feed.response.ts#L241)_
+*Defined in [responses/timeline.feed.response.ts:241](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/timeline.feed.response.ts#L241)*
 
----
+___
 
-### type
+###  type
 
-• **type**: _number_
+• **type**: *number*
 
-_Defined in [responses/timeline.feed.response.ts:242](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/timeline.feed.response.ts#L242)_
+*Defined in [responses/timeline.feed.response.ts:242](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/timeline.feed.response.ts#L242)*
 
----
+___
 
-### user
+###  user
 
-• **user**: _[TimelineFeedResponseUser](\_responses_timeline_feed_response_.timelinefeedresponseuser.md)\_
+• **user**: *[TimelineFeedResponseUser](_responses_timeline_feed_response_.timelinefeedresponseuser.md)*
 
-_Defined in [responses/timeline.feed.response.ts:238](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/timeline.feed.response.ts#L238)_
+*Defined in [responses/timeline.feed.response.ts:238](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/timeline.feed.response.ts#L238)*
 
----
+___
 
-### user_id
+###  user_id
 
-• **user_id**: _number_
+• **user_id**: *number*
 
-_Defined in [responses/timeline.feed.response.ts:239](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/timeline.feed.response.ts#L239)_
+*Defined in [responses/timeline.feed.response.ts:239](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/timeline.feed.response.ts#L239)*

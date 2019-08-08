@@ -6,45 +6,45 @@
 
 ## Hierarchy
 
-- **LocationFeedResponseInItem**
+* **LocationFeedResponseInItem**
 
 ## Index
 
 ### Properties
 
-- [duration_in_video_in_sec](_responses_location_feed_response_.locationfeedresponseinitem.md#duration_in_video_in_sec)
-- [position](_responses_location_feed_response_.locationfeedresponseinitem.md#position)
-- [start_time_in_video_in_sec](_responses_location_feed_response_.locationfeedresponseinitem.md#start_time_in_video_in_sec)
-- [user](_responses_location_feed_response_.locationfeedresponseinitem.md#user)
+* [duration_in_video_in_sec](_responses_location_feed_response_.locationfeedresponseinitem.md#duration_in_video_in_sec)
+* [position](_responses_location_feed_response_.locationfeedresponseinitem.md#position)
+* [start_time_in_video_in_sec](_responses_location_feed_response_.locationfeedresponseinitem.md#start_time_in_video_in_sec)
+* [user](_responses_location_feed_response_.locationfeedresponseinitem.md#user)
 
 ## Properties
 
-### duration_in_video_in_sec
+###  duration_in_video_in_sec
 
-• **duration_in_video_in_sec**: _null_
+• **duration_in_video_in_sec**: *null*
 
-_Defined in [responses/location.feed.response.ts:161](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/location.feed.response.ts#L161)_
+*Defined in [responses/location.feed.response.ts:161](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/location.feed.response.ts#L161)*
 
----
+___
 
-### position
+###  position
 
-• **position**: _number[] | string | number[]_
+• **position**: *number[] | string | number[]*
 
-_Defined in [responses/location.feed.response.ts:159](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/location.feed.response.ts#L159)_
+*Defined in [responses/location.feed.response.ts:159](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/location.feed.response.ts#L159)*
 
----
+___
 
-### start_time_in_video_in_sec
+###  start_time_in_video_in_sec
 
-• **start_time_in_video_in_sec**: _null_
+• **start_time_in_video_in_sec**: *null*
 
-_Defined in [responses/location.feed.response.ts:160](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/location.feed.response.ts#L160)_
+*Defined in [responses/location.feed.response.ts:160](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/location.feed.response.ts#L160)*
 
----
+___
 
-### user
+###  user
 
-• **user**: _[LocationFeedResponseUser](\_responses_location_feed_response_.locationfeedresponseuser.md)\_
+• **user**: *[LocationFeedResponseUser](_responses_location_feed_response_.locationfeedresponseuser.md)*
 
-_Defined in [responses/location.feed.response.ts:158](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/location.feed.response.ts#L158)_
+*Defined in [responses/location.feed.response.ts:158](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/location.feed.response.ts#L158)*

@@ -6,72 +6,72 @@
 
 ## Hierarchy
 
-- **LiveGetQuestionsResponseUser**
+* **LiveGetQuestionsResponseUser**
 
 ## Index
 
 ### Properties
 
-- [full_name](_responses_live_get_questions_response_.livegetquestionsresponseuser.md#full_name)
-- [is_private](_responses_live_get_questions_response_.livegetquestionsresponseuser.md#is_private)
-- [is_verified](_responses_live_get_questions_response_.livegetquestionsresponseuser.md#is_verified)
-- [pk](_responses_live_get_questions_response_.livegetquestionsresponseuser.md#pk)
-- [profile_pic_id](_responses_live_get_questions_response_.livegetquestionsresponseuser.md#profile_pic_id)
-- [profile_pic_url](_responses_live_get_questions_response_.livegetquestionsresponseuser.md#profile_pic_url)
-- [username](_responses_live_get_questions_response_.livegetquestionsresponseuser.md#username)
+* [full_name](_responses_live_get_questions_response_.livegetquestionsresponseuser.md#full_name)
+* [is_private](_responses_live_get_questions_response_.livegetquestionsresponseuser.md#is_private)
+* [is_verified](_responses_live_get_questions_response_.livegetquestionsresponseuser.md#is_verified)
+* [pk](_responses_live_get_questions_response_.livegetquestionsresponseuser.md#pk)
+* [profile_pic_id](_responses_live_get_questions_response_.livegetquestionsresponseuser.md#profile_pic_id)
+* [profile_pic_url](_responses_live_get_questions_response_.livegetquestionsresponseuser.md#profile_pic_url)
+* [username](_responses_live_get_questions_response_.livegetquestionsresponseuser.md#username)
 
 ## Properties
 
-### full_name
+###  full_name
 
-• **full_name**: _string_
+• **full_name**: *string*
 
-_Defined in [responses/live.get-questions.response.ts:16](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/live.get-questions.response.ts#L16)_
+*Defined in [responses/live.get-questions.response.ts:16](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/live.get-questions.response.ts#L16)*
 
----
+___
 
-### is_private
+###  is_private
 
-• **is_private**: _boolean_
+• **is_private**: *boolean*
 
-_Defined in [responses/live.get-questions.response.ts:17](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/live.get-questions.response.ts#L17)_
+*Defined in [responses/live.get-questions.response.ts:17](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/live.get-questions.response.ts#L17)*
 
----
+___
 
-### is_verified
+###  is_verified
 
-• **is_verified**: _boolean_
+• **is_verified**: *boolean*
 
-_Defined in [responses/live.get-questions.response.ts:20](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/live.get-questions.response.ts#L20)_
+*Defined in [responses/live.get-questions.response.ts:20](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/live.get-questions.response.ts#L20)*
 
----
+___
 
-### pk
+###  pk
 
-• **pk**: _number_
+• **pk**: *number*
 
-_Defined in [responses/live.get-questions.response.ts:14](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/live.get-questions.response.ts#L14)_
+*Defined in [responses/live.get-questions.response.ts:14](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/live.get-questions.response.ts#L14)*
 
----
+___
 
-### profile_pic_id
+###  profile_pic_id
 
-• **profile_pic_id**: _string_
+• **profile_pic_id**: *string*
 
-_Defined in [responses/live.get-questions.response.ts:19](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/live.get-questions.response.ts#L19)_
+*Defined in [responses/live.get-questions.response.ts:19](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/live.get-questions.response.ts#L19)*
 
----
+___
 
-### profile_pic_url
+###  profile_pic_url
 
-• **profile_pic_url**: _string_
+• **profile_pic_url**: *string*
 
-_Defined in [responses/live.get-questions.response.ts:18](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/live.get-questions.response.ts#L18)_
+*Defined in [responses/live.get-questions.response.ts:18](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/live.get-questions.response.ts#L18)*
 
----
+___
 
-### username
+###  username
 
-• **username**: _string_
+• **username**: *string*
 
-_Defined in [responses/live.get-questions.response.ts:15](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/live.get-questions.response.ts#L15)_
+*Defined in [responses/live.get-questions.response.ts:15](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/live.get-questions.response.ts#L15)*

@@ -6,108 +6,108 @@
 
 ## Hierarchy
 
-- **DirectRepositoryCreateGroupThreadResponseUsersItem**
+* **DirectRepositoryCreateGroupThreadResponseUsersItem**
 
 ## Index
 
 ### Properties
 
-- [friendship_status](_responses_direct_repository_create_group_thread_response_.directrepositorycreategroupthreadresponseusersitem.md#friendship_status)
-- [full_name](_responses_direct_repository_create_group_thread_response_.directrepositorycreategroupthreadresponseusersitem.md#full_name)
-- [has_anonymous_profile_picture](_responses_direct_repository_create_group_thread_response_.directrepositorycreategroupthreadresponseusersitem.md#has_anonymous_profile_picture)
-- [is_directapp_installed](_responses_direct_repository_create_group_thread_response_.directrepositorycreategroupthreadresponseusersitem.md#is_directapp_installed)
-- [is_private](_responses_direct_repository_create_group_thread_response_.directrepositorycreategroupthreadresponseusersitem.md#is_private)
-- [is_using_unified_inbox_for_direct](_responses_direct_repository_create_group_thread_response_.directrepositorycreategroupthreadresponseusersitem.md#is_using_unified_inbox_for_direct)
-- [is_verified](_responses_direct_repository_create_group_thread_response_.directrepositorycreategroupthreadresponseusersitem.md#is_verified)
-- [pk](_responses_direct_repository_create_group_thread_response_.directrepositorycreategroupthreadresponseusersitem.md#pk)
-- [profile_pic_id](_responses_direct_repository_create_group_thread_response_.directrepositorycreategroupthreadresponseusersitem.md#profile_pic_id)
-- [profile_pic_url](_responses_direct_repository_create_group_thread_response_.directrepositorycreategroupthreadresponseusersitem.md#profile_pic_url)
-- [username](_responses_direct_repository_create_group_thread_response_.directrepositorycreategroupthreadresponseusersitem.md#username)
+* [friendship_status](_responses_direct_repository_create_group_thread_response_.directrepositorycreategroupthreadresponseusersitem.md#friendship_status)
+* [full_name](_responses_direct_repository_create_group_thread_response_.directrepositorycreategroupthreadresponseusersitem.md#full_name)
+* [has_anonymous_profile_picture](_responses_direct_repository_create_group_thread_response_.directrepositorycreategroupthreadresponseusersitem.md#has_anonymous_profile_picture)
+* [is_directapp_installed](_responses_direct_repository_create_group_thread_response_.directrepositorycreategroupthreadresponseusersitem.md#is_directapp_installed)
+* [is_private](_responses_direct_repository_create_group_thread_response_.directrepositorycreategroupthreadresponseusersitem.md#is_private)
+* [is_using_unified_inbox_for_direct](_responses_direct_repository_create_group_thread_response_.directrepositorycreategroupthreadresponseusersitem.md#is_using_unified_inbox_for_direct)
+* [is_verified](_responses_direct_repository_create_group_thread_response_.directrepositorycreategroupthreadresponseusersitem.md#is_verified)
+* [pk](_responses_direct_repository_create_group_thread_response_.directrepositorycreategroupthreadresponseusersitem.md#pk)
+* [profile_pic_id](_responses_direct_repository_create_group_thread_response_.directrepositorycreategroupthreadresponseusersitem.md#profile_pic_id)
+* [profile_pic_url](_responses_direct_repository_create_group_thread_response_.directrepositorycreategroupthreadresponseusersitem.md#profile_pic_url)
+* [username](_responses_direct_repository_create_group_thread_response_.directrepositorycreategroupthreadresponseusersitem.md#username)
 
 ## Properties
 
-### friendship_status
+###  friendship_status
 
-• **friendship_status**: _[DirectRepositoryCreateGroupThreadResponseFriendshipStatus](\_responses_direct_repository_create_group_thread_response_.directrepositorycreategroupthreadresponsefriendshipstatus.md)\_
+• **friendship_status**: *[DirectRepositoryCreateGroupThreadResponseFriendshipStatus](_responses_direct_repository_create_group_thread_response_.directrepositorycreategroupthreadresponsefriendshipstatus.md)*
 
-_Defined in [responses/direct.repository.create-group-thread.response.ts:44](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct.repository.create-group-thread.response.ts#L44)_
+*Defined in [responses/direct.repository.create-group-thread.response.ts:44](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct.repository.create-group-thread.response.ts#L44)*
 
----
+___
 
-### full_name
+###  full_name
 
-• **full_name**: _string_
+• **full_name**: *string*
 
-_Defined in [responses/direct.repository.create-group-thread.response.ts:40](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct.repository.create-group-thread.response.ts#L40)_
+*Defined in [responses/direct.repository.create-group-thread.response.ts:40](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct.repository.create-group-thread.response.ts#L40)*
 
----
+___
 
-### has_anonymous_profile_picture
+###  has_anonymous_profile_picture
 
-• **has_anonymous_profile_picture**: _boolean_
+• **has_anonymous_profile_picture**: *boolean*
 
-_Defined in [responses/direct.repository.create-group-thread.response.ts:46](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct.repository.create-group-thread.response.ts#L46)_
+*Defined in [responses/direct.repository.create-group-thread.response.ts:46](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct.repository.create-group-thread.response.ts#L46)*
 
----
+___
 
-### is_directapp_installed
+###  is_directapp_installed
 
-• **is_directapp_installed**: _boolean_
+• **is_directapp_installed**: *boolean*
 
-_Defined in [responses/direct.repository.create-group-thread.response.ts:47](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct.repository.create-group-thread.response.ts#L47)_
+*Defined in [responses/direct.repository.create-group-thread.response.ts:47](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct.repository.create-group-thread.response.ts#L47)*
 
----
+___
 
-### is_private
+###  is_private
 
-• **is_private**: _boolean_
+• **is_private**: *boolean*
 
-_Defined in [responses/direct.repository.create-group-thread.response.ts:41](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct.repository.create-group-thread.response.ts#L41)_
+*Defined in [responses/direct.repository.create-group-thread.response.ts:41](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct.repository.create-group-thread.response.ts#L41)*
 
----
+___
 
-### is_using_unified_inbox_for_direct
+###  is_using_unified_inbox_for_direct
 
-• **is_using_unified_inbox_for_direct**: _boolean_
+• **is_using_unified_inbox_for_direct**: *boolean*
 
-_Defined in [responses/direct.repository.create-group-thread.response.ts:48](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct.repository.create-group-thread.response.ts#L48)_
+*Defined in [responses/direct.repository.create-group-thread.response.ts:48](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct.repository.create-group-thread.response.ts#L48)*
 
----
+___
 
-### is_verified
+###  is_verified
 
-• **is_verified**: _boolean_
+• **is_verified**: *boolean*
 
-_Defined in [responses/direct.repository.create-group-thread.response.ts:45](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct.repository.create-group-thread.response.ts#L45)_
+*Defined in [responses/direct.repository.create-group-thread.response.ts:45](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct.repository.create-group-thread.response.ts#L45)*
 
----
+___
 
-### pk
+###  pk
 
-• **pk**: _number_
+• **pk**: *number*
 
-_Defined in [responses/direct.repository.create-group-thread.response.ts:38](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct.repository.create-group-thread.response.ts#L38)_
+*Defined in [responses/direct.repository.create-group-thread.response.ts:38](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct.repository.create-group-thread.response.ts#L38)*
 
----
+___
 
-### profile_pic_id
+###  profile_pic_id
 
-• **profile_pic_id**: _string_
+• **profile_pic_id**: *string*
 
-_Defined in [responses/direct.repository.create-group-thread.response.ts:43](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct.repository.create-group-thread.response.ts#L43)_
+*Defined in [responses/direct.repository.create-group-thread.response.ts:43](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct.repository.create-group-thread.response.ts#L43)*
 
----
+___
 
-### profile_pic_url
+###  profile_pic_url
 
-• **profile_pic_url**: _string_
+• **profile_pic_url**: *string*
 
-_Defined in [responses/direct.repository.create-group-thread.response.ts:42](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct.repository.create-group-thread.response.ts#L42)_
+*Defined in [responses/direct.repository.create-group-thread.response.ts:42](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct.repository.create-group-thread.response.ts#L42)*
 
----
+___
 
-### username
+###  username
 
-• **username**: _string_
+• **username**: *string*
 
-_Defined in [responses/direct.repository.create-group-thread.response.ts:39](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct.repository.create-group-thread.response.ts#L39)_
+*Defined in [responses/direct.repository.create-group-thread.response.ts:39](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct.repository.create-group-thread.response.ts#L39)*

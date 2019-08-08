@@ -6,63 +6,63 @@
 
 ## Hierarchy
 
-- **CheckpointResponseChallenge**
+* **CheckpointResponseChallenge**
 
 ## Index
 
 ### Properties
 
-- [api_path](_responses_checkpoint_response_.checkpointresponsechallenge.md#api_path)
-- [hide_webview_header](_responses_checkpoint_response_.checkpointresponsechallenge.md#hide_webview_header)
-- [lock](_responses_checkpoint_response_.checkpointresponsechallenge.md#lock)
-- [logout](_responses_checkpoint_response_.checkpointresponsechallenge.md#logout)
-- [native_flow](_responses_checkpoint_response_.checkpointresponsechallenge.md#native_flow)
-- [url](_responses_checkpoint_response_.checkpointresponsechallenge.md#url)
+* [api_path](_responses_checkpoint_response_.checkpointresponsechallenge.md#api_path)
+* [hide_webview_header](_responses_checkpoint_response_.checkpointresponsechallenge.md#hide_webview_header)
+* [lock](_responses_checkpoint_response_.checkpointresponsechallenge.md#lock)
+* [logout](_responses_checkpoint_response_.checkpointresponsechallenge.md#logout)
+* [native_flow](_responses_checkpoint_response_.checkpointresponsechallenge.md#native_flow)
+* [url](_responses_checkpoint_response_.checkpointresponsechallenge.md#url)
 
 ## Properties
 
-### api_path
+###  api_path
 
-• **api_path**: _string_
+• **api_path**: *string*
 
-_Defined in [responses/checkpoint.response.ts:9](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/checkpoint.response.ts#L9)_
+*Defined in [responses/checkpoint.response.ts:9](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/checkpoint.response.ts#L9)*
 
----
+___
 
-### hide_webview_header
+###  hide_webview_header
 
-• **hide_webview_header**: _boolean_
+• **hide_webview_header**: *boolean*
 
-_Defined in [responses/checkpoint.response.ts:10](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/checkpoint.response.ts#L10)_
+*Defined in [responses/checkpoint.response.ts:10](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/checkpoint.response.ts#L10)*
 
----
+___
 
-### lock
+###  lock
 
-• **lock**: _boolean_
+• **lock**: *boolean*
 
-_Defined in [responses/checkpoint.response.ts:11](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/checkpoint.response.ts#L11)_
+*Defined in [responses/checkpoint.response.ts:11](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/checkpoint.response.ts#L11)*
 
----
+___
 
-### logout
+###  logout
 
-• **logout**: _boolean_
+• **logout**: *boolean*
 
-_Defined in [responses/checkpoint.response.ts:12](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/checkpoint.response.ts#L12)_
+*Defined in [responses/checkpoint.response.ts:12](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/checkpoint.response.ts#L12)*
 
----
+___
 
-### native_flow
+###  native_flow
 
-• **native_flow**: _boolean_
+• **native_flow**: *boolean*
 
-_Defined in [responses/checkpoint.response.ts:13](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/checkpoint.response.ts#L13)_
+*Defined in [responses/checkpoint.response.ts:13](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/checkpoint.response.ts#L13)*
 
----
+___
 
-### url
+###  url
 
-• **url**: _string_
+• **url**: *string*
 
-_Defined in [responses/checkpoint.response.ts:8](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/checkpoint.response.ts#L8)_
+*Defined in [responses/checkpoint.response.ts:8](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/checkpoint.response.ts#L8)*

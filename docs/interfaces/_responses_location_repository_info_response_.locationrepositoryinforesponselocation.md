@@ -6,90 +6,90 @@
 
 ## Hierarchy
 
-- **LocationRepositoryInfoResponseLocation**
+* **LocationRepositoryInfoResponseLocation**
 
 ## Index
 
 ### Properties
 
-- [address](_responses_location_repository_info_response_.locationrepositoryinforesponselocation.md#address)
-- [city](_responses_location_repository_info_response_.locationrepositoryinforesponselocation.md#city)
-- [external_source](_responses_location_repository_info_response_.locationrepositoryinforesponselocation.md#external_source)
-- [facebook_places_id](_responses_location_repository_info_response_.locationrepositoryinforesponselocation.md#facebook_places_id)
-- [lat](_responses_location_repository_info_response_.locationrepositoryinforesponselocation.md#lat)
-- [lng](_responses_location_repository_info_response_.locationrepositoryinforesponselocation.md#lng)
-- [name](_responses_location_repository_info_response_.locationrepositoryinforesponselocation.md#name)
-- [pk](_responses_location_repository_info_response_.locationrepositoryinforesponselocation.md#pk)
-- [short_name](_responses_location_repository_info_response_.locationrepositoryinforesponselocation.md#short_name)
+* [address](_responses_location_repository_info_response_.locationrepositoryinforesponselocation.md#address)
+* [city](_responses_location_repository_info_response_.locationrepositoryinforesponselocation.md#city)
+* [external_source](_responses_location_repository_info_response_.locationrepositoryinforesponselocation.md#external_source)
+* [facebook_places_id](_responses_location_repository_info_response_.locationrepositoryinforesponselocation.md#facebook_places_id)
+* [lat](_responses_location_repository_info_response_.locationrepositoryinforesponselocation.md#lat)
+* [lng](_responses_location_repository_info_response_.locationrepositoryinforesponselocation.md#lng)
+* [name](_responses_location_repository_info_response_.locationrepositoryinforesponselocation.md#name)
+* [pk](_responses_location_repository_info_response_.locationrepositoryinforesponselocation.md#pk)
+* [short_name](_responses_location_repository_info_response_.locationrepositoryinforesponselocation.md#short_name)
 
 ## Properties
 
-### address
+###  address
 
-• **address**: _string_
+• **address**: *string*
 
-_Defined in [responses/location.repository.info.response.ts:10](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/location.repository.info.response.ts#L10)_
+*Defined in [responses/location.repository.info.response.ts:10](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/location.repository.info.response.ts#L10)*
 
----
+___
 
-### city
+###  city
 
-• **city**: _string_
+• **city**: *string*
 
-_Defined in [responses/location.repository.info.response.ts:11](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/location.repository.info.response.ts#L11)_
+*Defined in [responses/location.repository.info.response.ts:11](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/location.repository.info.response.ts#L11)*
 
----
+___
 
-### external_source
+###  external_source
 
-• **external_source**: _string_
+• **external_source**: *string*
 
-_Defined in [responses/location.repository.info.response.ts:15](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/location.repository.info.response.ts#L15)_
+*Defined in [responses/location.repository.info.response.ts:15](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/location.repository.info.response.ts#L15)*
 
----
+___
 
-### facebook_places_id
+###  facebook_places_id
 
-• **facebook_places_id**: _number_
+• **facebook_places_id**: *number*
 
-_Defined in [responses/location.repository.info.response.ts:16](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/location.repository.info.response.ts#L16)_
+*Defined in [responses/location.repository.info.response.ts:16](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/location.repository.info.response.ts#L16)*
 
----
+___
 
-### lat
+###  lat
 
-• **lat**: _number_
+• **lat**: *number*
 
-_Defined in [responses/location.repository.info.response.ts:14](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/location.repository.info.response.ts#L14)_
+*Defined in [responses/location.repository.info.response.ts:14](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/location.repository.info.response.ts#L14)*
 
----
+___
 
-### lng
+###  lng
 
-• **lng**: _number_
+• **lng**: *number*
 
-_Defined in [responses/location.repository.info.response.ts:13](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/location.repository.info.response.ts#L13)_
+*Defined in [responses/location.repository.info.response.ts:13](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/location.repository.info.response.ts#L13)*
 
----
+___
 
-### name
+###  name
 
-• **name**: _string_
+• **name**: *string*
 
-_Defined in [responses/location.repository.info.response.ts:9](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/location.repository.info.response.ts#L9)_
+*Defined in [responses/location.repository.info.response.ts:9](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/location.repository.info.response.ts#L9)*
 
----
+___
 
-### pk
+###  pk
 
-• **pk**: _number_
+• **pk**: *number*
 
-_Defined in [responses/location.repository.info.response.ts:8](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/location.repository.info.response.ts#L8)_
+*Defined in [responses/location.repository.info.response.ts:8](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/location.repository.info.response.ts#L8)*
 
----
+___
 
-### short_name
+###  short_name
 
-• **short_name**: _string_
+• **short_name**: *string*
 
-_Defined in [responses/location.repository.info.response.ts:12](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/location.repository.info.response.ts#L12)_
+*Defined in [responses/location.repository.info.response.ts:12](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/location.repository.info.response.ts#L12)*

@@ -6,18 +6,18 @@
 
 ## Hierarchy
 
-- **TimelineFeedResponseUsertags**
+* **TimelineFeedResponseUsertags**
 
 ## Index
 
 ### Properties
 
-- [in](_responses_timeline_feed_response_.timelinefeedresponseusertags.md#in)
+* [in](_responses_timeline_feed_response_.timelinefeedresponseusertags.md#in)
 
 ## Properties
 
-### in
+###  in
 
-• **in**: _[TimelineFeedResponseInItem](\_responses_timeline_feed_response_.timelinefeedresponseinitem.md)[]\_
+• **in**: *[TimelineFeedResponseInItem](_responses_timeline_feed_response_.timelinefeedresponseinitem.md)[]*
 
-_Defined in [responses/timeline.feed.response.ts:228](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/timeline.feed.response.ts#L228)_
+*Defined in [responses/timeline.feed.response.ts:228](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/timeline.feed.response.ts#L228)*

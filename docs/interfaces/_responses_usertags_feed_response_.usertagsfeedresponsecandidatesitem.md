@@ -6,45 +6,45 @@
 
 ## Hierarchy
 
-- **UsertagsFeedResponseCandidatesItem**
+* **UsertagsFeedResponseCandidatesItem**
 
 ## Index
 
 ### Properties
 
-- [estimated_scans_sizes](_responses_usertags_feed_response_.usertagsfeedresponsecandidatesitem.md#estimated_scans_sizes)
-- [height](_responses_usertags_feed_response_.usertagsfeedresponsecandidatesitem.md#height)
-- [url](_responses_usertags_feed_response_.usertagsfeedresponsecandidatesitem.md#url)
-- [width](_responses_usertags_feed_response_.usertagsfeedresponsecandidatesitem.md#width)
+* [estimated_scans_sizes](_responses_usertags_feed_response_.usertagsfeedresponsecandidatesitem.md#estimated_scans_sizes)
+* [height](_responses_usertags_feed_response_.usertagsfeedresponsecandidatesitem.md#height)
+* [url](_responses_usertags_feed_response_.usertagsfeedresponsecandidatesitem.md#url)
+* [width](_responses_usertags_feed_response_.usertagsfeedresponsecandidatesitem.md#width)
 
 ## Properties
 
-### estimated_scans_sizes
+###  estimated_scans_sizes
 
-• **estimated_scans_sizes**: _number[]_
+• **estimated_scans_sizes**: *number[]*
 
-_Defined in [responses/usertags.feed.response.ts:55](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/usertags.feed.response.ts#L55)_
+*Defined in [responses/usertags.feed.response.ts:55](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/usertags.feed.response.ts#L55)*
 
----
+___
 
-### height
+###  height
 
-• **height**: _number_
+• **height**: *number*
 
-_Defined in [responses/usertags.feed.response.ts:53](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/usertags.feed.response.ts#L53)_
+*Defined in [responses/usertags.feed.response.ts:53](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/usertags.feed.response.ts#L53)*
 
----
+___
 
-### url
+###  url
 
-• **url**: _string_
+• **url**: *string*
 
-_Defined in [responses/usertags.feed.response.ts:54](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/usertags.feed.response.ts#L54)_
+*Defined in [responses/usertags.feed.response.ts:54](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/usertags.feed.response.ts#L54)*
 
----
+___
 
-### width
+###  width
 
-• **width**: _number_
+• **width**: *number*
 
-_Defined in [responses/usertags.feed.response.ts:52](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/usertags.feed.response.ts#L52)_
+*Defined in [responses/usertags.feed.response.ts:52](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/usertags.feed.response.ts#L52)*

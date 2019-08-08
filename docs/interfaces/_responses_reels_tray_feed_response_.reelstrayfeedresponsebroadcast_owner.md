@@ -6,90 +6,90 @@
 
 ## Hierarchy
 
-- **ReelsTrayFeedResponseBroadcast_owner**
+* **ReelsTrayFeedResponseBroadcast_owner**
 
 ## Index
 
 ### Properties
 
-- [friendship_status](_responses_reels_tray_feed_response_.reelstrayfeedresponsebroadcast_owner.md#friendship_status)
-- [full_name](_responses_reels_tray_feed_response_.reelstrayfeedresponsebroadcast_owner.md#full_name)
-- [is_private](_responses_reels_tray_feed_response_.reelstrayfeedresponsebroadcast_owner.md#is_private)
-- [is_verified](_responses_reels_tray_feed_response_.reelstrayfeedresponsebroadcast_owner.md#is_verified)
-- [live_subscription_status](_responses_reels_tray_feed_response_.reelstrayfeedresponsebroadcast_owner.md#live_subscription_status)
-- [pk](_responses_reels_tray_feed_response_.reelstrayfeedresponsebroadcast_owner.md#pk)
-- [profile_pic_id](_responses_reels_tray_feed_response_.reelstrayfeedresponsebroadcast_owner.md#profile_pic_id)
-- [profile_pic_url](_responses_reels_tray_feed_response_.reelstrayfeedresponsebroadcast_owner.md#profile_pic_url)
-- [username](_responses_reels_tray_feed_response_.reelstrayfeedresponsebroadcast_owner.md#username)
+* [friendship_status](_responses_reels_tray_feed_response_.reelstrayfeedresponsebroadcast_owner.md#friendship_status)
+* [full_name](_responses_reels_tray_feed_response_.reelstrayfeedresponsebroadcast_owner.md#full_name)
+* [is_private](_responses_reels_tray_feed_response_.reelstrayfeedresponsebroadcast_owner.md#is_private)
+* [is_verified](_responses_reels_tray_feed_response_.reelstrayfeedresponsebroadcast_owner.md#is_verified)
+* [live_subscription_status](_responses_reels_tray_feed_response_.reelstrayfeedresponsebroadcast_owner.md#live_subscription_status)
+* [pk](_responses_reels_tray_feed_response_.reelstrayfeedresponsebroadcast_owner.md#pk)
+* [profile_pic_id](_responses_reels_tray_feed_response_.reelstrayfeedresponsebroadcast_owner.md#profile_pic_id)
+* [profile_pic_url](_responses_reels_tray_feed_response_.reelstrayfeedresponsebroadcast_owner.md#profile_pic_url)
+* [username](_responses_reels_tray_feed_response_.reelstrayfeedresponsebroadcast_owner.md#username)
 
 ## Properties
 
-### friendship_status
+###  friendship_status
 
-• **friendship_status**: _[ReelsTrayFeedResponseFriendship_status](\_responses_reels_tray_feed_response_.reelstrayfeedresponsefriendship*status.md)*
+• **friendship_status**: *[ReelsTrayFeedResponseFriendship_status](_responses_reels_tray_feed_response_.reelstrayfeedresponsefriendship_status.md)*
 
-_Defined in [responses/reels-tray.feed.response.ts:259](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/reels-tray.feed.response.ts#L259)_
+*Defined in [responses/reels-tray.feed.response.ts:259](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-tray.feed.response.ts#L259)*
 
----
+___
 
-### full_name
+###  full_name
 
-• **full_name**: _string_
+• **full_name**: *string*
 
-_Defined in [responses/reels-tray.feed.response.ts:255](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/reels-tray.feed.response.ts#L255)_
+*Defined in [responses/reels-tray.feed.response.ts:255](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-tray.feed.response.ts#L255)*
 
----
+___
 
-### is_private
+###  is_private
 
-• **is_private**: _boolean_
+• **is_private**: *boolean*
 
-_Defined in [responses/reels-tray.feed.response.ts:256](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/reels-tray.feed.response.ts#L256)_
+*Defined in [responses/reels-tray.feed.response.ts:256](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-tray.feed.response.ts#L256)*
 
----
+___
 
-### is_verified
+###  is_verified
 
-• **is_verified**: _boolean_
+• **is_verified**: *boolean*
 
-_Defined in [responses/reels-tray.feed.response.ts:260](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/reels-tray.feed.response.ts#L260)_
+*Defined in [responses/reels-tray.feed.response.ts:260](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-tray.feed.response.ts#L260)*
 
----
+___
 
-### live_subscription_status
+###  live_subscription_status
 
-• **live_subscription_status**: _string_
+• **live_subscription_status**: *string*
 
-_Defined in [responses/reels-tray.feed.response.ts:261](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/reels-tray.feed.response.ts#L261)_
+*Defined in [responses/reels-tray.feed.response.ts:261](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-tray.feed.response.ts#L261)*
 
----
+___
 
-### pk
+###  pk
 
-• **pk**: _number_
+• **pk**: *number*
 
-_Defined in [responses/reels-tray.feed.response.ts:253](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/reels-tray.feed.response.ts#L253)_
+*Defined in [responses/reels-tray.feed.response.ts:253](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-tray.feed.response.ts#L253)*
 
----
+___
 
-### profile_pic_id
+###  profile_pic_id
 
-• **profile_pic_id**: _string_
+• **profile_pic_id**: *string*
 
-_Defined in [responses/reels-tray.feed.response.ts:258](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/reels-tray.feed.response.ts#L258)_
+*Defined in [responses/reels-tray.feed.response.ts:258](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-tray.feed.response.ts#L258)*
 
----
+___
 
-### profile_pic_url
+###  profile_pic_url
 
-• **profile_pic_url**: _string_
+• **profile_pic_url**: *string*
 
-_Defined in [responses/reels-tray.feed.response.ts:257](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/reels-tray.feed.response.ts#L257)_
+*Defined in [responses/reels-tray.feed.response.ts:257](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-tray.feed.response.ts#L257)*
 
----
+___
 
-### username
+###  username
 
-• **username**: _string_
+• **username**: *string*
 
-_Defined in [responses/reels-tray.feed.response.ts:254](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/reels-tray.feed.response.ts#L254)_
+*Defined in [responses/reels-tray.feed.response.ts:254](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-tray.feed.response.ts#L254)*

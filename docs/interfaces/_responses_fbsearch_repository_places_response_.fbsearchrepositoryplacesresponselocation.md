@@ -6,90 +6,90 @@
 
 ## Hierarchy
 
-- **FbsearchRepositoryPlacesResponseLocation**
+* **FbsearchRepositoryPlacesResponseLocation**
 
 ## Index
 
 ### Properties
 
-- [address](_responses_fbsearch_repository_places_response_.fbsearchrepositoryplacesresponselocation.md#address)
-- [city](_responses_fbsearch_repository_places_response_.fbsearchrepositoryplacesresponselocation.md#city)
-- [external_source](_responses_fbsearch_repository_places_response_.fbsearchrepositoryplacesresponselocation.md#external_source)
-- [facebook_places_id](_responses_fbsearch_repository_places_response_.fbsearchrepositoryplacesresponselocation.md#facebook_places_id)
-- [lat](_responses_fbsearch_repository_places_response_.fbsearchrepositoryplacesresponselocation.md#lat)
-- [lng](_responses_fbsearch_repository_places_response_.fbsearchrepositoryplacesresponselocation.md#lng)
-- [name](_responses_fbsearch_repository_places_response_.fbsearchrepositoryplacesresponselocation.md#name)
-- [pk](_responses_fbsearch_repository_places_response_.fbsearchrepositoryplacesresponselocation.md#pk)
-- [short_name](_responses_fbsearch_repository_places_response_.fbsearchrepositoryplacesresponselocation.md#short_name)
+* [address](_responses_fbsearch_repository_places_response_.fbsearchrepositoryplacesresponselocation.md#address)
+* [city](_responses_fbsearch_repository_places_response_.fbsearchrepositoryplacesresponselocation.md#city)
+* [external_source](_responses_fbsearch_repository_places_response_.fbsearchrepositoryplacesresponselocation.md#external_source)
+* [facebook_places_id](_responses_fbsearch_repository_places_response_.fbsearchrepositoryplacesresponselocation.md#facebook_places_id)
+* [lat](_responses_fbsearch_repository_places_response_.fbsearchrepositoryplacesresponselocation.md#lat)
+* [lng](_responses_fbsearch_repository_places_response_.fbsearchrepositoryplacesresponselocation.md#lng)
+* [name](_responses_fbsearch_repository_places_response_.fbsearchrepositoryplacesresponselocation.md#name)
+* [pk](_responses_fbsearch_repository_places_response_.fbsearchrepositoryplacesresponselocation.md#pk)
+* [short_name](_responses_fbsearch_repository_places_response_.fbsearchrepositoryplacesresponselocation.md#short_name)
 
 ## Properties
 
-### address
+###  address
 
-• **address**: _string_
+• **address**: *string*
 
-_Defined in [responses/fbsearch.repository.places.response.ts:17](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/fbsearch.repository.places.response.ts#L17)_
+*Defined in [responses/fbsearch.repository.places.response.ts:17](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/fbsearch.repository.places.response.ts#L17)*
 
----
+___
 
-### city
+###  city
 
-• **city**: _string_
+• **city**: *string*
 
-_Defined in [responses/fbsearch.repository.places.response.ts:18](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/fbsearch.repository.places.response.ts#L18)_
+*Defined in [responses/fbsearch.repository.places.response.ts:18](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/fbsearch.repository.places.response.ts#L18)*
 
----
+___
 
-### external_source
+###  external_source
 
-• **external_source**: _string_
+• **external_source**: *string*
 
-_Defined in [responses/fbsearch.repository.places.response.ts:22](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/fbsearch.repository.places.response.ts#L22)_
+*Defined in [responses/fbsearch.repository.places.response.ts:22](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/fbsearch.repository.places.response.ts#L22)*
 
----
+___
 
-### facebook_places_id
+###  facebook_places_id
 
-• **facebook_places_id**: _number_
+• **facebook_places_id**: *number*
 
-_Defined in [responses/fbsearch.repository.places.response.ts:23](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/fbsearch.repository.places.response.ts#L23)_
+*Defined in [responses/fbsearch.repository.places.response.ts:23](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/fbsearch.repository.places.response.ts#L23)*
 
----
+___
 
-### lat
+###  lat
 
-• **lat**: _number_
+• **lat**: *number*
 
-_Defined in [responses/fbsearch.repository.places.response.ts:21](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/fbsearch.repository.places.response.ts#L21)_
+*Defined in [responses/fbsearch.repository.places.response.ts:21](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/fbsearch.repository.places.response.ts#L21)*
 
----
+___
 
-### lng
+###  lng
 
-• **lng**: _number_
+• **lng**: *number*
 
-_Defined in [responses/fbsearch.repository.places.response.ts:20](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/fbsearch.repository.places.response.ts#L20)_
+*Defined in [responses/fbsearch.repository.places.response.ts:20](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/fbsearch.repository.places.response.ts#L20)*
 
----
+___
 
-### name
+###  name
 
-• **name**: _string_
+• **name**: *string*
 
-_Defined in [responses/fbsearch.repository.places.response.ts:16](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/fbsearch.repository.places.response.ts#L16)_
+*Defined in [responses/fbsearch.repository.places.response.ts:16](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/fbsearch.repository.places.response.ts#L16)*
 
----
+___
 
-### pk
+###  pk
 
-• **pk**: _number_
+• **pk**: *number*
 
-_Defined in [responses/fbsearch.repository.places.response.ts:15](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/fbsearch.repository.places.response.ts#L15)_
+*Defined in [responses/fbsearch.repository.places.response.ts:15](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/fbsearch.repository.places.response.ts#L15)*
 
----
+___
 
-### short_name
+###  short_name
 
-• **short_name**: _string_
+• **short_name**: *string*
 
-_Defined in [responses/fbsearch.repository.places.response.ts:19](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/fbsearch.repository.places.response.ts#L19)_
+*Defined in [responses/fbsearch.repository.places.response.ts:19](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/fbsearch.repository.places.response.ts#L19)*

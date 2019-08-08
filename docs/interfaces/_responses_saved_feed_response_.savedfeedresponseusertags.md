@@ -6,18 +6,18 @@
 
 ## Hierarchy
 
-- **SavedFeedResponseUsertags**
+* **SavedFeedResponseUsertags**
 
 ## Index
 
 ### Properties
 
-- [in](_responses_saved_feed_response_.savedfeedresponseusertags.md#in)
+* [in](_responses_saved_feed_response_.savedfeedresponseusertags.md#in)
 
 ## Properties
 
-### in
+###  in
 
-• **in**: _[SavedFeedResponseInItem](\_responses_saved_feed_response_.savedfeedresponseinitem.md)[]\_
+• **in**: *[SavedFeedResponseInItem](_responses_saved_feed_response_.savedfeedresponseinitem.md)[]*
 
-_Defined in [responses/saved.feed.response.ts:137](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/saved.feed.response.ts#L137)_
+*Defined in [responses/saved.feed.response.ts:178](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/saved.feed.response.ts#L178)*

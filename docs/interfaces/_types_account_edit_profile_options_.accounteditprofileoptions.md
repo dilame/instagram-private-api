@@ -6,72 +6,72 @@
 
 ## Hierarchy
 
-- **AccountEditProfileOptions**
+* **AccountEditProfileOptions**
 
 ## Index
 
 ### Properties
 
-- [biography](_types_account_edit_profile_options_.accounteditprofileoptions.md#biography)
-- [email](_types_account_edit_profile_options_.accounteditprofileoptions.md#email)
-- [external_url](_types_account_edit_profile_options_.accounteditprofileoptions.md#external_url)
-- [first_name](_types_account_edit_profile_options_.accounteditprofileoptions.md#first_name)
-- [gender](_types_account_edit_profile_options_.accounteditprofileoptions.md#gender)
-- [phone_number](_types_account_edit_profile_options_.accounteditprofileoptions.md#phone_number)
-- [username](_types_account_edit_profile_options_.accounteditprofileoptions.md#username)
+* [biography](_types_account_edit_profile_options_.accounteditprofileoptions.md#biography)
+* [email](_types_account_edit_profile_options_.accounteditprofileoptions.md#email)
+* [external_url](_types_account_edit_profile_options_.accounteditprofileoptions.md#external_url)
+* [first_name](_types_account_edit_profile_options_.accounteditprofileoptions.md#first_name)
+* [gender](_types_account_edit_profile_options_.accounteditprofileoptions.md#gender)
+* [phone_number](_types_account_edit_profile_options_.accounteditprofileoptions.md#phone_number)
+* [username](_types_account_edit_profile_options_.accounteditprofileoptions.md#username)
 
 ## Properties
 
-### biography
+###  biography
 
-• **biography**: _string_
+• **biography**: *string*
 
-_Defined in [types/account.edit-profile.options.ts:7](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/types/account.edit-profile.options.ts#L7)_
+*Defined in [types/account.edit-profile.options.ts:7](https://github.com/dilame/instagram-private-api/blob/01eb399/src/types/account.edit-profile.options.ts#L7)*
 
----
+___
 
-### email
+###  email
 
-• **email**: _string_
+• **email**: *string*
 
-_Defined in [types/account.edit-profile.options.ts:8](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/types/account.edit-profile.options.ts#L8)_
+*Defined in [types/account.edit-profile.options.ts:8](https://github.com/dilame/instagram-private-api/blob/01eb399/src/types/account.edit-profile.options.ts#L8)*
 
----
+___
 
-### external_url
+###  external_url
 
-• **external_url**: _string_
+• **external_url**: *string*
 
-_Defined in [types/account.edit-profile.options.ts:2](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/types/account.edit-profile.options.ts#L2)_
+*Defined in [types/account.edit-profile.options.ts:2](https://github.com/dilame/instagram-private-api/blob/01eb399/src/types/account.edit-profile.options.ts#L2)*
 
----
+___
 
-### first_name
+###  first_name
 
-• **first_name**: _string_
+• **first_name**: *string*
 
-_Defined in [types/account.edit-profile.options.ts:6](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/types/account.edit-profile.options.ts#L6)_
+*Defined in [types/account.edit-profile.options.ts:6](https://github.com/dilame/instagram-private-api/blob/01eb399/src/types/account.edit-profile.options.ts#L6)*
 
----
+___
 
-### gender
+###  gender
 
-• **gender**: _string_
+• **gender**: *string*
 
-_Defined in [types/account.edit-profile.options.ts:3](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/types/account.edit-profile.options.ts#L3)_
+*Defined in [types/account.edit-profile.options.ts:3](https://github.com/dilame/instagram-private-api/blob/01eb399/src/types/account.edit-profile.options.ts#L3)*
 
----
+___
 
-### phone_number
+###  phone_number
 
-• **phone_number**: _string_
+• **phone_number**: *string*
 
-_Defined in [types/account.edit-profile.options.ts:4](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/types/account.edit-profile.options.ts#L4)_
+*Defined in [types/account.edit-profile.options.ts:4](https://github.com/dilame/instagram-private-api/blob/01eb399/src/types/account.edit-profile.options.ts#L4)*
 
----
+___
 
-### username
+###  username
 
-• **username**: _string_
+• **username**: *string*
 
-_Defined in [types/account.edit-profile.options.ts:5](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/types/account.edit-profile.options.ts#L5)_
+*Defined in [types/account.edit-profile.options.ts:5](https://github.com/dilame/instagram-private-api/blob/01eb399/src/types/account.edit-profile.options.ts#L5)*

@@ -6,27 +6,27 @@
 
 ## Hierarchy
 
-- **LiveSwitchCommentsResponseRootObject**
+* **LiveSwitchCommentsResponseRootObject**
 
 ## Index
 
 ### Properties
 
-- [comment_muted](_responses_live_switch_comments_response_.liveswitchcommentsresponserootobject.md#comment_muted)
-- [status](_responses_live_switch_comments_response_.liveswitchcommentsresponserootobject.md#status)
+* [comment_muted](_responses_live_switch_comments_response_.liveswitchcommentsresponserootobject.md#comment_muted)
+* [status](_responses_live_switch_comments_response_.liveswitchcommentsresponserootobject.md#status)
 
 ## Properties
 
-### comment_muted
+###  comment_muted
 
-• **comment_muted**: _number_
+• **comment_muted**: *number*
 
-_Defined in [responses/live.switch-comments.response.ts:2](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/live.switch-comments.response.ts#L2)_
+*Defined in [responses/live.switch-comments.response.ts:2](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/live.switch-comments.response.ts#L2)*
 
----
+___
 
-### status
+###  status
 
-• **status**: _string_
+• **status**: *string*
 
-_Defined in [responses/live.switch-comments.response.ts:3](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/live.switch-comments.response.ts#L3)_
+*Defined in [responses/live.switch-comments.response.ts:3](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/live.switch-comments.response.ts#L3)*

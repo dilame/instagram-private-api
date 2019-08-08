@@ -6,36 +6,36 @@
 
 ## Hierarchy
 
-- **LocationFeedResponseCandidatesItem**
+* **LocationFeedResponseCandidatesItem**
 
 ## Index
 
 ### Properties
 
-- [height](_responses_location_feed_response_.locationfeedresponsecandidatesitem.md#height)
-- [url](_responses_location_feed_response_.locationfeedresponsecandidatesitem.md#url)
-- [width](_responses_location_feed_response_.locationfeedresponsecandidatesitem.md#width)
+* [height](_responses_location_feed_response_.locationfeedresponsecandidatesitem.md#height)
+* [url](_responses_location_feed_response_.locationfeedresponsecandidatesitem.md#url)
+* [width](_responses_location_feed_response_.locationfeedresponsecandidatesitem.md#width)
 
 ## Properties
 
-### height
+###  height
 
-• **height**: _number_
+• **height**: *number*
 
-_Defined in [responses/location.feed.response.ts:119](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/location.feed.response.ts#L119)_
+*Defined in [responses/location.feed.response.ts:119](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/location.feed.response.ts#L119)*
 
----
+___
 
-### url
+###  url
 
-• **url**: _string_
+• **url**: *string*
 
-_Defined in [responses/location.feed.response.ts:120](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/location.feed.response.ts#L120)_
+*Defined in [responses/location.feed.response.ts:120](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/location.feed.response.ts#L120)*
 
----
+___
 
-### width
+###  width
 
-• **width**: _number_
+• **width**: *number*
 
-_Defined in [responses/location.feed.response.ts:118](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/location.feed.response.ts#L118)_
+*Defined in [responses/location.feed.response.ts:118](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/location.feed.response.ts#L118)*
