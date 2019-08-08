@@ -74,3 +74,8 @@ export * from './news.repository.inbox.response';
 export * from './highlights.repository.highlights-tray.response';
 export * from './highlights.repository.create-reel.response';
 export * from './highlights.repository.edit-reel.response';
+export * from './feed-posts-insights.feed.response';
+export * from './insights.service.account.response';
+export * from './insights.service.post.response';
+export * from './stories-insights.feed.response';
+export * from './insights.service.story.response';

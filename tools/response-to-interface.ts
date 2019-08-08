@@ -34,5 +34,4 @@ async function login() {
 
 (async function mainAsync() {
   await login();
-  console.log(await ig.highlights.deleteReel((await ig.highlights.highlightsTray(ig.state.cookieUserId)).tray[0].id));
 })();
