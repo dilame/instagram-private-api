@@ -17,3 +17,4 @@ export * from './posting.album.options';
 export * from './posting.video.options';
 export * from './posting.photo.options';
 export * from './create-highlights-reel.options';
+export * from './edit-highlights-reel.options';

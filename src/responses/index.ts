@@ -73,3 +73,4 @@ export * from './usertags.feed.response';
 export * from './news.repository.inbox.response';
 export * from './highlights.repository.highlights-tray.response';
 export * from './highlights.repository.create-reel.response';
+export * from './highlights.repository.edit-reel.response';

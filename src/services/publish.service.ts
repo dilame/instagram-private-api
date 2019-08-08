@@ -133,15 +133,9 @@ export class PublishService extends Repository {
       configureOptions.posting_longitude = lng.toString();
     }
 
-    return Bluebird.try(() => this.client.media.configureVideo(configureOptions)).catch(
-      IgResponseError,
-      error => {
-        throw new IgConfigureVideoError(
-          error.response as IgResponse<UploadRepositoryVideoResponseRootObject>,
-          videoInfo,
-        );
-      },
-    );
+    return Bluebird.try(() => this.client.media.configureVideo(configureOptions)).catch(IgResponseError, error => {
+      throw new IgConfigureVideoError(error.response as IgResponse<UploadRepositoryVideoResponseRootObject>, videoInfo);
+    });
   }
 
   public async album(options: PostingAlbumOptions) {

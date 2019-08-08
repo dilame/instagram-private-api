@@ -34,9 +34,5 @@ async function login() {
 
 (async function mainAsync() {
   await login();
-  const stories = (await ig.feed.reelsMedia({userIds: ['12144123108']}).request()).reels['12144123108'].items;
-  console.log(await createInterface(ig.highlights.createReel({
-    title: 'pogger12345',
-    mediaIds: [stories[0].id],
-  }), 'highlights.repository.create-reel'));
+  console.log(await ig.highlights.deleteReel((await ig.highlights.highlightsTray(ig.state.cookieUserId)).tray[0].id));
 })();
