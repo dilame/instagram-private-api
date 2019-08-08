@@ -6,9 +6,9 @@ import {
   DirectThreadRepositoryUpdateTitleResponseRootObject,
   StatusResponse,
 } from '../responses';
-import { DirectThreadBroadcastOptions } from '../types/direct-thread.broadcast.options';
+import { DirectThreadBroadcastOptions } from '../types';
 import Chance = require('chance');
-import { DirectThreadRepositoryApproveParticipantRequestResponseRootObject } from '../responses/direct-thread.repository.approve-participant-request.response';
+import { DirectThreadRepositoryApproveParticipantRequestResponseRootObject } from '../responses';
 
 export class DirectThreadRepository extends Repository {
   public async approve(threadId: string | number): Promise<StatusResponse> {

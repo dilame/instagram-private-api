@@ -71,3 +71,5 @@ export * from './music-genre.feed.response';
 export * from './music-mood.feed.response';
 export * from './usertags.feed.response';
 export * from './news.repository.inbox.response';
+export * from './highlights.repository.highlights-tray.response';
+export * from './highlights.repository.create-reel.response';

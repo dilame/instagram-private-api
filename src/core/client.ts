@@ -31,6 +31,7 @@ import { LocationRepository } from '../repositories/location.repository';
 import { LocationSearch } from '../repositories/location-search.repository';
 import { MusicRepository } from '../repositories/music.repository';
 import { NewsRepository } from '../repositories/news.repository';
+import { HighlightsRepository } from '../repositories/highlights.repository';
 
 export class IgApiClient {
   public state = new State();
@@ -63,6 +64,7 @@ export class IgApiClient {
   public locationSearch = new LocationSearch(this);
   public music = new MusicRepository(this);
   public news = new NewsRepository(this);
+  public highlights = new HighlightsRepository(this);
   /* Services */
   public publish = new PublishService(this);
   public search = new SearchService(this);
