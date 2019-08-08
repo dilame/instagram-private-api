@@ -6,27 +6,27 @@
 
 ## Hierarchy
 
-- **LiveViewerListResponseRootObject**
+* **LiveViewerListResponseRootObject**
 
 ## Index
 
 ### Properties
 
-- [status](_responses_live_viewer_list_response_.liveviewerlistresponserootobject.md#status)
-- [users](_responses_live_viewer_list_response_.liveviewerlistresponserootobject.md#users)
+* [status](_responses_live_viewer_list_response_.liveviewerlistresponserootobject.md#status)
+* [users](_responses_live_viewer_list_response_.liveviewerlistresponserootobject.md#users)
 
 ## Properties
 
-### status
+###  status
 
-• **status**: _string_
+• **status**: *string*
 
-_Defined in [responses/live.viewer-list.response.ts:3](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/live.viewer-list.response.ts#L3)_
+*Defined in [responses/live.viewer-list.response.ts:3](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/live.viewer-list.response.ts#L3)*
 
----
+___
 
-### users
+###  users
 
-• **users**: _[LiveViewerListResponseUsersItem](\_responses_live_viewer_list_response_.liveviewerlistresponseusersitem.md)[]\_
+• **users**: *[LiveViewerListResponseUsersItem](_responses_live_viewer_list_response_.liveviewerlistresponseusersitem.md)[]*
 
-_Defined in [responses/live.viewer-list.response.ts:2](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/live.viewer-list.response.ts#L2)_
+*Defined in [responses/live.viewer-list.response.ts:2](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/live.viewer-list.response.ts#L2)*

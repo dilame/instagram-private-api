@@ -6,50 +6,50 @@
 
 ## Hierarchy
 
-- [Entity](_core_entity_.entity.md)
+  * [Entity](_core_entity_.entity.md)
 
-- **LiveEntity**
+  * **LiveEntity**
 
 ## Index
 
 ### Constructors
 
-- [constructor](_entities_live_entity_.liveentity.md#constructor)
+* [constructor](_entities_live_entity_.liveentity.md#constructor)
 
 ### Methods
 
-- [getUrlAndKey](_entities_live_entity_.liveentity.md#static-geturlandkey)
+* [getUrlAndKey](_entities_live_entity_.liveentity.md#static-geturlandkey)
 
 ## Constructors
 
-### constructor
+###  constructor
 
-\+ **new LiveEntity**(`client`: [IgApiClient](_core_client_.igapiclient.md)): _[LiveEntity](\_entities_live_entity_.liveentity.md)\_
+\+ **new LiveEntity**(`client`: [IgApiClient](_core_client_.igapiclient.md)): *[LiveEntity](_entities_live_entity_.liveentity.md)*
 
-_Inherited from [Repository](\_core_repository_.repository.md).[constructor](_core_repository_.repository.md#constructor)\_
+*Inherited from [Repository](_core_repository_.repository.md).[constructor](_core_repository_.repository.md#constructor)*
 
-_Defined in [core/repository.ts:6](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/repository.ts#L6)_
+*Defined in [core/repository.ts:6](https://github.com/dilame/instagram-private-api/blob/01eb399/src/core/repository.ts#L6)*
 
 **Parameters:**
 
-| Name     | Type                                        |
-| -------- | ------------------------------------------- |
-| `client` | [IgApiClient](_core_client_.igapiclient.md) |
+Name | Type |
+------ | ------ |
+`client` | [IgApiClient](_core_client_.igapiclient.md) |
 
-**Returns:** _[LiveEntity](\_entities_live_entity_.liveentity.md)\_
+**Returns:** *[LiveEntity](_entities_live_entity_.liveentity.md)*
 
 ## Methods
 
 ### `Static` getUrlAndKey
 
-▸ **getUrlAndKey**(`info`: object): _[LiveRtmpSettings](../interfaces/\_types_live_obs_settings_.livertmpsettings.md)\_
+▸ **getUrlAndKey**(`info`: object): *[LiveRtmpSettings](../interfaces/_types_live_obs_settings_.livertmpsettings.md)*
 
-_Defined in [entities/live.entity.ts:5](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/entities/live.entity.ts#L5)_
+*Defined in [entities/live.entity.ts:5](https://github.com/dilame/instagram-private-api/blob/01eb399/src/entities/live.entity.ts#L5)*
 
 **Parameters:**
 
-| Name   | Type   |
-| ------ | ------ |
-| `info` | object |
+Name | Type |
+------ | ------ |
+`info` | object |
 
-**Returns:** _[LiveRtmpSettings](../interfaces/\_types_live_obs_settings_.livertmpsettings.md)\_
+**Returns:** *[LiveRtmpSettings](../interfaces/_types_live_obs_settings_.livertmpsettings.md)*

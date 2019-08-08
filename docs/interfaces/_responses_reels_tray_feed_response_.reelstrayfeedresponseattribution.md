@@ -6,18 +6,18 @@
 
 ## Hierarchy
 
-- **ReelsTrayFeedResponseAttribution**
+* **ReelsTrayFeedResponseAttribution**
 
 ## Index
 
 ### Properties
 
-- [name](_responses_reels_tray_feed_response_.reelstrayfeedresponseattribution.md#name)
+* [name](_responses_reels_tray_feed_response_.reelstrayfeedresponseattribution.md#name)
 
 ## Properties
 
-### name
+###  name
 
-• **name**: _string_
+• **name**: *string*
 
-_Defined in [responses/reels-tray.feed.response.ts:205](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/reels-tray.feed.response.ts#L205)_
+*Defined in [responses/reels-tray.feed.response.ts:205](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-tray.feed.response.ts#L205)*

@@ -6,297 +6,297 @@
 
 ## Hierarchy
 
-- **DirectThreadRepositoryApproveParticipantRequestResponseMedia**
+* **DirectThreadRepositoryApproveParticipantRequestResponseMedia**
 
 ## Index
 
 ### Properties
 
-- [can_view_more_preview_comments](_responses_direct_thread_repository_approve_participant_request_response_.directthreadrepositoryapproveparticipantrequestresponsemedia.md#can_view_more_preview_comments)
-- [can_viewer_save](_responses_direct_thread_repository_approve_participant_request_response_.directthreadrepositoryapproveparticipantrequestresponsemedia.md#can_viewer_save)
-- [caption](_responses_direct_thread_repository_approve_participant_request_response_.directthreadrepositoryapproveparticipantrequestresponsemedia.md#caption)
-- [caption_is_edited](_responses_direct_thread_repository_approve_participant_request_response_.directthreadrepositoryapproveparticipantrequestresponsemedia.md#caption_is_edited)
-- [caption_position](_responses_direct_thread_repository_approve_participant_request_response_.directthreadrepositoryapproveparticipantrequestresponsemedia.md#caption_position)
-- [client_cache_key](_responses_direct_thread_repository_approve_participant_request_response_.directthreadrepositoryapproveparticipantrequestresponsemedia.md#client_cache_key)
-- [code](_responses_direct_thread_repository_approve_participant_request_response_.directthreadrepositoryapproveparticipantrequestresponsemedia.md#code)
-- [comment_count](_responses_direct_thread_repository_approve_participant_request_response_.directthreadrepositoryapproveparticipantrequestresponsemedia.md#comment_count)
-- [comment_likes_enabled](_responses_direct_thread_repository_approve_participant_request_response_.directthreadrepositoryapproveparticipantrequestresponsemedia.md#comment_likes_enabled)
-- [comment_threading_enabled](_responses_direct_thread_repository_approve_participant_request_response_.directthreadrepositoryapproveparticipantrequestresponsemedia.md#comment_threading_enabled)
-- [device_timestamp](_responses_direct_thread_repository_approve_participant_request_response_.directthreadrepositoryapproveparticipantrequestresponsemedia.md#device_timestamp)
-- [expiring_at](_responses_direct_thread_repository_approve_participant_request_response_.directthreadrepositoryapproveparticipantrequestresponsemedia.md#expiring_at)
-- [fb_user_tags](_responses_direct_thread_repository_approve_participant_request_response_.directthreadrepositoryapproveparticipantrequestresponsemedia.md#fb_user_tags)
-- [filter_type](_responses_direct_thread_repository_approve_participant_request_response_.directthreadrepositoryapproveparticipantrequestresponsemedia.md#filter_type)
-- [has_liked](_responses_direct_thread_repository_approve_participant_request_response_.directthreadrepositoryapproveparticipantrequestresponsemedia.md#has_liked)
-- [has_more_comments](_responses_direct_thread_repository_approve_participant_request_response_.directthreadrepositoryapproveparticipantrequestresponsemedia.md#has_more_comments)
-- [id](_responses_direct_thread_repository_approve_participant_request_response_.directthreadrepositoryapproveparticipantrequestresponsemedia.md#id)
-- [image_versions2](_responses_direct_thread_repository_approve_participant_request_response_.directthreadrepositoryapproveparticipantrequestresponsemedia.md#image_versions2)
-- [is_reel_media](_responses_direct_thread_repository_approve_participant_request_response_.directthreadrepositoryapproveparticipantrequestresponsemedia.md#is_reel_media)
-- [like_count](_responses_direct_thread_repository_approve_participant_request_response_.directthreadrepositoryapproveparticipantrequestresponsemedia.md#like_count)
-- [likers](_responses_direct_thread_repository_approve_participant_request_response_.directthreadrepositoryapproveparticipantrequestresponsemedia.md#likers)
-- [max_num_visible_preview_comments](_responses_direct_thread_repository_approve_participant_request_response_.directthreadrepositoryapproveparticipantrequestresponsemedia.md#max_num_visible_preview_comments)
-- [media_type](_responses_direct_thread_repository_approve_participant_request_response_.directthreadrepositoryapproveparticipantrequestresponsemedia.md#media_type)
-- [organic_tracking_token](_responses_direct_thread_repository_approve_participant_request_response_.directthreadrepositoryapproveparticipantrequestresponsemedia.md#organic_tracking_token)
-- [original_height](_responses_direct_thread_repository_approve_participant_request_response_.directthreadrepositoryapproveparticipantrequestresponsemedia.md#original_height)
-- [original_width](_responses_direct_thread_repository_approve_participant_request_response_.directthreadrepositoryapproveparticipantrequestresponsemedia.md#original_width)
-- [photo_of_you](_responses_direct_thread_repository_approve_participant_request_response_.directthreadrepositoryapproveparticipantrequestresponsemedia.md#photo_of_you)
-- [pk](_responses_direct_thread_repository_approve_participant_request_response_.directthreadrepositoryapproveparticipantrequestresponsemedia.md#pk)
-- [preview_comments](_responses_direct_thread_repository_approve_participant_request_response_.directthreadrepositoryapproveparticipantrequestresponsemedia.md#preview_comments)
-- [taken_at](_responses_direct_thread_repository_approve_participant_request_response_.directthreadrepositoryapproveparticipantrequestresponsemedia.md#taken_at)
-- [timezone_offset](_responses_direct_thread_repository_approve_participant_request_response_.directthreadrepositoryapproveparticipantrequestresponsemedia.md#timezone_offset)
-- [user](_responses_direct_thread_repository_approve_participant_request_response_.directthreadrepositoryapproveparticipantrequestresponsemedia.md#user)
+* [can_view_more_preview_comments](_responses_direct_thread_repository_approve_participant_request_response_.directthreadrepositoryapproveparticipantrequestresponsemedia.md#can_view_more_preview_comments)
+* [can_viewer_save](_responses_direct_thread_repository_approve_participant_request_response_.directthreadrepositoryapproveparticipantrequestresponsemedia.md#can_viewer_save)
+* [caption](_responses_direct_thread_repository_approve_participant_request_response_.directthreadrepositoryapproveparticipantrequestresponsemedia.md#caption)
+* [caption_is_edited](_responses_direct_thread_repository_approve_participant_request_response_.directthreadrepositoryapproveparticipantrequestresponsemedia.md#caption_is_edited)
+* [caption_position](_responses_direct_thread_repository_approve_participant_request_response_.directthreadrepositoryapproveparticipantrequestresponsemedia.md#caption_position)
+* [client_cache_key](_responses_direct_thread_repository_approve_participant_request_response_.directthreadrepositoryapproveparticipantrequestresponsemedia.md#client_cache_key)
+* [code](_responses_direct_thread_repository_approve_participant_request_response_.directthreadrepositoryapproveparticipantrequestresponsemedia.md#code)
+* [comment_count](_responses_direct_thread_repository_approve_participant_request_response_.directthreadrepositoryapproveparticipantrequestresponsemedia.md#comment_count)
+* [comment_likes_enabled](_responses_direct_thread_repository_approve_participant_request_response_.directthreadrepositoryapproveparticipantrequestresponsemedia.md#comment_likes_enabled)
+* [comment_threading_enabled](_responses_direct_thread_repository_approve_participant_request_response_.directthreadrepositoryapproveparticipantrequestresponsemedia.md#comment_threading_enabled)
+* [device_timestamp](_responses_direct_thread_repository_approve_participant_request_response_.directthreadrepositoryapproveparticipantrequestresponsemedia.md#device_timestamp)
+* [expiring_at](_responses_direct_thread_repository_approve_participant_request_response_.directthreadrepositoryapproveparticipantrequestresponsemedia.md#expiring_at)
+* [fb_user_tags](_responses_direct_thread_repository_approve_participant_request_response_.directthreadrepositoryapproveparticipantrequestresponsemedia.md#fb_user_tags)
+* [filter_type](_responses_direct_thread_repository_approve_participant_request_response_.directthreadrepositoryapproveparticipantrequestresponsemedia.md#filter_type)
+* [has_liked](_responses_direct_thread_repository_approve_participant_request_response_.directthreadrepositoryapproveparticipantrequestresponsemedia.md#has_liked)
+* [has_more_comments](_responses_direct_thread_repository_approve_participant_request_response_.directthreadrepositoryapproveparticipantrequestresponsemedia.md#has_more_comments)
+* [id](_responses_direct_thread_repository_approve_participant_request_response_.directthreadrepositoryapproveparticipantrequestresponsemedia.md#id)
+* [image_versions2](_responses_direct_thread_repository_approve_participant_request_response_.directthreadrepositoryapproveparticipantrequestresponsemedia.md#image_versions2)
+* [is_reel_media](_responses_direct_thread_repository_approve_participant_request_response_.directthreadrepositoryapproveparticipantrequestresponsemedia.md#is_reel_media)
+* [like_count](_responses_direct_thread_repository_approve_participant_request_response_.directthreadrepositoryapproveparticipantrequestresponsemedia.md#like_count)
+* [likers](_responses_direct_thread_repository_approve_participant_request_response_.directthreadrepositoryapproveparticipantrequestresponsemedia.md#likers)
+* [max_num_visible_preview_comments](_responses_direct_thread_repository_approve_participant_request_response_.directthreadrepositoryapproveparticipantrequestresponsemedia.md#max_num_visible_preview_comments)
+* [media_type](_responses_direct_thread_repository_approve_participant_request_response_.directthreadrepositoryapproveparticipantrequestresponsemedia.md#media_type)
+* [organic_tracking_token](_responses_direct_thread_repository_approve_participant_request_response_.directthreadrepositoryapproveparticipantrequestresponsemedia.md#organic_tracking_token)
+* [original_height](_responses_direct_thread_repository_approve_participant_request_response_.directthreadrepositoryapproveparticipantrequestresponsemedia.md#original_height)
+* [original_width](_responses_direct_thread_repository_approve_participant_request_response_.directthreadrepositoryapproveparticipantrequestresponsemedia.md#original_width)
+* [photo_of_you](_responses_direct_thread_repository_approve_participant_request_response_.directthreadrepositoryapproveparticipantrequestresponsemedia.md#photo_of_you)
+* [pk](_responses_direct_thread_repository_approve_participant_request_response_.directthreadrepositoryapproveparticipantrequestresponsemedia.md#pk)
+* [preview_comments](_responses_direct_thread_repository_approve_participant_request_response_.directthreadrepositoryapproveparticipantrequestresponsemedia.md#preview_comments)
+* [taken_at](_responses_direct_thread_repository_approve_participant_request_response_.directthreadrepositoryapproveparticipantrequestresponsemedia.md#taken_at)
+* [timezone_offset](_responses_direct_thread_repository_approve_participant_request_response_.directthreadrepositoryapproveparticipantrequestresponsemedia.md#timezone_offset)
+* [user](_responses_direct_thread_repository_approve_participant_request_response_.directthreadrepositoryapproveparticipantrequestresponsemedia.md#user)
 
 ## Properties
 
-### can_view_more_preview_comments
+###  can_view_more_preview_comments
 
-• **can_view_more_preview_comments**: _boolean_
+• **can_view_more_preview_comments**: *boolean*
 
-_Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:98](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.repository.approve-participant-request.response.ts#L98)_
+*Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:98](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-thread.repository.approve-participant-request.response.ts#L98)*
 
----
+___
 
-### can_viewer_save
+###  can_viewer_save
 
-• **can_viewer_save**: _boolean_
+• **can_viewer_save**: *boolean*
 
-_Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:109](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.repository.approve-participant-request.response.ts#L109)_
+*Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:109](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-thread.repository.approve-participant-request.response.ts#L109)*
 
----
+___
 
-### caption
+###  caption
 
-• **caption**: _null_
+• **caption**: *null*
 
-_Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:107](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.repository.approve-participant-request.response.ts#L107)_
+*Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:107](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-thread.repository.approve-participant-request.response.ts#L107)*
 
----
+___
 
-### caption_is_edited
+###  caption_is_edited
 
-• **caption_is_edited**: _boolean_
+• **caption_is_edited**: *boolean*
 
-_Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:92](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.repository.approve-participant-request.response.ts#L92)_
+*Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:92](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-thread.repository.approve-participant-request.response.ts#L92)*
 
----
+___
 
-### caption_position
+###  caption_position
 
-• **caption_position**: _number_
+• **caption_position**: *number*
 
-_Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:100](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.repository.approve-participant-request.response.ts#L100)_
+*Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:100](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-thread.repository.approve-participant-request.response.ts#L100)*
 
----
+___
 
-### client_cache_key
+###  client_cache_key
 
-• **client_cache_key**: _string_
+• **client_cache_key**: *string*
 
-_Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:86](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.repository.approve-participant-request.response.ts#L86)_
+*Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:86](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-thread.repository.approve-participant-request.response.ts#L86)*
 
----
+___
 
-### code
+###  code
 
-• **code**: _string_
+• **code**: *string*
 
-_Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:85](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.repository.approve-participant-request.response.ts#L85)_
+*Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:85](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-thread.repository.approve-participant-request.response.ts#L85)*
 
----
+___
 
-### comment_count
+###  comment_count
 
-• **comment_count**: _number_
+• **comment_count**: *number*
 
-_Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:99](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.repository.approve-participant-request.response.ts#L99)_
+*Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:99](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-thread.repository.approve-participant-request.response.ts#L99)*
 
----
+___
 
-### comment_likes_enabled
+###  comment_likes_enabled
 
-• **comment_likes_enabled**: _boolean_
+• **comment_likes_enabled**: *boolean*
 
-_Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:93](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.repository.approve-participant-request.response.ts#L93)_
+*Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:93](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-thread.repository.approve-participant-request.response.ts#L93)*
 
----
+___
 
-### comment_threading_enabled
+###  comment_threading_enabled
 
-• **comment_threading_enabled**: _boolean_
+• **comment_threading_enabled**: *boolean*
 
-_Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:94](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.repository.approve-participant-request.response.ts#L94)_
+*Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:94](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-thread.repository.approve-participant-request.response.ts#L94)*
 
----
+___
 
-### device_timestamp
+###  device_timestamp
 
-• **device_timestamp**: _number_
+• **device_timestamp**: *number*
 
-_Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:83](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.repository.approve-participant-request.response.ts#L83)_
+*Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:83](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-thread.repository.approve-participant-request.response.ts#L83)*
 
----
+___
 
-### expiring_at
+###  expiring_at
 
-• **expiring_at**: _number_
+• **expiring_at**: *number*
 
-_Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:111](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.repository.approve-participant-request.response.ts#L111)_
+*Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:111](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-thread.repository.approve-participant-request.response.ts#L111)*
 
----
+___
 
-### fb_user_tags
+###  fb_user_tags
 
-• **fb_user_tags**: _[DirectThreadRepositoryApproveParticipantRequestResponseFb_user_tags](\_responses_direct_thread_repository_approve_participant_request_response_.directthreadrepositoryapproveparticipantrequestresponsefb*user_tags.md)*
+• **fb_user_tags**: *[DirectThreadRepositoryApproveParticipantRequestResponseFb_user_tags](_responses_direct_thread_repository_approve_participant_request_response_.directthreadrepositoryapproveparticipantrequestresponsefb_user_tags.md)*
 
-_Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:108](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.repository.approve-participant-request.response.ts#L108)_
+*Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:108](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-thread.repository.approve-participant-request.response.ts#L108)*
 
----
+___
 
-### filter_type
+###  filter_type
 
-• **filter_type**: _number_
+• **filter_type**: *number*
 
-_Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:87](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.repository.approve-participant-request.response.ts#L87)_
+*Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:87](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-thread.repository.approve-participant-request.response.ts#L87)*
 
----
+___
 
-### has_liked
+###  has_liked
 
-• **has_liked**: _boolean_
+• **has_liked**: *boolean*
 
-_Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:104](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.repository.approve-participant-request.response.ts#L104)_
+*Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:104](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-thread.repository.approve-participant-request.response.ts#L104)*
 
----
+___
 
-### has_more_comments
+###  has_more_comments
 
-• **has_more_comments**: _boolean_
+• **has_more_comments**: *boolean*
 
-_Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:95](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.repository.approve-participant-request.response.ts#L95)_
+*Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:95](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-thread.repository.approve-participant-request.response.ts#L95)*
 
----
+___
 
-### id
+###  id
 
-• **id**: _string_
+• **id**: *string*
 
-_Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:82](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.repository.approve-participant-request.response.ts#L82)_
+*Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:82](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-thread.repository.approve-participant-request.response.ts#L82)*
 
----
+___
 
-### image_versions2
+###  image_versions2
 
-• **image_versions2**: _[DirectThreadRepositoryApproveParticipantRequestResponseImage_versions2](\_responses_direct_thread_repository_approve_participant_request_response_.directthreadrepositoryapproveparticipantrequestresponseimage*versions2.md)*
+• **image_versions2**: *[DirectThreadRepositoryApproveParticipantRequestResponseImage_versions2](_responses_direct_thread_repository_approve_participant_request_response_.directthreadrepositoryapproveparticipantrequestresponseimage_versions2.md)*
 
-_Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:88](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.repository.approve-participant-request.response.ts#L88)_
+*Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:88](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-thread.repository.approve-participant-request.response.ts#L88)*
 
----
+___
 
-### is_reel_media
+###  is_reel_media
 
-• **is_reel_media**: _boolean_
+• **is_reel_media**: *boolean*
 
-_Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:101](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.repository.approve-participant-request.response.ts#L101)_
+*Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:101](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-thread.repository.approve-participant-request.response.ts#L101)*
 
----
+___
 
-### like_count
+###  like_count
 
-• **like_count**: _number_
+• **like_count**: *number*
 
-_Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:103](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.repository.approve-participant-request.response.ts#L103)_
+*Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:103](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-thread.repository.approve-participant-request.response.ts#L103)*
 
----
+___
 
-### likers
+###  likers
 
-• **likers**: _any[]_
+• **likers**: *any[]*
 
-_Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:105](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.repository.approve-participant-request.response.ts#L105)_
+*Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:105](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-thread.repository.approve-participant-request.response.ts#L105)*
 
----
+___
 
-### max_num_visible_preview_comments
+###  max_num_visible_preview_comments
 
-• **max_num_visible_preview_comments**: _number_
+• **max_num_visible_preview_comments**: *number*
 
-_Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:96](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.repository.approve-participant-request.response.ts#L96)_
+*Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:96](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-thread.repository.approve-participant-request.response.ts#L96)*
 
----
+___
 
-### media_type
+###  media_type
 
-• **media_type**: _number_
+• **media_type**: *number*
 
-_Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:84](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.repository.approve-participant-request.response.ts#L84)_
+*Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:84](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-thread.repository.approve-participant-request.response.ts#L84)*
 
----
+___
 
-### organic_tracking_token
+###  organic_tracking_token
 
-• **organic_tracking_token**: _string_
+• **organic_tracking_token**: *string*
 
-_Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:110](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.repository.approve-participant-request.response.ts#L110)_
+*Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:110](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-thread.repository.approve-participant-request.response.ts#L110)*
 
----
+___
 
-### original_height
+###  original_height
 
-• **original_height**: _number_
+• **original_height**: *number*
 
-_Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:90](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.repository.approve-participant-request.response.ts#L90)_
+*Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:90](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-thread.repository.approve-participant-request.response.ts#L90)*
 
----
+___
 
-### original_width
+###  original_width
 
-• **original_width**: _number_
+• **original_width**: *number*
 
-_Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:89](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.repository.approve-participant-request.response.ts#L89)_
+*Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:89](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-thread.repository.approve-participant-request.response.ts#L89)*
 
----
+___
 
-### photo_of_you
+###  photo_of_you
 
-• **photo_of_you**: _boolean_
+• **photo_of_you**: *boolean*
 
-_Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:106](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.repository.approve-participant-request.response.ts#L106)_
+*Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:106](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-thread.repository.approve-participant-request.response.ts#L106)*
 
----
+___
 
-### pk
+###  pk
 
-• **pk**: _string_
+• **pk**: *string*
 
-_Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:81](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.repository.approve-participant-request.response.ts#L81)_
+*Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:81](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-thread.repository.approve-participant-request.response.ts#L81)*
 
----
+___
 
-### preview_comments
+###  preview_comments
 
-• **preview_comments**: _any[]_
+• **preview_comments**: *any[]*
 
-_Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:97](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.repository.approve-participant-request.response.ts#L97)_
+*Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:97](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-thread.repository.approve-participant-request.response.ts#L97)*
 
----
+___
 
-### taken_at
+###  taken_at
 
-• **taken_at**: _number_
+• **taken_at**: *number*
 
-_Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:80](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.repository.approve-participant-request.response.ts#L80)_
+*Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:80](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-thread.repository.approve-participant-request.response.ts#L80)*
 
----
+___
 
-### timezone_offset
+###  timezone_offset
 
-• **timezone_offset**: _number_
+• **timezone_offset**: *number*
 
-_Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:102](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.repository.approve-participant-request.response.ts#L102)_
+*Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:102](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-thread.repository.approve-participant-request.response.ts#L102)*
 
----
+___
 
-### user
+###  user
 
-• **user**: _[DirectThreadRepositoryApproveParticipantRequestResponseUser](\_responses_direct_thread_repository_approve_participant_request_response_.directthreadrepositoryapproveparticipantrequestresponseuser.md)\_
+• **user**: *[DirectThreadRepositoryApproveParticipantRequestResponseUser](_responses_direct_thread_repository_approve_participant_request_response_.directthreadrepositoryapproveparticipantrequestresponseuser.md)*
 
-_Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:91](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.repository.approve-participant-request.response.ts#L91)_
+*Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:91](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-thread.repository.approve-participant-request.response.ts#L91)*

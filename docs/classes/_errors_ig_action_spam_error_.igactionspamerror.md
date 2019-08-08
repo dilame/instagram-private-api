@@ -6,71 +6,108 @@
 
 ## Hierarchy
 
-- [IgResponseError](_errors_ig_response_error_.igresponseerror.md)‹_[SpamResponse](../interfaces/\_responses_spam_response_.spamresponse.md)\_›
+  * [IgResponseError](_errors_ig_response_error_.igresponseerror.md)‹*[SpamResponse](../interfaces/_responses_spam_response_.spamresponse.md)*›
 
-- **IgActionSpamError**
+  * **IgActionSpamError**
 
 ## Index
 
 ### Constructors
 
-- [constructor](_errors_ig_action_spam_error_.igactionspamerror.md#constructor)
+* [constructor](_errors_ig_action_spam_error_.igactionspamerror.md#constructor)
 
 ### Properties
 
-- [response](_errors_ig_action_spam_error_.igactionspamerror.md#response)
-- [text](_errors_ig_action_spam_error_.igactionspamerror.md#text)
+* [message](_errors_ig_action_spam_error_.igactionspamerror.md#message)
+* [name](_errors_ig_action_spam_error_.igactionspamerror.md#name)
+* [response](_errors_ig_action_spam_error_.igactionspamerror.md#response)
+* [stack](_errors_ig_action_spam_error_.igactionspamerror.md#optional-stack)
+* [text](_errors_ig_action_spam_error_.igactionspamerror.md#text)
 
 ### Accessors
 
-- [expirationDate](_errors_ig_action_spam_error_.igactionspamerror.md#expirationdate)
+* [expirationDate](_errors_ig_action_spam_error_.igactionspamerror.md#expirationdate)
 
 ## Constructors
 
-### constructor
+###  constructor
 
-\+ **new IgActionSpamError**(`response`: [IgResponse](../modules/_types_common_types_.md#igresponse)‹_[SpamResponse](../interfaces/\_responses_spam_response_.spamresponse.md)_›): _[IgActionSpamError](_errors_ig_action_spam_error_.igactionspamerror.md)\_
+\+ **new IgActionSpamError**(`response`: [IgResponse](../modules/_types_common_types_.md#igresponse)‹*[SpamResponse](../interfaces/_responses_spam_response_.spamresponse.md)*›): *[IgActionSpamError](_errors_ig_action_spam_error_.igactionspamerror.md)*
 
-_Inherited from [IgResponseError](\_errors_ig_response_error_.igresponseerror.md).[constructor](_errors_ig_response_error_.igresponseerror.md#constructor)\_
+*Inherited from [IgResponseError](_errors_ig_response_error_.igresponseerror.md).[constructor](_errors_ig_response_error_.igresponseerror.md#constructor)*
 
-_Overrides [IgClientError](\_errors_ig_client_error_.igclienterror.md).[constructor](_errors_ig_client_error_.igclienterror.md#constructor)\_
+*Overrides [IgClientError](_errors_ig_client_error_.igclienterror.md).[constructor](_errors_ig_client_error_.igclienterror.md#constructor)*
 
-_Defined in [errors/ig-response.error.ts:9](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/errors/ig-response.error.ts#L9)_
+*Defined in [errors/ig-response.error.ts:9](https://github.com/dilame/instagram-private-api/blob/01eb399/src/errors/ig-response.error.ts#L9)*
 
 **Parameters:**
 
-| Name       | Type                                                                                                                                     |
-| ---------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| `response` | [IgResponse](../modules/_types_common_types_.md#igresponse)‹_[SpamResponse](../interfaces/\_responses_spam_response_.spamresponse.md)\_› |
+Name | Type |
+------ | ------ |
+`response` | [IgResponse](../modules/_types_common_types_.md#igresponse)‹*[SpamResponse](../interfaces/_responses_spam_response_.spamresponse.md)*› |
 
-**Returns:** _[IgActionSpamError](\_errors_ig_action_spam_error_.igactionspamerror.md)\_
+**Returns:** *[IgActionSpamError](_errors_ig_action_spam_error_.igactionspamerror.md)*
 
 ## Properties
 
-### response
+###  message
 
-• **response**: _[IgResponse](../modules/\_types_common_types_.md#igresponse)‹_[SpamResponse](../interfaces/\_responses_spam_response_.spamresponse.md)_›_
+• **message**: *string*
 
-_Inherited from [IgResponseError](\_errors_ig_response_error_.igresponseerror.md).[response](_errors_ig_response_error_.igresponseerror.md#response)\_
+*Inherited from void*
 
-_Defined in [errors/ig-response.error.ts:9](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/errors/ig-response.error.ts#L9)_
+Defined in /Users/bowzee/WebstormProjects/instagram-private-api/node_modules/typedoc/node_modules/typescript/lib/lib.es5.d.ts:964
 
----
+___
 
-### text
+###  name
 
-• **text**: _string_
+• **name**: *string*
 
-_Inherited from [IgResponseError](\_errors_ig_response_error_.igresponseerror.md).[text](_errors_ig_response_error_.igresponseerror.md#text)\_
+*Inherited from void*
 
-_Defined in [errors/ig-response.error.ts:7](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/errors/ig-response.error.ts#L7)_
+*Overrides void*
+
+Defined in /Users/bowzee/WebstormProjects/instagram-private-api/node_modules/ts-custom-error/dist/custom-error.d.ts:2
+
+___
+
+###  response
+
+• **response**: *[IgResponse](../modules/_types_common_types_.md#igresponse)‹*[SpamResponse](../interfaces/_responses_spam_response_.spamresponse.md)*›*
+
+*Inherited from [IgResponseError](_errors_ig_response_error_.igresponseerror.md).[response](_errors_ig_response_error_.igresponseerror.md#response)*
+
+*Defined in [errors/ig-response.error.ts:9](https://github.com/dilame/instagram-private-api/blob/01eb399/src/errors/ig-response.error.ts#L9)*
+
+___
+
+### `Optional` stack
+
+• **stack**? : *string*
+
+*Inherited from void*
+
+*Overrides void*
+
+Defined in /Users/bowzee/WebstormProjects/instagram-private-api/node_modules/typedoc/node_modules/typescript/lib/lib.es5.d.ts:965
+
+___
+
+###  text
+
+• **text**: *string*
+
+*Inherited from [IgResponseError](_errors_ig_response_error_.igresponseerror.md).[text](_errors_ig_response_error_.igresponseerror.md#text)*
+
+*Defined in [errors/ig-response.error.ts:7](https://github.com/dilame/instagram-private-api/blob/01eb399/src/errors/ig-response.error.ts#L7)*
 
 ## Accessors
 
-### expirationDate
+###  expirationDate
 
-• **get expirationDate**(): _string | null_
+• **get expirationDate**(): *string | null*
 
-_Defined in [errors/ig-action-spam.error.ts:5](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/errors/ig-action-spam.error.ts#L5)_
+*Defined in [errors/ig-action-spam.error.ts:5](https://github.com/dilame/instagram-private-api/blob/01eb399/src/errors/ig-action-spam.error.ts#L5)*
 
-**Returns:** _string | null_
+**Returns:** *string | null*

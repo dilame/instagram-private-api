@@ -6,27 +6,27 @@
 
 ## Hierarchy
 
-- **LiveGetQuestionsResponseRootObject**
+* **LiveGetQuestionsResponseRootObject**
 
 ## Index
 
 ### Properties
 
-- [questions](_responses_live_get_questions_response_.livegetquestionsresponserootobject.md#questions)
-- [status](_responses_live_get_questions_response_.livegetquestionsresponserootobject.md#status)
+* [questions](_responses_live_get_questions_response_.livegetquestionsresponserootobject.md#questions)
+* [status](_responses_live_get_questions_response_.livegetquestionsresponserootobject.md#status)
 
 ## Properties
 
-### questions
+###  questions
 
-• **questions**: _[LiveGetQuestionsResponseQuestionsItem](\_responses_live_get_questions_response_.livegetquestionsresponsequestionsitem.md)[]\_
+• **questions**: *[LiveGetQuestionsResponseQuestionsItem](_responses_live_get_questions_response_.livegetquestionsresponsequestionsitem.md)[]*
 
-_Defined in [responses/live.get-questions.response.ts:2](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/live.get-questions.response.ts#L2)_
+*Defined in [responses/live.get-questions.response.ts:2](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/live.get-questions.response.ts#L2)*
 
----
+___
 
-### status
+###  status
 
-• **status**: _string_
+• **status**: *string*
 
-_Defined in [responses/live.get-questions.response.ts:3](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/live.get-questions.response.ts#L3)_
+*Defined in [responses/live.get-questions.response.ts:3](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/live.get-questions.response.ts#L3)*

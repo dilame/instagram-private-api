@@ -6,36 +6,36 @@
 
 ## Hierarchy
 
-- **MusicMoodFeedResponsePage_info**
+* **MusicMoodFeedResponsePage_info**
 
 ## Index
 
 ### Properties
 
-- [auto_load_more_available](_responses_music_mood_feed_response_.musicmoodfeedresponsepage_info.md#auto_load_more_available)
-- [more_available](_responses_music_mood_feed_response_.musicmoodfeedresponsepage_info.md#more_available)
-- [next_max_id](_responses_music_mood_feed_response_.musicmoodfeedresponsepage_info.md#next_max_id)
+* [auto_load_more_available](_responses_music_mood_feed_response_.musicmoodfeedresponsepage_info.md#auto_load_more_available)
+* [more_available](_responses_music_mood_feed_response_.musicmoodfeedresponsepage_info.md#more_available)
+* [next_max_id](_responses_music_mood_feed_response_.musicmoodfeedresponsepage_info.md#next_max_id)
 
 ## Properties
 
-### auto_load_more_available
+###  auto_load_more_available
 
-• **auto_load_more_available**: _boolean_
+• **auto_load_more_available**: *boolean*
 
-_Defined in [responses/music-mood.feed.response.ts:27](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/music-mood.feed.response.ts#L27)_
+*Defined in [responses/music-mood.feed.response.ts:27](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/music-mood.feed.response.ts#L27)*
 
----
+___
 
-### more_available
+###  more_available
 
-• **more_available**: _boolean_
+• **more_available**: *boolean*
 
-_Defined in [responses/music-mood.feed.response.ts:26](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/music-mood.feed.response.ts#L26)_
+*Defined in [responses/music-mood.feed.response.ts:26](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/music-mood.feed.response.ts#L26)*
 
----
+___
 
-### next_max_id
+###  next_max_id
 
-• **next_max_id**: _string_
+• **next_max_id**: *string*
 
-_Defined in [responses/music-mood.feed.response.ts:25](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/music-mood.feed.response.ts#L25)_
+*Defined in [responses/music-mood.feed.response.ts:25](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/music-mood.feed.response.ts#L25)*

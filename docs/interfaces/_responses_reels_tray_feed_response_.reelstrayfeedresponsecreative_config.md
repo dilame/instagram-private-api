@@ -6,36 +6,36 @@
 
 ## Hierarchy
 
-- **ReelsTrayFeedResponseCreative_config**
+* **ReelsTrayFeedResponseCreative_config**
 
 ## Index
 
 ### Properties
 
-- [camera_facing](_responses_reels_tray_feed_response_.reelstrayfeedresponsecreative_config.md#camera_facing)
-- [capture_type](_responses_reels_tray_feed_response_.reelstrayfeedresponsecreative_config.md#capture_type)
-- [should_render_try_it_on](_responses_reels_tray_feed_response_.reelstrayfeedresponsecreative_config.md#should_render_try_it_on)
+* [camera_facing](_responses_reels_tray_feed_response_.reelstrayfeedresponsecreative_config.md#camera_facing)
+* [capture_type](_responses_reels_tray_feed_response_.reelstrayfeedresponsecreative_config.md#capture_type)
+* [should_render_try_it_on](_responses_reels_tray_feed_response_.reelstrayfeedresponsecreative_config.md#should_render_try_it_on)
 
 ## Properties
 
-### camera_facing
+###  camera_facing
 
-• **camera_facing**: _string_
+• **camera_facing**: *string*
 
-_Defined in [responses/reels-tray.feed.response.ts:201](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/reels-tray.feed.response.ts#L201)_
+*Defined in [responses/reels-tray.feed.response.ts:201](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-tray.feed.response.ts#L201)*
 
----
+___
 
-### capture_type
+###  capture_type
 
-• **capture_type**: _string_
+• **capture_type**: *string*
 
-_Defined in [responses/reels-tray.feed.response.ts:200](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/reels-tray.feed.response.ts#L200)_
+*Defined in [responses/reels-tray.feed.response.ts:200](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-tray.feed.response.ts#L200)*
 
----
+___
 
-### should_render_try_it_on
+###  should_render_try_it_on
 
-• **should_render_try_it_on**: _boolean_
+• **should_render_try_it_on**: *boolean*
 
-_Defined in [responses/reels-tray.feed.response.ts:202](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/reels-tray.feed.response.ts#L202)_
+*Defined in [responses/reels-tray.feed.response.ts:202](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-tray.feed.response.ts#L202)*

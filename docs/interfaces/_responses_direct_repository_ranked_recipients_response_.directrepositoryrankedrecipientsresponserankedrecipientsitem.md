@@ -6,27 +6,27 @@
 
 ## Hierarchy
 
-- **DirectRepositoryRankedRecipientsResponseRankedRecipientsItem**
+* **DirectRepositoryRankedRecipientsResponseRankedRecipientsItem**
 
 ## Index
 
 ### Properties
 
-- [thread](_responses_direct_repository_ranked_recipients_response_.directrepositoryrankedrecipientsresponserankedrecipientsitem.md#optional-thread)
-- [user](_responses_direct_repository_ranked_recipients_response_.directrepositoryrankedrecipientsresponserankedrecipientsitem.md#optional-user)
+* [thread](_responses_direct_repository_ranked_recipients_response_.directrepositoryrankedrecipientsresponserankedrecipientsitem.md#optional-thread)
+* [user](_responses_direct_repository_ranked_recipients_response_.directrepositoryrankedrecipientsresponserankedrecipientsitem.md#optional-user)
 
 ## Properties
 
 ### `Optional` thread
 
-• **thread**? : _[DirectRepositoryRankedRecipientsResponseThread](\_responses_direct_repository_ranked_recipients_response_.directrepositoryrankedrecipientsresponsethread.md)\_
+• **thread**? : *[DirectRepositoryRankedRecipientsResponseThread](_responses_direct_repository_ranked_recipients_response_.directrepositoryrankedrecipientsresponsethread.md)*
 
-_Defined in [responses/direct.repository.ranked-recipients.response.ts:11](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct.repository.ranked-recipients.response.ts#L11)_
+*Defined in [responses/direct.repository.ranked-recipients.response.ts:11](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct.repository.ranked-recipients.response.ts#L11)*
 
----
+___
 
 ### `Optional` user
 
-• **user**? : _[DirectRepositoryRankedRecipientsResponseUser](\_responses_direct_repository_ranked_recipients_response_.directrepositoryrankedrecipientsresponseuser.md)\_
+• **user**? : *[DirectRepositoryRankedRecipientsResponseUser](_responses_direct_repository_ranked_recipients_response_.directrepositoryrankedrecipientsresponseuser.md)*
 
-_Defined in [responses/direct.repository.ranked-recipients.response.ts:10](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct.repository.ranked-recipients.response.ts#L10)_
+*Defined in [responses/direct.repository.ranked-recipients.response.ts:10](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct.repository.ranked-recipients.response.ts#L10)*

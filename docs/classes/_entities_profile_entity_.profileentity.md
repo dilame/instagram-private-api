@@ -6,73 +6,75 @@
 
 ## Hierarchy
 
-- [Entity](_core_entity_.entity.md)
+  * [Entity](_core_entity_.entity.md)
 
-- **ProfileEntity**
+  * **ProfileEntity**
 
-- [AccountFollowersFeedResponseUsersItem](_responses_account_followers_feed_response_.accountfollowersfeedresponseusersitem.md)
+  * [AccountFollowersFeedResponseUsersItem](_responses_account_followers_feed_response_.accountfollowersfeedresponseusersitem.md)
 
-- [AccountFollowingFeedResponseUsersItem](_responses_account_following_feed_response_.accountfollowingfeedresponseusersitem.md)
+  * [DiscoverFeedResponseUser](_responses_discover_feed_response_.discoverfeedresponseuser.md)
 
-- [PendingFriendshipsFeedResponseUsersItem](_responses_account_friendships_feed_response_.pendingfriendshipsfeedresponseusersitem.md)
+  * [PendingFriendshipsFeedResponseUsersItem](_responses_account_friendships_feed_response_.pendingfriendshipsfeedresponseusersitem.md)
+
+  * [AccountFollowingFeedResponseUsersItem](_responses_account_following_feed_response_.accountfollowingfeedresponseusersitem.md)
 
 ## Index
 
 ### Constructors
 
-- [constructor](_entities_profile_entity_.profileentity.md#constructor)
+* [constructor](_entities_profile_entity_.profileentity.md#constructor)
 
 ### Properties
 
-- [pk](_entities_profile_entity_.profileentity.md#pk)
+* [pk](_entities_profile_entity_.profileentity.md#pk)
 
 ### Methods
 
-- [checkFollow](_entities_profile_entity_.profileentity.md#checkfollow)
-- [checkUnfollow](_entities_profile_entity_.profileentity.md#checkunfollow)
+* [checkFollow](_entities_profile_entity_.profileentity.md#checkfollow)
+* [checkUnfollow](_entities_profile_entity_.profileentity.md#checkunfollow)
 
 ## Constructors
 
-### constructor
+###  constructor
 
-\+ **new ProfileEntity**(`client`: [IgApiClient](_core_client_.igapiclient.md)): _[ProfileEntity](\_entities_profile_entity_.profileentity.md)\_
+\+ **new ProfileEntity**(`client`: [IgApiClient](_core_client_.igapiclient.md)): *[ProfileEntity](_entities_profile_entity_.profileentity.md)*
 
-_Inherited from [Repository](\_core_repository_.repository.md).[constructor](_core_repository_.repository.md#constructor)\_
+*Inherited from [Repository](_core_repository_.repository.md).[constructor](_core_repository_.repository.md#constructor)*
 
-_Defined in [core/repository.ts:6](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/repository.ts#L6)_
+*Defined in [core/repository.ts:6](https://github.com/dilame/instagram-private-api/blob/01eb399/src/core/repository.ts#L6)*
 
 **Parameters:**
 
-| Name     | Type                                        |
-| -------- | ------------------------------------------- |
-| `client` | [IgApiClient](_core_client_.igapiclient.md) |
+Name | Type |
+------ | ------ |
+`client` | [IgApiClient](_core_client_.igapiclient.md) |
 
-**Returns:** _[ProfileEntity](\_entities_profile_entity_.profileentity.md)\_
+**Returns:** *[ProfileEntity](_entities_profile_entity_.profileentity.md)*
 
 ## Properties
 
-### pk
+###  pk
 
-• **pk**: _string | number_
+• **pk**: *string | number*
 
-_Defined in [entities/profile.entity.ts:4](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/entities/profile.entity.ts#L4)_
+*Defined in [entities/profile.entity.ts:4](https://github.com/dilame/instagram-private-api/blob/01eb399/src/entities/profile.entity.ts#L4)*
 
 ## Methods
 
-### checkFollow
+###  checkFollow
 
-▸ **checkFollow**(): _`Promise<any>`_
+▸ **checkFollow**(): *`Promise<FriendshipRepositoryChangeResponseFriendship_status>`*
 
-_Defined in [entities/profile.entity.ts:5](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/entities/profile.entity.ts#L5)_
+*Defined in [entities/profile.entity.ts:5](https://github.com/dilame/instagram-private-api/blob/01eb399/src/entities/profile.entity.ts#L5)*
 
-**Returns:** _`Promise<any>`_
+**Returns:** *`Promise<FriendshipRepositoryChangeResponseFriendship_status>`*
 
----
+___
 
-### checkUnfollow
+###  checkUnfollow
 
-▸ **checkUnfollow**(): _`Promise<any>`_
+▸ **checkUnfollow**(): *`Promise<FriendshipRepositoryChangeResponseFriendship_status>`*
 
-_Defined in [entities/profile.entity.ts:10](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/entities/profile.entity.ts#L10)_
+*Defined in [entities/profile.entity.ts:10](https://github.com/dilame/instagram-private-api/blob/01eb399/src/entities/profile.entity.ts#L10)*
 
-**Returns:** _`Promise<any>`_
+**Returns:** *`Promise<FriendshipRepositoryChangeResponseFriendship_status>`*

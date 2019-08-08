@@ -6,99 +6,99 @@
 
 ## Hierarchy
 
-- **DirectRepositoryRankedRecipientsResponseUser**
+* **DirectRepositoryRankedRecipientsResponseUser**
 
 ## Index
 
 ### Properties
 
-- [full_name](_responses_direct_repository_ranked_recipients_response_.directrepositoryrankedrecipientsresponseuser.md#full_name)
-- [has_anonymous_profile_picture](_responses_direct_repository_ranked_recipients_response_.directrepositoryrankedrecipientsresponseuser.md#has_anonymous_profile_picture)
-- [is_directapp_installed](_responses_direct_repository_ranked_recipients_response_.directrepositoryrankedrecipientsresponseuser.md#is_directapp_installed)
-- [is_private](_responses_direct_repository_ranked_recipients_response_.directrepositoryrankedrecipientsresponseuser.md#is_private)
-- [is_using_unified_inbox_for_direct](_responses_direct_repository_ranked_recipients_response_.directrepositoryrankedrecipientsresponseuser.md#is_using_unified_inbox_for_direct)
-- [is_verified](_responses_direct_repository_ranked_recipients_response_.directrepositoryrankedrecipientsresponseuser.md#is_verified)
-- [pk](_responses_direct_repository_ranked_recipients_response_.directrepositoryrankedrecipientsresponseuser.md#pk)
-- [profile_pic_id](_responses_direct_repository_ranked_recipients_response_.directrepositoryrankedrecipientsresponseuser.md#profile_pic_id)
-- [profile_pic_url](_responses_direct_repository_ranked_recipients_response_.directrepositoryrankedrecipientsresponseuser.md#profile_pic_url)
-- [username](_responses_direct_repository_ranked_recipients_response_.directrepositoryrankedrecipientsresponseuser.md#username)
+* [full_name](_responses_direct_repository_ranked_recipients_response_.directrepositoryrankedrecipientsresponseuser.md#full_name)
+* [has_anonymous_profile_picture](_responses_direct_repository_ranked_recipients_response_.directrepositoryrankedrecipientsresponseuser.md#has_anonymous_profile_picture)
+* [is_directapp_installed](_responses_direct_repository_ranked_recipients_response_.directrepositoryrankedrecipientsresponseuser.md#is_directapp_installed)
+* [is_private](_responses_direct_repository_ranked_recipients_response_.directrepositoryrankedrecipientsresponseuser.md#is_private)
+* [is_using_unified_inbox_for_direct](_responses_direct_repository_ranked_recipients_response_.directrepositoryrankedrecipientsresponseuser.md#is_using_unified_inbox_for_direct)
+* [is_verified](_responses_direct_repository_ranked_recipients_response_.directrepositoryrankedrecipientsresponseuser.md#is_verified)
+* [pk](_responses_direct_repository_ranked_recipients_response_.directrepositoryrankedrecipientsresponseuser.md#pk)
+* [profile_pic_id](_responses_direct_repository_ranked_recipients_response_.directrepositoryrankedrecipientsresponseuser.md#profile_pic_id)
+* [profile_pic_url](_responses_direct_repository_ranked_recipients_response_.directrepositoryrankedrecipientsresponseuser.md#profile_pic_url)
+* [username](_responses_direct_repository_ranked_recipients_response_.directrepositoryrankedrecipientsresponseuser.md#username)
 
 ## Properties
 
-### full_name
+###  full_name
 
-• **full_name**: _string_
+• **full_name**: *string*
 
-_Defined in [responses/direct.repository.ranked-recipients.response.ts:17](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct.repository.ranked-recipients.response.ts#L17)_
+*Defined in [responses/direct.repository.ranked-recipients.response.ts:17](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct.repository.ranked-recipients.response.ts#L17)*
 
----
+___
 
-### has_anonymous_profile_picture
+###  has_anonymous_profile_picture
 
-• **has_anonymous_profile_picture**: _boolean_
+• **has_anonymous_profile_picture**: *boolean*
 
-_Defined in [responses/direct.repository.ranked-recipients.response.ts:22](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct.repository.ranked-recipients.response.ts#L22)_
+*Defined in [responses/direct.repository.ranked-recipients.response.ts:22](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct.repository.ranked-recipients.response.ts#L22)*
 
----
+___
 
-### is_directapp_installed
+###  is_directapp_installed
 
-• **is_directapp_installed**: _boolean_
+• **is_directapp_installed**: *boolean*
 
-_Defined in [responses/direct.repository.ranked-recipients.response.ts:23](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct.repository.ranked-recipients.response.ts#L23)_
+*Defined in [responses/direct.repository.ranked-recipients.response.ts:23](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct.repository.ranked-recipients.response.ts#L23)*
 
----
+___
 
-### is_private
+###  is_private
 
-• **is_private**: _boolean_
+• **is_private**: *boolean*
 
-_Defined in [responses/direct.repository.ranked-recipients.response.ts:18](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct.repository.ranked-recipients.response.ts#L18)_
+*Defined in [responses/direct.repository.ranked-recipients.response.ts:18](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct.repository.ranked-recipients.response.ts#L18)*
 
----
+___
 
-### is_using_unified_inbox_for_direct
+###  is_using_unified_inbox_for_direct
 
-• **is_using_unified_inbox_for_direct**: _boolean_
+• **is_using_unified_inbox_for_direct**: *boolean*
 
-_Defined in [responses/direct.repository.ranked-recipients.response.ts:24](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct.repository.ranked-recipients.response.ts#L24)_
+*Defined in [responses/direct.repository.ranked-recipients.response.ts:24](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct.repository.ranked-recipients.response.ts#L24)*
 
----
+___
 
-### is_verified
+###  is_verified
 
-• **is_verified**: _boolean_
+• **is_verified**: *boolean*
 
-_Defined in [responses/direct.repository.ranked-recipients.response.ts:21](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct.repository.ranked-recipients.response.ts#L21)_
+*Defined in [responses/direct.repository.ranked-recipients.response.ts:21](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct.repository.ranked-recipients.response.ts#L21)*
 
----
+___
 
-### pk
+###  pk
 
-• **pk**: _number_
+• **pk**: *number*
 
-_Defined in [responses/direct.repository.ranked-recipients.response.ts:15](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct.repository.ranked-recipients.response.ts#L15)_
+*Defined in [responses/direct.repository.ranked-recipients.response.ts:15](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct.repository.ranked-recipients.response.ts#L15)*
 
----
+___
 
-### profile_pic_id
+###  profile_pic_id
 
-• **profile_pic_id**: _string_
+• **profile_pic_id**: *string*
 
-_Defined in [responses/direct.repository.ranked-recipients.response.ts:20](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct.repository.ranked-recipients.response.ts#L20)_
+*Defined in [responses/direct.repository.ranked-recipients.response.ts:20](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct.repository.ranked-recipients.response.ts#L20)*
 
----
+___
 
-### profile_pic_url
+###  profile_pic_url
 
-• **profile_pic_url**: _string_
+• **profile_pic_url**: *string*
 
-_Defined in [responses/direct.repository.ranked-recipients.response.ts:19](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct.repository.ranked-recipients.response.ts#L19)_
+*Defined in [responses/direct.repository.ranked-recipients.response.ts:19](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct.repository.ranked-recipients.response.ts#L19)*
 
----
+___
 
-### username
+###  username
 
-• **username**: _string_
+• **username**: *string*
 
-_Defined in [responses/direct.repository.ranked-recipients.response.ts:16](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct.repository.ranked-recipients.response.ts#L16)_
+*Defined in [responses/direct.repository.ranked-recipients.response.ts:16](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct.repository.ranked-recipients.response.ts#L16)*

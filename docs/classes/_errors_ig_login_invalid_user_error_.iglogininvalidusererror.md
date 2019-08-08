@@ -6,57 +6,94 @@
 
 ## Hierarchy
 
-- [IgResponseError](_errors_ig_response_error_.igresponseerror.md)‹_[AccountRepositoryLoginErrorResponse](../interfaces/\_responses_account_repository_login_error_response_.accountrepositoryloginerrorresponse.md)\_›
+  * [IgResponseError](_errors_ig_response_error_.igresponseerror.md)‹*[AccountRepositoryLoginErrorResponse](../interfaces/_responses_account_repository_login_error_response_.accountrepositoryloginerrorresponse.md)*›
 
-- **IgLoginInvalidUserError**
+  * **IgLoginInvalidUserError**
 
 ## Index
 
 ### Constructors
 
-- [constructor](_errors_ig_login_invalid_user_error_.iglogininvalidusererror.md#constructor)
+* [constructor](_errors_ig_login_invalid_user_error_.iglogininvalidusererror.md#constructor)
 
 ### Properties
 
-- [response](_errors_ig_login_invalid_user_error_.iglogininvalidusererror.md#response)
-- [text](_errors_ig_login_invalid_user_error_.iglogininvalidusererror.md#text)
+* [message](_errors_ig_login_invalid_user_error_.iglogininvalidusererror.md#message)
+* [name](_errors_ig_login_invalid_user_error_.iglogininvalidusererror.md#name)
+* [response](_errors_ig_login_invalid_user_error_.iglogininvalidusererror.md#response)
+* [stack](_errors_ig_login_invalid_user_error_.iglogininvalidusererror.md#optional-stack)
+* [text](_errors_ig_login_invalid_user_error_.iglogininvalidusererror.md#text)
 
 ## Constructors
 
-### constructor
+###  constructor
 
-\+ **new IgLoginInvalidUserError**(`response`: [IgResponse](../modules/_types_common_types_.md#igresponse)‹_[AccountRepositoryLoginErrorResponse](../interfaces/\_responses_account_repository_login_error_response_.accountrepositoryloginerrorresponse.md)_›): _[IgLoginInvalidUserError](_errors_ig_login_invalid_user_error_.iglogininvalidusererror.md)\_
+\+ **new IgLoginInvalidUserError**(`response`: [IgResponse](../modules/_types_common_types_.md#igresponse)‹*[AccountRepositoryLoginErrorResponse](../interfaces/_responses_account_repository_login_error_response_.accountrepositoryloginerrorresponse.md)*›): *[IgLoginInvalidUserError](_errors_ig_login_invalid_user_error_.iglogininvalidusererror.md)*
 
-_Inherited from [IgResponseError](\_errors_ig_response_error_.igresponseerror.md).[constructor](_errors_ig_response_error_.igresponseerror.md#constructor)\_
+*Inherited from [IgResponseError](_errors_ig_response_error_.igresponseerror.md).[constructor](_errors_ig_response_error_.igresponseerror.md#constructor)*
 
-_Overrides [IgClientError](\_errors_ig_client_error_.igclienterror.md).[constructor](_errors_ig_client_error_.igclienterror.md#constructor)\_
+*Overrides [IgClientError](_errors_ig_client_error_.igclienterror.md).[constructor](_errors_ig_client_error_.igclienterror.md#constructor)*
 
-_Defined in [errors/ig-response.error.ts:9](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/errors/ig-response.error.ts#L9)_
+*Defined in [errors/ig-response.error.ts:9](https://github.com/dilame/instagram-private-api/blob/01eb399/src/errors/ig-response.error.ts#L9)*
 
 **Parameters:**
 
-| Name       | Type                                                                                                                                                                                                             |
-| ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `response` | [IgResponse](../modules/_types_common_types_.md#igresponse)‹_[AccountRepositoryLoginErrorResponse](../interfaces/\_responses_account_repository_login_error_response_.accountrepositoryloginerrorresponse.md)\_› |
+Name | Type |
+------ | ------ |
+`response` | [IgResponse](../modules/_types_common_types_.md#igresponse)‹*[AccountRepositoryLoginErrorResponse](../interfaces/_responses_account_repository_login_error_response_.accountrepositoryloginerrorresponse.md)*› |
 
-**Returns:** _[IgLoginInvalidUserError](\_errors_ig_login_invalid_user_error_.iglogininvalidusererror.md)\_
+**Returns:** *[IgLoginInvalidUserError](_errors_ig_login_invalid_user_error_.iglogininvalidusererror.md)*
 
 ## Properties
 
-### response
+###  message
 
-• **response**: _[IgResponse](../modules/\_types_common_types_.md#igresponse)‹_[AccountRepositoryLoginErrorResponse](../interfaces/\_responses_account_repository_login_error_response_.accountrepositoryloginerrorresponse.md)_›_
+• **message**: *string*
 
-_Inherited from [IgResponseError](\_errors_ig_response_error_.igresponseerror.md).[response](_errors_ig_response_error_.igresponseerror.md#response)\_
+*Inherited from void*
 
-_Defined in [errors/ig-response.error.ts:9](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/errors/ig-response.error.ts#L9)_
+Defined in /Users/bowzee/WebstormProjects/instagram-private-api/node_modules/typedoc/node_modules/typescript/lib/lib.es5.d.ts:964
 
----
+___
 
-### text
+###  name
 
-• **text**: _string_
+• **name**: *string*
 
-_Inherited from [IgResponseError](\_errors_ig_response_error_.igresponseerror.md).[text](_errors_ig_response_error_.igresponseerror.md#text)\_
+*Inherited from void*
 
-_Defined in [errors/ig-response.error.ts:7](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/errors/ig-response.error.ts#L7)_
+*Overrides void*
+
+Defined in /Users/bowzee/WebstormProjects/instagram-private-api/node_modules/ts-custom-error/dist/custom-error.d.ts:2
+
+___
+
+###  response
+
+• **response**: *[IgResponse](../modules/_types_common_types_.md#igresponse)‹*[AccountRepositoryLoginErrorResponse](../interfaces/_responses_account_repository_login_error_response_.accountrepositoryloginerrorresponse.md)*›*
+
+*Inherited from [IgResponseError](_errors_ig_response_error_.igresponseerror.md).[response](_errors_ig_response_error_.igresponseerror.md#response)*
+
+*Defined in [errors/ig-response.error.ts:9](https://github.com/dilame/instagram-private-api/blob/01eb399/src/errors/ig-response.error.ts#L9)*
+
+___
+
+### `Optional` stack
+
+• **stack**? : *string*
+
+*Inherited from void*
+
+*Overrides void*
+
+Defined in /Users/bowzee/WebstormProjects/instagram-private-api/node_modules/typedoc/node_modules/typescript/lib/lib.es5.d.ts:965
+
+___
+
+###  text
+
+• **text**: *string*
+
+*Inherited from [IgResponseError](_errors_ig_response_error_.igresponseerror.md).[text](_errors_ig_response_error_.igresponseerror.md#text)*
+
+*Defined in [errors/ig-response.error.ts:7](https://github.com/dilame/instagram-private-api/blob/01eb399/src/errors/ig-response.error.ts#L7)*

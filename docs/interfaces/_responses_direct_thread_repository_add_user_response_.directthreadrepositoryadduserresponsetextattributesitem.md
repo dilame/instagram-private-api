@@ -6,54 +6,54 @@
 
 ## Hierarchy
 
-- **DirectThreadRepositoryAddUserResponseTextAttributesItem**
+* **DirectThreadRepositoryAddUserResponseTextAttributesItem**
 
 ## Index
 
 ### Properties
 
-- [bold](_responses_direct_thread_repository_add_user_response_.directthreadrepositoryadduserresponsetextattributesitem.md#bold)
-- [color](_responses_direct_thread_repository_add_user_response_.directthreadrepositoryadduserresponsetextattributesitem.md#color)
-- [end](_responses_direct_thread_repository_add_user_response_.directthreadrepositoryadduserresponsetextattributesitem.md#end)
-- [intent](_responses_direct_thread_repository_add_user_response_.directthreadrepositoryadduserresponsetextattributesitem.md#intent)
-- [start](_responses_direct_thread_repository_add_user_response_.directthreadrepositoryadduserresponsetextattributesitem.md#start)
+* [bold](_responses_direct_thread_repository_add_user_response_.directthreadrepositoryadduserresponsetextattributesitem.md#bold)
+* [color](_responses_direct_thread_repository_add_user_response_.directthreadrepositoryadduserresponsetextattributesitem.md#color)
+* [end](_responses_direct_thread_repository_add_user_response_.directthreadrepositoryadduserresponsetextattributesitem.md#end)
+* [intent](_responses_direct_thread_repository_add_user_response_.directthreadrepositoryadduserresponsetextattributesitem.md#intent)
+* [start](_responses_direct_thread_repository_add_user_response_.directthreadrepositoryadduserresponsetextattributesitem.md#start)
 
 ## Properties
 
-### bold
+###  bold
 
-• **bold**: _number_
+• **bold**: *number*
 
-_Defined in [responses/direct-thread.repository.add-user.response.ts:101](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.repository.add-user.response.ts#L101)_
+*Defined in [responses/direct-thread.repository.add-user.response.ts:101](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-thread.repository.add-user.response.ts#L101)*
 
----
+___
 
-### color
+###  color
 
-• **color**: _string_
+• **color**: *string*
 
-_Defined in [responses/direct-thread.repository.add-user.response.ts:102](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.repository.add-user.response.ts#L102)_
+*Defined in [responses/direct-thread.repository.add-user.response.ts:102](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-thread.repository.add-user.response.ts#L102)*
 
----
+___
 
-### end
+###  end
 
-• **end**: _number_
+• **end**: *number*
 
-_Defined in [responses/direct-thread.repository.add-user.response.ts:100](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.repository.add-user.response.ts#L100)_
+*Defined in [responses/direct-thread.repository.add-user.response.ts:100](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-thread.repository.add-user.response.ts#L100)*
 
----
+___
 
-### intent
+###  intent
 
-• **intent**: _string_
+• **intent**: *string*
 
-_Defined in [responses/direct-thread.repository.add-user.response.ts:103](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.repository.add-user.response.ts#L103)_
+*Defined in [responses/direct-thread.repository.add-user.response.ts:103](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-thread.repository.add-user.response.ts#L103)*
 
----
+___
 
-### start
+###  start
 
-• **start**: _number_
+• **start**: *number*
 
-_Defined in [responses/direct-thread.repository.add-user.response.ts:99](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.repository.add-user.response.ts#L99)_
+*Defined in [responses/direct-thread.repository.add-user.response.ts:99](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-thread.repository.add-user.response.ts#L99)*

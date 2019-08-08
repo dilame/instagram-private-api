@@ -6,18 +6,18 @@
 
 ## Hierarchy
 
-- **MusicTrendingFeedResponseItemsItem**
+* **MusicTrendingFeedResponseItemsItem**
 
 ## Index
 
 ### Properties
 
-- [track](_responses_music_trending_feed_response_.musictrendingfeedresponseitemsitem.md#track)
+* [track](_responses_music_trending_feed_response_.musictrendingfeedresponseitemsitem.md#track)
 
 ## Properties
 
-### track
+###  track
 
-• **track**: _[MusicTrendingFeedResponseTrack](\_responses_music_trending_feed_response_.musictrendingfeedresponsetrack.md)\_
+• **track**: *[MusicTrendingFeedResponseTrack](_responses_music_trending_feed_response_.musictrendingfeedresponsetrack.md)*
 
-_Defined in [responses/music-trending.feed.response.ts:8](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/music-trending.feed.response.ts#L8)_
+*Defined in [responses/music-trending.feed.response.ts:8](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/music-trending.feed.response.ts#L8)*

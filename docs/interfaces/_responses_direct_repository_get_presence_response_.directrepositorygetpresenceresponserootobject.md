@@ -6,34 +6,34 @@
 
 ## Hierarchy
 
-- **DirectRepositoryGetPresenceResponseRootObject**
+* **DirectRepositoryGetPresenceResponseRootObject**
 
 ## Index
 
 ### Properties
 
-- [status](_responses_direct_repository_get_presence_response_.directrepositorygetpresenceresponserootobject.md#status)
-- [user_presence](_responses_direct_repository_get_presence_response_.directrepositorygetpresenceresponserootobject.md#user_presence)
+* [status](_responses_direct_repository_get_presence_response_.directrepositorygetpresenceresponserootobject.md#status)
+* [user_presence](_responses_direct_repository_get_presence_response_.directrepositorygetpresenceresponserootobject.md#user_presence)
 
 ## Properties
 
-### status
+###  status
 
-• **status**: _string_
+• **status**: *string*
 
-_Defined in [responses/direct.repository.get-presence.response.ts:11](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct.repository.get-presence.response.ts#L11)_
+*Defined in [responses/direct.repository.get-presence.response.ts:11](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct.repository.get-presence.response.ts#L11)*
 
----
+___
 
-### user_presence
+###  user_presence
 
-• **user_presence**: _any_
+• **user_presence**: *any*
 
-_Defined in [responses/direct.repository.get-presence.response.ts:10](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct.repository.get-presence.response.ts#L10)_
+*Defined in [responses/direct.repository.get-presence.response.ts:10](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct.repository.get-presence.response.ts#L10)*
 
 user_presence: {
-user_id: {
-is_active: boolean,
-last_activity_at_ms,
-},...
+  user_id: {
+    is_active: boolean,
+    last_activity_at_ms,
+  },...
 }

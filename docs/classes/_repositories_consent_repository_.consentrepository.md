@@ -6,102 +6,102 @@
 
 ## Hierarchy
 
-- [Repository](_core_repository_.repository.md)
+* [Repository](_core_repository_.repository.md)
 
-  - **ConsentRepository**
+  * **ConsentRepository**
 
 ## Index
 
 ### Constructors
 
-- [constructor](_repositories_consent_repository_.consentrepository.md#constructor)
+* [constructor](_repositories_consent_repository_.consentrepository.md#constructor)
 
 ### Methods
 
-- [auto](_repositories_consent_repository_.consentrepository.md#auto)
-- [existingUserFlow](_repositories_consent_repository_.consentrepository.md#existinguserflow)
-- [existingUserFlowDob](_repositories_consent_repository_.consentrepository.md#existinguserflowdob)
-- [existingUserFlowIntro](_repositories_consent_repository_.consentrepository.md#existinguserflowintro)
-- [existingUserFlowTosAndTwoAgeButton](_repositories_consent_repository_.consentrepository.md#existinguserflowtosandtwoagebutton)
+* [auto](_repositories_consent_repository_.consentrepository.md#auto)
+* [existingUserFlow](_repositories_consent_repository_.consentrepository.md#existinguserflow)
+* [existingUserFlowDob](_repositories_consent_repository_.consentrepository.md#existinguserflowdob)
+* [existingUserFlowIntro](_repositories_consent_repository_.consentrepository.md#existinguserflowintro)
+* [existingUserFlowTosAndTwoAgeButton](_repositories_consent_repository_.consentrepository.md#existinguserflowtosandtwoagebutton)
 
 ## Constructors
 
-### constructor
+###  constructor
 
-\+ **new ConsentRepository**(`client`: [IgApiClient](_core_client_.igapiclient.md)): _[ConsentRepository](\_repositories_consent_repository_.consentrepository.md)\_
+\+ **new ConsentRepository**(`client`: [IgApiClient](_core_client_.igapiclient.md)): *[ConsentRepository](_repositories_consent_repository_.consentrepository.md)*
 
-_Inherited from [Repository](\_core_repository_.repository.md).[constructor](_core_repository_.repository.md#constructor)\_
+*Inherited from [Repository](_core_repository_.repository.md).[constructor](_core_repository_.repository.md#constructor)*
 
-_Defined in [core/repository.ts:6](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/repository.ts#L6)_
+*Defined in [core/repository.ts:6](https://github.com/dilame/instagram-private-api/blob/01eb399/src/core/repository.ts#L6)*
 
 **Parameters:**
 
-| Name     | Type                                        |
-| -------- | ------------------------------------------- |
-| `client` | [IgApiClient](_core_client_.igapiclient.md) |
+Name | Type |
+------ | ------ |
+`client` | [IgApiClient](_core_client_.igapiclient.md) |
 
-**Returns:** _[ConsentRepository](\_repositories_consent_repository_.consentrepository.md)\_
+**Returns:** *[ConsentRepository](_repositories_consent_repository_.consentrepository.md)*
 
 ## Methods
 
-### auto
+###  auto
 
-▸ **auto**(): _`Promise<any>`_
+▸ **auto**(): *`Promise<any>`*
 
-_Defined in [repositories/consent.repository.ts:6](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/repositories/consent.repository.ts#L6)_
+*Defined in [repositories/consent.repository.ts:6](https://github.com/dilame/instagram-private-api/blob/01eb399/src/repositories/consent.repository.ts#L6)*
 
-**Returns:** _`Promise<any>`_
+**Returns:** *`Promise<any>`*
 
----
+___
 
-### existingUserFlow
+###  existingUserFlow
 
-▸ **existingUserFlow**(`data?`: object): _`Promise<any>`_
+▸ **existingUserFlow**(`data?`: object): *`Promise<any>`*
 
-_Defined in [repositories/consent.repository.ts:41](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/repositories/consent.repository.ts#L41)_
-
-**Parameters:**
-
-| Name    | Type   |
-| ------- | ------ |
-| `data?` | object |
-
-**Returns:** _`Promise<any>`_
-
----
-
-### existingUserFlowDob
-
-▸ **existingUserFlowDob**(`year`: string | number, `month`: string | number, `day`: string | number): _`Promise<any>`_
-
-_Defined in [repositories/consent.repository.ts:25](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/repositories/consent.repository.ts#L25)_
+*Defined in [repositories/consent.repository.ts:41](https://github.com/dilame/instagram-private-api/blob/01eb399/src/repositories/consent.repository.ts#L41)*
 
 **Parameters:**
 
-| Name    | Type             |
-| ------- | ---------------- |
-| `year`  | string \| number |
-| `month` | string \| number |
-| `day`   | string \| number |
+Name | Type |
+------ | ------ |
+`data?` | object |
 
-**Returns:** _`Promise<any>`_
+**Returns:** *`Promise<any>`*
 
----
+___
 
-### existingUserFlowIntro
+###  existingUserFlowDob
 
-▸ **existingUserFlowIntro**(): _`Promise<any>`_
+▸ **existingUserFlowDob**(`year`: string | number, `month`: string | number, `day`: string | number): *`Promise<any>`*
 
-_Defined in [repositories/consent.repository.ts:18](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/repositories/consent.repository.ts#L18)_
+*Defined in [repositories/consent.repository.ts:25](https://github.com/dilame/instagram-private-api/blob/01eb399/src/repositories/consent.repository.ts#L25)*
 
-**Returns:** _`Promise<any>`_
+**Parameters:**
 
----
+Name | Type |
+------ | ------ |
+`year` | string \| number |
+`month` | string \| number |
+`day` | string \| number |
 
-### existingUserFlowTosAndTwoAgeButton
+**Returns:** *`Promise<any>`*
 
-▸ **existingUserFlowTosAndTwoAgeButton**(): _`Promise<any>`_
+___
 
-_Defined in [repositories/consent.repository.ts:34](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/repositories/consent.repository.ts#L34)_
+###  existingUserFlowIntro
 
-**Returns:** _`Promise<any>`_
+▸ **existingUserFlowIntro**(): *`Promise<any>`*
+
+*Defined in [repositories/consent.repository.ts:18](https://github.com/dilame/instagram-private-api/blob/01eb399/src/repositories/consent.repository.ts#L18)*
+
+**Returns:** *`Promise<any>`*
+
+___
+
+###  existingUserFlowTosAndTwoAgeButton
+
+▸ **existingUserFlowTosAndTwoAgeButton**(): *`Promise<any>`*
+
+*Defined in [repositories/consent.repository.ts:34](https://github.com/dilame/instagram-private-api/blob/01eb399/src/repositories/consent.repository.ts#L34)*
+
+**Returns:** *`Promise<any>`*

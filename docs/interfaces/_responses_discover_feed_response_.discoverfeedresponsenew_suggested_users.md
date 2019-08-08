@@ -6,18 +6,18 @@
 
 ## Hierarchy
 
-- **DiscoverFeedResponseNew_suggested_users**
+* **DiscoverFeedResponseNew_suggested_users**
 
 ## Index
 
 ### Properties
 
-- [suggestions](_responses_discover_feed_response_.discoverfeedresponsenew_suggested_users.md#suggestions)
+* [suggestions](_responses_discover_feed_response_.discoverfeedresponsenew_suggested_users.md#suggestions)
 
 ## Properties
 
-### suggestions
+###  suggestions
 
-• **suggestions**: _any[]_
+• **suggestions**: *any[]*
 
-_Defined in [responses/discover.feed.response.ts:40](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/discover.feed.response.ts#L40)_
+*Defined in [responses/discover.feed.response.ts:40](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/discover.feed.response.ts#L40)*

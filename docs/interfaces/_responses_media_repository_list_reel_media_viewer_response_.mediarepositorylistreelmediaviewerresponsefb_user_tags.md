@@ -6,18 +6,18 @@
 
 ## Hierarchy
 
-- **MediaRepositoryListReelMediaViewerResponseFb_user_tags**
+* **MediaRepositoryListReelMediaViewerResponseFb_user_tags**
 
 ## Index
 
 ### Properties
 
-- [in](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponsefb_user_tags.md#in)
+* [in](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponsefb_user_tags.md#in)
 
 ## Properties
 
-### in
+###  in
 
-• **in**: _any[]_
+• **in**: *any[]*
 
-_Defined in [responses/media.repository.list-reel-media-viewer.response.ts:92](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/media.repository.list-reel-media-viewer.response.ts#L92)_
+*Defined in [responses/media.repository.list-reel-media-viewer.response.ts:92](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/media.repository.list-reel-media-viewer.response.ts#L92)*

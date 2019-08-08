@@ -6,27 +6,27 @@
 
 ## Hierarchy
 
-- **DirectThreadRepositoryApproveParticipantRequestResponseRootObject**
+* **DirectThreadRepositoryApproveParticipantRequestResponseRootObject**
 
 ## Index
 
 ### Properties
 
-- [status](_responses_direct_thread_repository_approve_participant_request_response_.directthreadrepositoryapproveparticipantrequestresponserootobject.md#status)
-- [thread](_responses_direct_thread_repository_approve_participant_request_response_.directthreadrepositoryapproveparticipantrequestresponserootobject.md#thread)
+* [status](_responses_direct_thread_repository_approve_participant_request_response_.directthreadrepositoryapproveparticipantrequestresponserootobject.md#status)
+* [thread](_responses_direct_thread_repository_approve_participant_request_response_.directthreadrepositoryapproveparticipantrequestresponserootobject.md#thread)
 
 ## Properties
 
-### status
+###  status
 
-• **status**: _string_
+• **status**: *string*
 
-_Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:3](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.repository.approve-participant-request.response.ts#L3)_
+*Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:3](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-thread.repository.approve-participant-request.response.ts#L3)*
 
----
+___
 
-### thread
+###  thread
 
-• **thread**: _[DirectThreadRepositoryApproveParticipantRequestResponseThread](\_responses_direct_thread_repository_approve_participant_request_response_.directthreadrepositoryapproveparticipantrequestresponsethread.md)\_
+• **thread**: *[DirectThreadRepositoryApproveParticipantRequestResponseThread](_responses_direct_thread_repository_approve_participant_request_response_.directthreadrepositoryapproveparticipantrequestresponsethread.md)*
 
-_Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:2](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.repository.approve-participant-request.response.ts#L2)_
+*Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:2](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-thread.repository.approve-participant-request.response.ts#L2)*

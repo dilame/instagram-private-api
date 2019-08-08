@@ -6,27 +6,27 @@
 
 ## Hierarchy
 
-- **DirectThreadRepositoryAddUserResponseBoldItem**
+* **DirectThreadRepositoryAddUserResponseBoldItem**
 
 ## Index
 
 ### Properties
 
-- [end](_responses_direct_thread_repository_add_user_response_.directthreadrepositoryadduserresponsebolditem.md#end)
-- [start](_responses_direct_thread_repository_add_user_response_.directthreadrepositoryadduserresponsebolditem.md#start)
+* [end](_responses_direct_thread_repository_add_user_response_.directthreadrepositoryadduserresponsebolditem.md#end)
+* [start](_responses_direct_thread_repository_add_user_response_.directthreadrepositoryadduserresponsebolditem.md#start)
 
 ## Properties
 
-### end
+###  end
 
-• **end**: _number_
+• **end**: *number*
 
-_Defined in [responses/direct-thread.repository.add-user.response.ts:95](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.repository.add-user.response.ts#L95)_
+*Defined in [responses/direct-thread.repository.add-user.response.ts:95](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-thread.repository.add-user.response.ts#L95)*
 
----
+___
 
-### start
+###  start
 
-• **start**: _number_
+• **start**: *number*
 
-_Defined in [responses/direct-thread.repository.add-user.response.ts:94](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.repository.add-user.response.ts#L94)_
+*Defined in [responses/direct-thread.repository.add-user.response.ts:94](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-thread.repository.add-user.response.ts#L94)*

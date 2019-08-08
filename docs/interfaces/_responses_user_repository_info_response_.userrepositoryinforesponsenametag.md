@@ -6,45 +6,45 @@
 
 ## Hierarchy
 
-- **UserRepositoryInfoResponseNametag**
+* **UserRepositoryInfoResponseNametag**
 
 ## Index
 
 ### Properties
 
-- [emoji](_responses_user_repository_info_response_.userrepositoryinforesponsenametag.md#emoji)
-- [gradient](_responses_user_repository_info_response_.userrepositoryinforesponsenametag.md#gradient)
-- [mode](_responses_user_repository_info_response_.userrepositoryinforesponsenametag.md#mode)
-- [selfie_sticker](_responses_user_repository_info_response_.userrepositoryinforesponsenametag.md#selfie_sticker)
+* [emoji](_responses_user_repository_info_response_.userrepositoryinforesponsenametag.md#emoji)
+* [gradient](_responses_user_repository_info_response_.userrepositoryinforesponsenametag.md#gradient)
+* [mode](_responses_user_repository_info_response_.userrepositoryinforesponsenametag.md#mode)
+* [selfie_sticker](_responses_user_repository_info_response_.userrepositoryinforesponsenametag.md#selfie_sticker)
 
 ## Properties
 
-### emoji
+###  emoji
 
-• **emoji**: _string_
+• **emoji**: *string*
 
-_Defined in [responses/user.repository.info.response.ts:90](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/user.repository.info.response.ts#L90)_
+*Defined in [responses/user.repository.info.response.ts:90](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/user.repository.info.response.ts#L90)*
 
----
+___
 
-### gradient
+###  gradient
 
-• **gradient**: _string_
+• **gradient**: *string*
 
-_Defined in [responses/user.repository.info.response.ts:89](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/user.repository.info.response.ts#L89)_
+*Defined in [responses/user.repository.info.response.ts:89](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/user.repository.info.response.ts#L89)*
 
----
+___
 
-### mode
+###  mode
 
-• **mode**: _number_
+• **mode**: *number*
 
-_Defined in [responses/user.repository.info.response.ts:88](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/user.repository.info.response.ts#L88)_
+*Defined in [responses/user.repository.info.response.ts:88](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/user.repository.info.response.ts#L88)*
 
----
+___
 
-### selfie_sticker
+###  selfie_sticker
 
-• **selfie_sticker**: _string_
+• **selfie_sticker**: *string*
 
-_Defined in [responses/user.repository.info.response.ts:91](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/user.repository.info.response.ts#L91)_
+*Defined in [responses/user.repository.info.response.ts:91](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/user.repository.info.response.ts#L91)*

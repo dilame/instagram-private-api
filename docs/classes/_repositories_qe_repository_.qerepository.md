@@ -6,72 +6,72 @@
 
 ## Hierarchy
 
-- [Repository](_core_repository_.repository.md)
+* [Repository](_core_repository_.repository.md)
 
-  - **QeRepository**
+  * **QeRepository**
 
 ## Index
 
 ### Constructors
 
-- [constructor](_repositories_qe_repository_.qerepository.md#constructor)
+* [constructor](_repositories_qe_repository_.qerepository.md#constructor)
 
 ### Methods
 
-- [sync](_repositories_qe_repository_.qerepository.md#sync)
-- [syncExperiments](_repositories_qe_repository_.qerepository.md#syncexperiments)
-- [syncLoginExperiments](_repositories_qe_repository_.qerepository.md#syncloginexperiments)
+* [sync](_repositories_qe_repository_.qerepository.md#sync)
+* [syncExperiments](_repositories_qe_repository_.qerepository.md#syncexperiments)
+* [syncLoginExperiments](_repositories_qe_repository_.qerepository.md#syncloginexperiments)
 
 ## Constructors
 
-### constructor
+###  constructor
 
-\+ **new QeRepository**(`client`: [IgApiClient](_core_client_.igapiclient.md)): _[QeRepository](\_repositories_qe_repository_.qerepository.md)\_
+\+ **new QeRepository**(`client`: [IgApiClient](_core_client_.igapiclient.md)): *[QeRepository](_repositories_qe_repository_.qerepository.md)*
 
-_Inherited from [Repository](\_core_repository_.repository.md).[constructor](_core_repository_.repository.md#constructor)\_
+*Inherited from [Repository](_core_repository_.repository.md).[constructor](_core_repository_.repository.md#constructor)*
 
-_Defined in [core/repository.ts:6](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/repository.ts#L6)_
+*Defined in [core/repository.ts:6](https://github.com/dilame/instagram-private-api/blob/01eb399/src/core/repository.ts#L6)*
 
 **Parameters:**
 
-| Name     | Type                                        |
-| -------- | ------------------------------------------- |
-| `client` | [IgApiClient](_core_client_.igapiclient.md) |
+Name | Type |
+------ | ------ |
+`client` | [IgApiClient](_core_client_.igapiclient.md) |
 
-**Returns:** _[QeRepository](\_repositories_qe_repository_.qerepository.md)\_
+**Returns:** *[QeRepository](_repositories_qe_repository_.qerepository.md)*
 
 ## Methods
 
-### sync
+###  sync
 
-▸ **sync**(`experiments`: any): _`Promise<any>`_
+▸ **sync**(`experiments`: any): *`Promise<any>`*
 
-_Defined in [repositories/qe.repository.ts:10](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/repositories/qe.repository.ts#L10)_
+*Defined in [repositories/qe.repository.ts:10](https://github.com/dilame/instagram-private-api/blob/01eb399/src/repositories/qe.repository.ts#L10)*
 
 **Parameters:**
 
-| Name          | Type |
-| ------------- | ---- |
-| `experiments` | any  |
+Name | Type |
+------ | ------ |
+`experiments` | any |
 
-**Returns:** _`Promise<any>`_
+**Returns:** *`Promise<any>`*
 
----
+___
 
-### syncExperiments
+###  syncExperiments
 
-▸ **syncExperiments**(): _`Promise<any>`_
+▸ **syncExperiments**(): *`Promise<any>`*
 
-_Defined in [repositories/qe.repository.ts:4](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/repositories/qe.repository.ts#L4)_
+*Defined in [repositories/qe.repository.ts:4](https://github.com/dilame/instagram-private-api/blob/01eb399/src/repositories/qe.repository.ts#L4)*
 
-**Returns:** _`Promise<any>`_
+**Returns:** *`Promise<any>`*
 
----
+___
 
-### syncLoginExperiments
+###  syncLoginExperiments
 
-▸ **syncLoginExperiments**(): _`Promise<any>`_
+▸ **syncLoginExperiments**(): *`Promise<any>`*
 
-_Defined in [repositories/qe.repository.ts:7](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/repositories/qe.repository.ts#L7)_
+*Defined in [repositories/qe.repository.ts:7](https://github.com/dilame/instagram-private-api/blob/01eb399/src/repositories/qe.repository.ts#L7)*
 
-**Returns:** _`Promise<any>`_
+**Returns:** *`Promise<any>`*

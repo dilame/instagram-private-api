@@ -6,66 +6,66 @@
 
 ## Hierarchy
 
-- [Repository](_core_repository_.repository.md)
+* [Repository](_core_repository_.repository.md)
 
-  - **DiscoverRepository**
+  * **DiscoverRepository**
 
 ## Index
 
 ### Constructors
 
-- [constructor](_repositories_discover_repository_.discoverrepository.md#constructor)
+* [constructor](_repositories_discover_repository_.discoverrepository.md#constructor)
 
 ### Methods
 
-- [markSuSeen](_repositories_discover_repository_.discoverrepository.md#marksuseen)
-- [profileSuBadge](_repositories_discover_repository_.discoverrepository.md#profilesubadge)
-- [topicalExplore](_repositories_discover_repository_.discoverrepository.md#topicalexplore)
+* [markSuSeen](_repositories_discover_repository_.discoverrepository.md#marksuseen)
+* [profileSuBadge](_repositories_discover_repository_.discoverrepository.md#profilesubadge)
+* [topicalExplore](_repositories_discover_repository_.discoverrepository.md#topicalexplore)
 
 ## Constructors
 
-### constructor
+###  constructor
 
-\+ **new DiscoverRepository**(`client`: [IgApiClient](_core_client_.igapiclient.md)): _[DiscoverRepository](\_repositories_discover_repository_.discoverrepository.md)\_
+\+ **new DiscoverRepository**(`client`: [IgApiClient](_core_client_.igapiclient.md)): *[DiscoverRepository](_repositories_discover_repository_.discoverrepository.md)*
 
-_Inherited from [Repository](\_core_repository_.repository.md).[constructor](_core_repository_.repository.md#constructor)\_
+*Inherited from [Repository](_core_repository_.repository.md).[constructor](_core_repository_.repository.md#constructor)*
 
-_Defined in [core/repository.ts:6](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/repository.ts#L6)_
+*Defined in [core/repository.ts:6](https://github.com/dilame/instagram-private-api/blob/01eb399/src/core/repository.ts#L6)*
 
 **Parameters:**
 
-| Name     | Type                                        |
-| -------- | ------------------------------------------- |
-| `client` | [IgApiClient](_core_client_.igapiclient.md) |
+Name | Type |
+------ | ------ |
+`client` | [IgApiClient](_core_client_.igapiclient.md) |
 
-**Returns:** _[DiscoverRepository](\_repositories_discover_repository_.discoverrepository.md)\_
+**Returns:** *[DiscoverRepository](_repositories_discover_repository_.discoverrepository.md)*
 
 ## Methods
 
-### markSuSeen
+###  markSuSeen
 
-▸ **markSuSeen**(): _`Promise<any>`_
+▸ **markSuSeen**(): *`Promise<any>`*
 
-_Defined in [repositories/discover.repository.ts:19](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/repositories/discover.repository.ts#L19)_
+*Defined in [repositories/discover.repository.ts:19](https://github.com/dilame/instagram-private-api/blob/01eb399/src/repositories/discover.repository.ts#L19)*
 
-**Returns:** _`Promise<any>`_
+**Returns:** *`Promise<any>`*
 
----
+___
 
-### profileSuBadge
+###  profileSuBadge
 
-▸ **profileSuBadge**(): _`Promise<any>`_
+▸ **profileSuBadge**(): *`Promise<any>`*
 
-_Defined in [repositories/discover.repository.ts:31](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/repositories/discover.repository.ts#L31)_
+*Defined in [repositories/discover.repository.ts:31](https://github.com/dilame/instagram-private-api/blob/01eb399/src/repositories/discover.repository.ts#L31)*
 
-**Returns:** _`Promise<any>`_
+**Returns:** *`Promise<any>`*
 
----
+___
 
-### topicalExplore
+###  topicalExplore
 
-▸ **topicalExplore**(): _`Promise<any>`_
+▸ **topicalExplore**(): *`Promise<any>`*
 
-_Defined in [repositories/discover.repository.ts:4](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/repositories/discover.repository.ts#L4)_
+*Defined in [repositories/discover.repository.ts:4](https://github.com/dilame/instagram-private-api/blob/01eb399/src/repositories/discover.repository.ts#L4)*
 
-**Returns:** _`Promise<any>`_
+**Returns:** *`Promise<any>`*

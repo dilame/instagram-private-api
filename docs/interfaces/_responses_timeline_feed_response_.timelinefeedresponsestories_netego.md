@@ -6,36 +6,36 @@
 
 ## Hierarchy
 
-- **TimelineFeedResponseStories_netego**
+* **TimelineFeedResponseStories_netego**
 
 ## Index
 
 ### Properties
 
-- [hide_unit_if_seen](_responses_timeline_feed_response_.timelinefeedresponsestories_netego.md#hide_unit_if_seen)
-- [id](_responses_timeline_feed_response_.timelinefeedresponsestories_netego.md#id)
-- [tracking_token](_responses_timeline_feed_response_.timelinefeedresponsestories_netego.md#tracking_token)
+* [hide_unit_if_seen](_responses_timeline_feed_response_.timelinefeedresponsestories_netego.md#hide_unit_if_seen)
+* [id](_responses_timeline_feed_response_.timelinefeedresponsestories_netego.md#id)
+* [tracking_token](_responses_timeline_feed_response_.timelinefeedresponsestories_netego.md#tracking_token)
 
 ## Properties
 
-### hide_unit_if_seen
+###  hide_unit_if_seen
 
-• **hide_unit_if_seen**: _string_
+• **hide_unit_if_seen**: *string*
 
-_Defined in [responses/timeline.feed.response.ts:279](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/timeline.feed.response.ts#L279)_
+*Defined in [responses/timeline.feed.response.ts:279](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/timeline.feed.response.ts#L279)*
 
----
+___
 
-### id
+###  id
 
-• **id**: _number_
+• **id**: *number*
 
-_Defined in [responses/timeline.feed.response.ts:280](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/timeline.feed.response.ts#L280)_
+*Defined in [responses/timeline.feed.response.ts:280](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/timeline.feed.response.ts#L280)*
 
----
+___
 
-### tracking_token
+###  tracking_token
 
-• **tracking_token**: _string_
+• **tracking_token**: *string*
 
-_Defined in [responses/timeline.feed.response.ts:278](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/timeline.feed.response.ts#L278)_
+*Defined in [responses/timeline.feed.response.ts:278](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/timeline.feed.response.ts#L278)*

@@ -6,36 +6,36 @@
 
 ## Hierarchy
 
-- **ReelsTrayFeedResponseTalliesItem**
+* **ReelsTrayFeedResponseTalliesItem**
 
 ## Index
 
 ### Properties
 
-- [count](_responses_reels_tray_feed_response_.reelstrayfeedresponsetalliesitem.md#count)
-- [font_size](_responses_reels_tray_feed_response_.reelstrayfeedresponsetalliesitem.md#optional-font_size)
-- [text](_responses_reels_tray_feed_response_.reelstrayfeedresponsetalliesitem.md#text)
+* [count](_responses_reels_tray_feed_response_.reelstrayfeedresponsetalliesitem.md#count)
+* [font_size](_responses_reels_tray_feed_response_.reelstrayfeedresponsetalliesitem.md#optional-font_size)
+* [text](_responses_reels_tray_feed_response_.reelstrayfeedresponsetalliesitem.md#text)
 
 ## Properties
 
-### count
+###  count
 
-• **count**: _number_
+• **count**: *number*
 
-_Defined in [responses/reels-tray.feed.response.ts:131](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/reels-tray.feed.response.ts#L131)_
+*Defined in [responses/reels-tray.feed.response.ts:131](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-tray.feed.response.ts#L131)*
 
----
+___
 
 ### `Optional` font_size
 
-• **font_size**? : _number_
+• **font_size**? : *number*
 
-_Defined in [responses/reels-tray.feed.response.ts:132](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/reels-tray.feed.response.ts#L132)_
+*Defined in [responses/reels-tray.feed.response.ts:132](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-tray.feed.response.ts#L132)*
 
----
+___
 
-### text
+###  text
 
-• **text**: _string_
+• **text**: *string*
 
-_Defined in [responses/reels-tray.feed.response.ts:130](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/reels-tray.feed.response.ts#L130)_
+*Defined in [responses/reels-tray.feed.response.ts:130](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-tray.feed.response.ts#L130)*

@@ -6,27 +6,27 @@
 
 ## Hierarchy
 
-- **TimelineFeedResponseAdMetadataItem**
+* **TimelineFeedResponseAdMetadataItem**
 
 ## Index
 
 ### Properties
 
-- [type](_responses_timeline_feed_response_.timelinefeedresponseadmetadataitem.md#type)
-- [value](_responses_timeline_feed_response_.timelinefeedresponseadmetadataitem.md#value)
+* [type](_responses_timeline_feed_response_.timelinefeedresponseadmetadataitem.md#type)
+* [value](_responses_timeline_feed_response_.timelinefeedresponseadmetadataitem.md#value)
 
 ## Properties
 
-### type
+###  type
 
-• **type**: _number_
+• **type**: *number*
 
-_Defined in [responses/timeline.feed.response.ts:177](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/timeline.feed.response.ts#L177)_
+*Defined in [responses/timeline.feed.response.ts:177](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/timeline.feed.response.ts#L177)*
 
----
+___
 
-### value
+###  value
 
-• **value**: _string_
+• **value**: *string*
 
-_Defined in [responses/timeline.feed.response.ts:176](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/timeline.feed.response.ts#L176)_
+*Defined in [responses/timeline.feed.response.ts:176](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/timeline.feed.response.ts#L176)*

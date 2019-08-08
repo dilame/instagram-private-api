@@ -6,18 +6,18 @@
 
 ## Hierarchy
 
-- **TimelineFeedResponseClientGapEnforcerMatrixItem**
+* **TimelineFeedResponseClientGapEnforcerMatrixItem**
 
 ## Index
 
 ### Properties
 
-- [list](_responses_timeline_feed_response_.timelinefeedresponseclientgapenforcermatrixitem.md#list)
+* [list](_responses_timeline_feed_response_.timelinefeedresponseclientgapenforcermatrixitem.md#list)
 
 ## Properties
 
-### list
+###  list
 
-• **list**: _number[]_
+• **list**: *number[]*
 
-_Defined in [responses/timeline.feed.response.ts:287](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/timeline.feed.response.ts#L287)_
+*Defined in [responses/timeline.feed.response.ts:287](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/timeline.feed.response.ts#L287)*

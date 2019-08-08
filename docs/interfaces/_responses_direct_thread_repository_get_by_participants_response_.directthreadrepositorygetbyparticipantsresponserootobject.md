@@ -6,27 +6,27 @@
 
 ## Hierarchy
 
-- **DirectThreadRepositoryGetByParticipantsResponseRootObject**
+* **DirectThreadRepositoryGetByParticipantsResponseRootObject**
 
 ## Index
 
 ### Properties
 
-- [status](_responses_direct_thread_repository_get_by_participants_response_.directthreadrepositorygetbyparticipantsresponserootobject.md#status)
-- [thread](_responses_direct_thread_repository_get_by_participants_response_.directthreadrepositorygetbyparticipantsresponserootobject.md#thread)
+* [status](_responses_direct_thread_repository_get_by_participants_response_.directthreadrepositorygetbyparticipantsresponserootobject.md#status)
+* [thread](_responses_direct_thread_repository_get_by_participants_response_.directthreadrepositorygetbyparticipantsresponserootobject.md#thread)
 
 ## Properties
 
-### status
+###  status
 
-• **status**: _string_
+• **status**: *string*
 
-_Defined in [responses/direct-thread.repository.get-by-participants.response.ts:3](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.repository.get-by-participants.response.ts#L3)_
+*Defined in [responses/direct-thread.repository.get-by-participants.response.ts:3](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-thread.repository.get-by-participants.response.ts#L3)*
 
----
+___
 
-### thread
+###  thread
 
-• **thread**: _[DirectThreadRepositoryGetByParticipantsResponseThread](\_responses_direct_thread_repository_get_by_participants_response_.directthreadrepositorygetbyparticipantsresponsethread.md)\_
+• **thread**: *[DirectThreadRepositoryGetByParticipantsResponseThread](_responses_direct_thread_repository_get_by_participants_response_.directthreadrepositorygetbyparticipantsresponsethread.md)*
 
-_Defined in [responses/direct-thread.repository.get-by-participants.response.ts:2](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.repository.get-by-participants.response.ts#L2)_
+*Defined in [responses/direct-thread.repository.get-by-participants.response.ts:2](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-thread.repository.get-by-participants.response.ts#L2)*

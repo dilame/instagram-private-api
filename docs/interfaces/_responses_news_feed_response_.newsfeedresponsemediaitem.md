@@ -6,36 +6,36 @@
 
 ## Hierarchy
 
-- **NewsFeedResponseMediaItem**
+* **NewsFeedResponseMediaItem**
 
 ## Index
 
 ### Properties
 
-- [comment_threading_enabled](_responses_news_feed_response_.newsfeedresponsemediaitem.md#optional-comment_threading_enabled)
-- [id](_responses_news_feed_response_.newsfeedresponsemediaitem.md#id)
-- [image](_responses_news_feed_response_.newsfeedresponsemediaitem.md#image)
+* [comment_threading_enabled](_responses_news_feed_response_.newsfeedresponsemediaitem.md#optional-comment_threading_enabled)
+* [id](_responses_news_feed_response_.newsfeedresponsemediaitem.md#id)
+* [image](_responses_news_feed_response_.newsfeedresponsemediaitem.md#image)
 
 ## Properties
 
 ### `Optional` comment_threading_enabled
 
-• **comment_threading_enabled**? : _boolean_
+• **comment_threading_enabled**? : *boolean*
 
-_Defined in [responses/news.feed.response.ts:39](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/news.feed.response.ts#L39)_
+*Defined in [responses/news.feed.response.ts:39](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/news.feed.response.ts#L39)*
 
----
+___
 
-### id
+###  id
 
-• **id**: _string_
+• **id**: *string*
 
-_Defined in [responses/news.feed.response.ts:37](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/news.feed.response.ts#L37)_
+*Defined in [responses/news.feed.response.ts:37](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/news.feed.response.ts#L37)*
 
----
+___
 
-### image
+###  image
 
-• **image**: _string_
+• **image**: *string*
 
-_Defined in [responses/news.feed.response.ts:38](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/news.feed.response.ts#L38)_
+*Defined in [responses/news.feed.response.ts:38](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/news.feed.response.ts#L38)*

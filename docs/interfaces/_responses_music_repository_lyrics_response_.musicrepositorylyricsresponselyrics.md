@@ -6,18 +6,18 @@
 
 ## Hierarchy
 
-- **MusicRepositoryLyricsResponseLyrics**
+* **MusicRepositoryLyricsResponseLyrics**
 
 ## Index
 
 ### Properties
 
-- [phrases](_responses_music_repository_lyrics_response_.musicrepositorylyricsresponselyrics.md#phrases)
+* [phrases](_responses_music_repository_lyrics_response_.musicrepositorylyricsresponselyrics.md#phrases)
 
 ## Properties
 
-### phrases
+###  phrases
 
-• **phrases**: _[MusicRepositoryLyricsResponsePhrasesItem](\_responses_music_repository_lyrics_response_.musicrepositorylyricsresponsephrasesitem.md)[]\_
+• **phrases**: *[MusicRepositoryLyricsResponsePhrasesItem](_responses_music_repository_lyrics_response_.musicrepositorylyricsresponsephrasesitem.md)[]*
 
-_Defined in [responses/music.repository.lyrics.response.ts:6](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/music.repository.lyrics.response.ts#L6)_
+*Defined in [responses/music.repository.lyrics.response.ts:6](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/music.repository.lyrics.response.ts#L6)*

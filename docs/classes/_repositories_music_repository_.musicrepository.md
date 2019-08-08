@@ -6,84 +6,84 @@
 
 ## Hierarchy
 
-- [Repository](_core_repository_.repository.md)
+* [Repository](_core_repository_.repository.md)
 
-  - **MusicRepository**
+  * **MusicRepository**
 
 ## Index
 
 ### Constructors
 
-- [constructor](_repositories_music_repository_.musicrepository.md#constructor)
+* [constructor](_repositories_music_repository_.musicrepository.md#constructor)
 
 ### Methods
 
-- [genres](_repositories_music_repository_.musicrepository.md#genres)
-- [lyrics](_repositories_music_repository_.musicrepository.md#lyrics)
-- [moods](_repositories_music_repository_.musicrepository.md#moods)
+* [genres](_repositories_music_repository_.musicrepository.md#genres)
+* [lyrics](_repositories_music_repository_.musicrepository.md#lyrics)
+* [moods](_repositories_music_repository_.musicrepository.md#moods)
 
 ## Constructors
 
-### constructor
+###  constructor
 
-\+ **new MusicRepository**(`client`: [IgApiClient](_core_client_.igapiclient.md)): _[MusicRepository](\_repositories_music_repository_.musicrepository.md)\_
+\+ **new MusicRepository**(`client`: [IgApiClient](_core_client_.igapiclient.md)): *[MusicRepository](_repositories_music_repository_.musicrepository.md)*
 
-_Inherited from [Repository](\_core_repository_.repository.md).[constructor](_core_repository_.repository.md#constructor)\_
+*Inherited from [Repository](_core_repository_.repository.md).[constructor](_core_repository_.repository.md#constructor)*
 
-_Defined in [core/repository.ts:6](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/repository.ts#L6)_
+*Defined in [core/repository.ts:6](https://github.com/dilame/instagram-private-api/blob/01eb399/src/core/repository.ts#L6)*
 
 **Parameters:**
 
-| Name     | Type                                        |
-| -------- | ------------------------------------------- |
-| `client` | [IgApiClient](_core_client_.igapiclient.md) |
+Name | Type |
+------ | ------ |
+`client` | [IgApiClient](_core_client_.igapiclient.md) |
 
-**Returns:** _[MusicRepository](\_repositories_music_repository_.musicrepository.md)\_
+**Returns:** *[MusicRepository](_repositories_music_repository_.musicrepository.md)*
 
 ## Methods
 
-### genres
+###  genres
 
-▸ **genres**(`product?`: [IgAppModule](../modules/_types_common_types_.md#igappmodule)): _`Promise<MusicRepositoryGenresResponseRootObject>`_
+▸ **genres**(`product?`: [IgAppModule](../modules/_types_common_types_.md#igappmodule)): *`Promise<MusicRepositoryGenresResponseRootObject>`*
 
-_Defined in [repositories/music.repository.ts:22](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/repositories/music.repository.ts#L22)_
-
-**Parameters:**
-
-| Name       | Type                                                          |
-| ---------- | ------------------------------------------------------------- |
-| `product?` | [IgAppModule](../modules/_types_common_types_.md#igappmodule) |
-
-**Returns:** _`Promise<MusicRepositoryGenresResponseRootObject>`_
-
----
-
-### lyrics
-
-▸ **lyrics**(`trackId`: number | string): _`Promise<MusicRepositoryLyricsResponseRootObject>`_
-
-_Defined in [repositories/music.repository.ts:37](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/repositories/music.repository.ts#L37)_
+*Defined in [repositories/music.repository.ts:22](https://github.com/dilame/instagram-private-api/blob/01eb399/src/repositories/music.repository.ts#L22)*
 
 **Parameters:**
 
-| Name      | Type             |
-| --------- | ---------------- |
-| `trackId` | number \| string |
+Name | Type |
+------ | ------ |
+`product?` | [IgAppModule](../modules/_types_common_types_.md#igappmodule) |
 
-**Returns:** _`Promise<MusicRepositoryLyricsResponseRootObject>`_
+**Returns:** *`Promise<MusicRepositoryGenresResponseRootObject>`*
 
----
+___
 
-### moods
+###  lyrics
 
-▸ **moods**(`product?`: [IgAppModule](../modules/_types_common_types_.md#igappmodule)): _`Promise<MusicRepositoryMoodsResponseRootObject>`_
+▸ **lyrics**(`trackId`: number | string): *`Promise<MusicRepositoryLyricsResponseRootObject>`*
 
-_Defined in [repositories/music.repository.ts:7](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/repositories/music.repository.ts#L7)_
+*Defined in [repositories/music.repository.ts:37](https://github.com/dilame/instagram-private-api/blob/01eb399/src/repositories/music.repository.ts#L37)*
 
 **Parameters:**
 
-| Name       | Type                                                          |
-| ---------- | ------------------------------------------------------------- |
-| `product?` | [IgAppModule](../modules/_types_common_types_.md#igappmodule) |
+Name | Type |
+------ | ------ |
+`trackId` | number \| string |
 
-**Returns:** _`Promise<MusicRepositoryMoodsResponseRootObject>`_
+**Returns:** *`Promise<MusicRepositoryLyricsResponseRootObject>`*
+
+___
+
+###  moods
+
+▸ **moods**(`product?`: [IgAppModule](../modules/_types_common_types_.md#igappmodule)): *`Promise<MusicRepositoryMoodsResponseRootObject>`*
+
+*Defined in [repositories/music.repository.ts:7](https://github.com/dilame/instagram-private-api/blob/01eb399/src/repositories/music.repository.ts#L7)*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`product?` | [IgAppModule](../modules/_types_common_types_.md#igappmodule) |
+
+**Returns:** *`Promise<MusicRepositoryMoodsResponseRootObject>`*

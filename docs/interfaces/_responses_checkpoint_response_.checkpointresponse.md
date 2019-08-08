@@ -6,45 +6,45 @@
 
 ## Hierarchy
 
-- **CheckpointResponse**
+* **CheckpointResponse**
 
 ## Index
 
 ### Properties
 
-- [challenge](_responses_checkpoint_response_.checkpointresponse.md#challenge)
-- [error_type](_responses_checkpoint_response_.checkpointresponse.md#error_type)
-- [message](_responses_checkpoint_response_.checkpointresponse.md#message)
-- [status](_responses_checkpoint_response_.checkpointresponse.md#status)
+* [challenge](_responses_checkpoint_response_.checkpointresponse.md#challenge)
+* [error_type](_responses_checkpoint_response_.checkpointresponse.md#error_type)
+* [message](_responses_checkpoint_response_.checkpointresponse.md#message)
+* [status](_responses_checkpoint_response_.checkpointresponse.md#status)
 
 ## Properties
 
-### challenge
+###  challenge
 
-• **challenge**: _[CheckpointResponseChallenge](\_responses_checkpoint_response_.checkpointresponsechallenge.md)\_
+• **challenge**: *[CheckpointResponseChallenge](_responses_checkpoint_response_.checkpointresponsechallenge.md)*
 
-_Defined in [responses/checkpoint.response.ts:3](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/checkpoint.response.ts#L3)_
+*Defined in [responses/checkpoint.response.ts:3](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/checkpoint.response.ts#L3)*
 
----
+___
 
-### error_type
+###  error_type
 
-• **error_type**: _string_
+• **error_type**: *string*
 
-_Defined in [responses/checkpoint.response.ts:5](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/checkpoint.response.ts#L5)_
+*Defined in [responses/checkpoint.response.ts:5](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/checkpoint.response.ts#L5)*
 
----
+___
 
-### message
+###  message
 
-• **message**: _string_
+• **message**: *string*
 
-_Defined in [responses/checkpoint.response.ts:2](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/checkpoint.response.ts#L2)_
+*Defined in [responses/checkpoint.response.ts:2](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/checkpoint.response.ts#L2)*
 
----
+___
 
-### status
+###  status
 
-• **status**: _string_
+• **status**: *string*
 
-_Defined in [responses/checkpoint.response.ts:4](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/checkpoint.response.ts#L4)_
+*Defined in [responses/checkpoint.response.ts:4](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/checkpoint.response.ts#L4)*

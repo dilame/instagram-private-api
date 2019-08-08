@@ -6,4 +6,4 @@
 
 ## Hierarchy
 
-- **FbsearchRepositoryTopsearchFlatResponseHeader_media**
+* **FbsearchRepositoryTopsearchFlatResponseHeader_media**

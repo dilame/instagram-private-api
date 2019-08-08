@@ -6,171 +6,171 @@
 
 ## Hierarchy
 
-- **ReelsTrayFeedResponseTrayItem**
+* **ReelsTrayFeedResponseTrayItem**
 
 ## Index
 
 ### Properties
 
-- [can_reply](_responses_reels_tray_feed_response_.reelstrayfeedresponsetrayitem.md#can_reply)
-- [can_reshare](_responses_reels_tray_feed_response_.reelstrayfeedresponsetrayitem.md#can_reshare)
-- [expiring_at](_responses_reels_tray_feed_response_.reelstrayfeedresponsetrayitem.md#expiring_at)
-- [has_besties_media](_responses_reels_tray_feed_response_.reelstrayfeedresponsetrayitem.md#has_besties_media)
-- [has_pride_media](_responses_reels_tray_feed_response_.reelstrayfeedresponsetrayitem.md#has_pride_media)
-- [hide_from_feed_unit](_responses_reels_tray_feed_response_.reelstrayfeedresponsetrayitem.md#optional-hide_from_feed_unit)
-- [id](_responses_reels_tray_feed_response_.reelstrayfeedresponsetrayitem.md#id)
-- [items](_responses_reels_tray_feed_response_.reelstrayfeedresponsetrayitem.md#optional-items)
-- [latest_reel_media](_responses_reels_tray_feed_response_.reelstrayfeedresponsetrayitem.md#latest_reel_media)
-- [media_count](_responses_reels_tray_feed_response_.reelstrayfeedresponsetrayitem.md#media_count)
-- [media_ids](_responses_reels_tray_feed_response_.reelstrayfeedresponsetrayitem.md#media_ids)
-- [muted](_responses_reels_tray_feed_response_.reelstrayfeedresponsetrayitem.md#muted)
-- [prefetch_count](_responses_reels_tray_feed_response_.reelstrayfeedresponsetrayitem.md#prefetch_count)
-- [ranked_position](_responses_reels_tray_feed_response_.reelstrayfeedresponsetrayitem.md#ranked_position)
-- [reel_type](_responses_reels_tray_feed_response_.reelstrayfeedresponsetrayitem.md#reel_type)
-- [seen](_responses_reels_tray_feed_response_.reelstrayfeedresponsetrayitem.md#seen)
-- [seen_ranked_position](_responses_reels_tray_feed_response_.reelstrayfeedresponsetrayitem.md#seen_ranked_position)
-- [user](_responses_reels_tray_feed_response_.reelstrayfeedresponsetrayitem.md#user)
+* [can_reply](_responses_reels_tray_feed_response_.reelstrayfeedresponsetrayitem.md#can_reply)
+* [can_reshare](_responses_reels_tray_feed_response_.reelstrayfeedresponsetrayitem.md#can_reshare)
+* [expiring_at](_responses_reels_tray_feed_response_.reelstrayfeedresponsetrayitem.md#expiring_at)
+* [has_besties_media](_responses_reels_tray_feed_response_.reelstrayfeedresponsetrayitem.md#has_besties_media)
+* [has_pride_media](_responses_reels_tray_feed_response_.reelstrayfeedresponsetrayitem.md#has_pride_media)
+* [hide_from_feed_unit](_responses_reels_tray_feed_response_.reelstrayfeedresponsetrayitem.md#optional-hide_from_feed_unit)
+* [id](_responses_reels_tray_feed_response_.reelstrayfeedresponsetrayitem.md#id)
+* [items](_responses_reels_tray_feed_response_.reelstrayfeedresponsetrayitem.md#optional-items)
+* [latest_reel_media](_responses_reels_tray_feed_response_.reelstrayfeedresponsetrayitem.md#latest_reel_media)
+* [media_count](_responses_reels_tray_feed_response_.reelstrayfeedresponsetrayitem.md#media_count)
+* [media_ids](_responses_reels_tray_feed_response_.reelstrayfeedresponsetrayitem.md#media_ids)
+* [muted](_responses_reels_tray_feed_response_.reelstrayfeedresponsetrayitem.md#muted)
+* [prefetch_count](_responses_reels_tray_feed_response_.reelstrayfeedresponsetrayitem.md#prefetch_count)
+* [ranked_position](_responses_reels_tray_feed_response_.reelstrayfeedresponsetrayitem.md#ranked_position)
+* [reel_type](_responses_reels_tray_feed_response_.reelstrayfeedresponsetrayitem.md#reel_type)
+* [seen](_responses_reels_tray_feed_response_.reelstrayfeedresponsetrayitem.md#seen)
+* [seen_ranked_position](_responses_reels_tray_feed_response_.reelstrayfeedresponsetrayitem.md#seen_ranked_position)
+* [user](_responses_reels_tray_feed_response_.reelstrayfeedresponsetrayitem.md#user)
 
 ## Properties
 
-### can_reply
+###  can_reply
 
-• **can_reply**: _boolean_
+• **can_reply**: *boolean*
 
-_Defined in [responses/reels-tray.feed.response.ts:16](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/reels-tray.feed.response.ts#L16)_
+*Defined in [responses/reels-tray.feed.response.ts:16](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-tray.feed.response.ts#L16)*
 
----
+___
 
-### can_reshare
+###  can_reshare
 
-• **can_reshare**: _boolean_
+• **can_reshare**: *boolean*
 
-_Defined in [responses/reels-tray.feed.response.ts:17](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/reels-tray.feed.response.ts#L17)_
+*Defined in [responses/reels-tray.feed.response.ts:17](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-tray.feed.response.ts#L17)*
 
----
+___
 
-### expiring_at
+###  expiring_at
 
-• **expiring_at**: _number_
+• **expiring_at**: *number*
 
-_Defined in [responses/reels-tray.feed.response.ts:14](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/reels-tray.feed.response.ts#L14)_
+*Defined in [responses/reels-tray.feed.response.ts:14](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-tray.feed.response.ts#L14)*
 
----
+___
 
-### has_besties_media
+###  has_besties_media
 
-• **has_besties_media**: _boolean_
+• **has_besties_media**: *boolean*
 
-_Defined in [responses/reels-tray.feed.response.ts:24](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/reels-tray.feed.response.ts#L24)_
+*Defined in [responses/reels-tray.feed.response.ts:24](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-tray.feed.response.ts#L24)*
 
----
+___
 
-### has_pride_media
+###  has_pride_media
 
-• **has_pride_media**: _boolean_
+• **has_pride_media**: *boolean*
 
-_Defined in [responses/reels-tray.feed.response.ts:27](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/reels-tray.feed.response.ts#L27)_
+*Defined in [responses/reels-tray.feed.response.ts:27](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-tray.feed.response.ts#L27)*
 
----
+___
 
 ### `Optional` hide_from_feed_unit
 
-• **hide_from_feed_unit**? : _boolean_
+• **hide_from_feed_unit**? : *boolean*
 
-_Defined in [responses/reels-tray.feed.response.ts:29](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/reels-tray.feed.response.ts#L29)_
+*Defined in [responses/reels-tray.feed.response.ts:29](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-tray.feed.response.ts#L29)*
 
----
+___
 
-### id
+###  id
 
-• **id**: _number_
+• **id**: *number*
 
-_Defined in [responses/reels-tray.feed.response.ts:12](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/reels-tray.feed.response.ts#L12)_
+*Defined in [responses/reels-tray.feed.response.ts:12](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-tray.feed.response.ts#L12)*
 
----
+___
 
 ### `Optional` items
 
-• **items**? : _[ReelsTrayFeedResponseItemsItem](\_responses_reels_tray_feed_response_.reelstrayfeedresponseitemsitem.md)[]\_
+• **items**? : *[ReelsTrayFeedResponseItemsItem](_responses_reels_tray_feed_response_.reelstrayfeedresponseitemsitem.md)[]*
 
-_Defined in [responses/reels-tray.feed.response.ts:28](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/reels-tray.feed.response.ts#L28)_
+*Defined in [responses/reels-tray.feed.response.ts:28](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-tray.feed.response.ts#L28)*
 
----
+___
 
-### latest_reel_media
+###  latest_reel_media
 
-• **latest_reel_media**: _number_
+• **latest_reel_media**: *number*
 
-_Defined in [responses/reels-tray.feed.response.ts:13](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/reels-tray.feed.response.ts#L13)_
+*Defined in [responses/reels-tray.feed.response.ts:13](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-tray.feed.response.ts#L13)*
 
----
+___
 
-### media_count
+###  media_count
 
-• **media_count**: _number_
+• **media_count**: *number*
 
-_Defined in [responses/reels-tray.feed.response.ts:25](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/reels-tray.feed.response.ts#L25)_
+*Defined in [responses/reels-tray.feed.response.ts:25](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-tray.feed.response.ts#L25)*
 
----
+___
 
-### media_ids
+###  media_ids
 
-• **media_ids**: _string[]_
+• **media_ids**: *string[]*
 
-_Defined in [responses/reels-tray.feed.response.ts:26](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/reels-tray.feed.response.ts#L26)_
+*Defined in [responses/reels-tray.feed.response.ts:26](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-tray.feed.response.ts#L26)*
 
----
+___
 
-### muted
+###  muted
 
-• **muted**: _boolean_
+• **muted**: *boolean*
 
-_Defined in [responses/reels-tray.feed.response.ts:22](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/reels-tray.feed.response.ts#L22)_
+*Defined in [responses/reels-tray.feed.response.ts:22](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-tray.feed.response.ts#L22)*
 
----
+___
 
-### prefetch_count
+###  prefetch_count
 
-• **prefetch_count**: _number_
+• **prefetch_count**: *number*
 
-_Defined in [responses/reels-tray.feed.response.ts:23](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/reels-tray.feed.response.ts#L23)_
+*Defined in [responses/reels-tray.feed.response.ts:23](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-tray.feed.response.ts#L23)*
 
----
+___
 
-### ranked_position
+###  ranked_position
 
-• **ranked_position**: _number_
+• **ranked_position**: *number*
 
-_Defined in [responses/reels-tray.feed.response.ts:20](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/reels-tray.feed.response.ts#L20)_
+*Defined in [responses/reels-tray.feed.response.ts:20](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-tray.feed.response.ts#L20)*
 
----
+___
 
-### reel_type
+###  reel_type
 
-• **reel_type**: _string_
+• **reel_type**: *string*
 
-_Defined in [responses/reels-tray.feed.response.ts:18](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/reels-tray.feed.response.ts#L18)_
+*Defined in [responses/reels-tray.feed.response.ts:18](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-tray.feed.response.ts#L18)*
 
----
+___
 
-### seen
+###  seen
 
-• **seen**: _number_
+• **seen**: *number*
 
-_Defined in [responses/reels-tray.feed.response.ts:15](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/reels-tray.feed.response.ts#L15)_
+*Defined in [responses/reels-tray.feed.response.ts:15](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-tray.feed.response.ts#L15)*
 
----
+___
 
-### seen_ranked_position
+###  seen_ranked_position
 
-• **seen_ranked_position**: _number_
+• **seen_ranked_position**: *number*
 
-_Defined in [responses/reels-tray.feed.response.ts:21](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/reels-tray.feed.response.ts#L21)_
+*Defined in [responses/reels-tray.feed.response.ts:21](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-tray.feed.response.ts#L21)*
 
----
+___
 
-### user
+###  user
 
-• **user**: _[ReelsTrayFeedResponseUser](\_responses_reels_tray_feed_response_.reelstrayfeedresponseuser.md)\_
+• **user**: *[ReelsTrayFeedResponseUser](_responses_reels_tray_feed_response_.reelstrayfeedresponseuser.md)*
 
-_Defined in [responses/reels-tray.feed.response.ts:19](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/reels-tray.feed.response.ts#L19)_
+*Defined in [responses/reels-tray.feed.response.ts:19](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-tray.feed.response.ts#L19)*

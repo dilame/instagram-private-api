@@ -6,54 +6,54 @@
 
 ## Hierarchy
 
-- **FbsearchRepositoryTopsearchFlatResponseFriendship_status**
+* **FbsearchRepositoryTopsearchFlatResponseFriendship_status**
 
 ## Index
 
 ### Properties
 
-- [following](_responses_fbsearch_repository_topsearch_flat_response_.fbsearchrepositorytopsearchflatresponsefriendship_status.md#following)
-- [incoming_request](_responses_fbsearch_repository_topsearch_flat_response_.fbsearchrepositorytopsearchflatresponsefriendship_status.md#incoming_request)
-- [is_bestie](_responses_fbsearch_repository_topsearch_flat_response_.fbsearchrepositorytopsearchflatresponsefriendship_status.md#is_bestie)
-- [is_private](_responses_fbsearch_repository_topsearch_flat_response_.fbsearchrepositorytopsearchflatresponsefriendship_status.md#is_private)
-- [outgoing_request](_responses_fbsearch_repository_topsearch_flat_response_.fbsearchrepositorytopsearchflatresponsefriendship_status.md#outgoing_request)
+* [following](_responses_fbsearch_repository_topsearch_flat_response_.fbsearchrepositorytopsearchflatresponsefriendship_status.md#following)
+* [incoming_request](_responses_fbsearch_repository_topsearch_flat_response_.fbsearchrepositorytopsearchflatresponsefriendship_status.md#incoming_request)
+* [is_bestie](_responses_fbsearch_repository_topsearch_flat_response_.fbsearchrepositorytopsearchflatresponsefriendship_status.md#is_bestie)
+* [is_private](_responses_fbsearch_repository_topsearch_flat_response_.fbsearchrepositorytopsearchflatresponsefriendship_status.md#is_private)
+* [outgoing_request](_responses_fbsearch_repository_topsearch_flat_response_.fbsearchrepositorytopsearchflatresponsefriendship_status.md#outgoing_request)
 
 ## Properties
 
-### following
+###  following
 
-• **following**: _boolean_
+• **following**: *boolean*
 
-_Defined in [responses/fbsearch.repository.topsearch-flat.response.ts:58](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/fbsearch.repository.topsearch-flat.response.ts#L58)_
+*Defined in [responses/fbsearch.repository.topsearch-flat.response.ts:58](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/fbsearch.repository.topsearch-flat.response.ts#L58)*
 
----
+___
 
-### incoming_request
+###  incoming_request
 
-• **incoming_request**: _boolean_
+• **incoming_request**: *boolean*
 
-_Defined in [responses/fbsearch.repository.topsearch-flat.response.ts:60](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/fbsearch.repository.topsearch-flat.response.ts#L60)_
+*Defined in [responses/fbsearch.repository.topsearch-flat.response.ts:60](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/fbsearch.repository.topsearch-flat.response.ts#L60)*
 
----
+___
 
-### is_bestie
+###  is_bestie
 
-• **is_bestie**: _boolean_
+• **is_bestie**: *boolean*
 
-_Defined in [responses/fbsearch.repository.topsearch-flat.response.ts:62](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/fbsearch.repository.topsearch-flat.response.ts#L62)_
+*Defined in [responses/fbsearch.repository.topsearch-flat.response.ts:62](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/fbsearch.repository.topsearch-flat.response.ts#L62)*
 
----
+___
 
-### is_private
+###  is_private
 
-• **is_private**: _boolean_
+• **is_private**: *boolean*
 
-_Defined in [responses/fbsearch.repository.topsearch-flat.response.ts:59](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/fbsearch.repository.topsearch-flat.response.ts#L59)_
+*Defined in [responses/fbsearch.repository.topsearch-flat.response.ts:59](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/fbsearch.repository.topsearch-flat.response.ts#L59)*
 
----
+___
 
-### outgoing_request
+###  outgoing_request
 
-• **outgoing_request**: _boolean_
+• **outgoing_request**: *boolean*
 
-_Defined in [responses/fbsearch.repository.topsearch-flat.response.ts:61](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/fbsearch.repository.topsearch-flat.response.ts#L61)_
+*Defined in [responses/fbsearch.repository.topsearch-flat.response.ts:61](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/fbsearch.repository.topsearch-flat.response.ts#L61)*

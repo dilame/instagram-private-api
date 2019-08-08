@@ -6,63 +6,63 @@
 
 ## Hierarchy
 
-- **MediaLocation**
+* **MediaLocation**
 
 ## Index
 
 ### Properties
 
-- [address](_types_media_configure_options_.medialocation.md#address)
-- [external_id](_types_media_configure_options_.medialocation.md#external_id)
-- [external_source](_types_media_configure_options_.medialocation.md#external_source)
-- [lat](_types_media_configure_options_.medialocation.md#lat)
-- [lng](_types_media_configure_options_.medialocation.md#lng)
-- [name](_types_media_configure_options_.medialocation.md#name)
+* [address](_types_media_configure_options_.medialocation.md#address)
+* [external_id](_types_media_configure_options_.medialocation.md#external_id)
+* [external_source](_types_media_configure_options_.medialocation.md#external_source)
+* [lat](_types_media_configure_options_.medialocation.md#lat)
+* [lng](_types_media_configure_options_.medialocation.md#lng)
+* [name](_types_media_configure_options_.medialocation.md#name)
 
 ## Properties
 
-### address
+###  address
 
-• **address**: _string_
+• **address**: *string*
 
-_Defined in [types/media.configure.options.ts:52](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/types/media.configure.options.ts#L52)_
+*Defined in [types/media.configure.options.ts:52](https://github.com/dilame/instagram-private-api/blob/01eb399/src/types/media.configure.options.ts#L52)*
 
----
+___
 
-### external_id
+###  external_id
 
-• **external_id**: _string_
+• **external_id**: *string*
 
-_Defined in [types/media.configure.options.ts:54](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/types/media.configure.options.ts#L54)_
+*Defined in [types/media.configure.options.ts:54](https://github.com/dilame/instagram-private-api/blob/01eb399/src/types/media.configure.options.ts#L54)*
 
----
+___
 
-### external_source
+###  external_source
 
-• **external_source**: _string_
+• **external_source**: *string*
 
-_Defined in [types/media.configure.options.ts:53](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/types/media.configure.options.ts#L53)_
+*Defined in [types/media.configure.options.ts:53](https://github.com/dilame/instagram-private-api/blob/01eb399/src/types/media.configure.options.ts#L53)*
 
----
+___
 
-### lat
+###  lat
 
-• **lat**: _number_
+• **lat**: *number*
 
-_Defined in [types/media.configure.options.ts:50](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/types/media.configure.options.ts#L50)_
+*Defined in [types/media.configure.options.ts:50](https://github.com/dilame/instagram-private-api/blob/01eb399/src/types/media.configure.options.ts#L50)*
 
----
+___
 
-### lng
+###  lng
 
-• **lng**: _number_
+• **lng**: *number*
 
-_Defined in [types/media.configure.options.ts:51](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/types/media.configure.options.ts#L51)_
+*Defined in [types/media.configure.options.ts:51](https://github.com/dilame/instagram-private-api/blob/01eb399/src/types/media.configure.options.ts#L51)*
 
----
+___
 
-### name
+###  name
 
-• **name**: _string_
+• **name**: *string*
 
-_Defined in [types/media.configure.options.ts:49](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/types/media.configure.options.ts#L49)_
+*Defined in [types/media.configure.options.ts:49](https://github.com/dilame/instagram-private-api/blob/01eb399/src/types/media.configure.options.ts#L49)*

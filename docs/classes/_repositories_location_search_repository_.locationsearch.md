@@ -6,52 +6,52 @@
 
 ## Hierarchy
 
-- [Repository](_core_repository_.repository.md)
+* [Repository](_core_repository_.repository.md)
 
-  - **LocationSearch**
+  * **LocationSearch**
 
 ## Index
 
 ### Constructors
 
-- [constructor](_repositories_location_search_repository_.locationsearch.md#constructor)
+* [constructor](_repositories_location_search_repository_.locationsearch.md#constructor)
 
 ### Methods
 
-- [index](_repositories_location_search_repository_.locationsearch.md#index)
+* [index](_repositories_location_search_repository_.locationsearch.md#index)
 
 ## Constructors
 
-### constructor
+###  constructor
 
-\+ **new LocationSearch**(`client`: [IgApiClient](_core_client_.igapiclient.md)): _[LocationSearch](\_repositories_location_search_repository_.locationsearch.md)\_
+\+ **new LocationSearch**(`client`: [IgApiClient](_core_client_.igapiclient.md)): *[LocationSearch](_repositories_location_search_repository_.locationsearch.md)*
 
-_Inherited from [Repository](\_core_repository_.repository.md).[constructor](_core_repository_.repository.md#constructor)\_
+*Inherited from [Repository](_core_repository_.repository.md).[constructor](_core_repository_.repository.md#constructor)*
 
-_Defined in [core/repository.ts:6](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/repository.ts#L6)_
+*Defined in [core/repository.ts:6](https://github.com/dilame/instagram-private-api/blob/01eb399/src/core/repository.ts#L6)*
 
 **Parameters:**
 
-| Name     | Type                                        |
-| -------- | ------------------------------------------- |
-| `client` | [IgApiClient](_core_client_.igapiclient.md) |
+Name | Type |
+------ | ------ |
+`client` | [IgApiClient](_core_client_.igapiclient.md) |
 
-**Returns:** _[LocationSearch](\_repositories_location_search_repository_.locationsearch.md)\_
+**Returns:** *[LocationSearch](_repositories_location_search_repository_.locationsearch.md)*
 
 ## Methods
 
-### index
+###  index
 
-▸ **index**(`latitude`: number, `longitude`: number, `searchQuery?`: string): _`Promise<LocationRepositorySearchResponseRootObject>`_
+▸ **index**(`latitude`: number, `longitude`: number, `searchQuery?`: string): *`Promise<LocationRepositorySearchResponseRootObject>`*
 
-_Defined in [repositories/location-search.repository.ts:5](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/repositories/location-search.repository.ts#L5)_
+*Defined in [repositories/location-search.repository.ts:5](https://github.com/dilame/instagram-private-api/blob/01eb399/src/repositories/location-search.repository.ts#L5)*
 
 **Parameters:**
 
-| Name           | Type   |
-| -------------- | ------ |
-| `latitude`     | number |
-| `longitude`    | number |
-| `searchQuery?` | string |
+Name | Type |
+------ | ------ |
+`latitude` | number |
+`longitude` | number |
+`searchQuery?` | string |
 
-**Returns:** _`Promise<LocationRepositorySearchResponseRootObject>`_
+**Returns:** *`Promise<LocationRepositorySearchResponseRootObject>`*

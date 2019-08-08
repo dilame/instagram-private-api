@@ -6,51 +6,51 @@
 
 ## Hierarchy
 
-- [Repository](_core_repository_.repository.md)
+* [Repository](_core_repository_.repository.md)
 
-  - **StoryService**
+  * **StoryService**
 
 ## Index
 
 ### Constructors
 
-- [constructor](_services_story_service_.storyservice.md#constructor)
+* [constructor](_services_story_service_.storyservice.md#constructor)
 
 ### Methods
 
-- [seen](_services_story_service_.storyservice.md#seen)
+* [seen](_services_story_service_.storyservice.md#seen)
 
 ## Constructors
 
-### constructor
+###  constructor
 
-\+ **new StoryService**(`client`: [IgApiClient](_core_client_.igapiclient.md)): _[StoryService](\_services_story_service_.storyservice.md)\_
+\+ **new StoryService**(`client`: [IgApiClient](_core_client_.igapiclient.md)): *[StoryService](_services_story_service_.storyservice.md)*
 
-_Inherited from [Repository](\_core_repository_.repository.md).[constructor](_core_repository_.repository.md#constructor)\_
+*Inherited from [Repository](_core_repository_.repository.md).[constructor](_core_repository_.repository.md#constructor)*
 
-_Defined in [core/repository.ts:6](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/repository.ts#L6)_
+*Defined in [core/repository.ts:6](https://github.com/dilame/instagram-private-api/blob/01eb399/src/core/repository.ts#L6)*
 
 **Parameters:**
 
-| Name     | Type                                        |
-| -------- | ------------------------------------------- |
-| `client` | [IgApiClient](_core_client_.igapiclient.md) |
+Name | Type |
+------ | ------ |
+`client` | [IgApiClient](_core_client_.igapiclient.md) |
 
-**Returns:** _[StoryService](\_services_story_service_.storyservice.md)\_
+**Returns:** *[StoryService](_services_story_service_.storyservice.md)*
 
 ## Methods
 
-### seen
+###  seen
 
-▸ **seen**(`input`: `StoryServiceInput`, `sourceId`: string): _`Promise<any>`_
+▸ **seen**(`input`: [StoryServiceInput](../modules/_types_stories_types_.md#storyserviceinput), `sourceId`: string): *`Promise<StatusResponse>`*
 
-_Defined in [services/story.service.ts:18](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/services/story.service.ts#L18)_
+*Defined in [services/story.service.ts:5](https://github.com/dilame/instagram-private-api/blob/01eb399/src/services/story.service.ts#L5)*
 
 **Parameters:**
 
-| Name       | Type                | Default |
-| ---------- | ------------------- | ------- |
-| `input`    | `StoryServiceInput` | -       |
-| `sourceId` | string              | null    |
+Name | Type | Default |
+------ | ------ | ------ |
+`input` | [StoryServiceInput](../modules/_types_stories_types_.md#storyserviceinput) | - |
+`sourceId` | string |  null |
 
-**Returns:** _`Promise<any>`_
+**Returns:** *`Promise<StatusResponse>`*

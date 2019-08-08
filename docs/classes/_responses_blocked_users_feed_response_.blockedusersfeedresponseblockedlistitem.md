@@ -6,78 +6,78 @@
 
 ## Hierarchy
 
-- [Entity](_core_entity_.entity.md)
+  * [Entity](_core_entity_.entity.md)
 
-- **BlockedUsersFeedResponseBlockedListItem**
+  * **BlockedUsersFeedResponseBlockedListItem**
 
 ## Index
 
 ### Constructors
 
-- [constructor](_responses_blocked_users_feed_response_.blockedusersfeedresponseblockedlistitem.md#constructor)
+* [constructor](_responses_blocked_users_feed_response_.blockedusersfeedresponseblockedlistitem.md#constructor)
 
 ### Properties
 
-- [block_at](_responses_blocked_users_feed_response_.blockedusersfeedresponseblockedlistitem.md#block_at)
-- [full_name](_responses_blocked_users_feed_response_.blockedusersfeedresponseblockedlistitem.md#full_name)
-- [profile_pic_url](_responses_blocked_users_feed_response_.blockedusersfeedresponseblockedlistitem.md#profile_pic_url)
-- [user_id](_responses_blocked_users_feed_response_.blockedusersfeedresponseblockedlistitem.md#user_id)
-- [username](_responses_blocked_users_feed_response_.blockedusersfeedresponseblockedlistitem.md#username)
+* [block_at](_responses_blocked_users_feed_response_.blockedusersfeedresponseblockedlistitem.md#block_at)
+* [full_name](_responses_blocked_users_feed_response_.blockedusersfeedresponseblockedlistitem.md#full_name)
+* [profile_pic_url](_responses_blocked_users_feed_response_.blockedusersfeedresponseblockedlistitem.md#profile_pic_url)
+* [user_id](_responses_blocked_users_feed_response_.blockedusersfeedresponseblockedlistitem.md#user_id)
+* [username](_responses_blocked_users_feed_response_.blockedusersfeedresponseblockedlistitem.md#username)
 
 ## Constructors
 
-### constructor
+###  constructor
 
-\+ **new BlockedUsersFeedResponseBlockedListItem**(`client`: [IgApiClient](_core_client_.igapiclient.md)): _[BlockedUsersFeedResponseBlockedListItem](\_responses_blocked_users_feed_response_.blockedusersfeedresponseblockedlistitem.md)\_
+\+ **new BlockedUsersFeedResponseBlockedListItem**(`client`: [IgApiClient](_core_client_.igapiclient.md)): *[BlockedUsersFeedResponseBlockedListItem](_responses_blocked_users_feed_response_.blockedusersfeedresponseblockedlistitem.md)*
 
-_Inherited from [Repository](\_core_repository_.repository.md).[constructor](_core_repository_.repository.md#constructor)\_
+*Inherited from [Repository](_core_repository_.repository.md).[constructor](_core_repository_.repository.md#constructor)*
 
-_Defined in [core/repository.ts:6](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/repository.ts#L6)_
+*Defined in [core/repository.ts:6](https://github.com/dilame/instagram-private-api/blob/01eb399/src/core/repository.ts#L6)*
 
 **Parameters:**
 
-| Name     | Type                                        |
-| -------- | ------------------------------------------- |
-| `client` | [IgApiClient](_core_client_.igapiclient.md) |
+Name | Type |
+------ | ------ |
+`client` | [IgApiClient](_core_client_.igapiclient.md) |
 
-**Returns:** _[BlockedUsersFeedResponseBlockedListItem](\_responses_blocked_users_feed_response_.blockedusersfeedresponseblockedlistitem.md)\_
+**Returns:** *[BlockedUsersFeedResponseBlockedListItem](_responses_blocked_users_feed_response_.blockedusersfeedresponseblockedlistitem.md)*
 
 ## Properties
 
-### block_at
+###  block_at
 
-• **block_at**: _number_
+• **block_at**: *number*
 
-_Defined in [responses/blocked-users.feed.response.ts:14](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/blocked-users.feed.response.ts#L14)_
+*Defined in [responses/blocked-users.feed.response.ts:14](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/blocked-users.feed.response.ts#L14)*
 
----
+___
 
-### full_name
+###  full_name
 
-• **full_name**: _string_
+• **full_name**: *string*
 
-_Defined in [responses/blocked-users.feed.response.ts:12](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/blocked-users.feed.response.ts#L12)_
+*Defined in [responses/blocked-users.feed.response.ts:12](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/blocked-users.feed.response.ts#L12)*
 
----
+___
 
-### profile_pic_url
+###  profile_pic_url
 
-• **profile_pic_url**: _string_
+• **profile_pic_url**: *string*
 
-_Defined in [responses/blocked-users.feed.response.ts:13](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/blocked-users.feed.response.ts#L13)_
+*Defined in [responses/blocked-users.feed.response.ts:13](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/blocked-users.feed.response.ts#L13)*
 
----
+___
 
-### user_id
+###  user_id
 
-• **user_id**: _number_
+• **user_id**: *number*
 
-_Defined in [responses/blocked-users.feed.response.ts:10](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/blocked-users.feed.response.ts#L10)_
+*Defined in [responses/blocked-users.feed.response.ts:10](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/blocked-users.feed.response.ts#L10)*
 
----
+___
 
-### username
+###  username
 
-• **username**: _string_
+• **username**: *string*
 
-_Defined in [responses/blocked-users.feed.response.ts:11](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/blocked-users.feed.response.ts#L11)_
+*Defined in [responses/blocked-users.feed.response.ts:11](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/blocked-users.feed.response.ts#L11)*

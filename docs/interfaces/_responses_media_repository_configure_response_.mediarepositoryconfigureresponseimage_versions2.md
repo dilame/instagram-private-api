@@ -6,18 +6,18 @@
 
 ## Hierarchy
 
-- **MediaRepositoryConfigureResponseImage_versions2**
+* **MediaRepositoryConfigureResponseImage_versions2**
 
 ## Index
 
 ### Properties
 
-- [candidates](_responses_media_repository_configure_response_.mediarepositoryconfigureresponseimage_versions2.md#candidates)
+* [candidates](_responses_media_repository_configure_response_.mediarepositoryconfigureresponseimage_versions2.md#candidates)
 
 ## Properties
 
-### candidates
+###  candidates
 
-• **candidates**: _[MediaRepositoryConfigureResponseCandidatesItem](\_responses_media_repository_configure_response_.mediarepositoryconfigureresponsecandidatesitem.md)[]\_
+• **candidates**: *[MediaRepositoryConfigureResponseCandidatesItem](_responses_media_repository_configure_response_.mediarepositoryconfigureresponsecandidatesitem.md)[]*
 
-_Defined in [responses/media.repository.configure.response.ts:37](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/media.repository.configure.response.ts#L37)_
+*Defined in [responses/media.repository.configure.response.ts:37](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/media.repository.configure.response.ts#L37)*

@@ -6,4 +6,4 @@
 
 ## Hierarchy
 
-- **NewsFeedResponseCounts**
+* **NewsFeedResponseCounts**

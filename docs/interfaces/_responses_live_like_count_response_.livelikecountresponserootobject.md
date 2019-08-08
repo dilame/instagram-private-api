@@ -6,54 +6,54 @@
 
 ## Hierarchy
 
-- **LiveLikeCountResponseRootObject**
+* **LiveLikeCountResponseRootObject**
 
 ## Index
 
 ### Properties
 
-- [burst_likes](_responses_live_like_count_response_.livelikecountresponserootobject.md#burst_likes)
-- [like_ts](_responses_live_like_count_response_.livelikecountresponserootobject.md#like_ts)
-- [likers](_responses_live_like_count_response_.livelikecountresponserootobject.md#likers)
-- [likes](_responses_live_like_count_response_.livelikecountresponserootobject.md#likes)
-- [status](_responses_live_like_count_response_.livelikecountresponserootobject.md#status)
+* [burst_likes](_responses_live_like_count_response_.livelikecountresponserootobject.md#burst_likes)
+* [like_ts](_responses_live_like_count_response_.livelikecountresponserootobject.md#like_ts)
+* [likers](_responses_live_like_count_response_.livelikecountresponserootobject.md#likers)
+* [likes](_responses_live_like_count_response_.livelikecountresponserootobject.md#likes)
+* [status](_responses_live_like_count_response_.livelikecountresponserootobject.md#status)
 
 ## Properties
 
-### burst_likes
+###  burst_likes
 
-• **burst_likes**: _number_
+• **burst_likes**: *number*
 
-_Defined in [responses/live.like-count.response.ts:5](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/live.like-count.response.ts#L5)_
+*Defined in [responses/live.like-count.response.ts:5](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/live.like-count.response.ts#L5)*
 
----
+___
 
-### like_ts
+###  like_ts
 
-• **like_ts**: _number_
+• **like_ts**: *number*
 
-_Defined in [responses/live.like-count.response.ts:4](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/live.like-count.response.ts#L4)_
+*Defined in [responses/live.like-count.response.ts:4](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/live.like-count.response.ts#L4)*
 
----
+___
 
-### likers
+###  likers
 
-• **likers**: _any[]_
+• **likers**: *any[]*
 
-_Defined in [responses/live.like-count.response.ts:3](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/live.like-count.response.ts#L3)_
+*Defined in [responses/live.like-count.response.ts:3](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/live.like-count.response.ts#L3)*
 
----
+___
 
-### likes
+###  likes
 
-• **likes**: _number_
+• **likes**: *number*
 
-_Defined in [responses/live.like-count.response.ts:2](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/live.like-count.response.ts#L2)_
+*Defined in [responses/live.like-count.response.ts:2](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/live.like-count.response.ts#L2)*
 
----
+___
 
-### status
+###  status
 
-• **status**: _string_
+• **status**: *string*
 
-_Defined in [responses/live.like-count.response.ts:6](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/live.like-count.response.ts#L6)_
+*Defined in [responses/live.like-count.response.ts:6](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/live.like-count.response.ts#L6)*

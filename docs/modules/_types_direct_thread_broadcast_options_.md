@@ -16,4 +16,4 @@
 
 Ƭ **DirectThreadBroadcastOptions**: *`DirectTreadBroadcastBaseOptions` & `XOR<ExistingThreadOptions, CreateThreadOptions>`*
 
-*Defined in [types/direct-thread.broadcast.options.ts:16](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/types/direct-thread.broadcast.options.ts#L16)*
+*Defined in [types/direct-thread.broadcast.options.ts:16](https://github.com/dilame/instagram-private-api/blob/01eb399/src/types/direct-thread.broadcast.options.ts#L16)*

@@ -6,36 +6,36 @@
 
 ## Hierarchy
 
-- **LocationFeedResponseFriendship_status**
+* **LocationFeedResponseFriendship_status**
 
 ## Index
 
 ### Properties
 
-- [following](_responses_location_feed_response_.locationfeedresponsefriendship_status.md#following)
-- [is_bestie](_responses_location_feed_response_.locationfeedresponsefriendship_status.md#is_bestie)
-- [outgoing_request](_responses_location_feed_response_.locationfeedresponsefriendship_status.md#outgoing_request)
+* [following](_responses_location_feed_response_.locationfeedresponsefriendship_status.md#following)
+* [is_bestie](_responses_location_feed_response_.locationfeedresponsefriendship_status.md#is_bestie)
+* [outgoing_request](_responses_location_feed_response_.locationfeedresponsefriendship_status.md#outgoing_request)
 
 ## Properties
 
-### following
+###  following
 
-• **following**: _boolean_
+• **following**: *boolean*
 
-_Defined in [responses/location.feed.response.ts:134](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/location.feed.response.ts#L134)_
+*Defined in [responses/location.feed.response.ts:134](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/location.feed.response.ts#L134)*
 
----
+___
 
-### is_bestie
+###  is_bestie
 
-• **is_bestie**: _boolean_
+• **is_bestie**: *boolean*
 
-_Defined in [responses/location.feed.response.ts:136](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/location.feed.response.ts#L136)_
+*Defined in [responses/location.feed.response.ts:136](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/location.feed.response.ts#L136)*
 
----
+___
 
-### outgoing_request
+###  outgoing_request
 
-• **outgoing_request**: _boolean_
+• **outgoing_request**: *boolean*
 
-_Defined in [responses/location.feed.response.ts:135](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/location.feed.response.ts#L135)_
+*Defined in [responses/location.feed.response.ts:135](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/location.feed.response.ts#L135)*

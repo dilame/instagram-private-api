@@ -6,63 +6,63 @@
 
 ## Hierarchy
 
-- **DirectInboxFeedResponseReelShare**
+* **DirectInboxFeedResponseReelShare**
 
 ## Index
 
 ### Properties
 
-- [is_reel_persisted](_responses_direct_inbox_feed_response_.directinboxfeedresponsereelshare.md#is_reel_persisted)
-- [media](_responses_direct_inbox_feed_response_.directinboxfeedresponsereelshare.md#media)
-- [reel_owner_id](_responses_direct_inbox_feed_response_.directinboxfeedresponsereelshare.md#reel_owner_id)
-- [reel_type](_responses_direct_inbox_feed_response_.directinboxfeedresponsereelshare.md#reel_type)
-- [text](_responses_direct_inbox_feed_response_.directinboxfeedresponsereelshare.md#text)
-- [type](_responses_direct_inbox_feed_response_.directinboxfeedresponsereelshare.md#type)
+* [is_reel_persisted](_responses_direct_inbox_feed_response_.directinboxfeedresponsereelshare.md#is_reel_persisted)
+* [media](_responses_direct_inbox_feed_response_.directinboxfeedresponsereelshare.md#media)
+* [reel_owner_id](_responses_direct_inbox_feed_response_.directinboxfeedresponsereelshare.md#reel_owner_id)
+* [reel_type](_responses_direct_inbox_feed_response_.directinboxfeedresponsereelshare.md#reel_type)
+* [text](_responses_direct_inbox_feed_response_.directinboxfeedresponsereelshare.md#text)
+* [type](_responses_direct_inbox_feed_response_.directinboxfeedresponsereelshare.md#type)
 
 ## Properties
 
-### is_reel_persisted
+###  is_reel_persisted
 
-• **is_reel_persisted**: _boolean_
+• **is_reel_persisted**: *boolean*
 
-_Defined in [responses/direct-inbox.feed.response.ts:130](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-inbox.feed.response.ts#L130)_
+*Defined in [responses/direct-inbox.feed.response.ts:130](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-inbox.feed.response.ts#L130)*
 
----
+___
 
-### media
+###  media
 
-• **media**: _[DirectInboxFeedResponseMedia](\_responses_direct_inbox_feed_response_.directinboxfeedresponsemedia.md)\_
+• **media**: *[DirectInboxFeedResponseMedia](_responses_direct_inbox_feed_response_.directinboxfeedresponsemedia.md)*
 
-_Defined in [responses/direct-inbox.feed.response.ts:132](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-inbox.feed.response.ts#L132)_
+*Defined in [responses/direct-inbox.feed.response.ts:132](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-inbox.feed.response.ts#L132)*
 
----
+___
 
-### reel_owner_id
+###  reel_owner_id
 
-• **reel_owner_id**: _number_
+• **reel_owner_id**: *number*
 
-_Defined in [responses/direct-inbox.feed.response.ts:129](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-inbox.feed.response.ts#L129)_
+*Defined in [responses/direct-inbox.feed.response.ts:129](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-inbox.feed.response.ts#L129)*
 
----
+___
 
-### reel_type
+###  reel_type
 
-• **reel_type**: _string_
+• **reel_type**: *string*
 
-_Defined in [responses/direct-inbox.feed.response.ts:131](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-inbox.feed.response.ts#L131)_
+*Defined in [responses/direct-inbox.feed.response.ts:131](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-inbox.feed.response.ts#L131)*
 
----
+___
 
-### text
+###  text
 
-• **text**: _string_
+• **text**: *string*
 
-_Defined in [responses/direct-inbox.feed.response.ts:127](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-inbox.feed.response.ts#L127)_
+*Defined in [responses/direct-inbox.feed.response.ts:127](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-inbox.feed.response.ts#L127)*
 
----
+___
 
-### type
+###  type
 
-• **type**: _string_
+• **type**: *string*
 
-_Defined in [responses/direct-inbox.feed.response.ts:128](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-inbox.feed.response.ts#L128)_
+*Defined in [responses/direct-inbox.feed.response.ts:128](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-inbox.feed.response.ts#L128)*

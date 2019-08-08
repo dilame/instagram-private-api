@@ -6,8 +6,8 @@
 
 ## Hierarchy
 
-- **ReelsMediaFeedResponseReels**
+* **ReelsMediaFeedResponseReels**
 
 ## Indexable
 
-● \[▪ **pk**: _string_\]: [ReelsMediaFeedResponse](_responses_reels_media_feed_response_.reelsmediafeedresponse.md)
+● \[▪ **pk**: *string*\]: [ReelsMediaFeedResponse](_responses_reels_media_feed_response_.reelsmediafeedresponse.md)

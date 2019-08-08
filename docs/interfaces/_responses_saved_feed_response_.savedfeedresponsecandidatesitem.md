@@ -6,36 +6,45 @@
 
 ## Hierarchy
 
-- **SavedFeedResponseCandidatesItem**
+* **SavedFeedResponseCandidatesItem**
 
 ## Index
 
 ### Properties
 
-- [height](_responses_saved_feed_response_.savedfeedresponsecandidatesitem.md#height)
-- [url](_responses_saved_feed_response_.savedfeedresponsecandidatesitem.md#url)
-- [width](_responses_saved_feed_response_.savedfeedresponsecandidatesitem.md#width)
+* [estimated_scans_sizes](_responses_saved_feed_response_.savedfeedresponsecandidatesitem.md#optional-estimated_scans_sizes)
+* [height](_responses_saved_feed_response_.savedfeedresponsecandidatesitem.md#height)
+* [url](_responses_saved_feed_response_.savedfeedresponsecandidatesitem.md#url)
+* [width](_responses_saved_feed_response_.savedfeedresponsecandidatesitem.md#width)
 
 ## Properties
 
-### height
+### `Optional` estimated_scans_sizes
 
-• **height**: _number_
+• **estimated_scans_sizes**? : *number[]*
 
-_Defined in [responses/saved.feed.response.ts:91](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/saved.feed.response.ts#L91)_
+*Defined in [responses/saved.feed.response.ts:67](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/saved.feed.response.ts#L67)*
 
----
+___
 
-### url
+###  height
 
-• **url**: _string_
+• **height**: *number*
 
-_Defined in [responses/saved.feed.response.ts:92](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/saved.feed.response.ts#L92)_
+*Defined in [responses/saved.feed.response.ts:65](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/saved.feed.response.ts#L65)*
 
----
+___
 
-### width
+###  url
 
-• **width**: _number_
+• **url**: *string*
 
-_Defined in [responses/saved.feed.response.ts:90](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/saved.feed.response.ts#L90)_
+*Defined in [responses/saved.feed.response.ts:66](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/saved.feed.response.ts#L66)*
+
+___
+
+###  width
+
+• **width**: *number*
+
+*Defined in [responses/saved.feed.response.ts:64](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/saved.feed.response.ts#L64)*

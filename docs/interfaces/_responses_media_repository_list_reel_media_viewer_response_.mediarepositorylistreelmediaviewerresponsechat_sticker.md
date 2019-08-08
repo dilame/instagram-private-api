@@ -6,72 +6,72 @@
 
 ## Hierarchy
 
-- **MediaRepositoryListReelMediaViewerResponseChat_sticker**
+* **MediaRepositoryListReelMediaViewerResponseChat_sticker**
 
 ## Index
 
 ### Properties
 
-- [end_background_color](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponsechat_sticker.md#end_background_color)
-- [has_started_chat](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponsechat_sticker.md#has_started_chat)
-- [start_background_color](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponsechat_sticker.md#start_background_color)
-- [status](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponsechat_sticker.md#status)
-- [story_chat_id](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponsechat_sticker.md#story_chat_id)
-- [text](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponsechat_sticker.md#text)
-- [thread_id](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponsechat_sticker.md#thread_id)
+* [end_background_color](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponsechat_sticker.md#end_background_color)
+* [has_started_chat](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponsechat_sticker.md#has_started_chat)
+* [start_background_color](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponsechat_sticker.md#start_background_color)
+* [status](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponsechat_sticker.md#status)
+* [story_chat_id](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponsechat_sticker.md#story_chat_id)
+* [text](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponsechat_sticker.md#text)
+* [thread_id](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponsechat_sticker.md#thread_id)
 
 ## Properties
 
-### end_background_color
+###  end_background_color
 
-• **end_background_color**: _string_
+• **end_background_color**: *string*
 
-_Defined in [responses/media.repository.list-reel-media-viewer.response.ts:110](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/media.repository.list-reel-media-viewer.response.ts#L110)_
+*Defined in [responses/media.repository.list-reel-media-viewer.response.ts:110](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/media.repository.list-reel-media-viewer.response.ts#L110)*
 
----
+___
 
-### has_started_chat
+###  has_started_chat
 
-• **has_started_chat**: _boolean_
+• **has_started_chat**: *boolean*
 
-_Defined in [responses/media.repository.list-reel-media-viewer.response.ts:111](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/media.repository.list-reel-media-viewer.response.ts#L111)_
+*Defined in [responses/media.repository.list-reel-media-viewer.response.ts:111](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/media.repository.list-reel-media-viewer.response.ts#L111)*
 
----
+___
 
-### start_background_color
+###  start_background_color
 
-• **start_background_color**: _string_
+• **start_background_color**: *string*
 
-_Defined in [responses/media.repository.list-reel-media-viewer.response.ts:109](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/media.repository.list-reel-media-viewer.response.ts#L109)_
+*Defined in [responses/media.repository.list-reel-media-viewer.response.ts:109](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/media.repository.list-reel-media-viewer.response.ts#L109)*
 
----
+___
 
-### status
+###  status
 
-• **status**: _string_
+• **status**: *string*
 
-_Defined in [responses/media.repository.list-reel-media-viewer.response.ts:113](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/media.repository.list-reel-media-viewer.response.ts#L113)_
+*Defined in [responses/media.repository.list-reel-media-viewer.response.ts:113](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/media.repository.list-reel-media-viewer.response.ts#L113)*
 
----
+___
 
-### story_chat_id
+###  story_chat_id
 
-• **story_chat_id**: _string_
+• **story_chat_id**: *string*
 
-_Defined in [responses/media.repository.list-reel-media-viewer.response.ts:107](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/media.repository.list-reel-media-viewer.response.ts#L107)_
+*Defined in [responses/media.repository.list-reel-media-viewer.response.ts:107](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/media.repository.list-reel-media-viewer.response.ts#L107)*
 
----
+___
 
-### text
+###  text
 
-• **text**: _string_
+• **text**: *string*
 
-_Defined in [responses/media.repository.list-reel-media-viewer.response.ts:108](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/media.repository.list-reel-media-viewer.response.ts#L108)_
+*Defined in [responses/media.repository.list-reel-media-viewer.response.ts:108](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/media.repository.list-reel-media-viewer.response.ts#L108)*
 
----
+___
 
-### thread_id
+###  thread_id
 
-• **thread_id**: _string_
+• **thread_id**: *string*
 
-_Defined in [responses/media.repository.list-reel-media-viewer.response.ts:112](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/media.repository.list-reel-media-viewer.response.ts#L112)_
+*Defined in [responses/media.repository.list-reel-media-viewer.response.ts:112](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/media.repository.list-reel-media-viewer.response.ts#L112)*

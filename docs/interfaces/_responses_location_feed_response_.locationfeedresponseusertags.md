@@ -6,18 +6,18 @@
 
 ## Hierarchy
 
-- **LocationFeedResponseUsertags**
+* **LocationFeedResponseUsertags**
 
 ## Index
 
 ### Properties
 
-- [in](_responses_location_feed_response_.locationfeedresponseusertags.md#in)
+* [in](_responses_location_feed_response_.locationfeedresponseusertags.md#in)
 
 ## Properties
 
-### in
+###  in
 
-• **in**: _[LocationFeedResponseInItem](\_responses_location_feed_response_.locationfeedresponseinitem.md)[]\_
+• **in**: *[LocationFeedResponseInItem](_responses_location_feed_response_.locationfeedresponseinitem.md)[]*
 
-_Defined in [responses/location.feed.response.ts:155](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/location.feed.response.ts#L155)_
+*Defined in [responses/location.feed.response.ts:155](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/location.feed.response.ts#L155)*

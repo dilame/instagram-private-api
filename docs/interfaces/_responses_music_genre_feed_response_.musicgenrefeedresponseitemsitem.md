@@ -6,18 +6,18 @@
 
 ## Hierarchy
 
-- **MusicGenreFeedResponseItemsItem**
+* **MusicGenreFeedResponseItemsItem**
 
 ## Index
 
 ### Properties
 
-- [track](_responses_music_genre_feed_response_.musicgenrefeedresponseitemsitem.md#track)
+* [track](_responses_music_genre_feed_response_.musicgenrefeedresponseitemsitem.md#track)
 
 ## Properties
 
-### track
+###  track
 
-• **track**: _[MusicGenreFeedResponseTrack](\_responses_music_genre_feed_response_.musicgenrefeedresponsetrack.md)\_
+• **track**: *[MusicGenreFeedResponseTrack](_responses_music_genre_feed_response_.musicgenrefeedresponsetrack.md)*
 
-_Defined in [responses/music-genre.feed.response.ts:8](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/music-genre.feed.response.ts#L8)_
+*Defined in [responses/music-genre.feed.response.ts:8](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/music-genre.feed.response.ts#L8)*

@@ -6,54 +6,54 @@
 
 ## Hierarchy
 
-- **LiveCommentsResponseSystemCommentsItem**
+* **LiveCommentsResponseSystemCommentsItem**
 
 ## Index
 
 ### Properties
 
-- [created_at](_responses_live_comments_response_.livecommentsresponsesystemcommentsitem.md#created_at)
-- [pk](_responses_live_comments_response_.livecommentsresponsesystemcommentsitem.md#pk)
-- [text](_responses_live_comments_response_.livecommentsresponsesystemcommentsitem.md#text)
-- [user](_responses_live_comments_response_.livecommentsresponsesystemcommentsitem.md#user)
-- [user_count](_responses_live_comments_response_.livecommentsresponsesystemcommentsitem.md#user_count)
+* [created_at](_responses_live_comments_response_.livecommentsresponsesystemcommentsitem.md#created_at)
+* [pk](_responses_live_comments_response_.livecommentsresponsesystemcommentsitem.md#pk)
+* [text](_responses_live_comments_response_.livecommentsresponsesystemcommentsitem.md#text)
+* [user](_responses_live_comments_response_.livecommentsresponsesystemcommentsitem.md#user)
+* [user_count](_responses_live_comments_response_.livecommentsresponsesystemcommentsitem.md#user_count)
 
 ## Properties
 
-### created_at
+###  created_at
 
-• **created_at**: _number_
+• **created_at**: *number*
 
-_Defined in [responses/live.comments.response.ts:44](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/live.comments.response.ts#L44)_
+*Defined in [responses/live.comments.response.ts:44](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/live.comments.response.ts#L44)*
 
----
+___
 
-### pk
+###  pk
 
-• **pk**: _string_
+• **pk**: *string*
 
-_Defined in [responses/live.comments.response.ts:43](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/live.comments.response.ts#L43)_
+*Defined in [responses/live.comments.response.ts:43](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/live.comments.response.ts#L43)*
 
----
+___
 
-### text
+###  text
 
-• **text**: _string_
+• **text**: *string*
 
-_Defined in [responses/live.comments.response.ts:46](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/live.comments.response.ts#L46)_
+*Defined in [responses/live.comments.response.ts:46](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/live.comments.response.ts#L46)*
 
----
+___
 
-### user
+###  user
 
-• **user**: _[LiveCommentsResponseUser](\_responses_live_comments_response_.livecommentsresponseuser.md)\_
+• **user**: *[LiveCommentsResponseUser](_responses_live_comments_response_.livecommentsresponseuser.md)*
 
-_Defined in [responses/live.comments.response.ts:45](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/live.comments.response.ts#L45)_
+*Defined in [responses/live.comments.response.ts:45](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/live.comments.response.ts#L45)*
 
----
+___
 
-### user_count
+###  user_count
 
-• **user_count**: _number_
+• **user_count**: *number*
 
-_Defined in [responses/live.comments.response.ts:47](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/live.comments.response.ts#L47)_
+*Defined in [responses/live.comments.response.ts:47](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/live.comments.response.ts#L47)*

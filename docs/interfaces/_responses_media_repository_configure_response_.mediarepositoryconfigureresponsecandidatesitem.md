@@ -6,36 +6,36 @@
 
 ## Hierarchy
 
-- **MediaRepositoryConfigureResponseCandidatesItem**
+* **MediaRepositoryConfigureResponseCandidatesItem**
 
 ## Index
 
 ### Properties
 
-- [height](_responses_media_repository_configure_response_.mediarepositoryconfigureresponsecandidatesitem.md#height)
-- [url](_responses_media_repository_configure_response_.mediarepositoryconfigureresponsecandidatesitem.md#url)
-- [width](_responses_media_repository_configure_response_.mediarepositoryconfigureresponsecandidatesitem.md#width)
+* [height](_responses_media_repository_configure_response_.mediarepositoryconfigureresponsecandidatesitem.md#height)
+* [url](_responses_media_repository_configure_response_.mediarepositoryconfigureresponsecandidatesitem.md#url)
+* [width](_responses_media_repository_configure_response_.mediarepositoryconfigureresponsecandidatesitem.md#width)
 
 ## Properties
 
-### height
+###  height
 
-• **height**: _number_
+• **height**: *number*
 
-_Defined in [responses/media.repository.configure.response.ts:42](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/media.repository.configure.response.ts#L42)_
+*Defined in [responses/media.repository.configure.response.ts:42](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/media.repository.configure.response.ts#L42)*
 
----
+___
 
-### url
+###  url
 
-• **url**: _string_
+• **url**: *string*
 
-_Defined in [responses/media.repository.configure.response.ts:43](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/media.repository.configure.response.ts#L43)_
+*Defined in [responses/media.repository.configure.response.ts:43](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/media.repository.configure.response.ts#L43)*
 
----
+___
 
-### width
+###  width
 
-• **width**: _number_
+• **width**: *number*
 
-_Defined in [responses/media.repository.configure.response.ts:41](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/media.repository.configure.response.ts#L41)_
+*Defined in [responses/media.repository.configure.response.ts:41](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/media.repository.configure.response.ts#L41)*

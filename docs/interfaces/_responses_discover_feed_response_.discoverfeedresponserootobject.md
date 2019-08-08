@@ -6,63 +6,63 @@
 
 ## Hierarchy
 
-- **DiscoverFeedResponseRootObject**
+* **DiscoverFeedResponseRootObject**
 
 ## Index
 
 ### Properties
 
-- [max_id](_responses_discover_feed_response_.discoverfeedresponserootobject.md#max_id)
-- [more_available](_responses_discover_feed_response_.discoverfeedresponserootobject.md#more_available)
-- [new_suggested_users](_responses_discover_feed_response_.discoverfeedresponserootobject.md#new_suggested_users)
-- [next_max_id](_responses_discover_feed_response_.discoverfeedresponserootobject.md#next_max_id)
-- [status](_responses_discover_feed_response_.discoverfeedresponserootobject.md#status)
-- [suggested_users](_responses_discover_feed_response_.discoverfeedresponserootobject.md#suggested_users)
+* [max_id](_responses_discover_feed_response_.discoverfeedresponserootobject.md#max_id)
+* [more_available](_responses_discover_feed_response_.discoverfeedresponserootobject.md#more_available)
+* [new_suggested_users](_responses_discover_feed_response_.discoverfeedresponserootobject.md#new_suggested_users)
+* [next_max_id](_responses_discover_feed_response_.discoverfeedresponserootobject.md#next_max_id)
+* [status](_responses_discover_feed_response_.discoverfeedresponserootobject.md#status)
+* [suggested_users](_responses_discover_feed_response_.discoverfeedresponserootobject.md#suggested_users)
 
 ## Properties
 
-### max_id
+###  max_id
 
-• **max_id**: _string_
+• **max_id**: *string*
 
-_Defined in [responses/discover.feed.response.ts:5](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/discover.feed.response.ts#L5)_
+*Defined in [responses/discover.feed.response.ts:5](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/discover.feed.response.ts#L5)*
 
----
+___
 
-### more_available
+###  more_available
 
-• **more_available**: _boolean_
+• **more_available**: *boolean*
 
-_Defined in [responses/discover.feed.response.ts:4](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/discover.feed.response.ts#L4)_
+*Defined in [responses/discover.feed.response.ts:4](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/discover.feed.response.ts#L4)*
 
----
+___
 
-### new_suggested_users
+###  new_suggested_users
 
-• **new_suggested_users**: _[DiscoverFeedResponseNew_suggested_users](\_responses_discover_feed_response_.discoverfeedresponsenew*suggested_users.md)*
+• **new_suggested_users**: *[DiscoverFeedResponseNew_suggested_users](_responses_discover_feed_response_.discoverfeedresponsenew_suggested_users.md)*
 
-_Defined in [responses/discover.feed.response.ts:8](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/discover.feed.response.ts#L8)_
+*Defined in [responses/discover.feed.response.ts:8](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/discover.feed.response.ts#L8)*
 
----
+___
 
-### next_max_id
+###  next_max_id
 
-• **next_max_id**: _string_
+• **next_max_id**: *string*
 
-_Defined in [responses/discover.feed.response.ts:6](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/discover.feed.response.ts#L6)_
+*Defined in [responses/discover.feed.response.ts:6](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/discover.feed.response.ts#L6)*
 
----
+___
 
-### status
+###  status
 
-• **status**: _string_
+• **status**: *string*
 
-_Defined in [responses/discover.feed.response.ts:9](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/discover.feed.response.ts#L9)_
+*Defined in [responses/discover.feed.response.ts:9](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/discover.feed.response.ts#L9)*
 
----
+___
 
-### suggested_users
+###  suggested_users
 
-• **suggested_users**: _[DiscoverFeedResponseSuggested_users](\_responses_discover_feed_response_.discoverfeedresponsesuggested*users.md)*
+• **suggested_users**: *[DiscoverFeedResponseSuggested_users](_responses_discover_feed_response_.discoverfeedresponsesuggested_users.md)*
 
-_Defined in [responses/discover.feed.response.ts:7](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/discover.feed.response.ts#L7)_
+*Defined in [responses/discover.feed.response.ts:7](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/discover.feed.response.ts#L7)*

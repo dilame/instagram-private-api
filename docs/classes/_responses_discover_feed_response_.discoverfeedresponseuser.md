@@ -6,83 +6,136 @@
 
 ## Hierarchy
 
-- any
+  * [ProfileEntity](_entities_profile_entity_.profileentity.md)
 
-  - **DiscoverFeedResponseUser**
+  * **DiscoverFeedResponseUser**
 
 ## Index
 
+### Constructors
+
+* [constructor](_responses_discover_feed_response_.discoverfeedresponseuser.md#constructor)
+
 ### Properties
 
-- [full_name](_responses_discover_feed_response_.discoverfeedresponseuser.md#full_name)
-- [has_anonymous_profile_picture](_responses_discover_feed_response_.discoverfeedresponseuser.md#has_anonymous_profile_picture)
-- [is_private](_responses_discover_feed_response_.discoverfeedresponseuser.md#is_private)
-- [is_verified](_responses_discover_feed_response_.discoverfeedresponseuser.md#is_verified)
-- [pk](_responses_discover_feed_response_.discoverfeedresponseuser.md#pk)
-- [profile_pic_id](_responses_discover_feed_response_.discoverfeedresponseuser.md#profile_pic_id)
-- [profile_pic_url](_responses_discover_feed_response_.discoverfeedresponseuser.md#profile_pic_url)
-- [username](_responses_discover_feed_response_.discoverfeedresponseuser.md#username)
+* [full_name](_responses_discover_feed_response_.discoverfeedresponseuser.md#full_name)
+* [has_anonymous_profile_picture](_responses_discover_feed_response_.discoverfeedresponseuser.md#has_anonymous_profile_picture)
+* [is_private](_responses_discover_feed_response_.discoverfeedresponseuser.md#is_private)
+* [is_verified](_responses_discover_feed_response_.discoverfeedresponseuser.md#is_verified)
+* [pk](_responses_discover_feed_response_.discoverfeedresponseuser.md#pk)
+* [profile_pic_id](_responses_discover_feed_response_.discoverfeedresponseuser.md#profile_pic_id)
+* [profile_pic_url](_responses_discover_feed_response_.discoverfeedresponseuser.md#profile_pic_url)
+* [username](_responses_discover_feed_response_.discoverfeedresponseuser.md#username)
+
+### Methods
+
+* [checkFollow](_responses_discover_feed_response_.discoverfeedresponseuser.md#checkfollow)
+* [checkUnfollow](_responses_discover_feed_response_.discoverfeedresponseuser.md#checkunfollow)
+
+## Constructors
+
+###  constructor
+
+\+ **new DiscoverFeedResponseUser**(`client`: [IgApiClient](_core_client_.igapiclient.md)): *[DiscoverFeedResponseUser](_responses_discover_feed_response_.discoverfeedresponseuser.md)*
+
+*Inherited from [Repository](_core_repository_.repository.md).[constructor](_core_repository_.repository.md#constructor)*
+
+*Defined in [core/repository.ts:6](https://github.com/dilame/instagram-private-api/blob/01eb399/src/core/repository.ts#L6)*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`client` | [IgApiClient](_core_client_.igapiclient.md) |
+
+**Returns:** *[DiscoverFeedResponseUser](_responses_discover_feed_response_.discoverfeedresponseuser.md)*
 
 ## Properties
 
-### full_name
+###  full_name
 
-• **full_name**: _string_
+• **full_name**: *string*
 
-_Defined in [responses/discover.feed.response.ts:32](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/discover.feed.response.ts#L32)_
+*Defined in [responses/discover.feed.response.ts:32](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/discover.feed.response.ts#L32)*
 
----
+___
 
-### has_anonymous_profile_picture
+###  has_anonymous_profile_picture
 
-• **has_anonymous_profile_picture**: _boolean_
+• **has_anonymous_profile_picture**: *boolean*
 
-_Defined in [responses/discover.feed.response.ts:37](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/discover.feed.response.ts#L37)_
+*Defined in [responses/discover.feed.response.ts:37](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/discover.feed.response.ts#L37)*
 
----
+___
 
-### is_private
+###  is_private
 
-• **is_private**: _boolean_
+• **is_private**: *boolean*
 
-_Defined in [responses/discover.feed.response.ts:33](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/discover.feed.response.ts#L33)_
+*Defined in [responses/discover.feed.response.ts:33](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/discover.feed.response.ts#L33)*
 
----
+___
 
-### is_verified
+###  is_verified
 
-• **is_verified**: _boolean_
+• **is_verified**: *boolean*
 
-_Defined in [responses/discover.feed.response.ts:36](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/discover.feed.response.ts#L36)_
+*Defined in [responses/discover.feed.response.ts:36](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/discover.feed.response.ts#L36)*
 
----
+___
 
-### pk
+###  pk
 
-• **pk**: _string_
+• **pk**: *string*
 
-_Defined in [responses/discover.feed.response.ts:30](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/discover.feed.response.ts#L30)_
+*Overrides [ProfileEntity](_entities_profile_entity_.profileentity.md).[pk](_entities_profile_entity_.profileentity.md#pk)*
 
----
+*Defined in [responses/discover.feed.response.ts:30](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/discover.feed.response.ts#L30)*
 
-### profile_pic_id
+___
 
-• **profile_pic_id**: _string_
+###  profile_pic_id
 
-_Defined in [responses/discover.feed.response.ts:35](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/discover.feed.response.ts#L35)_
+• **profile_pic_id**: *string*
 
----
+*Defined in [responses/discover.feed.response.ts:35](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/discover.feed.response.ts#L35)*
 
-### profile_pic_url
+___
 
-• **profile_pic_url**: _string_
+###  profile_pic_url
 
-_Defined in [responses/discover.feed.response.ts:34](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/discover.feed.response.ts#L34)_
+• **profile_pic_url**: *string*
 
----
+*Defined in [responses/discover.feed.response.ts:34](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/discover.feed.response.ts#L34)*
 
-### username
+___
 
-• **username**: _string_
+###  username
 
-_Defined in [responses/discover.feed.response.ts:31](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/discover.feed.response.ts#L31)_
+• **username**: *string*
+
+*Defined in [responses/discover.feed.response.ts:31](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/discover.feed.response.ts#L31)*
+
+## Methods
+
+###  checkFollow
+
+▸ **checkFollow**(): *`Promise<FriendshipRepositoryChangeResponseFriendship_status>`*
+
+*Inherited from [ProfileEntity](_entities_profile_entity_.profileentity.md).[checkFollow](_entities_profile_entity_.profileentity.md#checkfollow)*
+
+*Defined in [entities/profile.entity.ts:5](https://github.com/dilame/instagram-private-api/blob/01eb399/src/entities/profile.entity.ts#L5)*
+
+**Returns:** *`Promise<FriendshipRepositoryChangeResponseFriendship_status>`*
+
+___
+
+###  checkUnfollow
+
+▸ **checkUnfollow**(): *`Promise<FriendshipRepositoryChangeResponseFriendship_status>`*
+
+*Inherited from [ProfileEntity](_entities_profile_entity_.profileentity.md).[checkUnfollow](_entities_profile_entity_.profileentity.md#checkunfollow)*
+
+*Defined in [entities/profile.entity.ts:10](https://github.com/dilame/instagram-private-api/blob/01eb399/src/entities/profile.entity.ts#L10)*
+
+**Returns:** *`Promise<FriendshipRepositoryChangeResponseFriendship_status>`*
