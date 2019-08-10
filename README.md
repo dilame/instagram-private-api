@@ -73,32 +73,11 @@ ig.state.proxyUrl = process.env.IG_PROXY;
 
 ## Feeds
 
-Feed allows you to get data. Every feed is accessible via `ig.feed.key`. See [nice example](https://github.com/dilame/instagram-private-api/blob/01eb39940e79a0d3fc7a528586bdb0fe37bea11d/examples/account-followers.feed.example.ts) and learn how to work with library feeds.
+Feed allows you to get data. Every feed is accessible via `ig.feed.feedName`. See [nice example](https://github.com/dilame/instagram-private-api/blob/01eb39940e79a0d3fc7a528586bdb0fe37bea11d/examples/account-followers.feed.example.ts) and learn how to work with library feeds.
 
-Available feed keys list:
+Available feeds key list:
 
-* `accountFollowers`
-* `accountFollowing`
-* `news`
-* `discover`
-* `pendingFriendships`
-* `blockedUsers`
-* `directInbox`
-* `directPending`
-* `directThread`
-* `user`
-* `tag`
-* `location`
-* `mediaComments`
-* `reelsMedia`
-* `reelsTray`
-* `timeline`
-* `musicTrending`
-* `musicSearch`
-* `musicGenre`
-* `musicMood`
-* `usertags`
-* `saved`
+`accountFollowers`, `accountFollowing`, `news`, `discover`, `pendingFriendships`, `blockedUsers`, `directInbox`, `directPending`, `directThread`, `user`, `tag`, `location`, `mediaComments`, `reelsMedia`, `reelsTray`, `timeline`, `musicTrending`, `musicSearch`, `musicGenre`, `musicMood`, `usertags`, `saved`
 
 ## Repositories
 
