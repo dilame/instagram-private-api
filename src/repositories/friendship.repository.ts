@@ -9,13 +9,13 @@ export class FriendshipRepository extends Repository {
     return body;
   }
 
-  async showMany(ids: number[]) {
+  async showMany(userIds: string[] | number[]) {
         const { body } = await this.client.request.send({
             url: `/api/v1/friendships/show_many/`,
             method: 'POST',
             form: {
                 _csrftoken: this.client.state.cookieCsrfToken,
-                user_ids: ids.join(),
+                user_ids: JSON.stringify(userIds),
                 _uuid: this.client.state.uuid
             },
         });
