@@ -15,7 +15,7 @@ export class FriendshipRepository extends Repository {
             method: 'POST',
             form: {
                 _csrftoken: this.client.state.cookieCsrfToken,
-                user_ids: JSON.stringify(userIds),
+                user_ids: userIds.join(),
                 _uuid: this.client.state.uuid
             },
         });
