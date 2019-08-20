@@ -49,6 +49,7 @@ export * from './media-comments.feed.response';
 export * from './reels-media.feed.response';
 export * from './spam.response';
 export * from './tag.feed.response';
+export * from './tags.feed.response';
 export * from './tag.repository.search.response';
 export * from './timeline.feed.response';
 export * from './upload.repository.photo.response';

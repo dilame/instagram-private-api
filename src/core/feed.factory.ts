@@ -19,6 +19,7 @@ import {
   ReelsTrayFeed,
   SavedFeed,
   TagFeed,
+  TagsFeed,
   TimelineFeed,
   UserFeed,
   UsertagsFeed,
@@ -88,6 +89,13 @@ export class FeedFactory {
   public tag(tag: string): TagFeed {
     const feed = new TagFeed(this.client);
     feed.tag = tag;
+    return feed;
+  }
+
+  public tags(tag: string, tab: 'top' | 'recent' | 'places' = 'top'): TagsFeed {
+    const feed = new TagsFeed(this.client);
+    feed.tag = tag;
+    feed.tab = tab;
     return feed;
   }
 
