@@ -8,14 +8,10 @@ export interface AccountInsightsOptions {
   audienceTab?: boolean;
 }
 
-export interface FeedPostsInsightsOptions {
-  timeframe: 'ONE_WEEK'
-    | 'ONE_MONTH'
-    | 'THREE_MONTHS'
-    | 'SIX_MONTHS'
-    | 'ONE_YEAR'
-    | 'TWO_YEARS';
-  dataOrdering: 'CALL'
+export interface PostsInsightsFeedOptions {
+  timeframe: 'ONE_WEEK' | 'ONE_MONTH' | 'THREE_MONTHS' | 'SIX_MONTHS' | 'ONE_YEAR' | 'TWO_YEARS';
+  dataOrdering:
+    | 'CALL'
     | 'COMMENT_COUNT'
     | 'EMAIL'
     | 'ENGAGEMENT_COUNT'
@@ -29,9 +25,5 @@ export interface FeedPostsInsightsOptions {
     | 'SHARE_COUNT'
     | 'TEXT'
     | 'BIO_LINK_CLICK';
-  postType: 'ALL'
-    | 'IMAGE'
-    | 'VIDEO'
-    | 'CAROUSEL_V2'
-    | 'SHOPPING';
+  postType: 'ALL' | 'IMAGE' | 'VIDEO' | 'CAROUSEL_V2' | 'SHOPPING';
 }

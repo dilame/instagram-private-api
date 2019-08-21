@@ -20,5 +20,5 @@ export * from './music-trending.feed';
 export * from './music-mood.feed';
 export * from './music-genre.feed';
 export * from './usertags.feed';
-export * from './feed-posts-insights.feed';
+export * from './posts-insights.feed';
 export * from './stories-insights.feed';

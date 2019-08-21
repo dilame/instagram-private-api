@@ -10,16 +10,16 @@ export class FriendshipRepository extends Repository {
   }
 
   async showMany(userIds: string[] | number[]) {
-        const { body } = await this.client.request.send({
-            url: `/api/v1/friendships/show_many/`,
-            method: 'POST',
-            form: {
-                _csrftoken: this.client.state.cookieCsrfToken,
-                user_ids: userIds.join(),
-                _uuid: this.client.state.uuid
-            },
-        });
-        return body.friendship_statuses;
+    const { body } = await this.client.request.send({
+      url: `/api/v1/friendships/show_many/`,
+      method: 'POST',
+      form: {
+        _csrftoken: this.client.state.cookieCsrfToken,
+        user_ids: userIds.join(),
+        _uuid: this.client.state.uuid,
+      },
+    });
+    return body.friendship_statuses;
   }
 
   async create(id: string | number, mediaIdAttribution?: string) {

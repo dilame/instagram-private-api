@@ -6,7 +6,8 @@ import {
   DirectInboxFeed,
   DirectPendingInboxFeed,
   DirectThreadFeed,
-  DiscoverFeed, FeedPostsInsightsFeed,
+  DiscoverFeed,
+  PostsInsightsFeed,
   LocationFeed,
   MediaCommentsFeed,
   MusicGenreFeed,
@@ -17,7 +18,8 @@ import {
   PendingFriendshipsFeed,
   ReelsMediaFeed,
   ReelsTrayFeed,
-  SavedFeed, StoriesInsightsFeed,
+  SavedFeed,
+  StoriesInsightsFeed,
   TagFeed,
   TimelineFeed,
   UserFeed,
@@ -28,7 +30,7 @@ import { TimelineFeedReason } from '../types/timeline-feed.types';
 import { IgAppModule } from '../types/common.types';
 import { plainToClassFromExist } from 'class-transformer';
 import * as Chance from 'chance';
-import { FeedPostsInsightsOptions } from '../types';
+import { PostsInsightsFeedOptions } from '../types';
 
 export class FeedFactory {
   constructor(private client: IgApiClient) {}
@@ -158,12 +160,12 @@ export class FeedFactory {
     return plainToClassFromExist(new UsertagsFeed(this.client), { id });
   }
 
-  public feedPostsInsights(options: FeedPostsInsightsOptions) {
-    return plainToClassFromExist(new FeedPostsInsightsFeed(this.client), {options});
+  public postsInsightsFeed(options: PostsInsightsFeedOptions) {
+    return plainToClassFromExist(new PostsInsightsFeed(this.client), { options });
   }
 
   public storiesInsights(timeframe: 'ONE_DAY' | 'ONE_WEEK' | 'TWO_WEEKS') {
-    return plainToClassFromExist(new StoriesInsightsFeed(this.client), {timeframe});
+    return plainToClassFromExist(new StoriesInsightsFeed(this.client), { timeframe });
   }
 
   public saved(): SavedFeed {
