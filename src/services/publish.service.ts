@@ -64,9 +64,9 @@ export class PublishService extends Repository {
    * @param transcodeDelayInMs The delay for instagram to transcode the video
    */
   private catchTranscodeError(videoInfo, transcodeDelayInMs: number) {
-    return async error => {
+    return error => {
       if (error.response.statusCode === 202) {
-        return await Bluebird.delay(transcodeDelayInMs);
+        return Bluebird.delay(transcodeDelayInMs);
       } else {
         throw new IgUploadVideoError(error.response as IgResponse<UploadRepositoryVideoResponseRootObject>, videoInfo);
       }
@@ -133,15 +133,9 @@ export class PublishService extends Repository {
       configureOptions.posting_longitude = lng.toString();
     }
 
-    return await Bluebird.try(() => this.client.media.configureVideo(configureOptions)).catch(
-      IgResponseError,
-      error => {
-        throw new IgConfigureVideoError(
-          error.response as IgResponse<UploadRepositoryVideoResponseRootObject>,
-          videoInfo,
-        );
-      },
-    );
+    return Bluebird.try(() => this.client.media.configureVideo(configureOptions)).catch(IgResponseError, error => {
+      throw new IgConfigureVideoError(error.response as IgResponse<UploadRepositoryVideoResponseRootObject>, videoInfo);
+    });
   }
 
   public async album(options: PostingAlbumOptions) {
@@ -260,7 +254,7 @@ export class PublishService extends Repository {
         video: { length: videoInfo.duration / 1000.0 },
       }),
     ).catch(IgResponseError, this.catchTranscodeError(videoInfo, options.transcodeDelay));
-    return await Bluebird.try(() =>
+    return Bluebird.try(() =>
       this.client.media.configureToStoryVideo({
         upload_id: uploadId,
         length: videoInfo.duration / 1000.0,

@@ -25,6 +25,8 @@ export type IgAppModule =
   | 'self_likers_self_likers_video_view_profile'
   | 'story_camera_music_overlay_post_capture'
   | 'story_camera_music_overlay_pre_capture'
+  | 'story_viewer_profile'
+  | 'story_viewer_default'
   | string;
 
 export type IgResponse<Body> = Pick<Response, Exclude<keyof Response, 'body'>> & { body: Body };
