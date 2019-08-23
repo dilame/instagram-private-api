@@ -4,6 +4,7 @@ export * from './ig-checkpoint.error';
 export * from './ig-client.error';
 export * from './ig-cookie-not-found.error';
 export * from './ig-exact-user-not-found-error';
+export * from './ig-inactive-user.error';
 export * from './ig-login-bad-password.error';
 export * from './ig-login-invalid-user.error';
 export * from './ig-login-required.error';

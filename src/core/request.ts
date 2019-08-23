@@ -9,6 +9,7 @@ import {
   IgActionSpamError,
   IgCheckpointError,
   IgClientError,
+  IgInactiveUserError,
   IgLoginRequiredError,
   IgNetworkError,
   IgNotFoundError,
@@ -16,8 +17,8 @@ import {
   IgResponseError,
   IgSentryBlockError,
 } from '../errors';
-import JSONbigInt = require('json-bigint');
 import { IgResponse } from '../types/common.types';
+import JSONbigInt = require('json-bigint');
 
 const JSONbigString = JSONbigInt({ storeAsString: true });
 
@@ -126,6 +127,9 @@ export class Request {
     }
     if (json.error_type === 'sentry_block') {
       return new IgSentryBlockError(response);
+    }
+    if (json.error_type === 'inactive user') {
+      return new IgInactiveUserError(response);
     }
     return new IgResponseError(response);
   }
