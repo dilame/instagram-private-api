@@ -27,7 +27,6 @@ type Payload = { [key: string]: any } | string;
 interface SignedPost {
   signed_body: string;
   ig_sig_key_version: string;
-  d: number;
 }
 
 export class Request {
@@ -104,7 +103,6 @@ export class Request {
     return {
       ig_sig_key_version: this.client.state.signatureVersion,
       signed_body: `${signature}.${json}`,
-      d: 0,
     };
   }
 
