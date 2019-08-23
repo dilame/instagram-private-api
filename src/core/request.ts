@@ -54,9 +54,11 @@ export class Request {
 
   public async send<T = any>(userOptions: Options): Promise<IgResponse<T>> {
     const cookies = this.client.state.cookieJar.getCookies('.instagram.com');
-    const sessionidCookie = cookies.find(cookie => cookie.key === 'sessionid');
+    const keepCookies = ['sessionid'];
+    const newCookies = cookies.filter(cookie => keepCookies.includes(cookie.key));
+
     const newCookieJar = request.jar();
-    newCookieJar.setCookie(sessionidCookie, '.instagram.com');
+    newCookies.forEach(cookie => newCookieJar.setCookie(cookie, '.instagram.com'));
 
     let options = defaultsDeep(
       userOptions,
