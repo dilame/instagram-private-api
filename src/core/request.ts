@@ -53,6 +53,11 @@ export class Request {
   }
 
   public async send<T = any>(userOptions: Options): Promise<IgResponse<T>> {
+    const cookies = this.client.state.cookieJar.getCookies('https://i.instagram.com/');
+    const sessionidCookie = cookies.find(cookie => cookie.key === 'sessionid');
+    const newCookieJar = request.jar();
+    newCookieJar.setCookie(sessionidCookie, 'https://i.instagram.com/');
+
     var options = defaultsDeep(
       userOptions,
       {
@@ -61,7 +66,7 @@ export class Request {
         proxy: this.client.state.proxyUrl,
         simple: false,
         transform: Request.requestTransform,
-        jar: this.client.state.cookieJar,
+        jar: newCookieJar,
         strictSSL: false,
         gzip: true,
         headers: this.getDefaultHeaders(),
@@ -70,7 +75,7 @@ export class Request {
     );
 
     // handle socks proxy
-    if (options.proxy.startsWith('socks')){
+    if (options.proxy.startsWith('socks')) {
       options.agent = new SocksProxyAgent(options.proxy);
       delete options.proxy;
     }
