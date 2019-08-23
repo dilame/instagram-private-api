@@ -31,9 +31,11 @@
 * [musicTrending](_core_feed_factory_.feedfactory.md#musictrending)
 * [news](_core_feed_factory_.feedfactory.md#news)
 * [pendingFriendships](_core_feed_factory_.feedfactory.md#pendingfriendships)
+* [postsInsightsFeed](_core_feed_factory_.feedfactory.md#postsinsightsfeed)
 * [reelsMedia](_core_feed_factory_.feedfactory.md#reelsmedia)
 * [reelsTray](_core_feed_factory_.feedfactory.md#reelstray)
 * [saved](_core_feed_factory_.feedfactory.md#saved)
+* [storiesInsights](_core_feed_factory_.feedfactory.md#storiesinsights)
 * [tag](_core_feed_factory_.feedfactory.md#tag)
 * [timeline](_core_feed_factory_.feedfactory.md#timeline)
 * [user](_core_feed_factory_.feedfactory.md#user)
@@ -45,7 +47,7 @@
 
 \+ **new FeedFactory**(`client`: [IgApiClient](_core_client_.igapiclient.md)): *[FeedFactory](_core_feed_factory_.feedfactory.md)*
 
-*Defined in [core/feed.factory.ts:32](https://github.com/dilame/instagram-private-api/blob/01eb399/src/core/feed.factory.ts#L32)*
+*Defined in [core/feed.factory.ts:35](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/core/feed.factory.ts#L35)*
 
 **Parameters:**
 
@@ -61,7 +63,7 @@ Name | Type |
 
 ▸ **accountFollowers**(`id?`: string | number): *[AccountFollowersFeed](_feeds_account_followers_feed_.accountfollowersfeed.md)*
 
-*Defined in [core/feed.factory.ts:35](https://github.com/dilame/instagram-private-api/blob/01eb399/src/core/feed.factory.ts#L35)*
+*Defined in [core/feed.factory.ts:38](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/core/feed.factory.ts#L38)*
 
 **Parameters:**
 
@@ -77,7 +79,7 @@ ___
 
 ▸ **accountFollowing**(`id?`: string | number): *[AccountFollowingFeed](_feeds_account_following_feed_.accountfollowingfeed.md)*
 
-*Defined in [core/feed.factory.ts:41](https://github.com/dilame/instagram-private-api/blob/01eb399/src/core/feed.factory.ts#L41)*
+*Defined in [core/feed.factory.ts:44](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/core/feed.factory.ts#L44)*
 
 **Parameters:**
 
@@ -93,7 +95,7 @@ ___
 
 ▸ **blockedUsers**(): *[BlockedUsersFeed](_feeds_blocked_users_feed_.blockedusersfeed.md)*
 
-*Defined in [core/feed.factory.ts:59](https://github.com/dilame/instagram-private-api/blob/01eb399/src/core/feed.factory.ts#L59)*
+*Defined in [core/feed.factory.ts:62](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/core/feed.factory.ts#L62)*
 
 **Returns:** *[BlockedUsersFeed](_feeds_blocked_users_feed_.blockedusersfeed.md)*
 
@@ -103,7 +105,7 @@ ___
 
 ▸ **directInbox**(): *[DirectInboxFeed](_feeds_direct_inbox_feed_.directinboxfeed.md)*
 
-*Defined in [core/feed.factory.ts:63](https://github.com/dilame/instagram-private-api/blob/01eb399/src/core/feed.factory.ts#L63)*
+*Defined in [core/feed.factory.ts:66](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/core/feed.factory.ts#L66)*
 
 **Returns:** *[DirectInboxFeed](_feeds_direct_inbox_feed_.directinboxfeed.md)*
 
@@ -113,7 +115,7 @@ ___
 
 ▸ **directPending**(): *[DirectPendingInboxFeed](_feeds_direct_pending_feed_.directpendinginboxfeed.md)*
 
-*Defined in [core/feed.factory.ts:67](https://github.com/dilame/instagram-private-api/blob/01eb399/src/core/feed.factory.ts#L67)*
+*Defined in [core/feed.factory.ts:70](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/core/feed.factory.ts#L70)*
 
 **Returns:** *[DirectPendingInboxFeed](_feeds_direct_pending_feed_.directpendinginboxfeed.md)*
 
@@ -123,7 +125,7 @@ ___
 
 ▸ **directThread**(`options`: `Pick<DirectInboxFeedResponseThreadsItem, "thread_id" | "oldest_cursor">`, `seqId?`: number): *[DirectThreadFeed](_feeds_direct_thread_feed_.directthreadfeed.md)*
 
-*Defined in [core/feed.factory.ts:71](https://github.com/dilame/instagram-private-api/blob/01eb399/src/core/feed.factory.ts#L71)*
+*Defined in [core/feed.factory.ts:74](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/core/feed.factory.ts#L74)*
 
 **Parameters:**
 
@@ -140,7 +142,7 @@ ___
 
 ▸ **discover**(): *[DiscoverFeed](_feeds_discover_feed_.discoverfeed.md)*
 
-*Defined in [core/feed.factory.ts:51](https://github.com/dilame/instagram-private-api/blob/01eb399/src/core/feed.factory.ts#L51)*
+*Defined in [core/feed.factory.ts:54](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/core/feed.factory.ts#L54)*
 
 **Returns:** *[DiscoverFeed](_feeds_discover_feed_.discoverfeed.md)*
 
@@ -150,7 +152,7 @@ ___
 
 ▸ **location**(`id`: string | number, `tab`: "recent" | "ranked"): *[LocationFeed](_feeds_location_feed_.locationfeed.md)*
 
-*Defined in [core/feed.factory.ts:94](https://github.com/dilame/instagram-private-api/blob/01eb399/src/core/feed.factory.ts#L94)*
+*Defined in [core/feed.factory.ts:97](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/core/feed.factory.ts#L97)*
 
 **Parameters:**
 
@@ -167,7 +169,7 @@ ___
 
 ▸ **mediaComments**(`id`: string): *[MediaCommentsFeed](_feeds_media_comments_feed_.mediacommentsfeed.md)*
 
-*Defined in [core/feed.factory.ts:101](https://github.com/dilame/instagram-private-api/blob/01eb399/src/core/feed.factory.ts#L101)*
+*Defined in [core/feed.factory.ts:104](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/core/feed.factory.ts#L104)*
 
 **Parameters:**
 
@@ -183,7 +185,7 @@ ___
 
 ▸ **musicGenre**(`id`: number | string, `product`: [IgAppModule](../modules/_types_common_types_.md#igappmodule)): *[MusicGenreFeed](_feeds_music_genre_feed_.musicgenrefeed.md)*
 
-*Defined in [core/feed.factory.ts:136](https://github.com/dilame/instagram-private-api/blob/01eb399/src/core/feed.factory.ts#L136)*
+*Defined in [core/feed.factory.ts:139](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/core/feed.factory.ts#L139)*
 
 **Parameters:**
 
@@ -200,7 +202,7 @@ ___
 
 ▸ **musicMood**(`id`: number | string, `product`: [IgAppModule](../modules/_types_common_types_.md#igappmodule)): *[MusicMoodFeed](_feeds_music_mood_feed_.musicmoodfeed.md)*
 
-*Defined in [core/feed.factory.ts:146](https://github.com/dilame/instagram-private-api/blob/01eb399/src/core/feed.factory.ts#L146)*
+*Defined in [core/feed.factory.ts:149](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/core/feed.factory.ts#L149)*
 
 **Parameters:**
 
@@ -217,7 +219,7 @@ ___
 
 ▸ **musicSearch**(`query`: string, `product`: [IgAppModule](../modules/_types_common_types_.md#igappmodule)): *[MusicSearchFeed](_feeds_music_search_feed_.musicsearchfeed.md)*
 
-*Defined in [core/feed.factory.ts:127](https://github.com/dilame/instagram-private-api/blob/01eb399/src/core/feed.factory.ts#L127)*
+*Defined in [core/feed.factory.ts:130](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/core/feed.factory.ts#L130)*
 
 **Parameters:**
 
@@ -234,7 +236,7 @@ ___
 
 ▸ **musicTrending**(`product`: [IgAppModule](../modules/_types_common_types_.md#igappmodule)): *[MusicTrendingFeed](_feeds_music_trending_feed_.musictrendingfeed.md)*
 
-*Defined in [core/feed.factory.ts:123](https://github.com/dilame/instagram-private-api/blob/01eb399/src/core/feed.factory.ts#L123)*
+*Defined in [core/feed.factory.ts:126](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/core/feed.factory.ts#L126)*
 
 **Parameters:**
 
@@ -250,7 +252,7 @@ ___
 
 ▸ **news**(): *[NewsFeed](_feeds_news_feed_.newsfeed.md)*
 
-*Defined in [core/feed.factory.ts:47](https://github.com/dilame/instagram-private-api/blob/01eb399/src/core/feed.factory.ts#L47)*
+*Defined in [core/feed.factory.ts:50](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/core/feed.factory.ts#L50)*
 
 **Returns:** *[NewsFeed](_feeds_news_feed_.newsfeed.md)*
 
@@ -260,9 +262,25 @@ ___
 
 ▸ **pendingFriendships**(): *[PendingFriendshipsFeed](_feeds_account_friendships_feed_.pendingfriendshipsfeed.md)*
 
-*Defined in [core/feed.factory.ts:55](https://github.com/dilame/instagram-private-api/blob/01eb399/src/core/feed.factory.ts#L55)*
+*Defined in [core/feed.factory.ts:58](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/core/feed.factory.ts#L58)*
 
 **Returns:** *[PendingFriendshipsFeed](_feeds_account_friendships_feed_.pendingfriendshipsfeed.md)*
+
+___
+
+###  postsInsightsFeed
+
+▸ **postsInsightsFeed**(`options`: [PostsInsightsFeedOptions](../interfaces/_types_insights_options_.postsinsightsfeedoptions.md)): *[PostsInsightsFeed](_feeds_posts_insights_feed_.postsinsightsfeed.md)*
+
+*Defined in [core/feed.factory.ts:163](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/core/feed.factory.ts#L163)*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`options` | [PostsInsightsFeedOptions](../interfaces/_types_insights_options_.postsinsightsfeedoptions.md) |
+
+**Returns:** *[PostsInsightsFeed](_feeds_posts_insights_feed_.postsinsightsfeed.md)*
 
 ___
 
@@ -270,7 +288,7 @@ ___
 
 ▸ **reelsMedia**(`options`: object): *[ReelsMediaFeed](_feeds_reels_media_feed_.reelsmediafeed.md)*
 
-*Defined in [core/feed.factory.ts:107](https://github.com/dilame/instagram-private-api/blob/01eb399/src/core/feed.factory.ts#L107)*
+*Defined in [core/feed.factory.ts:110](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/core/feed.factory.ts#L110)*
 
 **Parameters:**
 
@@ -286,7 +304,7 @@ ___
 
 ▸ **reelsTray**(`reason`: "pull_to_refresh" | "cold_start"): *[ReelsTrayFeed](_feeds_reels_tray_feed_.reelstrayfeed.md)*
 
-*Defined in [core/feed.factory.ts:111](https://github.com/dilame/instagram-private-api/blob/01eb399/src/core/feed.factory.ts#L111)*
+*Defined in [core/feed.factory.ts:114](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/core/feed.factory.ts#L114)*
 
 **Parameters:**
 
@@ -302,9 +320,25 @@ ___
 
 ▸ **saved**(): *[SavedFeed](_feeds_saved_feed_.savedfeed.md)*
 
-*Defined in [core/feed.factory.ts:160](https://github.com/dilame/instagram-private-api/blob/01eb399/src/core/feed.factory.ts#L160)*
+*Defined in [core/feed.factory.ts:171](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/core/feed.factory.ts#L171)*
 
 **Returns:** *[SavedFeed](_feeds_saved_feed_.savedfeed.md)*
+
+___
+
+###  storiesInsights
+
+▸ **storiesInsights**(`timeframe`: "ONE_DAY" | "ONE_WEEK" | "TWO_WEEKS"): *[StoriesInsightsFeed](_feeds_stories_insights_feed_.storiesinsightsfeed.md)*
+
+*Defined in [core/feed.factory.ts:167](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/core/feed.factory.ts#L167)*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`timeframe` | "ONE_DAY" \| "ONE_WEEK" \| "TWO_WEEKS" |
+
+**Returns:** *[StoriesInsightsFeed](_feeds_stories_insights_feed_.storiesinsightsfeed.md)*
 
 ___
 
@@ -312,7 +346,7 @@ ___
 
 ▸ **tag**(`tag`: string): *[TagFeed](_feeds_tag_feed_.tagfeed.md)*
 
-*Defined in [core/feed.factory.ts:88](https://github.com/dilame/instagram-private-api/blob/01eb399/src/core/feed.factory.ts#L88)*
+*Defined in [core/feed.factory.ts:91](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/core/feed.factory.ts#L91)*
 
 **Parameters:**
 
@@ -328,7 +362,7 @@ ___
 
 ▸ **timeline**(`reason?`: [TimelineFeedReason](../modules/_types_timeline_feed_types_.md#timelinefeedreason)): *[TimelineFeed](_feeds_timeline_feed_.timelinefeed.md)*
 
-*Defined in [core/feed.factory.ts:115](https://github.com/dilame/instagram-private-api/blob/01eb399/src/core/feed.factory.ts#L115)*
+*Defined in [core/feed.factory.ts:118](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/core/feed.factory.ts#L118)*
 
 **Parameters:**
 
@@ -344,7 +378,7 @@ ___
 
 ▸ **user**(`id`: string | number): *[UserFeed](_feeds_user_feed_.userfeed.md)*
 
-*Defined in [core/feed.factory.ts:82](https://github.com/dilame/instagram-private-api/blob/01eb399/src/core/feed.factory.ts#L82)*
+*Defined in [core/feed.factory.ts:85](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/core/feed.factory.ts#L85)*
 
 **Parameters:**
 
@@ -360,7 +394,7 @@ ___
 
 ▸ **usertags**(`id`: number | string): *[UsertagsFeed](_feeds_usertags_feed_.usertagsfeed.md)*
 
-*Defined in [core/feed.factory.ts:156](https://github.com/dilame/instagram-private-api/blob/01eb399/src/core/feed.factory.ts#L156)*
+*Defined in [core/feed.factory.ts:159](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/core/feed.factory.ts#L159)*
 
 **Parameters:**
 

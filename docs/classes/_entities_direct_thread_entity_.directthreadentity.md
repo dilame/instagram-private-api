@@ -43,7 +43,7 @@
 
 *Inherited from [Repository](_core_repository_.repository.md).[constructor](_core_repository_.repository.md#constructor)*
 
-*Defined in [core/repository.ts:6](https://github.com/dilame/instagram-private-api/blob/01eb399/src/core/repository.ts#L6)*
+*Defined in [core/repository.ts:6](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/core/repository.ts#L6)*
 
 **Parameters:**
 
@@ -59,7 +59,7 @@ Name | Type |
 
 • **threadId**: *string* =  null
 
-*Defined in [entities/direct-thread.entity.ts:7](https://github.com/dilame/instagram-private-api/blob/01eb399/src/entities/direct-thread.entity.ts#L7)*
+*Defined in [entities/direct-thread.entity.ts:7](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/entities/direct-thread.entity.ts#L7)*
 
 ___
 
@@ -67,7 +67,7 @@ ___
 
 • **userIds**: *string[]* =  null
 
-*Defined in [entities/direct-thread.entity.ts:8](https://github.com/dilame/instagram-private-api/blob/01eb399/src/entities/direct-thread.entity.ts#L8)*
+*Defined in [entities/direct-thread.entity.ts:8](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/entities/direct-thread.entity.ts#L8)*
 
 ## Methods
 
@@ -75,7 +75,7 @@ ___
 
 ▸ **addUser**(`userIds`: string[] | number[]): *`Promise<DirectThreadRepositoryAddUserResponseRootObject>`*
 
-*Defined in [entities/direct-thread.entity.ts:83](https://github.com/dilame/instagram-private-api/blob/01eb399/src/entities/direct-thread.entity.ts#L83)*
+*Defined in [entities/direct-thread.entity.ts:83](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/entities/direct-thread.entity.ts#L83)*
 
 **Parameters:**
 
@@ -91,7 +91,7 @@ ___
 
 ▸ **broadcastLink**(`link_text`: string, `link_urls`: string[]): *`Promise<DirectThreadRepositoryBroadcastResponsePayload>`*
 
-*Defined in [entities/direct-thread.entity.ts:23](https://github.com/dilame/instagram-private-api/blob/01eb399/src/entities/direct-thread.entity.ts#L23)*
+*Defined in [entities/direct-thread.entity.ts:23](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/entities/direct-thread.entity.ts#L23)*
 
 **Parameters:**
 
@@ -108,7 +108,7 @@ ___
 
 ▸ **broadcastPhoto**(`options`: [DirectThreadBroadcastPhotoOptions](../interfaces/_types_direct_thread_broadcast_photo_options_.directthreadbroadcastphotooptions.md)): *`Promise<DirectThreadRepositoryBroadcastResponsePayload>`*
 
-*Defined in [entities/direct-thread.entity.ts:33](https://github.com/dilame/instagram-private-api/blob/01eb399/src/entities/direct-thread.entity.ts#L33)*
+*Defined in [entities/direct-thread.entity.ts:33](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/entities/direct-thread.entity.ts#L33)*
 
 **Parameters:**
 
@@ -124,7 +124,7 @@ ___
 
 ▸ **broadcastStory**(`file`: `Buffer`): *`Promise<any>`*
 
-*Defined in [entities/direct-thread.entity.ts:47](https://github.com/dilame/instagram-private-api/blob/01eb399/src/entities/direct-thread.entity.ts#L47)*
+*Defined in [entities/direct-thread.entity.ts:47](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/entities/direct-thread.entity.ts#L47)*
 
 **Parameters:**
 
@@ -140,7 +140,7 @@ ___
 
 ▸ **broadcastText**(`text`: string): *`Promise<DirectThreadRepositoryBroadcastResponsePayload>`*
 
-*Defined in [entities/direct-thread.entity.ts:10](https://github.com/dilame/instagram-private-api/blob/01eb399/src/entities/direct-thread.entity.ts#L10)*
+*Defined in [entities/direct-thread.entity.ts:10](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/entities/direct-thread.entity.ts#L10)*
 
 **Parameters:**
 
@@ -156,7 +156,7 @@ ___
 
 ▸ **hide**(): *`Promise<StatusResponse>`*
 
-*Defined in [entities/direct-thread.entity.ts:75](https://github.com/dilame/instagram-private-api/blob/01eb399/src/entities/direct-thread.entity.ts#L75)*
+*Defined in [entities/direct-thread.entity.ts:75](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/entities/direct-thread.entity.ts#L75)*
 
 **Returns:** *`Promise<StatusResponse>`*
 
@@ -166,7 +166,7 @@ ___
 
 ▸ **leave**(): *`Promise<StatusResponse>`*
 
-*Defined in [entities/direct-thread.entity.ts:79](https://github.com/dilame/instagram-private-api/blob/01eb399/src/entities/direct-thread.entity.ts#L79)*
+*Defined in [entities/direct-thread.entity.ts:79](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/entities/direct-thread.entity.ts#L79)*
 
 **Returns:** *`Promise<StatusResponse>`*
 
@@ -176,7 +176,7 @@ ___
 
 ▸ **markItemSeen**(`threadItemId`: string): *`Promise<StatusResponse>`*
 
-*Defined in [entities/direct-thread.entity.ts:87](https://github.com/dilame/instagram-private-api/blob/01eb399/src/entities/direct-thread.entity.ts#L87)*
+*Defined in [entities/direct-thread.entity.ts:87](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/entities/direct-thread.entity.ts#L87)*
 
 **Parameters:**
 
@@ -192,7 +192,7 @@ ___
 
 ▸ **mute**(): *`Promise<StatusResponse>`*
 
-*Defined in [entities/direct-thread.entity.ts:67](https://github.com/dilame/instagram-private-api/blob/01eb399/src/entities/direct-thread.entity.ts#L67)*
+*Defined in [entities/direct-thread.entity.ts:67](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/entities/direct-thread.entity.ts#L67)*
 
 **Returns:** *`Promise<StatusResponse>`*
 
@@ -202,7 +202,7 @@ ___
 
 ▸ **unmute**(): *`Promise<StatusResponse>`*
 
-*Defined in [entities/direct-thread.entity.ts:71](https://github.com/dilame/instagram-private-api/blob/01eb399/src/entities/direct-thread.entity.ts#L71)*
+*Defined in [entities/direct-thread.entity.ts:71](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/entities/direct-thread.entity.ts#L71)*
 
 **Returns:** *`Promise<StatusResponse>`*
 
@@ -212,7 +212,7 @@ ___
 
 ▸ **updateTitle**(`title`: string): *`Promise<DirectThreadRepositoryUpdateTitleResponseRootObject>`*
 
-*Defined in [entities/direct-thread.entity.ts:63](https://github.com/dilame/instagram-private-api/blob/01eb399/src/entities/direct-thread.entity.ts#L63)*
+*Defined in [entities/direct-thread.entity.ts:63](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/entities/direct-thread.entity.ts#L63)*
 
 **Parameters:**
 

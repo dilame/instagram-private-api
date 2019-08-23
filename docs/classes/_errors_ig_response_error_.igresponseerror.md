@@ -18,6 +18,8 @@
 
   * [IgCheckpointError](_errors_ig_checkpoint_error_.igcheckpointerror.md)
 
+  * [IgInactiveUserError](_errors_ig_inactive_user_error_.iginactiveusererror.md)
+
   * [IgLoginBadPasswordError](_errors_ig_login_bad_password_error_.igloginbadpassworderror.md)
 
   * [IgLoginInvalidUserError](_errors_ig_login_invalid_user_error_.iglogininvalidusererror.md)
@@ -58,7 +60,7 @@
 
 *Overrides [IgClientError](_errors_ig_client_error_.igclienterror.md).[constructor](_errors_ig_client_error_.igclienterror.md#constructor)*
 
-*Defined in [errors/ig-response.error.ts:9](https://github.com/dilame/instagram-private-api/blob/01eb399/src/errors/ig-response.error.ts#L9)*
+*Defined in [errors/ig-response.error.ts:9](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/errors/ig-response.error.ts#L9)*
 
 **Parameters:**
 
@@ -76,7 +78,7 @@ Name | Type |
 
 *Inherited from void*
 
-Defined in /Users/bowzee/WebstormProjects/instagram-private-api/node_modules/typedoc/node_modules/typescript/lib/lib.es5.d.ts:964
+Defined in /Users/bowzee/WebstormProjects/instagram-private-api/node_modules/typedoc/node_modules/typescript/lib/lib.es5.d.ts:974
 
 ___
 
@@ -96,7 +98,7 @@ ___
 
 • **response**: *[IgResponse](../modules/_types_common_types_.md#igresponse)‹*`TBody`*›*
 
-*Defined in [errors/ig-response.error.ts:9](https://github.com/dilame/instagram-private-api/blob/01eb399/src/errors/ig-response.error.ts#L9)*
+*Defined in [errors/ig-response.error.ts:9](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/errors/ig-response.error.ts#L9)*
 
 ___
 
@@ -108,7 +110,7 @@ ___
 
 *Overrides void*
 
-Defined in /Users/bowzee/WebstormProjects/instagram-private-api/node_modules/typedoc/node_modules/typescript/lib/lib.es5.d.ts:965
+Defined in /Users/bowzee/WebstormProjects/instagram-private-api/node_modules/typedoc/node_modules/typescript/lib/lib.es5.d.ts:975
 
 ___
 
@@ -116,4 +118,4 @@ ___
 
 • **text**: *string*
 
-*Defined in [errors/ig-response.error.ts:7](https://github.com/dilame/instagram-private-api/blob/01eb399/src/errors/ig-response.error.ts#L7)*
+*Defined in [errors/ig-response.error.ts:7](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/errors/ig-response.error.ts#L7)*

@@ -20,4 +20,4 @@
 
 • **track**: *[MusicTrendingFeedResponseTrack](_responses_music_trending_feed_response_.musictrendingfeedresponsetrack.md)*
 
-*Defined in [responses/music-trending.feed.response.ts:8](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/music-trending.feed.response.ts#L8)*
+*Defined in [responses/music-trending.feed.response.ts:8](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/music-trending.feed.response.ts#L8)*

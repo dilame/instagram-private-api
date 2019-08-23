@@ -20,4 +20,4 @@
 
 • **candidates**: *[MediaRepositoryConfigureResponseCandidatesItem](_responses_media_repository_configure_response_.mediarepositoryconfigureresponsecandidatesitem.md)[]*
 
-*Defined in [responses/media.repository.configure.response.ts:37](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/media.repository.configure.response.ts#L37)*
+*Defined in [responses/media.repository.configure.response.ts:37](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/media.repository.configure.response.ts#L37)*

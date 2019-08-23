@@ -25,7 +25,7 @@
 
 • **blocking**: *boolean*
 
-*Defined in [responses/direct-inbox.feed.response.ts:69](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-inbox.feed.response.ts#L69)*
+*Defined in [responses/direct-inbox.feed.response.ts:69](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-inbox.feed.response.ts#L69)*
 
 ___
 
@@ -33,7 +33,7 @@ ___
 
 • **following**: *boolean*
 
-*Defined in [responses/direct-inbox.feed.response.ts:68](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-inbox.feed.response.ts#L68)*
+*Defined in [responses/direct-inbox.feed.response.ts:68](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-inbox.feed.response.ts#L68)*
 
 ___
 
@@ -41,7 +41,7 @@ ___
 
 • **incoming_request**: *boolean*
 
-*Defined in [responses/direct-inbox.feed.response.ts:71](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-inbox.feed.response.ts#L71)*
+*Defined in [responses/direct-inbox.feed.response.ts:71](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-inbox.feed.response.ts#L71)*
 
 ___
 
@@ -49,7 +49,7 @@ ___
 
 • **is_bestie**: *boolean*
 
-*Defined in [responses/direct-inbox.feed.response.ts:73](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-inbox.feed.response.ts#L73)*
+*Defined in [responses/direct-inbox.feed.response.ts:73](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-inbox.feed.response.ts#L73)*
 
 ___
 
@@ -57,7 +57,7 @@ ___
 
 • **is_private**: *boolean*
 
-*Defined in [responses/direct-inbox.feed.response.ts:70](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-inbox.feed.response.ts#L70)*
+*Defined in [responses/direct-inbox.feed.response.ts:70](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-inbox.feed.response.ts#L70)*
 
 ___
 
@@ -65,4 +65,4 @@ ___
 
 • **outgoing_request**: *boolean*
 
-*Defined in [responses/direct-inbox.feed.response.ts:72](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-inbox.feed.response.ts#L72)*
+*Defined in [responses/direct-inbox.feed.response.ts:72](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-inbox.feed.response.ts#L72)*

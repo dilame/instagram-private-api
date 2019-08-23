@@ -21,7 +21,7 @@
 
 • **action**: *string*
 
-*Defined in [responses/account.repository.login.error.response.ts:32](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/account.repository.login.error.response.ts#L32)*
+*Defined in [responses/account.repository.login.error.response.ts:32](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/account.repository.login.error.response.ts#L32)*
 
 ___
 
@@ -29,4 +29,4 @@ ___
 
 • **title**: *string*
 
-*Defined in [responses/account.repository.login.error.response.ts:31](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/account.repository.login.error.response.ts#L31)*
+*Defined in [responses/account.repository.login.error.response.ts:31](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/account.repository.login.error.response.ts#L31)*

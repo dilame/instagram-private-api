@@ -23,7 +23,7 @@
 
 • **client_context**: *string*
 
-*Defined in [responses/direct-thread.repository.broadcast.response.ts:8](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-thread.repository.broadcast.response.ts#L8)*
+*Defined in [responses/direct-thread.repository.broadcast.response.ts:8](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-thread.repository.broadcast.response.ts#L8)*
 
 ___
 
@@ -31,7 +31,7 @@ ___
 
 • **item_id**: *string*
 
-*Defined in [responses/direct-thread.repository.broadcast.response.ts:9](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-thread.repository.broadcast.response.ts#L9)*
+*Defined in [responses/direct-thread.repository.broadcast.response.ts:9](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-thread.repository.broadcast.response.ts#L9)*
 
 ___
 
@@ -39,7 +39,7 @@ ___
 
 • **thread_id**: *string*
 
-*Defined in [responses/direct-thread.repository.broadcast.response.ts:11](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-thread.repository.broadcast.response.ts#L11)*
+*Defined in [responses/direct-thread.repository.broadcast.response.ts:11](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-thread.repository.broadcast.response.ts#L11)*
 
 ___
 
@@ -47,4 +47,4 @@ ___
 
 • **timestamp**: *string*
 
-*Defined in [responses/direct-thread.repository.broadcast.response.ts:10](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-thread.repository.broadcast.response.ts#L10)*
+*Defined in [responses/direct-thread.repository.broadcast.response.ts:10](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-thread.repository.broadcast.response.ts#L10)*

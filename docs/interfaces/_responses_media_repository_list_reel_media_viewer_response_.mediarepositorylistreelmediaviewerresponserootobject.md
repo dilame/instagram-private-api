@@ -25,7 +25,7 @@
 
 • **next_max_id**: *null*
 
-*Defined in [responses/media.repository.list-reel-media-viewer.response.ts:3](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/media.repository.list-reel-media-viewer.response.ts#L3)*
+*Defined in [responses/media.repository.list-reel-media-viewer.response.ts:3](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/media.repository.list-reel-media-viewer.response.ts#L3)*
 
 ___
 
@@ -33,7 +33,7 @@ ___
 
 • **status**: *string*
 
-*Defined in [responses/media.repository.list-reel-media-viewer.response.ts:7](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/media.repository.list-reel-media-viewer.response.ts#L7)*
+*Defined in [responses/media.repository.list-reel-media-viewer.response.ts:7](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/media.repository.list-reel-media-viewer.response.ts#L7)*
 
 ___
 
@@ -41,7 +41,7 @@ ___
 
 • **total_viewer_count**: *number*
 
-*Defined in [responses/media.repository.list-reel-media-viewer.response.ts:5](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/media.repository.list-reel-media-viewer.response.ts#L5)*
+*Defined in [responses/media.repository.list-reel-media-viewer.response.ts:5](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/media.repository.list-reel-media-viewer.response.ts#L5)*
 
 ___
 
@@ -49,7 +49,7 @@ ___
 
 • **updated_media**: *[MediaRepositoryListReelMediaViewerResponseUpdated_media](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponseupdated_media.md)*
 
-*Defined in [responses/media.repository.list-reel-media-viewer.response.ts:6](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/media.repository.list-reel-media-viewer.response.ts#L6)*
+*Defined in [responses/media.repository.list-reel-media-viewer.response.ts:6](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/media.repository.list-reel-media-viewer.response.ts#L6)*
 
 ___
 
@@ -57,7 +57,7 @@ ___
 
 • **user_count**: *number*
 
-*Defined in [responses/media.repository.list-reel-media-viewer.response.ts:4](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/media.repository.list-reel-media-viewer.response.ts#L4)*
+*Defined in [responses/media.repository.list-reel-media-viewer.response.ts:4](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/media.repository.list-reel-media-viewer.response.ts#L4)*
 
 ___
 
@@ -65,4 +65,4 @@ ___
 
 • **users**: *[MediaRepositoryListReelMediaViewerResponseUsersItem](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponseusersitem.md)[]*
 
-*Defined in [responses/media.repository.list-reel-media-viewer.response.ts:2](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/media.repository.list-reel-media-viewer.response.ts#L2)*
+*Defined in [responses/media.repository.list-reel-media-viewer.response.ts:2](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/media.repository.list-reel-media-viewer.response.ts#L2)*

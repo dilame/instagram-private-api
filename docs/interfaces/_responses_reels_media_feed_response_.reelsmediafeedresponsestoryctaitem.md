@@ -20,4 +20,4 @@
 
 • **links**: *[ReelsMediaFeedResponseLinksItem](_responses_reels_media_feed_response_.reelsmediafeedresponselinksitem.md)[]*
 
-*Defined in [responses/reels-media.feed.response.ts:104](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-media.feed.response.ts#L104)*
+*Defined in [responses/reels-media.feed.response.ts:104](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/reels-media.feed.response.ts#L104)*

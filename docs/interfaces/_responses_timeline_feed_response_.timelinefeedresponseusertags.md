@@ -20,4 +20,4 @@
 
 • **in**: *[TimelineFeedResponseInItem](_responses_timeline_feed_response_.timelinefeedresponseinitem.md)[]*
 
-*Defined in [responses/timeline.feed.response.ts:228](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/timeline.feed.response.ts#L228)*
+*Defined in [responses/timeline.feed.response.ts:228](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/timeline.feed.response.ts#L228)*

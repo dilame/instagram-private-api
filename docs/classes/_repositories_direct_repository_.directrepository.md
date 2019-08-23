@@ -30,7 +30,7 @@
 
 *Inherited from [Repository](_core_repository_.repository.md).[constructor](_core_repository_.repository.md#constructor)*
 
-*Defined in [core/repository.ts:6](https://github.com/dilame/instagram-private-api/blob/01eb399/src/core/repository.ts#L6)*
+*Defined in [core/repository.ts:6](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/core/repository.ts#L6)*
 
 **Parameters:**
 
@@ -46,7 +46,7 @@ Name | Type |
 
 ▸ **createGroupThread**(`recipientUsers`: string[], `threadTitle`: string): *`Promise<DirectRepositoryCreateGroupThreadResponseRootObject>`*
 
-*Defined in [repositories/direct.repository.ts:9](https://github.com/dilame/instagram-private-api/blob/01eb399/src/repositories/direct.repository.ts#L9)*
+*Defined in [repositories/direct.repository.ts:9](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/repositories/direct.repository.ts#L9)*
 
 **Parameters:**
 
@@ -63,7 +63,7 @@ ___
 
 ▸ **getPresence**(): *`Promise<DirectRepositoryGetPresenceResponseRootObject>`*
 
-*Defined in [repositories/direct.repository.ts:43](https://github.com/dilame/instagram-private-api/blob/01eb399/src/repositories/direct.repository.ts#L43)*
+*Defined in [repositories/direct.repository.ts:43](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/repositories/direct.repository.ts#L43)*
 
 **Returns:** *`Promise<DirectRepositoryGetPresenceResponseRootObject>`*
 
@@ -73,7 +73,7 @@ ___
 
 ▸ **rankedRecipients**(`mode`: "raven" | "reshare", `query`: string): *`Promise<DirectRepositoryRankedRecipientsResponseRootObject>`*
 
-*Defined in [repositories/direct.repository.ts:27](https://github.com/dilame/instagram-private-api/blob/01eb399/src/repositories/direct.repository.ts#L27)*
+*Defined in [repositories/direct.repository.ts:27](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/repositories/direct.repository.ts#L27)*
 
 **Parameters:**
 

@@ -20,4 +20,4 @@
 
 • **in**: *any[]*
 
-*Defined in [responses/media.repository.configure.response.ts:63](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/media.repository.configure.response.ts#L63)*
+*Defined in [responses/media.repository.configure.response.ts:63](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/media.repository.configure.response.ts#L63)*

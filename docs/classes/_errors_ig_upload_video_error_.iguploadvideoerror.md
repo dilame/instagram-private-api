@@ -39,7 +39,7 @@
 
 *Overrides [IgResponseError](_errors_ig_response_error_.igresponseerror.md).[constructor](_errors_ig_response_error_.igresponseerror.md#constructor)*
 
-*Defined in [errors/ig-upload-video-error.ts:5](https://github.com/dilame/instagram-private-api/blob/01eb399/src/errors/ig-upload-video-error.ts#L5)*
+*Defined in [errors/ig-upload-video-error.ts:5](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/errors/ig-upload-video-error.ts#L5)*
 
 **Parameters:**
 
@@ -58,7 +58,7 @@ Name | Type |
 
 *Inherited from void*
 
-Defined in /Users/bowzee/WebstormProjects/instagram-private-api/node_modules/typedoc/node_modules/typescript/lib/lib.es5.d.ts:964
+Defined in /Users/bowzee/WebstormProjects/instagram-private-api/node_modules/typedoc/node_modules/typescript/lib/lib.es5.d.ts:974
 
 ___
 
@@ -80,7 +80,7 @@ ___
 
 *Inherited from [IgResponseError](_errors_ig_response_error_.igresponseerror.md).[response](_errors_ig_response_error_.igresponseerror.md#response)*
 
-*Defined in [errors/ig-response.error.ts:9](https://github.com/dilame/instagram-private-api/blob/01eb399/src/errors/ig-response.error.ts#L9)*
+*Defined in [errors/ig-response.error.ts:9](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/errors/ig-response.error.ts#L9)*
 
 ___
 
@@ -92,7 +92,7 @@ ___
 
 *Overrides void*
 
-Defined in /Users/bowzee/WebstormProjects/instagram-private-api/node_modules/typedoc/node_modules/typescript/lib/lib.es5.d.ts:965
+Defined in /Users/bowzee/WebstormProjects/instagram-private-api/node_modules/typedoc/node_modules/typescript/lib/lib.es5.d.ts:975
 
 ___
 
@@ -102,7 +102,7 @@ ___
 
 *Inherited from [IgResponseError](_errors_ig_response_error_.igresponseerror.md).[text](_errors_ig_response_error_.igresponseerror.md#text)*
 
-*Defined in [errors/ig-response.error.ts:7](https://github.com/dilame/instagram-private-api/blob/01eb399/src/errors/ig-response.error.ts#L7)*
+*Defined in [errors/ig-response.error.ts:7](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/errors/ig-response.error.ts#L7)*
 
 ___
 
@@ -110,4 +110,4 @@ ___
 
 • **videoInfo**: *any*
 
-*Defined in [errors/ig-upload-video-error.ts:6](https://github.com/dilame/instagram-private-api/blob/01eb399/src/errors/ig-upload-video-error.ts#L6)*
+*Defined in [errors/ig-upload-video-error.ts:6](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/errors/ig-upload-video-error.ts#L6)*

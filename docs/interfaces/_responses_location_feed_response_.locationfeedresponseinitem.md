@@ -23,7 +23,7 @@
 
 • **duration_in_video_in_sec**: *null*
 
-*Defined in [responses/location.feed.response.ts:161](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/location.feed.response.ts#L161)*
+*Defined in [responses/location.feed.response.ts:161](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/location.feed.response.ts#L161)*
 
 ___
 
@@ -31,7 +31,7 @@ ___
 
 • **position**: *number[] | string | number[]*
 
-*Defined in [responses/location.feed.response.ts:159](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/location.feed.response.ts#L159)*
+*Defined in [responses/location.feed.response.ts:159](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/location.feed.response.ts#L159)*
 
 ___
 
@@ -39,7 +39,7 @@ ___
 
 • **start_time_in_video_in_sec**: *null*
 
-*Defined in [responses/location.feed.response.ts:160](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/location.feed.response.ts#L160)*
+*Defined in [responses/location.feed.response.ts:160](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/location.feed.response.ts#L160)*
 
 ___
 
@@ -47,4 +47,4 @@ ___
 
 • **user**: *[LocationFeedResponseUser](_responses_location_feed_response_.locationfeedresponseuser.md)*
 
-*Defined in [responses/location.feed.response.ts:158](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/location.feed.response.ts#L158)*
+*Defined in [responses/location.feed.response.ts:158](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/location.feed.response.ts#L158)*

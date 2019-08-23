@@ -26,7 +26,7 @@
 
 • **full_name**: *string*
 
-*Defined in [responses/media.repository.list-reel-media-viewer.response.ts:126](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/media.repository.list-reel-media-viewer.response.ts#L126)*
+*Defined in [responses/media.repository.list-reel-media-viewer.response.ts:126](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/media.repository.list-reel-media-viewer.response.ts#L126)*
 
 ___
 
@@ -34,7 +34,7 @@ ___
 
 • **is_private**: *boolean*
 
-*Defined in [responses/media.repository.list-reel-media-viewer.response.ts:127](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/media.repository.list-reel-media-viewer.response.ts#L127)*
+*Defined in [responses/media.repository.list-reel-media-viewer.response.ts:127](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/media.repository.list-reel-media-viewer.response.ts#L127)*
 
 ___
 
@@ -42,7 +42,7 @@ ___
 
 • **is_verified**: *boolean*
 
-*Defined in [responses/media.repository.list-reel-media-viewer.response.ts:130](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/media.repository.list-reel-media-viewer.response.ts#L130)*
+*Defined in [responses/media.repository.list-reel-media-viewer.response.ts:130](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/media.repository.list-reel-media-viewer.response.ts#L130)*
 
 ___
 
@@ -50,7 +50,7 @@ ___
 
 • **pk**: *number*
 
-*Defined in [responses/media.repository.list-reel-media-viewer.response.ts:124](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/media.repository.list-reel-media-viewer.response.ts#L124)*
+*Defined in [responses/media.repository.list-reel-media-viewer.response.ts:124](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/media.repository.list-reel-media-viewer.response.ts#L124)*
 
 ___
 
@@ -58,7 +58,7 @@ ___
 
 • **profile_pic_id**: *string*
 
-*Defined in [responses/media.repository.list-reel-media-viewer.response.ts:129](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/media.repository.list-reel-media-viewer.response.ts#L129)*
+*Defined in [responses/media.repository.list-reel-media-viewer.response.ts:129](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/media.repository.list-reel-media-viewer.response.ts#L129)*
 
 ___
 
@@ -66,7 +66,7 @@ ___
 
 • **profile_pic_url**: *string*
 
-*Defined in [responses/media.repository.list-reel-media-viewer.response.ts:128](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/media.repository.list-reel-media-viewer.response.ts#L128)*
+*Defined in [responses/media.repository.list-reel-media-viewer.response.ts:128](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/media.repository.list-reel-media-viewer.response.ts#L128)*
 
 ___
 
@@ -74,4 +74,4 @@ ___
 
 • **username**: *string*
 
-*Defined in [responses/media.repository.list-reel-media-viewer.response.ts:125](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/media.repository.list-reel-media-viewer.response.ts#L125)*
+*Defined in [responses/media.repository.list-reel-media-viewer.response.ts:125](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/media.repository.list-reel-media-viewer.response.ts#L125)*

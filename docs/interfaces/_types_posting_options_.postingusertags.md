@@ -20,4 +20,4 @@
 
 • **in**: *`Array<object>`*
 
-*Defined in [types/posting.options.ts:14](https://github.com/dilame/instagram-private-api/blob/01eb399/src/types/posting.options.ts#L14)*
+*Defined in [types/posting.options.ts:14](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/posting.options.ts#L14)*

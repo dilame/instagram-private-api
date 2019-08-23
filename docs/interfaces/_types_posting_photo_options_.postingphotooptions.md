@@ -23,7 +23,7 @@
 
 • **caption**? : *string*
 
-*Defined in [types/posting.photo.options.ts:5](https://github.com/dilame/instagram-private-api/blob/01eb399/src/types/posting.photo.options.ts#L5)*
+*Defined in [types/posting.photo.options.ts:5](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/posting.photo.options.ts#L5)*
 
 ___
 
@@ -31,7 +31,7 @@ ___
 
 • **file**: *`Buffer`*
 
-*Defined in [types/posting.photo.options.ts:4](https://github.com/dilame/instagram-private-api/blob/01eb399/src/types/posting.photo.options.ts#L4)*
+*Defined in [types/posting.photo.options.ts:4](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/posting.photo.options.ts#L4)*
 
 ___
 
@@ -39,7 +39,7 @@ ___
 
 • **location**? : *[PostingLocation](_types_posting_options_.postinglocation.md)*
 
-*Defined in [types/posting.photo.options.ts:7](https://github.com/dilame/instagram-private-api/blob/01eb399/src/types/posting.photo.options.ts#L7)*
+*Defined in [types/posting.photo.options.ts:7](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/posting.photo.options.ts#L7)*
 
 ___
 
@@ -47,4 +47,4 @@ ___
 
 • **usertags**? : *[PostingUsertags](_types_posting_options_.postingusertags.md)*
 
-*Defined in [types/posting.photo.options.ts:6](https://github.com/dilame/instagram-private-api/blob/01eb399/src/types/posting.photo.options.ts#L6)*
+*Defined in [types/posting.photo.options.ts:6](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/posting.photo.options.ts#L6)*

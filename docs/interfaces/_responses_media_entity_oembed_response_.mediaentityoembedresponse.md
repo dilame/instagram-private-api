@@ -34,7 +34,7 @@
 
 • **author_id**: *number*
 
-*Defined in [responses/media.entity.oembed.response.ts:6](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/media.entity.oembed.response.ts#L6)*
+*Defined in [responses/media.entity.oembed.response.ts:6](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/media.entity.oembed.response.ts#L6)*
 
 ___
 
@@ -42,7 +42,7 @@ ___
 
 • **author_name**: *string*
 
-*Defined in [responses/media.entity.oembed.response.ts:4](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/media.entity.oembed.response.ts#L4)*
+*Defined in [responses/media.entity.oembed.response.ts:4](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/media.entity.oembed.response.ts#L4)*
 
 ___
 
@@ -50,7 +50,7 @@ ___
 
 • **author_url**: *string*
 
-*Defined in [responses/media.entity.oembed.response.ts:5](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/media.entity.oembed.response.ts#L5)*
+*Defined in [responses/media.entity.oembed.response.ts:5](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/media.entity.oembed.response.ts#L5)*
 
 ___
 
@@ -58,7 +58,7 @@ ___
 
 • **height**: *null*
 
-*Defined in [responses/media.entity.oembed.response.ts:12](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/media.entity.oembed.response.ts#L12)*
+*Defined in [responses/media.entity.oembed.response.ts:12](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/media.entity.oembed.response.ts#L12)*
 
 ___
 
@@ -66,7 +66,7 @@ ___
 
 • **html**: *string*
 
-*Defined in [responses/media.entity.oembed.response.ts:13](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/media.entity.oembed.response.ts#L13)*
+*Defined in [responses/media.entity.oembed.response.ts:13](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/media.entity.oembed.response.ts#L13)*
 
 ___
 
@@ -74,7 +74,7 @@ ___
 
 • **media_id**: *string*
 
-*Defined in [responses/media.entity.oembed.response.ts:7](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/media.entity.oembed.response.ts#L7)*
+*Defined in [responses/media.entity.oembed.response.ts:7](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/media.entity.oembed.response.ts#L7)*
 
 ___
 
@@ -82,7 +82,7 @@ ___
 
 • **provider_name**: *string*
 
-*Defined in [responses/media.entity.oembed.response.ts:8](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/media.entity.oembed.response.ts#L8)*
+*Defined in [responses/media.entity.oembed.response.ts:8](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/media.entity.oembed.response.ts#L8)*
 
 ___
 
@@ -90,7 +90,7 @@ ___
 
 • **provider_url**: *string*
 
-*Defined in [responses/media.entity.oembed.response.ts:9](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/media.entity.oembed.response.ts#L9)*
+*Defined in [responses/media.entity.oembed.response.ts:9](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/media.entity.oembed.response.ts#L9)*
 
 ___
 
@@ -98,7 +98,7 @@ ___
 
 • **thumbnail_height**: *number*
 
-*Defined in [responses/media.entity.oembed.response.ts:16](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/media.entity.oembed.response.ts#L16)*
+*Defined in [responses/media.entity.oembed.response.ts:16](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/media.entity.oembed.response.ts#L16)*
 
 ___
 
@@ -106,7 +106,7 @@ ___
 
 • **thumbnail_url**: *string*
 
-*Defined in [responses/media.entity.oembed.response.ts:14](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/media.entity.oembed.response.ts#L14)*
+*Defined in [responses/media.entity.oembed.response.ts:14](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/media.entity.oembed.response.ts#L14)*
 
 ___
 
@@ -114,7 +114,7 @@ ___
 
 • **thumbnail_width**: *number*
 
-*Defined in [responses/media.entity.oembed.response.ts:15](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/media.entity.oembed.response.ts#L15)*
+*Defined in [responses/media.entity.oembed.response.ts:15](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/media.entity.oembed.response.ts#L15)*
 
 ___
 
@@ -122,7 +122,7 @@ ___
 
 • **title**: *string*
 
-*Defined in [responses/media.entity.oembed.response.ts:3](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/media.entity.oembed.response.ts#L3)*
+*Defined in [responses/media.entity.oembed.response.ts:3](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/media.entity.oembed.response.ts#L3)*
 
 ___
 
@@ -130,7 +130,7 @@ ___
 
 • **type**: *string*
 
-*Defined in [responses/media.entity.oembed.response.ts:10](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/media.entity.oembed.response.ts#L10)*
+*Defined in [responses/media.entity.oembed.response.ts:10](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/media.entity.oembed.response.ts#L10)*
 
 ___
 
@@ -138,7 +138,7 @@ ___
 
 • **version**: *string*
 
-*Defined in [responses/media.entity.oembed.response.ts:2](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/media.entity.oembed.response.ts#L2)*
+*Defined in [responses/media.entity.oembed.response.ts:2](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/media.entity.oembed.response.ts#L2)*
 
 ___
 
@@ -146,4 +146,4 @@ ___
 
 • **width**: *number*
 
-*Defined in [responses/media.entity.oembed.response.ts:11](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/media.entity.oembed.response.ts#L11)*
+*Defined in [responses/media.entity.oembed.response.ts:11](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/media.entity.oembed.response.ts#L11)*

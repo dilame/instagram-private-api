@@ -21,7 +21,7 @@
 
 • **entities**: *any[]*
 
-*Defined in [responses/user.repository.info.response.ts:75](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/user.repository.info.response.ts#L75)*
+*Defined in [responses/user.repository.info.response.ts:75](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/user.repository.info.response.ts#L75)*
 
 ___
 
@@ -29,4 +29,4 @@ ___
 
 • **raw_text**: *string*
 
-*Defined in [responses/user.repository.info.response.ts:74](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/user.repository.info.response.ts#L74)*
+*Defined in [responses/user.repository.info.response.ts:74](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/user.repository.info.response.ts#L74)*

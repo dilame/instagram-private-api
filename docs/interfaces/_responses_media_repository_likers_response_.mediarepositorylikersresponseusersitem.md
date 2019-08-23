@@ -27,7 +27,7 @@
 
 • **full_name**: *string*
 
-*Defined in [responses/media.repository.likers.response.ts:9](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/media.repository.likers.response.ts#L9)*
+*Defined in [responses/media.repository.likers.response.ts:9](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/media.repository.likers.response.ts#L9)*
 
 ___
 
@@ -35,7 +35,7 @@ ___
 
 • **is_private**: *boolean*
 
-*Defined in [responses/media.repository.likers.response.ts:10](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/media.repository.likers.response.ts#L10)*
+*Defined in [responses/media.repository.likers.response.ts:10](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/media.repository.likers.response.ts#L10)*
 
 ___
 
@@ -43,7 +43,7 @@ ___
 
 • **is_verified**: *boolean*
 
-*Defined in [responses/media.repository.likers.response.ts:13](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/media.repository.likers.response.ts#L13)*
+*Defined in [responses/media.repository.likers.response.ts:13](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/media.repository.likers.response.ts#L13)*
 
 ___
 
@@ -51,7 +51,7 @@ ___
 
 • **latest_reel_media**? : *number*
 
-*Defined in [responses/media.repository.likers.response.ts:14](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/media.repository.likers.response.ts#L14)*
+*Defined in [responses/media.repository.likers.response.ts:14](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/media.repository.likers.response.ts#L14)*
 
 ___
 
@@ -59,7 +59,7 @@ ___
 
 • **pk**: *number*
 
-*Defined in [responses/media.repository.likers.response.ts:7](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/media.repository.likers.response.ts#L7)*
+*Defined in [responses/media.repository.likers.response.ts:7](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/media.repository.likers.response.ts#L7)*
 
 ___
 
@@ -67,7 +67,7 @@ ___
 
 • **profile_pic_id**? : *string*
 
-*Defined in [responses/media.repository.likers.response.ts:12](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/media.repository.likers.response.ts#L12)*
+*Defined in [responses/media.repository.likers.response.ts:12](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/media.repository.likers.response.ts#L12)*
 
 ___
 
@@ -75,7 +75,7 @@ ___
 
 • **profile_pic_url**: *string*
 
-*Defined in [responses/media.repository.likers.response.ts:11](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/media.repository.likers.response.ts#L11)*
+*Defined in [responses/media.repository.likers.response.ts:11](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/media.repository.likers.response.ts#L11)*
 
 ___
 
@@ -83,4 +83,4 @@ ___
 
 • **username**: *string*
 
-*Defined in [responses/media.repository.likers.response.ts:8](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/media.repository.likers.response.ts#L8)*
+*Defined in [responses/media.repository.likers.response.ts:8](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/media.repository.likers.response.ts#L8)*

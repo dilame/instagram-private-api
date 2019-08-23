@@ -20,4 +20,4 @@
 
 • **links**: *[object]*
 
-*Defined in [types/media.configure-story.options.ts:72](https://github.com/dilame/instagram-private-api/blob/01eb399/src/types/media.configure-story.options.ts#L72)*
+*Defined in [types/media.configure-story.options.ts:72](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/media.configure-story.options.ts#L72)*

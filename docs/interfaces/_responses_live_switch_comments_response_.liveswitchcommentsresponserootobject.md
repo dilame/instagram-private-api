@@ -21,7 +21,7 @@
 
 • **comment_muted**: *number*
 
-*Defined in [responses/live.switch-comments.response.ts:2](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/live.switch-comments.response.ts#L2)*
+*Defined in [responses/live.switch-comments.response.ts:2](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.switch-comments.response.ts#L2)*
 
 ___
 
@@ -29,4 +29,4 @@ ___
 
 • **status**: *string*
 
-*Defined in [responses/live.switch-comments.response.ts:3](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/live.switch-comments.response.ts#L3)*
+*Defined in [responses/live.switch-comments.response.ts:3](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.switch-comments.response.ts#L3)*

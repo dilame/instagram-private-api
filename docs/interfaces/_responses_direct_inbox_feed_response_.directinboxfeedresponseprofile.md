@@ -27,7 +27,7 @@
 
 • **full_name**: *string*
 
-*Defined in [responses/direct-inbox.feed.response.ts:151](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-inbox.feed.response.ts#L151)*
+*Defined in [responses/direct-inbox.feed.response.ts:151](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-inbox.feed.response.ts#L151)*
 
 ___
 
@@ -35,7 +35,7 @@ ___
 
 • **has_anonymous_profile_picture**: *boolean*
 
-*Defined in [responses/direct-inbox.feed.response.ts:156](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-inbox.feed.response.ts#L156)*
+*Defined in [responses/direct-inbox.feed.response.ts:156](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-inbox.feed.response.ts#L156)*
 
 ___
 
@@ -43,7 +43,7 @@ ___
 
 • **is_private**: *boolean*
 
-*Defined in [responses/direct-inbox.feed.response.ts:152](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-inbox.feed.response.ts#L152)*
+*Defined in [responses/direct-inbox.feed.response.ts:152](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-inbox.feed.response.ts#L152)*
 
 ___
 
@@ -51,7 +51,7 @@ ___
 
 • **is_verified**: *boolean*
 
-*Defined in [responses/direct-inbox.feed.response.ts:155](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-inbox.feed.response.ts#L155)*
+*Defined in [responses/direct-inbox.feed.response.ts:155](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-inbox.feed.response.ts#L155)*
 
 ___
 
@@ -59,7 +59,7 @@ ___
 
 • **pk**: *number*
 
-*Defined in [responses/direct-inbox.feed.response.ts:149](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-inbox.feed.response.ts#L149)*
+*Defined in [responses/direct-inbox.feed.response.ts:149](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-inbox.feed.response.ts#L149)*
 
 ___
 
@@ -67,7 +67,7 @@ ___
 
 • **profile_pic_id**: *string*
 
-*Defined in [responses/direct-inbox.feed.response.ts:154](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-inbox.feed.response.ts#L154)*
+*Defined in [responses/direct-inbox.feed.response.ts:154](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-inbox.feed.response.ts#L154)*
 
 ___
 
@@ -75,7 +75,7 @@ ___
 
 • **profile_pic_url**: *string*
 
-*Defined in [responses/direct-inbox.feed.response.ts:153](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-inbox.feed.response.ts#L153)*
+*Defined in [responses/direct-inbox.feed.response.ts:153](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-inbox.feed.response.ts#L153)*
 
 ___
 
@@ -83,4 +83,4 @@ ___
 
 • **username**: *string*
 
-*Defined in [responses/direct-inbox.feed.response.ts:150](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-inbox.feed.response.ts#L150)*
+*Defined in [responses/direct-inbox.feed.response.ts:150](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-inbox.feed.response.ts#L150)*

@@ -28,7 +28,7 @@
 
 • **obfuscated_phone_number**: *string*
 
-*Defined in [responses/account.repository.login.error.response.ts:16](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/account.repository.login.error.response.ts#L16)*
+*Defined in [responses/account.repository.login.error.response.ts:16](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/account.repository.login.error.response.ts#L16)*
 
 ___
 
@@ -36,7 +36,7 @@ ___
 
 • **phone_verification_settings**: *[AccountRepositoryLoginErrorResponsePhoneVerificationSettings](_responses_account_repository_login_error_response_.accountrepositoryloginerrorresponsephoneverificationsettings.md)*
 
-*Defined in [responses/account.repository.login.error.response.ts:21](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/account.repository.login.error.response.ts#L21)*
+*Defined in [responses/account.repository.login.error.response.ts:21](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/account.repository.login.error.response.ts#L21)*
 
 ___
 
@@ -44,7 +44,7 @@ ___
 
 • **show_messenger_code_option**: *boolean*
 
-*Defined in [responses/account.repository.login.error.response.ts:18](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/account.repository.login.error.response.ts#L18)*
+*Defined in [responses/account.repository.login.error.response.ts:18](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/account.repository.login.error.response.ts#L18)*
 
 ___
 
@@ -52,7 +52,7 @@ ___
 
 • **show_new_login_screen**: *boolean*
 
-*Defined in [responses/account.repository.login.error.response.ts:19](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/account.repository.login.error.response.ts#L19)*
+*Defined in [responses/account.repository.login.error.response.ts:19](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/account.repository.login.error.response.ts#L19)*
 
 ___
 
@@ -60,7 +60,7 @@ ___
 
 • **show_trusted_device_option**: *boolean*
 
-*Defined in [responses/account.repository.login.error.response.ts:20](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/account.repository.login.error.response.ts#L20)*
+*Defined in [responses/account.repository.login.error.response.ts:20](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/account.repository.login.error.response.ts#L20)*
 
 ___
 
@@ -68,7 +68,7 @@ ___
 
 • **sms_two_factor_on**: *boolean*
 
-*Defined in [responses/account.repository.login.error.response.ts:14](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/account.repository.login.error.response.ts#L14)*
+*Defined in [responses/account.repository.login.error.response.ts:14](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/account.repository.login.error.response.ts#L14)*
 
 ___
 
@@ -76,7 +76,7 @@ ___
 
 • **totp_two_factor_on**: *boolean*
 
-*Defined in [responses/account.repository.login.error.response.ts:15](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/account.repository.login.error.response.ts#L15)*
+*Defined in [responses/account.repository.login.error.response.ts:15](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/account.repository.login.error.response.ts#L15)*
 
 ___
 
@@ -84,7 +84,7 @@ ___
 
 • **two_factor_identifier**: *string*
 
-*Defined in [responses/account.repository.login.error.response.ts:17](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/account.repository.login.error.response.ts#L17)*
+*Defined in [responses/account.repository.login.error.response.ts:17](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/account.repository.login.error.response.ts#L17)*
 
 ___
 
@@ -92,4 +92,4 @@ ___
 
 • **username**: *string*
 
-*Defined in [responses/account.repository.login.error.response.ts:13](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/account.repository.login.error.response.ts#L13)*
+*Defined in [responses/account.repository.login.error.response.ts:13](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/account.repository.login.error.response.ts#L13)*

@@ -28,7 +28,7 @@
 
 • **friendship_status**: *[ReelsTrayFeedResponseFriendship_status](_responses_reels_tray_feed_response_.reelstrayfeedresponsefriendship_status.md)*
 
-*Defined in [responses/reels-tray.feed.response.ts:259](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-tray.feed.response.ts#L259)*
+*Defined in [responses/reels-tray.feed.response.ts:259](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/reels-tray.feed.response.ts#L259)*
 
 ___
 
@@ -36,7 +36,7 @@ ___
 
 • **full_name**: *string*
 
-*Defined in [responses/reels-tray.feed.response.ts:255](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-tray.feed.response.ts#L255)*
+*Defined in [responses/reels-tray.feed.response.ts:255](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/reels-tray.feed.response.ts#L255)*
 
 ___
 
@@ -44,7 +44,7 @@ ___
 
 • **is_private**: *boolean*
 
-*Defined in [responses/reels-tray.feed.response.ts:256](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-tray.feed.response.ts#L256)*
+*Defined in [responses/reels-tray.feed.response.ts:256](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/reels-tray.feed.response.ts#L256)*
 
 ___
 
@@ -52,7 +52,7 @@ ___
 
 • **is_verified**: *boolean*
 
-*Defined in [responses/reels-tray.feed.response.ts:260](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-tray.feed.response.ts#L260)*
+*Defined in [responses/reels-tray.feed.response.ts:260](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/reels-tray.feed.response.ts#L260)*
 
 ___
 
@@ -60,7 +60,7 @@ ___
 
 • **live_subscription_status**: *string*
 
-*Defined in [responses/reels-tray.feed.response.ts:261](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-tray.feed.response.ts#L261)*
+*Defined in [responses/reels-tray.feed.response.ts:261](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/reels-tray.feed.response.ts#L261)*
 
 ___
 
@@ -68,7 +68,7 @@ ___
 
 • **pk**: *number*
 
-*Defined in [responses/reels-tray.feed.response.ts:253](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-tray.feed.response.ts#L253)*
+*Defined in [responses/reels-tray.feed.response.ts:253](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/reels-tray.feed.response.ts#L253)*
 
 ___
 
@@ -76,7 +76,7 @@ ___
 
 • **profile_pic_id**: *string*
 
-*Defined in [responses/reels-tray.feed.response.ts:258](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-tray.feed.response.ts#L258)*
+*Defined in [responses/reels-tray.feed.response.ts:258](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/reels-tray.feed.response.ts#L258)*
 
 ___
 
@@ -84,7 +84,7 @@ ___
 
 • **profile_pic_url**: *string*
 
-*Defined in [responses/reels-tray.feed.response.ts:257](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-tray.feed.response.ts#L257)*
+*Defined in [responses/reels-tray.feed.response.ts:257](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/reels-tray.feed.response.ts#L257)*
 
 ___
 
@@ -92,4 +92,4 @@ ___
 
 • **username**: *string*
 
-*Defined in [responses/reels-tray.feed.response.ts:254](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-tray.feed.response.ts#L254)*
+*Defined in [responses/reels-tray.feed.response.ts:254](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/reels-tray.feed.response.ts#L254)*

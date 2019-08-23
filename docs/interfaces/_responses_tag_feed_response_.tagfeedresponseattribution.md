@@ -20,4 +20,4 @@
 
 • **name**: *string*
 
-*Defined in [responses/tag.feed.response.ts:220](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/tag.feed.response.ts#L220)*
+*Defined in [responses/tag.feed.response.ts:220](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/tag.feed.response.ts#L220)*

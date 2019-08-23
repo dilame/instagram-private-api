@@ -72,6 +72,12 @@
 
   * [NewsRepository](_repositories_news_repository_.newsrepository.md)
 
+  * [HighlightsRepository](_repositories_highlights_repository_.highlightsrepository.md)
+
+  * [AdsRepository](_repositories_ads_repository_.adsrepository.md)
+
+  * [InsightsService](_services_insights_service_.insightsservice.md)
+
 ## Index
 
 ### Constructors
@@ -84,7 +90,7 @@
 
 \+ **new Repository**(`client`: [IgApiClient](_core_client_.igapiclient.md)): *[Repository](_core_repository_.repository.md)*
 
-*Defined in [core/repository.ts:6](https://github.com/dilame/instagram-private-api/blob/01eb399/src/core/repository.ts#L6)*
+*Defined in [core/repository.ts:6](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/core/repository.ts#L6)*
 
 **Parameters:**
 

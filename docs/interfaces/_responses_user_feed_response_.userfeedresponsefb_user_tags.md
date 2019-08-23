@@ -20,4 +20,4 @@
 
 • **in**: *any[]*
 
-*Defined in [responses/user.feed.response.ts:90](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/user.feed.response.ts#L90)*
+*Defined in [responses/user.feed.response.ts:90](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/user.feed.response.ts#L90)*

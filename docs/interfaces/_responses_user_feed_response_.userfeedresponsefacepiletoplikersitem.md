@@ -26,7 +26,7 @@
 
 • **full_name**: *string*
 
-*Defined in [responses/user.feed.response.ts:83](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/user.feed.response.ts#L83)*
+*Defined in [responses/user.feed.response.ts:83](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/user.feed.response.ts#L83)*
 
 ___
 
@@ -34,7 +34,7 @@ ___
 
 • **is_private**: *boolean*
 
-*Defined in [responses/user.feed.response.ts:84](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/user.feed.response.ts#L84)*
+*Defined in [responses/user.feed.response.ts:84](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/user.feed.response.ts#L84)*
 
 ___
 
@@ -42,7 +42,7 @@ ___
 
 • **is_verified**: *boolean*
 
-*Defined in [responses/user.feed.response.ts:87](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/user.feed.response.ts#L87)*
+*Defined in [responses/user.feed.response.ts:87](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/user.feed.response.ts#L87)*
 
 ___
 
@@ -50,7 +50,7 @@ ___
 
 • **pk**: *number*
 
-*Defined in [responses/user.feed.response.ts:81](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/user.feed.response.ts#L81)*
+*Defined in [responses/user.feed.response.ts:81](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/user.feed.response.ts#L81)*
 
 ___
 
@@ -58,7 +58,7 @@ ___
 
 • **profile_pic_id**? : *string*
 
-*Defined in [responses/user.feed.response.ts:86](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/user.feed.response.ts#L86)*
+*Defined in [responses/user.feed.response.ts:86](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/user.feed.response.ts#L86)*
 
 ___
 
@@ -66,7 +66,7 @@ ___
 
 • **profile_pic_url**: *string*
 
-*Defined in [responses/user.feed.response.ts:85](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/user.feed.response.ts#L85)*
+*Defined in [responses/user.feed.response.ts:85](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/user.feed.response.ts#L85)*
 
 ___
 
@@ -74,4 +74,4 @@ ___
 
 • **username**: *string*
 
-*Defined in [responses/user.feed.response.ts:82](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/user.feed.response.ts#L82)*
+*Defined in [responses/user.feed.response.ts:82](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/user.feed.response.ts#L82)*

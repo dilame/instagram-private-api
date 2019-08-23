@@ -22,7 +22,7 @@
 
 • **burst_likes**: *number*
 
-*Defined in [responses/live.like.response.ts:3](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/live.like.response.ts#L3)*
+*Defined in [responses/live.like.response.ts:3](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.like.response.ts#L3)*
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 • **likes**: *number*
 
-*Defined in [responses/live.like.response.ts:2](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/live.like.response.ts#L2)*
+*Defined in [responses/live.like.response.ts:2](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.like.response.ts#L2)*
 
 ___
 
@@ -38,4 +38,4 @@ ___
 
 • **status**: *string*
 
-*Defined in [responses/live.like.response.ts:4](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/live.like.response.ts#L4)*
+*Defined in [responses/live.like.response.ts:4](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.like.response.ts#L4)*

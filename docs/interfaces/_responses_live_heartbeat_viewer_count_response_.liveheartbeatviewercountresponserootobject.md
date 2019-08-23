@@ -26,7 +26,7 @@
 
 • **broadcast_status**: *string*
 
-*Defined in [responses/live.heartbeat-viewer-count.response.ts:3](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/live.heartbeat-viewer-count.response.ts#L3)*
+*Defined in [responses/live.heartbeat-viewer-count.response.ts:3](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.heartbeat-viewer-count.response.ts#L3)*
 
 ___
 
@@ -34,7 +34,7 @@ ___
 
 • **cobroadcaster_ids**: *any[]*
 
-*Defined in [responses/live.heartbeat-viewer-count.response.ts:4](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/live.heartbeat-viewer-count.response.ts#L4)*
+*Defined in [responses/live.heartbeat-viewer-count.response.ts:4](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.heartbeat-viewer-count.response.ts#L4)*
 
 ___
 
@@ -42,7 +42,7 @@ ___
 
 • **is_top_live_eligible**: *number*
 
-*Defined in [responses/live.heartbeat-viewer-count.response.ts:7](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/live.heartbeat-viewer-count.response.ts#L7)*
+*Defined in [responses/live.heartbeat-viewer-count.response.ts:7](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.heartbeat-viewer-count.response.ts#L7)*
 
 ___
 
@@ -50,7 +50,7 @@ ___
 
 • **offset_to_video_start**: *number*
 
-*Defined in [responses/live.heartbeat-viewer-count.response.ts:5](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/live.heartbeat-viewer-count.response.ts#L5)*
+*Defined in [responses/live.heartbeat-viewer-count.response.ts:5](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.heartbeat-viewer-count.response.ts#L5)*
 
 ___
 
@@ -58,7 +58,7 @@ ___
 
 • **status**: *string*
 
-*Defined in [responses/live.heartbeat-viewer-count.response.ts:8](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/live.heartbeat-viewer-count.response.ts#L8)*
+*Defined in [responses/live.heartbeat-viewer-count.response.ts:8](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.heartbeat-viewer-count.response.ts#L8)*
 
 ___
 
@@ -66,7 +66,7 @@ ___
 
 • **total_unique_viewer_count**: *number*
 
-*Defined in [responses/live.heartbeat-viewer-count.response.ts:6](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/live.heartbeat-viewer-count.response.ts#L6)*
+*Defined in [responses/live.heartbeat-viewer-count.response.ts:6](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.heartbeat-viewer-count.response.ts#L6)*
 
 ___
 
@@ -74,4 +74,4 @@ ___
 
 • **viewer_count**: *number*
 
-*Defined in [responses/live.heartbeat-viewer-count.response.ts:2](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/live.heartbeat-viewer-count.response.ts#L2)*
+*Defined in [responses/live.heartbeat-viewer-count.response.ts:2](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.heartbeat-viewer-count.response.ts#L2)*

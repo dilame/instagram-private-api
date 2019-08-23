@@ -28,7 +28,7 @@
 
 • **blocking**: *boolean*
 
-*Defined in [responses/live.info.response.ts:34](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/live.info.response.ts#L34)*
+*Defined in [responses/live.info.response.ts:34](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.info.response.ts#L34)*
 
 ___
 
@@ -36,7 +36,7 @@ ___
 
 • **followed_by**: *boolean*
 
-*Defined in [responses/live.info.response.ts:33](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/live.info.response.ts#L33)*
+*Defined in [responses/live.info.response.ts:33](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.info.response.ts#L33)*
 
 ___
 
@@ -44,7 +44,7 @@ ___
 
 • **following**: *boolean*
 
-*Defined in [responses/live.info.response.ts:32](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/live.info.response.ts#L32)*
+*Defined in [responses/live.info.response.ts:32](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.info.response.ts#L32)*
 
 ___
 
@@ -52,7 +52,7 @@ ___
 
 • **incoming_request**: *boolean*
 
-*Defined in [responses/live.info.response.ts:37](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/live.info.response.ts#L37)*
+*Defined in [responses/live.info.response.ts:37](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.info.response.ts#L37)*
 
 ___
 
@@ -60,7 +60,7 @@ ___
 
 • **is_bestie**: *boolean*
 
-*Defined in [responses/live.info.response.ts:39](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/live.info.response.ts#L39)*
+*Defined in [responses/live.info.response.ts:39](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.info.response.ts#L39)*
 
 ___
 
@@ -68,7 +68,7 @@ ___
 
 • **is_private**: *boolean*
 
-*Defined in [responses/live.info.response.ts:36](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/live.info.response.ts#L36)*
+*Defined in [responses/live.info.response.ts:36](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.info.response.ts#L36)*
 
 ___
 
@@ -76,7 +76,7 @@ ___
 
 • **is_restricted**: *boolean*
 
-*Defined in [responses/live.info.response.ts:40](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/live.info.response.ts#L40)*
+*Defined in [responses/live.info.response.ts:40](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.info.response.ts#L40)*
 
 ___
 
@@ -84,7 +84,7 @@ ___
 
 • **muting**: *boolean*
 
-*Defined in [responses/live.info.response.ts:35](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/live.info.response.ts#L35)*
+*Defined in [responses/live.info.response.ts:35](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.info.response.ts#L35)*
 
 ___
 
@@ -92,4 +92,4 @@ ___
 
 • **outgoing_request**: *boolean*
 
-*Defined in [responses/live.info.response.ts:38](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/live.info.response.ts#L38)*
+*Defined in [responses/live.info.response.ts:38](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.info.response.ts#L38)*

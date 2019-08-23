@@ -43,7 +43,7 @@
 
 • **allowed_commenter_type**: *string*
 
-*Defined in [responses/account.repository.current-user.response.ts:23](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/account.repository.current-user.response.ts#L23)*
+*Defined in [responses/account.repository.current-user.response.ts:23](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/account.repository.current-user.response.ts#L23)*
 
 ___
 
@@ -51,7 +51,7 @@ ___
 
 • **biography**: *string*
 
-*Defined in [responses/account.repository.current-user.response.ts:14](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/account.repository.current-user.response.ts#L14)*
+*Defined in [responses/account.repository.current-user.response.ts:14](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/account.repository.current-user.response.ts#L14)*
 
 ___
 
@@ -59,7 +59,7 @@ ___
 
 • **biography_with_entities**: *[AccountRepositoryCurrentUserResponseBiography_with_entities](_responses_account_repository_current_user_response_.accountrepositorycurrentuserresponsebiography_with_entities.md)*
 
-*Defined in [responses/account.repository.current-user.response.ts:16](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/account.repository.current-user.response.ts#L16)*
+*Defined in [responses/account.repository.current-user.response.ts:16](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/account.repository.current-user.response.ts#L16)*
 
 ___
 
@@ -67,7 +67,7 @@ ___
 
 • **birthday**: *null*
 
-*Defined in [responses/account.repository.current-user.response.ts:24](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/account.repository.current-user.response.ts#L24)*
+*Defined in [responses/account.repository.current-user.response.ts:24](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/account.repository.current-user.response.ts#L24)*
 
 ___
 
@@ -75,7 +75,7 @@ ___
 
 • **can_link_entities_in_bio**: *boolean*
 
-*Defined in [responses/account.repository.current-user.response.ts:15](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/account.repository.current-user.response.ts#L15)*
+*Defined in [responses/account.repository.current-user.response.ts:15](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/account.repository.current-user.response.ts#L15)*
 
 ___
 
@@ -83,7 +83,7 @@ ___
 
 • **country_code**: *number*
 
-*Defined in [responses/account.repository.current-user.response.ts:26](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/account.repository.current-user.response.ts#L26)*
+*Defined in [responses/account.repository.current-user.response.ts:26](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/account.repository.current-user.response.ts#L26)*
 
 ___
 
@@ -91,7 +91,7 @@ ___
 
 • **email**: *string*
 
-*Defined in [responses/account.repository.current-user.response.ts:29](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/account.repository.current-user.response.ts#L29)*
+*Defined in [responses/account.repository.current-user.response.ts:29](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/account.repository.current-user.response.ts#L29)*
 
 ___
 
@@ -99,7 +99,7 @@ ___
 
 • **external_url**: *string*
 
-*Defined in [responses/account.repository.current-user.response.ts:17](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/account.repository.current-user.response.ts#L17)*
+*Defined in [responses/account.repository.current-user.response.ts:17](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/account.repository.current-user.response.ts#L17)*
 
 ___
 
@@ -107,7 +107,7 @@ ___
 
 • **full_name**: *string*
 
-*Defined in [responses/account.repository.current-user.response.ts:8](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/account.repository.current-user.response.ts#L8)*
+*Defined in [responses/account.repository.current-user.response.ts:8](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/account.repository.current-user.response.ts#L8)*
 
 ___
 
@@ -115,7 +115,7 @@ ___
 
 • **gender**: *number*
 
-*Defined in [responses/account.repository.current-user.response.ts:28](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/account.repository.current-user.response.ts#L28)*
+*Defined in [responses/account.repository.current-user.response.ts:28](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/account.repository.current-user.response.ts#L28)*
 
 ___
 
@@ -123,7 +123,7 @@ ___
 
 • **has_anonymous_profile_picture**: *boolean*
 
-*Defined in [responses/account.repository.current-user.response.ts:13](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/account.repository.current-user.response.ts#L13)*
+*Defined in [responses/account.repository.current-user.response.ts:13](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/account.repository.current-user.response.ts#L13)*
 
 ___
 
@@ -131,7 +131,7 @@ ___
 
 • **has_biography_translation**: *boolean*
 
-*Defined in [responses/account.repository.current-user.response.ts:18](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/account.repository.current-user.response.ts#L18)*
+*Defined in [responses/account.repository.current-user.response.ts:18](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/account.repository.current-user.response.ts#L18)*
 
 ___
 
@@ -139,7 +139,7 @@ ___
 
 • **hd_profile_pic_url_info**: *[AccountRepositoryCurrentUserResponseHd_profile_pic_url_info](_responses_account_repository_current_user_response_.accountrepositorycurrentuserresponsehd_profile_pic_url_info.md)*
 
-*Defined in [responses/account.repository.current-user.response.ts:21](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/account.repository.current-user.response.ts#L21)*
+*Defined in [responses/account.repository.current-user.response.ts:21](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/account.repository.current-user.response.ts#L21)*
 
 ___
 
@@ -147,7 +147,7 @@ ___
 
 • **hd_profile_pic_versions**: *[AccountRepositoryCurrentUserResponseHdProfilePicVersionsItem](_responses_account_repository_current_user_response_.accountrepositorycurrentuserresponsehdprofilepicversionsitem.md)[]*
 
-*Defined in [responses/account.repository.current-user.response.ts:20](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/account.repository.current-user.response.ts#L20)*
+*Defined in [responses/account.repository.current-user.response.ts:20](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/account.repository.current-user.response.ts#L20)*
 
 ___
 
@@ -155,7 +155,7 @@ ___
 
 • **is_private**: *boolean*
 
-*Defined in [responses/account.repository.current-user.response.ts:9](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/account.repository.current-user.response.ts#L9)*
+*Defined in [responses/account.repository.current-user.response.ts:9](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/account.repository.current-user.response.ts#L9)*
 
 ___
 
@@ -163,7 +163,7 @@ ___
 
 • **is_verified**: *boolean*
 
-*Defined in [responses/account.repository.current-user.response.ts:12](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/account.repository.current-user.response.ts#L12)*
+*Defined in [responses/account.repository.current-user.response.ts:12](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/account.repository.current-user.response.ts#L12)*
 
 ___
 
@@ -171,7 +171,7 @@ ___
 
 • **national_number**: *number*
 
-*Defined in [responses/account.repository.current-user.response.ts:27](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/account.repository.current-user.response.ts#L27)*
+*Defined in [responses/account.repository.current-user.response.ts:27](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/account.repository.current-user.response.ts#L27)*
 
 ___
 
@@ -179,7 +179,7 @@ ___
 
 • **phone_number**: *string*
 
-*Defined in [responses/account.repository.current-user.response.ts:25](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/account.repository.current-user.response.ts#L25)*
+*Defined in [responses/account.repository.current-user.response.ts:25](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/account.repository.current-user.response.ts#L25)*
 
 ___
 
@@ -187,7 +187,7 @@ ___
 
 • **pk**: *number*
 
-*Defined in [responses/account.repository.current-user.response.ts:6](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/account.repository.current-user.response.ts#L6)*
+*Defined in [responses/account.repository.current-user.response.ts:6](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/account.repository.current-user.response.ts#L6)*
 
 ___
 
@@ -195,7 +195,7 @@ ___
 
 • **profile_pic_id**: *string*
 
-*Defined in [responses/account.repository.current-user.response.ts:11](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/account.repository.current-user.response.ts#L11)*
+*Defined in [responses/account.repository.current-user.response.ts:11](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/account.repository.current-user.response.ts#L11)*
 
 ___
 
@@ -203,7 +203,7 @@ ___
 
 • **profile_pic_url**: *string*
 
-*Defined in [responses/account.repository.current-user.response.ts:10](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/account.repository.current-user.response.ts#L10)*
+*Defined in [responses/account.repository.current-user.response.ts:10](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/account.repository.current-user.response.ts#L10)*
 
 ___
 
@@ -211,7 +211,7 @@ ___
 
 • **reel_auto_archive**: *string*
 
-*Defined in [responses/account.repository.current-user.response.ts:19](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/account.repository.current-user.response.ts#L19)*
+*Defined in [responses/account.repository.current-user.response.ts:19](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/account.repository.current-user.response.ts#L19)*
 
 ___
 
@@ -219,7 +219,7 @@ ___
 
 • **show_conversion_edit_entry**: *boolean*
 
-*Defined in [responses/account.repository.current-user.response.ts:22](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/account.repository.current-user.response.ts#L22)*
+*Defined in [responses/account.repository.current-user.response.ts:22](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/account.repository.current-user.response.ts#L22)*
 
 ___
 
@@ -227,4 +227,4 @@ ___
 
 • **username**: *string*
 
-*Defined in [responses/account.repository.current-user.response.ts:7](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/account.repository.current-user.response.ts#L7)*
+*Defined in [responses/account.repository.current-user.response.ts:7](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/account.repository.current-user.response.ts#L7)*

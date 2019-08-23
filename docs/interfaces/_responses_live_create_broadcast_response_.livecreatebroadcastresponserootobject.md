@@ -52,7 +52,7 @@
 
 • **allow_resolution_change**: *number*
 
-*Defined in [responses/live.create-broadcast.response.ts:28](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/live.create-broadcast.response.ts#L28)*
+*Defined in [responses/live.create-broadcast.response.ts:28](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.create-broadcast.response.ts#L28)*
 
 ___
 
@@ -60,7 +60,7 @@ ___
 
 • **avc_rtmp_payload**: *number*
 
-*Defined in [responses/live.create-broadcast.response.ts:29](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/live.create-broadcast.response.ts#L29)*
+*Defined in [responses/live.create-broadcast.response.ts:29](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.create-broadcast.response.ts#L29)*
 
 ___
 
@@ -68,7 +68,7 @@ ___
 
 • **broadcast_id**: *string*
 
-*Defined in [responses/live.create-broadcast.response.ts:2](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/live.create-broadcast.response.ts#L2)*
+*Defined in [responses/live.create-broadcast.response.ts:2](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.create-broadcast.response.ts#L2)*
 
 ___
 
@@ -76,7 +76,7 @@ ___
 
 • **broadcaster_update_frequency**: *number*
 
-*Defined in [responses/live.create-broadcast.response.ts:23](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/live.create-broadcast.response.ts#L23)*
+*Defined in [responses/live.create-broadcast.response.ts:23](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.create-broadcast.response.ts#L23)*
 
 ___
 
@@ -84,7 +84,7 @@ ___
 
 • **connect_with_1rtt**: *number*
 
-*Defined in [responses/live.create-broadcast.response.ts:27](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/live.create-broadcast.response.ts#L27)*
+*Defined in [responses/live.create-broadcast.response.ts:27](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.create-broadcast.response.ts#L27)*
 
 ___
 
@@ -92,7 +92,7 @@ ___
 
 • **disable_speed_test**: *number*
 
-*Defined in [responses/live.create-broadcast.response.ts:14](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/live.create-broadcast.response.ts#L14)*
+*Defined in [responses/live.create-broadcast.response.ts:14](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.create-broadcast.response.ts#L14)*
 
 ___
 
@@ -100,7 +100,7 @@ ___
 
 • **fbvp_quic_upload_url**: *string*
 
-*Defined in [responses/live.create-broadcast.response.ts:5](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/live.create-broadcast.response.ts#L5)*
+*Defined in [responses/live.create-broadcast.response.ts:5](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.create-broadcast.response.ts#L5)*
 
 ___
 
@@ -108,7 +108,7 @@ ___
 
 • **fbvp_tcp_upload_url**: *string*
 
-*Defined in [responses/live.create-broadcast.response.ts:4](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/live.create-broadcast.response.ts#L4)*
+*Defined in [responses/live.create-broadcast.response.ts:4](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.create-broadcast.response.ts#L4)*
 
 ___
 
@@ -116,7 +116,7 @@ ___
 
 • **heartbeat_interval**: *number*
 
-*Defined in [responses/live.create-broadcast.response.ts:22](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/live.create-broadcast.response.ts#L22)*
+*Defined in [responses/live.create-broadcast.response.ts:22](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.create-broadcast.response.ts#L22)*
 
 ___
 
@@ -124,7 +124,7 @@ ___
 
 • **live_trace_enabled**: *number*
 
-*Defined in [responses/live.create-broadcast.response.ts:31](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/live.create-broadcast.response.ts#L31)*
+*Defined in [responses/live.create-broadcast.response.ts:31](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.create-broadcast.response.ts#L31)*
 
 ___
 
@@ -132,7 +132,7 @@ ___
 
 • **live_trace_sample_interval_in_seconds**: *number*
 
-*Defined in [responses/live.create-broadcast.response.ts:32](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/live.create-broadcast.response.ts#L32)*
+*Defined in [responses/live.create-broadcast.response.ts:32](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.create-broadcast.response.ts#L32)*
 
 ___
 
@@ -140,7 +140,7 @@ ___
 
 • **live_trace_sampling_source**: *number*
 
-*Defined in [responses/live.create-broadcast.response.ts:33](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/live.create-broadcast.response.ts#L33)*
+*Defined in [responses/live.create-broadcast.response.ts:33](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.create-broadcast.response.ts#L33)*
 
 ___
 
@@ -148,7 +148,7 @@ ___
 
 • **max_time_in_seconds**: *number*
 
-*Defined in [responses/live.create-broadcast.response.ts:6](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/live.create-broadcast.response.ts#L6)*
+*Defined in [responses/live.create-broadcast.response.ts:6](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.create-broadcast.response.ts#L6)*
 
 ___
 
@@ -156,7 +156,7 @@ ___
 
 • **pass_thru_enabled**: *number*
 
-*Defined in [responses/live.create-broadcast.response.ts:30](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/live.create-broadcast.response.ts#L30)*
+*Defined in [responses/live.create-broadcast.response.ts:30](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.create-broadcast.response.ts#L30)*
 
 ___
 
@@ -164,7 +164,7 @@ ___
 
 • **speed_test_minimum_bandwidth_threshold**: *number*
 
-*Defined in [responses/live.create-broadcast.response.ts:11](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/live.create-broadcast.response.ts#L11)*
+*Defined in [responses/live.create-broadcast.response.ts:11](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.create-broadcast.response.ts#L11)*
 
 ___
 
@@ -172,7 +172,7 @@ ___
 
 • **speed_test_retry_max_count**: *number*
 
-*Defined in [responses/live.create-broadcast.response.ts:12](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/live.create-broadcast.response.ts#L12)*
+*Defined in [responses/live.create-broadcast.response.ts:12](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.create-broadcast.response.ts#L12)*
 
 ___
 
@@ -180,7 +180,7 @@ ___
 
 • **speed_test_retry_time_delay**: *number*
 
-*Defined in [responses/live.create-broadcast.response.ts:13](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/live.create-broadcast.response.ts#L13)*
+*Defined in [responses/live.create-broadcast.response.ts:13](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.create-broadcast.response.ts#L13)*
 
 ___
 
@@ -188,7 +188,7 @@ ___
 
 • **speed_test_ui_timeout**: *number*
 
-*Defined in [responses/live.create-broadcast.response.ts:7](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/live.create-broadcast.response.ts#L7)*
+*Defined in [responses/live.create-broadcast.response.ts:7](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.create-broadcast.response.ts#L7)*
 
 ___
 
@@ -196,7 +196,7 @@ ___
 
 • **status**: *string*
 
-*Defined in [responses/live.create-broadcast.response.ts:34](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/live.create-broadcast.response.ts#L34)*
+*Defined in [responses/live.create-broadcast.response.ts:34](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.create-broadcast.response.ts#L34)*
 
 ___
 
@@ -204,7 +204,7 @@ ___
 
 • **stream_audio_bit_rate**: *number*
 
-*Defined in [responses/live.create-broadcast.response.ts:19](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/live.create-broadcast.response.ts#L19)*
+*Defined in [responses/live.create-broadcast.response.ts:19](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.create-broadcast.response.ts#L19)*
 
 ___
 
@@ -212,7 +212,7 @@ ___
 
 • **stream_audio_channels**: *number*
 
-*Defined in [responses/live.create-broadcast.response.ts:21](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/live.create-broadcast.response.ts#L21)*
+*Defined in [responses/live.create-broadcast.response.ts:21](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.create-broadcast.response.ts#L21)*
 
 ___
 
@@ -220,7 +220,7 @@ ___
 
 • **stream_audio_sample_rate**: *number*
 
-*Defined in [responses/live.create-broadcast.response.ts:20](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/live.create-broadcast.response.ts#L20)*
+*Defined in [responses/live.create-broadcast.response.ts:20](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.create-broadcast.response.ts#L20)*
 
 ___
 
@@ -228,7 +228,7 @@ ___
 
 • **stream_network_connection_retry_count**: *number*
 
-*Defined in [responses/live.create-broadcast.response.ts:25](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/live.create-broadcast.response.ts#L25)*
+*Defined in [responses/live.create-broadcast.response.ts:25](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.create-broadcast.response.ts#L25)*
 
 ___
 
@@ -236,7 +236,7 @@ ___
 
 • **stream_network_connection_retry_delay_in_seconds**: *number*
 
-*Defined in [responses/live.create-broadcast.response.ts:26](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/live.create-broadcast.response.ts#L26)*
+*Defined in [responses/live.create-broadcast.response.ts:26](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.create-broadcast.response.ts#L26)*
 
 ___
 
@@ -244,7 +244,7 @@ ___
 
 • **stream_network_speed_test_payload_chunk_size_in_bytes**: *number*
 
-*Defined in [responses/live.create-broadcast.response.ts:8](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/live.create-broadcast.response.ts#L8)*
+*Defined in [responses/live.create-broadcast.response.ts:8](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.create-broadcast.response.ts#L8)*
 
 ___
 
@@ -252,7 +252,7 @@ ___
 
 • **stream_network_speed_test_payload_size_in_bytes**: *number*
 
-*Defined in [responses/live.create-broadcast.response.ts:9](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/live.create-broadcast.response.ts#L9)*
+*Defined in [responses/live.create-broadcast.response.ts:9](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.create-broadcast.response.ts#L9)*
 
 ___
 
@@ -260,7 +260,7 @@ ___
 
 • **stream_network_speed_test_payload_timeout_in_seconds**: *number*
 
-*Defined in [responses/live.create-broadcast.response.ts:10](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/live.create-broadcast.response.ts#L10)*
+*Defined in [responses/live.create-broadcast.response.ts:10](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.create-broadcast.response.ts#L10)*
 
 ___
 
@@ -268,7 +268,7 @@ ___
 
 • **stream_video_adaptive_bitrate_config**: *string*
 
-*Defined in [responses/live.create-broadcast.response.ts:24](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/live.create-broadcast.response.ts#L24)*
+*Defined in [responses/live.create-broadcast.response.ts:24](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.create-broadcast.response.ts#L24)*
 
 ___
 
@@ -276,7 +276,7 @@ ___
 
 • **stream_video_allow_b_frames**: *number*
 
-*Defined in [responses/live.create-broadcast.response.ts:15](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/live.create-broadcast.response.ts#L15)*
+*Defined in [responses/live.create-broadcast.response.ts:15](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.create-broadcast.response.ts#L15)*
 
 ___
 
@@ -284,7 +284,7 @@ ___
 
 • **stream_video_bit_rate**: *number*
 
-*Defined in [responses/live.create-broadcast.response.ts:17](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/live.create-broadcast.response.ts#L17)*
+*Defined in [responses/live.create-broadcast.response.ts:17](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.create-broadcast.response.ts#L17)*
 
 ___
 
@@ -292,7 +292,7 @@ ___
 
 • **stream_video_fps**: *number*
 
-*Defined in [responses/live.create-broadcast.response.ts:18](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/live.create-broadcast.response.ts#L18)*
+*Defined in [responses/live.create-broadcast.response.ts:18](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.create-broadcast.response.ts#L18)*
 
 ___
 
@@ -300,7 +300,7 @@ ___
 
 • **stream_video_width**: *number*
 
-*Defined in [responses/live.create-broadcast.response.ts:16](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/live.create-broadcast.response.ts#L16)*
+*Defined in [responses/live.create-broadcast.response.ts:16](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.create-broadcast.response.ts#L16)*
 
 ___
 
@@ -308,4 +308,4 @@ ___
 
 • **upload_url**: *string*
 
-*Defined in [responses/live.create-broadcast.response.ts:3](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/live.create-broadcast.response.ts#L3)*
+*Defined in [responses/live.create-broadcast.response.ts:3](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.create-broadcast.response.ts#L3)*

@@ -20,4 +20,4 @@
 
 • **track**: *[MusicSearchFeedResponseTrack](_responses_music_search_feed_response_.musicsearchfeedresponsetrack.md)*
 
-*Defined in [responses/music-search.feed.response.ts:8](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/music-search.feed.response.ts#L8)*
+*Defined in [responses/music-search.feed.response.ts:8](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/music-search.feed.response.ts#L8)*

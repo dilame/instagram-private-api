@@ -20,4 +20,4 @@
 
 • **mood**: *[MusicRepositoryMoodsResponseMood](_responses_music_repository_moods_response_.musicrepositorymoodsresponsemood.md)*
 
-*Defined in [responses/music.repository.moods.response.ts:6](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/music.repository.moods.response.ts#L6)*
+*Defined in [responses/music.repository.moods.response.ts:6](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/music.repository.moods.response.ts#L6)*

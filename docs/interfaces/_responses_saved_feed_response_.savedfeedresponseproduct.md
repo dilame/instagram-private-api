@@ -37,7 +37,7 @@
 
 • **can_share_to_story**: *boolean*
 
-*Defined in [responses/saved.feed.response.ts:136](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/saved.feed.response.ts#L136)*
+*Defined in [responses/saved.feed.response.ts:136](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/saved.feed.response.ts#L136)*
 
 ___
 
@@ -45,7 +45,7 @@ ___
 
 • **checkout_style**: *string*
 
-*Defined in [responses/saved.feed.response.ts:135](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/saved.feed.response.ts#L135)*
+*Defined in [responses/saved.feed.response.ts:135](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/saved.feed.response.ts#L135)*
 
 ___
 
@@ -53,7 +53,7 @@ ___
 
 • **current_price**: *string*
 
-*Defined in [responses/saved.feed.response.ts:124](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/saved.feed.response.ts#L124)*
+*Defined in [responses/saved.feed.response.ts:124](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/saved.feed.response.ts#L124)*
 
 ___
 
@@ -61,7 +61,7 @@ ___
 
 • **current_price_stripped**: *string*
 
-*Defined in [responses/saved.feed.response.ts:138](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/saved.feed.response.ts#L138)*
+*Defined in [responses/saved.feed.response.ts:138](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/saved.feed.response.ts#L138)*
 
 ___
 
@@ -69,7 +69,7 @@ ___
 
 • **description**: *string*
 
-*Defined in [responses/saved.feed.response.ts:128](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/saved.feed.response.ts#L128)*
+*Defined in [responses/saved.feed.response.ts:128](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/saved.feed.response.ts#L128)*
 
 ___
 
@@ -77,7 +77,7 @@ ___
 
 • **external_url**: *string*
 
-*Defined in [responses/saved.feed.response.ts:134](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/saved.feed.response.ts#L134)*
+*Defined in [responses/saved.feed.response.ts:134](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/saved.feed.response.ts#L134)*
 
 ___
 
@@ -85,7 +85,7 @@ ___
 
 • **full_price**: *string*
 
-*Defined in [responses/saved.feed.response.ts:125](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/saved.feed.response.ts#L125)*
+*Defined in [responses/saved.feed.response.ts:125](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/saved.feed.response.ts#L125)*
 
 ___
 
@@ -93,7 +93,7 @@ ___
 
 • **full_price_stripped**: *string*
 
-*Defined in [responses/saved.feed.response.ts:137](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/saved.feed.response.ts#L137)*
+*Defined in [responses/saved.feed.response.ts:137](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/saved.feed.response.ts#L137)*
 
 ___
 
@@ -101,7 +101,7 @@ ___
 
 • **has_viewer_saved**: *boolean*
 
-*Defined in [responses/saved.feed.response.ts:130](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/saved.feed.response.ts#L130)*
+*Defined in [responses/saved.feed.response.ts:130](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/saved.feed.response.ts#L130)*
 
 ___
 
@@ -109,7 +109,7 @@ ___
 
 • **main_image**: *[SavedFeedResponseMain_image](_responses_saved_feed_response_.savedfeedresponsemain_image.md)*
 
-*Defined in [responses/saved.feed.response.ts:131](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/saved.feed.response.ts#L131)*
+*Defined in [responses/saved.feed.response.ts:131](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/saved.feed.response.ts#L131)*
 
 ___
 
@@ -117,7 +117,7 @@ ___
 
 • **merchant**: *[SavedFeedResponseMerchant](_responses_saved_feed_response_.savedfeedresponsemerchant.md)*
 
-*Defined in [responses/saved.feed.response.ts:127](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/saved.feed.response.ts#L127)*
+*Defined in [responses/saved.feed.response.ts:127](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/saved.feed.response.ts#L127)*
 
 ___
 
@@ -125,7 +125,7 @@ ___
 
 • **name**: *string*
 
-*Defined in [responses/saved.feed.response.ts:122](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/saved.feed.response.ts#L122)*
+*Defined in [responses/saved.feed.response.ts:122](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/saved.feed.response.ts#L122)*
 
 ___
 
@@ -133,7 +133,7 @@ ___
 
 • **price**: *string*
 
-*Defined in [responses/saved.feed.response.ts:123](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/saved.feed.response.ts#L123)*
+*Defined in [responses/saved.feed.response.ts:123](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/saved.feed.response.ts#L123)*
 
 ___
 
@@ -141,7 +141,7 @@ ___
 
 • **product_id**: *string*
 
-*Defined in [responses/saved.feed.response.ts:126](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/saved.feed.response.ts#L126)*
+*Defined in [responses/saved.feed.response.ts:126](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/saved.feed.response.ts#L126)*
 
 ___
 
@@ -149,7 +149,7 @@ ___
 
 • **retailer_id**: *string*
 
-*Defined in [responses/saved.feed.response.ts:129](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/saved.feed.response.ts#L129)*
+*Defined in [responses/saved.feed.response.ts:129](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/saved.feed.response.ts#L129)*
 
 ___
 
@@ -157,7 +157,7 @@ ___
 
 • **review_status**: *string*
 
-*Defined in [responses/saved.feed.response.ts:133](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/saved.feed.response.ts#L133)*
+*Defined in [responses/saved.feed.response.ts:133](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/saved.feed.response.ts#L133)*
 
 ___
 
@@ -165,7 +165,7 @@ ___
 
 • **thumbnail_image**: *[SavedFeedResponseThumbnail_image](_responses_saved_feed_response_.savedfeedresponsethumbnail_image.md)*
 
-*Defined in [responses/saved.feed.response.ts:132](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/saved.feed.response.ts#L132)*
+*Defined in [responses/saved.feed.response.ts:132](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/saved.feed.response.ts#L132)*
 
 ___
 
@@ -173,4 +173,4 @@ ___
 
 • **variant_values**? : *[SavedFeedResponseVariantValuesItem](_responses_saved_feed_response_.savedfeedresponsevariantvaluesitem.md)[]*
 
-*Defined in [responses/saved.feed.response.ts:139](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/saved.feed.response.ts#L139)*
+*Defined in [responses/saved.feed.response.ts:139](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/saved.feed.response.ts#L139)*

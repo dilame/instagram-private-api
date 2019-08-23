@@ -23,7 +23,7 @@
 
 • **challenge**: *[CheckpointResponseChallenge](_responses_checkpoint_response_.checkpointresponsechallenge.md)*
 
-*Defined in [responses/checkpoint.response.ts:3](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/checkpoint.response.ts#L3)*
+*Defined in [responses/checkpoint.response.ts:3](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/checkpoint.response.ts#L3)*
 
 ___
 
@@ -31,7 +31,7 @@ ___
 
 • **error_type**: *string*
 
-*Defined in [responses/checkpoint.response.ts:5](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/checkpoint.response.ts#L5)*
+*Defined in [responses/checkpoint.response.ts:5](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/checkpoint.response.ts#L5)*
 
 ___
 
@@ -39,7 +39,7 @@ ___
 
 • **message**: *string*
 
-*Defined in [responses/checkpoint.response.ts:2](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/checkpoint.response.ts#L2)*
+*Defined in [responses/checkpoint.response.ts:2](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/checkpoint.response.ts#L2)*
 
 ___
 
@@ -47,4 +47,4 @@ ___
 
 • **status**: *string*
 
-*Defined in [responses/checkpoint.response.ts:4](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/checkpoint.response.ts#L4)*
+*Defined in [responses/checkpoint.response.ts:4](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/checkpoint.response.ts#L4)*

@@ -29,7 +29,7 @@
 
 • **friendship_status**: *[DirectInboxFeedResponseFriendshipStatus](_responses_direct_inbox_feed_response_.directinboxfeedresponsefriendshipstatus.md)*
 
-*Defined in [responses/direct-inbox.feed.response.ts:61](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-inbox.feed.response.ts#L61)*
+*Defined in [responses/direct-inbox.feed.response.ts:61](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-inbox.feed.response.ts#L61)*
 
 ___
 
@@ -37,7 +37,7 @@ ___
 
 • **full_name**: *string*
 
-*Defined in [responses/direct-inbox.feed.response.ts:57](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-inbox.feed.response.ts#L57)*
+*Defined in [responses/direct-inbox.feed.response.ts:57](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-inbox.feed.response.ts#L57)*
 
 ___
 
@@ -45,7 +45,7 @@ ___
 
 • **has_anonymous_profile_picture**: *boolean*
 
-*Defined in [responses/direct-inbox.feed.response.ts:63](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-inbox.feed.response.ts#L63)*
+*Defined in [responses/direct-inbox.feed.response.ts:63](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-inbox.feed.response.ts#L63)*
 
 ___
 
@@ -53,7 +53,7 @@ ___
 
 • **is_directapp_installed**: *boolean*
 
-*Defined in [responses/direct-inbox.feed.response.ts:64](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-inbox.feed.response.ts#L64)*
+*Defined in [responses/direct-inbox.feed.response.ts:64](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-inbox.feed.response.ts#L64)*
 
 ___
 
@@ -61,7 +61,7 @@ ___
 
 • **is_private**: *boolean*
 
-*Defined in [responses/direct-inbox.feed.response.ts:58](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-inbox.feed.response.ts#L58)*
+*Defined in [responses/direct-inbox.feed.response.ts:58](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-inbox.feed.response.ts#L58)*
 
 ___
 
@@ -69,7 +69,7 @@ ___
 
 • **is_verified**: *boolean*
 
-*Defined in [responses/direct-inbox.feed.response.ts:62](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-inbox.feed.response.ts#L62)*
+*Defined in [responses/direct-inbox.feed.response.ts:62](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-inbox.feed.response.ts#L62)*
 
 ___
 
@@ -77,7 +77,7 @@ ___
 
 • **pk**: *number*
 
-*Defined in [responses/direct-inbox.feed.response.ts:55](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-inbox.feed.response.ts#L55)*
+*Defined in [responses/direct-inbox.feed.response.ts:55](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-inbox.feed.response.ts#L55)*
 
 ___
 
@@ -85,7 +85,7 @@ ___
 
 • **profile_pic_id**? : *string*
 
-*Defined in [responses/direct-inbox.feed.response.ts:60](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-inbox.feed.response.ts#L60)*
+*Defined in [responses/direct-inbox.feed.response.ts:60](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-inbox.feed.response.ts#L60)*
 
 ___
 
@@ -93,7 +93,7 @@ ___
 
 • **profile_pic_url**: *string*
 
-*Defined in [responses/direct-inbox.feed.response.ts:59](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-inbox.feed.response.ts#L59)*
+*Defined in [responses/direct-inbox.feed.response.ts:59](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-inbox.feed.response.ts#L59)*
 
 ___
 
@@ -101,4 +101,4 @@ ___
 
 • **username**: *string*
 
-*Defined in [responses/direct-inbox.feed.response.ts:56](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-inbox.feed.response.ts#L56)*
+*Defined in [responses/direct-inbox.feed.response.ts:56](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-inbox.feed.response.ts#L56)*

@@ -22,7 +22,7 @@
 
 • **count**: *number*
 
-*Defined in [responses/reels-tray.feed.response.ts:131](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-tray.feed.response.ts#L131)*
+*Defined in [responses/reels-tray.feed.response.ts:131](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/reels-tray.feed.response.ts#L131)*
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 • **font_size**? : *number*
 
-*Defined in [responses/reels-tray.feed.response.ts:132](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-tray.feed.response.ts#L132)*
+*Defined in [responses/reels-tray.feed.response.ts:132](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/reels-tray.feed.response.ts#L132)*
 
 ___
 
@@ -38,4 +38,4 @@ ___
 
 • **text**: *string*
 
-*Defined in [responses/reels-tray.feed.response.ts:130](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-tray.feed.response.ts#L130)*
+*Defined in [responses/reels-tray.feed.response.ts:130](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/reels-tray.feed.response.ts#L130)*

@@ -20,4 +20,4 @@
 
 • **in**: *[MediaRepositoryConfigureVideoResponseInItem](_responses_media_repository_configure_video_response_.mediarepositoryconfigurevideoresponseinitem.md)[]*
 
-*Defined in [responses/media.repository.configure-video.response.ts:62](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/media.repository.configure-video.response.ts#L62)*
+*Defined in [responses/media.repository.configure-video.response.ts:62](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/media.repository.configure-video.response.ts#L62)*

@@ -33,7 +33,7 @@
 
 *Inherited from [Repository](_core_repository_.repository.md).[constructor](_core_repository_.repository.md#constructor)*
 
-*Defined in [core/repository.ts:6](https://github.com/dilame/instagram-private-api/blob/01eb399/src/core/repository.ts#L6)*
+*Defined in [core/repository.ts:6](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/core/repository.ts#L6)*
 
 **Parameters:**
 
@@ -49,7 +49,7 @@ Name | Type |
 
 ▸ **blended**(`query`: string): *`Promise<FbsearchRepositoryTopsearchFlatResponseListItem[]>`*
 
-*Defined in [services/search.service.ts:4](https://github.com/dilame/instagram-private-api/blob/01eb399/src/services/search.service.ts#L4)*
+*Defined in [services/search.service.ts:4](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/services/search.service.ts#L4)*
 
 **Parameters:**
 
@@ -65,7 +65,7 @@ ___
 
 ▸ **blendedItems**(`query`: string): *`Promise<(FbsearchRepositoryTopsearchFlatResponsePlace | FbsearchRepositoryTopsearchFlatResponseHashtag | FbsearchRepositoryTopsearchFlatResponseUser)[]>`*
 
-*Defined in [services/search.service.ts:8](https://github.com/dilame/instagram-private-api/blob/01eb399/src/services/search.service.ts#L8)*
+*Defined in [services/search.service.ts:8](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/services/search.service.ts#L8)*
 
 **Parameters:**
 
@@ -81,7 +81,7 @@ ___
 
 ▸ **location**(`latitude`: number, `longitude`: number, `query?`: string): *`Promise<LocationRepositorySearchResponseVenuesItem[]>`*
 
-*Defined in [services/search.service.ts:25](https://github.com/dilame/instagram-private-api/blob/01eb399/src/services/search.service.ts#L25)*
+*Defined in [services/search.service.ts:25](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/services/search.service.ts#L25)*
 
 **Parameters:**
 
@@ -99,7 +99,7 @@ ___
 
 ▸ **places**(`query`: string): *`Promise<FbsearchRepositoryPlacesResponseItemsItem[]>`*
 
-*Defined in [services/search.service.ts:20](https://github.com/dilame/instagram-private-api/blob/01eb399/src/services/search.service.ts#L20)*
+*Defined in [services/search.service.ts:20](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/services/search.service.ts#L20)*
 
 **Parameters:**
 
@@ -115,7 +115,7 @@ ___
 
 ▸ **tags**(`query`: string): *`Promise<TagRepositorySearchResponseResultsItem[]>`*
 
-*Defined in [services/search.service.ts:16](https://github.com/dilame/instagram-private-api/blob/01eb399/src/services/search.service.ts#L16)*
+*Defined in [services/search.service.ts:16](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/services/search.service.ts#L16)*
 
 **Parameters:**
 
@@ -131,7 +131,7 @@ ___
 
 ▸ **users**(`query`: string): *`Promise<UserRepositorySearchResponseUsersItem[]>`*
 
-*Defined in [services/search.service.ts:12](https://github.com/dilame/instagram-private-api/blob/01eb399/src/services/search.service.ts#L12)*
+*Defined in [services/search.service.ts:12](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/services/search.service.ts#L12)*
 
 **Parameters:**
 

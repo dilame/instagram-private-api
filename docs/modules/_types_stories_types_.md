@@ -21,4 +21,4 @@
 
 Ƭ **StoryServiceInput**: *[StoryServiceSeenInputItems](../interfaces/_types_stories_types_.storyserviceseeninputitems.md)[] | [StoryServiceSeenInputReels](../interfaces/_types_stories_types_.storyserviceseeninputreels.md)*
 
-*Defined in [types/stories.types.ts:13](https://github.com/dilame/instagram-private-api/blob/01eb399/src/types/stories.types.ts#L13)*
+*Defined in [types/stories.types.ts:13](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/stories.types.ts#L13)*

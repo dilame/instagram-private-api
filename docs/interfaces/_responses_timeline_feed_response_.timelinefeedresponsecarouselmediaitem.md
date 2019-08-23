@@ -42,7 +42,7 @@
 
 • **ad_action**? : *string*
 
-*Defined in [responses/timeline.feed.response.ts:219](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/timeline.feed.response.ts#L219)*
+*Defined in [responses/timeline.feed.response.ts:219](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/timeline.feed.response.ts#L219)*
 
 ___
 
@@ -50,7 +50,7 @@ ___
 
 • **ad_link_type**? : *number*
 
-*Defined in [responses/timeline.feed.response.ts:220](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/timeline.feed.response.ts#L220)*
+*Defined in [responses/timeline.feed.response.ts:220](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/timeline.feed.response.ts#L220)*
 
 ___
 
@@ -58,7 +58,7 @@ ___
 
 • **ad_metadata**? : *[TimelineFeedResponseAdMetadataItem](_responses_timeline_feed_response_.timelinefeedresponseadmetadataitem.md)[]*
 
-*Defined in [responses/timeline.feed.response.ts:218](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/timeline.feed.response.ts#L218)*
+*Defined in [responses/timeline.feed.response.ts:218](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/timeline.feed.response.ts#L218)*
 
 ___
 
@@ -66,7 +66,7 @@ ___
 
 • **android_links**? : *[TimelineFeedResponseAndroidLinksItem](_responses_timeline_feed_response_.timelinefeedresponseandroidlinksitem.md)[]*
 
-*Defined in [responses/timeline.feed.response.ts:217](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/timeline.feed.response.ts#L217)*
+*Defined in [responses/timeline.feed.response.ts:217](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/timeline.feed.response.ts#L217)*
 
 ___
 
@@ -74,7 +74,7 @@ ___
 
 • **carousel_parent_id**: *string*
 
-*Defined in [responses/timeline.feed.response.ts:209](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/timeline.feed.response.ts#L209)*
+*Defined in [responses/timeline.feed.response.ts:209](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/timeline.feed.response.ts#L209)*
 
 ___
 
@@ -82,7 +82,7 @@ ___
 
 • **dominant_color**? : *string*
 
-*Defined in [responses/timeline.feed.response.ts:213](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/timeline.feed.response.ts#L213)*
+*Defined in [responses/timeline.feed.response.ts:213](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/timeline.feed.response.ts#L213)*
 
 ___
 
@@ -90,7 +90,7 @@ ___
 
 • **force_overlay**? : *boolean*
 
-*Defined in [responses/timeline.feed.response.ts:221](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/timeline.feed.response.ts#L221)*
+*Defined in [responses/timeline.feed.response.ts:221](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/timeline.feed.response.ts#L221)*
 
 ___
 
@@ -98,7 +98,7 @@ ___
 
 • **headline**? : *[TimelineFeedResponseHeadline](_responses_timeline_feed_response_.timelinefeedresponseheadline.md)*
 
-*Defined in [responses/timeline.feed.response.ts:211](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/timeline.feed.response.ts#L211)*
+*Defined in [responses/timeline.feed.response.ts:211](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/timeline.feed.response.ts#L211)*
 
 ___
 
@@ -106,7 +106,7 @@ ___
 
 • **hide_nux_text**? : *boolean*
 
-*Defined in [responses/timeline.feed.response.ts:222](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/timeline.feed.response.ts#L222)*
+*Defined in [responses/timeline.feed.response.ts:222](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/timeline.feed.response.ts#L222)*
 
 ___
 
@@ -114,7 +114,7 @@ ___
 
 • **id**: *string*
 
-*Defined in [responses/timeline.feed.response.ts:203](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/timeline.feed.response.ts#L203)*
+*Defined in [responses/timeline.feed.response.ts:203](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/timeline.feed.response.ts#L203)*
 
 ___
 
@@ -122,7 +122,7 @@ ___
 
 • **image_versions2**: *[TimelineFeedResponseImage_versions2](_responses_timeline_feed_response_.timelinefeedresponseimage_versions2.md)*
 
-*Defined in [responses/timeline.feed.response.ts:205](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/timeline.feed.response.ts#L205)*
+*Defined in [responses/timeline.feed.response.ts:205](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/timeline.feed.response.ts#L205)*
 
 ___
 
@@ -130,7 +130,7 @@ ___
 
 • **link**? : *string*
 
-*Defined in [responses/timeline.feed.response.ts:214](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/timeline.feed.response.ts#L214)*
+*Defined in [responses/timeline.feed.response.ts:214](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/timeline.feed.response.ts#L214)*
 
 ___
 
@@ -138,7 +138,7 @@ ___
 
 • **link_hint_text**? : *string*
 
-*Defined in [responses/timeline.feed.response.ts:216](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/timeline.feed.response.ts#L216)*
+*Defined in [responses/timeline.feed.response.ts:216](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/timeline.feed.response.ts#L216)*
 
 ___
 
@@ -146,7 +146,7 @@ ___
 
 • **link_text**? : *string*
 
-*Defined in [responses/timeline.feed.response.ts:215](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/timeline.feed.response.ts#L215)*
+*Defined in [responses/timeline.feed.response.ts:215](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/timeline.feed.response.ts#L215)*
 
 ___
 
@@ -154,7 +154,7 @@ ___
 
 • **media_type**: *number*
 
-*Defined in [responses/timeline.feed.response.ts:204](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/timeline.feed.response.ts#L204)*
+*Defined in [responses/timeline.feed.response.ts:204](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/timeline.feed.response.ts#L204)*
 
 ___
 
@@ -162,7 +162,7 @@ ___
 
 • **original_height**: *number*
 
-*Defined in [responses/timeline.feed.response.ts:207](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/timeline.feed.response.ts#L207)*
+*Defined in [responses/timeline.feed.response.ts:207](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/timeline.feed.response.ts#L207)*
 
 ___
 
@@ -170,7 +170,7 @@ ___
 
 • **original_width**: *number*
 
-*Defined in [responses/timeline.feed.response.ts:206](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/timeline.feed.response.ts#L206)*
+*Defined in [responses/timeline.feed.response.ts:206](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/timeline.feed.response.ts#L206)*
 
 ___
 
@@ -178,7 +178,7 @@ ___
 
 • **overlay_subtitle**? : *string*
 
-*Defined in [responses/timeline.feed.response.ts:225](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/timeline.feed.response.ts#L225)*
+*Defined in [responses/timeline.feed.response.ts:225](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/timeline.feed.response.ts#L225)*
 
 ___
 
@@ -186,7 +186,7 @@ ___
 
 • **overlay_text**? : *string*
 
-*Defined in [responses/timeline.feed.response.ts:223](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/timeline.feed.response.ts#L223)*
+*Defined in [responses/timeline.feed.response.ts:223](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/timeline.feed.response.ts#L223)*
 
 ___
 
@@ -194,7 +194,7 @@ ___
 
 • **overlay_title**? : *string*
 
-*Defined in [responses/timeline.feed.response.ts:224](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/timeline.feed.response.ts#L224)*
+*Defined in [responses/timeline.feed.response.ts:224](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/timeline.feed.response.ts#L224)*
 
 ___
 
@@ -202,7 +202,7 @@ ___
 
 • **pk**: *string*
 
-*Defined in [responses/timeline.feed.response.ts:208](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/timeline.feed.response.ts#L208)*
+*Defined in [responses/timeline.feed.response.ts:208](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/timeline.feed.response.ts#L208)*
 
 ___
 
@@ -210,7 +210,7 @@ ___
 
 • **usertags**? : *[TimelineFeedResponseUsertags](_responses_timeline_feed_response_.timelinefeedresponseusertags.md)*
 
-*Defined in [responses/timeline.feed.response.ts:210](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/timeline.feed.response.ts#L210)*
+*Defined in [responses/timeline.feed.response.ts:210](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/timeline.feed.response.ts#L210)*
 
 ___
 
@@ -218,4 +218,4 @@ ___
 
 • **video_subtitles_uri**? : *null*
 
-*Defined in [responses/timeline.feed.response.ts:212](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/timeline.feed.response.ts#L212)*
+*Defined in [responses/timeline.feed.response.ts:212](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/timeline.feed.response.ts#L212)*

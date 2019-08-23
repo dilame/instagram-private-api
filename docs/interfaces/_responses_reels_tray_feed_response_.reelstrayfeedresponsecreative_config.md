@@ -22,7 +22,7 @@
 
 • **camera_facing**: *string*
 
-*Defined in [responses/reels-tray.feed.response.ts:201](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-tray.feed.response.ts#L201)*
+*Defined in [responses/reels-tray.feed.response.ts:201](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/reels-tray.feed.response.ts#L201)*
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 • **capture_type**: *string*
 
-*Defined in [responses/reels-tray.feed.response.ts:200](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-tray.feed.response.ts#L200)*
+*Defined in [responses/reels-tray.feed.response.ts:200](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/reels-tray.feed.response.ts#L200)*
 
 ___
 
@@ -38,4 +38,4 @@ ___
 
 • **should_render_try_it_on**: *boolean*
 
-*Defined in [responses/reels-tray.feed.response.ts:202](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-tray.feed.response.ts#L202)*
+*Defined in [responses/reels-tray.feed.response.ts:202](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/reels-tray.feed.response.ts#L202)*

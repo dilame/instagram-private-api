@@ -23,7 +23,7 @@
 
 • **emoji**: *string*
 
-*Defined in [responses/user.repository.info.response.ts:90](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/user.repository.info.response.ts#L90)*
+*Defined in [responses/user.repository.info.response.ts:90](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/user.repository.info.response.ts#L90)*
 
 ___
 
@@ -31,7 +31,7 @@ ___
 
 • **gradient**: *string*
 
-*Defined in [responses/user.repository.info.response.ts:89](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/user.repository.info.response.ts#L89)*
+*Defined in [responses/user.repository.info.response.ts:89](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/user.repository.info.response.ts#L89)*
 
 ___
 
@@ -39,7 +39,7 @@ ___
 
 • **mode**: *number*
 
-*Defined in [responses/user.repository.info.response.ts:88](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/user.repository.info.response.ts#L88)*
+*Defined in [responses/user.repository.info.response.ts:88](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/user.repository.info.response.ts#L88)*
 
 ___
 
@@ -47,4 +47,4 @@ ___
 
 • **selfie_sticker**: *string*
 
-*Defined in [responses/user.repository.info.response.ts:91](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/user.repository.info.response.ts#L91)*
+*Defined in [responses/user.repository.info.response.ts:91](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/user.repository.info.response.ts#L91)*

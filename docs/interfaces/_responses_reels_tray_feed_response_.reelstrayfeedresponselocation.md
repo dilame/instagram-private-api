@@ -28,7 +28,7 @@
 
 • **address**: *string*
 
-*Defined in [responses/reels-tray.feed.response.ts:149](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-tray.feed.response.ts#L149)*
+*Defined in [responses/reels-tray.feed.response.ts:149](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/reels-tray.feed.response.ts#L149)*
 
 ___
 
@@ -36,7 +36,7 @@ ___
 
 • **city**: *string*
 
-*Defined in [responses/reels-tray.feed.response.ts:150](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-tray.feed.response.ts#L150)*
+*Defined in [responses/reels-tray.feed.response.ts:150](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/reels-tray.feed.response.ts#L150)*
 
 ___
 
@@ -44,7 +44,7 @@ ___
 
 • **external_source**: *string*
 
-*Defined in [responses/reels-tray.feed.response.ts:154](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-tray.feed.response.ts#L154)*
+*Defined in [responses/reels-tray.feed.response.ts:154](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/reels-tray.feed.response.ts#L154)*
 
 ___
 
@@ -52,7 +52,7 @@ ___
 
 • **facebook_places_id**: *number*
 
-*Defined in [responses/reels-tray.feed.response.ts:155](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-tray.feed.response.ts#L155)*
+*Defined in [responses/reels-tray.feed.response.ts:155](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/reels-tray.feed.response.ts#L155)*
 
 ___
 
@@ -60,7 +60,7 @@ ___
 
 • **lat**: *number*
 
-*Defined in [responses/reels-tray.feed.response.ts:153](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-tray.feed.response.ts#L153)*
+*Defined in [responses/reels-tray.feed.response.ts:153](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/reels-tray.feed.response.ts#L153)*
 
 ___
 
@@ -68,7 +68,7 @@ ___
 
 • **lng**: *number*
 
-*Defined in [responses/reels-tray.feed.response.ts:152](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-tray.feed.response.ts#L152)*
+*Defined in [responses/reels-tray.feed.response.ts:152](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/reels-tray.feed.response.ts#L152)*
 
 ___
 
@@ -76,7 +76,7 @@ ___
 
 • **name**: *string*
 
-*Defined in [responses/reels-tray.feed.response.ts:148](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-tray.feed.response.ts#L148)*
+*Defined in [responses/reels-tray.feed.response.ts:148](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/reels-tray.feed.response.ts#L148)*
 
 ___
 
@@ -84,7 +84,7 @@ ___
 
 • **pk**: *number*
 
-*Defined in [responses/reels-tray.feed.response.ts:147](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-tray.feed.response.ts#L147)*
+*Defined in [responses/reels-tray.feed.response.ts:147](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/reels-tray.feed.response.ts#L147)*
 
 ___
 
@@ -92,4 +92,4 @@ ___
 
 • **short_name**: *string*
 
-*Defined in [responses/reels-tray.feed.response.ts:151](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-tray.feed.response.ts#L151)*
+*Defined in [responses/reels-tray.feed.response.ts:151](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/reels-tray.feed.response.ts#L151)*

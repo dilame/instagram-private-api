@@ -26,7 +26,7 @@
 
 • **blocking**: *boolean*
 
-*Defined in [responses/direct-thread.repository.update-title.response.ts:65](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-thread.repository.update-title.response.ts#L65)*
+*Defined in [responses/direct-thread.repository.update-title.response.ts:65](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-thread.repository.update-title.response.ts#L65)*
 
 ___
 
@@ -34,7 +34,7 @@ ___
 
 • **following**: *boolean*
 
-*Defined in [responses/direct-thread.repository.update-title.response.ts:64](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-thread.repository.update-title.response.ts#L64)*
+*Defined in [responses/direct-thread.repository.update-title.response.ts:64](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-thread.repository.update-title.response.ts#L64)*
 
 ___
 
@@ -42,7 +42,7 @@ ___
 
 • **incoming_request**: *boolean*
 
-*Defined in [responses/direct-thread.repository.update-title.response.ts:67](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-thread.repository.update-title.response.ts#L67)*
+*Defined in [responses/direct-thread.repository.update-title.response.ts:67](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-thread.repository.update-title.response.ts#L67)*
 
 ___
 
@@ -50,7 +50,7 @@ ___
 
 • **is_bestie**: *boolean*
 
-*Defined in [responses/direct-thread.repository.update-title.response.ts:69](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-thread.repository.update-title.response.ts#L69)*
+*Defined in [responses/direct-thread.repository.update-title.response.ts:69](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-thread.repository.update-title.response.ts#L69)*
 
 ___
 
@@ -58,7 +58,7 @@ ___
 
 • **is_private**: *boolean*
 
-*Defined in [responses/direct-thread.repository.update-title.response.ts:66](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-thread.repository.update-title.response.ts#L66)*
+*Defined in [responses/direct-thread.repository.update-title.response.ts:66](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-thread.repository.update-title.response.ts#L66)*
 
 ___
 
@@ -66,7 +66,7 @@ ___
 
 • **is_restricted**: *boolean*
 
-*Defined in [responses/direct-thread.repository.update-title.response.ts:70](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-thread.repository.update-title.response.ts#L70)*
+*Defined in [responses/direct-thread.repository.update-title.response.ts:70](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-thread.repository.update-title.response.ts#L70)*
 
 ___
 
@@ -74,4 +74,4 @@ ___
 
 • **outgoing_request**: *boolean*
 
-*Defined in [responses/direct-thread.repository.update-title.response.ts:68](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-thread.repository.update-title.response.ts#L68)*
+*Defined in [responses/direct-thread.repository.update-title.response.ts:68](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-thread.repository.update-title.response.ts#L68)*

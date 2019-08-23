@@ -42,7 +42,7 @@
 
 • **height**: *number*
 
-*Defined in [types/media.configure-story.options.ts:67](https://github.com/dilame/instagram-private-api/blob/01eb399/src/types/media.configure-story.options.ts#L67)*
+*Defined in [types/media.configure-story.options.ts:67](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/media.configure-story.options.ts#L67)*
 
 ___
 
@@ -50,7 +50,7 @@ ___
 
 • **rotation**: *number*
 
-*Defined in [types/media.configure-story.options.ts:68](https://github.com/dilame/instagram-private-api/blob/01eb399/src/types/media.configure-story.options.ts#L68)*
+*Defined in [types/media.configure-story.options.ts:68](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/media.configure-story.options.ts#L68)*
 
 ___
 
@@ -58,7 +58,7 @@ ___
 
 • **width**: *number*
 
-*Defined in [types/media.configure-story.options.ts:66](https://github.com/dilame/instagram-private-api/blob/01eb399/src/types/media.configure-story.options.ts#L66)*
+*Defined in [types/media.configure-story.options.ts:66](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/media.configure-story.options.ts#L66)*
 
 ___
 
@@ -66,7 +66,7 @@ ___
 
 • **x**: *number*
 
-*Defined in [types/media.configure-story.options.ts:64](https://github.com/dilame/instagram-private-api/blob/01eb399/src/types/media.configure-story.options.ts#L64)*
+*Defined in [types/media.configure-story.options.ts:64](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/media.configure-story.options.ts#L64)*
 
 ___
 
@@ -74,4 +74,4 @@ ___
 
 • **y**: *number*
 
-*Defined in [types/media.configure-story.options.ts:65](https://github.com/dilame/instagram-private-api/blob/01eb399/src/types/media.configure-story.options.ts#L65)*
+*Defined in [types/media.configure-story.options.ts:65](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/media.configure-story.options.ts#L65)*

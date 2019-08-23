@@ -21,7 +21,7 @@
 
 • **status**: *string*
 
-*Defined in [responses/direct-thread.repository.update-title.response.ts:3](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-thread.repository.update-title.response.ts#L3)*
+*Defined in [responses/direct-thread.repository.update-title.response.ts:3](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-thread.repository.update-title.response.ts#L3)*
 
 ___
 
@@ -29,4 +29,4 @@ ___
 
 • **thread**: *[DirectThreadRepositoryUpdateTitleResponseThread](_responses_direct_thread_repository_update_title_response_.directthreadrepositoryupdatetitleresponsethread.md)*
 
-*Defined in [responses/direct-thread.repository.update-title.response.ts:2](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-thread.repository.update-title.response.ts#L2)*
+*Defined in [responses/direct-thread.repository.update-title.response.ts:2](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-thread.repository.update-title.response.ts#L2)*

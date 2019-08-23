@@ -28,7 +28,7 @@
 
 • **address**: *string*
 
-*Defined in [responses/fbsearch.repository.places.response.ts:17](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/fbsearch.repository.places.response.ts#L17)*
+*Defined in [responses/fbsearch.repository.places.response.ts:17](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/fbsearch.repository.places.response.ts#L17)*
 
 ___
 
@@ -36,7 +36,7 @@ ___
 
 • **city**: *string*
 
-*Defined in [responses/fbsearch.repository.places.response.ts:18](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/fbsearch.repository.places.response.ts#L18)*
+*Defined in [responses/fbsearch.repository.places.response.ts:18](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/fbsearch.repository.places.response.ts#L18)*
 
 ___
 
@@ -44,7 +44,7 @@ ___
 
 • **external_source**: *string*
 
-*Defined in [responses/fbsearch.repository.places.response.ts:22](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/fbsearch.repository.places.response.ts#L22)*
+*Defined in [responses/fbsearch.repository.places.response.ts:22](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/fbsearch.repository.places.response.ts#L22)*
 
 ___
 
@@ -52,7 +52,7 @@ ___
 
 • **facebook_places_id**: *number*
 
-*Defined in [responses/fbsearch.repository.places.response.ts:23](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/fbsearch.repository.places.response.ts#L23)*
+*Defined in [responses/fbsearch.repository.places.response.ts:23](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/fbsearch.repository.places.response.ts#L23)*
 
 ___
 
@@ -60,7 +60,7 @@ ___
 
 • **lat**: *number*
 
-*Defined in [responses/fbsearch.repository.places.response.ts:21](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/fbsearch.repository.places.response.ts#L21)*
+*Defined in [responses/fbsearch.repository.places.response.ts:21](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/fbsearch.repository.places.response.ts#L21)*
 
 ___
 
@@ -68,7 +68,7 @@ ___
 
 • **lng**: *number*
 
-*Defined in [responses/fbsearch.repository.places.response.ts:20](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/fbsearch.repository.places.response.ts#L20)*
+*Defined in [responses/fbsearch.repository.places.response.ts:20](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/fbsearch.repository.places.response.ts#L20)*
 
 ___
 
@@ -76,7 +76,7 @@ ___
 
 • **name**: *string*
 
-*Defined in [responses/fbsearch.repository.places.response.ts:16](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/fbsearch.repository.places.response.ts#L16)*
+*Defined in [responses/fbsearch.repository.places.response.ts:16](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/fbsearch.repository.places.response.ts#L16)*
 
 ___
 
@@ -84,7 +84,7 @@ ___
 
 • **pk**: *number*
 
-*Defined in [responses/fbsearch.repository.places.response.ts:15](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/fbsearch.repository.places.response.ts#L15)*
+*Defined in [responses/fbsearch.repository.places.response.ts:15](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/fbsearch.repository.places.response.ts#L15)*
 
 ___
 
@@ -92,4 +92,4 @@ ___
 
 • **short_name**: *string*
 
-*Defined in [responses/fbsearch.repository.places.response.ts:19](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/fbsearch.repository.places.response.ts#L19)*
+*Defined in [responses/fbsearch.repository.places.response.ts:19](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/fbsearch.repository.places.response.ts#L19)*

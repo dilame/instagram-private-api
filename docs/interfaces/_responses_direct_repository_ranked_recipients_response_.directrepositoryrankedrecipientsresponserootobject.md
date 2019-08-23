@@ -25,7 +25,7 @@
 
 • **expires**: *number*
 
-*Defined in [responses/direct.repository.ranked-recipients.response.ts:3](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct.repository.ranked-recipients.response.ts#L3)*
+*Defined in [responses/direct.repository.ranked-recipients.response.ts:3](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct.repository.ranked-recipients.response.ts#L3)*
 
 ___
 
@@ -33,7 +33,7 @@ ___
 
 • **filtered**: *boolean*
 
-*Defined in [responses/direct.repository.ranked-recipients.response.ts:4](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct.repository.ranked-recipients.response.ts#L4)*
+*Defined in [responses/direct.repository.ranked-recipients.response.ts:4](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct.repository.ranked-recipients.response.ts#L4)*
 
 ___
 
@@ -41,7 +41,7 @@ ___
 
 • **rank_token**: *string*
 
-*Defined in [responses/direct.repository.ranked-recipients.response.ts:6](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct.repository.ranked-recipients.response.ts#L6)*
+*Defined in [responses/direct.repository.ranked-recipients.response.ts:6](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct.repository.ranked-recipients.response.ts#L6)*
 
 ___
 
@@ -49,7 +49,7 @@ ___
 
 • **ranked_recipients**: *[DirectRepositoryRankedRecipientsResponseRankedRecipientsItem](_responses_direct_repository_ranked_recipients_response_.directrepositoryrankedrecipientsresponserankedrecipientsitem.md)[]*
 
-*Defined in [responses/direct.repository.ranked-recipients.response.ts:2](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct.repository.ranked-recipients.response.ts#L2)*
+*Defined in [responses/direct.repository.ranked-recipients.response.ts:2](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct.repository.ranked-recipients.response.ts#L2)*
 
 ___
 
@@ -57,7 +57,7 @@ ___
 
 • **request_id**: *string*
 
-*Defined in [responses/direct.repository.ranked-recipients.response.ts:5](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct.repository.ranked-recipients.response.ts#L5)*
+*Defined in [responses/direct.repository.ranked-recipients.response.ts:5](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct.repository.ranked-recipients.response.ts#L5)*
 
 ___
 
@@ -65,4 +65,4 @@ ___
 
 • **status**: *string*
 
-*Defined in [responses/direct.repository.ranked-recipients.response.ts:7](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct.repository.ranked-recipients.response.ts#L7)*
+*Defined in [responses/direct.repository.ranked-recipients.response.ts:7](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct.repository.ranked-recipients.response.ts#L7)*

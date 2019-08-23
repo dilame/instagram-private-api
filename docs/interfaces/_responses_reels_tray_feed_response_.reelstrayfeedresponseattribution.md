@@ -20,4 +20,4 @@
 
 • **name**: *string*
 
-*Defined in [responses/reels-tray.feed.response.ts:205](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-tray.feed.response.ts#L205)*
+*Defined in [responses/reels-tray.feed.response.ts:205](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/reels-tray.feed.response.ts#L205)*

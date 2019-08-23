@@ -22,7 +22,7 @@
 
 • **pk**: *number*
 
-*Defined in [responses/saved.feed.response.ts:142](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/saved.feed.response.ts#L142)*
+*Defined in [responses/saved.feed.response.ts:142](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/saved.feed.response.ts#L142)*
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 • **profile_pic_url**: *string*
 
-*Defined in [responses/saved.feed.response.ts:144](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/saved.feed.response.ts#L144)*
+*Defined in [responses/saved.feed.response.ts:144](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/saved.feed.response.ts#L144)*
 
 ___
 
@@ -38,4 +38,4 @@ ___
 
 • **username**: *string*
 
-*Defined in [responses/saved.feed.response.ts:143](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/saved.feed.response.ts#L143)*
+*Defined in [responses/saved.feed.response.ts:143](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/saved.feed.response.ts#L143)*

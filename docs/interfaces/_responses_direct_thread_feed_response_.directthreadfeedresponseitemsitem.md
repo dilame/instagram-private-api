@@ -25,7 +25,7 @@
 
 • **client_context**: *string*
 
-*Defined in [responses/direct-thread.feed.response.ts:43](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-thread.feed.response.ts#L43)*
+*Defined in [responses/direct-thread.feed.response.ts:43](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-thread.feed.response.ts#L43)*
 
 ___
 
@@ -33,7 +33,7 @@ ___
 
 • **item_id**: *string*
 
-*Defined in [responses/direct-thread.feed.response.ts:38](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-thread.feed.response.ts#L38)*
+*Defined in [responses/direct-thread.feed.response.ts:38](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-thread.feed.response.ts#L38)*
 
 ___
 
@@ -41,7 +41,7 @@ ___
 
 • **item_type**: *string*
 
-*Defined in [responses/direct-thread.feed.response.ts:41](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-thread.feed.response.ts#L41)*
+*Defined in [responses/direct-thread.feed.response.ts:41](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-thread.feed.response.ts#L41)*
 
 ___
 
@@ -49,7 +49,7 @@ ___
 
 • **text**: *string*
 
-*Defined in [responses/direct-thread.feed.response.ts:42](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-thread.feed.response.ts#L42)*
+*Defined in [responses/direct-thread.feed.response.ts:42](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-thread.feed.response.ts#L42)*
 
 ___
 
@@ -57,7 +57,7 @@ ___
 
 • **timestamp**: *string*
 
-*Defined in [responses/direct-thread.feed.response.ts:40](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-thread.feed.response.ts#L40)*
+*Defined in [responses/direct-thread.feed.response.ts:40](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-thread.feed.response.ts#L40)*
 
 ___
 
@@ -65,4 +65,4 @@ ___
 
 • **user_id**: *number*
 
-*Defined in [responses/direct-thread.feed.response.ts:39](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-thread.feed.response.ts#L39)*
+*Defined in [responses/direct-thread.feed.response.ts:39](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-thread.feed.response.ts#L39)*

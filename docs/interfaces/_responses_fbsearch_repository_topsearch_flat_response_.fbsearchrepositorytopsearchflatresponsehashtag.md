@@ -24,7 +24,7 @@
 
 • **id**: *string*
 
-*Defined in [responses/fbsearch.repository.topsearch-flat.response.ts:35](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/fbsearch.repository.topsearch-flat.response.ts#L35)*
+*Defined in [responses/fbsearch.repository.topsearch-flat.response.ts:35](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/fbsearch.repository.topsearch-flat.response.ts#L35)*
 
 ___
 
@@ -32,7 +32,7 @@ ___
 
 • **media_count**: *number*
 
-*Defined in [responses/fbsearch.repository.topsearch-flat.response.ts:36](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/fbsearch.repository.topsearch-flat.response.ts#L36)*
+*Defined in [responses/fbsearch.repository.topsearch-flat.response.ts:36](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/fbsearch.repository.topsearch-flat.response.ts#L36)*
 
 ___
 
@@ -40,7 +40,7 @@ ___
 
 • **name**: *string*
 
-*Defined in [responses/fbsearch.repository.topsearch-flat.response.ts:34](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/fbsearch.repository.topsearch-flat.response.ts#L34)*
+*Defined in [responses/fbsearch.repository.topsearch-flat.response.ts:34](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/fbsearch.repository.topsearch-flat.response.ts#L34)*
 
 ___
 
@@ -48,7 +48,7 @@ ___
 
 • **profile_pic_url**: *string*
 
-*Defined in [responses/fbsearch.repository.topsearch-flat.response.ts:37](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/fbsearch.repository.topsearch-flat.response.ts#L37)*
+*Defined in [responses/fbsearch.repository.topsearch-flat.response.ts:37](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/fbsearch.repository.topsearch-flat.response.ts#L37)*
 
 ___
 
@@ -56,4 +56,4 @@ ___
 
 • **search_result_subtitle**: *string*
 
-*Defined in [responses/fbsearch.repository.topsearch-flat.response.ts:38](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/fbsearch.repository.topsearch-flat.response.ts#L38)*
+*Defined in [responses/fbsearch.repository.topsearch-flat.response.ts:38](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/fbsearch.repository.topsearch-flat.response.ts#L38)*

@@ -27,7 +27,7 @@
 
 • **campaign_notification**? : *number*
 
-*Defined in [responses/news.repository.inbox.response.ts:49](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/news.repository.inbox.response.ts#L49)*
+*Defined in [responses/news.repository.inbox.response.ts:49](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/news.repository.inbox.response.ts#L49)*
 
 ___
 
@@ -35,7 +35,7 @@ ___
 
 • **comment_likes**? : *number*
 
-*Defined in [responses/news.repository.inbox.response.ts:50](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/news.repository.inbox.response.ts#L50)*
+*Defined in [responses/news.repository.inbox.response.ts:50](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/news.repository.inbox.response.ts#L50)*
 
 ___
 
@@ -43,7 +43,7 @@ ___
 
 • **comments**? : *number*
 
-*Defined in [responses/news.repository.inbox.response.ts:48](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/news.repository.inbox.response.ts#L48)*
+*Defined in [responses/news.repository.inbox.response.ts:48](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/news.repository.inbox.response.ts#L48)*
 
 ___
 
@@ -51,7 +51,7 @@ ___
 
 • **likes**? : *number*
 
-*Defined in [responses/news.repository.inbox.response.ts:47](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/news.repository.inbox.response.ts#L47)*
+*Defined in [responses/news.repository.inbox.response.ts:47](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/news.repository.inbox.response.ts#L47)*
 
 ___
 
@@ -59,7 +59,7 @@ ___
 
 • **photos_of_you**? : *number*
 
-*Defined in [responses/news.repository.inbox.response.ts:51](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/news.repository.inbox.response.ts#L51)*
+*Defined in [responses/news.repository.inbox.response.ts:51](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/news.repository.inbox.response.ts#L51)*
 
 ___
 
@@ -67,7 +67,7 @@ ___
 
 • **relationships**? : *number*
 
-*Defined in [responses/news.repository.inbox.response.ts:45](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/news.repository.inbox.response.ts#L45)*
+*Defined in [responses/news.repository.inbox.response.ts:45](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/news.repository.inbox.response.ts#L45)*
 
 ___
 
@@ -75,7 +75,7 @@ ___
 
 • **requests**? : *number*
 
-*Defined in [responses/news.repository.inbox.response.ts:52](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/news.repository.inbox.response.ts#L52)*
+*Defined in [responses/news.repository.inbox.response.ts:52](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/news.repository.inbox.response.ts#L52)*
 
 ___
 
@@ -83,4 +83,4 @@ ___
 
 • **usertags**? : *number*
 
-*Defined in [responses/news.repository.inbox.response.ts:46](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/news.repository.inbox.response.ts#L46)*
+*Defined in [responses/news.repository.inbox.response.ts:46](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/news.repository.inbox.response.ts#L46)*

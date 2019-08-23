@@ -22,7 +22,7 @@
 
 • **camera_facing**: *string*
 
-*Defined in [responses/tag.feed.response.ts:260](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/tag.feed.response.ts#L260)*
+*Defined in [responses/tag.feed.response.ts:260](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/tag.feed.response.ts#L260)*
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 • **capture_type**: *string*
 
-*Defined in [responses/tag.feed.response.ts:259](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/tag.feed.response.ts#L259)*
+*Defined in [responses/tag.feed.response.ts:259](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/tag.feed.response.ts#L259)*
 
 ___
 
@@ -38,4 +38,4 @@ ___
 
 • **should_render_try_it_on**: *boolean*
 
-*Defined in [responses/tag.feed.response.ts:261](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/tag.feed.response.ts#L261)*
+*Defined in [responses/tag.feed.response.ts:261](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/tag.feed.response.ts#L261)*

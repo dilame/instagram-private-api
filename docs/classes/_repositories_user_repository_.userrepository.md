@@ -36,7 +36,7 @@
 
 *Inherited from [Repository](_core_repository_.repository.md).[constructor](_core_repository_.repository.md#constructor)*
 
-*Defined in [core/repository.ts:6](https://github.com/dilame/instagram-private-api/blob/01eb399/src/core/repository.ts#L6)*
+*Defined in [core/repository.ts:6](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/core/repository.ts#L6)*
 
 **Parameters:**
 
@@ -52,7 +52,7 @@ Name | Type |
 
 ▸ **accountDetails**(`id?`: string | number): *`Promise<any>`*
 
-*Defined in [repositories/user.repository.ts:47](https://github.com/dilame/instagram-private-api/blob/01eb399/src/repositories/user.repository.ts#L47)*
+*Defined in [repositories/user.repository.ts:47](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/repositories/user.repository.ts#L47)*
 
 **Parameters:**
 
@@ -68,7 +68,7 @@ ___
 
 ▸ **arlinkDownloadInfo**(): *`Promise<any>`*
 
-*Defined in [repositories/user.repository.ts:17](https://github.com/dilame/instagram-private-api/blob/01eb399/src/repositories/user.repository.ts#L17)*
+*Defined in [repositories/user.repository.ts:17](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/repositories/user.repository.ts#L17)*
 
 **Returns:** *`Promise<any>`*
 
@@ -78,7 +78,7 @@ ___
 
 ▸ **flagUser**(`id`: string | number): *`Promise<any>`*
 
-*Defined in [repositories/user.repository.ts:67](https://github.com/dilame/instagram-private-api/blob/01eb399/src/repositories/user.repository.ts#L67)*
+*Defined in [repositories/user.repository.ts:67](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/repositories/user.repository.ts#L67)*
 
 **Parameters:**
 
@@ -94,7 +94,7 @@ ___
 
 ▸ **formerUsernames**(`id?`: string | number): *`Promise<any>`*
 
-*Defined in [repositories/user.repository.ts:54](https://github.com/dilame/instagram-private-api/blob/01eb399/src/repositories/user.repository.ts#L54)*
+*Defined in [repositories/user.repository.ts:54](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/repositories/user.repository.ts#L54)*
 
 **Parameters:**
 
@@ -110,7 +110,7 @@ ___
 
 ▸ **getIdByUsername**(`username`: string): *`Promise<number>`*
 
-*Defined in [repositories/user.repository.ts:83](https://github.com/dilame/instagram-private-api/blob/01eb399/src/repositories/user.repository.ts#L83)*
+*Defined in [repositories/user.repository.ts:83](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/repositories/user.repository.ts#L83)*
 
 **Parameters:**
 
@@ -126,7 +126,7 @@ ___
 
 ▸ **info**(`id`: string | number): *`Promise<UserRepositoryInfoResponseUser>`*
 
-*Defined in [repositories/user.repository.ts:11](https://github.com/dilame/instagram-private-api/blob/01eb399/src/repositories/user.repository.ts#L11)*
+*Defined in [repositories/user.repository.ts:11](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/repositories/user.repository.ts#L11)*
 
 **Parameters:**
 
@@ -142,7 +142,7 @@ ___
 
 ▸ **search**(`username`: string): *`Promise<UserRepositorySearchResponseRootObject>`*
 
-*Defined in [repositories/user.repository.ts:26](https://github.com/dilame/instagram-private-api/blob/01eb399/src/repositories/user.repository.ts#L26)*
+*Defined in [repositories/user.repository.ts:26](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/repositories/user.repository.ts#L26)*
 
 **Parameters:**
 
@@ -158,7 +158,7 @@ ___
 
 ▸ **searchExact**(`username`: string): *`Promise<UserRepositorySearchResponseUsersItem>`*
 
-*Defined in [repositories/user.repository.ts:37](https://github.com/dilame/instagram-private-api/blob/01eb399/src/repositories/user.repository.ts#L37)*
+*Defined in [repositories/user.repository.ts:37](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/repositories/user.repository.ts#L37)*
 
 **Parameters:**
 
@@ -174,7 +174,7 @@ ___
 
 ▸ **sharedFollowerAccounts**(`id`: string | number): *`Promise<any>`*
 
-*Defined in [repositories/user.repository.ts:61](https://github.com/dilame/instagram-private-api/blob/01eb399/src/repositories/user.repository.ts#L61)*
+*Defined in [repositories/user.repository.ts:61](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/repositories/user.repository.ts#L61)*
 
 **Parameters:**
 

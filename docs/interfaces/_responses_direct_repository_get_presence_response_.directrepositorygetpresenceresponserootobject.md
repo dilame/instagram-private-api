@@ -21,7 +21,7 @@
 
 • **status**: *string*
 
-*Defined in [responses/direct.repository.get-presence.response.ts:11](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct.repository.get-presence.response.ts#L11)*
+*Defined in [responses/direct.repository.get-presence.response.ts:11](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct.repository.get-presence.response.ts#L11)*
 
 ___
 
@@ -29,7 +29,7 @@ ___
 
 • **user_presence**: *any*
 
-*Defined in [responses/direct.repository.get-presence.response.ts:10](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct.repository.get-presence.response.ts#L10)*
+*Defined in [responses/direct.repository.get-presence.response.ts:10](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct.repository.get-presence.response.ts#L10)*
 
 user_presence: {
   user_id: {

@@ -20,4 +20,4 @@
 
 • **candidates**: *[TimelineFeedResponseCandidatesItem](_responses_timeline_feed_response_.timelinefeedresponsecandidatesitem.md)[]*
 
-*Defined in [responses/timeline.feed.response.ts:100](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/timeline.feed.response.ts#L100)*
+*Defined in [responses/timeline.feed.response.ts:100](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/timeline.feed.response.ts#L100)*

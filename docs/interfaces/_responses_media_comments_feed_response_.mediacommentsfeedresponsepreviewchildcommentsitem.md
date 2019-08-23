@@ -32,7 +32,7 @@
 
 • **comment_like_count**: *number*
 
-*Defined in [responses/media-comments.feed.response.ts:71](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/media-comments.feed.response.ts#L71)*
+*Defined in [responses/media-comments.feed.response.ts:71](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/media-comments.feed.response.ts#L71)*
 
 ___
 
@@ -40,7 +40,7 @@ ___
 
 • **content_type**: *string*
 
-*Defined in [responses/media-comments.feed.response.ts:59](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/media-comments.feed.response.ts#L59)*
+*Defined in [responses/media-comments.feed.response.ts:59](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/media-comments.feed.response.ts#L59)*
 
 ___
 
@@ -48,7 +48,7 @@ ___
 
 • **created_at**: *number*
 
-*Defined in [responses/media-comments.feed.response.ts:64](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/media-comments.feed.response.ts#L64)*
+*Defined in [responses/media-comments.feed.response.ts:64](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/media-comments.feed.response.ts#L64)*
 
 ___
 
@@ -56,7 +56,7 @@ ___
 
 • **created_at_utc**: *number*
 
-*Defined in [responses/media-comments.feed.response.ts:65](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/media-comments.feed.response.ts#L65)*
+*Defined in [responses/media-comments.feed.response.ts:65](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/media-comments.feed.response.ts#L65)*
 
 ___
 
@@ -64,7 +64,7 @@ ___
 
 • **has_liked_comment**: *boolean*
 
-*Defined in [responses/media-comments.feed.response.ts:70](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/media-comments.feed.response.ts#L70)*
+*Defined in [responses/media-comments.feed.response.ts:70](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/media-comments.feed.response.ts#L70)*
 
 ___
 
@@ -72,7 +72,7 @@ ___
 
 • **media_id**: *string*
 
-*Defined in [responses/media-comments.feed.response.ts:66](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/media-comments.feed.response.ts#L66)*
+*Defined in [responses/media-comments.feed.response.ts:66](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/media-comments.feed.response.ts#L66)*
 
 ___
 
@@ -80,7 +80,7 @@ ___
 
 • **parent_comment_id**: *string*
 
-*Defined in [responses/media-comments.feed.response.ts:68](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/media-comments.feed.response.ts#L68)*
+*Defined in [responses/media-comments.feed.response.ts:68](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/media-comments.feed.response.ts#L68)*
 
 ___
 
@@ -88,7 +88,7 @@ ___
 
 • **pk**: *string*
 
-*Defined in [responses/media-comments.feed.response.ts:61](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/media-comments.feed.response.ts#L61)*
+*Defined in [responses/media-comments.feed.response.ts:61](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/media-comments.feed.response.ts#L61)*
 
 ___
 
@@ -96,7 +96,7 @@ ___
 
 • **share_enabled**: *boolean*
 
-*Defined in [responses/media-comments.feed.response.ts:69](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/media-comments.feed.response.ts#L69)*
+*Defined in [responses/media-comments.feed.response.ts:69](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/media-comments.feed.response.ts#L69)*
 
 ___
 
@@ -104,7 +104,7 @@ ___
 
 • **status**: *string*
 
-*Defined in [responses/media-comments.feed.response.ts:67](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/media-comments.feed.response.ts#L67)*
+*Defined in [responses/media-comments.feed.response.ts:67](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/media-comments.feed.response.ts#L67)*
 
 ___
 
@@ -112,7 +112,7 @@ ___
 
 • **text**: *string*
 
-*Defined in [responses/media-comments.feed.response.ts:62](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/media-comments.feed.response.ts#L62)*
+*Defined in [responses/media-comments.feed.response.ts:62](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/media-comments.feed.response.ts#L62)*
 
 ___
 
@@ -120,7 +120,7 @@ ___
 
 • **type**: *number*
 
-*Defined in [responses/media-comments.feed.response.ts:63](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/media-comments.feed.response.ts#L63)*
+*Defined in [responses/media-comments.feed.response.ts:63](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/media-comments.feed.response.ts#L63)*
 
 ___
 
@@ -128,4 +128,4 @@ ___
 
 • **user**: *[MediaCommentsFeedResponseUser](_responses_media_comments_feed_response_.mediacommentsfeedresponseuser.md)*
 
-*Defined in [responses/media-comments.feed.response.ts:60](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/media-comments.feed.response.ts#L60)*
+*Defined in [responses/media-comments.feed.response.ts:60](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/media-comments.feed.response.ts#L60)*

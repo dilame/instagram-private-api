@@ -21,7 +21,7 @@
 
 • **id**: *string*
 
-*Defined in [responses/tag.feed.response.ts:256](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/tag.feed.response.ts#L256)*
+*Defined in [responses/tag.feed.response.ts:256](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/tag.feed.response.ts#L256)*
 
 ___
 
@@ -29,4 +29,4 @@ ___
 
 • **name**: *string*
 
-*Defined in [responses/tag.feed.response.ts:255](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/tag.feed.response.ts#L255)*
+*Defined in [responses/tag.feed.response.ts:255](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/tag.feed.response.ts#L255)*

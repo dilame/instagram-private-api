@@ -28,7 +28,7 @@
 
 *Inherited from [Repository](_core_repository_.repository.md).[constructor](_core_repository_.repository.md#constructor)*
 
-*Defined in [core/repository.ts:6](https://github.com/dilame/instagram-private-api/blob/01eb399/src/core/repository.ts#L6)*
+*Defined in [core/repository.ts:6](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/core/repository.ts#L6)*
 
 **Parameters:**
 
@@ -44,7 +44,7 @@ Name | Type |
 
 ▸ **seen**(`input`: [StoryServiceInput](../modules/_types_stories_types_.md#storyserviceinput), `sourceId`: string): *`Promise<StatusResponse>`*
 
-*Defined in [services/story.service.ts:5](https://github.com/dilame/instagram-private-api/blob/01eb399/src/services/story.service.ts#L5)*
+*Defined in [services/story.service.ts:5](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/services/story.service.ts#L5)*
 
 **Parameters:**
 

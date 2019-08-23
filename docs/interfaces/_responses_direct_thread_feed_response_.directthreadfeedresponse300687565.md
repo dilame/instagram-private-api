@@ -21,7 +21,7 @@
 
 • **item_id**: *string*
 
-*Defined in [responses/direct-thread.feed.response.ts:62](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-thread.feed.response.ts#L62)*
+*Defined in [responses/direct-thread.feed.response.ts:62](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-thread.feed.response.ts#L62)*
 
 ___
 
@@ -29,4 +29,4 @@ ___
 
 • **timestamp**: *string*
 
-*Defined in [responses/direct-thread.feed.response.ts:61](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-thread.feed.response.ts#L61)*
+*Defined in [responses/direct-thread.feed.response.ts:61](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-thread.feed.response.ts#L61)*

@@ -20,4 +20,4 @@
 
 • **candidates**: *[MediaRepositoryConfigureSidecarResponseCandidatesItem](_responses_media_repository_configure_sidecar_response_.mediarepositoryconfiguresidecarresponsecandidatesitem.md)[]*
 
-*Defined in [responses/media.repository.configure-sidecar.response.ts:49](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/media.repository.configure-sidecar.response.ts#L49)*
+*Defined in [responses/media.repository.configure-sidecar.response.ts:49](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/media.repository.configure-sidecar.response.ts#L49)*

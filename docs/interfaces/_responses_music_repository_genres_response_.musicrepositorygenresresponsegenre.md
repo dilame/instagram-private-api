@@ -22,7 +22,7 @@
 
 • **cover_artwork_uri**: *string*
 
-*Defined in [responses/music.repository.genres.response.ts:11](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/music.repository.genres.response.ts#L11)*
+*Defined in [responses/music.repository.genres.response.ts:11](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/music.repository.genres.response.ts#L11)*
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 • **id**: *string*
 
-*Defined in [responses/music.repository.genres.response.ts:9](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/music.repository.genres.response.ts#L9)*
+*Defined in [responses/music.repository.genres.response.ts:9](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/music.repository.genres.response.ts#L9)*
 
 ___
 
@@ -38,4 +38,4 @@ ___
 
 • **name**: *string*
 
-*Defined in [responses/music.repository.genres.response.ts:10](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/music.repository.genres.response.ts#L10)*
+*Defined in [responses/music.repository.genres.response.ts:10](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/music.repository.genres.response.ts#L10)*

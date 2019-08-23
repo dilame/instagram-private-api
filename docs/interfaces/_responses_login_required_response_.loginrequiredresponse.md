@@ -22,7 +22,7 @@
 
 • **logout_reason**: *number*
 
-*Defined in [responses/login-required.response.ts:3](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/login-required.response.ts#L3)*
+*Defined in [responses/login-required.response.ts:3](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/login-required.response.ts#L3)*
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 • **message**: *"login_required"*
 
-*Defined in [responses/login-required.response.ts:2](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/login-required.response.ts#L2)*
+*Defined in [responses/login-required.response.ts:2](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/login-required.response.ts#L2)*
 
 ___
 
@@ -38,4 +38,4 @@ ___
 
 • **status**: *"fail"*
 
-*Defined in [responses/login-required.response.ts:4](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/login-required.response.ts#L4)*
+*Defined in [responses/login-required.response.ts:4](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/login-required.response.ts#L4)*

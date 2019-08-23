@@ -32,7 +32,7 @@
 
 • **algorithm**: *string*
 
-*Defined in [responses/news.repository.inbox.response.ts:20](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/news.repository.inbox.response.ts#L20)*
+*Defined in [responses/news.repository.inbox.response.ts:20](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/news.repository.inbox.response.ts#L20)*
 
 ___
 
@@ -40,7 +40,7 @@ ___
 
 • **caption**: *string*
 
-*Defined in [responses/news.repository.inbox.response.ts:23](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/news.repository.inbox.response.ts#L23)*
+*Defined in [responses/news.repository.inbox.response.ts:23](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/news.repository.inbox.response.ts#L23)*
 
 ___
 
@@ -48,7 +48,7 @@ ___
 
 • **followed_by**: *boolean*
 
-*Defined in [responses/news.repository.inbox.response.ts:29](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/news.repository.inbox.response.ts#L29)*
+*Defined in [responses/news.repository.inbox.response.ts:29](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/news.repository.inbox.response.ts#L29)*
 
 ___
 
@@ -56,7 +56,7 @@ ___
 
 • **icon**: *string*
 
-*Defined in [responses/news.repository.inbox.response.ts:22](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/news.repository.inbox.response.ts#L22)*
+*Defined in [responses/news.repository.inbox.response.ts:22](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/news.repository.inbox.response.ts#L22)*
 
 ___
 
@@ -64,7 +64,7 @@ ___
 
 • **is_new_suggestion**: *boolean*
 
-*Defined in [responses/news.repository.inbox.response.ts:30](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/news.repository.inbox.response.ts#L30)*
+*Defined in [responses/news.repository.inbox.response.ts:30](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/news.repository.inbox.response.ts#L30)*
 
 ___
 
@@ -72,7 +72,7 @@ ___
 
 • **large_urls**: *any[]*
 
-*Defined in [responses/news.repository.inbox.response.ts:26](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/news.repository.inbox.response.ts#L26)*
+*Defined in [responses/news.repository.inbox.response.ts:26](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/news.repository.inbox.response.ts#L26)*
 
 ___
 
@@ -80,7 +80,7 @@ ___
 
 • **media_ids**: *any[]*
 
-*Defined in [responses/news.repository.inbox.response.ts:24](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/news.repository.inbox.response.ts#L24)*
+*Defined in [responses/news.repository.inbox.response.ts:24](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/news.repository.inbox.response.ts#L24)*
 
 ___
 
@@ -88,7 +88,7 @@ ___
 
 • **media_infos**: *any[]*
 
-*Defined in [responses/news.repository.inbox.response.ts:27](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/news.repository.inbox.response.ts#L27)*
+*Defined in [responses/news.repository.inbox.response.ts:27](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/news.repository.inbox.response.ts#L27)*
 
 ___
 
@@ -96,7 +96,7 @@ ___
 
 • **social_context**: *string*
 
-*Defined in [responses/news.repository.inbox.response.ts:21](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/news.repository.inbox.response.ts#L21)*
+*Defined in [responses/news.repository.inbox.response.ts:21](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/news.repository.inbox.response.ts#L21)*
 
 ___
 
@@ -104,7 +104,7 @@ ___
 
 • **thumbnail_urls**: *any[]*
 
-*Defined in [responses/news.repository.inbox.response.ts:25](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/news.repository.inbox.response.ts#L25)*
+*Defined in [responses/news.repository.inbox.response.ts:25](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/news.repository.inbox.response.ts#L25)*
 
 ___
 
@@ -112,7 +112,7 @@ ___
 
 • **user**: *[NewsRepositoryInboxResponseUser](_responses_news_repository_inbox_response_.newsrepositoryinboxresponseuser.md)*
 
-*Defined in [responses/news.repository.inbox.response.ts:19](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/news.repository.inbox.response.ts#L19)*
+*Defined in [responses/news.repository.inbox.response.ts:19](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/news.repository.inbox.response.ts#L19)*
 
 ___
 
@@ -120,7 +120,7 @@ ___
 
 • **uuid**: *string*
 
-*Defined in [responses/news.repository.inbox.response.ts:31](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/news.repository.inbox.response.ts#L31)*
+*Defined in [responses/news.repository.inbox.response.ts:31](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/news.repository.inbox.response.ts#L31)*
 
 ___
 
@@ -128,4 +128,4 @@ ___
 
 • **value**: *number*
 
-*Defined in [responses/news.repository.inbox.response.ts:28](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/news.repository.inbox.response.ts#L28)*
+*Defined in [responses/news.repository.inbox.response.ts:28](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/news.repository.inbox.response.ts#L28)*

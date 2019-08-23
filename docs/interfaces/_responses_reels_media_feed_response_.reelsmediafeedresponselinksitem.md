@@ -29,7 +29,7 @@
 
 • **androidClass**: *string*
 
-*Defined in [responses/reels-media.feed.response.ts:109](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-media.feed.response.ts#L109)*
+*Defined in [responses/reels-media.feed.response.ts:109](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/reels-media.feed.response.ts#L109)*
 
 ___
 
@@ -37,7 +37,7 @@ ___
 
 • **appInstallObjectiveInvalidationBehavior**: *null*
 
-*Defined in [responses/reels-media.feed.response.ts:116](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-media.feed.response.ts#L116)*
+*Defined in [responses/reels-media.feed.response.ts:116](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/reels-media.feed.response.ts#L116)*
 
 ___
 
@@ -45,7 +45,7 @@ ___
 
 • **callToActionTitle**: *string*
 
-*Defined in [responses/reels-media.feed.response.ts:112](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-media.feed.response.ts#L112)*
+*Defined in [responses/reels-media.feed.response.ts:112](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/reels-media.feed.response.ts#L112)*
 
 ___
 
@@ -53,7 +53,7 @@ ___
 
 • **deeplinkUri**: *string*
 
-*Defined in [responses/reels-media.feed.response.ts:111](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-media.feed.response.ts#L111)*
+*Defined in [responses/reels-media.feed.response.ts:111](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/reels-media.feed.response.ts#L111)*
 
 ___
 
@@ -61,7 +61,7 @@ ___
 
 • **igUserId**: *string*
 
-*Defined in [responses/reels-media.feed.response.ts:115](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-media.feed.response.ts#L115)*
+*Defined in [responses/reels-media.feed.response.ts:115](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/reels-media.feed.response.ts#L115)*
 
 ___
 
@@ -69,7 +69,7 @@ ___
 
 • **leadGenFormId**: *string*
 
-*Defined in [responses/reels-media.feed.response.ts:114](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-media.feed.response.ts#L114)*
+*Defined in [responses/reels-media.feed.response.ts:114](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/reels-media.feed.response.ts#L114)*
 
 ___
 
@@ -77,7 +77,7 @@ ___
 
 • **linkType**: *number*
 
-*Defined in [responses/reels-media.feed.response.ts:107](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-media.feed.response.ts#L107)*
+*Defined in [responses/reels-media.feed.response.ts:107](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/reels-media.feed.response.ts#L107)*
 
 ___
 
@@ -85,7 +85,7 @@ ___
 
 • **package**: *string*
 
-*Defined in [responses/reels-media.feed.response.ts:110](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-media.feed.response.ts#L110)*
+*Defined in [responses/reels-media.feed.response.ts:110](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/reels-media.feed.response.ts#L110)*
 
 ___
 
@@ -93,7 +93,7 @@ ___
 
 • **redirectUri**: *null*
 
-*Defined in [responses/reels-media.feed.response.ts:113](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-media.feed.response.ts#L113)*
+*Defined in [responses/reels-media.feed.response.ts:113](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/reels-media.feed.response.ts#L113)*
 
 ___
 
@@ -101,4 +101,4 @@ ___
 
 • **webUri**: *string*
 
-*Defined in [responses/reels-media.feed.response.ts:108](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-media.feed.response.ts#L108)*
+*Defined in [responses/reels-media.feed.response.ts:108](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/reels-media.feed.response.ts#L108)*

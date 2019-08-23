@@ -25,7 +25,7 @@
 
 • **fetch_ts**: *number*
 
-*Defined in [responses/live.join-request-counts.response.ts:2](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/live.join-request-counts.response.ts#L2)*
+*Defined in [responses/live.join-request-counts.response.ts:2](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.join-request-counts.response.ts#L2)*
 
 ___
 
@@ -33,7 +33,7 @@ ___
 
 • **num_new_requests**: *number*
 
-*Defined in [responses/live.join-request-counts.response.ts:4](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/live.join-request-counts.response.ts#L4)*
+*Defined in [responses/live.join-request-counts.response.ts:4](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.join-request-counts.response.ts#L4)*
 
 ___
 
@@ -41,7 +41,7 @@ ___
 
 • **num_total_requests**: *number*
 
-*Defined in [responses/live.join-request-counts.response.ts:3](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/live.join-request-counts.response.ts#L3)*
+*Defined in [responses/live.join-request-counts.response.ts:3](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.join-request-counts.response.ts#L3)*
 
 ___
 
@@ -49,7 +49,7 @@ ___
 
 • **num_unseen_requests**: *number*
 
-*Defined in [responses/live.join-request-counts.response.ts:6](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/live.join-request-counts.response.ts#L6)*
+*Defined in [responses/live.join-request-counts.response.ts:6](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.join-request-counts.response.ts#L6)*
 
 ___
 
@@ -57,7 +57,7 @@ ___
 
 • **status**: *string*
 
-*Defined in [responses/live.join-request-counts.response.ts:7](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/live.join-request-counts.response.ts#L7)*
+*Defined in [responses/live.join-request-counts.response.ts:7](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.join-request-counts.response.ts#L7)*
 
 ___
 
@@ -65,4 +65,4 @@ ___
 
 • **users**: *[LiveJoinRequestCountsResponseUsersItem](_responses_live_join_request_counts_response_.livejoinrequestcountsresponseusersitem.md)[]*
 
-*Defined in [responses/live.join-request-counts.response.ts:5](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/live.join-request-counts.response.ts#L5)*
+*Defined in [responses/live.join-request-counts.response.ts:5](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.join-request-counts.response.ts#L5)*

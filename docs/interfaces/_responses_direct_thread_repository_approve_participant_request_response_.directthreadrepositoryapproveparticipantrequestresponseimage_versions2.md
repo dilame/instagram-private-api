@@ -20,4 +20,4 @@
 
 • **candidates**: *[DirectThreadRepositoryApproveParticipantRequestResponseCandidatesItem](_responses_direct_thread_repository_approve_participant_request_response_.directthreadrepositoryapproveparticipantrequestresponsecandidatesitem.md)[]*
 
-*Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:114](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/direct-thread.repository.approve-participant-request.response.ts#L114)*
+*Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:114](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-thread.repository.approve-participant-request.response.ts#L114)*

@@ -38,7 +38,7 @@
 
 • **audio_muted**? : *string*
 
-*Defined in [types/media.configure-sidecar.options.ts:47](https://github.com/dilame/instagram-private-api/blob/01eb399/src/types/media.configure-sidecar.options.ts#L47)*
+*Defined in [types/media.configure-sidecar.options.ts:47](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/media.configure-sidecar.options.ts#L47)*
 
 ___
 
@@ -48,7 +48,7 @@ ___
 
 *Inherited from [MediaConfigureSidecarItem](_types_media_configure_sidecar_options_.mediaconfiguresidecaritem.md).[caption](_types_media_configure_sidecar_options_.mediaconfiguresidecaritem.md#optional-caption)*
 
-*Defined in [types/media.configure-sidecar.options.ts:25](https://github.com/dilame/instagram-private-api/blob/01eb399/src/types/media.configure-sidecar.options.ts#L25)*
+*Defined in [types/media.configure-sidecar.options.ts:25](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/media.configure-sidecar.options.ts#L25)*
 
 ___
 
@@ -56,7 +56,7 @@ ___
 
 • **clips**? : *`Array<object>` | string*
 
-*Defined in [types/media.configure-sidecar.options.ts:48](https://github.com/dilame/instagram-private-api/blob/01eb399/src/types/media.configure-sidecar.options.ts#L48)*
+*Defined in [types/media.configure-sidecar.options.ts:48](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/media.configure-sidecar.options.ts#L48)*
 
 ___
 
@@ -64,7 +64,7 @@ ___
 
 • **date_time_original**? : *string*
 
-*Defined in [types/media.configure-sidecar.options.ts:46](https://github.com/dilame/instagram-private-api/blob/01eb399/src/types/media.configure-sidecar.options.ts#L46)*
+*Defined in [types/media.configure-sidecar.options.ts:46](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/media.configure-sidecar.options.ts#L46)*
 
 ___
 
@@ -74,7 +74,7 @@ ___
 
 *Inherited from [MediaConfigureSidecarItem](_types_media_configure_sidecar_options_.mediaconfiguresidecaritem.md).[device](_types_media_configure_sidecar_options_.mediaconfiguresidecaritem.md#optional-device)*
 
-*Defined in [types/media.configure-sidecar.options.ts:30](https://github.com/dilame/instagram-private-api/blob/01eb399/src/types/media.configure-sidecar.options.ts#L30)*
+*Defined in [types/media.configure-sidecar.options.ts:30](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/media.configure-sidecar.options.ts#L30)*
 
 ___
 
@@ -84,7 +84,7 @@ ___
 
 *Inherited from [MediaConfigureSidecarItem](_types_media_configure_sidecar_options_.mediaconfiguresidecaritem.md).[edits](_types_media_configure_sidecar_options_.mediaconfiguresidecaritem.md#optional-edits)*
 
-*Defined in [types/media.configure-sidecar.options.ts:29](https://github.com/dilame/instagram-private-api/blob/01eb399/src/types/media.configure-sidecar.options.ts#L29)*
+*Defined in [types/media.configure-sidecar.options.ts:29](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/media.configure-sidecar.options.ts#L29)*
 
 ___
 
@@ -94,7 +94,7 @@ ___
 
 *Inherited from [MediaConfigureSidecarItem](_types_media_configure_sidecar_options_.mediaconfiguresidecaritem.md).[extra](_types_media_configure_sidecar_options_.mediaconfiguresidecaritem.md#optional-extra)*
 
-*Defined in [types/media.configure-sidecar.options.ts:28](https://github.com/dilame/instagram-private-api/blob/01eb399/src/types/media.configure-sidecar.options.ts#L28)*
+*Defined in [types/media.configure-sidecar.options.ts:28](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/media.configure-sidecar.options.ts#L28)*
 
 ___
 
@@ -102,7 +102,7 @@ ___
 
 • **filter_type**? : *string*
 
-*Defined in [types/media.configure-sidecar.options.ts:44](https://github.com/dilame/instagram-private-api/blob/01eb399/src/types/media.configure-sidecar.options.ts#L44)*
+*Defined in [types/media.configure-sidecar.options.ts:44](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/media.configure-sidecar.options.ts#L44)*
 
 ___
 
@@ -112,7 +112,7 @@ ___
 
 *Inherited from [MediaConfigureSidecarItem](_types_media_configure_sidecar_options_.mediaconfiguresidecaritem.md).[height](_types_media_configure_sidecar_options_.mediaconfiguresidecaritem.md#height)*
 
-*Defined in [types/media.configure-sidecar.options.ts:40](https://github.com/dilame/instagram-private-api/blob/01eb399/src/types/media.configure-sidecar.options.ts#L40)*
+*Defined in [types/media.configure-sidecar.options.ts:40](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/media.configure-sidecar.options.ts#L40)*
 
 ___
 
@@ -120,7 +120,7 @@ ___
 
 • **length**: *string*
 
-*Defined in [types/media.configure-sidecar.options.ts:49](https://github.com/dilame/instagram-private-api/blob/01eb399/src/types/media.configure-sidecar.options.ts#L49)*
+*Defined in [types/media.configure-sidecar.options.ts:49](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/media.configure-sidecar.options.ts#L49)*
 
 ___
 
@@ -128,7 +128,7 @@ ___
 
 • **poster_frame_index**? : *string*
 
-*Defined in [types/media.configure-sidecar.options.ts:50](https://github.com/dilame/instagram-private-api/blob/01eb399/src/types/media.configure-sidecar.options.ts#L50)*
+*Defined in [types/media.configure-sidecar.options.ts:50](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/media.configure-sidecar.options.ts#L50)*
 
 ___
 
@@ -138,7 +138,7 @@ ___
 
 *Inherited from [MediaConfigureSidecarItem](_types_media_configure_sidecar_options_.mediaconfiguresidecaritem.md).[source_type](_types_media_configure_sidecar_options_.mediaconfiguresidecaritem.md#optional-source_type)*
 
-*Defined in [types/media.configure-sidecar.options.ts:26](https://github.com/dilame/instagram-private-api/blob/01eb399/src/types/media.configure-sidecar.options.ts#L26)*
+*Defined in [types/media.configure-sidecar.options.ts:26](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/media.configure-sidecar.options.ts#L26)*
 
 ___
 
@@ -148,7 +148,7 @@ ___
 
 *Inherited from [MediaConfigureSidecarItem](_types_media_configure_sidecar_options_.mediaconfiguresidecaritem.md).[timezone_offset](_types_media_configure_sidecar_options_.mediaconfiguresidecaritem.md#optional-timezone_offset)*
 
-*Defined in [types/media.configure-sidecar.options.ts:24](https://github.com/dilame/instagram-private-api/blob/01eb399/src/types/media.configure-sidecar.options.ts#L24)*
+*Defined in [types/media.configure-sidecar.options.ts:24](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/media.configure-sidecar.options.ts#L24)*
 
 ___
 
@@ -158,7 +158,7 @@ ___
 
 *Inherited from [MediaConfigureSidecarItem](_types_media_configure_sidecar_options_.mediaconfiguresidecaritem.md).[upload_id](_types_media_configure_sidecar_options_.mediaconfiguresidecaritem.md#upload_id)*
 
-*Defined in [types/media.configure-sidecar.options.ts:23](https://github.com/dilame/instagram-private-api/blob/01eb399/src/types/media.configure-sidecar.options.ts#L23)*
+*Defined in [types/media.configure-sidecar.options.ts:23](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/media.configure-sidecar.options.ts#L23)*
 
 ___
 
@@ -168,7 +168,7 @@ ___
 
 *Inherited from [MediaConfigureSidecarItem](_types_media_configure_sidecar_options_.mediaconfiguresidecaritem.md).[usertags](_types_media_configure_sidecar_options_.mediaconfiguresidecaritem.md#optional-usertags)*
 
-*Defined in [types/media.configure-sidecar.options.ts:27](https://github.com/dilame/instagram-private-api/blob/01eb399/src/types/media.configure-sidecar.options.ts#L27)*
+*Defined in [types/media.configure-sidecar.options.ts:27](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/media.configure-sidecar.options.ts#L27)*
 
 ___
 
@@ -176,7 +176,7 @@ ___
 
 • **video_result**? : *string*
 
-*Defined in [types/media.configure-sidecar.options.ts:45](https://github.com/dilame/instagram-private-api/blob/01eb399/src/types/media.configure-sidecar.options.ts#L45)*
+*Defined in [types/media.configure-sidecar.options.ts:45](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/media.configure-sidecar.options.ts#L45)*
 
 ___
 
@@ -186,4 +186,4 @@ ___
 
 *Inherited from [MediaConfigureSidecarItem](_types_media_configure_sidecar_options_.mediaconfiguresidecaritem.md).[width](_types_media_configure_sidecar_options_.mediaconfiguresidecaritem.md#width)*
 
-*Defined in [types/media.configure-sidecar.options.ts:39](https://github.com/dilame/instagram-private-api/blob/01eb399/src/types/media.configure-sidecar.options.ts#L39)*
+*Defined in [types/media.configure-sidecar.options.ts:39](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/media.configure-sidecar.options.ts#L39)*

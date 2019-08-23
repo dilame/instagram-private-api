@@ -33,7 +33,7 @@
 
 • **bit_flags**: *number*
 
-*Defined in [responses/location.feed.response.ts:147](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/location.feed.response.ts#L147)*
+*Defined in [responses/location.feed.response.ts:147](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/location.feed.response.ts#L147)*
 
 ___
 
@@ -41,7 +41,7 @@ ___
 
 • **content_type**: *string*
 
-*Defined in [responses/location.feed.response.ts:145](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/location.feed.response.ts#L145)*
+*Defined in [responses/location.feed.response.ts:145](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/location.feed.response.ts#L145)*
 
 ___
 
@@ -49,7 +49,7 @@ ___
 
 • **created_at**: *number*
 
-*Defined in [responses/location.feed.response.ts:143](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/location.feed.response.ts#L143)*
+*Defined in [responses/location.feed.response.ts:143](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/location.feed.response.ts#L143)*
 
 ___
 
@@ -57,7 +57,7 @@ ___
 
 • **created_at_utc**: *number*
 
-*Defined in [responses/location.feed.response.ts:144](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/location.feed.response.ts#L144)*
+*Defined in [responses/location.feed.response.ts:144](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/location.feed.response.ts#L144)*
 
 ___
 
@@ -65,7 +65,7 @@ ___
 
 • **did_report_as_spam**: *boolean*
 
-*Defined in [responses/location.feed.response.ts:149](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/location.feed.response.ts#L149)*
+*Defined in [responses/location.feed.response.ts:149](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/location.feed.response.ts#L149)*
 
 ___
 
@@ -73,7 +73,7 @@ ___
 
 • **has_translation**? : *boolean*
 
-*Defined in [responses/location.feed.response.ts:152](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/location.feed.response.ts#L152)*
+*Defined in [responses/location.feed.response.ts:152](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/location.feed.response.ts#L152)*
 
 ___
 
@@ -81,7 +81,7 @@ ___
 
 • **media_id**: *string*
 
-*Defined in [responses/location.feed.response.ts:151](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/location.feed.response.ts#L151)*
+*Defined in [responses/location.feed.response.ts:151](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/location.feed.response.ts#L151)*
 
 ___
 
@@ -89,7 +89,7 @@ ___
 
 • **pk**: *string*
 
-*Defined in [responses/location.feed.response.ts:139](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/location.feed.response.ts#L139)*
+*Defined in [responses/location.feed.response.ts:139](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/location.feed.response.ts#L139)*
 
 ___
 
@@ -97,7 +97,7 @@ ___
 
 • **share_enabled**: *boolean*
 
-*Defined in [responses/location.feed.response.ts:150](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/location.feed.response.ts#L150)*
+*Defined in [responses/location.feed.response.ts:150](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/location.feed.response.ts#L150)*
 
 ___
 
@@ -105,7 +105,7 @@ ___
 
 • **status**: *string*
 
-*Defined in [responses/location.feed.response.ts:146](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/location.feed.response.ts#L146)*
+*Defined in [responses/location.feed.response.ts:146](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/location.feed.response.ts#L146)*
 
 ___
 
@@ -113,7 +113,7 @@ ___
 
 • **text**: *string*
 
-*Defined in [responses/location.feed.response.ts:141](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/location.feed.response.ts#L141)*
+*Defined in [responses/location.feed.response.ts:141](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/location.feed.response.ts#L141)*
 
 ___
 
@@ -121,7 +121,7 @@ ___
 
 • **type**: *number*
 
-*Defined in [responses/location.feed.response.ts:142](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/location.feed.response.ts#L142)*
+*Defined in [responses/location.feed.response.ts:142](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/location.feed.response.ts#L142)*
 
 ___
 
@@ -129,7 +129,7 @@ ___
 
 • **user**: *[LocationFeedResponseUser](_responses_location_feed_response_.locationfeedresponseuser.md)*
 
-*Defined in [responses/location.feed.response.ts:148](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/location.feed.response.ts#L148)*
+*Defined in [responses/location.feed.response.ts:148](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/location.feed.response.ts#L148)*
 
 ___
 
@@ -137,4 +137,4 @@ ___
 
 • **user_id**: *number*
 
-*Defined in [responses/location.feed.response.ts:140](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/location.feed.response.ts#L140)*
+*Defined in [responses/location.feed.response.ts:140](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/location.feed.response.ts#L140)*

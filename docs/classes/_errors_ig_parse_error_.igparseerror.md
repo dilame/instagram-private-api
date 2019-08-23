@@ -31,7 +31,7 @@
 
 *Overrides [IgClientError](_errors_ig_client_error_.igclienterror.md).[constructor](_errors_ig_client_error_.igclienterror.md#constructor)*
 
-*Defined in [errors/ig-parse.error.ts:3](https://github.com/dilame/instagram-private-api/blob/01eb399/src/errors/ig-parse.error.ts#L3)*
+*Defined in [errors/ig-parse.error.ts:3](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/errors/ig-parse.error.ts#L3)*
 
 **Parameters:**
 
@@ -47,7 +47,7 @@ Name | Type |
 
 • **body**: *string*
 
-*Defined in [errors/ig-parse.error.ts:4](https://github.com/dilame/instagram-private-api/blob/01eb399/src/errors/ig-parse.error.ts#L4)*
+*Defined in [errors/ig-parse.error.ts:4](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/errors/ig-parse.error.ts#L4)*
 
 ___
 
@@ -57,7 +57,7 @@ ___
 
 *Inherited from void*
 
-Defined in /Users/bowzee/WebstormProjects/instagram-private-api/node_modules/typedoc/node_modules/typescript/lib/lib.es5.d.ts:964
+Defined in /Users/bowzee/WebstormProjects/instagram-private-api/node_modules/typedoc/node_modules/typescript/lib/lib.es5.d.ts:974
 
 ___
 
@@ -81,4 +81,4 @@ ___
 
 *Overrides void*
 
-Defined in /Users/bowzee/WebstormProjects/instagram-private-api/node_modules/typedoc/node_modules/typescript/lib/lib.es5.d.ts:965
+Defined in /Users/bowzee/WebstormProjects/instagram-private-api/node_modules/typedoc/node_modules/typescript/lib/lib.es5.d.ts:975

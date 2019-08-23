@@ -22,7 +22,7 @@
 
 • **latitude**: *string*
 
-*Defined in [types/posting.options.ts:46](https://github.com/dilame/instagram-private-api/blob/01eb399/src/types/posting.options.ts#L46)*
+*Defined in [types/posting.options.ts:46](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/posting.options.ts#L46)*
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 • **longitude**: *string*
 
-*Defined in [types/posting.options.ts:47](https://github.com/dilame/instagram-private-api/blob/01eb399/src/types/posting.options.ts#L47)*
+*Defined in [types/posting.options.ts:47](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/posting.options.ts#L47)*
 
 ___
 
@@ -38,4 +38,4 @@ ___
 
 • **sticker**: *[StoryLocation](_types_media_configure_story_options_.storylocation.md)*
 
-*Defined in [types/posting.options.ts:48](https://github.com/dilame/instagram-private-api/blob/01eb399/src/types/posting.options.ts#L48)*
+*Defined in [types/posting.options.ts:48](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/posting.options.ts#L48)*

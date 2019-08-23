@@ -31,7 +31,7 @@
 
 • **friendship_status**? : *[TimelineFeedResponseFriendship_status](_responses_timeline_feed_response_.timelinefeedresponsefriendship_status.md)*
 
-*Defined in [responses/timeline.feed.response.ts:121](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/timeline.feed.response.ts#L121)*
+*Defined in [responses/timeline.feed.response.ts:121](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/timeline.feed.response.ts#L121)*
 
 ___
 
@@ -39,7 +39,7 @@ ___
 
 • **full_name**: *string*
 
-*Defined in [responses/timeline.feed.response.ts:117](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/timeline.feed.response.ts#L117)*
+*Defined in [responses/timeline.feed.response.ts:117](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/timeline.feed.response.ts#L117)*
 
 ___
 
@@ -47,7 +47,7 @@ ___
 
 • **has_anonymous_profile_picture**? : *boolean*
 
-*Defined in [responses/timeline.feed.response.ts:123](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/timeline.feed.response.ts#L123)*
+*Defined in [responses/timeline.feed.response.ts:123](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/timeline.feed.response.ts#L123)*
 
 ___
 
@@ -55,7 +55,7 @@ ___
 
 • **is_favorite**? : *boolean*
 
-*Defined in [responses/timeline.feed.response.ts:125](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/timeline.feed.response.ts#L125)*
+*Defined in [responses/timeline.feed.response.ts:125](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/timeline.feed.response.ts#L125)*
 
 ___
 
@@ -63,7 +63,7 @@ ___
 
 • **is_private**: *boolean*
 
-*Defined in [responses/timeline.feed.response.ts:118](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/timeline.feed.response.ts#L118)*
+*Defined in [responses/timeline.feed.response.ts:118](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/timeline.feed.response.ts#L118)*
 
 ___
 
@@ -71,7 +71,7 @@ ___
 
 • **is_unpublished**? : *boolean*
 
-*Defined in [responses/timeline.feed.response.ts:124](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/timeline.feed.response.ts#L124)*
+*Defined in [responses/timeline.feed.response.ts:124](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/timeline.feed.response.ts#L124)*
 
 ___
 
@@ -79,7 +79,7 @@ ___
 
 • **is_verified**: *boolean*
 
-*Defined in [responses/timeline.feed.response.ts:122](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/timeline.feed.response.ts#L122)*
+*Defined in [responses/timeline.feed.response.ts:122](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/timeline.feed.response.ts#L122)*
 
 ___
 
@@ -87,7 +87,7 @@ ___
 
 • **latest_reel_media**? : *number*
 
-*Defined in [responses/timeline.feed.response.ts:126](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/timeline.feed.response.ts#L126)*
+*Defined in [responses/timeline.feed.response.ts:126](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/timeline.feed.response.ts#L126)*
 
 ___
 
@@ -95,7 +95,7 @@ ___
 
 • **pk**: *number*
 
-*Defined in [responses/timeline.feed.response.ts:115](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/timeline.feed.response.ts#L115)*
+*Defined in [responses/timeline.feed.response.ts:115](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/timeline.feed.response.ts#L115)*
 
 ___
 
@@ -103,7 +103,7 @@ ___
 
 • **profile_pic_id**? : *string*
 
-*Defined in [responses/timeline.feed.response.ts:120](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/timeline.feed.response.ts#L120)*
+*Defined in [responses/timeline.feed.response.ts:120](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/timeline.feed.response.ts#L120)*
 
 ___
 
@@ -111,7 +111,7 @@ ___
 
 • **profile_pic_url**: *string*
 
-*Defined in [responses/timeline.feed.response.ts:119](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/timeline.feed.response.ts#L119)*
+*Defined in [responses/timeline.feed.response.ts:119](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/timeline.feed.response.ts#L119)*
 
 ___
 
@@ -119,4 +119,4 @@ ___
 
 • **username**: *string*
 
-*Defined in [responses/timeline.feed.response.ts:116](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/timeline.feed.response.ts#L116)*
+*Defined in [responses/timeline.feed.response.ts:116](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/timeline.feed.response.ts#L116)*

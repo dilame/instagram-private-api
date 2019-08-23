@@ -42,7 +42,7 @@
 
 *Inherited from [Repository](_core_repository_.repository.md).[constructor](_core_repository_.repository.md#constructor)*
 
-*Defined in [core/repository.ts:6](https://github.com/dilame/instagram-private-api/blob/01eb399/src/core/repository.ts#L6)*
+*Defined in [core/repository.ts:6](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/core/repository.ts#L6)*
 
 **Parameters:**
 
@@ -58,7 +58,7 @@ Name | Type |
 
 • **full_name**: *string*
 
-*Defined in [responses/account-friendships.feed.response.ts:14](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/account-friendships.feed.response.ts#L14)*
+*Defined in [responses/account-friendships.feed.response.ts:14](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/account-friendships.feed.response.ts#L14)*
 
 ___
 
@@ -66,7 +66,7 @@ ___
 
 • **has_anonymous_profile_picture**: *boolean*
 
-*Defined in [responses/account-friendships.feed.response.ts:19](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/account-friendships.feed.response.ts#L19)*
+*Defined in [responses/account-friendships.feed.response.ts:19](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/account-friendships.feed.response.ts#L19)*
 
 ___
 
@@ -74,7 +74,7 @@ ___
 
 • **is_favorite**: *boolean*
 
-*Defined in [responses/account-friendships.feed.response.ts:20](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/account-friendships.feed.response.ts#L20)*
+*Defined in [responses/account-friendships.feed.response.ts:20](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/account-friendships.feed.response.ts#L20)*
 
 ___
 
@@ -82,7 +82,7 @@ ___
 
 • **is_private**: *boolean*
 
-*Defined in [responses/account-friendships.feed.response.ts:15](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/account-friendships.feed.response.ts#L15)*
+*Defined in [responses/account-friendships.feed.response.ts:15](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/account-friendships.feed.response.ts#L15)*
 
 ___
 
@@ -90,7 +90,7 @@ ___
 
 • **is_verified**: *boolean*
 
-*Defined in [responses/account-friendships.feed.response.ts:18](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/account-friendships.feed.response.ts#L18)*
+*Defined in [responses/account-friendships.feed.response.ts:18](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/account-friendships.feed.response.ts#L18)*
 
 ___
 
@@ -98,7 +98,7 @@ ___
 
 • **latest_reel_media**? : *number*
 
-*Defined in [responses/account-friendships.feed.response.ts:21](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/account-friendships.feed.response.ts#L21)*
+*Defined in [responses/account-friendships.feed.response.ts:21](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/account-friendships.feed.response.ts#L21)*
 
 ___
 
@@ -108,7 +108,7 @@ ___
 
 *Overrides [ProfileEntity](_entities_profile_entity_.profileentity.md).[pk](_entities_profile_entity_.profileentity.md#pk)*
 
-*Defined in [responses/account-friendships.feed.response.ts:12](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/account-friendships.feed.response.ts#L12)*
+*Defined in [responses/account-friendships.feed.response.ts:12](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/account-friendships.feed.response.ts#L12)*
 
 ___
 
@@ -116,7 +116,7 @@ ___
 
 • **profile_pic_id**? : *string*
 
-*Defined in [responses/account-friendships.feed.response.ts:17](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/account-friendships.feed.response.ts#L17)*
+*Defined in [responses/account-friendships.feed.response.ts:17](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/account-friendships.feed.response.ts#L17)*
 
 ___
 
@@ -124,7 +124,7 @@ ___
 
 • **profile_pic_url**: *string*
 
-*Defined in [responses/account-friendships.feed.response.ts:16](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/account-friendships.feed.response.ts#L16)*
+*Defined in [responses/account-friendships.feed.response.ts:16](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/account-friendships.feed.response.ts#L16)*
 
 ___
 
@@ -132,7 +132,7 @@ ___
 
 • **username**: *string*
 
-*Defined in [responses/account-friendships.feed.response.ts:13](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/account-friendships.feed.response.ts#L13)*
+*Defined in [responses/account-friendships.feed.response.ts:13](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/account-friendships.feed.response.ts#L13)*
 
 ## Methods
 
@@ -142,7 +142,7 @@ ___
 
 *Inherited from [ProfileEntity](_entities_profile_entity_.profileentity.md).[checkFollow](_entities_profile_entity_.profileentity.md#checkfollow)*
 
-*Defined in [entities/profile.entity.ts:5](https://github.com/dilame/instagram-private-api/blob/01eb399/src/entities/profile.entity.ts#L5)*
+*Defined in [entities/profile.entity.ts:5](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/entities/profile.entity.ts#L5)*
 
 **Returns:** *`Promise<FriendshipRepositoryChangeResponseFriendship_status>`*
 
@@ -154,6 +154,6 @@ ___
 
 *Inherited from [ProfileEntity](_entities_profile_entity_.profileentity.md).[checkUnfollow](_entities_profile_entity_.profileentity.md#checkunfollow)*
 
-*Defined in [entities/profile.entity.ts:10](https://github.com/dilame/instagram-private-api/blob/01eb399/src/entities/profile.entity.ts#L10)*
+*Defined in [entities/profile.entity.ts:10](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/entities/profile.entity.ts#L10)*
 
 **Returns:** *`Promise<FriendshipRepositoryChangeResponseFriendship_status>`*

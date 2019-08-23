@@ -20,4 +20,4 @@
 
 • **in**: *[TagFeedResponseInItem](_responses_tag_feed_response_.tagfeedresponseinitem.md)[]*
 
-*Defined in [responses/tag.feed.response.ts:117](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/tag.feed.response.ts#L117)*
+*Defined in [responses/tag.feed.response.ts:117](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/tag.feed.response.ts#L117)*

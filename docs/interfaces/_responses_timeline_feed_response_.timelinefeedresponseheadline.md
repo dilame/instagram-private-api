@@ -30,7 +30,7 @@
 
 • **bit_flags**: *number*
 
-*Defined in [responses/timeline.feed.response.ts:246](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/timeline.feed.response.ts#L246)*
+*Defined in [responses/timeline.feed.response.ts:246](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/timeline.feed.response.ts#L246)*
 
 ___
 
@@ -38,7 +38,7 @@ ___
 
 • **content_type**: *string*
 
-*Defined in [responses/timeline.feed.response.ts:237](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/timeline.feed.response.ts#L237)*
+*Defined in [responses/timeline.feed.response.ts:237](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/timeline.feed.response.ts#L237)*
 
 ___
 
@@ -46,7 +46,7 @@ ___
 
 • **created_at**: *number*
 
-*Defined in [responses/timeline.feed.response.ts:243](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/timeline.feed.response.ts#L243)*
+*Defined in [responses/timeline.feed.response.ts:243](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/timeline.feed.response.ts#L243)*
 
 ___
 
@@ -54,7 +54,7 @@ ___
 
 • **created_at_utc**: *number*
 
-*Defined in [responses/timeline.feed.response.ts:244](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/timeline.feed.response.ts#L244)*
+*Defined in [responses/timeline.feed.response.ts:244](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/timeline.feed.response.ts#L244)*
 
 ___
 
@@ -62,7 +62,7 @@ ___
 
 • **media_id**: *string*
 
-*Defined in [responses/timeline.feed.response.ts:245](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/timeline.feed.response.ts#L245)*
+*Defined in [responses/timeline.feed.response.ts:245](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/timeline.feed.response.ts#L245)*
 
 ___
 
@@ -70,7 +70,7 @@ ___
 
 • **pk**: *string*
 
-*Defined in [responses/timeline.feed.response.ts:240](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/timeline.feed.response.ts#L240)*
+*Defined in [responses/timeline.feed.response.ts:240](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/timeline.feed.response.ts#L240)*
 
 ___
 
@@ -78,7 +78,7 @@ ___
 
 • **status**: *string*
 
-*Defined in [responses/timeline.feed.response.ts:247](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/timeline.feed.response.ts#L247)*
+*Defined in [responses/timeline.feed.response.ts:247](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/timeline.feed.response.ts#L247)*
 
 ___
 
@@ -86,7 +86,7 @@ ___
 
 • **text**: *string*
 
-*Defined in [responses/timeline.feed.response.ts:241](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/timeline.feed.response.ts#L241)*
+*Defined in [responses/timeline.feed.response.ts:241](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/timeline.feed.response.ts#L241)*
 
 ___
 
@@ -94,7 +94,7 @@ ___
 
 • **type**: *number*
 
-*Defined in [responses/timeline.feed.response.ts:242](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/timeline.feed.response.ts#L242)*
+*Defined in [responses/timeline.feed.response.ts:242](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/timeline.feed.response.ts#L242)*
 
 ___
 
@@ -102,7 +102,7 @@ ___
 
 • **user**: *[TimelineFeedResponseUser](_responses_timeline_feed_response_.timelinefeedresponseuser.md)*
 
-*Defined in [responses/timeline.feed.response.ts:238](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/timeline.feed.response.ts#L238)*
+*Defined in [responses/timeline.feed.response.ts:238](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/timeline.feed.response.ts#L238)*
 
 ___
 
@@ -110,4 +110,4 @@ ___
 
 • **user_id**: *number*
 
-*Defined in [responses/timeline.feed.response.ts:239](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/timeline.feed.response.ts#L239)*
+*Defined in [responses/timeline.feed.response.ts:239](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/timeline.feed.response.ts#L239)*

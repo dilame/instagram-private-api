@@ -27,7 +27,7 @@
 
 • **finished**: *boolean*
 
-*Defined in [responses/reels-tray.feed.response.ts:227](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-tray.feed.response.ts#L227)*
+*Defined in [responses/reels-tray.feed.response.ts:227](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/reels-tray.feed.response.ts#L227)*
 
 ___
 
@@ -35,7 +35,7 @@ ___
 
 • **id**: *string*
 
-*Defined in [responses/reels-tray.feed.response.ts:220](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-tray.feed.response.ts#L220)*
+*Defined in [responses/reels-tray.feed.response.ts:220](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/reels-tray.feed.response.ts#L220)*
 
 ___
 
@@ -43,7 +43,7 @@ ___
 
 • **is_shared_result**: *boolean*
 
-*Defined in [responses/reels-tray.feed.response.ts:226](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-tray.feed.response.ts#L226)*
+*Defined in [responses/reels-tray.feed.response.ts:226](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/reels-tray.feed.response.ts#L226)*
 
 ___
 
@@ -51,7 +51,7 @@ ___
 
 • **poll_id**: *string*
 
-*Defined in [responses/reels-tray.feed.response.ts:221](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-tray.feed.response.ts#L221)*
+*Defined in [responses/reels-tray.feed.response.ts:221](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/reels-tray.feed.response.ts#L221)*
 
 ___
 
@@ -59,7 +59,7 @@ ___
 
 • **promotion_tallies**: *null*
 
-*Defined in [responses/reels-tray.feed.response.ts:224](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-tray.feed.response.ts#L224)*
+*Defined in [responses/reels-tray.feed.response.ts:224](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/reels-tray.feed.response.ts#L224)*
 
 ___
 
@@ -67,7 +67,7 @@ ___
 
 • **question**: *string*
 
-*Defined in [responses/reels-tray.feed.response.ts:222](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-tray.feed.response.ts#L222)*
+*Defined in [responses/reels-tray.feed.response.ts:222](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/reels-tray.feed.response.ts#L222)*
 
 ___
 
@@ -75,7 +75,7 @@ ___
 
 • **tallies**: *[ReelsTrayFeedResponseTalliesItem](_responses_reels_tray_feed_response_.reelstrayfeedresponsetalliesitem.md)[]*
 
-*Defined in [responses/reels-tray.feed.response.ts:223](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-tray.feed.response.ts#L223)*
+*Defined in [responses/reels-tray.feed.response.ts:223](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/reels-tray.feed.response.ts#L223)*
 
 ___
 
@@ -83,4 +83,4 @@ ___
 
 • **viewer_can_vote**: *boolean*
 
-*Defined in [responses/reels-tray.feed.response.ts:225](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-tray.feed.response.ts#L225)*
+*Defined in [responses/reels-tray.feed.response.ts:225](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/reels-tray.feed.response.ts#L225)*

@@ -21,7 +21,7 @@
 
 • **reels**: *[ReelsMediaFeedResponseReels](_responses_reels_media_feed_response_.reelsmediafeedresponsereels.md)*
 
-*Defined in [responses/reels-media.feed.response.ts:2](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-media.feed.response.ts#L2)*
+*Defined in [responses/reels-media.feed.response.ts:2](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/reels-media.feed.response.ts#L2)*
 
 ___
 
@@ -29,4 +29,4 @@ ___
 
 • **status**: *string*
 
-*Defined in [responses/reels-media.feed.response.ts:3](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-media.feed.response.ts#L3)*
+*Defined in [responses/reels-media.feed.response.ts:3](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/reels-media.feed.response.ts#L3)*

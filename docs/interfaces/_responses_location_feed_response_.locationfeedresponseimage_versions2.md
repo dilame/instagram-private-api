@@ -20,4 +20,4 @@
 
 • **candidates**: *[LocationFeedResponseCandidatesItem](_responses_location_feed_response_.locationfeedresponsecandidatesitem.md)[]*
 
-*Defined in [responses/location.feed.response.ts:115](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/location.feed.response.ts#L115)*
+*Defined in [responses/location.feed.response.ts:115](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/location.feed.response.ts#L115)*

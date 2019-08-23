@@ -29,7 +29,7 @@
 
 • **blocking**? : *boolean*
 
-*Defined in [responses/reels-tray.feed.response.ts:47](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-tray.feed.response.ts#L47)*
+*Defined in [responses/reels-tray.feed.response.ts:47](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/reels-tray.feed.response.ts#L47)*
 
 ___
 
@@ -37,7 +37,7 @@ ___
 
 • **followed_by**? : *boolean*
 
-*Defined in [responses/reels-tray.feed.response.ts:46](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-tray.feed.response.ts#L46)*
+*Defined in [responses/reels-tray.feed.response.ts:46](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/reels-tray.feed.response.ts#L46)*
 
 ___
 
@@ -45,7 +45,7 @@ ___
 
 • **following**: *boolean*
 
-*Defined in [responses/reels-tray.feed.response.ts:44](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-tray.feed.response.ts#L44)*
+*Defined in [responses/reels-tray.feed.response.ts:44](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/reels-tray.feed.response.ts#L44)*
 
 ___
 
@@ -53,7 +53,7 @@ ___
 
 • **incoming_request**? : *boolean*
 
-*Defined in [responses/reels-tray.feed.response.ts:49](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-tray.feed.response.ts#L49)*
+*Defined in [responses/reels-tray.feed.response.ts:49](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/reels-tray.feed.response.ts#L49)*
 
 ___
 
@@ -61,7 +61,7 @@ ___
 
 • **is_bestie**? : *boolean*
 
-*Defined in [responses/reels-tray.feed.response.ts:50](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-tray.feed.response.ts#L50)*
+*Defined in [responses/reels-tray.feed.response.ts:50](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/reels-tray.feed.response.ts#L50)*
 
 ___
 
@@ -69,7 +69,7 @@ ___
 
 • **is_muting_reel**: *boolean*
 
-*Defined in [responses/reels-tray.feed.response.ts:43](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-tray.feed.response.ts#L43)*
+*Defined in [responses/reels-tray.feed.response.ts:43](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/reels-tray.feed.response.ts#L43)*
 
 ___
 
@@ -77,7 +77,7 @@ ___
 
 • **is_private**? : *boolean*
 
-*Defined in [responses/reels-tray.feed.response.ts:48](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-tray.feed.response.ts#L48)*
+*Defined in [responses/reels-tray.feed.response.ts:48](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/reels-tray.feed.response.ts#L48)*
 
 ___
 
@@ -85,7 +85,7 @@ ___
 
 • **is_restricted**? : *boolean*
 
-*Defined in [responses/reels-tray.feed.response.ts:51](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-tray.feed.response.ts#L51)*
+*Defined in [responses/reels-tray.feed.response.ts:51](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/reels-tray.feed.response.ts#L51)*
 
 ___
 
@@ -93,7 +93,7 @@ ___
 
 • **muting**: *boolean*
 
-*Defined in [responses/reels-tray.feed.response.ts:42](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-tray.feed.response.ts#L42)*
+*Defined in [responses/reels-tray.feed.response.ts:42](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/reels-tray.feed.response.ts#L42)*
 
 ___
 
@@ -101,4 +101,4 @@ ___
 
 • **outgoing_request**: *boolean*
 
-*Defined in [responses/reels-tray.feed.response.ts:45](https://github.com/dilame/instagram-private-api/blob/01eb399/src/responses/reels-tray.feed.response.ts#L45)*
+*Defined in [responses/reels-tray.feed.response.ts:45](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/reels-tray.feed.response.ts#L45)*
