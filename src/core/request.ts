@@ -19,6 +19,7 @@ import {
 } from '../errors';
 import JSONbigInt = require('json-bigint');
 import { IgResponse } from '../types/common.types';
+import url from 'url';
 
 const JSONbigString = JSONbigInt({ storeAsString: true });
 
@@ -53,12 +54,13 @@ export class Request {
   }
 
   public async send<T = any>(userOptions: Options): Promise<IgResponse<T>> {
-    const cookies = this.client.state.cookieJar.getCookies('https://i.instagram.com/');
+    const parsedUrl = url.parse('https://instagram.com/');
+    const cookies = this.client.state.cookieJar.getCookies(parsedUrl);
     const keepCookies = ['sessionid'];
     const newCookies = cookies.filter(cookie => keepCookies.includes(cookie.key));
 
     const newCookieJar = request.jar();
-    newCookies.forEach(cookie => newCookieJar.setCookie(cookie.toString(), 'https://i.instagram.com/'));
+    newCookies.forEach(cookie => newCookieJar.setCookie(cookie.toString(), parsedUrl));
 
     let options = defaultsDeep(
       userOptions,
@@ -84,7 +86,7 @@ export class Request {
 
     const response = await this.faultTolerantRequest(options);
     newCookieJar
-      .getCookies('https://i.instagram.com/')
+      .getCookies(parsedUrl)
       .forEach(cookie => this.client.state.cookieJar.setCookie(cookie.toString(), 'https://i.instagram.com/'));
 
     process.nextTick(() => this.end$.next());
