@@ -87,7 +87,7 @@ export class Request {
     const response = await this.faultTolerantRequest(options);
     newCookieJar
       .getCookies(parsedUrl)
-      .forEach(cookie => this.client.state.cookieJar.setCookie(cookie.toString(), 'https://i.instagram.com/'));
+      .forEach(cookie => this.client.state.cookieJar.setCookie(cookie.toString(), parsedUrl));
 
     process.nextTick(() => this.end$.next());
     if (response.body.status === 'ok') {
