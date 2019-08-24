@@ -19,7 +19,7 @@ import {
 } from '../errors';
 import JSONbigInt = require('json-bigint');
 import { IgResponse } from '../types/common.types';
-import url from 'url';
+import * as url from 'url';
 
 const JSONbigString = JSONbigInt({ storeAsString: true });
 
