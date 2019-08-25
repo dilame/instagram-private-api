@@ -201,7 +201,7 @@ export class Request {
       'Accept-Language': this.client.state.language.replace('_', '-'),
       Host: 'i.instagram.com',
       'Accept-Encoding': 'gzip',
-      Connection: 'Keep-Alive',
+      Connection: 'close',
     };
   }
 }
