@@ -3,6 +3,7 @@ import { createHmac } from 'crypto';
 import { Subject } from 'rxjs';
 import { AttemptOptions, retry } from '@lifeomic/attempt';
 import * as request from 'request-promise';
+import * as simpleRequest from 'request';
 import * as SocksProxyAgent from 'socks-proxy-agent';
 import { Options, Response } from 'request';
 import { IgApiClient } from './client';
@@ -22,6 +23,27 @@ import { IgResponse } from '../types/common.types';
 import * as url from 'url';
 
 const JSONbigString = JSONbigInt({ storeAsString: true });
+
+const saveTrafficRequest = (options: Options) => {
+  const req = simpleRequest(options);
+
+  return new Promise<{ body: { statusCode: number; status: string } }>((res, rej) => {
+    req.on('response', data => {
+      req.abort();
+    });
+
+    req.on('error', rej);
+
+    req.on('end', data => {
+      res({
+        body: {
+          statusCode: req.response.statusCode,
+          status: req.response.statusCode === 200 ? 'ok' : 'not ok',
+        },
+      });
+    });
+  });
+};
 
 type Payload = { [key: string]: any } | string;
 
@@ -53,7 +75,7 @@ export class Request {
     return resolveWithFullResponse ? response : response.body;
   }
 
-  public async send<T = any>(userOptions: Options): Promise<IgResponse<T>> {
+  public async send<T = any>(userOptions: Options & { isReg: boolean }): Promise<IgResponse<T>> {
     const parsedUrl = url.parse('https://instagram.com/');
     const cookies = this.client.state.cookieJar.getCookies(parsedUrl);
     const keepCookies = ['sessionid'];
@@ -62,7 +84,7 @@ export class Request {
     const newCookieJar = request.jar();
     newCookies.forEach(cookie => newCookieJar.setCookie(cookie.toString(), parsedUrl));
 
-    let options = defaultsDeep(
+    const options = defaultsDeep(
       userOptions,
       {
         baseUrl: 'https://i.instagram.com/',
@@ -84,7 +106,7 @@ export class Request {
       delete options.proxy;
     }
 
-    const response = await this.faultTolerantRequest(options);
+    const response = userOptions.isReg ? await saveTrafficRequest(options) : await this.faultTolerantRequest(options);
     newCookieJar
       .getCookies(parsedUrl)
       .forEach(cookie => this.client.state.cookieJar.setCookie(cookie.toString(), parsedUrl));
@@ -147,6 +169,9 @@ export class Request {
     }
     if (json.error_type === 'sentry_block') {
       return new IgSentryBlockError(response);
+    }
+    if (json.status === 'not ok') {
+      return new Error(`saveTrafficRequest ${json.statusCode} error`);
     }
     return new IgResponseError(response);
   }
