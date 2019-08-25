@@ -78,7 +78,7 @@ export class Request {
   public async send<T = any>(userOptions: Options & { isReg?: boolean }): Promise<IgResponse<T>> {
     const parsedUrl = url.parse('https://instagram.com/');
     const cookies = this.client.state.cookieJar.getCookies(parsedUrl);
-    const keepCookies = ['mid', 'rur', 'csrftoken', 'sessionid', 'shbid', 'shbts'];
+    const keepCookies = userOptions.isReg ? ['sessionid'] : ['mid', 'rur', 'csrftoken', 'sessionid', 'shbid', 'shbts'];
     const newCookies = cookies.filter(cookie => keepCookies.includes(cookie.key));
 
     const newCookieJar = request.jar();
