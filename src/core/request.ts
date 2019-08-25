@@ -75,7 +75,7 @@ export class Request {
     return resolveWithFullResponse ? response : response.body;
   }
 
-  public async send<T = any>(userOptions: Options & { isReg: boolean }): Promise<IgResponse<T>> {
+  public async send<T = any>(userOptions: Options & { isReg?: boolean }): Promise<IgResponse<T>> {
     const parsedUrl = url.parse('https://instagram.com/');
     const cookies = this.client.state.cookieJar.getCookies(parsedUrl);
     const keepCookies = ['sessionid'];
