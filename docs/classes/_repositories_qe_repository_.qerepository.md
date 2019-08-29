@@ -30,7 +30,7 @@
 
 *Inherited from [Repository](_core_repository_.repository.md).[constructor](_core_repository_.repository.md#constructor)*
 
-*Defined in [core/repository.ts:6](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/core/repository.ts#L6)*
+*Defined in [core/repository.ts:6](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/repository.ts#L6)*
 
 **Parameters:**
 
@@ -46,7 +46,7 @@ Name | Type |
 
 ▸ **sync**(`experiments`: any): *`Promise<any>`*
 
-*Defined in [repositories/qe.repository.ts:10](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/repositories/qe.repository.ts#L10)*
+*Defined in [repositories/qe.repository.ts:10](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/qe.repository.ts#L10)*
 
 **Parameters:**
 
@@ -62,7 +62,7 @@ ___
 
 ▸ **syncExperiments**(): *`Promise<any>`*
 
-*Defined in [repositories/qe.repository.ts:4](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/repositories/qe.repository.ts#L4)*
+*Defined in [repositories/qe.repository.ts:4](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/qe.repository.ts#L4)*
 
 **Returns:** *`Promise<any>`*
 
@@ -72,6 +72,6 @@ ___
 
 ▸ **syncLoginExperiments**(): *`Promise<any>`*
 
-*Defined in [repositories/qe.repository.ts:7](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/repositories/qe.repository.ts#L7)*
+*Defined in [repositories/qe.repository.ts:7](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/qe.repository.ts#L7)*
 
 **Returns:** *`Promise<any>`*

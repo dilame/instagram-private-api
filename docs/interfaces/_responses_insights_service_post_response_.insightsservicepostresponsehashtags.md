@@ -21,7 +21,7 @@
 
 • **count**: *number*
 
-*Defined in [responses/insights.service.post.response.ts:92](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/insights.service.post.response.ts#L92)*
+*Defined in [responses/insights.service.post.response.ts:92](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.post.response.ts#L92)*
 
 ___
 
@@ -29,4 +29,4 @@ ___
 
 • **nodes**: *any[]*
 
-*Defined in [responses/insights.service.post.response.ts:93](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/insights.service.post.response.ts#L93)*
+*Defined in [responses/insights.service.post.response.ts:93](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.post.response.ts#L93)*

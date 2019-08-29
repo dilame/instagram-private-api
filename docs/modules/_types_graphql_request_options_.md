@@ -21,7 +21,7 @@
 
 Ƭ **InsightsFriendlyName**: *"IgInsightsAccountInsightsSurfaceQuery" | "IgInsightsAccountInsightsWithTabsQuery" | "IgInsightsPostGridSurfaceQuery" | "IgInsightsPostInsightsQuery" | "IgInsightsStoryInsightsAppQuery" | string*
 
-*Defined in [types/graphql-request.options.ts:8](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/graphql-request.options.ts#L8)*
+*Defined in [types/graphql-request.options.ts:8](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/graphql-request.options.ts#L8)*
 
 ___
 
@@ -29,4 +29,4 @@ ___
 
 Ƭ **InsightsSurface**: *"account" | "post" | "story" | string*
 
-*Defined in [types/graphql-request.options.ts:15](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/graphql-request.options.ts#L15)*
+*Defined in [types/graphql-request.options.ts:15](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/graphql-request.options.ts#L15)*

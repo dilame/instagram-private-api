@@ -26,7 +26,7 @@
 
 • **end_background_color**: *string*
 
-*Defined in [responses/media.repository.list-reel-media-viewer.response.ts:110](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/media.repository.list-reel-media-viewer.response.ts#L110)*
+*Defined in [responses/media.repository.list-reel-media-viewer.response.ts:110](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.list-reel-media-viewer.response.ts#L110)*
 
 ___
 
@@ -34,7 +34,7 @@ ___
 
 • **has_started_chat**: *boolean*
 
-*Defined in [responses/media.repository.list-reel-media-viewer.response.ts:111](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/media.repository.list-reel-media-viewer.response.ts#L111)*
+*Defined in [responses/media.repository.list-reel-media-viewer.response.ts:111](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.list-reel-media-viewer.response.ts#L111)*
 
 ___
 
@@ -42,7 +42,7 @@ ___
 
 • **start_background_color**: *string*
 
-*Defined in [responses/media.repository.list-reel-media-viewer.response.ts:109](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/media.repository.list-reel-media-viewer.response.ts#L109)*
+*Defined in [responses/media.repository.list-reel-media-viewer.response.ts:109](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.list-reel-media-viewer.response.ts#L109)*
 
 ___
 
@@ -50,7 +50,7 @@ ___
 
 • **status**: *string*
 
-*Defined in [responses/media.repository.list-reel-media-viewer.response.ts:113](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/media.repository.list-reel-media-viewer.response.ts#L113)*
+*Defined in [responses/media.repository.list-reel-media-viewer.response.ts:113](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.list-reel-media-viewer.response.ts#L113)*
 
 ___
 
@@ -58,7 +58,7 @@ ___
 
 • **story_chat_id**: *string*
 
-*Defined in [responses/media.repository.list-reel-media-viewer.response.ts:107](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/media.repository.list-reel-media-viewer.response.ts#L107)*
+*Defined in [responses/media.repository.list-reel-media-viewer.response.ts:107](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.list-reel-media-viewer.response.ts#L107)*
 
 ___
 
@@ -66,7 +66,7 @@ ___
 
 • **text**: *string*
 
-*Defined in [responses/media.repository.list-reel-media-viewer.response.ts:108](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/media.repository.list-reel-media-viewer.response.ts#L108)*
+*Defined in [responses/media.repository.list-reel-media-viewer.response.ts:108](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.list-reel-media-viewer.response.ts#L108)*
 
 ___
 
@@ -74,4 +74,4 @@ ___
 
 • **thread_id**: *string*
 
-*Defined in [responses/media.repository.list-reel-media-viewer.response.ts:112](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/media.repository.list-reel-media-viewer.response.ts#L112)*
+*Defined in [responses/media.repository.list-reel-media-viewer.response.ts:112](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.list-reel-media-viewer.response.ts#L112)*

@@ -23,7 +23,7 @@
 
 • **crop_rect**: *number[]*
 
-*Defined in [responses/highlights.repository.edit-reel.response.ts:26](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/highlights.repository.edit-reel.response.ts#L26)*
+*Defined in [responses/highlights.repository.edit-reel.response.ts:26](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/highlights.repository.edit-reel.response.ts#L26)*
 
 ___
 
@@ -31,7 +31,7 @@ ___
 
 • **cropped_image_version**: *[HighlightsRepositoryEditReelResponseCropped_image_version](_responses_highlights_repository_edit_reel_response_.highlightsrepositoryeditreelresponsecropped_image_version.md)*
 
-*Defined in [responses/highlights.repository.edit-reel.response.ts:25](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/highlights.repository.edit-reel.response.ts#L25)*
+*Defined in [responses/highlights.repository.edit-reel.response.ts:25](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/highlights.repository.edit-reel.response.ts#L25)*
 
 ___
 
@@ -39,7 +39,7 @@ ___
 
 • **full_image_version**: *[HighlightsRepositoryEditReelResponseFull_image_version](_responses_highlights_repository_edit_reel_response_.highlightsrepositoryeditreelresponsefull_image_version.md)*
 
-*Defined in [responses/highlights.repository.edit-reel.response.ts:28](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/highlights.repository.edit-reel.response.ts#L28)*
+*Defined in [responses/highlights.repository.edit-reel.response.ts:28](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/highlights.repository.edit-reel.response.ts#L28)*
 
 ___
 
@@ -47,4 +47,4 @@ ___
 
 • **media_id**: *string*
 
-*Defined in [responses/highlights.repository.edit-reel.response.ts:27](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/highlights.repository.edit-reel.response.ts#L27)*
+*Defined in [responses/highlights.repository.edit-reel.response.ts:27](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/highlights.repository.edit-reel.response.ts#L27)*

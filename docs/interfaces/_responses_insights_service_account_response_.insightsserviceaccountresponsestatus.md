@@ -20,4 +20,4 @@
 
 • **account_type**: *string*
 
-*Defined in [responses/insights.service.account.response.ts:104](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/insights.service.account.response.ts#L104)*
+*Defined in [responses/insights.service.account.response.ts:104](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.account.response.ts#L104)*

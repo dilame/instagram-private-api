@@ -20,4 +20,4 @@
 
 • **300687565**: *[DirectThreadFeedResponse300687565](_responses_direct_thread_feed_response_.directthreadfeedresponse300687565.md)*
 
-*Defined in [responses/direct-thread.feed.response.ts:58](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-thread.feed.response.ts#L58)*
+*Defined in [responses/direct-thread.feed.response.ts:58](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-thread.feed.response.ts#L58)*

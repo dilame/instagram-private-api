@@ -20,4 +20,4 @@
 
 • **data_points**: *[InsightsServiceAccountResponseDataPointsItem](_responses_insights_service_account_response_.insightsserviceaccountresponsedatapointsitem.md)[]*
 
-*Defined in [responses/insights.service.account.response.ts:125](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/insights.service.account.response.ts#L125)*
+*Defined in [responses/insights.service.account.response.ts:125](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.account.response.ts#L125)*

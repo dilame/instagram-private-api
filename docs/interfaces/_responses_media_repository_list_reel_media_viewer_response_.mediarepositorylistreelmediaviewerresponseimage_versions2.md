@@ -20,4 +20,4 @@
 
 • **candidates**: *[MediaRepositoryListReelMediaViewerResponseCandidatesItem](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponsecandidatesitem.md)[]*
 
-*Defined in [responses/media.repository.list-reel-media-viewer.response.ts:67](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/media.repository.list-reel-media-viewer.response.ts#L67)*
+*Defined in [responses/media.repository.list-reel-media-viewer.response.ts:67](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.list-reel-media-viewer.response.ts#L67)*

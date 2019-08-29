@@ -30,7 +30,7 @@
 
 *Inherited from [Repository](_core_repository_.repository.md).[constructor](_core_repository_.repository.md#constructor)*
 
-*Defined in [core/repository.ts:6](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/core/repository.ts#L6)*
+*Defined in [core/repository.ts:6](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/repository.ts#L6)*
 
 **Parameters:**
 
@@ -46,7 +46,7 @@ Name | Type |
 
 ▸ **postLoginSync**(): *`Promise<any>`*
 
-*Defined in [repositories/launcher.repository.ts:11](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/repositories/launcher.repository.ts#L11)*
+*Defined in [repositories/launcher.repository.ts:11](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/launcher.repository.ts#L11)*
 
 **Returns:** *`Promise<any>`*
 
@@ -56,7 +56,7 @@ ___
 
 ▸ **preLoginSync**(): *`Promise<any>`*
 
-*Defined in [repositories/launcher.repository.ts:4](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/repositories/launcher.repository.ts#L4)*
+*Defined in [repositories/launcher.repository.ts:4](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/launcher.repository.ts#L4)*
 
 **Returns:** *`Promise<any>`*
 
@@ -66,7 +66,7 @@ ___
 
 ▸ **sync**(`data`: `Object`): *`Promise<any>`*
 
-*Defined in [repositories/launcher.repository.ts:22](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/repositories/launcher.repository.ts#L22)*
+*Defined in [repositories/launcher.repository.ts:22](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/launcher.repository.ts#L22)*
 
 **Parameters:**
 

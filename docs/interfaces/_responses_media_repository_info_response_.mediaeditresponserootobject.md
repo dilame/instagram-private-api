@@ -21,7 +21,7 @@
 
 • **media**: *[MediaInfoResponseItemsItem](_responses_media_repository_info_response_.mediainforesponseitemsitem.md)*
 
-*Defined in [responses/media.repository.info.response.ts:83](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/media.repository.info.response.ts#L83)*
+*Defined in [responses/media.repository.info.response.ts:83](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.info.response.ts#L83)*
 
 ___
 
@@ -29,4 +29,4 @@ ___
 
 • **status**: *string*
 
-*Defined in [responses/media.repository.info.response.ts:84](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/media.repository.info.response.ts#L84)*
+*Defined in [responses/media.repository.info.response.ts:84](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.info.response.ts#L84)*

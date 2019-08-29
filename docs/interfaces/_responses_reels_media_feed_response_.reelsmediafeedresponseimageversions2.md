@@ -20,4 +20,4 @@
 
 • **candidates**: *[ReelsMediaFeedResponseCandidatesItem](_responses_reels_media_feed_response_.reelsmediafeedresponsecandidatesitem.md)[]*
 
-*Defined in [responses/reels-media.feed.response.ts:78](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/reels-media.feed.response.ts#L78)*
+*Defined in [responses/reels-media.feed.response.ts:78](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-media.feed.response.ts#L78)*

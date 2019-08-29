@@ -60,7 +60,7 @@
 
 *Overrides [IgClientError](_errors_ig_client_error_.igclienterror.md).[constructor](_errors_ig_client_error_.igclienterror.md#constructor)*
 
-*Defined in [errors/ig-response.error.ts:9](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/errors/ig-response.error.ts#L9)*
+*Defined in [errors/ig-response.error.ts:9](https://github.com/dilame/instagram-private-api/blob/173bc62/src/errors/ig-response.error.ts#L9)*
 
 **Parameters:**
 
@@ -98,7 +98,7 @@ ___
 
 • **response**: *[IgResponse](../modules/_types_common_types_.md#igresponse)‹*`TBody`*›*
 
-*Defined in [errors/ig-response.error.ts:9](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/errors/ig-response.error.ts#L9)*
+*Defined in [errors/ig-response.error.ts:9](https://github.com/dilame/instagram-private-api/blob/173bc62/src/errors/ig-response.error.ts#L9)*
 
 ___
 
@@ -118,4 +118,4 @@ ___
 
 • **text**: *string*
 
-*Defined in [errors/ig-response.error.ts:7](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/errors/ig-response.error.ts#L7)*
+*Defined in [errors/ig-response.error.ts:7](https://github.com/dilame/instagram-private-api/blob/173bc62/src/errors/ig-response.error.ts#L7)*

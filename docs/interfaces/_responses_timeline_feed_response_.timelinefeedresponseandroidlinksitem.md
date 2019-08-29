@@ -29,7 +29,7 @@
 
 • **androidClass**: *string*
 
-*Defined in [responses/timeline.feed.response.ts:182](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/timeline.feed.response.ts#L182)*
+*Defined in [responses/timeline.feed.response.ts:182](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/timeline.feed.response.ts#L182)*
 
 ___
 
@@ -37,7 +37,7 @@ ___
 
 • **appInstallObjectiveInvalidationBehavior**: *null*
 
-*Defined in [responses/timeline.feed.response.ts:189](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/timeline.feed.response.ts#L189)*
+*Defined in [responses/timeline.feed.response.ts:189](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/timeline.feed.response.ts#L189)*
 
 ___
 
@@ -45,7 +45,7 @@ ___
 
 • **callToActionTitle**: *string*
 
-*Defined in [responses/timeline.feed.response.ts:185](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/timeline.feed.response.ts#L185)*
+*Defined in [responses/timeline.feed.response.ts:185](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/timeline.feed.response.ts#L185)*
 
 ___
 
@@ -53,7 +53,7 @@ ___
 
 • **deeplinkUri**: *string*
 
-*Defined in [responses/timeline.feed.response.ts:184](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/timeline.feed.response.ts#L184)*
+*Defined in [responses/timeline.feed.response.ts:184](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/timeline.feed.response.ts#L184)*
 
 ___
 
@@ -61,7 +61,7 @@ ___
 
 • **igUserId**: *null*
 
-*Defined in [responses/timeline.feed.response.ts:188](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/timeline.feed.response.ts#L188)*
+*Defined in [responses/timeline.feed.response.ts:188](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/timeline.feed.response.ts#L188)*
 
 ___
 
@@ -69,7 +69,7 @@ ___
 
 • **leadGenFormId**: *string | number*
 
-*Defined in [responses/timeline.feed.response.ts:187](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/timeline.feed.response.ts#L187)*
+*Defined in [responses/timeline.feed.response.ts:187](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/timeline.feed.response.ts#L187)*
 
 ___
 
@@ -77,7 +77,7 @@ ___
 
 • **linkType**: *number*
 
-*Defined in [responses/timeline.feed.response.ts:180](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/timeline.feed.response.ts#L180)*
+*Defined in [responses/timeline.feed.response.ts:180](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/timeline.feed.response.ts#L180)*
 
 ___
 
@@ -85,7 +85,7 @@ ___
 
 • **package**: *string*
 
-*Defined in [responses/timeline.feed.response.ts:183](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/timeline.feed.response.ts#L183)*
+*Defined in [responses/timeline.feed.response.ts:183](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/timeline.feed.response.ts#L183)*
 
 ___
 
@@ -93,7 +93,7 @@ ___
 
 • **redirectUri**: *string*
 
-*Defined in [responses/timeline.feed.response.ts:186](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/timeline.feed.response.ts#L186)*
+*Defined in [responses/timeline.feed.response.ts:186](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/timeline.feed.response.ts#L186)*
 
 ___
 
@@ -101,4 +101,4 @@ ___
 
 • **webUri**: *string*
 
-*Defined in [responses/timeline.feed.response.ts:181](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/timeline.feed.response.ts#L181)*
+*Defined in [responses/timeline.feed.response.ts:181](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/timeline.feed.response.ts#L181)*

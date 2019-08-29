@@ -22,7 +22,7 @@
 
 • **count**: *`0`*
 
-*Defined in [types/media.configure-story.options.ts:131](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/media.configure-story.options.ts#L131)*
+*Defined in [types/media.configure-story.options.ts:131](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/media.configure-story.options.ts#L131)*
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 • **font_size**: *number*
 
-*Defined in [types/media.configure-story.options.ts:133](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/media.configure-story.options.ts#L133)*
+*Defined in [types/media.configure-story.options.ts:133](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/media.configure-story.options.ts#L133)*
 
 ___
 
@@ -38,4 +38,4 @@ ___
 
 • **text**: *string*
 
-*Defined in [types/media.configure-story.options.ts:130](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/media.configure-story.options.ts#L130)*
+*Defined in [types/media.configure-story.options.ts:130](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/media.configure-story.options.ts#L130)*

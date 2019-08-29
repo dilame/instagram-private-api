@@ -24,7 +24,7 @@
 
 • **duration_in_video_in_sec**? : *null*
 
-*Defined in [responses/saved.feed.response.ts:119](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/saved.feed.response.ts#L119)*
+*Defined in [responses/saved.feed.response.ts:119](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/saved.feed.response.ts#L119)*
 
 ___
 
@@ -32,7 +32,7 @@ ___
 
 • **position**: *string[] | number[]*
 
-*Defined in [responses/saved.feed.response.ts:116](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/saved.feed.response.ts#L116)*
+*Defined in [responses/saved.feed.response.ts:116](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/saved.feed.response.ts#L116)*
 
 ___
 
@@ -40,7 +40,7 @@ ___
 
 • **product**? : *[SavedFeedResponseProduct](_responses_saved_feed_response_.savedfeedresponseproduct.md)*
 
-*Defined in [responses/saved.feed.response.ts:115](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/saved.feed.response.ts#L115)*
+*Defined in [responses/saved.feed.response.ts:115](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/saved.feed.response.ts#L115)*
 
 ___
 
@@ -48,7 +48,7 @@ ___
 
 • **start_time_in_video_in_sec**? : *null*
 
-*Defined in [responses/saved.feed.response.ts:118](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/saved.feed.response.ts#L118)*
+*Defined in [responses/saved.feed.response.ts:118](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/saved.feed.response.ts#L118)*
 
 ___
 
@@ -56,4 +56,4 @@ ___
 
 • **user**? : *[SavedFeedResponseUser](_responses_saved_feed_response_.savedfeedresponseuser.md)*
 
-*Defined in [responses/saved.feed.response.ts:117](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/saved.feed.response.ts#L117)*
+*Defined in [responses/saved.feed.response.ts:117](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/saved.feed.response.ts#L117)*

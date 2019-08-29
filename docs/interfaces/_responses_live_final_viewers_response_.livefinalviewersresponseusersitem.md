@@ -26,7 +26,7 @@
 
 • **full_name**: *string*
 
-*Defined in [responses/live.final-viewers.response.ts:9](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.final-viewers.response.ts#L9)*
+*Defined in [responses/live.final-viewers.response.ts:9](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.final-viewers.response.ts#L9)*
 
 ___
 
@@ -34,7 +34,7 @@ ___
 
 • **is_private**: *boolean*
 
-*Defined in [responses/live.final-viewers.response.ts:10](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.final-viewers.response.ts#L10)*
+*Defined in [responses/live.final-viewers.response.ts:10](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.final-viewers.response.ts#L10)*
 
 ___
 
@@ -42,7 +42,7 @@ ___
 
 • **is_verified**: *boolean*
 
-*Defined in [responses/live.final-viewers.response.ts:13](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.final-viewers.response.ts#L13)*
+*Defined in [responses/live.final-viewers.response.ts:13](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.final-viewers.response.ts#L13)*
 
 ___
 
@@ -50,7 +50,7 @@ ___
 
 • **pk**: *number*
 
-*Defined in [responses/live.final-viewers.response.ts:7](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.final-viewers.response.ts#L7)*
+*Defined in [responses/live.final-viewers.response.ts:7](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.final-viewers.response.ts#L7)*
 
 ___
 
@@ -58,7 +58,7 @@ ___
 
 • **profile_pic_id**: *string*
 
-*Defined in [responses/live.final-viewers.response.ts:12](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.final-viewers.response.ts#L12)*
+*Defined in [responses/live.final-viewers.response.ts:12](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.final-viewers.response.ts#L12)*
 
 ___
 
@@ -66,7 +66,7 @@ ___
 
 • **profile_pic_url**: *string*
 
-*Defined in [responses/live.final-viewers.response.ts:11](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.final-viewers.response.ts#L11)*
+*Defined in [responses/live.final-viewers.response.ts:11](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.final-viewers.response.ts#L11)*
 
 ___
 
@@ -74,4 +74,4 @@ ___
 
 • **username**: *string*
 
-*Defined in [responses/live.final-viewers.response.ts:8](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.final-viewers.response.ts#L8)*
+*Defined in [responses/live.final-viewers.response.ts:8](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.final-viewers.response.ts#L8)*

@@ -24,7 +24,7 @@
 
 • **bold**: *number*
 
-*Defined in [responses/direct-thread.repository.add-user.response.ts:101](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-thread.repository.add-user.response.ts#L101)*
+*Defined in [responses/direct-thread.repository.add-user.response.ts:101](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-thread.repository.add-user.response.ts#L101)*
 
 ___
 
@@ -32,7 +32,7 @@ ___
 
 • **color**: *string*
 
-*Defined in [responses/direct-thread.repository.add-user.response.ts:102](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-thread.repository.add-user.response.ts#L102)*
+*Defined in [responses/direct-thread.repository.add-user.response.ts:102](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-thread.repository.add-user.response.ts#L102)*
 
 ___
 
@@ -40,7 +40,7 @@ ___
 
 • **end**: *number*
 
-*Defined in [responses/direct-thread.repository.add-user.response.ts:100](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-thread.repository.add-user.response.ts#L100)*
+*Defined in [responses/direct-thread.repository.add-user.response.ts:100](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-thread.repository.add-user.response.ts#L100)*
 
 ___
 
@@ -48,7 +48,7 @@ ___
 
 • **intent**: *string*
 
-*Defined in [responses/direct-thread.repository.add-user.response.ts:103](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-thread.repository.add-user.response.ts#L103)*
+*Defined in [responses/direct-thread.repository.add-user.response.ts:103](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-thread.repository.add-user.response.ts#L103)*
 
 ___
 
@@ -56,4 +56,4 @@ ___
 
 • **start**: *number*
 
-*Defined in [responses/direct-thread.repository.add-user.response.ts:99](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-thread.repository.add-user.response.ts#L99)*
+*Defined in [responses/direct-thread.repository.add-user.response.ts:99](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-thread.repository.add-user.response.ts#L99)*

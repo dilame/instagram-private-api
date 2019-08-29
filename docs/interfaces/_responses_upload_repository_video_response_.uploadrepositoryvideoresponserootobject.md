@@ -21,7 +21,7 @@
 
 • **status**: *string*
 
-*Defined in [responses/upload.repository.video.response.ts:3](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/upload.repository.video.response.ts#L3)*
+*Defined in [responses/upload.repository.video.response.ts:3](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/upload.repository.video.response.ts#L3)*
 
 ___
 
@@ -29,4 +29,4 @@ ___
 
 • **xsharing_nonces**: *[UploadRepositoryVideoResponseXsharing_nonces](_responses_upload_repository_video_response_.uploadrepositoryvideoresponsexsharing_nonces.md)*
 
-*Defined in [responses/upload.repository.video.response.ts:2](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/upload.repository.video.response.ts#L2)*
+*Defined in [responses/upload.repository.video.response.ts:2](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/upload.repository.video.response.ts#L2)*

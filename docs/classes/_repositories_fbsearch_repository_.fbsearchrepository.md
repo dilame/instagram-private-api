@@ -31,7 +31,7 @@
 
 *Inherited from [Repository](_core_repository_.repository.md).[constructor](_core_repository_.repository.md#constructor)*
 
-*Defined in [core/repository.ts:6](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/core/repository.ts#L6)*
+*Defined in [core/repository.ts:6](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/repository.ts#L6)*
 
 **Parameters:**
 
@@ -47,7 +47,7 @@ Name | Type |
 
 ▸ **places**(`query`: string): *`Promise<FbsearchRepositoryPlacesResponseRootObject>`*
 
-*Defined in [repositories/fbsearch.repository.ts:36](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/repositories/fbsearch.repository.ts#L36)*
+*Defined in [repositories/fbsearch.repository.ts:36](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/fbsearch.repository.ts#L36)*
 
 **Parameters:**
 
@@ -63,7 +63,7 @@ ___
 
 ▸ **recentSearches**(): *`Promise<any>`*
 
-*Defined in [repositories/fbsearch.repository.ts:17](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/repositories/fbsearch.repository.ts#L17)*
+*Defined in [repositories/fbsearch.repository.ts:17](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/fbsearch.repository.ts#L17)*
 
 **Returns:** *`Promise<any>`*
 
@@ -73,7 +73,7 @@ ___
 
 ▸ **suggestedSearches**(`type`: "blended" | "users" | "hashtags" | "places"): *`Promise<any>`*
 
-*Defined in [repositories/fbsearch.repository.ts:8](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/repositories/fbsearch.repository.ts#L8)*
+*Defined in [repositories/fbsearch.repository.ts:8](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/fbsearch.repository.ts#L8)*
 
 **Parameters:**
 
@@ -89,7 +89,7 @@ ___
 
 ▸ **topsearchFlat**(`query`: string): *`Promise<FbsearchRepositoryTopsearchFlatResponseRootObject>`*
 
-*Defined in [repositories/fbsearch.repository.ts:24](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/repositories/fbsearch.repository.ts#L24)*
+*Defined in [repositories/fbsearch.repository.ts:24](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/fbsearch.repository.ts#L24)*
 
 **Parameters:**
 

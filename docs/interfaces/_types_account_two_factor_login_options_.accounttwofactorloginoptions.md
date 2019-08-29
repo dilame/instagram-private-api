@@ -24,7 +24,7 @@
 
 • **trustThisDevice**? : *"1" | "0"*
 
-*Defined in [types/account.two-factor-login.options.ts:5](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/account.two-factor-login.options.ts#L5)*
+*Defined in [types/account.two-factor-login.options.ts:5](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/account.two-factor-login.options.ts#L5)*
 
 ___
 
@@ -32,7 +32,7 @@ ___
 
 • **twoFactorIdentifier**: *string*
 
-*Defined in [types/account.two-factor-login.options.ts:3](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/account.two-factor-login.options.ts#L3)*
+*Defined in [types/account.two-factor-login.options.ts:3](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/account.two-factor-login.options.ts#L3)*
 
 ___
 
@@ -40,7 +40,7 @@ ___
 
 • **username**: *string*
 
-*Defined in [types/account.two-factor-login.options.ts:4](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/account.two-factor-login.options.ts#L4)*
+*Defined in [types/account.two-factor-login.options.ts:4](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/account.two-factor-login.options.ts#L4)*
 
 ___
 
@@ -48,7 +48,7 @@ ___
 
 • **verificationCode**: *string*
 
-*Defined in [types/account.two-factor-login.options.ts:2](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/account.two-factor-login.options.ts#L2)*
+*Defined in [types/account.two-factor-login.options.ts:2](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/account.two-factor-login.options.ts#L2)*
 
 ___
 
@@ -56,4 +56,4 @@ ___
 
 • **verificationMethod**? : *string*
 
-*Defined in [types/account.two-factor-login.options.ts:7](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/account.two-factor-login.options.ts#L7)*
+*Defined in [types/account.two-factor-login.options.ts:7](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/account.two-factor-login.options.ts#L7)*

@@ -38,7 +38,7 @@
 
 • **disable_comments**? : *boolean*
 
-*Defined in [types/media.configure.options.ts:6](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/media.configure.options.ts#L6)*
+*Defined in [types/media.configure.options.ts:6](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/media.configure.options.ts#L6)*
 
 ___
 
@@ -46,7 +46,7 @@ ___
 
 • **edits**? : *object*
 
-*Defined in [types/media.configure.options.ts:7](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/media.configure.options.ts#L7)*
+*Defined in [types/media.configure.options.ts:7](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/media.configure.options.ts#L7)*
 
 #### Type declaration:
 
@@ -56,7 +56,7 @@ ___
 
 • **extra**? : *object*
 
-*Defined in [types/media.configure.options.ts:12](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/media.configure.options.ts#L12)*
+*Defined in [types/media.configure.options.ts:12](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/media.configure.options.ts#L12)*
 
 #### Type declaration:
 
@@ -66,7 +66,7 @@ ___
 
 • **geotag_enabled**? : *"1" | "0"*
 
-*Defined in [types/media.configure.options.ts:24](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/media.configure.options.ts#L24)*
+*Defined in [types/media.configure.options.ts:24](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/media.configure.options.ts#L24)*
 
 ___
 
@@ -74,7 +74,7 @@ ___
 
 • **height**? : *number*
 
-*Defined in [types/media.configure.options.ts:18](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/media.configure.options.ts#L18)*
+*Defined in [types/media.configure.options.ts:18](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/media.configure.options.ts#L18)*
 
 ___
 
@@ -82,7 +82,7 @@ ___
 
 • **media_folder**? : *string*
 
-*Defined in [types/media.configure.options.ts:21](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/media.configure.options.ts#L21)*
+*Defined in [types/media.configure.options.ts:21](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/media.configure.options.ts#L21)*
 
 ___
 
@@ -90,7 +90,7 @@ ___
 
 • **media_latitude**? : *string*
 
-*Defined in [types/media.configure.options.ts:27](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/media.configure.options.ts#L27)*
+*Defined in [types/media.configure.options.ts:27](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/media.configure.options.ts#L27)*
 
 ___
 
@@ -98,7 +98,7 @@ ___
 
 • **media_longitude**? : *string*
 
-*Defined in [types/media.configure.options.ts:28](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/media.configure.options.ts#L28)*
+*Defined in [types/media.configure.options.ts:28](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/media.configure.options.ts#L28)*
 
 ___
 
@@ -106,7 +106,7 @@ ___
 
 • **posting_latitude**? : *string*
 
-*Defined in [types/media.configure.options.ts:25](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/media.configure.options.ts#L25)*
+*Defined in [types/media.configure.options.ts:25](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/media.configure.options.ts#L25)*
 
 ___
 
@@ -114,7 +114,7 @@ ___
 
 • **posting_longitude**? : *string*
 
-*Defined in [types/media.configure.options.ts:26](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/media.configure.options.ts#L26)*
+*Defined in [types/media.configure.options.ts:26](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/media.configure.options.ts#L26)*
 
 ___
 
@@ -122,7 +122,7 @@ ___
 
 • **scene_capture_type**? : *string*
 
-*Defined in [types/media.configure.options.ts:20](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/media.configure.options.ts#L20)*
+*Defined in [types/media.configure.options.ts:20](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/media.configure.options.ts#L20)*
 
 ___
 
@@ -130,7 +130,7 @@ ___
 
 • **software**? : *string*
 
-*Defined in [types/media.configure.options.ts:22](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/media.configure.options.ts#L22)*
+*Defined in [types/media.configure.options.ts:22](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/media.configure.options.ts#L22)*
 
 ___
 
@@ -138,7 +138,7 @@ ___
 
 • **source_type**? : *string*
 
-*Defined in [types/media.configure.options.ts:5](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/media.configure.options.ts#L5)*
+*Defined in [types/media.configure.options.ts:5](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/media.configure.options.ts#L5)*
 
 ___
 
@@ -146,7 +146,7 @@ ___
 
 • **upload_id**: *string*
 
-*Defined in [types/media.configure.options.ts:4](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/media.configure.options.ts#L4)*
+*Defined in [types/media.configure.options.ts:4](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/media.configure.options.ts#L4)*
 
 ___
 
@@ -154,4 +154,4 @@ ___
 
 • **width**? : *number*
 
-*Defined in [types/media.configure.options.ts:17](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/media.configure.options.ts#L17)*
+*Defined in [types/media.configure.options.ts:17](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/media.configure.options.ts#L17)*

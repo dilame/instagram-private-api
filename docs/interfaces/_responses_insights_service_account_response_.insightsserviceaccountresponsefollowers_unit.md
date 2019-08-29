@@ -29,7 +29,7 @@
 
 • **all_followers_age_graph**: *[InsightsServiceAccountResponseAll_followers_age_graph](_responses_insights_service_account_response_.insightsserviceaccountresponseall_followers_age_graph.md)*
 
-*Defined in [responses/insights.service.account.response.ts:110](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/insights.service.account.response.ts#L110)*
+*Defined in [responses/insights.service.account.response.ts:110](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.account.response.ts#L110)*
 
 ___
 
@@ -37,7 +37,7 @@ ___
 
 • **days_hourly_followers_graphs**: *[InsightsServiceAccountResponseDaysHourlyFollowersGraphsItem](_responses_insights_service_account_response_.insightsserviceaccountresponsedayshourlyfollowersgraphsitem.md)[]*
 
-*Defined in [responses/insights.service.account.response.ts:116](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/insights.service.account.response.ts#L116)*
+*Defined in [responses/insights.service.account.response.ts:116](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.account.response.ts#L116)*
 
 ___
 
@@ -45,7 +45,7 @@ ___
 
 • **followers_delta_from_last_week**: *number*
 
-*Defined in [responses/insights.service.account.response.ts:108](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/insights.service.account.response.ts#L108)*
+*Defined in [responses/insights.service.account.response.ts:108](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.account.response.ts#L108)*
 
 ___
 
@@ -53,7 +53,7 @@ ___
 
 • **followers_top_cities_graph**: *[InsightsServiceAccountResponseFollowers_top_cities_graph](_responses_insights_service_account_response_.insightsserviceaccountresponsefollowers_top_cities_graph.md)*
 
-*Defined in [responses/insights.service.account.response.ts:113](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/insights.service.account.response.ts#L113)*
+*Defined in [responses/insights.service.account.response.ts:113](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.account.response.ts#L113)*
 
 ___
 
@@ -61,7 +61,7 @@ ___
 
 • **followers_top_countries_graph**: *[InsightsServiceAccountResponseFollowers_top_countries_graph](_responses_insights_service_account_response_.insightsserviceaccountresponsefollowers_top_countries_graph.md)*
 
-*Defined in [responses/insights.service.account.response.ts:114](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/insights.service.account.response.ts#L114)*
+*Defined in [responses/insights.service.account.response.ts:114](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.account.response.ts#L114)*
 
 ___
 
@@ -69,7 +69,7 @@ ___
 
 • **followers_unit_state**: *string*
 
-*Defined in [responses/insights.service.account.response.ts:107](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/insights.service.account.response.ts#L107)*
+*Defined in [responses/insights.service.account.response.ts:107](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.account.response.ts#L107)*
 
 ___
 
@@ -77,7 +77,7 @@ ___
 
 • **gender_graph**: *[InsightsServiceAccountResponseGender_graph](_responses_insights_service_account_response_.insightsserviceaccountresponsegender_graph.md)*
 
-*Defined in [responses/insights.service.account.response.ts:109](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/insights.service.account.response.ts#L109)*
+*Defined in [responses/insights.service.account.response.ts:109](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.account.response.ts#L109)*
 
 ___
 
@@ -85,7 +85,7 @@ ___
 
 • **men_followers_age_graph**: *[InsightsServiceAccountResponseMen_followers_age_graph](_responses_insights_service_account_response_.insightsserviceaccountresponsemen_followers_age_graph.md)*
 
-*Defined in [responses/insights.service.account.response.ts:111](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/insights.service.account.response.ts#L111)*
+*Defined in [responses/insights.service.account.response.ts:111](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.account.response.ts#L111)*
 
 ___
 
@@ -93,7 +93,7 @@ ___
 
 • **week_daily_followers_graph**: *[InsightsServiceAccountResponseWeek_daily_followers_graph](_responses_insights_service_account_response_.insightsserviceaccountresponseweek_daily_followers_graph.md)*
 
-*Defined in [responses/insights.service.account.response.ts:115](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/insights.service.account.response.ts#L115)*
+*Defined in [responses/insights.service.account.response.ts:115](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.account.response.ts#L115)*
 
 ___
 
@@ -101,4 +101,4 @@ ___
 
 • **women_followers_age_graph**: *[InsightsServiceAccountResponseWomen_followers_age_graph](_responses_insights_service_account_response_.insightsserviceaccountresponsewomen_followers_age_graph.md)*
 
-*Defined in [responses/insights.service.account.response.ts:112](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/insights.service.account.response.ts#L112)*
+*Defined in [responses/insights.service.account.response.ts:112](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.account.response.ts#L112)*

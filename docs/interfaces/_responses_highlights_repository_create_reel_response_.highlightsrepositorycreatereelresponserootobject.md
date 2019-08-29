@@ -21,7 +21,7 @@
 
 • **reel**: *[HighlightsRepositoryCreateReelResponseReel](_responses_highlights_repository_create_reel_response_.highlightsrepositorycreatereelresponsereel.md)*
 
-*Defined in [responses/highlights.repository.create-reel.response.ts:2](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/highlights.repository.create-reel.response.ts#L2)*
+*Defined in [responses/highlights.repository.create-reel.response.ts:2](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/highlights.repository.create-reel.response.ts#L2)*
 
 ___
 
@@ -29,4 +29,4 @@ ___
 
 • **status**: *string*
 
-*Defined in [responses/highlights.repository.create-reel.response.ts:3](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/highlights.repository.create-reel.response.ts#L3)*
+*Defined in [responses/highlights.repository.create-reel.response.ts:3](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/highlights.repository.create-reel.response.ts#L3)*

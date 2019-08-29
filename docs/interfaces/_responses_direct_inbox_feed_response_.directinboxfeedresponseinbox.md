@@ -25,7 +25,7 @@
 
 • **blended_inbox_enabled**: *boolean*
 
-*Defined in [responses/direct-inbox.feed.response.ts:15](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-inbox.feed.response.ts#L15)*
+*Defined in [responses/direct-inbox.feed.response.ts:15](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-inbox.feed.response.ts#L15)*
 
 ___
 
@@ -33,7 +33,7 @@ ___
 
 • **has_older**: *boolean*
 
-*Defined in [responses/direct-inbox.feed.response.ts:11](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-inbox.feed.response.ts#L11)*
+*Defined in [responses/direct-inbox.feed.response.ts:11](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-inbox.feed.response.ts#L11)*
 
 ___
 
@@ -41,7 +41,7 @@ ___
 
 • **oldest_cursor**: *string*
 
-*Defined in [responses/direct-inbox.feed.response.ts:14](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-inbox.feed.response.ts#L14)*
+*Defined in [responses/direct-inbox.feed.response.ts:14](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-inbox.feed.response.ts#L14)*
 
 ___
 
@@ -49,7 +49,7 @@ ___
 
 • **threads**: *[DirectInboxFeedResponseThreadsItem](../classes/_responses_direct_inbox_feed_response_.directinboxfeedresponsethreadsitem.md)[]*
 
-*Defined in [responses/direct-inbox.feed.response.ts:10](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-inbox.feed.response.ts#L10)*
+*Defined in [responses/direct-inbox.feed.response.ts:10](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-inbox.feed.response.ts#L10)*
 
 ___
 
@@ -57,7 +57,7 @@ ___
 
 • **unseen_count**: *number*
 
-*Defined in [responses/direct-inbox.feed.response.ts:12](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-inbox.feed.response.ts#L12)*
+*Defined in [responses/direct-inbox.feed.response.ts:12](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-inbox.feed.response.ts#L12)*
 
 ___
 
@@ -65,4 +65,4 @@ ___
 
 • **unseen_count_ts**: *string*
 
-*Defined in [responses/direct-inbox.feed.response.ts:13](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-inbox.feed.response.ts#L13)*
+*Defined in [responses/direct-inbox.feed.response.ts:13](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-inbox.feed.response.ts#L13)*

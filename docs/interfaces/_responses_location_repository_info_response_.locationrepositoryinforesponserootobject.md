@@ -23,7 +23,7 @@
 
 • **location**: *[LocationRepositoryInfoResponseLocation](_responses_location_repository_info_response_.locationrepositoryinforesponselocation.md)*
 
-*Defined in [responses/location.repository.info.response.ts:4](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/location.repository.info.response.ts#L4)*
+*Defined in [responses/location.repository.info.response.ts:4](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/location.repository.info.response.ts#L4)*
 
 ___
 
@@ -33,4 +33,4 @@ ___
 
 *Inherited from [StatusResponse](_responses_status_response_.statusresponse.md).[status](_responses_status_response_.statusresponse.md#status)*
 
-*Defined in [responses/status.response.ts:2](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/status.response.ts#L2)*
+*Defined in [responses/status.response.ts:2](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/status.response.ts#L2)*

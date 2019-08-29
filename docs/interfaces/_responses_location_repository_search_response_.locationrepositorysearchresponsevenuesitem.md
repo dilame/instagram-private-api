@@ -26,7 +26,7 @@
 
 • **address**: *string*
 
-*Defined in [responses/location.repository.search.response.ts:15](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/location.repository.search.response.ts#L15)*
+*Defined in [responses/location.repository.search.response.ts:15](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/location.repository.search.response.ts#L15)*
 
 ___
 
@@ -34,7 +34,7 @@ ___
 
 • **external_id**: *string*
 
-*Defined in [responses/location.repository.search.response.ts:11](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/location.repository.search.response.ts#L11)*
+*Defined in [responses/location.repository.search.response.ts:11](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/location.repository.search.response.ts#L11)*
 
 ___
 
@@ -42,7 +42,7 @@ ___
 
 • **external_id_source**: *string*
 
-*Defined in [responses/location.repository.search.response.ts:12](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/location.repository.search.response.ts#L12)*
+*Defined in [responses/location.repository.search.response.ts:12](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/location.repository.search.response.ts#L12)*
 
 ___
 
@@ -50,7 +50,7 @@ ___
 
 • **lat**: *number*
 
-*Defined in [responses/location.repository.search.response.ts:13](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/location.repository.search.response.ts#L13)*
+*Defined in [responses/location.repository.search.response.ts:13](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/location.repository.search.response.ts#L13)*
 
 ___
 
@@ -58,7 +58,7 @@ ___
 
 • **lng**: *number*
 
-*Defined in [responses/location.repository.search.response.ts:14](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/location.repository.search.response.ts#L14)*
+*Defined in [responses/location.repository.search.response.ts:14](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/location.repository.search.response.ts#L14)*
 
 ___
 
@@ -66,7 +66,7 @@ ___
 
 • **minimum_age**: *number*
 
-*Defined in [responses/location.repository.search.response.ts:16](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/location.repository.search.response.ts#L16)*
+*Defined in [responses/location.repository.search.response.ts:16](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/location.repository.search.response.ts#L16)*
 
 ___
 
@@ -74,4 +74,4 @@ ___
 
 • **name**: *string*
 
-*Defined in [responses/location.repository.search.response.ts:10](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/location.repository.search.response.ts#L10)*
+*Defined in [responses/location.repository.search.response.ts:10](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/location.repository.search.response.ts#L10)*

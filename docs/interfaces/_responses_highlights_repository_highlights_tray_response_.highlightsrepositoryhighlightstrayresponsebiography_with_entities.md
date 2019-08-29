@@ -21,7 +21,7 @@
 
 • **entities**: *any[]*
 
-*Defined in [responses/highlights.repository.highlights-tray.response.ts:199](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/highlights.repository.highlights-tray.response.ts#L199)*
+*Defined in [responses/highlights.repository.highlights-tray.response.ts:199](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/highlights.repository.highlights-tray.response.ts#L199)*
 
 ___
 
@@ -29,4 +29,4 @@ ___
 
 • **raw_text**: *string*
 
-*Defined in [responses/highlights.repository.highlights-tray.response.ts:198](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/highlights.repository.highlights-tray.response.ts#L198)*
+*Defined in [responses/highlights.repository.highlights-tray.response.ts:198](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/highlights.repository.highlights-tray.response.ts#L198)*

@@ -29,7 +29,7 @@
 
 • **error_type**? : *string*
 
-*Defined in [responses/spam.response.ts:11](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/spam.response.ts#L11)*
+*Defined in [responses/spam.response.ts:11](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/spam.response.ts#L11)*
 
 ___
 
@@ -37,7 +37,7 @@ ___
 
 • **feedback_action**: *string*
 
-*Defined in [responses/spam.response.ts:9](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/spam.response.ts#L9)*
+*Defined in [responses/spam.response.ts:9](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/spam.response.ts#L9)*
 
 ___
 
@@ -45,7 +45,7 @@ ___
 
 • **feedback_appeal_label**: *string*
 
-*Defined in [responses/spam.response.ts:7](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/spam.response.ts#L7)*
+*Defined in [responses/spam.response.ts:7](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/spam.response.ts#L7)*
 
 ___
 
@@ -53,7 +53,7 @@ ___
 
 • **feedback_ignore_label**: *string*
 
-*Defined in [responses/spam.response.ts:8](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/spam.response.ts#L8)*
+*Defined in [responses/spam.response.ts:8](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/spam.response.ts#L8)*
 
 ___
 
@@ -61,7 +61,7 @@ ___
 
 • **feedback_message**: *string*
 
-*Defined in [responses/spam.response.ts:5](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/spam.response.ts#L5)*
+*Defined in [responses/spam.response.ts:5](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/spam.response.ts#L5)*
 
 ___
 
@@ -69,7 +69,7 @@ ___
 
 • **feedback_title**: *string*
 
-*Defined in [responses/spam.response.ts:4](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/spam.response.ts#L4)*
+*Defined in [responses/spam.response.ts:4](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/spam.response.ts#L4)*
 
 ___
 
@@ -77,7 +77,7 @@ ___
 
 • **feedback_url**: *string*
 
-*Defined in [responses/spam.response.ts:6](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/spam.response.ts#L6)*
+*Defined in [responses/spam.response.ts:6](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/spam.response.ts#L6)*
 
 ___
 
@@ -85,7 +85,7 @@ ___
 
 • **message**: *"feedback_required"*
 
-*Defined in [responses/spam.response.ts:2](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/spam.response.ts#L2)*
+*Defined in [responses/spam.response.ts:2](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/spam.response.ts#L2)*
 
 ___
 
@@ -93,7 +93,7 @@ ___
 
 • **spam**: *true*
 
-*Defined in [responses/spam.response.ts:3](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/spam.response.ts#L3)*
+*Defined in [responses/spam.response.ts:3](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/spam.response.ts#L3)*
 
 ___
 
@@ -101,4 +101,4 @@ ___
 
 • **status**: *"fail"*
 
-*Defined in [responses/spam.response.ts:10](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/spam.response.ts#L10)*
+*Defined in [responses/spam.response.ts:10](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/spam.response.ts#L10)*

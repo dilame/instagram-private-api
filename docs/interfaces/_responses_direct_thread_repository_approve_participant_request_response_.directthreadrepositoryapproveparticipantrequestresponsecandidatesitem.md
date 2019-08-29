@@ -23,7 +23,7 @@
 
 • **estimated_scans_sizes**: *number[]*
 
-*Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:120](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-thread.repository.approve-participant-request.response.ts#L120)*
+*Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:120](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-thread.repository.approve-participant-request.response.ts#L120)*
 
 ___
 
@@ -31,7 +31,7 @@ ___
 
 • **height**: *number*
 
-*Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:118](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-thread.repository.approve-participant-request.response.ts#L118)*
+*Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:118](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-thread.repository.approve-participant-request.response.ts#L118)*
 
 ___
 
@@ -39,7 +39,7 @@ ___
 
 • **url**: *string*
 
-*Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:119](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-thread.repository.approve-participant-request.response.ts#L119)*
+*Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:119](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-thread.repository.approve-participant-request.response.ts#L119)*
 
 ___
 
@@ -47,4 +47,4 @@ ___
 
 • **width**: *number*
 
-*Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:117](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-thread.repository.approve-participant-request.response.ts#L117)*
+*Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:117](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-thread.repository.approve-participant-request.response.ts#L117)*

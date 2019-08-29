@@ -27,7 +27,7 @@
 
 • **coverImage**: *`Buffer`*
 
-*Defined in [types/posting.album.options.ts:20](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/posting.album.options.ts#L20)*
+*Defined in [types/posting.album.options.ts:20](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/posting.album.options.ts#L20)*
 
 ___
 
@@ -35,7 +35,7 @@ ___
 
 • **transcodeDelay**? : *number*
 
-*Defined in [types/posting.album.options.ts:22](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/posting.album.options.ts#L22)*
+*Defined in [types/posting.album.options.ts:22](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/posting.album.options.ts#L22)*
 
 ___
 
@@ -45,7 +45,7 @@ ___
 
 *Inherited from [PostingAlbumItem](_types_posting_album_options_.postingalbumitem.md).[uploadId](_types_posting_album_options_.postingalbumitem.md#optional-uploadid)*
 
-*Defined in [types/posting.album.options.ts:10](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/posting.album.options.ts#L10)*
+*Defined in [types/posting.album.options.ts:10](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/posting.album.options.ts#L10)*
 
 ___
 
@@ -55,7 +55,7 @@ ___
 
 *Inherited from [PostingAlbumItem](_types_posting_album_options_.postingalbumitem.md).[usertags](_types_posting_album_options_.postingalbumitem.md#optional-usertags)*
 
-*Defined in [types/posting.album.options.ts:9](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/posting.album.options.ts#L9)*
+*Defined in [types/posting.album.options.ts:9](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/posting.album.options.ts#L9)*
 
 ___
 
@@ -63,7 +63,7 @@ ___
 
 • **video**: *`Buffer`*
 
-*Defined in [types/posting.album.options.ts:19](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/posting.album.options.ts#L19)*
+*Defined in [types/posting.album.options.ts:19](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/posting.album.options.ts#L19)*
 
 ___
 
@@ -71,6 +71,6 @@ ___
 
 • **videoInfo**? : *object*
 
-*Defined in [types/posting.album.options.ts:21](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/posting.album.options.ts#L21)*
+*Defined in [types/posting.album.options.ts:21](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/posting.album.options.ts#L21)*
 
 #### Type declaration:

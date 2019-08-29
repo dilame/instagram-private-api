@@ -20,4 +20,4 @@
 
 • **candidates**: *[SavedFeedResponseCandidatesItem](_responses_saved_feed_response_.savedfeedresponsecandidatesitem.md)[]*
 
-*Defined in [responses/saved.feed.response.ts:61](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/saved.feed.response.ts#L61)*
+*Defined in [responses/saved.feed.response.ts:61](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/saved.feed.response.ts#L61)*

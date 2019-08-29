@@ -22,7 +22,7 @@
 
 • **channel_id**: *string*
 
-*Defined in [responses/insights.service.account.response.ts:54](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/insights.service.account.response.ts#L54)*
+*Defined in [responses/insights.service.account.response.ts:54](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.account.response.ts#L54)*
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 • **id**: *string*
 
-*Defined in [responses/insights.service.account.response.ts:53](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/insights.service.account.response.ts#L53)*
+*Defined in [responses/insights.service.account.response.ts:53](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.account.response.ts#L53)*
 
 ___
 
@@ -38,4 +38,4 @@ ___
 
 • **tips**: *any[]*
 
-*Defined in [responses/insights.service.account.response.ts:52](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/insights.service.account.response.ts#L52)*
+*Defined in [responses/insights.service.account.response.ts:52](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.account.response.ts#L52)*

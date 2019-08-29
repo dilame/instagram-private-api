@@ -28,7 +28,7 @@
 
 • **big_blue_token**: *string*
 
-*Defined in [responses/challenge.state.response.ts:16](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/challenge.state.response.ts#L16)*
+*Defined in [responses/challenge.state.response.ts:16](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/challenge.state.response.ts#L16)*
 
 ___
 
@@ -36,7 +36,7 @@ ___
 
 • **choice**: *string*
 
-*Defined in [responses/challenge.state.response.ts:14](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/challenge.state.response.ts#L14)*
+*Defined in [responses/challenge.state.response.ts:14](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/challenge.state.response.ts#L14)*
 
 ___
 
@@ -44,7 +44,7 @@ ___
 
 • **contact_point**: *string*
 
-*Defined in [responses/challenge.state.response.ts:21](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/challenge.state.response.ts#L21)*
+*Defined in [responses/challenge.state.response.ts:21](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/challenge.state.response.ts#L21)*
 
 ___
 
@@ -52,7 +52,7 @@ ___
 
 • **email**: *string*
 
-*Defined in [responses/challenge.state.response.ts:18](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/challenge.state.response.ts#L18)*
+*Defined in [responses/challenge.state.response.ts:18](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/challenge.state.response.ts#L18)*
 
 ___
 
@@ -60,7 +60,7 @@ ___
 
 • **fb_access_token**: *string*
 
-*Defined in [responses/challenge.state.response.ts:15](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/challenge.state.response.ts#L15)*
+*Defined in [responses/challenge.state.response.ts:15](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/challenge.state.response.ts#L15)*
 
 ___
 
@@ -68,7 +68,7 @@ ___
 
 • **form_type**: *string*
 
-*Defined in [responses/challenge.state.response.ts:22](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/challenge.state.response.ts#L22)*
+*Defined in [responses/challenge.state.response.ts:22](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/challenge.state.response.ts#L22)*
 
 ___
 
@@ -76,7 +76,7 @@ ___
 
 • **google_oauth_token**: *string*
 
-*Defined in [responses/challenge.state.response.ts:17](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/challenge.state.response.ts#L17)*
+*Defined in [responses/challenge.state.response.ts:17](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/challenge.state.response.ts#L17)*
 
 ___
 
@@ -84,7 +84,7 @@ ___
 
 • **resend_delay**: *number*
 
-*Defined in [responses/challenge.state.response.ts:20](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/challenge.state.response.ts#L20)*
+*Defined in [responses/challenge.state.response.ts:20](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/challenge.state.response.ts#L20)*
 
 ___
 
@@ -92,4 +92,4 @@ ___
 
 • **security_code**: *string*
 
-*Defined in [responses/challenge.state.response.ts:19](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/challenge.state.response.ts#L19)*
+*Defined in [responses/challenge.state.response.ts:19](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/challenge.state.response.ts#L19)*

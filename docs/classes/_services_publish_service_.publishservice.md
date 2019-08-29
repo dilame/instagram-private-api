@@ -32,7 +32,7 @@
 
 *Inherited from [Repository](_core_repository_.repository.md).[constructor](_core_repository_.repository.md#constructor)*
 
-*Defined in [core/repository.ts:6](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/core/repository.ts#L6)*
+*Defined in [core/repository.ts:6](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/repository.ts#L6)*
 
 **Parameters:**
 
@@ -48,7 +48,7 @@ Name | Type |
 
 ▸ **album**(`options`: [PostingAlbumOptions](../interfaces/_types_posting_album_options_.postingalbumoptions.md)): *`Promise<any>`*
 
-*Defined in [services/publish.service.ts:141](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/services/publish.service.ts#L141)*
+*Defined in [services/publish.service.ts:141](https://github.com/dilame/instagram-private-api/blob/173bc62/src/services/publish.service.ts#L141)*
 
 **Parameters:**
 
@@ -64,7 +64,7 @@ ___
 
 ▸ **photo**(`options`: [PostingPhotoOptions](../interfaces/_types_posting_photo_options_.postingphotooptions.md)): *`Promise<MediaRepositoryConfigureResponseRootObject>`*
 
-*Defined in [services/publish.service.ts:27](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/services/publish.service.ts#L27)*
+*Defined in [services/publish.service.ts:27](https://github.com/dilame/instagram-private-api/blob/173bc62/src/services/publish.service.ts#L27)*
 
 Uploads a single photo to the timeline-feed
 
@@ -82,7 +82,7 @@ ___
 
 ▸ **story**(`options`: [PostingStoryPhotoOptions](../interfaces/_types_posting_photo_options_.postingstoryphotooptions.md) | [PostingStoryVideoOptions](../interfaces/_types_posting_video_options_.postingstoryvideooptions.md)): *`Promise<any>`*
 
-*Defined in [services/publish.service.ts:270](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/services/publish.service.ts#L270)*
+*Defined in [services/publish.service.ts:270](https://github.com/dilame/instagram-private-api/blob/173bc62/src/services/publish.service.ts#L270)*
 
 **Parameters:**
 
@@ -98,7 +98,7 @@ ___
 
 ▸ **video**(`options`: [PostingVideoOptions](../interfaces/_types_posting_video_options_.postingvideooptions.md)): *`Promise<MediaRepositoryConfigureResponseRootObject>`*
 
-*Defined in [services/publish.service.ts:76](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/services/publish.service.ts#L76)*
+*Defined in [services/publish.service.ts:76](https://github.com/dilame/instagram-private-api/blob/173bc62/src/services/publish.service.ts#L76)*
 
 **Parameters:**
 
@@ -114,7 +114,7 @@ ___
 
 ▸ **getVideoInfo**(`buffer`: `Buffer`): *object*
 
-*Defined in [services/publish.service.ts:382](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/services/publish.service.ts#L382)*
+*Defined in [services/publish.service.ts:382](https://github.com/dilame/instagram-private-api/blob/173bc62/src/services/publish.service.ts#L382)*
 
 Gets duration in ms, width and height info for a video in the mp4 container
 

@@ -22,7 +22,7 @@
 
 • **status**: *string*
 
-*Defined in [responses/live.final-viewers.response.ts:4](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.final-viewers.response.ts#L4)*
+*Defined in [responses/live.final-viewers.response.ts:4](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.final-viewers.response.ts#L4)*
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 • **total_unique_viewer_count**: *number*
 
-*Defined in [responses/live.final-viewers.response.ts:3](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.final-viewers.response.ts#L3)*
+*Defined in [responses/live.final-viewers.response.ts:3](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.final-viewers.response.ts#L3)*
 
 ___
 
@@ -38,4 +38,4 @@ ___
 
 • **users**: *[LiveFinalViewersResponseUsersItem](_responses_live_final_viewers_response_.livefinalviewersresponseusersitem.md)[]*
 
-*Defined in [responses/live.final-viewers.response.ts:2](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.final-viewers.response.ts#L2)*
+*Defined in [responses/live.final-viewers.response.ts:2](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.final-viewers.response.ts#L2)*

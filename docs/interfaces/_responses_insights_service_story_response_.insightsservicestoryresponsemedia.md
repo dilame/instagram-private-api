@@ -28,7 +28,7 @@
 
 • **creation_time**: *number*
 
-*Defined in [responses/insights.service.story.response.ts:13](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/insights.service.story.response.ts#L13)*
+*Defined in [responses/insights.service.story.response.ts:13](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.story.response.ts#L13)*
 
 ___
 
@@ -36,7 +36,7 @@ ___
 
 • **id**: *string*
 
-*Defined in [responses/insights.service.story.response.ts:10](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/insights.service.story.response.ts#L10)*
+*Defined in [responses/insights.service.story.response.ts:10](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.story.response.ts#L10)*
 
 ___
 
@@ -44,7 +44,7 @@ ___
 
 • **inline_insights_node**: *[InsightsServiceStoryResponseInline_insights_node](_responses_insights_service_story_response_.insightsservicestoryresponseinline_insights_node.md)*
 
-*Defined in [responses/insights.service.story.response.ts:9](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/insights.service.story.response.ts#L9)*
+*Defined in [responses/insights.service.story.response.ts:9](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.story.response.ts#L9)*
 
 ___
 
@@ -52,7 +52,7 @@ ___
 
 • **instagram_actor**: *[InsightsServiceStoryResponseInstagram_actor](_responses_insights_service_story_response_.insightsservicestoryresponseinstagram_actor.md)*
 
-*Defined in [responses/insights.service.story.response.ts:12](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/insights.service.story.response.ts#L12)*
+*Defined in [responses/insights.service.story.response.ts:12](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.story.response.ts#L12)*
 
 ___
 
@@ -60,7 +60,7 @@ ___
 
 • **instagram_media_id**: *string*
 
-*Defined in [responses/insights.service.story.response.ts:8](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/insights.service.story.response.ts#L8)*
+*Defined in [responses/insights.service.story.response.ts:8](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.story.response.ts#L8)*
 
 ___
 
@@ -68,7 +68,7 @@ ___
 
 • **instagram_media_owner_id**: *string*
 
-*Defined in [responses/insights.service.story.response.ts:11](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/insights.service.story.response.ts#L11)*
+*Defined in [responses/insights.service.story.response.ts:11](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.story.response.ts#L11)*
 
 ___
 
@@ -76,7 +76,7 @@ ___
 
 • **shopping_outbound_click_count**: *number*
 
-*Defined in [responses/insights.service.story.response.ts:14](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/insights.service.story.response.ts#L14)*
+*Defined in [responses/insights.service.story.response.ts:14](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.story.response.ts#L14)*
 
 ___
 
@@ -84,7 +84,7 @@ ___
 
 • **taps_back_count**: *number*
 
-*Defined in [responses/insights.service.story.response.ts:15](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/insights.service.story.response.ts#L15)*
+*Defined in [responses/insights.service.story.response.ts:15](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.story.response.ts#L15)*
 
 ___
 
@@ -92,4 +92,4 @@ ___
 
 • **taps_forward_count**: *number*
 
-*Defined in [responses/insights.service.story.response.ts:16](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/insights.service.story.response.ts#L16)*
+*Defined in [responses/insights.service.story.response.ts:16](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.story.response.ts#L16)*

@@ -21,7 +21,7 @@
 
 • **post**: *[InsightsServicePostResponsePost](_responses_insights_service_post_response_.insightsservicepostresponsepost.md)*
 
-*Defined in [responses/insights.service.post.response.ts:48](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/insights.service.post.response.ts#L48)*
+*Defined in [responses/insights.service.post.response.ts:48](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.post.response.ts#L48)*
 
 ___
 
@@ -29,4 +29,4 @@ ___
 
 • **tray**: *[InsightsServicePostResponseTray](_responses_insights_service_post_response_.insightsservicepostresponsetray.md)*
 
-*Defined in [responses/insights.service.post.response.ts:47](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/insights.service.post.response.ts#L47)*
+*Defined in [responses/insights.service.post.response.ts:47](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.post.response.ts#L47)*

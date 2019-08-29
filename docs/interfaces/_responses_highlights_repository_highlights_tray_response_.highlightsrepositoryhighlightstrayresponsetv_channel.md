@@ -27,7 +27,7 @@
 
 • **id**: *string*
 
-*Defined in [responses/highlights.repository.highlights-tray.response.ts:49](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/highlights.repository.highlights-tray.response.ts#L49)*
+*Defined in [responses/highlights.repository.highlights-tray.response.ts:49](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/highlights.repository.highlights-tray.response.ts#L49)*
 
 ___
 
@@ -35,7 +35,7 @@ ___
 
 • **items**: *[HighlightsRepositoryHighlightsTrayResponseItemsItem](_responses_highlights_repository_highlights_tray_response_.highlightsrepositoryhighlightstrayresponseitemsitem.md)[]*
 
-*Defined in [responses/highlights.repository.highlights-tray.response.ts:50](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/highlights.repository.highlights-tray.response.ts#L50)*
+*Defined in [responses/highlights.repository.highlights-tray.response.ts:50](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/highlights.repository.highlights-tray.response.ts#L50)*
 
 ___
 
@@ -43,7 +43,7 @@ ___
 
 • **max_id**: *null*
 
-*Defined in [responses/highlights.repository.highlights-tray.response.ts:55](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/highlights.repository.highlights-tray.response.ts#L55)*
+*Defined in [responses/highlights.repository.highlights-tray.response.ts:55](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/highlights.repository.highlights-tray.response.ts#L55)*
 
 ___
 
@@ -51,7 +51,7 @@ ___
 
 • **more_available**: *boolean*
 
-*Defined in [responses/highlights.repository.highlights-tray.response.ts:51](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/highlights.repository.highlights-tray.response.ts#L51)*
+*Defined in [responses/highlights.repository.highlights-tray.response.ts:51](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/highlights.repository.highlights-tray.response.ts#L51)*
 
 ___
 
@@ -59,7 +59,7 @@ ___
 
 • **seen_state**: *[HighlightsRepositoryHighlightsTrayResponseSeen_state](_responses_highlights_repository_highlights_tray_response_.highlightsrepositoryhighlightstrayresponseseen_state.md)*
 
-*Defined in [responses/highlights.repository.highlights-tray.response.ts:52](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/highlights.repository.highlights-tray.response.ts#L52)*
+*Defined in [responses/highlights.repository.highlights-tray.response.ts:52](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/highlights.repository.highlights-tray.response.ts#L52)*
 
 ___
 
@@ -67,7 +67,7 @@ ___
 
 • **title**: *string*
 
-*Defined in [responses/highlights.repository.highlights-tray.response.ts:53](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/highlights.repository.highlights-tray.response.ts#L53)*
+*Defined in [responses/highlights.repository.highlights-tray.response.ts:53](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/highlights.repository.highlights-tray.response.ts#L53)*
 
 ___
 
@@ -75,7 +75,7 @@ ___
 
 • **type**: *string*
 
-*Defined in [responses/highlights.repository.highlights-tray.response.ts:54](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/highlights.repository.highlights-tray.response.ts#L54)*
+*Defined in [responses/highlights.repository.highlights-tray.response.ts:54](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/highlights.repository.highlights-tray.response.ts#L54)*
 
 ___
 
@@ -83,4 +83,4 @@ ___
 
 • **user_dict**: *[HighlightsRepositoryHighlightsTrayResponseUser_dict](_responses_highlights_repository_highlights_tray_response_.highlightsrepositoryhighlightstrayresponseuser_dict.md)*
 
-*Defined in [responses/highlights.repository.highlights-tray.response.ts:56](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/highlights.repository.highlights-tray.response.ts#L56)*
+*Defined in [responses/highlights.repository.highlights-tray.response.ts:56](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/highlights.repository.highlights-tray.response.ts#L56)*

@@ -20,4 +20,4 @@
 
 • **candidates**: *[MediaRepositoryConfigureVideoResponseCandidatesItem](_responses_media_repository_configure_video_response_.mediarepositoryconfigurevideoresponsecandidatesitem.md)[]*
 
-*Defined in [responses/media.repository.configure-video.response.ts:36](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/media.repository.configure-video.response.ts#L36)*
+*Defined in [responses/media.repository.configure-video.response.ts:36](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.configure-video.response.ts#L36)*

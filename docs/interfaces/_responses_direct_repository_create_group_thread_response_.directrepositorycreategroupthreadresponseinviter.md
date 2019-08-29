@@ -29,7 +29,7 @@
 
 • **allowed_commenter_type**: *string*
 
-*Defined in [responses/direct.repository.create-group-thread.response.ts:71](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct.repository.create-group-thread.response.ts#L71)*
+*Defined in [responses/direct.repository.create-group-thread.response.ts:71](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct.repository.create-group-thread.response.ts#L71)*
 
 ___
 
@@ -37,7 +37,7 @@ ___
 
 • **full_name**: *string*
 
-*Defined in [responses/direct.repository.create-group-thread.response.ts:64](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct.repository.create-group-thread.response.ts#L64)*
+*Defined in [responses/direct.repository.create-group-thread.response.ts:64](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct.repository.create-group-thread.response.ts#L64)*
 
 ___
 
@@ -45,7 +45,7 @@ ___
 
 • **has_anonymous_profile_picture**: *boolean*
 
-*Defined in [responses/direct.repository.create-group-thread.response.ts:69](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct.repository.create-group-thread.response.ts#L69)*
+*Defined in [responses/direct.repository.create-group-thread.response.ts:69](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct.repository.create-group-thread.response.ts#L69)*
 
 ___
 
@@ -53,7 +53,7 @@ ___
 
 • **is_private**: *boolean*
 
-*Defined in [responses/direct.repository.create-group-thread.response.ts:65](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct.repository.create-group-thread.response.ts#L65)*
+*Defined in [responses/direct.repository.create-group-thread.response.ts:65](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct.repository.create-group-thread.response.ts#L65)*
 
 ___
 
@@ -61,7 +61,7 @@ ___
 
 • **is_verified**: *boolean*
 
-*Defined in [responses/direct.repository.create-group-thread.response.ts:68](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct.repository.create-group-thread.response.ts#L68)*
+*Defined in [responses/direct.repository.create-group-thread.response.ts:68](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct.repository.create-group-thread.response.ts#L68)*
 
 ___
 
@@ -69,7 +69,7 @@ ___
 
 • **pk**: *number*
 
-*Defined in [responses/direct.repository.create-group-thread.response.ts:62](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct.repository.create-group-thread.response.ts#L62)*
+*Defined in [responses/direct.repository.create-group-thread.response.ts:62](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct.repository.create-group-thread.response.ts#L62)*
 
 ___
 
@@ -77,7 +77,7 @@ ___
 
 • **profile_pic_id**: *string*
 
-*Defined in [responses/direct.repository.create-group-thread.response.ts:67](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct.repository.create-group-thread.response.ts#L67)*
+*Defined in [responses/direct.repository.create-group-thread.response.ts:67](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct.repository.create-group-thread.response.ts#L67)*
 
 ___
 
@@ -85,7 +85,7 @@ ___
 
 • **profile_pic_url**: *string*
 
-*Defined in [responses/direct.repository.create-group-thread.response.ts:66](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct.repository.create-group-thread.response.ts#L66)*
+*Defined in [responses/direct.repository.create-group-thread.response.ts:66](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct.repository.create-group-thread.response.ts#L66)*
 
 ___
 
@@ -93,7 +93,7 @@ ___
 
 • **reel_auto_archive**: *string*
 
-*Defined in [responses/direct.repository.create-group-thread.response.ts:70](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct.repository.create-group-thread.response.ts#L70)*
+*Defined in [responses/direct.repository.create-group-thread.response.ts:70](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct.repository.create-group-thread.response.ts#L70)*
 
 ___
 
@@ -101,4 +101,4 @@ ___
 
 • **username**: *string*
 
-*Defined in [responses/direct.repository.create-group-thread.response.ts:63](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct.repository.create-group-thread.response.ts#L63)*
+*Defined in [responses/direct.repository.create-group-thread.response.ts:63](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct.repository.create-group-thread.response.ts#L63)*

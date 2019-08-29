@@ -29,7 +29,7 @@
 
 • **correct_answer**: *number*
 
-*Defined in [responses/highlights.repository.edit-reel.response.ts:141](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/highlights.repository.edit-reel.response.ts#L141)*
+*Defined in [responses/highlights.repository.edit-reel.response.ts:141](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/highlights.repository.edit-reel.response.ts#L141)*
 
 ___
 
@@ -37,7 +37,7 @@ ___
 
 • **end_background_color**: *string*
 
-*Defined in [responses/highlights.repository.edit-reel.response.ts:146](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/highlights.repository.edit-reel.response.ts#L146)*
+*Defined in [responses/highlights.repository.edit-reel.response.ts:146](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/highlights.repository.edit-reel.response.ts#L146)*
 
 ___
 
@@ -45,7 +45,7 @@ ___
 
 • **finished**: *boolean*
 
-*Defined in [responses/highlights.repository.edit-reel.response.ts:143](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/highlights.repository.edit-reel.response.ts#L143)*
+*Defined in [responses/highlights.repository.edit-reel.response.ts:143](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/highlights.repository.edit-reel.response.ts#L143)*
 
 ___
 
@@ -53,7 +53,7 @@ ___
 
 • **id**: *string*
 
-*Defined in [responses/highlights.repository.edit-reel.response.ts:137](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/highlights.repository.edit-reel.response.ts#L137)*
+*Defined in [responses/highlights.repository.edit-reel.response.ts:137](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/highlights.repository.edit-reel.response.ts#L137)*
 
 ___
 
@@ -61,7 +61,7 @@ ___
 
 • **question**: *string*
 
-*Defined in [responses/highlights.repository.edit-reel.response.ts:139](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/highlights.repository.edit-reel.response.ts#L139)*
+*Defined in [responses/highlights.repository.edit-reel.response.ts:139](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/highlights.repository.edit-reel.response.ts#L139)*
 
 ___
 
@@ -69,7 +69,7 @@ ___
 
 • **quiz_id**: *string*
 
-*Defined in [responses/highlights.repository.edit-reel.response.ts:138](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/highlights.repository.edit-reel.response.ts#L138)*
+*Defined in [responses/highlights.repository.edit-reel.response.ts:138](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/highlights.repository.edit-reel.response.ts#L138)*
 
 ___
 
@@ -77,7 +77,7 @@ ___
 
 • **start_background_color**: *string*
 
-*Defined in [responses/highlights.repository.edit-reel.response.ts:145](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/highlights.repository.edit-reel.response.ts#L145)*
+*Defined in [responses/highlights.repository.edit-reel.response.ts:145](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/highlights.repository.edit-reel.response.ts#L145)*
 
 ___
 
@@ -85,7 +85,7 @@ ___
 
 • **tallies**: *[HighlightsRepositoryEditReelResponseTalliesItem](_responses_highlights_repository_edit_reel_response_.highlightsrepositoryeditreelresponsetalliesitem.md)[]*
 
-*Defined in [responses/highlights.repository.edit-reel.response.ts:140](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/highlights.repository.edit-reel.response.ts#L140)*
+*Defined in [responses/highlights.repository.edit-reel.response.ts:140](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/highlights.repository.edit-reel.response.ts#L140)*
 
 ___
 
@@ -93,7 +93,7 @@ ___
 
 • **text_color**: *string*
 
-*Defined in [responses/highlights.repository.edit-reel.response.ts:144](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/highlights.repository.edit-reel.response.ts#L144)*
+*Defined in [responses/highlights.repository.edit-reel.response.ts:144](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/highlights.repository.edit-reel.response.ts#L144)*
 
 ___
 
@@ -101,4 +101,4 @@ ___
 
 • **viewer_can_answer**: *boolean*
 
-*Defined in [responses/highlights.repository.edit-reel.response.ts:142](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/highlights.repository.edit-reel.response.ts#L142)*
+*Defined in [responses/highlights.repository.edit-reel.response.ts:142](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/highlights.repository.edit-reel.response.ts#L142)*

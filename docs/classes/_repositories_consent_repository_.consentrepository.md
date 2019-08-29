@@ -32,7 +32,7 @@
 
 *Inherited from [Repository](_core_repository_.repository.md).[constructor](_core_repository_.repository.md#constructor)*
 
-*Defined in [core/repository.ts:6](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/core/repository.ts#L6)*
+*Defined in [core/repository.ts:6](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/repository.ts#L6)*
 
 **Parameters:**
 
@@ -48,7 +48,7 @@ Name | Type |
 
 ▸ **auto**(): *`Promise<any>`*
 
-*Defined in [repositories/consent.repository.ts:6](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/repositories/consent.repository.ts#L6)*
+*Defined in [repositories/consent.repository.ts:6](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/consent.repository.ts#L6)*
 
 **Returns:** *`Promise<any>`*
 
@@ -58,7 +58,7 @@ ___
 
 ▸ **existingUserFlow**(`data?`: object): *`Promise<any>`*
 
-*Defined in [repositories/consent.repository.ts:41](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/repositories/consent.repository.ts#L41)*
+*Defined in [repositories/consent.repository.ts:41](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/consent.repository.ts#L41)*
 
 **Parameters:**
 
@@ -74,7 +74,7 @@ ___
 
 ▸ **existingUserFlowDob**(`year`: string | number, `month`: string | number, `day`: string | number): *`Promise<any>`*
 
-*Defined in [repositories/consent.repository.ts:25](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/repositories/consent.repository.ts#L25)*
+*Defined in [repositories/consent.repository.ts:25](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/consent.repository.ts#L25)*
 
 **Parameters:**
 
@@ -92,7 +92,7 @@ ___
 
 ▸ **existingUserFlowIntro**(): *`Promise<any>`*
 
-*Defined in [repositories/consent.repository.ts:18](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/repositories/consent.repository.ts#L18)*
+*Defined in [repositories/consent.repository.ts:18](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/consent.repository.ts#L18)*
 
 **Returns:** *`Promise<any>`*
 
@@ -102,6 +102,6 @@ ___
 
 ▸ **existingUserFlowTosAndTwoAgeButton**(): *`Promise<any>`*
 
-*Defined in [repositories/consent.repository.ts:34](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/repositories/consent.repository.ts#L34)*
+*Defined in [repositories/consent.repository.ts:34](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/consent.repository.ts#L34)*
 
 **Returns:** *`Promise<any>`*

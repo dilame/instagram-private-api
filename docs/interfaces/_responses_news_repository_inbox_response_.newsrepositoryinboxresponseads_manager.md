@@ -20,4 +20,4 @@
 
 • **pending_count**: *number*
 
-*Defined in [responses/news.repository.inbox.response.ts:118](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/news.repository.inbox.response.ts#L118)*
+*Defined in [responses/news.repository.inbox.response.ts:118](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/news.repository.inbox.response.ts#L118)*

@@ -31,7 +31,7 @@
 
 • **caption**? : *null*
 
-*Defined in [types/media.configure-sidecar.options.ts:25](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/media.configure-sidecar.options.ts#L25)*
+*Defined in [types/media.configure-sidecar.options.ts:25](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/media.configure-sidecar.options.ts#L25)*
 
 ___
 
@@ -39,7 +39,7 @@ ___
 
 • **device**? : *object | string*
 
-*Defined in [types/media.configure-sidecar.options.ts:30](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/media.configure-sidecar.options.ts#L30)*
+*Defined in [types/media.configure-sidecar.options.ts:30](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/media.configure-sidecar.options.ts#L30)*
 
 ___
 
@@ -47,7 +47,7 @@ ___
 
 • **edits**? : *object | string*
 
-*Defined in [types/media.configure-sidecar.options.ts:29](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/media.configure-sidecar.options.ts#L29)*
+*Defined in [types/media.configure-sidecar.options.ts:29](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/media.configure-sidecar.options.ts#L29)*
 
 ___
 
@@ -55,7 +55,7 @@ ___
 
 • **extra**? : *object | string*
 
-*Defined in [types/media.configure-sidecar.options.ts:28](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/media.configure-sidecar.options.ts#L28)*
+*Defined in [types/media.configure-sidecar.options.ts:28](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/media.configure-sidecar.options.ts#L28)*
 
 ___
 
@@ -63,7 +63,7 @@ ___
 
 • **height**: *number*
 
-*Defined in [types/media.configure-sidecar.options.ts:40](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/media.configure-sidecar.options.ts#L40)*
+*Defined in [types/media.configure-sidecar.options.ts:40](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/media.configure-sidecar.options.ts#L40)*
 
 ___
 
@@ -71,7 +71,7 @@ ___
 
 • **source_type**? : *string*
 
-*Defined in [types/media.configure-sidecar.options.ts:26](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/media.configure-sidecar.options.ts#L26)*
+*Defined in [types/media.configure-sidecar.options.ts:26](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/media.configure-sidecar.options.ts#L26)*
 
 ___
 
@@ -79,7 +79,7 @@ ___
 
 • **timezone_offset**? : *string*
 
-*Defined in [types/media.configure-sidecar.options.ts:24](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/media.configure-sidecar.options.ts#L24)*
+*Defined in [types/media.configure-sidecar.options.ts:24](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/media.configure-sidecar.options.ts#L24)*
 
 ___
 
@@ -87,7 +87,7 @@ ___
 
 • **upload_id**: *string*
 
-*Defined in [types/media.configure-sidecar.options.ts:23](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/media.configure-sidecar.options.ts#L23)*
+*Defined in [types/media.configure-sidecar.options.ts:23](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/media.configure-sidecar.options.ts#L23)*
 
 ___
 
@@ -95,7 +95,7 @@ ___
 
 • **usertags**? : *[PostingUsertags](_types_posting_options_.postingusertags.md) | string*
 
-*Defined in [types/media.configure-sidecar.options.ts:27](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/media.configure-sidecar.options.ts#L27)*
+*Defined in [types/media.configure-sidecar.options.ts:27](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/media.configure-sidecar.options.ts#L27)*
 
 ___
 
@@ -103,4 +103,4 @@ ___
 
 • **width**: *number*
 
-*Defined in [types/media.configure-sidecar.options.ts:39](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/media.configure-sidecar.options.ts#L39)*
+*Defined in [types/media.configure-sidecar.options.ts:39](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/media.configure-sidecar.options.ts#L39)*

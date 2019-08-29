@@ -20,4 +20,4 @@
 
 • **candidates**: *[HighlightsRepositoryHighlightsTrayResponseCandidatesItem](_responses_highlights_repository_highlights_tray_response_.highlightsrepositoryhighlightstrayresponsecandidatesitem.md)[]*
 
-*Defined in [responses/highlights.repository.highlights-tray.response.ts:102](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/highlights.repository.highlights-tray.response.ts#L102)*
+*Defined in [responses/highlights.repository.highlights-tray.response.ts:102](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/highlights.repository.highlights-tray.response.ts#L102)*

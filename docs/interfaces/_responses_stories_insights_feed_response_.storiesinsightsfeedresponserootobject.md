@@ -20,4 +20,4 @@
 
 • **data**: *[StoriesInsightsFeedResponseData](_responses_stories_insights_feed_response_.storiesinsightsfeedresponsedata.md)*
 
-*Defined in [responses/stories-insights.feed.response.ts:2](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/stories-insights.feed.response.ts#L2)*
+*Defined in [responses/stories-insights.feed.response.ts:2](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/stories-insights.feed.response.ts#L2)*

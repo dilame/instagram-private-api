@@ -20,4 +20,4 @@
 
 • **media**: *[InsightsServiceStoryResponseMedia](_responses_insights_service_story_response_.insightsservicestoryresponsemedia.md)*
 
-*Defined in [responses/insights.service.story.response.ts:5](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/insights.service.story.response.ts#L5)*
+*Defined in [responses/insights.service.story.response.ts:5](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.story.response.ts#L5)*

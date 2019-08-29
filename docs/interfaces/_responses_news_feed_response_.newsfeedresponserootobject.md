@@ -23,7 +23,7 @@
 
 • **auto_load_more_enabled**: *boolean*
 
-*Defined in [responses/news.feed.response.ts:4](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/news.feed.response.ts#L4)*
+*Defined in [responses/news.feed.response.ts:4](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/news.feed.response.ts#L4)*
 
 ___
 
@@ -31,7 +31,7 @@ ___
 
 • **next_max_id**: *number*
 
-*Defined in [responses/news.feed.response.ts:5](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/news.feed.response.ts#L5)*
+*Defined in [responses/news.feed.response.ts:5](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/news.feed.response.ts#L5)*
 
 ___
 
@@ -39,7 +39,7 @@ ___
 
 • **status**: *string*
 
-*Defined in [responses/news.feed.response.ts:7](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/news.feed.response.ts#L7)*
+*Defined in [responses/news.feed.response.ts:7](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/news.feed.response.ts#L7)*
 
 ___
 
@@ -47,4 +47,4 @@ ___
 
 • **stories**: *[NewsFeedResponseStoriesItem](../classes/_responses_news_feed_response_.newsfeedresponsestoriesitem.md)[]*
 
-*Defined in [responses/news.feed.response.ts:6](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/news.feed.response.ts#L6)*
+*Defined in [responses/news.feed.response.ts:6](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/news.feed.response.ts#L6)*

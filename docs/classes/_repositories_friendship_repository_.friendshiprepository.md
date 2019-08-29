@@ -34,7 +34,7 @@
 
 *Inherited from [Repository](_core_repository_.repository.md).[constructor](_core_repository_.repository.md#constructor)*
 
-*Defined in [core/repository.ts:6](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/core/repository.ts#L6)*
+*Defined in [core/repository.ts:6](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/repository.ts#L6)*
 
 **Parameters:**
 
@@ -50,7 +50,7 @@ Name | Type |
 
 ▸ **approve**(`id`: string | number, `mediaIdAttribution?`: string): *`Promise<FriendshipRepositoryChangeResponseFriendship_status>`*
 
-*Defined in [repositories/friendship.repository.ts:33](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/repositories/friendship.repository.ts#L33)*
+*Defined in [repositories/friendship.repository.ts:33](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/friendship.repository.ts#L33)*
 
 **Parameters:**
 
@@ -67,7 +67,7 @@ ___
 
 ▸ **create**(`id`: string | number, `mediaIdAttribution?`: string): *`Promise<FriendshipRepositoryChangeResponseFriendship_status>`*
 
-*Defined in [repositories/friendship.repository.ts:25](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/repositories/friendship.repository.ts#L25)*
+*Defined in [repositories/friendship.repository.ts:25](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/friendship.repository.ts#L25)*
 
 **Parameters:**
 
@@ -84,7 +84,7 @@ ___
 
 ▸ **deny**(`id`: string | number, `mediaIdAttribution?`: string): *`Promise<FriendshipRepositoryChangeResponseFriendship_status>`*
 
-*Defined in [repositories/friendship.repository.ts:37](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/repositories/friendship.repository.ts#L37)*
+*Defined in [repositories/friendship.repository.ts:37](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/friendship.repository.ts#L37)*
 
 **Parameters:**
 
@@ -101,7 +101,7 @@ ___
 
 ▸ **destroy**(`id`: string | number, `mediaIdAttribution?`: string): *`Promise<FriendshipRepositoryChangeResponseFriendship_status>`*
 
-*Defined in [repositories/friendship.repository.ts:29](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/repositories/friendship.repository.ts#L29)*
+*Defined in [repositories/friendship.repository.ts:29](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/friendship.repository.ts#L29)*
 
 **Parameters:**
 
@@ -118,7 +118,7 @@ ___
 
 ▸ **removeFollower**(`id`: string | number): *`Promise<FriendshipRepositoryChangeResponseFriendship_status>`*
 
-*Defined in [repositories/friendship.repository.ts:41](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/repositories/friendship.repository.ts#L41)*
+*Defined in [repositories/friendship.repository.ts:41](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/friendship.repository.ts#L41)*
 
 **Parameters:**
 
@@ -134,7 +134,7 @@ ___
 
 ▸ **show**(`id`: string | number): *`Promise<FriendshipRepositoryShowResponseRootObject>`*
 
-*Defined in [repositories/friendship.repository.ts:5](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/repositories/friendship.repository.ts#L5)*
+*Defined in [repositories/friendship.repository.ts:5](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/friendship.repository.ts#L5)*
 
 **Parameters:**
 
@@ -150,7 +150,7 @@ ___
 
 ▸ **showMany**(`userIds`: string[] | number[]): *`Promise<any>`*
 
-*Defined in [repositories/friendship.repository.ts:12](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/repositories/friendship.repository.ts#L12)*
+*Defined in [repositories/friendship.repository.ts:12](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/friendship.repository.ts#L12)*
 
 **Parameters:**
 

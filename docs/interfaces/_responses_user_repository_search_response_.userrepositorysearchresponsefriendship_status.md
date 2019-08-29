@@ -24,7 +24,7 @@
 
 • **following**: *boolean*
 
-*Defined in [responses/user.repository.search.response.ts:27](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/user.repository.search.response.ts#L27)*
+*Defined in [responses/user.repository.search.response.ts:27](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/user.repository.search.response.ts#L27)*
 
 ___
 
@@ -32,7 +32,7 @@ ___
 
 • **incoming_request**: *boolean*
 
-*Defined in [responses/user.repository.search.response.ts:29](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/user.repository.search.response.ts#L29)*
+*Defined in [responses/user.repository.search.response.ts:29](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/user.repository.search.response.ts#L29)*
 
 ___
 
@@ -40,7 +40,7 @@ ___
 
 • **is_bestie**: *boolean*
 
-*Defined in [responses/user.repository.search.response.ts:31](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/user.repository.search.response.ts#L31)*
+*Defined in [responses/user.repository.search.response.ts:31](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/user.repository.search.response.ts#L31)*
 
 ___
 
@@ -48,7 +48,7 @@ ___
 
 • **is_private**: *boolean*
 
-*Defined in [responses/user.repository.search.response.ts:28](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/user.repository.search.response.ts#L28)*
+*Defined in [responses/user.repository.search.response.ts:28](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/user.repository.search.response.ts#L28)*
 
 ___
 
@@ -56,4 +56,4 @@ ___
 
 • **outgoing_request**: *boolean*
 
-*Defined in [responses/user.repository.search.response.ts:30](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/user.repository.search.response.ts#L30)*
+*Defined in [responses/user.repository.search.response.ts:30](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/user.repository.search.response.ts#L30)*

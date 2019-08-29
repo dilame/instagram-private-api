@@ -20,4 +20,4 @@
 
 • **tray**: *[PostsInsightsFeedResponseTray](_responses_posts_insights_feed_response_.postsinsightsfeedresponsetray.md)*
 
-*Defined in [responses/posts-insights.feed.response.ts:65](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/posts-insights.feed.response.ts#L65)*
+*Defined in [responses/posts-insights.feed.response.ts:65](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/posts-insights.feed.response.ts#L65)*

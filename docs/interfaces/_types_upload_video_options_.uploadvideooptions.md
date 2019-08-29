@@ -26,7 +26,7 @@
 
 • **duration**: *number*
 
-*Defined in [types/upload.video.options.ts:4](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/upload.video.options.ts#L4)*
+*Defined in [types/upload.video.options.ts:4](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/upload.video.options.ts#L4)*
 
 ___
 
@@ -34,7 +34,7 @@ ___
 
 • **forAlbum**? : *boolean*
 
-*Defined in [types/upload.video.options.ts:8](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/upload.video.options.ts#L8)*
+*Defined in [types/upload.video.options.ts:8](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/upload.video.options.ts#L8)*
 
 ___
 
@@ -42,7 +42,7 @@ ___
 
 • **height**: *number*
 
-*Defined in [types/upload.video.options.ts:6](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/upload.video.options.ts#L6)*
+*Defined in [types/upload.video.options.ts:6](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/upload.video.options.ts#L6)*
 
 ___
 
@@ -50,7 +50,7 @@ ___
 
 • **isSidecar**? : *boolean*
 
-*Defined in [types/upload.video.options.ts:7](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/upload.video.options.ts#L7)*
+*Defined in [types/upload.video.options.ts:7](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/upload.video.options.ts#L7)*
 
 ___
 
@@ -58,7 +58,7 @@ ___
 
 • **uploadId**? : *string*
 
-*Defined in [types/upload.video.options.ts:3](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/upload.video.options.ts#L3)*
+*Defined in [types/upload.video.options.ts:3](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/upload.video.options.ts#L3)*
 
 ___
 
@@ -66,7 +66,7 @@ ___
 
 • **video**: *`Buffer`*
 
-*Defined in [types/upload.video.options.ts:2](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/upload.video.options.ts#L2)*
+*Defined in [types/upload.video.options.ts:2](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/upload.video.options.ts#L2)*
 
 ___
 
@@ -74,4 +74,4 @@ ___
 
 • **width**: *number*
 
-*Defined in [types/upload.video.options.ts:5](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/upload.video.options.ts#L5)*
+*Defined in [types/upload.video.options.ts:5](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/upload.video.options.ts#L5)*

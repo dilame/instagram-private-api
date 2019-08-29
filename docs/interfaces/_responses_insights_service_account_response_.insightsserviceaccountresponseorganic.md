@@ -21,7 +21,7 @@
 
 • **status**: *string*
 
-*Defined in [responses/insights.service.account.response.ts:87](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/insights.service.account.response.ts#L87)*
+*Defined in [responses/insights.service.account.response.ts:87](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.account.response.ts#L87)*
 
 ___
 
@@ -29,4 +29,4 @@ ___
 
 • **value**: *number*
 
-*Defined in [responses/insights.service.account.response.ts:86](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/insights.service.account.response.ts#L86)*
+*Defined in [responses/insights.service.account.response.ts:86](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.account.response.ts#L86)*

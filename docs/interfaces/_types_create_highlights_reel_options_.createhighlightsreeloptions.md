@@ -23,7 +23,7 @@
 
 • **coverId**? : *string*
 
-*Defined in [types/create-highlights-reel.options.ts:6](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/create-highlights-reel.options.ts#L6)*
+*Defined in [types/create-highlights-reel.options.ts:6](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/create-highlights-reel.options.ts#L6)*
 
 ___
 
@@ -31,7 +31,7 @@ ___
 
 • **mediaIds**: *string[]*
 
-*Defined in [types/create-highlights-reel.options.ts:4](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/create-highlights-reel.options.ts#L4)*
+*Defined in [types/create-highlights-reel.options.ts:4](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/create-highlights-reel.options.ts#L4)*
 
 ___
 
@@ -39,7 +39,7 @@ ___
 
 • **source**? : *[IgAppModule](../modules/_types_common_types_.md#igappmodule)*
 
-*Defined in [types/create-highlights-reel.options.ts:7](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/create-highlights-reel.options.ts#L7)*
+*Defined in [types/create-highlights-reel.options.ts:7](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/create-highlights-reel.options.ts#L7)*
 
 ___
 
@@ -47,4 +47,4 @@ ___
 
 • **title**: *string*
 
-*Defined in [types/create-highlights-reel.options.ts:5](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/create-highlights-reel.options.ts#L5)*
+*Defined in [types/create-highlights-reel.options.ts:5](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/create-highlights-reel.options.ts#L5)*

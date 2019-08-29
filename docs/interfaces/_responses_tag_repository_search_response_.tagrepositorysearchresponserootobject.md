@@ -23,7 +23,7 @@
 
 • **has_more**: *boolean*
 
-*Defined in [responses/tag.repository.search.response.ts:3](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/tag.repository.search.response.ts#L3)*
+*Defined in [responses/tag.repository.search.response.ts:3](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/tag.repository.search.response.ts#L3)*
 
 ___
 
@@ -31,7 +31,7 @@ ___
 
 • **rank_token**: *string*
 
-*Defined in [responses/tag.repository.search.response.ts:4](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/tag.repository.search.response.ts#L4)*
+*Defined in [responses/tag.repository.search.response.ts:4](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/tag.repository.search.response.ts#L4)*
 
 ___
 
@@ -39,7 +39,7 @@ ___
 
 • **results**: *[TagRepositorySearchResponseResultsItem](_responses_tag_repository_search_response_.tagrepositorysearchresponseresultsitem.md)[]*
 
-*Defined in [responses/tag.repository.search.response.ts:2](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/tag.repository.search.response.ts#L2)*
+*Defined in [responses/tag.repository.search.response.ts:2](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/tag.repository.search.response.ts#L2)*
 
 ___
 
@@ -47,4 +47,4 @@ ___
 
 • **status**: *string*
 
-*Defined in [responses/tag.repository.search.response.ts:5](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/tag.repository.search.response.ts#L5)*
+*Defined in [responses/tag.repository.search.response.ts:5](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/tag.repository.search.response.ts#L5)*

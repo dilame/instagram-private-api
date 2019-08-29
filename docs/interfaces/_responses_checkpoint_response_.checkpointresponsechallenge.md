@@ -25,7 +25,7 @@
 
 • **api_path**: *string*
 
-*Defined in [responses/checkpoint.response.ts:9](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/checkpoint.response.ts#L9)*
+*Defined in [responses/checkpoint.response.ts:9](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/checkpoint.response.ts#L9)*
 
 ___
 
@@ -33,7 +33,7 @@ ___
 
 • **hide_webview_header**: *boolean*
 
-*Defined in [responses/checkpoint.response.ts:10](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/checkpoint.response.ts#L10)*
+*Defined in [responses/checkpoint.response.ts:10](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/checkpoint.response.ts#L10)*
 
 ___
 
@@ -41,7 +41,7 @@ ___
 
 • **lock**: *boolean*
 
-*Defined in [responses/checkpoint.response.ts:11](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/checkpoint.response.ts#L11)*
+*Defined in [responses/checkpoint.response.ts:11](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/checkpoint.response.ts#L11)*
 
 ___
 
@@ -49,7 +49,7 @@ ___
 
 • **logout**: *boolean*
 
-*Defined in [responses/checkpoint.response.ts:12](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/checkpoint.response.ts#L12)*
+*Defined in [responses/checkpoint.response.ts:12](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/checkpoint.response.ts#L12)*
 
 ___
 
@@ -57,7 +57,7 @@ ___
 
 • **native_flow**: *boolean*
 
-*Defined in [responses/checkpoint.response.ts:13](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/checkpoint.response.ts#L13)*
+*Defined in [responses/checkpoint.response.ts:13](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/checkpoint.response.ts#L13)*
 
 ___
 
@@ -65,4 +65,4 @@ ___
 
 • **url**: *string*
 
-*Defined in [responses/checkpoint.response.ts:8](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/checkpoint.response.ts#L8)*
+*Defined in [responses/checkpoint.response.ts:8](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/checkpoint.response.ts#L8)*

@@ -28,7 +28,7 @@
 
 • **auto_load_more_enabled**: *boolean*
 
-*Defined in [responses/usertags.feed.response.ts:5](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/usertags.feed.response.ts#L5)*
+*Defined in [responses/usertags.feed.response.ts:5](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/usertags.feed.response.ts#L5)*
 
 ___
 
@@ -36,7 +36,7 @@ ___
 
 • **items**: *[UsertagsFeedResponseItemsItem](_responses_usertags_feed_response_.usertagsfeedresponseitemsitem.md)[]*
 
-*Defined in [responses/usertags.feed.response.ts:2](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/usertags.feed.response.ts#L2)*
+*Defined in [responses/usertags.feed.response.ts:2](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/usertags.feed.response.ts#L2)*
 
 ___
 
@@ -44,7 +44,7 @@ ___
 
 • **more_available**: *boolean*
 
-*Defined in [responses/usertags.feed.response.ts:4](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/usertags.feed.response.ts#L4)*
+*Defined in [responses/usertags.feed.response.ts:4](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/usertags.feed.response.ts#L4)*
 
 ___
 
@@ -52,7 +52,7 @@ ___
 
 • **new_photos**: *any[]*
 
-*Defined in [responses/usertags.feed.response.ts:7](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/usertags.feed.response.ts#L7)*
+*Defined in [responses/usertags.feed.response.ts:7](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/usertags.feed.response.ts#L7)*
 
 ___
 
@@ -60,7 +60,7 @@ ___
 
 • **next_max_id**: *string*
 
-*Defined in [responses/usertags.feed.response.ts:6](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/usertags.feed.response.ts#L6)*
+*Defined in [responses/usertags.feed.response.ts:6](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/usertags.feed.response.ts#L6)*
 
 ___
 
@@ -68,7 +68,7 @@ ___
 
 • **num_results**: *number*
 
-*Defined in [responses/usertags.feed.response.ts:3](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/usertags.feed.response.ts#L3)*
+*Defined in [responses/usertags.feed.response.ts:3](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/usertags.feed.response.ts#L3)*
 
 ___
 
@@ -76,7 +76,7 @@ ___
 
 • **requires_review**: *boolean*
 
-*Defined in [responses/usertags.feed.response.ts:8](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/usertags.feed.response.ts#L8)*
+*Defined in [responses/usertags.feed.response.ts:8](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/usertags.feed.response.ts#L8)*
 
 ___
 
@@ -84,7 +84,7 @@ ___
 
 • **status**: *string*
 
-*Defined in [responses/usertags.feed.response.ts:10](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/usertags.feed.response.ts#L10)*
+*Defined in [responses/usertags.feed.response.ts:10](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/usertags.feed.response.ts#L10)*
 
 ___
 
@@ -92,4 +92,4 @@ ___
 
 • **total_count**: *number*
 
-*Defined in [responses/usertags.feed.response.ts:9](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/usertags.feed.response.ts#L9)*
+*Defined in [responses/usertags.feed.response.ts:9](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/usertags.feed.response.ts#L9)*

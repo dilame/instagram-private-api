@@ -30,7 +30,7 @@
 
 *Inherited from [Repository](_core_repository_.repository.md).[constructor](_core_repository_.repository.md#constructor)*
 
-*Defined in [core/repository.ts:6](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/core/repository.ts#L6)*
+*Defined in [core/repository.ts:6](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/repository.ts#L6)*
 
 **Parameters:**
 
@@ -46,7 +46,7 @@ Name | Type |
 
 ▸ **markSuSeen**(): *`Promise<any>`*
 
-*Defined in [repositories/discover.repository.ts:19](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/repositories/discover.repository.ts#L19)*
+*Defined in [repositories/discover.repository.ts:19](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/discover.repository.ts#L19)*
 
 **Returns:** *`Promise<any>`*
 
@@ -56,7 +56,7 @@ ___
 
 ▸ **profileSuBadge**(): *`Promise<any>`*
 
-*Defined in [repositories/discover.repository.ts:31](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/repositories/discover.repository.ts#L31)*
+*Defined in [repositories/discover.repository.ts:31](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/discover.repository.ts#L31)*
 
 **Returns:** *`Promise<any>`*
 
@@ -66,6 +66,6 @@ ___
 
 ▸ **topicalExplore**(): *`Promise<any>`*
 
-*Defined in [repositories/discover.repository.ts:4](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/repositories/discover.repository.ts#L4)*
+*Defined in [repositories/discover.repository.ts:4](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/discover.repository.ts#L4)*
 
 **Returns:** *`Promise<any>`*

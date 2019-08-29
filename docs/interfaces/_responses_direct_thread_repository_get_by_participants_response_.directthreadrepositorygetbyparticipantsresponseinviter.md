@@ -27,7 +27,7 @@
 
 • **full_name**: *string*
 
-*Defined in [responses/direct-thread.repository.get-by-participants.response.ts:84](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-thread.repository.get-by-participants.response.ts#L84)*
+*Defined in [responses/direct-thread.repository.get-by-participants.response.ts:84](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-thread.repository.get-by-participants.response.ts#L84)*
 
 ___
 
@@ -35,7 +35,7 @@ ___
 
 • **has_anonymous_profile_picture**: *boolean*
 
-*Defined in [responses/direct-thread.repository.get-by-participants.response.ts:89](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-thread.repository.get-by-participants.response.ts#L89)*
+*Defined in [responses/direct-thread.repository.get-by-participants.response.ts:89](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-thread.repository.get-by-participants.response.ts#L89)*
 
 ___
 
@@ -43,7 +43,7 @@ ___
 
 • **is_private**: *boolean*
 
-*Defined in [responses/direct-thread.repository.get-by-participants.response.ts:85](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-thread.repository.get-by-participants.response.ts#L85)*
+*Defined in [responses/direct-thread.repository.get-by-participants.response.ts:85](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-thread.repository.get-by-participants.response.ts#L85)*
 
 ___
 
@@ -51,7 +51,7 @@ ___
 
 • **is_verified**: *boolean*
 
-*Defined in [responses/direct-thread.repository.get-by-participants.response.ts:88](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-thread.repository.get-by-participants.response.ts#L88)*
+*Defined in [responses/direct-thread.repository.get-by-participants.response.ts:88](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-thread.repository.get-by-participants.response.ts#L88)*
 
 ___
 
@@ -59,7 +59,7 @@ ___
 
 • **pk**: *number*
 
-*Defined in [responses/direct-thread.repository.get-by-participants.response.ts:82](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-thread.repository.get-by-participants.response.ts#L82)*
+*Defined in [responses/direct-thread.repository.get-by-participants.response.ts:82](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-thread.repository.get-by-participants.response.ts#L82)*
 
 ___
 
@@ -67,7 +67,7 @@ ___
 
 • **profile_pic_id**: *string*
 
-*Defined in [responses/direct-thread.repository.get-by-participants.response.ts:87](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-thread.repository.get-by-participants.response.ts#L87)*
+*Defined in [responses/direct-thread.repository.get-by-participants.response.ts:87](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-thread.repository.get-by-participants.response.ts#L87)*
 
 ___
 
@@ -75,7 +75,7 @@ ___
 
 • **profile_pic_url**: *string*
 
-*Defined in [responses/direct-thread.repository.get-by-participants.response.ts:86](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-thread.repository.get-by-participants.response.ts#L86)*
+*Defined in [responses/direct-thread.repository.get-by-participants.response.ts:86](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-thread.repository.get-by-participants.response.ts#L86)*
 
 ___
 
@@ -83,4 +83,4 @@ ___
 
 • **username**: *string*
 
-*Defined in [responses/direct-thread.repository.get-by-participants.response.ts:83](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-thread.repository.get-by-participants.response.ts#L83)*
+*Defined in [responses/direct-thread.repository.get-by-participants.response.ts:83](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-thread.repository.get-by-participants.response.ts#L83)*

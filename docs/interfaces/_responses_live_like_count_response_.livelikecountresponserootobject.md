@@ -24,7 +24,7 @@
 
 • **burst_likes**: *number*
 
-*Defined in [responses/live.like-count.response.ts:5](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.like-count.response.ts#L5)*
+*Defined in [responses/live.like-count.response.ts:5](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.like-count.response.ts#L5)*
 
 ___
 
@@ -32,7 +32,7 @@ ___
 
 • **like_ts**: *number*
 
-*Defined in [responses/live.like-count.response.ts:4](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.like-count.response.ts#L4)*
+*Defined in [responses/live.like-count.response.ts:4](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.like-count.response.ts#L4)*
 
 ___
 
@@ -40,7 +40,7 @@ ___
 
 • **likers**: *any[]*
 
-*Defined in [responses/live.like-count.response.ts:3](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.like-count.response.ts#L3)*
+*Defined in [responses/live.like-count.response.ts:3](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.like-count.response.ts#L3)*
 
 ___
 
@@ -48,7 +48,7 @@ ___
 
 • **likes**: *number*
 
-*Defined in [responses/live.like-count.response.ts:2](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.like-count.response.ts#L2)*
+*Defined in [responses/live.like-count.response.ts:2](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.like-count.response.ts#L2)*
 
 ___
 
@@ -56,4 +56,4 @@ ___
 
 • **status**: *string*
 
-*Defined in [responses/live.like-count.response.ts:6](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.like-count.response.ts#L6)*
+*Defined in [responses/live.like-count.response.ts:6](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.like-count.response.ts#L6)*

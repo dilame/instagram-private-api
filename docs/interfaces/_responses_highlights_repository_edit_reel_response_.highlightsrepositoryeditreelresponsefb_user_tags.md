@@ -20,4 +20,4 @@
 
 • **in**: *any[]*
 
-*Defined in [responses/highlights.repository.edit-reel.response.ts:117](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/highlights.repository.edit-reel.response.ts#L117)*
+*Defined in [responses/highlights.repository.edit-reel.response.ts:117](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/highlights.repository.edit-reel.response.ts#L117)*

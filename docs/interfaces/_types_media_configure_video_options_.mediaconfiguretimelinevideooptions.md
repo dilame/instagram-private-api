@@ -43,7 +43,7 @@
 
 *Inherited from [MediaConfigureVideoOptions](_types_media_configure_video_options_.mediaconfigurevideooptions.md).[audio_muted](_types_media_configure_video_options_.mediaconfigurevideooptions.md#optional-audio_muted)*
 
-*Defined in [types/media.configure-video.options.ts:8](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/media.configure-video.options.ts#L8)*
+*Defined in [types/media.configure-video.options.ts:8](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/media.configure-video.options.ts#L8)*
 
 ___
 
@@ -51,7 +51,7 @@ ___
 
 • **caption**? : *string*
 
-*Defined in [types/media.configure-video.options.ts:28](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/media.configure-video.options.ts#L28)*
+*Defined in [types/media.configure-video.options.ts:28](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/media.configure-video.options.ts#L28)*
 
 ___
 
@@ -61,7 +61,7 @@ ___
 
 *Inherited from [MediaConfigureVideoOptions](_types_media_configure_video_options_.mediaconfigurevideooptions.md).[clips](_types_media_configure_video_options_.mediaconfigurevideooptions.md#optional-clips)*
 
-*Defined in [types/media.configure-video.options.ts:7](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/media.configure-video.options.ts#L7)*
+*Defined in [types/media.configure-video.options.ts:7](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/media.configure-video.options.ts#L7)*
 
 ___
 
@@ -69,7 +69,7 @@ ___
 
 • **date_time_original**? : *string*
 
-*Defined in [types/media.configure-video.options.ts:29](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/media.configure-video.options.ts#L29)*
+*Defined in [types/media.configure-video.options.ts:29](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/media.configure-video.options.ts#L29)*
 
 ___
 
@@ -77,7 +77,7 @@ ___
 
 • **device_id**? : *string*
 
-*Defined in [types/media.configure-video.options.ts:27](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/media.configure-video.options.ts#L27)*
+*Defined in [types/media.configure-video.options.ts:27](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/media.configure-video.options.ts#L27)*
 
 ___
 
@@ -85,7 +85,7 @@ ___
 
 • **filter_type**? : *string*
 
-*Defined in [types/media.configure-video.options.ts:22](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/media.configure-video.options.ts#L22)*
+*Defined in [types/media.configure-video.options.ts:22](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/media.configure-video.options.ts#L22)*
 
 ___
 
@@ -95,7 +95,7 @@ ___
 
 *Inherited from [MediaConfigureVideoOptions](_types_media_configure_video_options_.mediaconfigurevideooptions.md).[geotag_enabled](_types_media_configure_video_options_.mediaconfigurevideooptions.md#optional-geotag_enabled)*
 
-*Defined in [types/media.configure-video.options.ts:14](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/media.configure-video.options.ts#L14)*
+*Defined in [types/media.configure-video.options.ts:14](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/media.configure-video.options.ts#L14)*
 
 ___
 
@@ -105,7 +105,7 @@ ___
 
 *Inherited from [MediaConfigureVideoOptions](_types_media_configure_video_options_.mediaconfigurevideooptions.md).[height](_types_media_configure_video_options_.mediaconfigurevideooptions.md#height)*
 
-*Defined in [types/media.configure-video.options.ts:12](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/media.configure-video.options.ts#L12)*
+*Defined in [types/media.configure-video.options.ts:12](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/media.configure-video.options.ts#L12)*
 
 ___
 
@@ -115,7 +115,7 @@ ___
 
 *Inherited from [MediaConfigureVideoOptions](_types_media_configure_video_options_.mediaconfigurevideooptions.md).[length](_types_media_configure_video_options_.mediaconfigurevideooptions.md#length)*
 
-*Defined in [types/media.configure-video.options.ts:6](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/media.configure-video.options.ts#L6)*
+*Defined in [types/media.configure-video.options.ts:6](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/media.configure-video.options.ts#L6)*
 
 ___
 
@@ -123,7 +123,7 @@ ___
 
 • **location**? : *[MediaLocation](_types_media_configure_options_.medialocation.md) | string*
 
-*Defined in [types/media.configure-video.options.ts:25](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/media.configure-video.options.ts#L25)*
+*Defined in [types/media.configure-video.options.ts:25](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/media.configure-video.options.ts#L25)*
 
 ___
 
@@ -133,7 +133,7 @@ ___
 
 *Inherited from [MediaConfigureVideoOptions](_types_media_configure_video_options_.mediaconfigurevideooptions.md).[media_latitude](_types_media_configure_video_options_.mediaconfigurevideooptions.md#optional-media_latitude)*
 
-*Defined in [types/media.configure-video.options.ts:17](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/media.configure-video.options.ts#L17)*
+*Defined in [types/media.configure-video.options.ts:17](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/media.configure-video.options.ts#L17)*
 
 ___
 
@@ -143,7 +143,7 @@ ___
 
 *Inherited from [MediaConfigureVideoOptions](_types_media_configure_video_options_.mediaconfigurevideooptions.md).[media_longitude](_types_media_configure_video_options_.mediaconfigurevideooptions.md#optional-media_longitude)*
 
-*Defined in [types/media.configure-video.options.ts:18](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/media.configure-video.options.ts#L18)*
+*Defined in [types/media.configure-video.options.ts:18](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/media.configure-video.options.ts#L18)*
 
 ___
 
@@ -153,7 +153,7 @@ ___
 
 *Inherited from [MediaConfigureVideoOptions](_types_media_configure_video_options_.mediaconfigurevideooptions.md).[poster_frame_index](_types_media_configure_video_options_.mediaconfigurevideooptions.md#optional-poster_frame_index)*
 
-*Defined in [types/media.configure-video.options.ts:9](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/media.configure-video.options.ts#L9)*
+*Defined in [types/media.configure-video.options.ts:9](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/media.configure-video.options.ts#L9)*
 
 ___
 
@@ -163,7 +163,7 @@ ___
 
 *Inherited from [MediaConfigureVideoOptions](_types_media_configure_video_options_.mediaconfigurevideooptions.md).[posting_latitude](_types_media_configure_video_options_.mediaconfigurevideooptions.md#optional-posting_latitude)*
 
-*Defined in [types/media.configure-video.options.ts:15](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/media.configure-video.options.ts#L15)*
+*Defined in [types/media.configure-video.options.ts:15](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/media.configure-video.options.ts#L15)*
 
 ___
 
@@ -173,7 +173,7 @@ ___
 
 *Inherited from [MediaConfigureVideoOptions](_types_media_configure_video_options_.mediaconfigurevideooptions.md).[posting_longitude](_types_media_configure_video_options_.mediaconfigurevideooptions.md#optional-posting_longitude)*
 
-*Defined in [types/media.configure-video.options.ts:16](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/media.configure-video.options.ts#L16)*
+*Defined in [types/media.configure-video.options.ts:16](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/media.configure-video.options.ts#L16)*
 
 ___
 
@@ -181,7 +181,7 @@ ___
 
 • **source_type**? : *"4"*
 
-*Defined in [types/media.configure-video.options.ts:26](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/media.configure-video.options.ts#L26)*
+*Defined in [types/media.configure-video.options.ts:26](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/media.configure-video.options.ts#L26)*
 
 ___
 
@@ -189,7 +189,7 @@ ___
 
 • **timezone_offset**? : *string*
 
-*Defined in [types/media.configure-video.options.ts:23](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/media.configure-video.options.ts#L23)*
+*Defined in [types/media.configure-video.options.ts:23](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/media.configure-video.options.ts#L23)*
 
 ___
 
@@ -199,7 +199,7 @@ ___
 
 *Overrides [MediaConfigureVideoOptions](_types_media_configure_video_options_.mediaconfigurevideooptions.md).[upload_id](_types_media_configure_video_options_.mediaconfigurevideooptions.md#upload_id)*
 
-*Defined in [types/media.configure-video.options.ts:30](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/media.configure-video.options.ts#L30)*
+*Defined in [types/media.configure-video.options.ts:30](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/media.configure-video.options.ts#L30)*
 
 ___
 
@@ -207,7 +207,7 @@ ___
 
 • **usertags**? : *[PostingUsertags](_types_posting_options_.postingusertags.md) | string*
 
-*Defined in [types/media.configure-video.options.ts:24](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/media.configure-video.options.ts#L24)*
+*Defined in [types/media.configure-video.options.ts:24](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/media.configure-video.options.ts#L24)*
 
 ___
 
@@ -217,4 +217,4 @@ ___
 
 *Inherited from [MediaConfigureVideoOptions](_types_media_configure_video_options_.mediaconfigurevideooptions.md).[width](_types_media_configure_video_options_.mediaconfigurevideooptions.md#width)*
 
-*Defined in [types/media.configure-video.options.ts:11](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/media.configure-video.options.ts#L11)*
+*Defined in [types/media.configure-video.options.ts:11](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/media.configure-video.options.ts#L11)*

@@ -49,7 +49,7 @@
 
 • **admin_user_ids**: *any[]*
 
-*Defined in [responses/direct-inbox.feed.response.ts:22](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-inbox.feed.response.ts#L22)*
+*Defined in [responses/direct-inbox.feed.response.ts:22](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-inbox.feed.response.ts#L22)*
 
 ___
 
@@ -57,7 +57,7 @@ ___
 
 • **archived**: *boolean*
 
-*Defined in [responses/direct-inbox.feed.response.ts:30](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-inbox.feed.response.ts#L30)*
+*Defined in [responses/direct-inbox.feed.response.ts:30](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-inbox.feed.response.ts#L30)*
 
 ___
 
@@ -65,7 +65,7 @@ ___
 
 • **canonical**: *boolean*
 
-*Defined in [responses/direct-inbox.feed.response.ts:28](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-inbox.feed.response.ts#L28)*
+*Defined in [responses/direct-inbox.feed.response.ts:28](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-inbox.feed.response.ts#L28)*
 
 ___
 
@@ -73,7 +73,7 @@ ___
 
 • **folder**: *number*
 
-*Defined in [responses/direct-inbox.feed.response.ts:36](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-inbox.feed.response.ts#L36)*
+*Defined in [responses/direct-inbox.feed.response.ts:36](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-inbox.feed.response.ts#L36)*
 
 ___
 
@@ -81,7 +81,7 @@ ___
 
 • **has_newer**: *boolean*
 
-*Defined in [responses/direct-inbox.feed.response.ts:42](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-inbox.feed.response.ts#L42)*
+*Defined in [responses/direct-inbox.feed.response.ts:42](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-inbox.feed.response.ts#L42)*
 
 ___
 
@@ -89,7 +89,7 @@ ___
 
 • **has_older**: *boolean*
 
-*Defined in [responses/direct-inbox.feed.response.ts:41](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-inbox.feed.response.ts#L41)*
+*Defined in [responses/direct-inbox.feed.response.ts:41](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-inbox.feed.response.ts#L41)*
 
 ___
 
@@ -97,7 +97,7 @@ ___
 
 • **inviter**: *[DirectInboxFeedResponseInviter](../interfaces/_responses_direct_inbox_feed_response_.directinboxfeedresponseinviter.md)*
 
-*Defined in [responses/direct-inbox.feed.response.ts:40](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-inbox.feed.response.ts#L40)*
+*Defined in [responses/direct-inbox.feed.response.ts:40](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-inbox.feed.response.ts#L40)*
 
 ___
 
@@ -105,7 +105,7 @@ ___
 
 • **is_group**: *boolean*
 
-*Defined in [responses/direct-inbox.feed.response.ts:38](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-inbox.feed.response.ts#L38)*
+*Defined in [responses/direct-inbox.feed.response.ts:38](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-inbox.feed.response.ts#L38)*
 
 ___
 
@@ -113,7 +113,7 @@ ___
 
 • **is_pin**: *boolean*
 
-*Defined in [responses/direct-inbox.feed.response.ts:26](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-inbox.feed.response.ts#L26)*
+*Defined in [responses/direct-inbox.feed.response.ts:26](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-inbox.feed.response.ts#L26)*
 
 ___
 
@@ -121,7 +121,7 @@ ___
 
 • **is_spam**: *boolean*
 
-*Defined in [responses/direct-inbox.feed.response.ts:51](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-inbox.feed.response.ts#L51)*
+*Defined in [responses/direct-inbox.feed.response.ts:51](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-inbox.feed.response.ts#L51)*
 
 ___
 
@@ -129,7 +129,7 @@ ___
 
 • **items**: *[DirectInboxFeedResponseItemsItem](../interfaces/_responses_direct_inbox_feed_response_.directinboxfeedresponseitemsitem.md)[]*
 
-*Defined in [responses/direct-inbox.feed.response.ts:23](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-inbox.feed.response.ts#L23)*
+*Defined in [responses/direct-inbox.feed.response.ts:23](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-inbox.feed.response.ts#L23)*
 
 ___
 
@@ -137,7 +137,7 @@ ___
 
 • **last_activity_at**: *string*
 
-*Defined in [responses/direct-inbox.feed.response.ts:24](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-inbox.feed.response.ts#L24)*
+*Defined in [responses/direct-inbox.feed.response.ts:24](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-inbox.feed.response.ts#L24)*
 
 ___
 
@@ -145,7 +145,7 @@ ___
 
 • **last_permanent_item**: *[DirectInboxFeedResponseLastPermanentItem](../interfaces/_responses_direct_inbox_feed_response_.directinboxfeedresponselastpermanentitem.md)*
 
-*Defined in [responses/direct-inbox.feed.response.ts:52](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-inbox.feed.response.ts#L52)*
+*Defined in [responses/direct-inbox.feed.response.ts:52](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-inbox.feed.response.ts#L52)*
 
 ___
 
@@ -153,7 +153,7 @@ ___
 
 • **last_seen_at**: *any*
 
-*Defined in [responses/direct-inbox.feed.response.ts:48](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-inbox.feed.response.ts#L48)*
+*Defined in [responses/direct-inbox.feed.response.ts:48](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-inbox.feed.response.ts#L48)*
 
 ___
 
@@ -161,7 +161,7 @@ ___
 
 • **left_users**: *any[]*
 
-*Defined in [responses/direct-inbox.feed.response.ts:21](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-inbox.feed.response.ts#L21)*
+*Defined in [responses/direct-inbox.feed.response.ts:21](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-inbox.feed.response.ts#L21)*
 
 ___
 
@@ -169,7 +169,7 @@ ___
 
 • **mentions_muted**: *boolean*
 
-*Defined in [responses/direct-inbox.feed.response.ts:39](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-inbox.feed.response.ts#L39)*
+*Defined in [responses/direct-inbox.feed.response.ts:39](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-inbox.feed.response.ts#L39)*
 
 ___
 
@@ -177,7 +177,7 @@ ___
 
 • **muted**: *boolean*
 
-*Defined in [responses/direct-inbox.feed.response.ts:25](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-inbox.feed.response.ts#L25)*
+*Defined in [responses/direct-inbox.feed.response.ts:25](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-inbox.feed.response.ts#L25)*
 
 ___
 
@@ -185,7 +185,7 @@ ___
 
 • **named**: *boolean*
 
-*Defined in [responses/direct-inbox.feed.response.ts:27](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-inbox.feed.response.ts#L27)*
+*Defined in [responses/direct-inbox.feed.response.ts:27](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-inbox.feed.response.ts#L27)*
 
 ___
 
@@ -193,7 +193,7 @@ ___
 
 • **newest_cursor**: *string*
 
-*Defined in [responses/direct-inbox.feed.response.ts:49](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-inbox.feed.response.ts#L49)*
+*Defined in [responses/direct-inbox.feed.response.ts:49](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-inbox.feed.response.ts#L49)*
 
 ___
 
@@ -201,7 +201,7 @@ ___
 
 • **oldest_cursor**: *string*
 
-*Defined in [responses/direct-inbox.feed.response.ts:50](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-inbox.feed.response.ts#L50)*
+*Defined in [responses/direct-inbox.feed.response.ts:50](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-inbox.feed.response.ts#L50)*
 
 ___
 
@@ -209,7 +209,7 @@ ___
 
 • **pending**: *boolean*
 
-*Defined in [responses/direct-inbox.feed.response.ts:29](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-inbox.feed.response.ts#L29)*
+*Defined in [responses/direct-inbox.feed.response.ts:29](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-inbox.feed.response.ts#L29)*
 
 ___
 
@@ -217,7 +217,7 @@ ___
 
 • **pending_score**: *string*
 
-*Defined in [responses/direct-inbox.feed.response.ts:35](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-inbox.feed.response.ts#L35)*
+*Defined in [responses/direct-inbox.feed.response.ts:35](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-inbox.feed.response.ts#L35)*
 
 ___
 
@@ -225,7 +225,7 @@ ___
 
 • **thread_id**: *string*
 
-*Defined in [responses/direct-inbox.feed.response.ts:18](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-inbox.feed.response.ts#L18)*
+*Defined in [responses/direct-inbox.feed.response.ts:18](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-inbox.feed.response.ts#L18)*
 
 ___
 
@@ -233,7 +233,7 @@ ___
 
 • **thread_title**: *string*
 
-*Defined in [responses/direct-inbox.feed.response.ts:34](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-inbox.feed.response.ts#L34)*
+*Defined in [responses/direct-inbox.feed.response.ts:34](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-inbox.feed.response.ts#L34)*
 
 ___
 
@@ -241,7 +241,7 @@ ___
 
 • **thread_type**: *string*
 
-*Defined in [responses/direct-inbox.feed.response.ts:32](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-inbox.feed.response.ts#L32)*
+*Defined in [responses/direct-inbox.feed.response.ts:32](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-inbox.feed.response.ts#L32)*
 
 ___
 
@@ -249,7 +249,7 @@ ___
 
 • **thread_v2_id**: *string*
 
-*Defined in [responses/direct-inbox.feed.response.ts:19](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-inbox.feed.response.ts#L19)*
+*Defined in [responses/direct-inbox.feed.response.ts:19](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-inbox.feed.response.ts#L19)*
 
 ___
 
@@ -257,7 +257,7 @@ ___
 
 • **users**: *[DirectInboxFeedResponseUsersItem](../interfaces/_responses_direct_inbox_feed_response_.directinboxfeedresponseusersitem.md)[]*
 
-*Defined in [responses/direct-inbox.feed.response.ts:20](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-inbox.feed.response.ts#L20)*
+*Defined in [responses/direct-inbox.feed.response.ts:20](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-inbox.feed.response.ts#L20)*
 
 ___
 
@@ -265,7 +265,7 @@ ___
 
 • **valued_request**: *boolean*
 
-*Defined in [responses/direct-inbox.feed.response.ts:31](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-inbox.feed.response.ts#L31)*
+*Defined in [responses/direct-inbox.feed.response.ts:31](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-inbox.feed.response.ts#L31)*
 
 ___
 
@@ -273,7 +273,7 @@ ___
 
 • **vc_muted**: *boolean*
 
-*Defined in [responses/direct-inbox.feed.response.ts:37](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-inbox.feed.response.ts#L37)*
+*Defined in [responses/direct-inbox.feed.response.ts:37](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-inbox.feed.response.ts#L37)*
 
 ___
 
@@ -281,4 +281,4 @@ ___
 
 • **viewer_id**: *number*
 
-*Defined in [responses/direct-inbox.feed.response.ts:33](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-inbox.feed.response.ts#L33)*
+*Defined in [responses/direct-inbox.feed.response.ts:33](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-inbox.feed.response.ts#L33)*

@@ -31,7 +31,7 @@
 
 • **__typename**: *string*
 
-*Defined in [responses/stories-insights.feed.response.ts:37](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/stories-insights.feed.response.ts#L37)*
+*Defined in [responses/stories-insights.feed.response.ts:37](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/stories-insights.feed.response.ts#L37)*
 
 ___
 
@@ -39,7 +39,7 @@ ___
 
 • **display_url**: *string*
 
-*Defined in [responses/stories-insights.feed.response.ts:27](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/stories-insights.feed.response.ts#L27)*
+*Defined in [responses/stories-insights.feed.response.ts:27](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/stories-insights.feed.response.ts#L27)*
 
 ___
 
@@ -47,7 +47,7 @@ ___
 
 • **exits_count**: *number*
 
-*Defined in [responses/stories-insights.feed.response.ts:28](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/stories-insights.feed.response.ts#L28)*
+*Defined in [responses/stories-insights.feed.response.ts:28](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/stories-insights.feed.response.ts#L28)*
 
 ___
 
@@ -55,7 +55,7 @@ ___
 
 • **id**: *string*
 
-*Defined in [responses/stories-insights.feed.response.ts:36](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/stories-insights.feed.response.ts#L36)*
+*Defined in [responses/stories-insights.feed.response.ts:36](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/stories-insights.feed.response.ts#L36)*
 
 ___
 
@@ -63,7 +63,7 @@ ___
 
 • **impression_count**: *number*
 
-*Defined in [responses/stories-insights.feed.response.ts:29](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/stories-insights.feed.response.ts#L29)*
+*Defined in [responses/stories-insights.feed.response.ts:29](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/stories-insights.feed.response.ts#L29)*
 
 ___
 
@@ -71,7 +71,7 @@ ___
 
 • **inline_insights_node**: *[StoriesInsightsFeedResponseInline_insights_node](_responses_stories_insights_feed_response_.storiesinsightsfeedresponseinline_insights_node.md)*
 
-*Defined in [responses/stories-insights.feed.response.ts:35](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/stories-insights.feed.response.ts#L35)*
+*Defined in [responses/stories-insights.feed.response.ts:35](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/stories-insights.feed.response.ts#L35)*
 
 ___
 
@@ -79,7 +79,7 @@ ___
 
 • **instagram_media_id**: *string*
 
-*Defined in [responses/stories-insights.feed.response.ts:26](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/stories-insights.feed.response.ts#L26)*
+*Defined in [responses/stories-insights.feed.response.ts:26](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/stories-insights.feed.response.ts#L26)*
 
 ___
 
@@ -87,7 +87,7 @@ ___
 
 • **reach_count**: *number*
 
-*Defined in [responses/stories-insights.feed.response.ts:30](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/stories-insights.feed.response.ts#L30)*
+*Defined in [responses/stories-insights.feed.response.ts:30](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/stories-insights.feed.response.ts#L30)*
 
 ___
 
@@ -95,7 +95,7 @@ ___
 
 • **replies_count**: *number*
 
-*Defined in [responses/stories-insights.feed.response.ts:31](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/stories-insights.feed.response.ts#L31)*
+*Defined in [responses/stories-insights.feed.response.ts:31](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/stories-insights.feed.response.ts#L31)*
 
 ___
 
@@ -103,7 +103,7 @@ ___
 
 • **story_swipe_away_count**: *number*
 
-*Defined in [responses/stories-insights.feed.response.ts:34](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/stories-insights.feed.response.ts#L34)*
+*Defined in [responses/stories-insights.feed.response.ts:34](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/stories-insights.feed.response.ts#L34)*
 
 ___
 
@@ -111,7 +111,7 @@ ___
 
 • **taps_back_count**: *number*
 
-*Defined in [responses/stories-insights.feed.response.ts:32](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/stories-insights.feed.response.ts#L32)*
+*Defined in [responses/stories-insights.feed.response.ts:32](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/stories-insights.feed.response.ts#L32)*
 
 ___
 
@@ -119,4 +119,4 @@ ___
 
 • **taps_forward_count**: *number*
 
-*Defined in [responses/stories-insights.feed.response.ts:33](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/stories-insights.feed.response.ts#L33)*
+*Defined in [responses/stories-insights.feed.response.ts:33](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/stories-insights.feed.response.ts#L33)*

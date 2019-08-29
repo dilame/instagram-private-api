@@ -24,7 +24,7 @@
 
 • **height**: *number*
 
-*Defined in [responses/highlights.repository.create-reel.response.ts:115](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/highlights.repository.create-reel.response.ts#L115)*
+*Defined in [responses/highlights.repository.create-reel.response.ts:115](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/highlights.repository.create-reel.response.ts#L115)*
 
 ___
 
@@ -32,7 +32,7 @@ ___
 
 • **id**: *string*
 
-*Defined in [responses/highlights.repository.create-reel.response.ts:117](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/highlights.repository.create-reel.response.ts#L117)*
+*Defined in [responses/highlights.repository.create-reel.response.ts:117](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/highlights.repository.create-reel.response.ts#L117)*
 
 ___
 
@@ -40,7 +40,7 @@ ___
 
 • **type**: *number*
 
-*Defined in [responses/highlights.repository.create-reel.response.ts:113](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/highlights.repository.create-reel.response.ts#L113)*
+*Defined in [responses/highlights.repository.create-reel.response.ts:113](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/highlights.repository.create-reel.response.ts#L113)*
 
 ___
 
@@ -48,7 +48,7 @@ ___
 
 • **url**: *string*
 
-*Defined in [responses/highlights.repository.create-reel.response.ts:116](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/highlights.repository.create-reel.response.ts#L116)*
+*Defined in [responses/highlights.repository.create-reel.response.ts:116](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/highlights.repository.create-reel.response.ts#L116)*
 
 ___
 
@@ -56,4 +56,4 @@ ___
 
 • **width**: *number*
 
-*Defined in [responses/highlights.repository.create-reel.response.ts:114](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/highlights.repository.create-reel.response.ts#L114)*
+*Defined in [responses/highlights.repository.create-reel.response.ts:114](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/highlights.repository.create-reel.response.ts#L114)*

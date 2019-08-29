@@ -30,7 +30,7 @@
 
 • **friendship_status**: *[MediaInfoResponseFriendship_status](_responses_media_repository_info_response_.mediainforesponsefriendship_status.md)*
 
-*Defined in [responses/media.repository.info.response.ts:55](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/media.repository.info.response.ts#L55)*
+*Defined in [responses/media.repository.info.response.ts:55](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.info.response.ts#L55)*
 
 ___
 
@@ -38,7 +38,7 @@ ___
 
 • **full_name**: *string*
 
-*Defined in [responses/media.repository.info.response.ts:51](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/media.repository.info.response.ts#L51)*
+*Defined in [responses/media.repository.info.response.ts:51](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.info.response.ts#L51)*
 
 ___
 
@@ -46,7 +46,7 @@ ___
 
 • **has_anonymous_profile_picture**: *boolean*
 
-*Defined in [responses/media.repository.info.response.ts:57](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/media.repository.info.response.ts#L57)*
+*Defined in [responses/media.repository.info.response.ts:57](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.info.response.ts#L57)*
 
 ___
 
@@ -54,7 +54,7 @@ ___
 
 • **is_favorite**: *boolean*
 
-*Defined in [responses/media.repository.info.response.ts:59](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/media.repository.info.response.ts#L59)*
+*Defined in [responses/media.repository.info.response.ts:59](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.info.response.ts#L59)*
 
 ___
 
@@ -62,7 +62,7 @@ ___
 
 • **is_private**: *boolean*
 
-*Defined in [responses/media.repository.info.response.ts:52](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/media.repository.info.response.ts#L52)*
+*Defined in [responses/media.repository.info.response.ts:52](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.info.response.ts#L52)*
 
 ___
 
@@ -70,7 +70,7 @@ ___
 
 • **is_unpublished**: *boolean*
 
-*Defined in [responses/media.repository.info.response.ts:58](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/media.repository.info.response.ts#L58)*
+*Defined in [responses/media.repository.info.response.ts:58](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.info.response.ts#L58)*
 
 ___
 
@@ -78,7 +78,7 @@ ___
 
 • **is_verified**: *boolean*
 
-*Defined in [responses/media.repository.info.response.ts:56](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/media.repository.info.response.ts#L56)*
+*Defined in [responses/media.repository.info.response.ts:56](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.info.response.ts#L56)*
 
 ___
 
@@ -86,7 +86,7 @@ ___
 
 • **pk**: *number*
 
-*Defined in [responses/media.repository.info.response.ts:49](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/media.repository.info.response.ts#L49)*
+*Defined in [responses/media.repository.info.response.ts:49](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.info.response.ts#L49)*
 
 ___
 
@@ -94,7 +94,7 @@ ___
 
 • **profile_pic_id**: *string*
 
-*Defined in [responses/media.repository.info.response.ts:54](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/media.repository.info.response.ts#L54)*
+*Defined in [responses/media.repository.info.response.ts:54](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.info.response.ts#L54)*
 
 ___
 
@@ -102,7 +102,7 @@ ___
 
 • **profile_pic_url**: *string*
 
-*Defined in [responses/media.repository.info.response.ts:53](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/media.repository.info.response.ts#L53)*
+*Defined in [responses/media.repository.info.response.ts:53](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.info.response.ts#L53)*
 
 ___
 
@@ -110,4 +110,4 @@ ___
 
 • **username**: *string*
 
-*Defined in [responses/media.repository.info.response.ts:50](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/media.repository.info.response.ts#L50)*
+*Defined in [responses/media.repository.info.response.ts:50](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.info.response.ts#L50)*

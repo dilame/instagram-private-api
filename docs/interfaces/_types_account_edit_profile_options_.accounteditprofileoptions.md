@@ -26,7 +26,7 @@
 
 • **biography**: *string*
 
-*Defined in [types/account.edit-profile.options.ts:7](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/account.edit-profile.options.ts#L7)*
+*Defined in [types/account.edit-profile.options.ts:7](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/account.edit-profile.options.ts#L7)*
 
 ___
 
@@ -34,7 +34,7 @@ ___
 
 • **email**: *string*
 
-*Defined in [types/account.edit-profile.options.ts:8](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/account.edit-profile.options.ts#L8)*
+*Defined in [types/account.edit-profile.options.ts:8](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/account.edit-profile.options.ts#L8)*
 
 ___
 
@@ -42,7 +42,7 @@ ___
 
 • **external_url**: *string*
 
-*Defined in [types/account.edit-profile.options.ts:2](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/account.edit-profile.options.ts#L2)*
+*Defined in [types/account.edit-profile.options.ts:2](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/account.edit-profile.options.ts#L2)*
 
 ___
 
@@ -50,7 +50,7 @@ ___
 
 • **first_name**: *string*
 
-*Defined in [types/account.edit-profile.options.ts:6](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/account.edit-profile.options.ts#L6)*
+*Defined in [types/account.edit-profile.options.ts:6](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/account.edit-profile.options.ts#L6)*
 
 ___
 
@@ -58,7 +58,7 @@ ___
 
 • **gender**: *string*
 
-*Defined in [types/account.edit-profile.options.ts:3](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/account.edit-profile.options.ts#L3)*
+*Defined in [types/account.edit-profile.options.ts:3](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/account.edit-profile.options.ts#L3)*
 
 ___
 
@@ -66,7 +66,7 @@ ___
 
 • **phone_number**: *string*
 
-*Defined in [types/account.edit-profile.options.ts:4](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/account.edit-profile.options.ts#L4)*
+*Defined in [types/account.edit-profile.options.ts:4](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/account.edit-profile.options.ts#L4)*
 
 ___
 
@@ -74,4 +74,4 @@ ___
 
 • **username**: *string*
 
-*Defined in [types/account.edit-profile.options.ts:5](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/account.edit-profile.options.ts#L5)*
+*Defined in [types/account.edit-profile.options.ts:5](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/account.edit-profile.options.ts#L5)*

@@ -25,7 +25,7 @@
 
 • **__typename**? : *string*
 
-*Defined in [responses/insights.service.account.response.ts:73](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/insights.service.account.response.ts#L73)*
+*Defined in [responses/insights.service.account.response.ts:73](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.account.response.ts#L73)*
 
 ___
 
@@ -33,7 +33,7 @@ ___
 
 • **data_points**? : *[InsightsServiceAccountResponseDataPointsItem](_responses_insights_service_account_response_.insightsserviceaccountresponsedatapointsitem.md)[]*
 
-*Defined in [responses/insights.service.account.response.ts:72](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/insights.service.account.response.ts#L72)*
+*Defined in [responses/insights.service.account.response.ts:72](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.account.response.ts#L72)*
 
 ___
 
@@ -41,7 +41,7 @@ ___
 
 • **delta**? : *null*
 
-*Defined in [responses/insights.service.account.response.ts:75](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/insights.service.account.response.ts#L75)*
+*Defined in [responses/insights.service.account.response.ts:75](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.account.response.ts#L75)*
 
 ___
 
@@ -49,7 +49,7 @@ ___
 
 • **graph_name**? : *string*
 
-*Defined in [responses/insights.service.account.response.ts:71](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/insights.service.account.response.ts#L71)*
+*Defined in [responses/insights.service.account.response.ts:71](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.account.response.ts#L71)*
 
 ___
 
@@ -57,7 +57,7 @@ ___
 
 • **organic**? : *[InsightsServiceAccountResponseOrganic](_responses_insights_service_account_response_.insightsserviceaccountresponseorganic.md)*
 
-*Defined in [responses/insights.service.account.response.ts:74](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/insights.service.account.response.ts#L74)*
+*Defined in [responses/insights.service.account.response.ts:74](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.account.response.ts#L74)*
 
 ___
 
@@ -65,4 +65,4 @@ ___
 
 • **total**? : *number*
 
-*Defined in [responses/insights.service.account.response.ts:76](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/insights.service.account.response.ts#L76)*
+*Defined in [responses/insights.service.account.response.ts:76](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.account.response.ts#L76)*

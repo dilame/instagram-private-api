@@ -37,7 +37,7 @@
 
 \+ **new Request**(`client`: [IgApiClient](_core_client_.igapiclient.md)): *[Request](_core_request_.request.md)*
 
-*Defined in [core/request.ts:38](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/core/request.ts#L38)*
+*Defined in [core/request.ts:38](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/request.ts#L38)*
 
 **Parameters:**
 
@@ -53,7 +53,7 @@ Name | Type |
 
 • **defaults**: *`Partial<Options>`*
 
-*Defined in [core/request.ts:38](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/core/request.ts#L38)*
+*Defined in [core/request.ts:38](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/request.ts#L38)*
 
 ___
 
@@ -61,7 +61,7 @@ ___
 
 • **end$**: *`Subject<unknown>`* =  new Subject()
 
-*Defined in [core/request.ts:33](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/core/request.ts#L33)*
+*Defined in [core/request.ts:33](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/request.ts#L33)*
 
 ___
 
@@ -69,7 +69,7 @@ ___
 
 • **error$**: *`Subject<IgClientError>`* =  new Subject<IgClientError>()
 
-*Defined in [core/request.ts:34](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/core/request.ts#L34)*
+*Defined in [core/request.ts:34](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/request.ts#L34)*
 
 ## Methods
 
@@ -77,7 +77,7 @@ ___
 
 ▸ **send**<**T**>(`userOptions`: `Options`, `onlyCheckHttpStatus?`: boolean): *`Promise<IgResponse<T>>`*
 
-*Defined in [core/request.ts:55](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/core/request.ts#L55)*
+*Defined in [core/request.ts:55](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/request.ts#L55)*
 
 **Type parameters:**
 
@@ -98,7 +98,7 @@ ___
 
 ▸ **sign**(`payload`: `Payload`): *`SignedPost`*
 
-*Defined in [core/request.ts:86](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/core/request.ts#L86)*
+*Defined in [core/request.ts:86](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/request.ts#L86)*
 
 **Parameters:**
 
@@ -114,7 +114,7 @@ ___
 
 ▸ **signature**(`data`: string): *string*
 
-*Defined in [core/request.ts:80](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/core/request.ts#L80)*
+*Defined in [core/request.ts:80](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/request.ts#L80)*
 
 **Parameters:**
 
@@ -130,7 +130,7 @@ ___
 
 ▸ **userBreadcrumb**(`size`: number): *string*
 
-*Defined in [core/request.ts:95](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/core/request.ts#L95)*
+*Defined in [core/request.ts:95](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/request.ts#L95)*
 
 **Parameters:**
 
@@ -146,10 +146,10 @@ Name | Type |
 
 ### ▪ **attemptOptions**: *object*
 
-*Defined in [core/request.ts:35](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/core/request.ts#L35)*
+*Defined in [core/request.ts:35](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/request.ts#L35)*
 
 ###  maxAttempts
 
 • **maxAttempts**: *number* = 1
 
-*Defined in [core/request.ts:36](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/core/request.ts#L36)*
+*Defined in [core/request.ts:36](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/request.ts#L36)*

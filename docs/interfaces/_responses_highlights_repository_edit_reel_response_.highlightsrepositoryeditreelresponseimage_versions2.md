@@ -20,4 +20,4 @@
 
 • **candidates**: *[HighlightsRepositoryEditReelResponseCandidatesItem](_responses_highlights_repository_edit_reel_response_.highlightsrepositoryeditreelresponsecandidatesitem.md)[]*
 
-*Defined in [responses/highlights.repository.edit-reel.response.ts:108](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/highlights.repository.edit-reel.response.ts#L108)*
+*Defined in [responses/highlights.repository.edit-reel.response.ts:108](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/highlights.repository.edit-reel.response.ts#L108)*

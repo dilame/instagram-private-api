@@ -25,7 +25,7 @@
 
 • **accessToken**? : *string*
 
-*Defined in [types/insights.options.ts:4](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/insights.options.ts#L4)*
+*Defined in [types/insights.options.ts:4](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/insights.options.ts#L4)*
 
 ___
 
@@ -33,7 +33,7 @@ ___
 
 • **activityTab**? : *boolean*
 
-*Defined in [types/insights.options.ts:7](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/insights.options.ts#L7)*
+*Defined in [types/insights.options.ts:7](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/insights.options.ts#L7)*
 
 ___
 
@@ -41,7 +41,7 @@ ___
 
 • **audienceTab**? : *boolean*
 
-*Defined in [types/insights.options.ts:8](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/insights.options.ts#L8)*
+*Defined in [types/insights.options.ts:8](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/insights.options.ts#L8)*
 
 ___
 
@@ -49,7 +49,7 @@ ___
 
 • **contentTab**? : *boolean*
 
-*Defined in [types/insights.options.ts:6](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/insights.options.ts#L6)*
+*Defined in [types/insights.options.ts:6](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/insights.options.ts#L6)*
 
 ___
 
@@ -57,7 +57,7 @@ ___
 
 • **gridMediaSize**? : *number*
 
-*Defined in [types/insights.options.ts:2](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/insights.options.ts#L2)*
+*Defined in [types/insights.options.ts:2](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/insights.options.ts#L2)*
 
 ___
 
@@ -65,4 +65,4 @@ ___
 
 • **userId**? : *string*
 
-*Defined in [types/insights.options.ts:3](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/insights.options.ts#L3)*
+*Defined in [types/insights.options.ts:3](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/insights.options.ts#L3)*

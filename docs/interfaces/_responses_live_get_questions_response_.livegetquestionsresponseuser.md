@@ -26,7 +26,7 @@
 
 • **full_name**: *string*
 
-*Defined in [responses/live.get-questions.response.ts:16](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.get-questions.response.ts#L16)*
+*Defined in [responses/live.get-questions.response.ts:16](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.get-questions.response.ts#L16)*
 
 ___
 
@@ -34,7 +34,7 @@ ___
 
 • **is_private**: *boolean*
 
-*Defined in [responses/live.get-questions.response.ts:17](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.get-questions.response.ts#L17)*
+*Defined in [responses/live.get-questions.response.ts:17](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.get-questions.response.ts#L17)*
 
 ___
 
@@ -42,7 +42,7 @@ ___
 
 • **is_verified**: *boolean*
 
-*Defined in [responses/live.get-questions.response.ts:20](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.get-questions.response.ts#L20)*
+*Defined in [responses/live.get-questions.response.ts:20](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.get-questions.response.ts#L20)*
 
 ___
 
@@ -50,7 +50,7 @@ ___
 
 • **pk**: *number*
 
-*Defined in [responses/live.get-questions.response.ts:14](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.get-questions.response.ts#L14)*
+*Defined in [responses/live.get-questions.response.ts:14](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.get-questions.response.ts#L14)*
 
 ___
 
@@ -58,7 +58,7 @@ ___
 
 • **profile_pic_id**: *string*
 
-*Defined in [responses/live.get-questions.response.ts:19](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.get-questions.response.ts#L19)*
+*Defined in [responses/live.get-questions.response.ts:19](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.get-questions.response.ts#L19)*
 
 ___
 
@@ -66,7 +66,7 @@ ___
 
 • **profile_pic_url**: *string*
 
-*Defined in [responses/live.get-questions.response.ts:18](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.get-questions.response.ts#L18)*
+*Defined in [responses/live.get-questions.response.ts:18](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.get-questions.response.ts#L18)*
 
 ___
 
@@ -74,4 +74,4 @@ ___
 
 • **username**: *string*
 
-*Defined in [responses/live.get-questions.response.ts:15](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.get-questions.response.ts#L15)*
+*Defined in [responses/live.get-questions.response.ts:15](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.get-questions.response.ts#L15)*

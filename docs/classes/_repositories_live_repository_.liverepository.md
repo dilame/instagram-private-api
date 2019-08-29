@@ -50,7 +50,7 @@
 
 *Inherited from [Repository](_core_repository_.repository.md).[constructor](_core_repository_.repository.md#constructor)*
 
-*Defined in [core/repository.ts:6](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/core/repository.ts#L6)*
+*Defined in [core/repository.ts:6](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/repository.ts#L6)*
 
 **Parameters:**
 
@@ -66,7 +66,7 @@ Name | Type |
 
 ▸ **activateQuestion**(`broadcastId`: string, `questionId`: string): *`Promise<any>`*
 
-*Defined in [repositories/live.repository.ts:142](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/repositories/live.repository.ts#L142)*
+*Defined in [repositories/live.repository.ts:142](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/live.repository.ts#L142)*
 
 **Parameters:**
 
@@ -83,7 +83,7 @@ ___
 
 ▸ **comment**(`broadcastId`: string, `message`: string): *`Promise<any>`*
 
-*Defined in [repositories/live.repository.ts:284](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/repositories/live.repository.ts#L284)*
+*Defined in [repositories/live.repository.ts:284](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/live.repository.ts#L284)*
 
 **Parameters:**
 
@@ -100,7 +100,7 @@ ___
 
 ▸ **create**(`__namedParameters`: object): *`Promise<LiveCreateBroadcastResponseRootObject>`*
 
-*Defined in [repositories/live.repository.ts:94](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/repositories/live.repository.ts#L94)*
+*Defined in [repositories/live.repository.ts:94](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/live.repository.ts#L94)*
 
 **Parameters:**
 
@@ -116,7 +116,7 @@ ___
 
 ▸ **createQuestion**(`broadcastId`: string, `question`: string): *`Promise<any>`*
 
-*Defined in [repositories/live.repository.ts:128](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/repositories/live.repository.ts#L128)*
+*Defined in [repositories/live.repository.ts:128](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/live.repository.ts#L128)*
 
 **Parameters:**
 
@@ -133,7 +133,7 @@ ___
 
 ▸ **deactivateQuestion**(`broadcastId`: string, `questionId`: string): *`Promise<any>`*
 
-*Defined in [repositories/live.repository.ts:155](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/repositories/live.repository.ts#L155)*
+*Defined in [repositories/live.repository.ts:155](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/live.repository.ts#L155)*
 
 **Parameters:**
 
@@ -150,7 +150,7 @@ ___
 
 ▸ **endBroadcast**(`broadcastId`: string, `endAfterCopyrightWarning`: boolean): *`Promise<any>`*
 
-*Defined in [repositories/live.repository.ts:270](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/repositories/live.repository.ts#L270)*
+*Defined in [repositories/live.repository.ts:270](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/live.repository.ts#L270)*
 
 **Parameters:**
 
@@ -167,7 +167,7 @@ ___
 
 ▸ **getComment**(`__namedParameters`: object): *`Promise<LiveCommentsResponseRootObject>`*
 
-*Defined in [repositories/live.repository.ts:32](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/repositories/live.repository.ts#L32)*
+*Defined in [repositories/live.repository.ts:32](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/live.repository.ts#L32)*
 
 **Parameters:**
 
@@ -183,7 +183,7 @@ ___
 
 ▸ **getFinalViewerList**(`broadcastId`: string): *`Promise<LiveFinalViewersResponseRootObject>`*
 
-*Defined in [repositories/live.repository.ts:73](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/repositories/live.repository.ts#L73)*
+*Defined in [repositories/live.repository.ts:73](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/live.repository.ts#L73)*
 
 **Parameters:**
 
@@ -199,7 +199,7 @@ ___
 
 ▸ **getJoinRequestCounts**(`__namedParameters`: object): *`Promise<LiveJoinRequestCountsResponseRootObject>`*
 
-*Defined in [repositories/live.repository.ts:231](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/repositories/live.repository.ts#L231)*
+*Defined in [repositories/live.repository.ts:231](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/live.repository.ts#L231)*
 
 **Parameters:**
 
@@ -215,7 +215,7 @@ ___
 
 ▸ **getLikeCount**(`broadcastId`: string, `likeTs`: string | number): *`Promise<LiveLikeCountResponseRootObject>`*
 
-*Defined in [repositories/live.repository.ts:203](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/repositories/live.repository.ts#L203)*
+*Defined in [repositories/live.repository.ts:203](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/live.repository.ts#L203)*
 
 **Parameters:**
 
@@ -232,7 +232,7 @@ ___
 
 ▸ **getLiveQuestions**(`broadcastId`: string): *`Promise<any>`*
 
-*Defined in [repositories/live.repository.ts:332](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/repositories/live.repository.ts#L332)*
+*Defined in [repositories/live.repository.ts:332](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/live.repository.ts#L332)*
 
 **Parameters:**
 
@@ -248,7 +248,7 @@ ___
 
 ▸ **getQuestions**(): *`Promise<LiveGetQuestionsResponseRootObject>`*
 
-*Defined in [repositories/live.repository.ts:167](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/repositories/live.repository.ts#L167)*
+*Defined in [repositories/live.repository.ts:167](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/live.repository.ts#L167)*
 
 **Returns:** *`Promise<LiveGetQuestionsResponseRootObject>`*
 
@@ -258,7 +258,7 @@ ___
 
 ▸ **getViewerList**(`broadcastId`: string): *`Promise<LiveViewerListResponseRootObject>`*
 
-*Defined in [repositories/live.repository.ts:120](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/repositories/live.repository.ts#L120)*
+*Defined in [repositories/live.repository.ts:120](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/live.repository.ts#L120)*
 
 **Parameters:**
 
@@ -274,7 +274,7 @@ ___
 
 ▸ **heartbeatAndGetViewerCount**(`broadcastId`: string): *`Promise<LiveHeartbeatViewerCountResponseRootObject>`*
 
-*Defined in [repositories/live.repository.ts:52](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/repositories/live.repository.ts#L52)*
+*Defined in [repositories/live.repository.ts:52](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/live.repository.ts#L52)*
 
 **Parameters:**
 
@@ -290,7 +290,7 @@ ___
 
 ▸ **info**(`broadcastId`: string): *`Promise<LiveInfoResponseRootObject>`*
 
-*Defined in [repositories/live.repository.ts:65](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/repositories/live.repository.ts#L65)*
+*Defined in [repositories/live.repository.ts:65](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/live.repository.ts#L65)*
 
 **Parameters:**
 
@@ -306,7 +306,7 @@ ___
 
 ▸ **like**(`broadcastId`: string, `likeCount`: number): *`Promise<LiveLikeResponseRootObject>`*
 
-*Defined in [repositories/live.repository.ts:189](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/repositories/live.repository.ts#L189)*
+*Defined in [repositories/live.repository.ts:189](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/live.repository.ts#L189)*
 
 **Parameters:**
 
@@ -323,7 +323,7 @@ ___
 
 ▸ **muteComment**(`broadcastId`: string): *`Promise<LiveSwitchCommentsResponseRootObject>`*
 
-*Defined in [repositories/live.repository.ts:19](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/repositories/live.repository.ts#L19)*
+*Defined in [repositories/live.repository.ts:19](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/live.repository.ts#L19)*
 
 **Parameters:**
 
@@ -339,7 +339,7 @@ ___
 
 ▸ **pinComment**(`broadcastId`: string, `commentId`: string): *`Promise<any>`*
 
-*Defined in [repositories/live.repository.ts:302](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/repositories/live.repository.ts#L302)*
+*Defined in [repositories/live.repository.ts:302](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/live.repository.ts#L302)*
 
 **Parameters:**
 
@@ -356,7 +356,7 @@ ___
 
 ▸ **resumeBroadcastAfterContentMatch**(`broadcastId`: string): *`Promise<any>`*
 
-*Defined in [repositories/live.repository.ts:217](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/repositories/live.repository.ts#L217)*
+*Defined in [repositories/live.repository.ts:217](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/live.repository.ts#L217)*
 
 **Parameters:**
 
@@ -372,7 +372,7 @@ ___
 
 ▸ **start**(`broadcastId`: string, `sendNotifications`: boolean): *`Promise<LiveStartBroadcastResponseRootObject>`*
 
-*Defined in [repositories/live.repository.ts:254](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/repositories/live.repository.ts#L254)*
+*Defined in [repositories/live.repository.ts:254](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/live.repository.ts#L254)*
 
 **Parameters:**
 
@@ -389,7 +389,7 @@ ___
 
 ▸ **unmuteComment**(`broadcastId`: string): *`Promise<LiveSwitchCommentsResponseRootObject>`*
 
-*Defined in [repositories/live.repository.ts:81](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/repositories/live.repository.ts#L81)*
+*Defined in [repositories/live.repository.ts:81](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/live.repository.ts#L81)*
 
 **Parameters:**
 
@@ -405,7 +405,7 @@ ___
 
 ▸ **unpinComment**(`broadcastId`: string, `commentId`: string): *`Promise<any>`*
 
-*Defined in [repositories/live.repository.ts:317](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/repositories/live.repository.ts#L317)*
+*Defined in [repositories/live.repository.ts:317](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/live.repository.ts#L317)*
 
 **Parameters:**
 
@@ -422,7 +422,7 @@ ___
 
 ▸ **wave**(`broadcastId`: string, `viewerId`: string): *`Promise<any>`*
 
-*Defined in [repositories/live.repository.ts:175](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/repositories/live.repository.ts#L175)*
+*Defined in [repositories/live.repository.ts:175](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/live.repository.ts#L175)*
 
 **Parameters:**
 

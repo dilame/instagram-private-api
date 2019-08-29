@@ -21,7 +21,7 @@
 
 • **status**: *string*
 
-*Defined in [responses/live.viewer-list.response.ts:3](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.viewer-list.response.ts#L3)*
+*Defined in [responses/live.viewer-list.response.ts:3](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.viewer-list.response.ts#L3)*
 
 ___
 
@@ -29,4 +29,4 @@ ___
 
 • **users**: *[LiveViewerListResponseUsersItem](_responses_live_viewer_list_response_.liveviewerlistresponseusersitem.md)[]*
 
-*Defined in [responses/live.viewer-list.response.ts:2](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.viewer-list.response.ts#L2)*
+*Defined in [responses/live.viewer-list.response.ts:2](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.viewer-list.response.ts#L2)*

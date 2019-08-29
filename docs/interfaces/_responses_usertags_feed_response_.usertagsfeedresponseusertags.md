@@ -20,4 +20,4 @@
 
 • **in**: *[UsertagsFeedResponseInItem](_responses_usertags_feed_response_.usertagsfeedresponseinitem.md)[]*
 
-*Defined in [responses/usertags.feed.response.ts:96](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/usertags.feed.response.ts#L96)*
+*Defined in [responses/usertags.feed.response.ts:96](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/usertags.feed.response.ts#L96)*

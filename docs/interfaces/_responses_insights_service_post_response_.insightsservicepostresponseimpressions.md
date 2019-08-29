@@ -21,7 +21,7 @@
 
 • **surfaces**: *[InsightsServicePostResponseSurfaces](_responses_insights_service_post_response_.insightsservicepostresponsesurfaces.md)*
 
-*Defined in [responses/insights.service.post.response.ts:71](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/insights.service.post.response.ts#L71)*
+*Defined in [responses/insights.service.post.response.ts:71](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.post.response.ts#L71)*
 
 ___
 
@@ -29,4 +29,4 @@ ___
 
 • **value**: *number*
 
-*Defined in [responses/insights.service.post.response.ts:70](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/insights.service.post.response.ts#L70)*
+*Defined in [responses/insights.service.post.response.ts:70](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.post.response.ts#L70)*

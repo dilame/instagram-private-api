@@ -20,4 +20,4 @@
 
 • **edges**: *[PostsInsightsFeedResponseEdgesItem](_responses_posts_insights_feed_response_.postsinsightsfeedresponseedgesitem.md)[]*
 
-*Defined in [responses/posts-insights.feed.response.ts:62](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/posts-insights.feed.response.ts#L62)*
+*Defined in [responses/posts-insights.feed.response.ts:62](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/posts-insights.feed.response.ts#L62)*

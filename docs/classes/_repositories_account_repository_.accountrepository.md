@@ -44,7 +44,7 @@
 
 *Inherited from [Repository](_core_repository_.repository.md).[constructor](_core_repository_.repository.md#constructor)*
 
-*Defined in [core/repository.ts:6](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/core/repository.ts#L6)*
+*Defined in [core/repository.ts:6](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/repository.ts#L6)*
 
 **Parameters:**
 
@@ -60,7 +60,7 @@ Name | Type |
 
 ▸ **changePassword**(`oldPassword`: string, `newPassword`: string): *`Promise<any>`*
 
-*Defined in [repositories/account.repository.ts:196](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/repositories/account.repository.ts#L196)*
+*Defined in [repositories/account.repository.ts:196](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/account.repository.ts#L196)*
 
 **Parameters:**
 
@@ -77,7 +77,7 @@ ___
 
 ▸ **changeProfilePicture**(`stream`: `ReadStream`): *`Promise<AccountRepositoryCurrentUserResponseRootObject>`*
 
-*Defined in [repositories/account.repository.ts:158](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/repositories/account.repository.ts#L158)*
+*Defined in [repositories/account.repository.ts:158](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/account.repository.ts#L158)*
 
 **Parameters:**
 
@@ -93,7 +93,7 @@ ___
 
 ▸ **contactPointPrefill**(`usage`: string): *`Promise<any>`*
 
-*Defined in [repositories/account.repository.ts:264](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/repositories/account.repository.ts#L264)*
+*Defined in [repositories/account.repository.ts:264](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/account.repository.ts#L264)*
 
 **Parameters:**
 
@@ -109,7 +109,7 @@ ___
 
 ▸ **create**(`__namedParameters`: object): *`Promise<any>`*
 
-*Defined in [repositories/account.repository.ts:100](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/repositories/account.repository.ts#L100)*
+*Defined in [repositories/account.repository.ts:100](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/account.repository.ts#L100)*
 
 **Parameters:**
 
@@ -125,7 +125,7 @@ ___
 
 ▸ **currentUser**(): *`Promise<AccountRepositoryCurrentUserResponseUser>`*
 
-*Defined in [repositories/account.repository.ts:133](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/repositories/account.repository.ts#L133)*
+*Defined in [repositories/account.repository.ts:133](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/account.repository.ts#L133)*
 
 **Returns:** *`Promise<AccountRepositoryCurrentUserResponseUser>`*
 
@@ -135,7 +135,7 @@ ___
 
 ▸ **editProfile**(`options`: [AccountEditProfileOptions](../interfaces/_types_account_edit_profile_options_.accounteditprofileoptions.md)): *`Promise<AccountRepositoryCurrentUserResponseUser>`*
 
-*Defined in [repositories/account.repository.ts:181](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/repositories/account.repository.ts#L181)*
+*Defined in [repositories/account.repository.ts:181](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/account.repository.ts#L181)*
 
 **Parameters:**
 
@@ -151,7 +151,7 @@ ___
 
 ▸ **getPrefillCandidates**(): *`Promise<any>`*
 
-*Defined in [repositories/account.repository.ts:276](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/repositories/account.repository.ts#L276)*
+*Defined in [repositories/account.repository.ts:276](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/account.repository.ts#L276)*
 
 **Returns:** *`Promise<any>`*
 
@@ -161,7 +161,7 @@ ___
 
 ▸ **login**(`username`: string, `password`: string): *`Promise<AccountRepositoryLoginResponseLogged_in_user>`*
 
-*Defined in [repositories/account.repository.ts:25](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/repositories/account.repository.ts#L25)*
+*Defined in [repositories/account.repository.ts:25](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/account.repository.ts#L25)*
 
 **Parameters:**
 
@@ -178,7 +178,7 @@ ___
 
 ▸ **logout**(): *`Promise<StatusResponse>`*
 
-*Defined in [repositories/account.repository.ts:85](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/repositories/account.repository.ts#L85)*
+*Defined in [repositories/account.repository.ts:85](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/account.repository.ts#L85)*
 
 **Returns:** *`Promise<StatusResponse>`*
 
@@ -188,7 +188,7 @@ ___
 
 ▸ **msisdnHeaderBootstrap**(`usage`: string): *`Promise<any>`*
 
-*Defined in [repositories/account.repository.ts:252](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/repositories/account.repository.ts#L252)*
+*Defined in [repositories/account.repository.ts:252](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/account.repository.ts#L252)*
 
 **Parameters:**
 
@@ -204,7 +204,7 @@ ___
 
 ▸ **processContactPointSignals**(): *`Promise<any>`*
 
-*Defined in [repositories/account.repository.ts:289](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/repositories/account.repository.ts#L289)*
+*Defined in [repositories/account.repository.ts:289](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/account.repository.ts#L289)*
 
 **Returns:** *`Promise<any>`*
 
@@ -214,7 +214,7 @@ ___
 
 ▸ **readMsisdnHeader**(`usage`: string): *`Promise<any>`*
 
-*Defined in [repositories/account.repository.ts:237](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/repositories/account.repository.ts#L237)*
+*Defined in [repositories/account.repository.ts:237](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/account.repository.ts#L237)*
 
 **Parameters:**
 
@@ -230,7 +230,7 @@ ___
 
 ▸ **removeProfilePicture**(): *`Promise<AccountRepositoryCurrentUserResponseRootObject>`*
 
-*Defined in [repositories/account.repository.ts:212](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/repositories/account.repository.ts#L212)*
+*Defined in [repositories/account.repository.ts:212](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/account.repository.ts#L212)*
 
 **Returns:** *`Promise<AccountRepositoryCurrentUserResponseRootObject>`*
 
@@ -240,7 +240,7 @@ ___
 
 ▸ **setBiography**(`text`: string): *`Promise<AccountRepositoryCurrentUserResponseUser>`*
 
-*Defined in [repositories/account.repository.ts:143](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/repositories/account.repository.ts#L143)*
+*Defined in [repositories/account.repository.ts:143](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/account.repository.ts#L143)*
 
 **Parameters:**
 
@@ -256,7 +256,7 @@ ___
 
 ▸ **setPrivate**(): *`Promise<AccountRepositoryCurrentUserResponseRootObject>`*
 
-*Defined in [repositories/account.repository.ts:216](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/repositories/account.repository.ts#L216)*
+*Defined in [repositories/account.repository.ts:216](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/account.repository.ts#L216)*
 
 **Returns:** *`Promise<AccountRepositoryCurrentUserResponseRootObject>`*
 
@@ -266,7 +266,7 @@ ___
 
 ▸ **setPublic**(): *`Promise<AccountRepositoryCurrentUserResponseRootObject>`*
 
-*Defined in [repositories/account.repository.ts:220](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/repositories/account.repository.ts#L220)*
+*Defined in [repositories/account.repository.ts:220](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/account.repository.ts#L220)*
 
 **Returns:** *`Promise<AccountRepositoryCurrentUserResponseRootObject>`*
 
@@ -276,7 +276,7 @@ ___
 
 ▸ **twoFactorLogin**(`options`: [AccountTwoFactorLoginOptions](../interfaces/_types_account_two_factor_login_options_.accounttwofactorloginoptions.md)): *`Promise<AccountRepositoryLoginResponseLogged_in_user>`*
 
-*Defined in [repositories/account.repository.ts:61](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/repositories/account.repository.ts#L61)*
+*Defined in [repositories/account.repository.ts:61](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/account.repository.ts#L61)*
 
 **Parameters:**
 

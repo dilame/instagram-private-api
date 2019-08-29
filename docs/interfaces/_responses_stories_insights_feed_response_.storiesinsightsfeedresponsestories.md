@@ -21,7 +21,7 @@
 
 • **edges**: *[StoriesInsightsFeedResponseEdgesItem](_responses_stories_insights_feed_response_.storiesinsightsfeedresponseedgesitem.md)[]*
 
-*Defined in [responses/stories-insights.feed.response.ts:18](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/stories-insights.feed.response.ts#L18)*
+*Defined in [responses/stories-insights.feed.response.ts:18](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/stories-insights.feed.response.ts#L18)*
 
 ___
 
@@ -29,4 +29,4 @@ ___
 
 • **page_info**: *[StoriesInsightsFeedResponsePage_info](_responses_stories_insights_feed_response_.storiesinsightsfeedresponsepage_info.md)*
 
-*Defined in [responses/stories-insights.feed.response.ts:19](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/stories-insights.feed.response.ts#L19)*
+*Defined in [responses/stories-insights.feed.response.ts:19](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/stories-insights.feed.response.ts#L19)*

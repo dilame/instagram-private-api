@@ -25,7 +25,7 @@
 
 • **uploadId**? : *string*
 
-*Defined in [types/posting.album.options.ts:10](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/posting.album.options.ts#L10)*
+*Defined in [types/posting.album.options.ts:10](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/posting.album.options.ts#L10)*
 
 ___
 
@@ -33,4 +33,4 @@ ___
 
 • **usertags**? : *[PostingUsertags](_types_posting_options_.postingusertags.md)*
 
-*Defined in [types/posting.album.options.ts:9](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/types/posting.album.options.ts#L9)*
+*Defined in [types/posting.album.options.ts:9](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/posting.album.options.ts#L9)*

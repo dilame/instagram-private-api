@@ -20,4 +20,4 @@
 
 • **genre**: *[MusicRepositoryGenresResponseGenre](_responses_music_repository_genres_response_.musicrepositorygenresresponsegenre.md)*
 
-*Defined in [responses/music.repository.genres.response.ts:6](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/music.repository.genres.response.ts#L6)*
+*Defined in [responses/music.repository.genres.response.ts:6](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/music.repository.genres.response.ts#L6)*

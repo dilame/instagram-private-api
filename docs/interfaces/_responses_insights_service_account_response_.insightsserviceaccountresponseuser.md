@@ -26,7 +26,7 @@
 
 • **business_manager**: *[InsightsServiceAccountResponseBusiness_manager](_responses_insights_service_account_response_.insightsserviceaccountresponsebusiness_manager.md)*
 
-*Defined in [responses/insights.service.account.response.ts:8](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/insights.service.account.response.ts#L8)*
+*Defined in [responses/insights.service.account.response.ts:8](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.account.response.ts#L8)*
 
 ___
 
@@ -34,7 +34,7 @@ ___
 
 • **business_profile**: *[InsightsServiceAccountResponseBusiness_profile](_responses_insights_service_account_response_.insightsserviceaccountresponsebusiness_profile.md)*
 
-*Defined in [responses/insights.service.account.response.ts:13](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/insights.service.account.response.ts#L13)*
+*Defined in [responses/insights.service.account.response.ts:13](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.account.response.ts#L13)*
 
 ___
 
@@ -42,7 +42,7 @@ ___
 
 • **followers_count**: *number*
 
-*Defined in [responses/insights.service.account.response.ts:12](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/insights.service.account.response.ts#L12)*
+*Defined in [responses/insights.service.account.response.ts:12](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.account.response.ts#L12)*
 
 ___
 
@@ -50,7 +50,7 @@ ___
 
 • **id**: *string*
 
-*Defined in [responses/insights.service.account.response.ts:14](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/insights.service.account.response.ts#L14)*
+*Defined in [responses/insights.service.account.response.ts:14](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.account.response.ts#L14)*
 
 ___
 
@@ -58,7 +58,7 @@ ___
 
 • **instagram_user_id**: *string*
 
-*Defined in [responses/insights.service.account.response.ts:9](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/insights.service.account.response.ts#L9)*
+*Defined in [responses/insights.service.account.response.ts:9](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.account.response.ts#L9)*
 
 ___
 
@@ -66,7 +66,7 @@ ___
 
 • **profile_picture**: *[InsightsServiceAccountResponseProfile_picture](_responses_insights_service_account_response_.insightsserviceaccountresponseprofile_picture.md)*
 
-*Defined in [responses/insights.service.account.response.ts:11](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/insights.service.account.response.ts#L11)*
+*Defined in [responses/insights.service.account.response.ts:11](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.account.response.ts#L11)*
 
 ___
 
@@ -74,4 +74,4 @@ ___
 
 • **username**: *string*
 
-*Defined in [responses/insights.service.account.response.ts:10](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/insights.service.account.response.ts#L10)*
+*Defined in [responses/insights.service.account.response.ts:10](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.account.response.ts#L10)*

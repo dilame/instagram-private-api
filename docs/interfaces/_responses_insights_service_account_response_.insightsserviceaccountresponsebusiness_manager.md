@@ -26,7 +26,7 @@
 
 • **account_insights_unit**: *[InsightsServiceAccountResponseAccount_insights_unit](_responses_insights_service_account_response_.insightsserviceaccountresponseaccount_insights_unit.md)*
 
-*Defined in [responses/insights.service.account.response.ts:17](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/insights.service.account.response.ts#L17)*
+*Defined in [responses/insights.service.account.response.ts:17](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.account.response.ts#L17)*
 
 ___
 
@@ -34,7 +34,7 @@ ___
 
 • **account_summary_unit**: *[InsightsServiceAccountResponseAccount_summary_unit](_responses_insights_service_account_response_.insightsserviceaccountresponseaccount_summary_unit.md)*
 
-*Defined in [responses/insights.service.account.response.ts:22](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/insights.service.account.response.ts#L22)*
+*Defined in [responses/insights.service.account.response.ts:22](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.account.response.ts#L22)*
 
 ___
 
@@ -42,7 +42,7 @@ ___
 
 • **followers_unit**: *[InsightsServiceAccountResponseFollowers_unit](_responses_insights_service_account_response_.insightsserviceaccountresponsefollowers_unit.md)*
 
-*Defined in [responses/insights.service.account.response.ts:19](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/insights.service.account.response.ts#L19)*
+*Defined in [responses/insights.service.account.response.ts:19](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.account.response.ts#L19)*
 
 ___
 
@@ -50,7 +50,7 @@ ___
 
 • **promotions_unit**: *[InsightsServiceAccountResponsePromotions_unit](_responses_insights_service_account_response_.insightsserviceaccountresponsepromotions_unit.md)*
 
-*Defined in [responses/insights.service.account.response.ts:23](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/insights.service.account.response.ts#L23)*
+*Defined in [responses/insights.service.account.response.ts:23](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.account.response.ts#L23)*
 
 ___
 
@@ -58,7 +58,7 @@ ___
 
 • **status**: *[InsightsServiceAccountResponseStatus](_responses_insights_service_account_response_.insightsserviceaccountresponsestatus.md)*
 
-*Defined in [responses/insights.service.account.response.ts:18](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/insights.service.account.response.ts#L18)*
+*Defined in [responses/insights.service.account.response.ts:18](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.account.response.ts#L18)*
 
 ___
 
@@ -66,7 +66,7 @@ ___
 
 • **stories_unit**: *[InsightsServiceAccountResponseStories_unit](_responses_insights_service_account_response_.insightsserviceaccountresponsestories_unit.md)*
 
-*Defined in [responses/insights.service.account.response.ts:21](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/insights.service.account.response.ts#L21)*
+*Defined in [responses/insights.service.account.response.ts:21](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.account.response.ts#L21)*
 
 ___
 
@@ -74,4 +74,4 @@ ___
 
 • **top_posts_unit**: *[InsightsServiceAccountResponseTop_posts_unit](_responses_insights_service_account_response_.insightsserviceaccountresponsetop_posts_unit.md)*
 
-*Defined in [responses/insights.service.account.response.ts:20](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/insights.service.account.response.ts#L20)*
+*Defined in [responses/insights.service.account.response.ts:20](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.account.response.ts#L20)*

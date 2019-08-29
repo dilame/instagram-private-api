@@ -33,7 +33,7 @@
 
 • **carousel_parent_id**: *string*
 
-*Defined in [responses/saved.feed.response.ts:194](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/saved.feed.response.ts#L194)*
+*Defined in [responses/saved.feed.response.ts:194](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/saved.feed.response.ts#L194)*
 
 ___
 
@@ -41,7 +41,7 @@ ___
 
 • **id**: *string*
 
-*Defined in [responses/saved.feed.response.ts:188](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/saved.feed.response.ts#L188)*
+*Defined in [responses/saved.feed.response.ts:188](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/saved.feed.response.ts#L188)*
 
 ___
 
@@ -49,7 +49,7 @@ ___
 
 • **image_versions2**: *[SavedFeedResponseImage_versions2](_responses_saved_feed_response_.savedfeedresponseimage_versions2.md)*
 
-*Defined in [responses/saved.feed.response.ts:190](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/saved.feed.response.ts#L190)*
+*Defined in [responses/saved.feed.response.ts:190](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/saved.feed.response.ts#L190)*
 
 ___
 
@@ -57,7 +57,7 @@ ___
 
 • **is_dash_eligible**? : *number*
 
-*Defined in [responses/saved.feed.response.ts:198](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/saved.feed.response.ts#L198)*
+*Defined in [responses/saved.feed.response.ts:198](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/saved.feed.response.ts#L198)*
 
 ___
 
@@ -65,7 +65,7 @@ ___
 
 • **media_type**: *number*
 
-*Defined in [responses/saved.feed.response.ts:189](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/saved.feed.response.ts#L189)*
+*Defined in [responses/saved.feed.response.ts:189](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/saved.feed.response.ts#L189)*
 
 ___
 
@@ -73,7 +73,7 @@ ___
 
 • **number_of_qualities**? : *number*
 
-*Defined in [responses/saved.feed.response.ts:201](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/saved.feed.response.ts#L201)*
+*Defined in [responses/saved.feed.response.ts:201](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/saved.feed.response.ts#L201)*
 
 ___
 
@@ -81,7 +81,7 @@ ___
 
 • **original_height**: *number*
 
-*Defined in [responses/saved.feed.response.ts:192](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/saved.feed.response.ts#L192)*
+*Defined in [responses/saved.feed.response.ts:192](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/saved.feed.response.ts#L192)*
 
 ___
 
@@ -89,7 +89,7 @@ ___
 
 • **original_width**: *number*
 
-*Defined in [responses/saved.feed.response.ts:191](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/saved.feed.response.ts#L191)*
+*Defined in [responses/saved.feed.response.ts:191](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/saved.feed.response.ts#L191)*
 
 ___
 
@@ -97,7 +97,7 @@ ___
 
 • **pk**: *string*
 
-*Defined in [responses/saved.feed.response.ts:193](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/saved.feed.response.ts#L193)*
+*Defined in [responses/saved.feed.response.ts:193](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/saved.feed.response.ts#L193)*
 
 ___
 
@@ -105,7 +105,7 @@ ___
 
 • **usertags**: *[SavedFeedResponseUsertags](_responses_saved_feed_response_.savedfeedresponseusertags.md)*
 
-*Defined in [responses/saved.feed.response.ts:195](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/saved.feed.response.ts#L195)*
+*Defined in [responses/saved.feed.response.ts:195](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/saved.feed.response.ts#L195)*
 
 ___
 
@@ -113,7 +113,7 @@ ___
 
 • **video_codec**? : *string*
 
-*Defined in [responses/saved.feed.response.ts:200](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/saved.feed.response.ts#L200)*
+*Defined in [responses/saved.feed.response.ts:200](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/saved.feed.response.ts#L200)*
 
 ___
 
@@ -121,7 +121,7 @@ ___
 
 • **video_dash_manifest**? : *string*
 
-*Defined in [responses/saved.feed.response.ts:199](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/saved.feed.response.ts#L199)*
+*Defined in [responses/saved.feed.response.ts:199](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/saved.feed.response.ts#L199)*
 
 ___
 
@@ -129,7 +129,7 @@ ___
 
 • **video_duration**? : *number*
 
-*Defined in [responses/saved.feed.response.ts:197](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/saved.feed.response.ts#L197)*
+*Defined in [responses/saved.feed.response.ts:197](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/saved.feed.response.ts#L197)*
 
 ___
 
@@ -137,4 +137,4 @@ ___
 
 • **video_versions**? : *[SavedFeedResponseVideoVersionsItem](_responses_saved_feed_response_.savedfeedresponsevideoversionsitem.md)[]*
 
-*Defined in [responses/saved.feed.response.ts:196](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/saved.feed.response.ts#L196)*
+*Defined in [responses/saved.feed.response.ts:196](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/saved.feed.response.ts#L196)*

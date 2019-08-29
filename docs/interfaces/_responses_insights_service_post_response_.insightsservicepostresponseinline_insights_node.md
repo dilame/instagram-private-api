@@ -22,7 +22,7 @@
 
 • **error**: *null*
 
-*Defined in [responses/insights.service.post.response.ts:33](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/insights.service.post.response.ts#L33)*
+*Defined in [responses/insights.service.post.response.ts:33](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.post.response.ts#L33)*
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 • **metrics**: *[InsightsServicePostResponseMetrics](_responses_insights_service_post_response_.insightsservicepostresponsemetrics.md)*
 
-*Defined in [responses/insights.service.post.response.ts:32](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/insights.service.post.response.ts#L32)*
+*Defined in [responses/insights.service.post.response.ts:32](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.post.response.ts#L32)*
 
 ___
 
@@ -38,4 +38,4 @@ ___
 
 • **state**: *string*
 
-*Defined in [responses/insights.service.post.response.ts:31](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/insights.service.post.response.ts#L31)*
+*Defined in [responses/insights.service.post.response.ts:31](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.post.response.ts#L31)*

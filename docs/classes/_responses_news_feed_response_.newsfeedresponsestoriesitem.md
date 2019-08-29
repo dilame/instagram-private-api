@@ -32,7 +32,7 @@
 
 *Inherited from [Repository](_core_repository_.repository.md).[constructor](_core_repository_.repository.md#constructor)*
 
-*Defined in [core/repository.ts:6](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/core/repository.ts#L6)*
+*Defined in [core/repository.ts:6](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/repository.ts#L6)*
 
 **Parameters:**
 
@@ -48,7 +48,7 @@ Name | Type |
 
 • **args**: *[NewsFeedResponseArgs](../interfaces/_responses_news_feed_response_.newsfeedresponseargs.md)*
 
-*Defined in [responses/news.feed.response.ts:12](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/news.feed.response.ts#L12)*
+*Defined in [responses/news.feed.response.ts:12](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/news.feed.response.ts#L12)*
 
 ___
 
@@ -56,7 +56,7 @@ ___
 
 • **counts**: *[NewsFeedResponseCounts](../interfaces/_responses_news_feed_response_.newsfeedresponsecounts.md)*
 
-*Defined in [responses/news.feed.response.ts:13](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/news.feed.response.ts#L13)*
+*Defined in [responses/news.feed.response.ts:13](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/news.feed.response.ts#L13)*
 
 ___
 
@@ -64,7 +64,7 @@ ___
 
 • **pk**: *string*
 
-*Defined in [responses/news.feed.response.ts:14](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/news.feed.response.ts#L14)*
+*Defined in [responses/news.feed.response.ts:14](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/news.feed.response.ts#L14)*
 
 ___
 
@@ -72,7 +72,7 @@ ___
 
 • **story_type**: *number*
 
-*Defined in [responses/news.feed.response.ts:11](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/news.feed.response.ts#L11)*
+*Defined in [responses/news.feed.response.ts:11](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/news.feed.response.ts#L11)*
 
 ___
 
@@ -80,4 +80,4 @@ ___
 
 • **type**: *number*
 
-*Defined in [responses/news.feed.response.ts:10](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/news.feed.response.ts#L10)*
+*Defined in [responses/news.feed.response.ts:10](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/news.feed.response.ts#L10)*

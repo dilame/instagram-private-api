@@ -24,7 +24,7 @@
 
 • **bold**: *number*
 
-*Defined in [responses/direct-thread.repository.update-title.response.ts:95](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-thread.repository.update-title.response.ts#L95)*
+*Defined in [responses/direct-thread.repository.update-title.response.ts:95](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-thread.repository.update-title.response.ts#L95)*
 
 ___
 
@@ -32,7 +32,7 @@ ___
 
 • **color**: *string*
 
-*Defined in [responses/direct-thread.repository.update-title.response.ts:96](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-thread.repository.update-title.response.ts#L96)*
+*Defined in [responses/direct-thread.repository.update-title.response.ts:96](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-thread.repository.update-title.response.ts#L96)*
 
 ___
 
@@ -40,7 +40,7 @@ ___
 
 • **end**: *number*
 
-*Defined in [responses/direct-thread.repository.update-title.response.ts:94](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-thread.repository.update-title.response.ts#L94)*
+*Defined in [responses/direct-thread.repository.update-title.response.ts:94](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-thread.repository.update-title.response.ts#L94)*
 
 ___
 
@@ -48,7 +48,7 @@ ___
 
 • **intent**: *string*
 
-*Defined in [responses/direct-thread.repository.update-title.response.ts:97](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-thread.repository.update-title.response.ts#L97)*
+*Defined in [responses/direct-thread.repository.update-title.response.ts:97](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-thread.repository.update-title.response.ts#L97)*
 
 ___
 
@@ -56,4 +56,4 @@ ___
 
 • **start**: *number*
 
-*Defined in [responses/direct-thread.repository.update-title.response.ts:93](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/direct-thread.repository.update-title.response.ts#L93)*
+*Defined in [responses/direct-thread.repository.update-title.response.ts:93](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-thread.repository.update-title.response.ts#L93)*

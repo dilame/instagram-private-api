@@ -21,7 +21,7 @@
 
 • **media_id**: *string*
 
-*Defined in [responses/live.start-broadcast.response.ts:2](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.start-broadcast.response.ts#L2)*
+*Defined in [responses/live.start-broadcast.response.ts:2](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.start-broadcast.response.ts#L2)*
 
 ___
 
@@ -29,4 +29,4 @@ ___
 
 • **status**: *string*
 
-*Defined in [responses/live.start-broadcast.response.ts:3](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.start-broadcast.response.ts#L3)*
+*Defined in [responses/live.start-broadcast.response.ts:3](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.start-broadcast.response.ts#L3)*

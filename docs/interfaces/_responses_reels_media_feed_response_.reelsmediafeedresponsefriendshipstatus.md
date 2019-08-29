@@ -24,7 +24,7 @@
 
 • **following**: *boolean*
 
-*Defined in [responses/reels-media.feed.response.ts:32](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/reels-media.feed.response.ts#L32)*
+*Defined in [responses/reels-media.feed.response.ts:32](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-media.feed.response.ts#L32)*
 
 ___
 
@@ -32,7 +32,7 @@ ___
 
 • **incoming_request**: *boolean*
 
-*Defined in [responses/reels-media.feed.response.ts:34](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/reels-media.feed.response.ts#L34)*
+*Defined in [responses/reels-media.feed.response.ts:34](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-media.feed.response.ts#L34)*
 
 ___
 
@@ -40,7 +40,7 @@ ___
 
 • **is_bestie**: *boolean*
 
-*Defined in [responses/reels-media.feed.response.ts:36](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/reels-media.feed.response.ts#L36)*
+*Defined in [responses/reels-media.feed.response.ts:36](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-media.feed.response.ts#L36)*
 
 ___
 
@@ -48,7 +48,7 @@ ___
 
 • **is_private**: *boolean*
 
-*Defined in [responses/reels-media.feed.response.ts:33](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/reels-media.feed.response.ts#L33)*
+*Defined in [responses/reels-media.feed.response.ts:33](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-media.feed.response.ts#L33)*
 
 ___
 
@@ -56,4 +56,4 @@ ___
 
 • **outgoing_request**: *boolean*
 
-*Defined in [responses/reels-media.feed.response.ts:35](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/reels-media.feed.response.ts#L35)*
+*Defined in [responses/reels-media.feed.response.ts:35](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-media.feed.response.ts#L35)*

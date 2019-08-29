@@ -21,7 +21,7 @@
 
 • **end_cursor**: *string*
 
-*Defined in [responses/posts-insights.feed.response.ts:71](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/posts-insights.feed.response.ts#L71)*
+*Defined in [responses/posts-insights.feed.response.ts:71](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/posts-insights.feed.response.ts#L71)*
 
 ___
 
@@ -29,4 +29,4 @@ ___
 
 • **has_next_page**: *boolean*
 
-*Defined in [responses/posts-insights.feed.response.ts:72](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/posts-insights.feed.response.ts#L72)*
+*Defined in [responses/posts-insights.feed.response.ts:72](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/posts-insights.feed.response.ts#L72)*

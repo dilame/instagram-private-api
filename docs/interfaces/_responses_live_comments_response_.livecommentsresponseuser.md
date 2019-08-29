@@ -27,7 +27,7 @@
 
 • **full_name**: *string*
 
-*Defined in [responses/live.comments.response.ts:35](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.comments.response.ts#L35)*
+*Defined in [responses/live.comments.response.ts:35](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.comments.response.ts#L35)*
 
 ___
 
@@ -35,7 +35,7 @@ ___
 
 • **is_private**: *boolean*
 
-*Defined in [responses/live.comments.response.ts:36](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.comments.response.ts#L36)*
+*Defined in [responses/live.comments.response.ts:36](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.comments.response.ts#L36)*
 
 ___
 
@@ -43,7 +43,7 @@ ___
 
 • **is_verified**: *boolean*
 
-*Defined in [responses/live.comments.response.ts:39](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.comments.response.ts#L39)*
+*Defined in [responses/live.comments.response.ts:39](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.comments.response.ts#L39)*
 
 ___
 
@@ -51,7 +51,7 @@ ___
 
 • **live_with_eligibility**? : *string*
 
-*Defined in [responses/live.comments.response.ts:40](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.comments.response.ts#L40)*
+*Defined in [responses/live.comments.response.ts:40](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.comments.response.ts#L40)*
 
 ___
 
@@ -59,7 +59,7 @@ ___
 
 • **pk**: *number*
 
-*Defined in [responses/live.comments.response.ts:33](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.comments.response.ts#L33)*
+*Defined in [responses/live.comments.response.ts:33](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.comments.response.ts#L33)*
 
 ___
 
@@ -67,7 +67,7 @@ ___
 
 • **profile_pic_id**: *string*
 
-*Defined in [responses/live.comments.response.ts:38](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.comments.response.ts#L38)*
+*Defined in [responses/live.comments.response.ts:38](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.comments.response.ts#L38)*
 
 ___
 
@@ -75,7 +75,7 @@ ___
 
 • **profile_pic_url**: *string*
 
-*Defined in [responses/live.comments.response.ts:37](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.comments.response.ts#L37)*
+*Defined in [responses/live.comments.response.ts:37](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.comments.response.ts#L37)*
 
 ___
 
@@ -83,4 +83,4 @@ ___
 
 • **username**: *string*
 
-*Defined in [responses/live.comments.response.ts:34](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/live.comments.response.ts#L34)*
+*Defined in [responses/live.comments.response.ts:34](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.comments.response.ts#L34)*

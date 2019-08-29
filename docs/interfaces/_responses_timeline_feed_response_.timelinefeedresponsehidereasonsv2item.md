@@ -21,7 +21,7 @@
 
 • **reason**: *string | null*
 
-*Defined in [responses/timeline.feed.response.ts:173](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/timeline.feed.response.ts#L173)*
+*Defined in [responses/timeline.feed.response.ts:173](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/timeline.feed.response.ts#L173)*
 
 ___
 
@@ -29,4 +29,4 @@ ___
 
 • **text**: *string*
 
-*Defined in [responses/timeline.feed.response.ts:172](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/timeline.feed.response.ts#L172)*
+*Defined in [responses/timeline.feed.response.ts:172](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/timeline.feed.response.ts#L172)*

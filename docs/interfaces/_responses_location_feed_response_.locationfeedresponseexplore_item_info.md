@@ -23,7 +23,7 @@
 
 • **aspect_ratio**: *number*
 
-*Defined in [responses/location.feed.response.ts:166](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/location.feed.response.ts#L166)*
+*Defined in [responses/location.feed.response.ts:166](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/location.feed.response.ts#L166)*
 
 ___
 
@@ -31,7 +31,7 @@ ___
 
 • **autoplay**: *boolean*
 
-*Defined in [responses/location.feed.response.ts:167](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/location.feed.response.ts#L167)*
+*Defined in [responses/location.feed.response.ts:167](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/location.feed.response.ts#L167)*
 
 ___
 
@@ -39,7 +39,7 @@ ___
 
 • **num_columns**: *number*
 
-*Defined in [responses/location.feed.response.ts:164](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/location.feed.response.ts#L164)*
+*Defined in [responses/location.feed.response.ts:164](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/location.feed.response.ts#L164)*
 
 ___
 
@@ -47,4 +47,4 @@ ___
 
 • **total_num_columns**: *number*
 
-*Defined in [responses/location.feed.response.ts:165](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/responses/location.feed.response.ts#L165)*
+*Defined in [responses/location.feed.response.ts:165](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/location.feed.response.ts#L165)*

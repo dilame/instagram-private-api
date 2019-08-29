@@ -30,7 +30,7 @@
 
 *Overrides [IgClientError](_errors_ig_client_error_.igclienterror.md).[constructor](_errors_ig_client_error_.igclienterror.md#constructor)*
 
-*Defined in [errors/ig-exact-user-not-found-error.ts:3](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/errors/ig-exact-user-not-found-error.ts#L3)*
+*Defined in [errors/ig-exact-user-not-found-error.ts:3](https://github.com/dilame/instagram-private-api/blob/173bc62/src/errors/ig-exact-user-not-found-error.ts#L3)*
 
 **Returns:** *[IgExactUserNotFoundError](_errors_ig_exact_user_not_found_error_.igexactusernotfounderror.md)*
 

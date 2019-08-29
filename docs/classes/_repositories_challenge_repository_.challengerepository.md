@@ -38,7 +38,7 @@ It is filled in automatically when [IgCheckpointError](_errors_ig_checkpoint_err
 
 *Inherited from [Repository](_core_repository_.repository.md).[constructor](_core_repository_.repository.md#constructor)*
 
-*Defined in [core/repository.ts:6](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/core/repository.ts#L6)*
+*Defined in [core/repository.ts:6](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/repository.ts#L6)*
 
 **Parameters:**
 
@@ -54,7 +54,7 @@ Name | Type |
 
 ▸ **auto**(`reset`: boolean): *`Promise<ChallengeStateResponse>`*
 
-*Defined in [repositories/challenge.repository.ts:80](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/repositories/challenge.repository.ts#L80)*
+*Defined in [repositories/challenge.repository.ts:80](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/challenge.repository.ts#L80)*
 
 **Parameters:**
 
@@ -70,7 +70,7 @@ ___
 
 ▸ **deltaLoginReview**(`choice`: "1" | "0"): *`Promise<ChallengeStateResponse>`*
 
-*Defined in [repositories/challenge.repository.ts:61](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/repositories/challenge.repository.ts#L61)*
+*Defined in [repositories/challenge.repository.ts:61](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/challenge.repository.ts#L61)*
 
 «We detected an unusual login attempt»
 
@@ -88,7 +88,7 @@ ___
 
 ▸ **replay**(`choice`: string): *`Promise<ChallengeStateResponse>`*
 
-*Defined in [repositories/challenge.repository.ts:53](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/repositories/challenge.repository.ts#L53)*
+*Defined in [repositories/challenge.repository.ts:53](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/challenge.repository.ts#L53)*
 
 «Didn't receive your code? Get a new one»
 
@@ -106,7 +106,7 @@ ___
 
 ▸ **reset**(): *`Promise<ChallengeStateResponse>`*
 
-*Defined in [repositories/challenge.repository.ts:107](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/repositories/challenge.repository.ts#L107)*
+*Defined in [repositories/challenge.repository.ts:107](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/challenge.repository.ts#L107)*
 
 Go back to "select_verify_method"
 
@@ -118,7 +118,7 @@ ___
 
 ▸ **selectVerifyMethod**(`choice`: string, `isReplay`: boolean): *`Promise<ChallengeStateResponse>`*
 
-*Defined in [repositories/challenge.repository.ts:30](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/repositories/challenge.repository.ts#L30)*
+*Defined in [repositories/challenge.repository.ts:30](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/challenge.repository.ts#L30)*
 
 Select verification method.
 
@@ -137,7 +137,7 @@ ___
 
 ▸ **sendPhoneNumber**(`phoneNumber`: string): *`Promise<ChallengeStateResponse>`*
 
-*Defined in [repositories/challenge.repository.ts:65](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/repositories/challenge.repository.ts#L65)*
+*Defined in [repositories/challenge.repository.ts:65](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/challenge.repository.ts#L65)*
 
 **Parameters:**
 
@@ -153,7 +153,7 @@ ___
 
 ▸ **sendSecurityCode**(`code`: string | number): *`Promise<ChallengeStateResponse>`*
 
-*Defined in [repositories/challenge.repository.ts:124](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/repositories/challenge.repository.ts#L124)*
+*Defined in [repositories/challenge.repository.ts:124](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/challenge.repository.ts#L124)*
 
 Send the code received in the message
 
@@ -171,7 +171,7 @@ ___
 
 ▸ **state**(): *`Promise<ChallengeStateResponse>`*
 
-*Defined in [repositories/challenge.repository.ts:13](https://github.com/dilame/instagram-private-api/blob/e9c516c/src/repositories/challenge.repository.ts#L13)*
+*Defined in [repositories/challenge.repository.ts:13](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/challenge.repository.ts#L13)*
 
 Get challenge state.
 
