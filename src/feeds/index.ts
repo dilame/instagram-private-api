@@ -11,6 +11,7 @@ export * from './news.feed';
 export * from './reels-media.feed';
 export * from './saved.feed';
 export * from './tag.feed';
+export * from './tags.feed';
 export * from './timeline.feed';
 export * from './user.feed';
 export * from './direct-pending.feed';
