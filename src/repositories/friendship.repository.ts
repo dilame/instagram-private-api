@@ -22,6 +22,14 @@ export class FriendshipRepository extends Repository {
     return body.friendship_statuses;
   }
 
+  async block(id: string | number, mediaIdAttribution?: string) {
+    return this.change('block', id, mediaIdAttribution);
+  }
+
+  async unblock(id: string | number, mediaIdAttribution?: string) {
+    return this.change('unblock', id, mediaIdAttribution);
+  }
+
   async create(id: string | number, mediaIdAttribution?: string) {
     return this.change('create', id, mediaIdAttribution);
   }

@@ -1,11 +1,20 @@
 import * as urlRegex from 'url-regex';
 import { Entity } from '../core/entity';
-import { DirectThreadBroadcastPhotoOptions } from '../types/direct-thread.broadcast-photo.options';
-import { DirectThreadBroadcastOptions } from '../types/direct-thread.broadcast.options';
+import { DirectThreadBroadcastPhotoOptions } from '../types';
+import { DirectThreadBroadcastOptions } from '../types';
+import { IgClientError } from '../errors';
 
 export class DirectThreadEntity extends Entity {
   threadId: string = null;
   userIds: string[] = null;
+
+  public async deleteItem(itemId: string | number, threadId?: string | number) {
+    const id = threadId || this.threadId;
+    if (!id) {
+      throw new IgClientError('threadId was null.');
+    }
+    return this.client.directThread.deleteItem(id, itemId);
+  }
 
   public async broadcastText(text: string) {
     const urls = text.match(urlRegex({ strict: false }));
