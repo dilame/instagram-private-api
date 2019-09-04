@@ -1,4 +1,5 @@
 import { PostingUsertags } from './posting.options';
+import { MediaLocation } from './media.configure.options';
 
 export interface MediaConfigureSidecarOptions {
   _csrftoken?: string;
@@ -17,6 +18,7 @@ export interface MediaConfigureSidecarOptions {
     android_release: string;
   };
   children_metadata: MediaConfigureSidecarItem[];
+  location?: MediaLocation | string;
 }
 
 export interface MediaConfigureSidecarItem {

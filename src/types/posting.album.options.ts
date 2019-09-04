@@ -1,8 +1,9 @@
-import { PostingUsertags } from './posting.options';
+import { PostingLocation, PostingUsertags } from './posting.options';
 
 export interface PostingAlbumOptions {
   caption?: string;
   items: Array<PostingAlbumPhotoItem | PostingAlbumVideoItem>;
+  location?: PostingLocation;
 }
 
 export interface PostingAlbumItem {

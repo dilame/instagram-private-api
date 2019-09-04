@@ -516,6 +516,10 @@ export class MediaRepository extends Repository {
       return item;
     });
 
+    if (typeof options.location !== 'string') {
+      options.location = JSON.stringify(options.location);
+    }
+
     const { body } = await this.client.request.send({
       url: '/api/v1/media/configure_sidecar/',
       method: 'POST',
