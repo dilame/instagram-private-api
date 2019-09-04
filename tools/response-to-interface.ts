@@ -35,5 +35,5 @@ async function login() {
 (async function mainAsync() {
   await login();
 
-  console.log();
+  console.log(await createInterface(ig.feed.userStory(2265780615).request(), 'user-story.feed'));
 })();

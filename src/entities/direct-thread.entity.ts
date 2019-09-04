@@ -29,6 +29,15 @@ export class DirectThreadEntity extends Entity {
     });
   }
 
+  public async broadcastProfile(id: number | string) {
+    return await this.broadcast({
+      item: 'profile',
+      form: {
+        profile_user_id: id,
+      },
+    });
+  }
+
   public async broadcastLink(link_text: string, link_urls: string[]) {
     return await this.broadcast({
       item: 'link',
