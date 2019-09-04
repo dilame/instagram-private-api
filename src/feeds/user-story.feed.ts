@@ -2,7 +2,6 @@ import { Feed } from '../core/feed';
 import { UserStoryFeedResponseItemsItem, UserStoryFeedResponseRootObject } from '../responses/user-story.feed.response';
 
 export class UserStoryFeed extends Feed<UserStoryFeedResponseRootObject, UserStoryFeedResponseItemsItem> {
-
   userId: string | number;
 
   async items(): Promise<UserStoryFeedResponseItemsItem[]> {
@@ -11,7 +10,7 @@ export class UserStoryFeed extends Feed<UserStoryFeedResponseRootObject, UserSto
   }
 
   async request(): Promise<UserStoryFeedResponseRootObject> {
-    const {body} = await this.client.request.send({
+    const { body } = await this.client.request.send({
       url: `/api/v1/feed/user/${this.userId}/story/`,
       method: 'GET',
       qs: {
@@ -21,7 +20,5 @@ export class UserStoryFeed extends Feed<UserStoryFeedResponseRootObject, UserSto
     return body;
   }
 
-  protected set state(response: any) {
-  }
-
+  protected set state(response: any) {}
 }

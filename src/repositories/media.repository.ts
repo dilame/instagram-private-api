@@ -128,8 +128,11 @@ export class MediaRepository extends Repository {
     });
   }
 
-  public async checkOffensiveComment(commentText: string, mediaId?: string): Promise<MediaRepositoryCheckOffensiveCommentResponseRootObject> {
-    const {body} = await this.client.request.send<MediaRepositoryCheckOffensiveCommentResponseRootObject>({
+  public async checkOffensiveComment(
+    commentText: string,
+    mediaId?: string,
+  ): Promise<MediaRepositoryCheckOffensiveCommentResponseRootObject> {
+    const { body } = await this.client.request.send<MediaRepositoryCheckOffensiveCommentResponseRootObject>({
       url: '/api/v1/media/comment/check_offensive_comment/',
       method: 'POST',
       form: this.client.request.sign({
@@ -140,11 +143,11 @@ export class MediaRepository extends Repository {
         comment_text: commentText,
       }),
     });
-    return  body;
+    return body;
   }
 
   public async commentsBulkDelete(mediaId: string, commentIds: string[]): Promise<StatusResponse> {
-    const {body} = await this.client.request.send({
+    const { body } = await this.client.request.send({
       url: `/api/v1/media/${mediaId}/comment/bulk_delete/`,
       method: 'POST',
       form: this.client.request.sign({

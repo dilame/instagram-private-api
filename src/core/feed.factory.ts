@@ -121,7 +121,7 @@ export class FeedFactory {
   }
 
   public userStory(userId: string | number): UserStoryFeed {
-    return plainToClassFromExist(new UserStoryFeed(this.client), {userId});
+    return plainToClassFromExist(new UserStoryFeed(this.client), { userId });
   }
 
   public reelsTray(reason: 'pull_to_refresh' | 'cold_start' = 'cold_start'): ReelsTrayFeed {

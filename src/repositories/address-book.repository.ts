@@ -4,12 +4,15 @@ import { AddressBookRepositoryLinkResponseRootObject } from '../responses/addres
 import { StatusResponse } from '../responses';
 
 export class AddressBookRepository extends Repository {
-  public async link(contacts: Array<{
-    phone_numbers: string[],
-    email_addresses: string[],
-    first_name: string,
-    last_name: string,
-  }>, module?: IgAppModule): Promise<AddressBookRepositoryLinkResponseRootObject> {
+  public async link(
+    contacts: Array<{
+      phone_numbers: string[];
+      email_addresses: string[];
+      first_name: string;
+      last_name: string;
+    }>,
+    module?: IgAppModule,
+  ): Promise<AddressBookRepositoryLinkResponseRootObject> {
     const { body } = await this.client.request.send<AddressBookRepositoryLinkResponseRootObject>({
       url: '/api/v1/address_book/link/',
       method: 'POST',
@@ -25,7 +28,12 @@ export class AddressBookRepository extends Repository {
     return body;
   }
 
-  public async acquireOwnerContacts(me: { phone_numbers: string[], email_addresses: string[], first_name?: string, last_name?: string }): Promise<StatusResponse> {
+  public async acquireOwnerContacts(me: {
+    phone_numbers: string[];
+    email_addresses: string[];
+    first_name?: string;
+    last_name?: string;
+  }): Promise<StatusResponse> {
     const { body } = await this.client.request.send({
       url: '/api/v1/address_book/acquire_owner_contacts/',
       method: 'POST',

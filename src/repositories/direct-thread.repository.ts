@@ -227,7 +227,7 @@ export class DirectThreadRepository extends Repository {
   }
 
   public async deleteItem(threadId: string | number, itemId: string | number): Promise<StatusResponse> {
-    const {body} = await this.client.request.send({
+    const { body } = await this.client.request.send({
       url: `/api/v1/direct_v2/threads/${threadId}/items/${itemId}/delete/`,
       method: 'POST',
       form: {
