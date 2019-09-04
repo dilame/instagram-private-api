@@ -7,6 +7,7 @@ import {
   StoryMention,
   StoryPoll,
   StoryQuestion,
+  StoryQuiz,
   StorySlider,
 } from './media.configure-story.options';
 
@@ -39,6 +40,7 @@ export interface PostingStoryOptions {
   countdown?: StoryCountdown;
   media?: StoryAttachedMedia;
   chat?: StoryChat;
+  quiz?: StoryQuiz;
   link?: string;
 }
 

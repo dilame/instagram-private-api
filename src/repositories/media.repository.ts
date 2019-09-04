@@ -377,6 +377,9 @@ export class MediaRepository extends Repository {
     if (typeof form.story_chats !== 'undefined') {
       form.story_chats = JSON.stringify(form.story_chats);
     }
+    if (typeof form.story_quizs !== 'undefined') {
+      form.story_quizs = JSON.stringify(form.story_quizs);
+    }
   }
 
   public async configureToStory(options: MediaConfigureStoryPhotoOptions) {

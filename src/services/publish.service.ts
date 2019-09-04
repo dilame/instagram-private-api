@@ -351,6 +351,10 @@ export class PublishService extends Repository {
       configureOptions.story_chats = [options.chat];
       storyStickerIds.push('chat_sticker_id');
     }
+    if (typeof options.quiz !== 'undefined') {
+      configureOptions.story_quizs = [options.quiz];
+      storyStickerIds.push('quiz_story_sticker_default');
+    }
     if (typeof options.link !== 'undefined' && options.link.length > 0) {
       configureOptions.story_cta = [
         {
