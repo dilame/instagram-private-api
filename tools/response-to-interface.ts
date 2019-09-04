@@ -4,7 +4,7 @@ import { IgApiClient } from '../src';
 import * as Bluebird from 'bluebird';
 import { json2ts } from 'json-ts/dist';
 import { camelCase } from 'lodash';
-import { readFile, writeFile } from 'fs';
+import { writeFile } from 'fs';
 
 const ig = new IgApiClient();
 
