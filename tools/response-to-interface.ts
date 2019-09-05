@@ -35,13 +35,5 @@ async function login() {
 (async function mainAsync() {
   await login();
 
-
-  console.log(
-    await createInterface(
-      (async () =>
-        (await Promise.all((await ig.feed.userStory(ig.state.cookieUserId).items()).map(story => ig.media.listReelMediaViewer(story.pk))))
-        .reduce((acc, current) => Object.assign(acc, current), {})
-      )(),
-      'media.repository.list-reel-media-viewer'),
-  );
+  console.log();
 })();
