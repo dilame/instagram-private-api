@@ -128,6 +128,11 @@ export class MediaRepository extends Repository {
     });
   }
 
+  /**
+   * Normally, this is requested before each comment is sent to ensure it isn't spam or hateful
+   * @param commentText
+   * @param mediaId - The mediaId of the post
+   */
   public async checkOffensiveComment(
     commentText: string,
     mediaId?: string,
