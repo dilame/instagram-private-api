@@ -8,12 +8,11 @@ export class DirectThreadEntity extends Entity {
   threadId: string = null;
   userIds: string[] = null;
 
-  public async deleteItem(itemId: string | number, threadId?: string | number) {
-    const id = threadId || this.threadId;
-    if (!id) {
+  public async deleteItem(itemId: string | number) {
+    if (!this.threadId) {
       throw new IgClientError('threadId was null.');
     }
-    return this.client.directThread.deleteItem(id, itemId);
+    return this.client.directThread.deleteItem(this.threadId, itemId);
   }
 
   public async broadcastText(text: string) {
