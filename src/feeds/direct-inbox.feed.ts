@@ -39,6 +39,6 @@ export class DirectInboxFeed extends Feed<DirectInboxFeedResponse, DirectInboxFe
 
   async records(): Promise<DirectThreadEntity[]> {
     const threads = await this.items();
-    return threads.map(thread => this.client.entity.directThreadFromResponse(thread));
+    return threads.map(thread => this.client.entity.directThread(thread.thread_id));
   }
 }
