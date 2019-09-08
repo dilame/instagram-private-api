@@ -14,7 +14,7 @@ import {
   MediaConfigureStoryBaseOptions,
   IgResponse,
 } from '../types';
-import { PostingStoryOptions } from '../types/posting.options';
+import { PostingLocation, PostingStoryOptions } from '../types/posting.options';
 import Bluebird = require('bluebird');
 import { IgConfigureVideoError, IgResponseError, IgUploadVideoError } from '../errors';
 import { UploadRepositoryVideoResponseRootObject } from '../responses';
@@ -34,26 +34,10 @@ export class PublishService extends Repository {
       width: imageSize.width,
       height: imageSize.height,
       caption: options.caption,
+      ...PublishService.makeLocationOptions(options.location),
     };
     if (typeof options.usertags !== 'undefined') {
       configureOptions.usertags = options.usertags;
-    }
-    if (typeof options.location !== 'undefined') {
-      const { lat, lng, external_id_source, external_id, name, address } = options.location;
-      configureOptions.location = {
-        name,
-        lat,
-        lng,
-        address,
-        external_source: external_id_source,
-        external_id,
-      };
-      configureOptions.location[external_id_source + '_id'] = external_id;
-      configureOptions.geotag_enabled = '1';
-      configureOptions.media_latitude = lat.toString();
-      configureOptions.media_longitude = lng.toString();
-      configureOptions.posting_latitude = lat.toString();
-      configureOptions.posting_longitude = lng.toString();
     }
     return await this.client.media.configure(configureOptions);
   }
@@ -110,27 +94,11 @@ export class PublishService extends Repository {
           source_type: '4',
         },
       ],
+      ...PublishService.makeLocationOptions(options.location),
     };
 
     if (typeof options.usertags !== 'undefined') {
       configureOptions.usertags = options.usertags;
-    }
-    if (typeof options.location !== 'undefined') {
-      const { lat, lng, external_id_source, external_id, name, address } = options.location;
-      configureOptions.location = {
-        name,
-        lat,
-        lng,
-        address,
-        external_source: external_id_source,
-        external_id,
-      };
-      configureOptions.location[external_id_source + '_id'] = external_id;
-      configureOptions.geotag_enabled = '1';
-      configureOptions.media_latitude = lat.toString();
-      configureOptions.media_longitude = lng.toString();
-      configureOptions.posting_latitude = lat.toString();
-      configureOptions.posting_longitude = lng.toString();
     }
 
     return Bluebird.try(() => this.client.media.configureVideo(configureOptions)).catch(IgResponseError, error => {
@@ -206,7 +174,30 @@ export class PublishService extends Repository {
           };
         }
       }),
+      ...PublishService.makeLocationOptions(options.location),
     });
+  }
+
+  private static makeLocationOptions(location?: PostingLocation): any {
+    const options: any = {};
+    if (typeof location !== 'undefined') {
+      const { lat, lng, external_id_source, external_id, name, address } = location;
+      options.location = {
+        name,
+        lat,
+        lng,
+        address,
+        external_source: external_id_source,
+        external_id,
+      };
+      options.location[external_id_source + '_id'] = external_id;
+      options.geotag_enabled = '1';
+      options.media_latitude = lat.toString();
+      options.media_longitude = lng.toString();
+      options.posting_latitude = lat.toString();
+      options.posting_longitude = lng.toString();
+    }
+    return options;
   }
 
   private async uploadAndConfigureStoryPhoto(
@@ -292,7 +283,7 @@ export class PublishService extends Repository {
       if (threadIds) {
         configureOptions.thread_ids = options.threadIds;
       }
-      return await uploadAndConfigure();
+      return uploadAndConfigure();
     }
 
     // story goes to story-feed
@@ -359,6 +350,10 @@ export class PublishService extends Repository {
     if (typeof options.chat !== 'undefined') {
       configureOptions.story_chats = [options.chat];
       storyStickerIds.push('chat_sticker_id');
+    }
+    if (typeof options.quiz !== 'undefined') {
+      configureOptions.story_quizs = [options.quiz];
+      storyStickerIds.push('quiz_story_sticker_default');
     }
     if (typeof options.link !== 'undefined' && options.link.length > 0) {
       configureOptions.story_cta = [

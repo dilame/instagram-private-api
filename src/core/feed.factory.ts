@@ -32,6 +32,7 @@ import { IgAppModule } from '../types/common.types';
 import { plainToClassFromExist } from 'class-transformer';
 import * as Chance from 'chance';
 import { PostsInsightsFeedOptions } from '../types';
+import { UserStoryFeed } from '../feeds/user-story.feed';
 
 export class FeedFactory {
   constructor(private client: IgApiClient) {}
@@ -117,6 +118,10 @@ export class FeedFactory {
 
   public reelsMedia(options: { userIds: Array<number | string>; source?: IgAppModule }): ReelsMediaFeed {
     return plainToClassFromExist(new ReelsMediaFeed(this.client), options);
+  }
+
+  public userStory(userId: string | number): UserStoryFeed {
+    return plainToClassFromExist(new UserStoryFeed(this.client), { userId });
   }
 
   public reelsTray(reason: 'pull_to_refresh' | 'cold_start' = 'cold_start'): ReelsTrayFeed {

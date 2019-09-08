@@ -43,6 +43,8 @@ export interface MediaConfigureStoryBaseOptions {
 
   story_chats?: [StoryChat] | string;
 
+  story_quizs?: [StoryQuiz] | string;
+
   // links are only valid in business accounts
   story_cta?: [StoryCta] | string;
 }
@@ -147,4 +149,15 @@ export interface StoryHashtag extends StorySticker {
   tag_name: string;
   use_custom_title: boolean;
   is_sticker: boolean;
+}
+
+export interface StoryQuiz extends StorySticker {
+  question: string;
+  options: Array<{ text: string; count: number }>;
+  correct_answer: string;
+  viewer_can_answer: boolean;
+  viewer_answer: number;
+  text_color: string;
+  start_background_color: string;
+  end_background_color: string;
 }

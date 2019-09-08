@@ -225,4 +225,16 @@ export class DirectThreadRepository extends Repository {
     });
     return body;
   }
+
+  public async deleteItem(threadId: string | number, itemId: string | number): Promise<StatusResponse> {
+    const { body } = await this.client.request.send({
+      url: `/api/v1/direct_v2/threads/${threadId}/items/${itemId}/delete/`,
+      method: 'POST',
+      form: {
+        _csrftoken: this.client.state.cookieCsrfToken,
+        _uuid: this.client.state.uuid,
+      },
+    });
+    return body;
+  }
 }

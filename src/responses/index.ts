@@ -80,3 +80,8 @@ export * from './insights.service.account.response';
 export * from './insights.service.post.response';
 export * from './stories-insights.feed.response';
 export * from './insights.service.story.response';
+export * from './media.repository.check-offensive-comment.response';
+export * from './restrict-action.repository.restrict.response';
+export * from './address-book.repository.link.response';
+export * from './location.repository.story.response';
+export * from './user-story.feed.response';

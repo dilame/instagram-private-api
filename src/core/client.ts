@@ -34,6 +34,8 @@ import { NewsRepository } from '../repositories/news.repository';
 import { HighlightsRepository } from '../repositories/highlights.repository';
 import { AdsRepository } from '../repositories/ads.repository';
 import { InsightsService } from '../services/insights.service';
+import { RestrictActionRepository } from '../repositories/restrict-action.repository';
+import { AddressBookRepository } from '../repositories/address-book.repository';
 
 export class IgApiClient {
   public state = new State();
@@ -68,6 +70,8 @@ export class IgApiClient {
   public news = new NewsRepository(this);
   public highlights = new HighlightsRepository(this);
   public ads = new AdsRepository(this);
+  public restrictAction = new RestrictActionRepository(this);
+  public addressBook = new AddressBookRepository(this);
   /* Services */
   public publish = new PublishService(this);
   public search = new SearchService(this);

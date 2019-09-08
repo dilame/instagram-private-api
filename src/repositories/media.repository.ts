@@ -25,8 +25,9 @@ import {
   MediaConfigureSidecarVideoItem,
   MediaConfigureTimelineVideoOptions,
 } from '../types';
-import { MediaRepositoryConfigureResponseRootObject } from '../responses/media.repository.configure.response';
+import { MediaRepositoryConfigureResponseRootObject } from '../responses';
 import Chance = require('chance');
+import { MediaRepositoryCheckOffensiveCommentResponseRootObject } from '../responses';
 
 export class MediaRepository extends Repository {
   public async info(mediaId: string): Promise<MediaInfoResponseRootObject> {
@@ -125,6 +126,43 @@ export class MediaRepository extends Repository {
       action: 'unlike',
       ...options,
     });
+  }
+
+  /**
+   * Normally, this is requested before each comment is sent to ensure it isn't spam or hateful
+   * @param commentText
+   * @param mediaId - The mediaId of the post
+   */
+  public async checkOffensiveComment(
+    commentText: string,
+    mediaId?: string,
+  ): Promise<MediaRepositoryCheckOffensiveCommentResponseRootObject> {
+    const { body } = await this.client.request.send<MediaRepositoryCheckOffensiveCommentResponseRootObject>({
+      url: '/api/v1/media/comment/check_offensive_comment/',
+      method: 'POST',
+      form: this.client.request.sign({
+        media_id: mediaId,
+        _csrftoken: this.client.state.cookieCsrfToken,
+        _uid: this.client.state.cookieUserId,
+        _uuid: this.client.state.uuid,
+        comment_text: commentText,
+      }),
+    });
+    return body;
+  }
+
+  public async commentsBulkDelete(mediaId: string, commentIds: string[]): Promise<StatusResponse> {
+    const { body } = await this.client.request.send({
+      url: `/api/v1/media/${mediaId}/comment/bulk_delete/`,
+      method: 'POST',
+      form: this.client.request.sign({
+        comment_ids_to_delete: commentIds.join(','),
+        _csrftoken: this.client.state.cookieCsrfToken,
+        _uid: this.client.state.cookieUserId,
+        _uuid: this.client.state.uuid,
+      }),
+    });
+    return body;
   }
 
   public async comment({
@@ -344,6 +382,9 @@ export class MediaRepository extends Repository {
     if (typeof form.story_chats !== 'undefined') {
       form.story_chats = JSON.stringify(form.story_chats);
     }
+    if (typeof form.story_quizs !== 'undefined') {
+      form.story_quizs = JSON.stringify(form.story_quizs);
+    }
   }
 
   public async configureToStory(options: MediaConfigureStoryPhotoOptions) {
@@ -485,6 +526,10 @@ export class MediaRepository extends Repository {
       }
       return item;
     });
+
+    if (typeof options.location !== 'string') {
+      options.location = JSON.stringify(options.location);
+    }
 
     const { body } = await this.client.request.send({
       url: '/api/v1/media/configure_sidecar/',

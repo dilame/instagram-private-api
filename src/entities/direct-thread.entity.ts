@@ -1,11 +1,19 @@
 import * as urlRegex from 'url-regex';
 import { Entity } from '../core/entity';
-import { DirectThreadBroadcastPhotoOptions } from '../types/direct-thread.broadcast-photo.options';
-import { DirectThreadBroadcastOptions } from '../types/direct-thread.broadcast.options';
+import { DirectThreadBroadcastPhotoOptions } from '../types';
+import { DirectThreadBroadcastOptions } from '../types';
+import { IgClientError } from '../errors';
 
 export class DirectThreadEntity extends Entity {
   threadId: string = null;
   userIds: string[] = null;
+
+  public async deleteItem(itemId: string | number) {
+    if (!this.threadId) {
+      throw new IgClientError('threadId was null.');
+    }
+    return this.client.directThread.deleteItem(this.threadId, itemId);
+  }
 
   public async broadcastText(text: string) {
     const urls = text.match(urlRegex({ strict: false }));
@@ -16,6 +24,15 @@ export class DirectThreadEntity extends Entity {
       item: 'text',
       form: {
         text,
+      },
+    });
+  }
+
+  public async broadcastProfile(id: number | string) {
+    return await this.broadcast({
+      item: 'profile',
+      form: {
+        profile_user_id: id,
       },
     });
   }
