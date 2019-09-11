@@ -13,4 +13,16 @@ export class TagRepository extends Repository {
     });
     return body;
   }
+
+  public async section(q: string, tab: string) {
+    const { body } = await this.client.request.send<TagRepositorySearchResponseRootObject>({
+      url: `/api/v1/tags/${encodeURI(q)}/sections/`,
+      qs: {
+        timezone_offset: this.client.state.timezoneOffset,
+        tab: tab,
+        count: 30,
+      },
+    });
+    return body;
+  }
 }

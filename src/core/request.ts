@@ -9,6 +9,7 @@ import {
   IgActionSpamError,
   IgCheckpointError,
   IgClientError,
+  IgInactiveUserError,
   IgLoginRequiredError,
   IgNetworkError,
   IgNotFoundError,
@@ -16,8 +17,8 @@ import {
   IgResponseError,
   IgSentryBlockError,
 } from '../errors';
-import JSONbigInt = require('json-bigint');
 import { IgResponse } from '../types/common.types';
+import JSONbigInt = require('json-bigint');
 
 const JSONbigString = JSONbigInt({ storeAsString: true });
 
@@ -51,7 +52,7 @@ export class Request {
     return resolveWithFullResponse ? response : response.body;
   }
 
-  public async send<T = any>(userOptions: Options): Promise<IgResponse<T>> {
+  public async send<T = any>(userOptions: Options, onlyCheckHttpStatus?: boolean): Promise<IgResponse<T>> {
     const options = defaultsDeep(
       userOptions,
       {
@@ -69,7 +70,7 @@ export class Request {
     );
     const response = await this.faultTolerantRequest(options);
     process.nextTick(() => this.end$.next());
-    if (response.body.status === 'ok') {
+    if (response.body.status === 'ok' || (onlyCheckHttpStatus && response.statusCode === 200)) {
       return response;
     }
     const error = this.handleResponseError(response);
@@ -117,7 +118,7 @@ export class Request {
         this.client.state.checkpoint = json;
         return new IgCheckpointError(response);
       }
-      if (json.message === 'login_required') {
+      if (['user_has_logged_out', 'login_required'].includes(json.message)) {
         return new IgLoginRequiredError(response);
       }
       if (json.message.toLowerCase() === 'not authorized to view user') {
@@ -126,6 +127,9 @@ export class Request {
     }
     if (json.error_type === 'sentry_block') {
       return new IgSentryBlockError(response);
+    }
+    if (json.error_type === 'inactive user') {
+      return new IgInactiveUserError(response);
     }
     return new IgResponseError(response);
   }
@@ -151,6 +155,7 @@ export class Request {
       'X-IG-Connection-Type': this.client.state.connectionTypeHeader,
       'X-IG-Capabilities': this.client.state.capabilitiesHeader,
       'X-IG-App-ID': this.client.state.fbAnalyticsApplicationId,
+      'X-IG-VP9-Capable': true,
       'Accept-Language': this.client.state.language.replace('_', '-'),
       Host: 'i.instagram.com',
       'Accept-Encoding': 'gzip',

@@ -1,17 +1,17 @@
 import { Expose } from 'class-transformer';
 import { Feed } from '../core/feed';
-import { SavedFeedResponse, SavedFeedResponseMedia } from '../responses';
+import { SavedFeedResponseRootObject, SavedFeedResponseMedia } from '../responses';
 
-export class SavedFeed extends Feed<SavedFeedResponse, SavedFeedResponseMedia> {
+export class SavedFeed extends Feed<SavedFeedResponseRootObject, SavedFeedResponseMedia> {
   @Expose()
   private nextMaxId: string;
 
-  set state(body: SavedFeedResponse) {
+  set state(body: SavedFeedResponseRootObject) {
     this.moreAvailable = body.more_available;
     this.nextMaxId = body.next_max_id;
   }
 
-  async request() {
+  async request(): Promise<SavedFeedResponseRootObject> {
     const { body } = await this.client.request.send({
       url: '/api/v1/feed/saved/',
       method: 'POST',
@@ -23,8 +23,8 @@ export class SavedFeed extends Feed<SavedFeedResponse, SavedFeedResponseMedia> {
     return body;
   }
 
-  async items() {
+  async items(): Promise<SavedFeedResponseMedia[]> {
     const { items } = await this.request();
-    return items;
+    return items.map(i => i.media);
   }
 }

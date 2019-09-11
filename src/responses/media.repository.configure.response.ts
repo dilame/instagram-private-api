@@ -1,10 +1,10 @@
-export interface MediaRepositoryCommentResponseRootObject {
-  media: MediaRepositoryCommentResponseMedia;
+export interface MediaRepositoryConfigureResponseRootObject {
+  media: MediaRepositoryConfigureResponseMedia;
   upload_id: string;
   status: string;
 }
 
-export interface MediaRepositoryCommentResponseMedia {
+export interface MediaRepositoryConfigureResponseMedia {
   taken_at: number;
   pk: string;
   id: string;
@@ -20,30 +20,30 @@ export interface MediaRepositoryCommentResponseMedia {
   preview_comments: any[];
   can_view_more_preview_comments: boolean;
   comment_count: number;
-  image_versions2: MediaRepositoryCommentResponseImage_versions2;
+  image_versions2: MediaRepositoryConfigureResponseImage_versions2;
   original_width: number;
   original_height: number;
-  user: MediaRepositoryCommentResponseUser;
+  user: MediaRepositoryConfigureResponseUser;
   can_viewer_reshare: boolean;
   caption_is_edited: boolean;
   photo_of_you: boolean;
   caption: null;
-  fb_user_tags: MediaRepositoryCommentResponseFb_user_tags;
+  fb_user_tags: MediaRepositoryConfigureResponseFb_user_tags;
   can_viewer_save: boolean;
   organic_tracking_token: string;
 }
 
-export interface MediaRepositoryCommentResponseImage_versions2 {
-  candidates: MediaRepositoryCommentResponseCandidatesItem[];
+export interface MediaRepositoryConfigureResponseImage_versions2 {
+  candidates: MediaRepositoryConfigureResponseCandidatesItem[];
 }
 
-export interface MediaRepositoryCommentResponseCandidatesItem {
+export interface MediaRepositoryConfigureResponseCandidatesItem {
   width: number;
   height: number;
   url: string;
 }
 
-export interface MediaRepositoryCommentResponseUser {
+export interface MediaRepositoryConfigureResponseUser {
   pk: number;
   username: string;
   full_name: string;
@@ -59,6 +59,6 @@ export interface MediaRepositoryCommentResponseUser {
   allowed_commenter_type: string;
 }
 
-export interface MediaRepositoryCommentResponseFb_user_tags {
+export interface MediaRepositoryConfigureResponseFb_user_tags {
   in: any[];
 }

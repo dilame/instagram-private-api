@@ -8,4 +8,5 @@ export interface SpamResponse {
   feedback_ignore_label: string;
   feedback_action: string;
   status: 'fail';
+  error_type?: string;
 }

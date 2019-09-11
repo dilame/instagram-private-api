@@ -11,6 +11,7 @@ export class EntityFactory extends Repository {
     }
     return thread;
   }
+
   public profile(pk: string): ProfileEntity {
     const thread = new ProfileEntity(this.client);
     thread.pk = pk;

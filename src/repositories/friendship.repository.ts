@@ -9,6 +9,27 @@ export class FriendshipRepository extends Repository {
     return body;
   }
 
+  async showMany(userIds: string[] | number[]) {
+    const { body } = await this.client.request.send({
+      url: `/api/v1/friendships/show_many/`,
+      method: 'POST',
+      form: {
+        _csrftoken: this.client.state.cookieCsrfToken,
+        user_ids: userIds.join(),
+        _uuid: this.client.state.uuid,
+      },
+    });
+    return body.friendship_statuses;
+  }
+
+  async block(id: string | number, mediaIdAttribution?: string) {
+    return this.change('block', id, mediaIdAttribution);
+  }
+
+  async unblock(id: string | number, mediaIdAttribution?: string) {
+    return this.change('unblock', id, mediaIdAttribution);
+  }
+
   async create(id: string | number, mediaIdAttribution?: string) {
     return this.change('create', id, mediaIdAttribution);
   }

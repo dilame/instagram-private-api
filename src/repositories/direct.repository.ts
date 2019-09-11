@@ -6,8 +6,10 @@ import {
 } from '../responses';
 
 export class DirectRepository extends Repository {
-
-  public async createGroupThread(recipientUsers: string[], threadTitle: string): Promise<DirectRepositoryCreateGroupThreadResponseRootObject> {
+  public async createGroupThread(
+    recipientUsers: string[],
+    threadTitle: string,
+  ): Promise<DirectRepositoryCreateGroupThreadResponseRootObject> {
     const { body } = await this.client.request.send({
       url: '/api/v1/direct_v2/create_group_thread/',
       method: 'POST',
@@ -22,7 +24,10 @@ export class DirectRepository extends Repository {
     return body;
   }
 
-  public async rankedRecipients(mode: 'raven' | 'reshare' = 'raven', query = ''): Promise<DirectRepositoryRankedRecipientsResponseRootObject> {
+  public async rankedRecipients(
+    mode: 'raven' | 'reshare' = 'raven',
+    query = '',
+  ): Promise<DirectRepositoryRankedRecipientsResponseRootObject> {
     const { body } = await this.client.request.send<DirectRepositoryRankedRecipientsResponseRootObject>({
       url: '/api/v1/direct_v2/ranked_recipients/',
       method: 'GET',

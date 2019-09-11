@@ -15,40 +15,50 @@ export abstract class Feed<Response = any, Item = any> extends Repository {
     maxDelay: 300000,
     jitter: true,
   };
-  public items$ = new Observable<Item[]>(observer => {
-    let subscribed = true;
-    process.nextTick(async () => {
-      do {
-        try {
-          await retry(
-            async () => {
-              const items = await this.items();
-              observer.next(items);
-            },
-            {
-              handleError(error, context) {
-                // If instagram just tells us to wait - we are waiting.
-                if (
-                  error instanceof IgResponseError &&
-                  error.response.statusCode === 400 &&
-                  error.response.body.status === 'fail'
-                ) {
-                  return;
-                } else {
-                  context.abort();
+  public get items$() {
+    return this.observable();
+  }
+  public observable(semaphore?: () => Promise<any>, attemptOptions?: Partial<AttemptOptions<any>>) {
+    return new Observable<Item[]>(observer => {
+      let subscribed = true;
+      process.nextTick(async () => {
+        do {
+          try {
+            await retry(
+              async () => {
+                const items = await this.items();
+                observer.next(items);
+                if (typeof semaphore === 'function') {
+                  await semaphore();
                 }
               },
-              ...this.attemptOptions,
-            },
-          );
-        } catch (e) {
-          observer.error(e);
-        }
-      } while (this.isMoreAvailable() && subscribed);
-      observer.complete();
+              {
+                handleError(error, context) {
+                  // If instagram just tells us to wait - we are waiting.
+                  if (
+                    error instanceof IgResponseError &&
+                    [400, 429, 500, 502].includes(error.response.statusCode) &&
+                    subscribed
+                  ) {
+                    return;
+                  } else {
+                    context.abort();
+                  }
+                },
+                ...(attemptOptions || this.attemptOptions),
+              },
+            );
+          } catch (e) {
+            observer.error(e);
+          }
+        } while (this.isMoreAvailable() && subscribed);
+        observer.complete();
+      });
+      return function unsubscribe() {
+        subscribed = false;
+      };
     });
-    return () => (subscribed = false);
-  });
+  }
   @Expose()
   protected moreAvailable: boolean;
   @Enumerable(false)
