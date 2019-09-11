@@ -7,6 +7,8 @@ export * from './direct-thread.feed';
 export * from './discover.feed';
 export * from './location.feed';
 export * from './media-comments.feed';
+export * from './postlive-likes.feed';
+export * from './postlive-viewers.feed';
 export * from './news.feed';
 export * from './reels-media.feed';
 export * from './saved.feed';
