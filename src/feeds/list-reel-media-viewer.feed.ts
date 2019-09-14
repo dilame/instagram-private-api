@@ -9,7 +9,7 @@ export class ListReelMediaViewerFeed extends Feed<
   @Expose()
   private mediaId: string;
   @Expose()
-  private nextMaxId: string | null = null;
+  private nextMaxId?: string = undefined;
 
   async items(): Promise<ListReelMediaViewerFeedResponseUsersItem[]> {
     const res = await this.request();
@@ -31,5 +31,9 @@ export class ListReelMediaViewerFeed extends Feed<
     });
     this.state = body;
     return body;
+  }
+
+  isMoreAvailable(): boolean {
+    return this.nextMaxId === null;
   }
 }
