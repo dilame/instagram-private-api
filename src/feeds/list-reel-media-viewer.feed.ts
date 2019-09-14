@@ -34,6 +34,6 @@ export class ListReelMediaViewerFeed extends Feed<
   }
 
   isMoreAvailable(): boolean {
-    return this.nextMaxId === null;
+    return this.nextMaxId !== null;
   }
 }
