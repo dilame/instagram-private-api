@@ -1,4 +1,4 @@
-import { Feed } from '..';
+import { Feed } from '../core/feed';
 import { ListReelMediaViewerFeedResponseRootObject, ListReelMediaViewerFeedResponseUsersItem } from '../responses';
 import { Expose } from 'class-transformer';
 
