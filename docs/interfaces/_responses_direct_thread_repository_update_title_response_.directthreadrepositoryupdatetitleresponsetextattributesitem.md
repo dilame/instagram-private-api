@@ -6,54 +6,54 @@
 
 ## Hierarchy
 
-- **DirectThreadRepositoryUpdateTitleResponseTextAttributesItem**
+* **DirectThreadRepositoryUpdateTitleResponseTextAttributesItem**
 
 ## Index
 
 ### Properties
 
-- [bold](_responses_direct_thread_repository_update_title_response_.directthreadrepositoryupdatetitleresponsetextattributesitem.md#bold)
-- [color](_responses_direct_thread_repository_update_title_response_.directthreadrepositoryupdatetitleresponsetextattributesitem.md#color)
-- [end](_responses_direct_thread_repository_update_title_response_.directthreadrepositoryupdatetitleresponsetextattributesitem.md#end)
-- [intent](_responses_direct_thread_repository_update_title_response_.directthreadrepositoryupdatetitleresponsetextattributesitem.md#intent)
-- [start](_responses_direct_thread_repository_update_title_response_.directthreadrepositoryupdatetitleresponsetextattributesitem.md#start)
+* [bold](_responses_direct_thread_repository_update_title_response_.directthreadrepositoryupdatetitleresponsetextattributesitem.md#bold)
+* [color](_responses_direct_thread_repository_update_title_response_.directthreadrepositoryupdatetitleresponsetextattributesitem.md#color)
+* [end](_responses_direct_thread_repository_update_title_response_.directthreadrepositoryupdatetitleresponsetextattributesitem.md#end)
+* [intent](_responses_direct_thread_repository_update_title_response_.directthreadrepositoryupdatetitleresponsetextattributesitem.md#intent)
+* [start](_responses_direct_thread_repository_update_title_response_.directthreadrepositoryupdatetitleresponsetextattributesitem.md#start)
 
 ## Properties
 
-### bold
+###  bold
 
-• **bold**: _number_
+• **bold**: *number*
 
-_Defined in [responses/direct-thread.repository.update-title.response.ts:95](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.repository.update-title.response.ts#L95)_
+*Defined in [responses/direct-thread.repository.update-title.response.ts:95](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-thread.repository.update-title.response.ts#L95)*
 
----
+___
 
-### color
+###  color
 
-• **color**: _string_
+• **color**: *string*
 
-_Defined in [responses/direct-thread.repository.update-title.response.ts:96](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.repository.update-title.response.ts#L96)_
+*Defined in [responses/direct-thread.repository.update-title.response.ts:96](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-thread.repository.update-title.response.ts#L96)*
 
----
+___
 
-### end
+###  end
 
-• **end**: _number_
+• **end**: *number*
 
-_Defined in [responses/direct-thread.repository.update-title.response.ts:94](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.repository.update-title.response.ts#L94)_
+*Defined in [responses/direct-thread.repository.update-title.response.ts:94](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-thread.repository.update-title.response.ts#L94)*
 
----
+___
 
-### intent
+###  intent
 
-• **intent**: _string_
+• **intent**: *string*
 
-_Defined in [responses/direct-thread.repository.update-title.response.ts:97](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.repository.update-title.response.ts#L97)_
+*Defined in [responses/direct-thread.repository.update-title.response.ts:97](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-thread.repository.update-title.response.ts#L97)*
 
----
+___
 
-### start
+###  start
 
-• **start**: _number_
+• **start**: *number*
 
-_Defined in [responses/direct-thread.repository.update-title.response.ts:93](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.repository.update-title.response.ts#L93)_
+*Defined in [responses/direct-thread.repository.update-title.response.ts:93](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-thread.repository.update-title.response.ts#L93)*

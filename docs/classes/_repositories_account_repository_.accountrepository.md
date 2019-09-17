@@ -6,282 +6,282 @@
 
 ## Hierarchy
 
-- [Repository](_core_repository_.repository.md)
+* [Repository](_core_repository_.repository.md)
 
-  - **AccountRepository**
+  * **AccountRepository**
 
 ## Index
 
 ### Constructors
 
-- [constructor](_repositories_account_repository_.accountrepository.md#constructor)
+* [constructor](_repositories_account_repository_.accountrepository.md#constructor)
 
 ### Methods
 
-- [changePassword](_repositories_account_repository_.accountrepository.md#changepassword)
-- [changeProfilePicture](_repositories_account_repository_.accountrepository.md#changeprofilepicture)
-- [contactPointPrefill](_repositories_account_repository_.accountrepository.md#contactpointprefill)
-- [create](_repositories_account_repository_.accountrepository.md#create)
-- [currentUser](_repositories_account_repository_.accountrepository.md#currentuser)
-- [editProfile](_repositories_account_repository_.accountrepository.md#editprofile)
-- [getPrefillCandidates](_repositories_account_repository_.accountrepository.md#getprefillcandidates)
-- [login](_repositories_account_repository_.accountrepository.md#login)
-- [logout](_repositories_account_repository_.accountrepository.md#logout)
-- [msisdnHeaderBootstrap](_repositories_account_repository_.accountrepository.md#msisdnheaderbootstrap)
-- [processContactPointSignals](_repositories_account_repository_.accountrepository.md#processcontactpointsignals)
-- [readMsisdnHeader](_repositories_account_repository_.accountrepository.md#readmsisdnheader)
-- [removeProfilePicture](_repositories_account_repository_.accountrepository.md#removeprofilepicture)
-- [setBiography](_repositories_account_repository_.accountrepository.md#setbiography)
-- [setPrivate](_repositories_account_repository_.accountrepository.md#setprivate)
-- [setPublic](_repositories_account_repository_.accountrepository.md#setpublic)
-- [twoFactorLogin](_repositories_account_repository_.accountrepository.md#twofactorlogin)
+* [changePassword](_repositories_account_repository_.accountrepository.md#changepassword)
+* [changeProfilePicture](_repositories_account_repository_.accountrepository.md#changeprofilepicture)
+* [contactPointPrefill](_repositories_account_repository_.accountrepository.md#contactpointprefill)
+* [create](_repositories_account_repository_.accountrepository.md#create)
+* [currentUser](_repositories_account_repository_.accountrepository.md#currentuser)
+* [editProfile](_repositories_account_repository_.accountrepository.md#editprofile)
+* [getPrefillCandidates](_repositories_account_repository_.accountrepository.md#getprefillcandidates)
+* [login](_repositories_account_repository_.accountrepository.md#login)
+* [logout](_repositories_account_repository_.accountrepository.md#logout)
+* [msisdnHeaderBootstrap](_repositories_account_repository_.accountrepository.md#msisdnheaderbootstrap)
+* [processContactPointSignals](_repositories_account_repository_.accountrepository.md#processcontactpointsignals)
+* [readMsisdnHeader](_repositories_account_repository_.accountrepository.md#readmsisdnheader)
+* [removeProfilePicture](_repositories_account_repository_.accountrepository.md#removeprofilepicture)
+* [setBiography](_repositories_account_repository_.accountrepository.md#setbiography)
+* [setPrivate](_repositories_account_repository_.accountrepository.md#setprivate)
+* [setPublic](_repositories_account_repository_.accountrepository.md#setpublic)
+* [twoFactorLogin](_repositories_account_repository_.accountrepository.md#twofactorlogin)
 
 ## Constructors
 
-### constructor
+###  constructor
 
-\+ **new AccountRepository**(`client`: [IgApiClient](_core_client_.igapiclient.md)): _[AccountRepository](\_repositories_account_repository_.accountrepository.md)\_
+\+ **new AccountRepository**(`client`: [IgApiClient](_core_client_.igapiclient.md)): *[AccountRepository](_repositories_account_repository_.accountrepository.md)*
 
-_Inherited from [Repository](\_core_repository_.repository.md).[constructor](_core_repository_.repository.md#constructor)\_
+*Inherited from [Repository](_core_repository_.repository.md).[constructor](_core_repository_.repository.md#constructor)*
 
-_Defined in [core/repository.ts:6](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/repository.ts#L6)_
+*Defined in [core/repository.ts:6](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/repository.ts#L6)*
 
 **Parameters:**
 
-| Name     | Type                                        |
-| -------- | ------------------------------------------- |
-| `client` | [IgApiClient](_core_client_.igapiclient.md) |
+Name | Type |
+------ | ------ |
+`client` | [IgApiClient](_core_client_.igapiclient.md) |
 
-**Returns:** _[AccountRepository](\_repositories_account_repository_.accountrepository.md)\_
+**Returns:** *[AccountRepository](_repositories_account_repository_.accountrepository.md)*
 
 ## Methods
 
-### changePassword
+###  changePassword
 
-▸ **changePassword**(`oldPassword`: string, `newPassword`: string): _`Promise<any>`_
+▸ **changePassword**(`oldPassword`: string, `newPassword`: string): *`Promise<any>`*
 
-_Defined in [repositories/account.repository.ts:196](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/repositories/account.repository.ts#L196)_
-
-**Parameters:**
-
-| Name          | Type   |
-| ------------- | ------ |
-| `oldPassword` | string |
-| `newPassword` | string |
-
-**Returns:** _`Promise<any>`_
-
----
-
-### changeProfilePicture
-
-▸ **changeProfilePicture**(`stream`: `ReadStream`): _`Promise<AccountRepositoryCurrentUserResponseRootObject>`_
-
-_Defined in [repositories/account.repository.ts:158](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/repositories/account.repository.ts#L158)_
+*Defined in [repositories/account.repository.ts:196](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/account.repository.ts#L196)*
 
 **Parameters:**
 
-| Name     | Type         |
-| -------- | ------------ |
-| `stream` | `ReadStream` |
+Name | Type |
+------ | ------ |
+`oldPassword` | string |
+`newPassword` | string |
 
-**Returns:** _`Promise<AccountRepositoryCurrentUserResponseRootObject>`_
+**Returns:** *`Promise<any>`*
 
----
+___
 
-### contactPointPrefill
+###  changeProfilePicture
 
-▸ **contactPointPrefill**(`usage`: string): _`Promise<any>`_
+▸ **changeProfilePicture**(`stream`: `ReadStream`): *`Promise<AccountRepositoryCurrentUserResponseRootObject>`*
 
-_Defined in [repositories/account.repository.ts:264](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/repositories/account.repository.ts#L264)_
-
-**Parameters:**
-
-| Name    | Type   | Default   |
-| ------- | ------ | --------- |
-| `usage` | string | "default" |
-
-**Returns:** _`Promise<any>`_
-
----
-
-### create
-
-▸ **create**(`__namedParameters`: object): _`Promise<any>`_
-
-_Defined in [repositories/account.repository.ts:100](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/repositories/account.repository.ts#L100)_
+*Defined in [repositories/account.repository.ts:158](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/account.repository.ts#L158)*
 
 **Parameters:**
 
-| Name                | Type   |
-| ------------------- | ------ |
-| `__namedParameters` | object |
+Name | Type |
+------ | ------ |
+`stream` | `ReadStream` |
 
-**Returns:** _`Promise<any>`_
+**Returns:** *`Promise<AccountRepositoryCurrentUserResponseRootObject>`*
 
----
+___
 
-### currentUser
+###  contactPointPrefill
 
-▸ **currentUser**(): _`Promise<any>`_
+▸ **contactPointPrefill**(`usage`: string): *`Promise<any>`*
 
-_Defined in [repositories/account.repository.ts:133](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/repositories/account.repository.ts#L133)_
-
-**Returns:** _`Promise<any>`_
-
----
-
-### editProfile
-
-▸ **editProfile**(`options`: [AccountEditProfileOptions](../interfaces/_types_account_edit_profile_options_.accounteditprofileoptions.md)): _`Promise<any>`_
-
-_Defined in [repositories/account.repository.ts:181](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/repositories/account.repository.ts#L181)_
+*Defined in [repositories/account.repository.ts:264](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/account.repository.ts#L264)*
 
 **Parameters:**
 
-| Name      | Type                                                                                                         |
-| --------- | ------------------------------------------------------------------------------------------------------------ |
-| `options` | [AccountEditProfileOptions](../interfaces/_types_account_edit_profile_options_.accounteditprofileoptions.md) |
+Name | Type | Default |
+------ | ------ | ------ |
+`usage` | string | "default" |
 
-**Returns:** _`Promise<any>`_
+**Returns:** *`Promise<any>`*
 
----
+___
 
-### getPrefillCandidates
+###  create
 
-▸ **getPrefillCandidates**(): _`Promise<any>`_
+▸ **create**(`__namedParameters`: object): *`Promise<any>`*
 
-_Defined in [repositories/account.repository.ts:276](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/repositories/account.repository.ts#L276)_
-
-**Returns:** _`Promise<any>`_
-
----
-
-### login
-
-▸ **login**(`username`: string, `password`: string): _`Promise<AccountRepositoryLoginResponseLogged_in_user>`_
-
-_Defined in [repositories/account.repository.ts:25](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/repositories/account.repository.ts#L25)_
+*Defined in [repositories/account.repository.ts:100](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/account.repository.ts#L100)*
 
 **Parameters:**
 
-| Name       | Type   |
-| ---------- | ------ |
-| `username` | string |
-| `password` | string |
+Name | Type |
+------ | ------ |
+`__namedParameters` | object |
 
-**Returns:** _`Promise<AccountRepositoryLoginResponseLogged_in_user>`_
+**Returns:** *`Promise<any>`*
 
----
+___
 
-### logout
+###  currentUser
 
-▸ **logout**(): _`Promise<any>`_
+▸ **currentUser**(): *`Promise<AccountRepositoryCurrentUserResponseUser>`*
 
-_Defined in [repositories/account.repository.ts:85](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/repositories/account.repository.ts#L85)_
+*Defined in [repositories/account.repository.ts:133](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/account.repository.ts#L133)*
 
-**Returns:** _`Promise<any>`_
+**Returns:** *`Promise<AccountRepositoryCurrentUserResponseUser>`*
 
----
+___
 
-### msisdnHeaderBootstrap
+###  editProfile
 
-▸ **msisdnHeaderBootstrap**(`usage`: string): _`Promise<any>`_
+▸ **editProfile**(`options`: [AccountEditProfileOptions](../interfaces/_types_account_edit_profile_options_.accounteditprofileoptions.md)): *`Promise<AccountRepositoryCurrentUserResponseUser>`*
 
-_Defined in [repositories/account.repository.ts:252](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/repositories/account.repository.ts#L252)_
-
-**Parameters:**
-
-| Name    | Type   | Default   |
-| ------- | ------ | --------- |
-| `usage` | string | "default" |
-
-**Returns:** _`Promise<any>`_
-
----
-
-### processContactPointSignals
-
-▸ **processContactPointSignals**(): _`Promise<any>`_
-
-_Defined in [repositories/account.repository.ts:289](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/repositories/account.repository.ts#L289)_
-
-**Returns:** _`Promise<any>`_
-
----
-
-### readMsisdnHeader
-
-▸ **readMsisdnHeader**(`usage`: string): _`Promise<any>`_
-
-_Defined in [repositories/account.repository.ts:237](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/repositories/account.repository.ts#L237)_
+*Defined in [repositories/account.repository.ts:181](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/account.repository.ts#L181)*
 
 **Parameters:**
 
-| Name    | Type   | Default   |
-| ------- | ------ | --------- |
-| `usage` | string | "default" |
+Name | Type |
+------ | ------ |
+`options` | [AccountEditProfileOptions](../interfaces/_types_account_edit_profile_options_.accounteditprofileoptions.md) |
 
-**Returns:** _`Promise<any>`_
+**Returns:** *`Promise<AccountRepositoryCurrentUserResponseUser>`*
 
----
+___
 
-### removeProfilePicture
+###  getPrefillCandidates
 
-▸ **removeProfilePicture**(): _`Promise<any>`_
+▸ **getPrefillCandidates**(): *`Promise<any>`*
 
-_Defined in [repositories/account.repository.ts:212](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/repositories/account.repository.ts#L212)_
+*Defined in [repositories/account.repository.ts:276](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/account.repository.ts#L276)*
 
-**Returns:** _`Promise<any>`_
+**Returns:** *`Promise<any>`*
 
----
+___
 
-### setBiography
+###  login
 
-▸ **setBiography**(`text`: string): _`Promise<any>`_
+▸ **login**(`username`: string, `password`: string): *`Promise<AccountRepositoryLoginResponseLogged_in_user>`*
 
-_Defined in [repositories/account.repository.ts:143](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/repositories/account.repository.ts#L143)_
-
-**Parameters:**
-
-| Name   | Type   |
-| ------ | ------ |
-| `text` | string |
-
-**Returns:** _`Promise<any>`_
-
----
-
-### setPrivate
-
-▸ **setPrivate**(): _`Promise<any>`_
-
-_Defined in [repositories/account.repository.ts:216](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/repositories/account.repository.ts#L216)_
-
-**Returns:** _`Promise<any>`_
-
----
-
-### setPublic
-
-▸ **setPublic**(): _`Promise<any>`_
-
-_Defined in [repositories/account.repository.ts:220](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/repositories/account.repository.ts#L220)_
-
-**Returns:** _`Promise<any>`_
-
----
-
-### twoFactorLogin
-
-▸ **twoFactorLogin**(`options`: [AccountTwoFactorLoginOptions](../interfaces/_types_account_two_factor_login_options_.accounttwofactorloginoptions.md)): _`Promise<AccountRepositoryLoginResponseLogged_in_user>`_
-
-_Defined in [repositories/account.repository.ts:61](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/repositories/account.repository.ts#L61)_
+*Defined in [repositories/account.repository.ts:25](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/account.repository.ts#L25)*
 
 **Parameters:**
 
-| Name      | Type                                                                                                                   |
-| --------- | ---------------------------------------------------------------------------------------------------------------------- |
-| `options` | [AccountTwoFactorLoginOptions](../interfaces/_types_account_two_factor_login_options_.accounttwofactorloginoptions.md) |
+Name | Type |
+------ | ------ |
+`username` | string |
+`password` | string |
 
-**Returns:** _`Promise<AccountRepositoryLoginResponseLogged_in_user>`_
+**Returns:** *`Promise<AccountRepositoryLoginResponseLogged_in_user>`*
+
+___
+
+###  logout
+
+▸ **logout**(): *`Promise<StatusResponse>`*
+
+*Defined in [repositories/account.repository.ts:85](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/account.repository.ts#L85)*
+
+**Returns:** *`Promise<StatusResponse>`*
+
+___
+
+###  msisdnHeaderBootstrap
+
+▸ **msisdnHeaderBootstrap**(`usage`: string): *`Promise<any>`*
+
+*Defined in [repositories/account.repository.ts:252](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/account.repository.ts#L252)*
+
+**Parameters:**
+
+Name | Type | Default |
+------ | ------ | ------ |
+`usage` | string | "default" |
+
+**Returns:** *`Promise<any>`*
+
+___
+
+###  processContactPointSignals
+
+▸ **processContactPointSignals**(): *`Promise<any>`*
+
+*Defined in [repositories/account.repository.ts:289](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/account.repository.ts#L289)*
+
+**Returns:** *`Promise<any>`*
+
+___
+
+###  readMsisdnHeader
+
+▸ **readMsisdnHeader**(`usage`: string): *`Promise<any>`*
+
+*Defined in [repositories/account.repository.ts:237](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/account.repository.ts#L237)*
+
+**Parameters:**
+
+Name | Type | Default |
+------ | ------ | ------ |
+`usage` | string | "default" |
+
+**Returns:** *`Promise<any>`*
+
+___
+
+###  removeProfilePicture
+
+▸ **removeProfilePicture**(): *`Promise<AccountRepositoryCurrentUserResponseRootObject>`*
+
+*Defined in [repositories/account.repository.ts:212](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/account.repository.ts#L212)*
+
+**Returns:** *`Promise<AccountRepositoryCurrentUserResponseRootObject>`*
+
+___
+
+###  setBiography
+
+▸ **setBiography**(`text`: string): *`Promise<AccountRepositoryCurrentUserResponseUser>`*
+
+*Defined in [repositories/account.repository.ts:143](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/account.repository.ts#L143)*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`text` | string |
+
+**Returns:** *`Promise<AccountRepositoryCurrentUserResponseUser>`*
+
+___
+
+###  setPrivate
+
+▸ **setPrivate**(): *`Promise<AccountRepositoryCurrentUserResponseRootObject>`*
+
+*Defined in [repositories/account.repository.ts:216](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/account.repository.ts#L216)*
+
+**Returns:** *`Promise<AccountRepositoryCurrentUserResponseRootObject>`*
+
+___
+
+###  setPublic
+
+▸ **setPublic**(): *`Promise<AccountRepositoryCurrentUserResponseRootObject>`*
+
+*Defined in [repositories/account.repository.ts:220](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/account.repository.ts#L220)*
+
+**Returns:** *`Promise<AccountRepositoryCurrentUserResponseRootObject>`*
+
+___
+
+###  twoFactorLogin
+
+▸ **twoFactorLogin**(`options`: [AccountTwoFactorLoginOptions](../interfaces/_types_account_two_factor_login_options_.accounttwofactorloginoptions.md)): *`Promise<AccountRepositoryLoginResponseLogged_in_user>`*
+
+*Defined in [repositories/account.repository.ts:61](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/account.repository.ts#L61)*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`options` | [AccountTwoFactorLoginOptions](../interfaces/_types_account_two_factor_login_options_.accounttwofactorloginoptions.md) |
+
+**Returns:** *`Promise<AccountRepositoryLoginResponseLogged_in_user>`*

@@ -6,54 +6,54 @@
 
 ## Hierarchy
 
-- **DirectThreadRepositoryGetByParticipantsResponseItemsItem**
+* **DirectThreadRepositoryGetByParticipantsResponseItemsItem**
 
 ## Index
 
 ### Properties
 
-- [item_id](_responses_direct_thread_repository_get_by_participants_response_.directthreadrepositorygetbyparticipantsresponseitemsitem.md#item_id)
-- [item_type](_responses_direct_thread_repository_get_by_participants_response_.directthreadrepositorygetbyparticipantsresponseitemsitem.md#item_type)
-- [text](_responses_direct_thread_repository_get_by_participants_response_.directthreadrepositorygetbyparticipantsresponseitemsitem.md#text)
-- [timestamp](_responses_direct_thread_repository_get_by_participants_response_.directthreadrepositorygetbyparticipantsresponseitemsitem.md#timestamp)
-- [user_id](_responses_direct_thread_repository_get_by_participants_response_.directthreadrepositorygetbyparticipantsresponseitemsitem.md#user_id)
+* [item_id](_responses_direct_thread_repository_get_by_participants_response_.directthreadrepositorygetbyparticipantsresponseitemsitem.md#item_id)
+* [item_type](_responses_direct_thread_repository_get_by_participants_response_.directthreadrepositorygetbyparticipantsresponseitemsitem.md#item_type)
+* [text](_responses_direct_thread_repository_get_by_participants_response_.directthreadrepositorygetbyparticipantsresponseitemsitem.md#text)
+* [timestamp](_responses_direct_thread_repository_get_by_participants_response_.directthreadrepositorygetbyparticipantsresponseitemsitem.md#timestamp)
+* [user_id](_responses_direct_thread_repository_get_by_participants_response_.directthreadrepositorygetbyparticipantsresponseitemsitem.md#user_id)
 
 ## Properties
 
-### item_id
+###  item_id
 
-• **item_id**: _string_
+• **item_id**: *string*
 
-_Defined in [responses/direct-thread.repository.get-by-participants.response.ts:74](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.repository.get-by-participants.response.ts#L74)_
+*Defined in [responses/direct-thread.repository.get-by-participants.response.ts:74](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-thread.repository.get-by-participants.response.ts#L74)*
 
----
+___
 
-### item_type
+###  item_type
 
-• **item_type**: _string_
+• **item_type**: *string*
 
-_Defined in [responses/direct-thread.repository.get-by-participants.response.ts:77](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.repository.get-by-participants.response.ts#L77)_
+*Defined in [responses/direct-thread.repository.get-by-participants.response.ts:77](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-thread.repository.get-by-participants.response.ts#L77)*
 
----
+___
 
-### text
+###  text
 
-• **text**: _string_
+• **text**: *string*
 
-_Defined in [responses/direct-thread.repository.get-by-participants.response.ts:78](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.repository.get-by-participants.response.ts#L78)_
+*Defined in [responses/direct-thread.repository.get-by-participants.response.ts:78](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-thread.repository.get-by-participants.response.ts#L78)*
 
----
+___
 
-### timestamp
+###  timestamp
 
-• **timestamp**: _string_
+• **timestamp**: *string*
 
-_Defined in [responses/direct-thread.repository.get-by-participants.response.ts:76](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.repository.get-by-participants.response.ts#L76)_
+*Defined in [responses/direct-thread.repository.get-by-participants.response.ts:76](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-thread.repository.get-by-participants.response.ts#L76)*
 
----
+___
 
-### user_id
+###  user_id
 
-• **user_id**: _number_
+• **user_id**: *number*
 
-_Defined in [responses/direct-thread.repository.get-by-participants.response.ts:75](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.repository.get-by-participants.response.ts#L75)_
+*Defined in [responses/direct-thread.repository.get-by-participants.response.ts:75](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-thread.repository.get-by-participants.response.ts#L75)*

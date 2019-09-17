@@ -6,27 +6,27 @@
 
 ## Hierarchy
 
-- **MediaRepositoryCommentResponse**
+* **MediaRepositoryCommentResponse**
 
 ## Index
 
 ### Properties
 
-- [comment](_responses_media_repository_comment_response_.mediarepositorycommentresponse.md#comment)
-- [status](_responses_media_repository_comment_response_.mediarepositorycommentresponse.md#status)
+* [comment](_responses_media_repository_comment_response_.mediarepositorycommentresponse.md#comment)
+* [status](_responses_media_repository_comment_response_.mediarepositorycommentresponse.md#status)
 
 ## Properties
 
-### comment
+###  comment
 
-• **comment**: _[MediaRepositoryCommentResponseComment](\_responses_media_repository_comment_response_.mediarepositorycommentresponsecomment.md)\_
+• **comment**: *[MediaRepositoryCommentResponseComment](_responses_media_repository_comment_response_.mediarepositorycommentresponsecomment.md)*
 
-_Defined in [responses/media.repository.comment.response.ts:2](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/media.repository.comment.response.ts#L2)_
+*Defined in [responses/media.repository.comment.response.ts:2](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.comment.response.ts#L2)*
 
----
+___
 
-### status
+###  status
 
-• **status**: _string_
+• **status**: *string*
 
-_Defined in [responses/media.repository.comment.response.ts:3](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/media.repository.comment.response.ts#L3)_
+*Defined in [responses/media.repository.comment.response.ts:3](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.comment.response.ts#L3)*

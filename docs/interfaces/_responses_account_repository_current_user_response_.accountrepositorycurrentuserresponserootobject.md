@@ -6,27 +6,27 @@
 
 ## Hierarchy
 
-- **AccountRepositoryCurrentUserResponseRootObject**
+* **AccountRepositoryCurrentUserResponseRootObject**
 
 ## Index
 
 ### Properties
 
-- [status](_responses_account_repository_current_user_response_.accountrepositorycurrentuserresponserootobject.md#status)
-- [user](_responses_account_repository_current_user_response_.accountrepositorycurrentuserresponserootobject.md#user)
+* [status](_responses_account_repository_current_user_response_.accountrepositorycurrentuserresponserootobject.md#status)
+* [user](_responses_account_repository_current_user_response_.accountrepositorycurrentuserresponserootobject.md#user)
 
 ## Properties
 
-### status
+###  status
 
-• **status**: _string_
+• **status**: *string*
 
-_Defined in [responses/account.repository.current-user.response.ts:3](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/account.repository.current-user.response.ts#L3)_
+*Defined in [responses/account.repository.current-user.response.ts:3](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/account.repository.current-user.response.ts#L3)*
 
----
+___
 
-### user
+###  user
 
-• **user**: _[AccountRepositoryCurrentUserResponseUser](\_responses_account_repository_current_user_response_.accountrepositorycurrentuserresponseuser.md)\_
+• **user**: *[AccountRepositoryCurrentUserResponseUser](_responses_account_repository_current_user_response_.accountrepositorycurrentuserresponseuser.md)*
 
-_Defined in [responses/account.repository.current-user.response.ts:2](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/account.repository.current-user.response.ts#L2)_
+*Defined in [responses/account.repository.current-user.response.ts:2](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/account.repository.current-user.response.ts#L2)*

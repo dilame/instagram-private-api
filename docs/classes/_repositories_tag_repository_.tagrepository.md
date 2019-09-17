@@ -6,50 +6,68 @@
 
 ## Hierarchy
 
-- [Repository](_core_repository_.repository.md)
+* [Repository](_core_repository_.repository.md)
 
-  - **TagRepository**
+  * **TagRepository**
 
 ## Index
 
 ### Constructors
 
-- [constructor](_repositories_tag_repository_.tagrepository.md#constructor)
+* [constructor](_repositories_tag_repository_.tagrepository.md#constructor)
 
 ### Methods
 
-- [search](_repositories_tag_repository_.tagrepository.md#search)
+* [search](_repositories_tag_repository_.tagrepository.md#search)
+* [section](_repositories_tag_repository_.tagrepository.md#section)
 
 ## Constructors
 
-### constructor
+###  constructor
 
-\+ **new TagRepository**(`client`: [IgApiClient](_core_client_.igapiclient.md)): _[TagRepository](\_repositories_tag_repository_.tagrepository.md)\_
+\+ **new TagRepository**(`client`: [IgApiClient](_core_client_.igapiclient.md)): *[TagRepository](_repositories_tag_repository_.tagrepository.md)*
 
-_Inherited from [Repository](\_core_repository_.repository.md).[constructor](_core_repository_.repository.md#constructor)\_
+*Inherited from [Repository](_core_repository_.repository.md).[constructor](_core_repository_.repository.md#constructor)*
 
-_Defined in [core/repository.ts:6](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/repository.ts#L6)_
+*Defined in [core/repository.ts:6](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/repository.ts#L6)*
 
 **Parameters:**
 
-| Name     | Type                                        |
-| -------- | ------------------------------------------- |
-| `client` | [IgApiClient](_core_client_.igapiclient.md) |
+Name | Type |
+------ | ------ |
+`client` | [IgApiClient](_core_client_.igapiclient.md) |
 
-**Returns:** _[TagRepository](\_repositories_tag_repository_.tagrepository.md)\_
+**Returns:** *[TagRepository](_repositories_tag_repository_.tagrepository.md)*
 
 ## Methods
 
-### search
+###  search
 
-▸ **search**(`q`: string): _`Promise<any>`_
+▸ **search**(`q`: string): *`Promise<TagRepositorySearchResponseRootObject>`*
 
-_Defined in [repositories/tag.repository.ts:5](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/repositories/tag.repository.ts#L5)_
+*Defined in [repositories/tag.repository.ts:5](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/tag.repository.ts#L5)*
 
 **Parameters:**
 
-| Name | Type   |
-| ---- | ------ |
-| `q`  | string |
+Name | Type |
+------ | ------ |
+`q` | string |
 
-**Returns:** _`Promise<any>`_
+**Returns:** *`Promise<TagRepositorySearchResponseRootObject>`*
+
+___
+
+###  section
+
+▸ **section**(`q`: string, `tab`: string): *`Promise<TagRepositorySearchResponseRootObject>`*
+
+*Defined in [repositories/tag.repository.ts:17](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/tag.repository.ts#L17)*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`q` | string |
+`tab` | string |
+
+**Returns:** *`Promise<TagRepositorySearchResponseRootObject>`*

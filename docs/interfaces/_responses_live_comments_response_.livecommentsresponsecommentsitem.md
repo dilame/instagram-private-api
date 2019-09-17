@@ -6,126 +6,126 @@
 
 ## Hierarchy
 
-- **LiveCommentsResponseCommentsItem**
+* **LiveCommentsResponseCommentsItem**
 
 ## Index
 
 ### Properties
 
-- [bit_flags](_responses_live_comments_response_.livecommentsresponsecommentsitem.md#bit_flags)
-- [content_type](_responses_live_comments_response_.livecommentsresponsecommentsitem.md#content_type)
-- [created_at](_responses_live_comments_response_.livecommentsresponsecommentsitem.md#created_at)
-- [created_at_utc](_responses_live_comments_response_.livecommentsresponsecommentsitem.md#created_at_utc)
-- [did_report_as_spam](_responses_live_comments_response_.livecommentsresponsecommentsitem.md#did_report_as_spam)
-- [inline_composer_display_condition](_responses_live_comments_response_.livecommentsresponsecommentsitem.md#inline_composer_display_condition)
-- [pk](_responses_live_comments_response_.livecommentsresponsecommentsitem.md#pk)
-- [share_enabled](_responses_live_comments_response_.livecommentsresponsecommentsitem.md#share_enabled)
-- [status](_responses_live_comments_response_.livecommentsresponsecommentsitem.md#status)
-- [text](_responses_live_comments_response_.livecommentsresponsecommentsitem.md#text)
-- [type](_responses_live_comments_response_.livecommentsresponsecommentsitem.md#type)
-- [user](_responses_live_comments_response_.livecommentsresponsecommentsitem.md#user)
-- [user_id](_responses_live_comments_response_.livecommentsresponsecommentsitem.md#user_id)
+* [bit_flags](_responses_live_comments_response_.livecommentsresponsecommentsitem.md#bit_flags)
+* [content_type](_responses_live_comments_response_.livecommentsresponsecommentsitem.md#content_type)
+* [created_at](_responses_live_comments_response_.livecommentsresponsecommentsitem.md#created_at)
+* [created_at_utc](_responses_live_comments_response_.livecommentsresponsecommentsitem.md#created_at_utc)
+* [did_report_as_spam](_responses_live_comments_response_.livecommentsresponsecommentsitem.md#did_report_as_spam)
+* [inline_composer_display_condition](_responses_live_comments_response_.livecommentsresponsecommentsitem.md#inline_composer_display_condition)
+* [pk](_responses_live_comments_response_.livecommentsresponsecommentsitem.md#pk)
+* [share_enabled](_responses_live_comments_response_.livecommentsresponsecommentsitem.md#share_enabled)
+* [status](_responses_live_comments_response_.livecommentsresponsecommentsitem.md#status)
+* [text](_responses_live_comments_response_.livecommentsresponsecommentsitem.md#text)
+* [type](_responses_live_comments_response_.livecommentsresponsecommentsitem.md#type)
+* [user](_responses_live_comments_response_.livecommentsresponsecommentsitem.md#user)
+* [user_id](_responses_live_comments_response_.livecommentsresponsecommentsitem.md#user_id)
 
 ## Properties
 
-### bit_flags
+###  bit_flags
 
-• **bit_flags**: _number_
+• **bit_flags**: *number*
 
-_Defined in [responses/live.comments.response.ts:26](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/live.comments.response.ts#L26)_
+*Defined in [responses/live.comments.response.ts:26](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.comments.response.ts#L26)*
 
----
+___
 
-### content_type
+###  content_type
 
-• **content_type**: _string_
+• **content_type**: *string*
 
-_Defined in [responses/live.comments.response.ts:24](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/live.comments.response.ts#L24)_
+*Defined in [responses/live.comments.response.ts:24](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.comments.response.ts#L24)*
 
----
+___
 
-### created_at
+###  created_at
 
-• **created_at**: _number_
+• **created_at**: *number*
 
-_Defined in [responses/live.comments.response.ts:22](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/live.comments.response.ts#L22)_
+*Defined in [responses/live.comments.response.ts:22](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.comments.response.ts#L22)*
 
----
+___
 
-### created_at_utc
+###  created_at_utc
 
-• **created_at_utc**: _number_
+• **created_at_utc**: *number*
 
-_Defined in [responses/live.comments.response.ts:23](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/live.comments.response.ts#L23)_
+*Defined in [responses/live.comments.response.ts:23](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.comments.response.ts#L23)*
 
----
+___
 
-### did_report_as_spam
+###  did_report_as_spam
 
-• **did_report_as_spam**: _boolean_
+• **did_report_as_spam**: *boolean*
 
-_Defined in [responses/live.comments.response.ts:28](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/live.comments.response.ts#L28)_
+*Defined in [responses/live.comments.response.ts:28](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.comments.response.ts#L28)*
 
----
+___
 
-### inline_composer_display_condition
+###  inline_composer_display_condition
 
-• **inline_composer_display_condition**: _string_
+• **inline_composer_display_condition**: *string*
 
-_Defined in [responses/live.comments.response.ts:30](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/live.comments.response.ts#L30)_
+*Defined in [responses/live.comments.response.ts:30](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.comments.response.ts#L30)*
 
----
+___
 
-### pk
+###  pk
 
-• **pk**: _string_
+• **pk**: *string*
 
-_Defined in [responses/live.comments.response.ts:18](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/live.comments.response.ts#L18)_
+*Defined in [responses/live.comments.response.ts:18](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.comments.response.ts#L18)*
 
----
+___
 
-### share_enabled
+###  share_enabled
 
-• **share_enabled**: _boolean_
+• **share_enabled**: *boolean*
 
-_Defined in [responses/live.comments.response.ts:29](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/live.comments.response.ts#L29)_
+*Defined in [responses/live.comments.response.ts:29](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.comments.response.ts#L29)*
 
----
+___
 
-### status
+###  status
 
-• **status**: _string_
+• **status**: *string*
 
-_Defined in [responses/live.comments.response.ts:25](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/live.comments.response.ts#L25)_
+*Defined in [responses/live.comments.response.ts:25](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.comments.response.ts#L25)*
 
----
+___
 
-### text
+###  text
 
-• **text**: _string_
+• **text**: *string*
 
-_Defined in [responses/live.comments.response.ts:20](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/live.comments.response.ts#L20)_
+*Defined in [responses/live.comments.response.ts:20](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.comments.response.ts#L20)*
 
----
+___
 
-### type
+###  type
 
-• **type**: _number_
+• **type**: *number*
 
-_Defined in [responses/live.comments.response.ts:21](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/live.comments.response.ts#L21)_
+*Defined in [responses/live.comments.response.ts:21](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.comments.response.ts#L21)*
 
----
+___
 
-### user
+###  user
 
-• **user**: _[LiveCommentsResponseUser](\_responses_live_comments_response_.livecommentsresponseuser.md)\_
+• **user**: *[LiveCommentsResponseUser](_responses_live_comments_response_.livecommentsresponseuser.md)*
 
-_Defined in [responses/live.comments.response.ts:27](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/live.comments.response.ts#L27)_
+*Defined in [responses/live.comments.response.ts:27](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.comments.response.ts#L27)*
 
----
+___
 
-### user_id
+###  user_id
 
-• **user_id**: _number_
+• **user_id**: *number*
 
-_Defined in [responses/live.comments.response.ts:19](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/live.comments.response.ts#L19)_
+*Defined in [responses/live.comments.response.ts:19](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.comments.response.ts#L19)*

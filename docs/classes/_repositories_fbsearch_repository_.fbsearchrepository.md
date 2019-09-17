@@ -6,95 +6,95 @@
 
 ## Hierarchy
 
-- [Repository](_core_repository_.repository.md)
+* [Repository](_core_repository_.repository.md)
 
-  - **FbsearchRepository**
+  * **FbsearchRepository**
 
 ## Index
 
 ### Constructors
 
-- [constructor](_repositories_fbsearch_repository_.fbsearchrepository.md#constructor)
+* [constructor](_repositories_fbsearch_repository_.fbsearchrepository.md#constructor)
 
 ### Methods
 
-- [places](_repositories_fbsearch_repository_.fbsearchrepository.md#places)
-- [recentSearches](_repositories_fbsearch_repository_.fbsearchrepository.md#recentsearches)
-- [suggestedSearches](_repositories_fbsearch_repository_.fbsearchrepository.md#suggestedsearches)
-- [topsearchFlat](_repositories_fbsearch_repository_.fbsearchrepository.md#topsearchflat)
+* [places](_repositories_fbsearch_repository_.fbsearchrepository.md#places)
+* [recentSearches](_repositories_fbsearch_repository_.fbsearchrepository.md#recentsearches)
+* [suggestedSearches](_repositories_fbsearch_repository_.fbsearchrepository.md#suggestedsearches)
+* [topsearchFlat](_repositories_fbsearch_repository_.fbsearchrepository.md#topsearchflat)
 
 ## Constructors
 
-### constructor
+###  constructor
 
-\+ **new FbsearchRepository**(`client`: [IgApiClient](_core_client_.igapiclient.md)): _[FbsearchRepository](\_repositories_fbsearch_repository_.fbsearchrepository.md)\_
+\+ **new FbsearchRepository**(`client`: [IgApiClient](_core_client_.igapiclient.md)): *[FbsearchRepository](_repositories_fbsearch_repository_.fbsearchrepository.md)*
 
-_Inherited from [Repository](\_core_repository_.repository.md).[constructor](_core_repository_.repository.md#constructor)\_
+*Inherited from [Repository](_core_repository_.repository.md).[constructor](_core_repository_.repository.md#constructor)*
 
-_Defined in [core/repository.ts:6](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/repository.ts#L6)_
+*Defined in [core/repository.ts:6](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/repository.ts#L6)*
 
 **Parameters:**
 
-| Name     | Type                                        |
-| -------- | ------------------------------------------- |
-| `client` | [IgApiClient](_core_client_.igapiclient.md) |
+Name | Type |
+------ | ------ |
+`client` | [IgApiClient](_core_client_.igapiclient.md) |
 
-**Returns:** _[FbsearchRepository](\_repositories_fbsearch_repository_.fbsearchrepository.md)\_
+**Returns:** *[FbsearchRepository](_repositories_fbsearch_repository_.fbsearchrepository.md)*
 
 ## Methods
 
-### places
+###  places
 
-▸ **places**(`query`: string): _`Promise<any>`_
+▸ **places**(`query`: string): *`Promise<FbsearchRepositoryPlacesResponseRootObject>`*
 
-_Defined in [repositories/fbsearch.repository.ts:36](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/repositories/fbsearch.repository.ts#L36)_
-
-**Parameters:**
-
-| Name    | Type   |
-| ------- | ------ |
-| `query` | string |
-
-**Returns:** _`Promise<any>`_
-
----
-
-### recentSearches
-
-▸ **recentSearches**(): _`Promise<any>`_
-
-_Defined in [repositories/fbsearch.repository.ts:17](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/repositories/fbsearch.repository.ts#L17)_
-
-**Returns:** _`Promise<any>`_
-
----
-
-### suggestedSearches
-
-▸ **suggestedSearches**(`type`: "blended" | "users" | "hashtags" | "places"): _`Promise<any>`_
-
-_Defined in [repositories/fbsearch.repository.ts:8](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/repositories/fbsearch.repository.ts#L8)_
+*Defined in [repositories/fbsearch.repository.ts:36](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/fbsearch.repository.ts#L36)*
 
 **Parameters:**
 
-| Name   | Type                                           |
-| ------ | ---------------------------------------------- |
-| `type` | "blended" \| "users" \| "hashtags" \| "places" |
+Name | Type |
+------ | ------ |
+`query` | string |
 
-**Returns:** _`Promise<any>`_
+**Returns:** *`Promise<FbsearchRepositoryPlacesResponseRootObject>`*
 
----
+___
 
-### topsearchFlat
+###  recentSearches
 
-▸ **topsearchFlat**(`query`: string): _`Promise<FbsearchRepositoryTopsearchFlatResponseRootObject>`_
+▸ **recentSearches**(): *`Promise<any>`*
 
-_Defined in [repositories/fbsearch.repository.ts:24](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/repositories/fbsearch.repository.ts#L24)_
+*Defined in [repositories/fbsearch.repository.ts:17](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/fbsearch.repository.ts#L17)*
+
+**Returns:** *`Promise<any>`*
+
+___
+
+###  suggestedSearches
+
+▸ **suggestedSearches**(`type`: "blended" | "users" | "hashtags" | "places"): *`Promise<any>`*
+
+*Defined in [repositories/fbsearch.repository.ts:8](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/fbsearch.repository.ts#L8)*
 
 **Parameters:**
 
-| Name    | Type   |
-| ------- | ------ |
-| `query` | string |
+Name | Type |
+------ | ------ |
+`type` | "blended" \| "users" \| "hashtags" \| "places" |
 
-**Returns:** _`Promise<FbsearchRepositoryTopsearchFlatResponseRootObject>`_
+**Returns:** *`Promise<any>`*
+
+___
+
+###  topsearchFlat
+
+▸ **topsearchFlat**(`query`: string): *`Promise<FbsearchRepositoryTopsearchFlatResponseRootObject>`*
+
+*Defined in [repositories/fbsearch.repository.ts:24](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/fbsearch.repository.ts#L24)*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`query` | string |
+
+**Returns:** *`Promise<FbsearchRepositoryTopsearchFlatResponseRootObject>`*

@@ -11,6 +11,7 @@ import {
   IgActionSpamError,
   IgCheckpointError,
   IgClientError,
+  IgInactiveUserError,
   IgLoginRequiredError,
   IgNetworkError,
   IgNotFoundError,
@@ -18,6 +19,7 @@ import {
   IgResponseError,
   IgSentryBlockError,
 } from '../errors';
+import { IgResponse } from '../types/common.types';
 import JSONbigInt = require('json-bigint');
 import { IgResponse } from '../types/common.types';
 import * as url from 'url';
@@ -112,7 +114,7 @@ export class Request {
       .forEach(cookie => this.client.state.cookieJar.setCookie(cookie.toString(), parsedUrl));
 
     process.nextTick(() => this.end$.next());
-    if (response.body.status === 'ok') {
+    if (response.body.status === 'ok' || (onlyCheckHttpStatus && response.statusCode === 200)) {
       return response;
     }
     const error = this.handleResponseError(response);
@@ -172,6 +174,9 @@ export class Request {
     }
     if (json.status === 'not ok') {
       return new Error(`saveTrafficRequest ${json.statusCode} error`);
+    }
+    if (json.error_type === 'inactive user') {
+      return new IgInactiveUserError(response);
     }
     return new IgResponseError(response);
   }

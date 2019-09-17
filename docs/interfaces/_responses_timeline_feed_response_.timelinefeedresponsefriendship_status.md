@@ -6,45 +6,45 @@
 
 ## Hierarchy
 
-- **TimelineFeedResponseFriendship_status**
+* **TimelineFeedResponseFriendship_status**
 
 ## Index
 
 ### Properties
 
-- [following](_responses_timeline_feed_response_.timelinefeedresponsefriendship_status.md#following)
-- [is_bestie](_responses_timeline_feed_response_.timelinefeedresponsefriendship_status.md#is_bestie)
-- [is_muting_reel](_responses_timeline_feed_response_.timelinefeedresponsefriendship_status.md#is_muting_reel)
-- [outgoing_request](_responses_timeline_feed_response_.timelinefeedresponsefriendship_status.md#outgoing_request)
+* [following](_responses_timeline_feed_response_.timelinefeedresponsefriendship_status.md#following)
+* [is_bestie](_responses_timeline_feed_response_.timelinefeedresponsefriendship_status.md#is_bestie)
+* [is_muting_reel](_responses_timeline_feed_response_.timelinefeedresponsefriendship_status.md#is_muting_reel)
+* [outgoing_request](_responses_timeline_feed_response_.timelinefeedresponsefriendship_status.md#outgoing_request)
 
 ## Properties
 
-### following
+###  following
 
-• **following**: _boolean_
+• **following**: *boolean*
 
-_Defined in [responses/timeline.feed.response.ts:129](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/timeline.feed.response.ts#L129)_
+*Defined in [responses/timeline.feed.response.ts:129](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/timeline.feed.response.ts#L129)*
 
----
+___
 
-### is_bestie
+###  is_bestie
 
-• **is_bestie**: _boolean_
+• **is_bestie**: *boolean*
 
-_Defined in [responses/timeline.feed.response.ts:132](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/timeline.feed.response.ts#L132)_
+*Defined in [responses/timeline.feed.response.ts:132](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/timeline.feed.response.ts#L132)*
 
----
+___
 
-### is_muting_reel
+###  is_muting_reel
 
-• **is_muting_reel**: _boolean_
+• **is_muting_reel**: *boolean*
 
-_Defined in [responses/timeline.feed.response.ts:131](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/timeline.feed.response.ts#L131)_
+*Defined in [responses/timeline.feed.response.ts:131](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/timeline.feed.response.ts#L131)*
 
----
+___
 
-### outgoing_request
+###  outgoing_request
 
-• **outgoing_request**: _boolean_
+• **outgoing_request**: *boolean*
 
-_Defined in [responses/timeline.feed.response.ts:130](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/timeline.feed.response.ts#L130)_
+*Defined in [responses/timeline.feed.response.ts:130](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/timeline.feed.response.ts#L130)*

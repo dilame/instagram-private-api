@@ -6,27 +6,27 @@
 
 ## Hierarchy
 
-- **ReelsMediaFeedResponseRootObject**
+* **ReelsMediaFeedResponseRootObject**
 
 ## Index
 
 ### Properties
 
-- [reels](_responses_reels_media_feed_response_.reelsmediafeedresponserootobject.md#reels)
-- [status](_responses_reels_media_feed_response_.reelsmediafeedresponserootobject.md#status)
+* [reels](_responses_reels_media_feed_response_.reelsmediafeedresponserootobject.md#reels)
+* [status](_responses_reels_media_feed_response_.reelsmediafeedresponserootobject.md#status)
 
 ## Properties
 
-### reels
+###  reels
 
-• **reels**: _[ReelsMediaFeedResponseReels](\_responses_reels_media_feed_response_.reelsmediafeedresponsereels.md)\_
+• **reels**: *[ReelsMediaFeedResponseReels](_responses_reels_media_feed_response_.reelsmediafeedresponsereels.md)*
 
-_Defined in [responses/reels-media.feed.response.ts:2](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/reels-media.feed.response.ts#L2)_
+*Defined in [responses/reels-media.feed.response.ts:2](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-media.feed.response.ts#L2)*
 
----
+___
 
-### status
+###  status
 
-• **status**: _string_
+• **status**: *string*
 
-_Defined in [responses/reels-media.feed.response.ts:3](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/reels-media.feed.response.ts#L3)_
+*Defined in [responses/reels-media.feed.response.ts:3](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-media.feed.response.ts#L3)*

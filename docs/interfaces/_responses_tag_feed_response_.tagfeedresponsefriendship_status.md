@@ -6,36 +6,36 @@
 
 ## Hierarchy
 
-- **TagFeedResponseFriendship_status**
+* **TagFeedResponseFriendship_status**
 
 ## Index
 
 ### Properties
 
-- [following](_responses_tag_feed_response_.tagfeedresponsefriendship_status.md#following)
-- [is_bestie](_responses_tag_feed_response_.tagfeedresponsefriendship_status.md#is_bestie)
-- [outgoing_request](_responses_tag_feed_response_.tagfeedresponsefriendship_status.md#outgoing_request)
+* [following](_responses_tag_feed_response_.tagfeedresponsefriendship_status.md#following)
+* [is_bestie](_responses_tag_feed_response_.tagfeedresponsefriendship_status.md#is_bestie)
+* [outgoing_request](_responses_tag_feed_response_.tagfeedresponsefriendship_status.md#outgoing_request)
 
 ## Properties
 
-### following
+###  following
 
-• **following**: _boolean_
+• **following**: *boolean*
 
-_Defined in [responses/tag.feed.response.ts:96](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/tag.feed.response.ts#L96)_
+*Defined in [responses/tag.feed.response.ts:96](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/tag.feed.response.ts#L96)*
 
----
+___
 
-### is_bestie
+###  is_bestie
 
-• **is_bestie**: _boolean_
+• **is_bestie**: *boolean*
 
-_Defined in [responses/tag.feed.response.ts:98](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/tag.feed.response.ts#L98)_
+*Defined in [responses/tag.feed.response.ts:98](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/tag.feed.response.ts#L98)*
 
----
+___
 
-### outgoing_request
+###  outgoing_request
 
-• **outgoing_request**: _boolean_
+• **outgoing_request**: *boolean*
 
-_Defined in [responses/tag.feed.response.ts:97](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/tag.feed.response.ts#L97)_
+*Defined in [responses/tag.feed.response.ts:97](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/tag.feed.response.ts#L97)*

@@ -16,7 +16,7 @@
 
 ▸ **Enumerable**(`value`: boolean): *`(Anonymous function)`*
 
-*Defined in [decorators/enumerable.decorator.ts:1](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/decorators/enumerable.decorator.ts#L1)*
+*Defined in [decorators/enumerable.decorator.ts:1](https://github.com/dilame/instagram-private-api/blob/173bc62/src/decorators/enumerable.decorator.ts#L1)*
 
 **Parameters:**
 

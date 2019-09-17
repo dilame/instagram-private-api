@@ -6,27 +6,27 @@
 
 ## Hierarchy
 
-- **TimelineFeedResponsePagination_info**
+* **TimelineFeedResponsePagination_info**
 
 ## Index
 
 ### Properties
 
-- [group_id](_responses_timeline_feed_response_.timelinefeedresponsepagination_info.md#group_id)
-- [source](_responses_timeline_feed_response_.timelinefeedresponsepagination_info.md#source)
+* [group_id](_responses_timeline_feed_response_.timelinefeedresponsepagination_info.md#group_id)
+* [source](_responses_timeline_feed_response_.timelinefeedresponsepagination_info.md#source)
 
 ## Properties
 
-### group_id
+###  group_id
 
-• **group_id**: _null_
+• **group_id**: *null*
 
-_Defined in [responses/timeline.feed.response.ts:284](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/timeline.feed.response.ts#L284)_
+*Defined in [responses/timeline.feed.response.ts:284](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/timeline.feed.response.ts#L284)*
 
----
+___
 
-### source
+###  source
 
-• **source**: _null_
+• **source**: *null*
 
-_Defined in [responses/timeline.feed.response.ts:283](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/timeline.feed.response.ts#L283)_
+*Defined in [responses/timeline.feed.response.ts:283](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/timeline.feed.response.ts#L283)*

@@ -6,45 +6,45 @@
 
 ## Hierarchy
 
-- **FbsearchRepositoryTopsearchFlatResponseListItem**
+* **FbsearchRepositoryTopsearchFlatResponseListItem**
 
 ## Index
 
 ### Properties
 
-- [hashtag](_responses_fbsearch_repository_topsearch_flat_response_.fbsearchrepositorytopsearchflatresponselistitem.md#optional-hashtag)
-- [place](_responses_fbsearch_repository_topsearch_flat_response_.fbsearchrepositorytopsearchflatresponselistitem.md#optional-place)
-- [position](_responses_fbsearch_repository_topsearch_flat_response_.fbsearchrepositorytopsearchflatresponselistitem.md#position)
-- [user](_responses_fbsearch_repository_topsearch_flat_response_.fbsearchrepositorytopsearchflatresponselistitem.md#optional-user)
+* [hashtag](_responses_fbsearch_repository_topsearch_flat_response_.fbsearchrepositorytopsearchflatresponselistitem.md#optional-hashtag)
+* [place](_responses_fbsearch_repository_topsearch_flat_response_.fbsearchrepositorytopsearchflatresponselistitem.md#optional-place)
+* [position](_responses_fbsearch_repository_topsearch_flat_response_.fbsearchrepositorytopsearchflatresponselistitem.md#position)
+* [user](_responses_fbsearch_repository_topsearch_flat_response_.fbsearchrepositorytopsearchflatresponselistitem.md#optional-user)
 
 ## Properties
 
 ### `Optional` hashtag
 
-• **hashtag**? : _[FbsearchRepositoryTopsearchFlatResponseHashtag](\_responses_fbsearch_repository_topsearch_flat_response_.fbsearchrepositorytopsearchflatresponsehashtag.md)\_
+• **hashtag**? : *[FbsearchRepositoryTopsearchFlatResponseHashtag](_responses_fbsearch_repository_topsearch_flat_response_.fbsearchrepositorytopsearchflatresponsehashtag.md)*
 
-_Defined in [responses/fbsearch.repository.topsearch-flat.response.ts:11](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/fbsearch.repository.topsearch-flat.response.ts#L11)_
+*Defined in [responses/fbsearch.repository.topsearch-flat.response.ts:11](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/fbsearch.repository.topsearch-flat.response.ts#L11)*
 
----
+___
 
 ### `Optional` place
 
-• **place**? : _[FbsearchRepositoryTopsearchFlatResponsePlace](\_responses_fbsearch_repository_topsearch_flat_response_.fbsearchrepositorytopsearchflatresponseplace.md)\_
+• **place**? : *[FbsearchRepositoryTopsearchFlatResponsePlace](_responses_fbsearch_repository_topsearch_flat_response_.fbsearchrepositorytopsearchflatresponseplace.md)*
 
-_Defined in [responses/fbsearch.repository.topsearch-flat.response.ts:9](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/fbsearch.repository.topsearch-flat.response.ts#L9)_
+*Defined in [responses/fbsearch.repository.topsearch-flat.response.ts:9](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/fbsearch.repository.topsearch-flat.response.ts#L9)*
 
----
+___
 
-### position
+###  position
 
-• **position**: _number_
+• **position**: *number*
 
-_Defined in [responses/fbsearch.repository.topsearch-flat.response.ts:10](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/fbsearch.repository.topsearch-flat.response.ts#L10)_
+*Defined in [responses/fbsearch.repository.topsearch-flat.response.ts:10](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/fbsearch.repository.topsearch-flat.response.ts#L10)*
 
----
+___
 
 ### `Optional` user
 
-• **user**? : _[FbsearchRepositoryTopsearchFlatResponseUser](\_responses_fbsearch_repository_topsearch_flat_response_.fbsearchrepositorytopsearchflatresponseuser.md)\_
+• **user**? : *[FbsearchRepositoryTopsearchFlatResponseUser](_responses_fbsearch_repository_topsearch_flat_response_.fbsearchrepositorytopsearchflatresponseuser.md)*
 
-_Defined in [responses/fbsearch.repository.topsearch-flat.response.ts:12](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/fbsearch.repository.topsearch-flat.response.ts#L12)_
+*Defined in [responses/fbsearch.repository.topsearch-flat.response.ts:12](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/fbsearch.repository.topsearch-flat.response.ts#L12)*

@@ -6,27 +6,27 @@
 
 ## Hierarchy
 
-- **DirectThreadRepositoryUpdateTitleResponseRootObject**
+* **DirectThreadRepositoryUpdateTitleResponseRootObject**
 
 ## Index
 
 ### Properties
 
-- [status](_responses_direct_thread_repository_update_title_response_.directthreadrepositoryupdatetitleresponserootobject.md#status)
-- [thread](_responses_direct_thread_repository_update_title_response_.directthreadrepositoryupdatetitleresponserootobject.md#thread)
+* [status](_responses_direct_thread_repository_update_title_response_.directthreadrepositoryupdatetitleresponserootobject.md#status)
+* [thread](_responses_direct_thread_repository_update_title_response_.directthreadrepositoryupdatetitleresponserootobject.md#thread)
 
 ## Properties
 
-### status
+###  status
 
-• **status**: _string_
+• **status**: *string*
 
-_Defined in [responses/direct-thread.repository.update-title.response.ts:3](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.repository.update-title.response.ts#L3)_
+*Defined in [responses/direct-thread.repository.update-title.response.ts:3](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-thread.repository.update-title.response.ts#L3)*
 
----
+___
 
-### thread
+###  thread
 
-• **thread**: _[DirectThreadRepositoryUpdateTitleResponseThread](\_responses_direct_thread_repository_update_title_response_.directthreadrepositoryupdatetitleresponsethread.md)\_
+• **thread**: *[DirectThreadRepositoryUpdateTitleResponseThread](_responses_direct_thread_repository_update_title_response_.directthreadrepositoryupdatetitleresponsethread.md)*
 
-_Defined in [responses/direct-thread.repository.update-title.response.ts:2](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.repository.update-title.response.ts#L2)_
+*Defined in [responses/direct-thread.repository.update-title.response.ts:2](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-thread.repository.update-title.response.ts#L2)*

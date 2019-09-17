@@ -6,36 +6,36 @@
 
 ## Hierarchy
 
-- **AccountRepositoryCurrentUserResponseHdProfilePicVersionsItem**
+* **AccountRepositoryCurrentUserResponseHdProfilePicVersionsItem**
 
 ## Index
 
 ### Properties
 
-- [height](_responses_account_repository_current_user_response_.accountrepositorycurrentuserresponsehdprofilepicversionsitem.md#height)
-- [url](_responses_account_repository_current_user_response_.accountrepositorycurrentuserresponsehdprofilepicversionsitem.md#url)
-- [width](_responses_account_repository_current_user_response_.accountrepositorycurrentuserresponsehdprofilepicversionsitem.md#width)
+* [height](_responses_account_repository_current_user_response_.accountrepositorycurrentuserresponsehdprofilepicversionsitem.md#height)
+* [url](_responses_account_repository_current_user_response_.accountrepositorycurrentuserresponsehdprofilepicversionsitem.md#url)
+* [width](_responses_account_repository_current_user_response_.accountrepositorycurrentuserresponsehdprofilepicversionsitem.md#width)
 
 ## Properties
 
-### height
+###  height
 
-• **height**: _number_
+• **height**: *number*
 
-_Defined in [responses/account.repository.current-user.response.ts:37](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/account.repository.current-user.response.ts#L37)_
+*Defined in [responses/account.repository.current-user.response.ts:37](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/account.repository.current-user.response.ts#L37)*
 
----
+___
 
-### url
+###  url
 
-• **url**: _string_
+• **url**: *string*
 
-_Defined in [responses/account.repository.current-user.response.ts:38](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/account.repository.current-user.response.ts#L38)_
+*Defined in [responses/account.repository.current-user.response.ts:38](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/account.repository.current-user.response.ts#L38)*
 
----
+___
 
-### width
+###  width
 
-• **width**: _number_
+• **width**: *number*
 
-_Defined in [responses/account.repository.current-user.response.ts:36](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/account.repository.current-user.response.ts#L36)_
+*Defined in [responses/account.repository.current-user.response.ts:36](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/account.repository.current-user.response.ts#L36)*

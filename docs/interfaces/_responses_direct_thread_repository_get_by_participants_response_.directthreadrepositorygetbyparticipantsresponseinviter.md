@@ -6,81 +6,81 @@
 
 ## Hierarchy
 
-- **DirectThreadRepositoryGetByParticipantsResponseInviter**
+* **DirectThreadRepositoryGetByParticipantsResponseInviter**
 
 ## Index
 
 ### Properties
 
-- [full_name](_responses_direct_thread_repository_get_by_participants_response_.directthreadrepositorygetbyparticipantsresponseinviter.md#full_name)
-- [has_anonymous_profile_picture](_responses_direct_thread_repository_get_by_participants_response_.directthreadrepositorygetbyparticipantsresponseinviter.md#has_anonymous_profile_picture)
-- [is_private](_responses_direct_thread_repository_get_by_participants_response_.directthreadrepositorygetbyparticipantsresponseinviter.md#is_private)
-- [is_verified](_responses_direct_thread_repository_get_by_participants_response_.directthreadrepositorygetbyparticipantsresponseinviter.md#is_verified)
-- [pk](_responses_direct_thread_repository_get_by_participants_response_.directthreadrepositorygetbyparticipantsresponseinviter.md#pk)
-- [profile_pic_id](_responses_direct_thread_repository_get_by_participants_response_.directthreadrepositorygetbyparticipantsresponseinviter.md#profile_pic_id)
-- [profile_pic_url](_responses_direct_thread_repository_get_by_participants_response_.directthreadrepositorygetbyparticipantsresponseinviter.md#profile_pic_url)
-- [username](_responses_direct_thread_repository_get_by_participants_response_.directthreadrepositorygetbyparticipantsresponseinviter.md#username)
+* [full_name](_responses_direct_thread_repository_get_by_participants_response_.directthreadrepositorygetbyparticipantsresponseinviter.md#full_name)
+* [has_anonymous_profile_picture](_responses_direct_thread_repository_get_by_participants_response_.directthreadrepositorygetbyparticipantsresponseinviter.md#has_anonymous_profile_picture)
+* [is_private](_responses_direct_thread_repository_get_by_participants_response_.directthreadrepositorygetbyparticipantsresponseinviter.md#is_private)
+* [is_verified](_responses_direct_thread_repository_get_by_participants_response_.directthreadrepositorygetbyparticipantsresponseinviter.md#is_verified)
+* [pk](_responses_direct_thread_repository_get_by_participants_response_.directthreadrepositorygetbyparticipantsresponseinviter.md#pk)
+* [profile_pic_id](_responses_direct_thread_repository_get_by_participants_response_.directthreadrepositorygetbyparticipantsresponseinviter.md#profile_pic_id)
+* [profile_pic_url](_responses_direct_thread_repository_get_by_participants_response_.directthreadrepositorygetbyparticipantsresponseinviter.md#profile_pic_url)
+* [username](_responses_direct_thread_repository_get_by_participants_response_.directthreadrepositorygetbyparticipantsresponseinviter.md#username)
 
 ## Properties
 
-### full_name
+###  full_name
 
-• **full_name**: _string_
+• **full_name**: *string*
 
-_Defined in [responses/direct-thread.repository.get-by-participants.response.ts:84](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.repository.get-by-participants.response.ts#L84)_
+*Defined in [responses/direct-thread.repository.get-by-participants.response.ts:84](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-thread.repository.get-by-participants.response.ts#L84)*
 
----
+___
 
-### has_anonymous_profile_picture
+###  has_anonymous_profile_picture
 
-• **has_anonymous_profile_picture**: _boolean_
+• **has_anonymous_profile_picture**: *boolean*
 
-_Defined in [responses/direct-thread.repository.get-by-participants.response.ts:89](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.repository.get-by-participants.response.ts#L89)_
+*Defined in [responses/direct-thread.repository.get-by-participants.response.ts:89](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-thread.repository.get-by-participants.response.ts#L89)*
 
----
+___
 
-### is_private
+###  is_private
 
-• **is_private**: _boolean_
+• **is_private**: *boolean*
 
-_Defined in [responses/direct-thread.repository.get-by-participants.response.ts:85](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.repository.get-by-participants.response.ts#L85)_
+*Defined in [responses/direct-thread.repository.get-by-participants.response.ts:85](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-thread.repository.get-by-participants.response.ts#L85)*
 
----
+___
 
-### is_verified
+###  is_verified
 
-• **is_verified**: _boolean_
+• **is_verified**: *boolean*
 
-_Defined in [responses/direct-thread.repository.get-by-participants.response.ts:88](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.repository.get-by-participants.response.ts#L88)_
+*Defined in [responses/direct-thread.repository.get-by-participants.response.ts:88](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-thread.repository.get-by-participants.response.ts#L88)*
 
----
+___
 
-### pk
+###  pk
 
-• **pk**: _number_
+• **pk**: *number*
 
-_Defined in [responses/direct-thread.repository.get-by-participants.response.ts:82](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.repository.get-by-participants.response.ts#L82)_
+*Defined in [responses/direct-thread.repository.get-by-participants.response.ts:82](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-thread.repository.get-by-participants.response.ts#L82)*
 
----
+___
 
-### profile_pic_id
+###  profile_pic_id
 
-• **profile_pic_id**: _string_
+• **profile_pic_id**: *string*
 
-_Defined in [responses/direct-thread.repository.get-by-participants.response.ts:87](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.repository.get-by-participants.response.ts#L87)_
+*Defined in [responses/direct-thread.repository.get-by-participants.response.ts:87](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-thread.repository.get-by-participants.response.ts#L87)*
 
----
+___
 
-### profile_pic_url
+###  profile_pic_url
 
-• **profile_pic_url**: _string_
+• **profile_pic_url**: *string*
 
-_Defined in [responses/direct-thread.repository.get-by-participants.response.ts:86](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.repository.get-by-participants.response.ts#L86)_
+*Defined in [responses/direct-thread.repository.get-by-participants.response.ts:86](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-thread.repository.get-by-participants.response.ts#L86)*
 
----
+___
 
-### username
+###  username
 
-• **username**: _string_
+• **username**: *string*
 
-_Defined in [responses/direct-thread.repository.get-by-participants.response.ts:83](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.repository.get-by-participants.response.ts#L83)_
+*Defined in [responses/direct-thread.repository.get-by-participants.response.ts:83](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-thread.repository.get-by-participants.response.ts#L83)*

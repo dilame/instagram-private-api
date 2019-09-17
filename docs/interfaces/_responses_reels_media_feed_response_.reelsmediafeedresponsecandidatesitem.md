@@ -6,36 +6,36 @@
 
 ## Hierarchy
 
-- **ReelsMediaFeedResponseCandidatesItem**
+* **ReelsMediaFeedResponseCandidatesItem**
 
 ## Index
 
 ### Properties
 
-- [height](_responses_reels_media_feed_response_.reelsmediafeedresponsecandidatesitem.md#height)
-- [url](_responses_reels_media_feed_response_.reelsmediafeedresponsecandidatesitem.md#url)
-- [width](_responses_reels_media_feed_response_.reelsmediafeedresponsecandidatesitem.md#width)
+* [height](_responses_reels_media_feed_response_.reelsmediafeedresponsecandidatesitem.md#height)
+* [url](_responses_reels_media_feed_response_.reelsmediafeedresponsecandidatesitem.md#url)
+* [width](_responses_reels_media_feed_response_.reelsmediafeedresponsecandidatesitem.md#width)
 
 ## Properties
 
-### height
+###  height
 
-• **height**: _number_
+• **height**: *number*
 
-_Defined in [responses/reels-media.feed.response.ts:82](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/reels-media.feed.response.ts#L82)_
+*Defined in [responses/reels-media.feed.response.ts:82](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-media.feed.response.ts#L82)*
 
----
+___
 
-### url
+###  url
 
-• **url**: _string_
+• **url**: *string*
 
-_Defined in [responses/reels-media.feed.response.ts:83](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/reels-media.feed.response.ts#L83)_
+*Defined in [responses/reels-media.feed.response.ts:83](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-media.feed.response.ts#L83)*
 
----
+___
 
-### width
+###  width
 
-• **width**: _number_
+• **width**: *number*
 
-_Defined in [responses/reels-media.feed.response.ts:81](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/reels-media.feed.response.ts#L81)_
+*Defined in [responses/reels-media.feed.response.ts:81](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-media.feed.response.ts#L81)*

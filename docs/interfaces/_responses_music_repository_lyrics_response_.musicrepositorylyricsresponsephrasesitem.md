@@ -6,27 +6,27 @@
 
 ## Hierarchy
 
-- **MusicRepositoryLyricsResponsePhrasesItem**
+* **MusicRepositoryLyricsResponsePhrasesItem**
 
 ## Index
 
 ### Properties
 
-- [phrase](_responses_music_repository_lyrics_response_.musicrepositorylyricsresponsephrasesitem.md#phrase)
-- [start_time_in_ms](_responses_music_repository_lyrics_response_.musicrepositorylyricsresponsephrasesitem.md#start_time_in_ms)
+* [phrase](_responses_music_repository_lyrics_response_.musicrepositorylyricsresponsephrasesitem.md#phrase)
+* [start_time_in_ms](_responses_music_repository_lyrics_response_.musicrepositorylyricsresponsephrasesitem.md#start_time_in_ms)
 
 ## Properties
 
-### phrase
+###  phrase
 
-• **phrase**: _string_
+• **phrase**: *string*
 
-_Defined in [responses/music.repository.lyrics.response.ts:10](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/music.repository.lyrics.response.ts#L10)_
+*Defined in [responses/music.repository.lyrics.response.ts:10](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/music.repository.lyrics.response.ts#L10)*
 
----
+___
 
-### start_time_in_ms
+###  start_time_in_ms
 
-• **start_time_in_ms**: _number_
+• **start_time_in_ms**: *number*
 
-_Defined in [responses/music.repository.lyrics.response.ts:9](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/music.repository.lyrics.response.ts#L9)_
+*Defined in [responses/music.repository.lyrics.response.ts:9](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/music.repository.lyrics.response.ts#L9)*

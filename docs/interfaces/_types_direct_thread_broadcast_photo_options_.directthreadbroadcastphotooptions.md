@@ -6,36 +6,36 @@
 
 ## Hierarchy
 
-- **DirectThreadBroadcastPhotoOptions**
+* **DirectThreadBroadcastPhotoOptions**
 
 ## Index
 
 ### Properties
 
-- [allowFullAspectRatio](_types_direct_thread_broadcast_photo_options_.directthreadbroadcastphotooptions.md#optional-allowfullaspectratio)
-- [file](_types_direct_thread_broadcast_photo_options_.directthreadbroadcastphotooptions.md#file)
-- [uploadId](_types_direct_thread_broadcast_photo_options_.directthreadbroadcastphotooptions.md#optional-uploadid)
+* [allowFullAspectRatio](_types_direct_thread_broadcast_photo_options_.directthreadbroadcastphotooptions.md#optional-allowfullaspectratio)
+* [file](_types_direct_thread_broadcast_photo_options_.directthreadbroadcastphotooptions.md#file)
+* [uploadId](_types_direct_thread_broadcast_photo_options_.directthreadbroadcastphotooptions.md#optional-uploadid)
 
 ## Properties
 
 ### `Optional` allowFullAspectRatio
 
-• **allowFullAspectRatio**? : _boolean_
+• **allowFullAspectRatio**? : *boolean*
 
-_Defined in [types/direct-thread.broadcast-photo.options.ts:3](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/types/direct-thread.broadcast-photo.options.ts#L3)_
+*Defined in [types/direct-thread.broadcast-photo.options.ts:3](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/direct-thread.broadcast-photo.options.ts#L3)*
 
----
+___
 
-### file
+###  file
 
-• **file**: _`Buffer`_
+• **file**: *`Buffer`*
 
-_Defined in [types/direct-thread.broadcast-photo.options.ts:2](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/types/direct-thread.broadcast-photo.options.ts#L2)_
+*Defined in [types/direct-thread.broadcast-photo.options.ts:2](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/direct-thread.broadcast-photo.options.ts#L2)*
 
----
+___
 
 ### `Optional` uploadId
 
-• **uploadId**? : _string_
+• **uploadId**? : *string*
 
-_Defined in [types/direct-thread.broadcast-photo.options.ts:4](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/types/direct-thread.broadcast-photo.options.ts#L4)_
+*Defined in [types/direct-thread.broadcast-photo.options.ts:4](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/direct-thread.broadcast-photo.options.ts#L4)*

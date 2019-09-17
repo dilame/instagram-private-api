@@ -4,142 +4,175 @@
 
 # Class: ChallengeRepository
 
+All methods expects [State.checkpoint](_core_state_.state.md#checkpoint) to be filled with [CheckpointResponse](../interfaces/_responses_checkpoint_response_.checkpointresponse.md).
+It is filled in automatically when [IgCheckpointError](_errors_ig_checkpoint_error_.igcheckpointerror.md) occurs.
+
 ## Hierarchy
 
-- [Repository](_core_repository_.repository.md)
+* [Repository](_core_repository_.repository.md)
 
-  - **ChallengeRepository**
+  * **ChallengeRepository**
 
 ## Index
 
 ### Constructors
 
-- [constructor](_repositories_challenge_repository_.challengerepository.md#constructor)
+* [constructor](_repositories_challenge_repository_.challengerepository.md#constructor)
 
 ### Methods
 
-- [auto](_repositories_challenge_repository_.challengerepository.md#auto)
-- [deltaLoginReview](_repositories_challenge_repository_.challengerepository.md#deltaloginreview)
-- [reset](_repositories_challenge_repository_.challengerepository.md#reset)
-- [selectVerifyMethod](_repositories_challenge_repository_.challengerepository.md#selectverifymethod)
-- [sendPhoneNumber](_repositories_challenge_repository_.challengerepository.md#sendphonenumber)
-- [sendSecurityCode](_repositories_challenge_repository_.challengerepository.md#sendsecuritycode)
-- [state](_repositories_challenge_repository_.challengerepository.md#state)
+* [auto](_repositories_challenge_repository_.challengerepository.md#auto)
+* [deltaLoginReview](_repositories_challenge_repository_.challengerepository.md#deltaloginreview)
+* [replay](_repositories_challenge_repository_.challengerepository.md#replay)
+* [reset](_repositories_challenge_repository_.challengerepository.md#reset)
+* [selectVerifyMethod](_repositories_challenge_repository_.challengerepository.md#selectverifymethod)
+* [sendPhoneNumber](_repositories_challenge_repository_.challengerepository.md#sendphonenumber)
+* [sendSecurityCode](_repositories_challenge_repository_.challengerepository.md#sendsecuritycode)
+* [state](_repositories_challenge_repository_.challengerepository.md#state)
 
 ## Constructors
 
-### constructor
+###  constructor
 
-\+ **new ChallengeRepository**(`client`: [IgApiClient](_core_client_.igapiclient.md)): _[ChallengeRepository](\_repositories_challenge_repository_.challengerepository.md)\_
+\+ **new ChallengeRepository**(`client`: [IgApiClient](_core_client_.igapiclient.md)): *[ChallengeRepository](_repositories_challenge_repository_.challengerepository.md)*
 
-_Inherited from [Repository](\_core_repository_.repository.md).[constructor](_core_repository_.repository.md#constructor)\_
+*Inherited from [Repository](_core_repository_.repository.md).[constructor](_core_repository_.repository.md#constructor)*
 
-_Defined in [core/repository.ts:6](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/repository.ts#L6)_
+*Defined in [core/repository.ts:6](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/repository.ts#L6)*
 
 **Parameters:**
 
-| Name     | Type                                        |
-| -------- | ------------------------------------------- |
-| `client` | [IgApiClient](_core_client_.igapiclient.md) |
+Name | Type |
+------ | ------ |
+`client` | [IgApiClient](_core_client_.igapiclient.md) |
 
-**Returns:** _[ChallengeRepository](\_repositories_challenge_repository_.challengerepository.md)\_
+**Returns:** *[ChallengeRepository](_repositories_challenge_repository_.challengerepository.md)*
 
 ## Methods
 
-### auto
+###  auto
 
-▸ **auto**(`reset`: boolean): _`Promise<ChallengeStateResponse>`_
+▸ **auto**(`reset`: boolean): *`Promise<ChallengeStateResponse>`*
 
-_Defined in [repositories/challenge.repository.ts:52](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/repositories/challenge.repository.ts#L52)_
-
-**Parameters:**
-
-| Name    | Type    | Default |
-| ------- | ------- | ------- |
-| `reset` | boolean | false   |
-
-**Returns:** _`Promise<ChallengeStateResponse>`_
-
----
-
-### deltaLoginReview
-
-▸ **deltaLoginReview**(`choice`: "1" | "0"): _`Promise<any>`_
-
-_Defined in [repositories/challenge.repository.ts:33](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/repositories/challenge.repository.ts#L33)_
+*Defined in [repositories/challenge.repository.ts:80](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/challenge.repository.ts#L80)*
 
 **Parameters:**
 
-| Name     | Type       |
-| -------- | ---------- |
-| `choice` | "1" \| "0" |
+Name | Type | Default |
+------ | ------ | ------ |
+`reset` | boolean | false |
 
-**Returns:** _`Promise<any>`_
+**Returns:** *`Promise<ChallengeStateResponse>`*
 
----
+___
 
-### reset
+###  deltaLoginReview
 
-▸ **reset**(): _`Promise<any>`_
+▸ **deltaLoginReview**(`choice`: "1" | "0"): *`Promise<ChallengeStateResponse>`*
 
-_Defined in [repositories/challenge.repository.ts:76](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/repositories/challenge.repository.ts#L76)_
+*Defined in [repositories/challenge.repository.ts:61](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/challenge.repository.ts#L61)*
 
-**Returns:** _`Promise<any>`_
-
----
-
-### selectVerifyMethod
-
-▸ **selectVerifyMethod**(`choice`: string): _`Promise<any>`_
-
-_Defined in [repositories/challenge.repository.ts:18](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/repositories/challenge.repository.ts#L18)_
+«We detected an unusual login attempt»
 
 **Parameters:**
 
-| Name     | Type   |
-| -------- | ------ |
-| `choice` | string |
+Name | Type | Description |
+------ | ------ | ------ |
+`choice` | "1" \| "0" | It was me = 0, It wasn't me = 1  |
 
-**Returns:** _`Promise<any>`_
+**Returns:** *`Promise<ChallengeStateResponse>`*
 
----
+___
 
-### sendPhoneNumber
+###  replay
 
-▸ **sendPhoneNumber**(`phoneNumber`: string): _`Promise<any>`_
+▸ **replay**(`choice`: string): *`Promise<ChallengeStateResponse>`*
 
-_Defined in [repositories/challenge.repository.ts:37](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/repositories/challenge.repository.ts#L37)_
+*Defined in [repositories/challenge.repository.ts:53](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/challenge.repository.ts#L53)*
 
-**Parameters:**
-
-| Name          | Type   |
-| ------------- | ------ |
-| `phoneNumber` | string |
-
-**Returns:** _`Promise<any>`_
-
----
-
-### sendSecurityCode
-
-▸ **sendSecurityCode**(`code`: string | number): _`Promise<any>`_
-
-_Defined in [repositories/challenge.repository.ts:90](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/repositories/challenge.repository.ts#L90)_
+«Didn't receive your code? Get a new one»
 
 **Parameters:**
 
-| Name   | Type             |
-| ------ | ---------------- |
-| `code` | string \| number |
+Name | Type | Description |
+------ | ------ | ------ |
+`choice` | string | Verification method. Phone number = 0, email = 1  |
 
-**Returns:** _`Promise<any>`_
+**Returns:** *`Promise<ChallengeStateResponse>`*
 
----
+___
 
-### state
+###  reset
 
-▸ **state**(): _`Promise<any>`_
+▸ **reset**(): *`Promise<ChallengeStateResponse>`*
 
-_Defined in [repositories/challenge.repository.ts:6](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/repositories/challenge.repository.ts#L6)_
+*Defined in [repositories/challenge.repository.ts:107](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/challenge.repository.ts#L107)*
 
-**Returns:** _`Promise<any>`_
+Go back to "select_verify_method"
+
+**Returns:** *`Promise<ChallengeStateResponse>`*
+
+___
+
+###  selectVerifyMethod
+
+▸ **selectVerifyMethod**(`choice`: string, `isReplay`: boolean): *`Promise<ChallengeStateResponse>`*
+
+*Defined in [repositories/challenge.repository.ts:30](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/challenge.repository.ts#L30)*
+
+Select verification method.
+
+**Parameters:**
+
+Name | Type | Default | Description |
+------ | ------ | ------ | ------ |
+`choice` | string | - | Verification method. Phone number = 0, email = 1 |
+`isReplay` | boolean | false | resend code  |
+
+**Returns:** *`Promise<ChallengeStateResponse>`*
+
+___
+
+###  sendPhoneNumber
+
+▸ **sendPhoneNumber**(`phoneNumber`: string): *`Promise<ChallengeStateResponse>`*
+
+*Defined in [repositories/challenge.repository.ts:65](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/challenge.repository.ts#L65)*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`phoneNumber` | string |
+
+**Returns:** *`Promise<ChallengeStateResponse>`*
+
+___
+
+###  sendSecurityCode
+
+▸ **sendSecurityCode**(`code`: string | number): *`Promise<ChallengeStateResponse>`*
+
+*Defined in [repositories/challenge.repository.ts:124](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/challenge.repository.ts#L124)*
+
+Send the code received in the message
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`code` | string \| number |
+
+**Returns:** *`Promise<ChallengeStateResponse>`*
+
+___
+
+###  state
+
+▸ **state**(): *`Promise<ChallengeStateResponse>`*
+
+*Defined in [repositories/challenge.repository.ts:13](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/challenge.repository.ts#L13)*
+
+Get challenge state.
+
+**Returns:** *`Promise<ChallengeStateResponse>`*

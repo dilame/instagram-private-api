@@ -6,72 +6,135 @@
 
 ## Hierarchy
 
-- **SavedFeedResponseCarouselMediaItem**
+* **SavedFeedResponseCarouselMediaItem**
 
 ## Index
 
 ### Properties
 
-- [carousel_parent_id](_responses_saved_feed_response_.savedfeedresponsecarouselmediaitem.md#carousel_parent_id)
-- [id](_responses_saved_feed_response_.savedfeedresponsecarouselmediaitem.md#id)
-- [image_versions2](_responses_saved_feed_response_.savedfeedresponsecarouselmediaitem.md#image_versions2)
-- [media_type](_responses_saved_feed_response_.savedfeedresponsecarouselmediaitem.md#media_type)
-- [original_height](_responses_saved_feed_response_.savedfeedresponsecarouselmediaitem.md#original_height)
-- [original_width](_responses_saved_feed_response_.savedfeedresponsecarouselmediaitem.md#original_width)
-- [pk](_responses_saved_feed_response_.savedfeedresponsecarouselmediaitem.md#pk)
+* [carousel_parent_id](_responses_saved_feed_response_.savedfeedresponsecarouselmediaitem.md#carousel_parent_id)
+* [id](_responses_saved_feed_response_.savedfeedresponsecarouselmediaitem.md#id)
+* [image_versions2](_responses_saved_feed_response_.savedfeedresponsecarouselmediaitem.md#image_versions2)
+* [is_dash_eligible](_responses_saved_feed_response_.savedfeedresponsecarouselmediaitem.md#optional-is_dash_eligible)
+* [media_type](_responses_saved_feed_response_.savedfeedresponsecarouselmediaitem.md#media_type)
+* [number_of_qualities](_responses_saved_feed_response_.savedfeedresponsecarouselmediaitem.md#optional-number_of_qualities)
+* [original_height](_responses_saved_feed_response_.savedfeedresponsecarouselmediaitem.md#original_height)
+* [original_width](_responses_saved_feed_response_.savedfeedresponsecarouselmediaitem.md#original_width)
+* [pk](_responses_saved_feed_response_.savedfeedresponsecarouselmediaitem.md#pk)
+* [usertags](_responses_saved_feed_response_.savedfeedresponsecarouselmediaitem.md#usertags)
+* [video_codec](_responses_saved_feed_response_.savedfeedresponsecarouselmediaitem.md#optional-video_codec)
+* [video_dash_manifest](_responses_saved_feed_response_.savedfeedresponsecarouselmediaitem.md#optional-video_dash_manifest)
+* [video_duration](_responses_saved_feed_response_.savedfeedresponsecarouselmediaitem.md#optional-video_duration)
+* [video_versions](_responses_saved_feed_response_.savedfeedresponsecarouselmediaitem.md#optional-video_versions)
 
 ## Properties
 
-### carousel_parent_id
+###  carousel_parent_id
 
-• **carousel_parent_id**: _string_
+• **carousel_parent_id**: *string*
 
-_Defined in [responses/saved.feed.response.ts:134](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/saved.feed.response.ts#L134)_
+*Defined in [responses/saved.feed.response.ts:194](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/saved.feed.response.ts#L194)*
 
----
+___
 
-### id
+###  id
 
-• **id**: _string_
+• **id**: *string*
 
-_Defined in [responses/saved.feed.response.ts:128](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/saved.feed.response.ts#L128)_
+*Defined in [responses/saved.feed.response.ts:188](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/saved.feed.response.ts#L188)*
 
----
+___
 
-### image_versions2
+###  image_versions2
 
-• **image_versions2**: _[SavedFeedResponseImage_versions2](\_responses_saved_feed_response_.savedfeedresponseimage*versions2.md)*
+• **image_versions2**: *[SavedFeedResponseImage_versions2](_responses_saved_feed_response_.savedfeedresponseimage_versions2.md)*
 
-_Defined in [responses/saved.feed.response.ts:130](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/saved.feed.response.ts#L130)_
+*Defined in [responses/saved.feed.response.ts:190](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/saved.feed.response.ts#L190)*
 
----
+___
 
-### media_type
+### `Optional` is_dash_eligible
 
-• **media_type**: _number_
+• **is_dash_eligible**? : *number*
 
-_Defined in [responses/saved.feed.response.ts:129](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/saved.feed.response.ts#L129)_
+*Defined in [responses/saved.feed.response.ts:198](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/saved.feed.response.ts#L198)*
 
----
+___
 
-### original_height
+###  media_type
 
-• **original_height**: _number_
+• **media_type**: *number*
 
-_Defined in [responses/saved.feed.response.ts:132](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/saved.feed.response.ts#L132)_
+*Defined in [responses/saved.feed.response.ts:189](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/saved.feed.response.ts#L189)*
 
----
+___
 
-### original_width
+### `Optional` number_of_qualities
 
-• **original_width**: _number_
+• **number_of_qualities**? : *number*
 
-_Defined in [responses/saved.feed.response.ts:131](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/saved.feed.response.ts#L131)_
+*Defined in [responses/saved.feed.response.ts:201](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/saved.feed.response.ts#L201)*
 
----
+___
 
-### pk
+###  original_height
 
-• **pk**: _string_
+• **original_height**: *number*
 
-_Defined in [responses/saved.feed.response.ts:133](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/saved.feed.response.ts#L133)_
+*Defined in [responses/saved.feed.response.ts:192](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/saved.feed.response.ts#L192)*
+
+___
+
+###  original_width
+
+• **original_width**: *number*
+
+*Defined in [responses/saved.feed.response.ts:191](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/saved.feed.response.ts#L191)*
+
+___
+
+###  pk
+
+• **pk**: *string*
+
+*Defined in [responses/saved.feed.response.ts:193](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/saved.feed.response.ts#L193)*
+
+___
+
+###  usertags
+
+• **usertags**: *[SavedFeedResponseUsertags](_responses_saved_feed_response_.savedfeedresponseusertags.md)*
+
+*Defined in [responses/saved.feed.response.ts:195](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/saved.feed.response.ts#L195)*
+
+___
+
+### `Optional` video_codec
+
+• **video_codec**? : *string*
+
+*Defined in [responses/saved.feed.response.ts:200](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/saved.feed.response.ts#L200)*
+
+___
+
+### `Optional` video_dash_manifest
+
+• **video_dash_manifest**? : *string*
+
+*Defined in [responses/saved.feed.response.ts:199](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/saved.feed.response.ts#L199)*
+
+___
+
+### `Optional` video_duration
+
+• **video_duration**? : *number*
+
+*Defined in [responses/saved.feed.response.ts:197](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/saved.feed.response.ts#L197)*
+
+___
+
+### `Optional` video_versions
+
+• **video_versions**? : *[SavedFeedResponseVideoVersionsItem](_responses_saved_feed_response_.savedfeedresponsevideoversionsitem.md)[]*
+
+*Defined in [responses/saved.feed.response.ts:196](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/saved.feed.response.ts#L196)*

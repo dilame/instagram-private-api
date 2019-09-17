@@ -6,42 +6,42 @@
 
 ## Hierarchy
 
-- [Repository](_core_repository_.repository.md)
+* [Repository](_core_repository_.repository.md)
 
-  - **Entity**
+  * **Entity**
 
-  - [DirectThreadEntity](_entities_direct_thread_entity_.directthreadentity.md)
+  * [ProfileEntity](_entities_profile_entity_.profileentity.md)
 
-  - [MediaEntity](_entities_media_entity_.mediaentity.md)
+  * [BlockedUsersFeedResponseBlockedListItem](_responses_blocked_users_feed_response_.blockedusersfeedresponseblockedlistitem.md)
 
-  - [ProfileEntity](_entities_profile_entity_.profileentity.md)
+  * [NewsFeedResponseStoriesItem](_responses_news_feed_response_.newsfeedresponsestoriesitem.md)
 
-  - [LiveEntity](_entities_live_entity_.liveentity.md)
+  * [DirectThreadEntity](_entities_direct_thread_entity_.directthreadentity.md)
 
-  - [BlockedUsersFeedResponseBlockedListItem](_responses_blocked_users_feed_response_.blockedusersfeedresponseblockedlistitem.md)
+  * [MediaEntity](_entities_media_entity_.mediaentity.md)
 
-  - [NewsFeedResponseStoriesItem](_responses_news_feed_response_.newsfeedresponsestoriesitem.md)
+  * [LiveEntity](_entities_live_entity_.liveentity.md)
 
 ## Index
 
 ### Constructors
 
-- [constructor](_core_entity_.entity.md#constructor)
+* [constructor](_core_entity_.entity.md#constructor)
 
 ## Constructors
 
-### constructor
+###  constructor
 
-\+ **new Entity**(`client`: [IgApiClient](_core_client_.igapiclient.md)): _[Entity](\_core_entity_.entity.md)\_
+\+ **new Entity**(`client`: [IgApiClient](_core_client_.igapiclient.md)): *[Entity](_core_entity_.entity.md)*
 
-_Inherited from [Repository](\_core_repository_.repository.md).[constructor](_core_repository_.repository.md#constructor)\_
+*Inherited from [Repository](_core_repository_.repository.md).[constructor](_core_repository_.repository.md#constructor)*
 
-_Defined in [core/repository.ts:6](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/repository.ts#L6)_
+*Defined in [core/repository.ts:6](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/repository.ts#L6)*
 
 **Parameters:**
 
-| Name     | Type                                        |
-| -------- | ------------------------------------------- |
-| `client` | [IgApiClient](_core_client_.igapiclient.md) |
+Name | Type |
+------ | ------ |
+`client` | [IgApiClient](_core_client_.igapiclient.md) |
 
-**Returns:** _[Entity](\_core_entity_.entity.md)\_
+**Returns:** *[Entity](_core_entity_.entity.md)*

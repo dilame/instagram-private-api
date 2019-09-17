@@ -6,81 +6,81 @@
 
 ## Hierarchy
 
-- **ReelsMediaFeedResponseUser**
+* **ReelsMediaFeedResponseUser**
 
 ## Index
 
 ### Properties
 
-- [friendship_status](_responses_reels_media_feed_response_.reelsmediafeedresponseuser.md#optional-friendship_status)
-- [full_name](_responses_reels_media_feed_response_.reelsmediafeedresponseuser.md#optional-full_name)
-- [is_private](_responses_reels_media_feed_response_.reelsmediafeedresponseuser.md#optional-is_private)
-- [is_verified](_responses_reels_media_feed_response_.reelsmediafeedresponseuser.md#optional-is_verified)
-- [pk](_responses_reels_media_feed_response_.reelsmediafeedresponseuser.md#pk)
-- [profile_pic_id](_responses_reels_media_feed_response_.reelsmediafeedresponseuser.md#optional-profile_pic_id)
-- [profile_pic_url](_responses_reels_media_feed_response_.reelsmediafeedresponseuser.md#optional-profile_pic_url)
-- [username](_responses_reels_media_feed_response_.reelsmediafeedresponseuser.md#optional-username)
+* [friendship_status](_responses_reels_media_feed_response_.reelsmediafeedresponseuser.md#optional-friendship_status)
+* [full_name](_responses_reels_media_feed_response_.reelsmediafeedresponseuser.md#optional-full_name)
+* [is_private](_responses_reels_media_feed_response_.reelsmediafeedresponseuser.md#optional-is_private)
+* [is_verified](_responses_reels_media_feed_response_.reelsmediafeedresponseuser.md#optional-is_verified)
+* [pk](_responses_reels_media_feed_response_.reelsmediafeedresponseuser.md#pk)
+* [profile_pic_id](_responses_reels_media_feed_response_.reelsmediafeedresponseuser.md#optional-profile_pic_id)
+* [profile_pic_url](_responses_reels_media_feed_response_.reelsmediafeedresponseuser.md#optional-profile_pic_url)
+* [username](_responses_reels_media_feed_response_.reelsmediafeedresponseuser.md#optional-username)
 
 ## Properties
 
 ### `Optional` friendship_status
 
-• **friendship_status**? : _[ReelsMediaFeedResponseFriendshipStatus](\_responses_reels_media_feed_response_.reelsmediafeedresponsefriendshipstatus.md)\_
+• **friendship_status**? : *[ReelsMediaFeedResponseFriendshipStatus](_responses_reels_media_feed_response_.reelsmediafeedresponsefriendshipstatus.md)*
 
-_Defined in [responses/reels-media.feed.response.ts:28](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/reels-media.feed.response.ts#L28)_
+*Defined in [responses/reels-media.feed.response.ts:28](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-media.feed.response.ts#L28)*
 
----
+___
 
 ### `Optional` full_name
 
-• **full_name**? : _string_
+• **full_name**? : *string*
 
-_Defined in [responses/reels-media.feed.response.ts:24](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/reels-media.feed.response.ts#L24)_
+*Defined in [responses/reels-media.feed.response.ts:24](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-media.feed.response.ts#L24)*
 
----
+___
 
 ### `Optional` is_private
 
-• **is_private**? : _boolean_
+• **is_private**? : *boolean*
 
-_Defined in [responses/reels-media.feed.response.ts:25](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/reels-media.feed.response.ts#L25)_
+*Defined in [responses/reels-media.feed.response.ts:25](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-media.feed.response.ts#L25)*
 
----
+___
 
 ### `Optional` is_verified
 
-• **is_verified**? : _boolean_
+• **is_verified**? : *boolean*
 
-_Defined in [responses/reels-media.feed.response.ts:29](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/reels-media.feed.response.ts#L29)_
+*Defined in [responses/reels-media.feed.response.ts:29](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-media.feed.response.ts#L29)*
 
----
+___
 
-### pk
+###  pk
 
-• **pk**: _number_
+• **pk**: *number*
 
-_Defined in [responses/reels-media.feed.response.ts:22](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/reels-media.feed.response.ts#L22)_
+*Defined in [responses/reels-media.feed.response.ts:22](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-media.feed.response.ts#L22)*
 
----
+___
 
 ### `Optional` profile_pic_id
 
-• **profile_pic_id**? : _string_
+• **profile_pic_id**? : *string*
 
-_Defined in [responses/reels-media.feed.response.ts:27](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/reels-media.feed.response.ts#L27)_
+*Defined in [responses/reels-media.feed.response.ts:27](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-media.feed.response.ts#L27)*
 
----
+___
 
 ### `Optional` profile_pic_url
 
-• **profile_pic_url**? : _string_
+• **profile_pic_url**? : *string*
 
-_Defined in [responses/reels-media.feed.response.ts:26](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/reels-media.feed.response.ts#L26)_
+*Defined in [responses/reels-media.feed.response.ts:26](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-media.feed.response.ts#L26)*
 
----
+___
 
 ### `Optional` username
 
-• **username**? : _string_
+• **username**? : *string*
 
-_Defined in [responses/reels-media.feed.response.ts:23](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/reels-media.feed.response.ts#L23)_
+*Defined in [responses/reels-media.feed.response.ts:23](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-media.feed.response.ts#L23)*

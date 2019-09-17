@@ -6,18 +6,18 @@
 
 ## Hierarchy
 
-- **TagFeedResponseUsertags**
+* **TagFeedResponseUsertags**
 
 ## Index
 
 ### Properties
 
-- [in](_responses_tag_feed_response_.tagfeedresponseusertags.md#in)
+* [in](_responses_tag_feed_response_.tagfeedresponseusertags.md#in)
 
 ## Properties
 
-### in
+###  in
 
-• **in**: _[TagFeedResponseInItem](\_responses_tag_feed_response_.tagfeedresponseinitem.md)[]\_
+• **in**: *[TagFeedResponseInItem](_responses_tag_feed_response_.tagfeedresponseinitem.md)[]*
 
-_Defined in [responses/tag.feed.response.ts:117](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/tag.feed.response.ts#L117)_
+*Defined in [responses/tag.feed.response.ts:117](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/tag.feed.response.ts#L117)*

@@ -6,549 +6,549 @@
 
 ## Hierarchy
 
-- **TagFeedResponseItemsItem**
+* **TagFeedResponseItemsItem**
 
 ## Index
 
 ### Properties
 
-- [attribution](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-attribution)
-- [can_reply](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-can_reply)
-- [can_reshare](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-can_reshare)
-- [can_see_insights_as_brand](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-can_see_insights_as_brand)
-- [can_view_more_preview_comments](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-can_view_more_preview_comments)
-- [can_viewer_reshare](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-can_viewer_reshare)
-- [can_viewer_save](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#can_viewer_save)
-- [caption](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#caption)
-- [caption_is_edited](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#caption_is_edited)
-- [caption_position](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-caption_position)
-- [carousel_media](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-carousel_media)
-- [carousel_media_count](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-carousel_media_count)
-- [client_cache_key](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#client_cache_key)
-- [code](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#code)
-- [comment_count](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-comment_count)
-- [comment_likes_enabled](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-comment_likes_enabled)
-- [comment_threading_enabled](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-comment_threading_enabled)
-- [commenting_disabled_for_viewer](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-commenting_disabled_for_viewer)
-- [comments_disabled](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-comments_disabled)
-- [creative_config](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-creative_config)
-- [device_timestamp](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#device_timestamp)
-- [expiring_at](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-expiring_at)
-- [filter_type](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#filter_type)
-- [has_audio](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-has_audio)
-- [has_liked](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-has_liked)
-- [has_more_comments](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-has_more_comments)
-- [has_shared_to_fb](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-has_shared_to_fb)
-- [id](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#id)
-- [image_versions2](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-image_versions2)
-- [imported_taken_at](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-imported_taken_at)
-- [is_dash_eligible](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-is_dash_eligible)
-- [is_reel_media](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-is_reel_media)
-- [lat](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-lat)
-- [like_count](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-like_count)
-- [likers](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-likers)
-- [lng](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-lng)
-- [location](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-location)
-- [max_num_visible_preview_comments](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-max_num_visible_preview_comments)
-- [media_type](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#media_type)
-- [next_max_id](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-next_max_id)
-- [number_of_qualities](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-number_of_qualities)
-- [organic_tracking_token](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#organic_tracking_token)
-- [original_height](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-original_height)
-- [original_width](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-original_width)
-- [photo_of_you](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#photo_of_you)
-- [pk](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#pk)
-- [preview_comments](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-preview_comments)
-- [reel_mentions](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-reel_mentions)
-- [show_one_tap_fb_share_tooltip](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-show_one_tap_fb_share_tooltip)
-- [story_hashtags](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-story_hashtags)
-- [story_locations](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-story_locations)
-- [supports_reel_reactions](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-supports_reel_reactions)
-- [taken_at](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#taken_at)
-- [user](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#user)
-- [usertags](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-usertags)
-- [video_codec](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-video_codec)
-- [video_dash_manifest](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-video_dash_manifest)
-- [video_duration](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-video_duration)
-- [video_versions](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-video_versions)
-- [view_count](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-view_count)
+* [attribution](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-attribution)
+* [can_reply](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-can_reply)
+* [can_reshare](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-can_reshare)
+* [can_see_insights_as_brand](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-can_see_insights_as_brand)
+* [can_view_more_preview_comments](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-can_view_more_preview_comments)
+* [can_viewer_reshare](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-can_viewer_reshare)
+* [can_viewer_save](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#can_viewer_save)
+* [caption](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#caption)
+* [caption_is_edited](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#caption_is_edited)
+* [caption_position](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-caption_position)
+* [carousel_media](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-carousel_media)
+* [carousel_media_count](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-carousel_media_count)
+* [client_cache_key](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#client_cache_key)
+* [code](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#code)
+* [comment_count](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-comment_count)
+* [comment_likes_enabled](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-comment_likes_enabled)
+* [comment_threading_enabled](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-comment_threading_enabled)
+* [commenting_disabled_for_viewer](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-commenting_disabled_for_viewer)
+* [comments_disabled](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-comments_disabled)
+* [creative_config](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-creative_config)
+* [device_timestamp](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#device_timestamp)
+* [expiring_at](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-expiring_at)
+* [filter_type](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#filter_type)
+* [has_audio](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-has_audio)
+* [has_liked](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-has_liked)
+* [has_more_comments](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-has_more_comments)
+* [has_shared_to_fb](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-has_shared_to_fb)
+* [id](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#id)
+* [image_versions2](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-image_versions2)
+* [imported_taken_at](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-imported_taken_at)
+* [is_dash_eligible](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-is_dash_eligible)
+* [is_reel_media](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-is_reel_media)
+* [lat](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-lat)
+* [like_count](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-like_count)
+* [likers](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-likers)
+* [lng](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-lng)
+* [location](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-location)
+* [max_num_visible_preview_comments](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-max_num_visible_preview_comments)
+* [media_type](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#media_type)
+* [next_max_id](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-next_max_id)
+* [number_of_qualities](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-number_of_qualities)
+* [organic_tracking_token](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#organic_tracking_token)
+* [original_height](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-original_height)
+* [original_width](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-original_width)
+* [photo_of_you](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#photo_of_you)
+* [pk](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#pk)
+* [preview_comments](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-preview_comments)
+* [reel_mentions](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-reel_mentions)
+* [show_one_tap_fb_share_tooltip](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-show_one_tap_fb_share_tooltip)
+* [story_hashtags](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-story_hashtags)
+* [story_locations](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-story_locations)
+* [supports_reel_reactions](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-supports_reel_reactions)
+* [taken_at](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#taken_at)
+* [user](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#user)
+* [usertags](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-usertags)
+* [video_codec](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-video_codec)
+* [video_dash_manifest](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-video_dash_manifest)
+* [video_duration](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-video_duration)
+* [video_versions](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-video_versions)
+* [view_count](_responses_tag_feed_response_.tagfeedresponseitemsitem.md#optional-view_count)
 
 ## Properties
 
 ### `Optional` attribution
 
-• **attribution**? : _[TagFeedResponseAttribution](\_responses_tag_feed_response_.tagfeedresponseattribution.md)\_
+• **attribution**? : *[TagFeedResponseAttribution](_responses_tag_feed_response_.tagfeedresponseattribution.md)*
 
-_Defined in [responses/tag.feed.response.ts:170](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/tag.feed.response.ts#L170)_
+*Defined in [responses/tag.feed.response.ts:170](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/tag.feed.response.ts#L170)*
 
----
+___
 
 ### `Optional` can_reply
 
-• **can_reply**? : _boolean_
+• **can_reply**? : *boolean*
 
-_Defined in [responses/tag.feed.response.ts:177](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/tag.feed.response.ts#L177)_
+*Defined in [responses/tag.feed.response.ts:177](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/tag.feed.response.ts#L177)*
 
----
+___
 
 ### `Optional` can_reshare
 
-• **can_reshare**? : _boolean_
+• **can_reshare**? : *boolean*
 
-_Defined in [responses/tag.feed.response.ts:176](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/tag.feed.response.ts#L176)_
+*Defined in [responses/tag.feed.response.ts:176](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/tag.feed.response.ts#L176)*
 
----
+___
 
 ### `Optional` can_see_insights_as_brand
 
-• **can_see_insights_as_brand**? : _boolean_
+• **can_see_insights_as_brand**? : *boolean*
 
-_Defined in [responses/tag.feed.response.ts:143](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/tag.feed.response.ts#L143)_
+*Defined in [responses/tag.feed.response.ts:143](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/tag.feed.response.ts#L143)*
 
----
+___
 
 ### `Optional` can_view_more_preview_comments
 
-• **can_view_more_preview_comments**? : _boolean_
+• **can_view_more_preview_comments**? : *boolean*
 
-_Defined in [responses/tag.feed.response.ts:139](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/tag.feed.response.ts#L139)_
+*Defined in [responses/tag.feed.response.ts:139](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/tag.feed.response.ts#L139)*
 
----
+___
 
 ### `Optional` can_viewer_reshare
 
-• **can_viewer_reshare**? : _boolean_
+• **can_viewer_reshare**? : *boolean*
 
-_Defined in [responses/tag.feed.response.ts:145](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/tag.feed.response.ts#L145)_
+*Defined in [responses/tag.feed.response.ts:145](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/tag.feed.response.ts#L145)*
 
----
+___
 
-### can_viewer_save
+###  can_viewer_save
 
-• **can_viewer_save**: _boolean_
+• **can_viewer_save**: *boolean*
 
-_Defined in [responses/tag.feed.response.ts:152](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/tag.feed.response.ts#L152)_
+*Defined in [responses/tag.feed.response.ts:152](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/tag.feed.response.ts#L152)*
 
----
+___
 
-### caption
+###  caption
 
-• **caption**: _[TagFeedResponseCaption](\_responses_tag_feed_response_.tagfeedresponsecaption.md) | null\_
+• **caption**: *[TagFeedResponseCaption](_responses_tag_feed_response_.tagfeedresponsecaption.md) | null*
 
-_Defined in [responses/tag.feed.response.ts:146](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/tag.feed.response.ts#L146)_
+*Defined in [responses/tag.feed.response.ts:146](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/tag.feed.response.ts#L146)*
 
----
+___
 
-### caption_is_edited
+###  caption_is_edited
 
-• **caption_is_edited**: _boolean_
+• **caption_is_edited**: *boolean*
 
-_Defined in [responses/tag.feed.response.ts:147](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/tag.feed.response.ts#L147)_
+*Defined in [responses/tag.feed.response.ts:147](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/tag.feed.response.ts#L147)*
 
----
+___
 
 ### `Optional` caption_position
 
-• **caption_position**? : _number_
+• **caption_position**? : *number*
 
-_Defined in [responses/tag.feed.response.ts:173](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/tag.feed.response.ts#L173)_
+*Defined in [responses/tag.feed.response.ts:173](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/tag.feed.response.ts#L173)*
 
----
+___
 
 ### `Optional` carousel_media
 
-• **carousel_media**? : _[TagFeedResponseCarouselMediaItem](\_responses_tag_feed_response_.tagfeedresponsecarouselmediaitem.md)[]\_
+• **carousel_media**? : *[TagFeedResponseCarouselMediaItem](_responses_tag_feed_response_.tagfeedresponsecarouselmediaitem.md)[]*
 
-_Defined in [responses/tag.feed.response.ts:142](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/tag.feed.response.ts#L142)_
+*Defined in [responses/tag.feed.response.ts:142](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/tag.feed.response.ts#L142)*
 
----
+___
 
 ### `Optional` carousel_media_count
 
-• **carousel_media_count**? : _number_
+• **carousel_media_count**? : *number*
 
-_Defined in [responses/tag.feed.response.ts:141](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/tag.feed.response.ts#L141)_
+*Defined in [responses/tag.feed.response.ts:141](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/tag.feed.response.ts#L141)*
 
----
+___
 
-### client_cache_key
+###  client_cache_key
 
-• **client_cache_key**: _string_
+• **client_cache_key**: *string*
 
-_Defined in [responses/tag.feed.response.ts:132](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/tag.feed.response.ts#L132)_
+*Defined in [responses/tag.feed.response.ts:132](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/tag.feed.response.ts#L132)*
 
----
+___
 
-### code
+###  code
 
-• **code**: _string_
+• **code**: *string*
 
-_Defined in [responses/tag.feed.response.ts:131](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/tag.feed.response.ts#L131)_
+*Defined in [responses/tag.feed.response.ts:131](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/tag.feed.response.ts#L131)*
 
----
+___
 
 ### `Optional` comment_count
 
-• **comment_count**? : _number_
+• **comment_count**? : *number*
 
-_Defined in [responses/tag.feed.response.ts:140](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/tag.feed.response.ts#L140)_
+*Defined in [responses/tag.feed.response.ts:140](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/tag.feed.response.ts#L140)*
 
----
+___
 
 ### `Optional` comment_likes_enabled
 
-• **comment_likes_enabled**? : _boolean_
+• **comment_likes_enabled**? : *boolean*
 
-_Defined in [responses/tag.feed.response.ts:134](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/tag.feed.response.ts#L134)_
+*Defined in [responses/tag.feed.response.ts:134](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/tag.feed.response.ts#L134)*
 
----
+___
 
 ### `Optional` comment_threading_enabled
 
-• **comment_threading_enabled**? : _boolean_
+• **comment_threading_enabled**? : *boolean*
 
-_Defined in [responses/tag.feed.response.ts:135](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/tag.feed.response.ts#L135)_
+*Defined in [responses/tag.feed.response.ts:135](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/tag.feed.response.ts#L135)*
 
----
+___
 
 ### `Optional` commenting_disabled_for_viewer
 
-• **commenting_disabled_for_viewer**? : _boolean_
+• **commenting_disabled_for_viewer**? : *boolean*
 
-_Defined in [responses/tag.feed.response.ts:169](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/tag.feed.response.ts#L169)_
+*Defined in [responses/tag.feed.response.ts:169](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/tag.feed.response.ts#L169)*
 
----
+___
 
 ### `Optional` comments_disabled
 
-• **comments_disabled**? : _boolean_
+• **comments_disabled**? : *boolean*
 
-_Defined in [responses/tag.feed.response.ts:172](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/tag.feed.response.ts#L172)_
+*Defined in [responses/tag.feed.response.ts:172](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/tag.feed.response.ts#L172)*
 
----
+___
 
 ### `Optional` creative_config
 
-• **creative_config**? : _[TagFeedResponseCreative_config](\_responses_tag_feed_response_.tagfeedresponsecreative*config.md)*
+• **creative_config**? : *[TagFeedResponseCreative_config](_responses_tag_feed_response_.tagfeedresponsecreative_config.md)*
 
-_Defined in [responses/tag.feed.response.ts:179](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/tag.feed.response.ts#L179)_
+*Defined in [responses/tag.feed.response.ts:179](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/tag.feed.response.ts#L179)*
 
----
+___
 
-### device_timestamp
+###  device_timestamp
 
-• **device_timestamp**: _string | number_
+• **device_timestamp**: *string | number*
 
-_Defined in [responses/tag.feed.response.ts:129](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/tag.feed.response.ts#L129)_
+*Defined in [responses/tag.feed.response.ts:129](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/tag.feed.response.ts#L129)*
 
----
+___
 
 ### `Optional` expiring_at
 
-• **expiring_at**? : _number_
+• **expiring_at**? : *number*
 
-_Defined in [responses/tag.feed.response.ts:175](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/tag.feed.response.ts#L175)_
+*Defined in [responses/tag.feed.response.ts:175](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/tag.feed.response.ts#L175)*
 
----
+___
 
-### filter_type
+###  filter_type
 
-• **filter_type**: _number_
+• **filter_type**: *number*
 
-_Defined in [responses/tag.feed.response.ts:133](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/tag.feed.response.ts#L133)_
+*Defined in [responses/tag.feed.response.ts:133](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/tag.feed.response.ts#L133)*
 
----
+___
 
 ### `Optional` has_audio
 
-• **has_audio**? : _boolean_
+• **has_audio**? : *boolean*
 
-_Defined in [responses/tag.feed.response.ts:165](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/tag.feed.response.ts#L165)_
+*Defined in [responses/tag.feed.response.ts:165](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/tag.feed.response.ts#L165)*
 
----
+___
 
 ### `Optional` has_liked
 
-• **has_liked**? : _boolean_
+• **has_liked**? : *boolean*
 
-_Defined in [responses/tag.feed.response.ts:149](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/tag.feed.response.ts#L149)_
+*Defined in [responses/tag.feed.response.ts:149](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/tag.feed.response.ts#L149)*
 
----
+___
 
 ### `Optional` has_more_comments
 
-• **has_more_comments**? : _boolean_
+• **has_more_comments**? : *boolean*
 
-_Defined in [responses/tag.feed.response.ts:136](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/tag.feed.response.ts#L136)_
+*Defined in [responses/tag.feed.response.ts:136](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/tag.feed.response.ts#L136)*
 
----
+___
 
 ### `Optional` has_shared_to_fb
 
-• **has_shared_to_fb**? : _number_
+• **has_shared_to_fb**? : *number*
 
-_Defined in [responses/tag.feed.response.ts:182](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/tag.feed.response.ts#L182)_
+*Defined in [responses/tag.feed.response.ts:182](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/tag.feed.response.ts#L182)*
 
----
+___
 
-### id
+###  id
 
-• **id**: _string_
+• **id**: *string*
 
-_Defined in [responses/tag.feed.response.ts:128](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/tag.feed.response.ts#L128)_
+*Defined in [responses/tag.feed.response.ts:128](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/tag.feed.response.ts#L128)*
 
----
+___
 
 ### `Optional` image_versions2
 
-• **image_versions2**? : _[TagFeedResponseImage_versions2](\_responses_tag_feed_response_.tagfeedresponseimage*versions2.md)*
+• **image_versions2**? : *[TagFeedResponseImage_versions2](_responses_tag_feed_response_.tagfeedresponseimage_versions2.md)*
 
-_Defined in [responses/tag.feed.response.ts:154](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/tag.feed.response.ts#L154)_
+*Defined in [responses/tag.feed.response.ts:154](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/tag.feed.response.ts#L154)*
 
----
+___
 
 ### `Optional` imported_taken_at
 
-• **imported_taken_at**? : _number_
+• **imported_taken_at**? : *number*
 
-_Defined in [responses/tag.feed.response.ts:183](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/tag.feed.response.ts#L183)_
+*Defined in [responses/tag.feed.response.ts:183](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/tag.feed.response.ts#L183)*
 
----
+___
 
 ### `Optional` is_dash_eligible
 
-• **is_dash_eligible**? : _number_
+• **is_dash_eligible**? : *number*
 
-_Defined in [responses/tag.feed.response.ts:160](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/tag.feed.response.ts#L160)_
+*Defined in [responses/tag.feed.response.ts:160](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/tag.feed.response.ts#L160)*
 
----
+___
 
 ### `Optional` is_reel_media
 
-• **is_reel_media**? : _boolean_
+• **is_reel_media**? : *boolean*
 
-_Defined in [responses/tag.feed.response.ts:174](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/tag.feed.response.ts#L174)_
+*Defined in [responses/tag.feed.response.ts:174](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/tag.feed.response.ts#L174)*
 
----
+___
 
 ### `Optional` lat
 
-• **lat**? : _number | string_
+• **lat**? : *number | string*
 
-_Defined in [responses/tag.feed.response.ts:158](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/tag.feed.response.ts#L158)_
+*Defined in [responses/tag.feed.response.ts:158](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/tag.feed.response.ts#L158)*
 
----
+___
 
 ### `Optional` like_count
 
-• **like_count**? : _number_
+• **like_count**? : *number*
 
-_Defined in [responses/tag.feed.response.ts:148](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/tag.feed.response.ts#L148)_
+*Defined in [responses/tag.feed.response.ts:148](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/tag.feed.response.ts#L148)*
 
----
+___
 
 ### `Optional` likers
 
-• **likers**? : _[TagFeedResponseLikersItem](\_responses_tag_feed_response_.tagfeedresponselikersitem.md)[]\_
+• **likers**? : *[TagFeedResponseLikersItem](_responses_tag_feed_response_.tagfeedresponselikersitem.md)[]*
 
-_Defined in [responses/tag.feed.response.ts:150](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/tag.feed.response.ts#L150)_
+*Defined in [responses/tag.feed.response.ts:150](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/tag.feed.response.ts#L150)*
 
----
+___
 
 ### `Optional` lng
 
-• **lng**? : _number | string_
+• **lng**? : *number | string*
 
-_Defined in [responses/tag.feed.response.ts:159](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/tag.feed.response.ts#L159)_
+*Defined in [responses/tag.feed.response.ts:159](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/tag.feed.response.ts#L159)*
 
----
+___
 
 ### `Optional` location
 
-• **location**? : _[TagFeedResponseLocation](\_responses_tag_feed_response_.tagfeedresponselocation.md)\_
+• **location**? : *[TagFeedResponseLocation](_responses_tag_feed_response_.tagfeedresponselocation.md)*
 
-_Defined in [responses/tag.feed.response.ts:157](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/tag.feed.response.ts#L157)_
+*Defined in [responses/tag.feed.response.ts:157](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/tag.feed.response.ts#L157)*
 
----
+___
 
 ### `Optional` max_num_visible_preview_comments
 
-• **max_num_visible_preview_comments**? : _number_
+• **max_num_visible_preview_comments**? : *number*
 
-_Defined in [responses/tag.feed.response.ts:137](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/tag.feed.response.ts#L137)_
+*Defined in [responses/tag.feed.response.ts:137](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/tag.feed.response.ts#L137)*
 
----
+___
 
-### media_type
+###  media_type
 
-• **media_type**: _number_
+• **media_type**: *number*
 
-_Defined in [responses/tag.feed.response.ts:130](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/tag.feed.response.ts#L130)_
+*Defined in [responses/tag.feed.response.ts:130](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/tag.feed.response.ts#L130)*
 
----
+___
 
 ### `Optional` next_max_id
 
-• **next_max_id**? : _string_
+• **next_max_id**? : *string*
 
-_Defined in [responses/tag.feed.response.ts:171](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/tag.feed.response.ts#L171)_
+*Defined in [responses/tag.feed.response.ts:171](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/tag.feed.response.ts#L171)*
 
----
+___
 
 ### `Optional` number_of_qualities
 
-• **number_of_qualities**? : _number_
+• **number_of_qualities**? : *number*
 
-_Defined in [responses/tag.feed.response.ts:163](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/tag.feed.response.ts#L163)_
+*Defined in [responses/tag.feed.response.ts:163](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/tag.feed.response.ts#L163)*
 
----
+___
 
-### organic_tracking_token
+###  organic_tracking_token
 
-• **organic_tracking_token**: _string_
+• **organic_tracking_token**: *string*
 
-_Defined in [responses/tag.feed.response.ts:153](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/tag.feed.response.ts#L153)_
+*Defined in [responses/tag.feed.response.ts:153](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/tag.feed.response.ts#L153)*
 
----
+___
 
 ### `Optional` original_height
 
-• **original_height**? : _number_
+• **original_height**? : *number*
 
-_Defined in [responses/tag.feed.response.ts:156](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/tag.feed.response.ts#L156)_
+*Defined in [responses/tag.feed.response.ts:156](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/tag.feed.response.ts#L156)*
 
----
+___
 
 ### `Optional` original_width
 
-• **original_width**? : _number_
+• **original_width**? : *number*
 
-_Defined in [responses/tag.feed.response.ts:155](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/tag.feed.response.ts#L155)_
+*Defined in [responses/tag.feed.response.ts:155](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/tag.feed.response.ts#L155)*
 
----
+___
 
-### photo_of_you
+###  photo_of_you
 
-• **photo_of_you**: _boolean_
+• **photo_of_you**: *boolean*
 
-_Defined in [responses/tag.feed.response.ts:151](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/tag.feed.response.ts#L151)_
+*Defined in [responses/tag.feed.response.ts:151](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/tag.feed.response.ts#L151)*
 
----
+___
 
-### pk
+###  pk
 
-• **pk**: _string_
+• **pk**: *string*
 
-_Defined in [responses/tag.feed.response.ts:127](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/tag.feed.response.ts#L127)_
+*Defined in [responses/tag.feed.response.ts:127](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/tag.feed.response.ts#L127)*
 
----
+___
 
 ### `Optional` preview_comments
 
-• **preview_comments**? : _[TagFeedResponsePreviewCommentsItem](\_responses_tag_feed_response_.tagfeedresponsepreviewcommentsitem.md)[]\_
+• **preview_comments**? : *[TagFeedResponsePreviewCommentsItem](_responses_tag_feed_response_.tagfeedresponsepreviewcommentsitem.md)[]*
 
-_Defined in [responses/tag.feed.response.ts:138](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/tag.feed.response.ts#L138)_
+*Defined in [responses/tag.feed.response.ts:138](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/tag.feed.response.ts#L138)*
 
----
+___
 
 ### `Optional` reel_mentions
 
-• **reel_mentions**? : _[TagFeedResponseReelMentionsItem](\_responses_tag_feed_response_.tagfeedresponsereelmentionsitem.md)[]\_
+• **reel_mentions**? : *[TagFeedResponseReelMentionsItem](_responses_tag_feed_response_.tagfeedresponsereelmentionsitem.md)[]*
 
-_Defined in [responses/tag.feed.response.ts:184](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/tag.feed.response.ts#L184)_
+*Defined in [responses/tag.feed.response.ts:184](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/tag.feed.response.ts#L184)*
 
----
+___
 
 ### `Optional` show_one_tap_fb_share_tooltip
 
-• **show_one_tap_fb_share_tooltip**? : _boolean_
+• **show_one_tap_fb_share_tooltip**? : *boolean*
 
-_Defined in [responses/tag.feed.response.ts:181](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/tag.feed.response.ts#L181)_
+*Defined in [responses/tag.feed.response.ts:181](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/tag.feed.response.ts#L181)*
 
----
+___
 
 ### `Optional` story_hashtags
 
-• **story_hashtags**? : _[TagFeedResponseStoryHashtagsItem](\_responses_tag_feed_response_.tagfeedresponsestoryhashtagsitem.md)[]\_
+• **story_hashtags**? : *[TagFeedResponseStoryHashtagsItem](_responses_tag_feed_response_.tagfeedresponsestoryhashtagsitem.md)[]*
 
-_Defined in [responses/tag.feed.response.ts:178](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/tag.feed.response.ts#L178)_
+*Defined in [responses/tag.feed.response.ts:178](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/tag.feed.response.ts#L178)*
 
----
+___
 
 ### `Optional` story_locations
 
-• **story_locations**? : _[TagFeedResponseStoryLocationsItem](\_responses_tag_feed_response_.tagfeedresponsestorylocationsitem.md)[]\_
+• **story_locations**? : *[TagFeedResponseStoryLocationsItem](_responses_tag_feed_response_.tagfeedresponsestorylocationsitem.md)[]*
 
-_Defined in [responses/tag.feed.response.ts:185](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/tag.feed.response.ts#L185)_
+*Defined in [responses/tag.feed.response.ts:185](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/tag.feed.response.ts#L185)*
 
----
+___
 
 ### `Optional` supports_reel_reactions
 
-• **supports_reel_reactions**? : _boolean_
+• **supports_reel_reactions**? : *boolean*
 
-_Defined in [responses/tag.feed.response.ts:180](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/tag.feed.response.ts#L180)_
+*Defined in [responses/tag.feed.response.ts:180](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/tag.feed.response.ts#L180)*
 
----
+___
 
-### taken_at
+###  taken_at
 
-• **taken_at**: _number_
+• **taken_at**: *number*
 
-_Defined in [responses/tag.feed.response.ts:126](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/tag.feed.response.ts#L126)_
+*Defined in [responses/tag.feed.response.ts:126](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/tag.feed.response.ts#L126)*
 
----
+___
 
-### user
+###  user
 
-• **user**: _[TagFeedResponseUser](\_responses_tag_feed_response_.tagfeedresponseuser.md)\_
+• **user**: *[TagFeedResponseUser](_responses_tag_feed_response_.tagfeedresponseuser.md)*
 
-_Defined in [responses/tag.feed.response.ts:144](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/tag.feed.response.ts#L144)_
+*Defined in [responses/tag.feed.response.ts:144](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/tag.feed.response.ts#L144)*
 
----
+___
 
 ### `Optional` usertags
 
-• **usertags**? : _[TagFeedResponseUsertags](\_responses_tag_feed_response_.tagfeedresponseusertags.md)\_
+• **usertags**? : *[TagFeedResponseUsertags](_responses_tag_feed_response_.tagfeedresponseusertags.md)*
 
-_Defined in [responses/tag.feed.response.ts:168](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/tag.feed.response.ts#L168)_
+*Defined in [responses/tag.feed.response.ts:168](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/tag.feed.response.ts#L168)*
 
----
+___
 
 ### `Optional` video_codec
 
-• **video_codec**? : _string_
+• **video_codec**? : *string*
 
-_Defined in [responses/tag.feed.response.ts:162](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/tag.feed.response.ts#L162)_
+*Defined in [responses/tag.feed.response.ts:162](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/tag.feed.response.ts#L162)*
 
----
+___
 
 ### `Optional` video_dash_manifest
 
-• **video_dash_manifest**? : _string_
+• **video_dash_manifest**? : *string*
 
-_Defined in [responses/tag.feed.response.ts:161](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/tag.feed.response.ts#L161)_
+*Defined in [responses/tag.feed.response.ts:161](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/tag.feed.response.ts#L161)*
 
----
+___
 
 ### `Optional` video_duration
 
-• **video_duration**? : _number_
+• **video_duration**? : *number*
 
-_Defined in [responses/tag.feed.response.ts:166](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/tag.feed.response.ts#L166)_
+*Defined in [responses/tag.feed.response.ts:166](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/tag.feed.response.ts#L166)*
 
----
+___
 
 ### `Optional` video_versions
 
-• **video_versions**? : _[TagFeedResponseVideoVersionsItem](\_responses_tag_feed_response_.tagfeedresponsevideoversionsitem.md)[]\_
+• **video_versions**? : *[TagFeedResponseVideoVersionsItem](_responses_tag_feed_response_.tagfeedresponsevideoversionsitem.md)[]*
 
-_Defined in [responses/tag.feed.response.ts:164](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/tag.feed.response.ts#L164)_
+*Defined in [responses/tag.feed.response.ts:164](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/tag.feed.response.ts#L164)*
 
----
+___
 
 ### `Optional` view_count
 
-• **view_count**? : _number_
+• **view_count**? : *number*
 
-_Defined in [responses/tag.feed.response.ts:167](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/tag.feed.response.ts#L167)_
+*Defined in [responses/tag.feed.response.ts:167](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/tag.feed.response.ts#L167)*

@@ -6,67 +6,67 @@
 
 ## Hierarchy
 
-- [Repository](_core_repository_.repository.md)
+* [Repository](_core_repository_.repository.md)
 
-  - **EntityFactory**
+  * **EntityFactory**
 
 ## Index
 
 ### Constructors
 
-- [constructor](_core_entity_factory_.entityfactory.md#constructor)
+* [constructor](_core_entity_factory_.entityfactory.md#constructor)
 
 ### Methods
 
-- [directThread](_core_entity_factory_.entityfactory.md#directthread)
-- [profile](_core_entity_factory_.entityfactory.md#profile)
+* [directThread](_core_entity_factory_.entityfactory.md#directthread)
+* [profile](_core_entity_factory_.entityfactory.md#profile)
 
 ## Constructors
 
-### constructor
+###  constructor
 
-\+ **new EntityFactory**(`client`: [IgApiClient](_core_client_.igapiclient.md)): _[EntityFactory](\_core_entity_factory_.entityfactory.md)\_
+\+ **new EntityFactory**(`client`: [IgApiClient](_core_client_.igapiclient.md)): *[EntityFactory](_core_entity_factory_.entityfactory.md)*
 
-_Inherited from [Repository](\_core_repository_.repository.md).[constructor](_core_repository_.repository.md#constructor)\_
+*Inherited from [Repository](_core_repository_.repository.md).[constructor](_core_repository_.repository.md#constructor)*
 
-_Defined in [core/repository.ts:6](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/repository.ts#L6)_
+*Defined in [core/repository.ts:6](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/repository.ts#L6)*
 
 **Parameters:**
 
-| Name     | Type                                        |
-| -------- | ------------------------------------------- |
-| `client` | [IgApiClient](_core_client_.igapiclient.md) |
+Name | Type |
+------ | ------ |
+`client` | [IgApiClient](_core_client_.igapiclient.md) |
 
-**Returns:** _[EntityFactory](\_core_entity_factory_.entityfactory.md)\_
+**Returns:** *[EntityFactory](_core_entity_factory_.entityfactory.md)*
 
 ## Methods
 
-### directThread
+###  directThread
 
-▸ **directThread**(`id`: string | string[]): _[DirectThreadEntity](\_entities_direct_thread_entity_.directthreadentity.md)\_
+▸ **directThread**(`id`: string | string[]): *[DirectThreadEntity](_entities_direct_thread_entity_.directthreadentity.md)*
 
-_Defined in [core/entity.factory.ts:5](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/entity.factory.ts#L5)_
-
-**Parameters:**
-
-| Name | Type               |
-| ---- | ------------------ |
-| `id` | string \| string[] |
-
-**Returns:** _[DirectThreadEntity](\_entities_direct_thread_entity_.directthreadentity.md)\_
-
----
-
-### profile
-
-▸ **profile**(`pk`: string): _[ProfileEntity](\_entities_profile_entity_.profileentity.md)\_
-
-_Defined in [core/entity.factory.ts:14](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/entity.factory.ts#L14)_
+*Defined in [core/entity.factory.ts:5](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/entity.factory.ts#L5)*
 
 **Parameters:**
 
-| Name | Type   |
-| ---- | ------ |
-| `pk` | string |
+Name | Type |
+------ | ------ |
+`id` | string \| string[] |
 
-**Returns:** _[ProfileEntity](\_entities_profile_entity_.profileentity.md)\_
+**Returns:** *[DirectThreadEntity](_entities_direct_thread_entity_.directthreadentity.md)*
+
+___
+
+###  profile
+
+▸ **profile**(`pk`: string): *[ProfileEntity](_entities_profile_entity_.profileentity.md)*
+
+*Defined in [core/entity.factory.ts:14](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/entity.factory.ts#L14)*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`pk` | string |
+
+**Returns:** *[ProfileEntity](_entities_profile_entity_.profileentity.md)*

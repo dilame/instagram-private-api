@@ -6,45 +6,45 @@
 
 ## Hierarchy
 
-- **PostingPhotoOptions**
+* **PostingPhotoOptions**
 
 ## Index
 
 ### Properties
 
-- [caption](_types_posting_photo_options_.postingphotooptions.md#optional-caption)
-- [file](_types_posting_photo_options_.postingphotooptions.md#file)
-- [location](_types_posting_photo_options_.postingphotooptions.md#optional-location)
-- [usertags](_types_posting_photo_options_.postingphotooptions.md#optional-usertags)
+* [caption](_types_posting_photo_options_.postingphotooptions.md#optional-caption)
+* [file](_types_posting_photo_options_.postingphotooptions.md#file)
+* [location](_types_posting_photo_options_.postingphotooptions.md#optional-location)
+* [usertags](_types_posting_photo_options_.postingphotooptions.md#optional-usertags)
 
 ## Properties
 
 ### `Optional` caption
 
-• **caption**? : _string_
+• **caption**? : *string*
 
-_Defined in [types/posting.photo.options.ts:28](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/types/posting.photo.options.ts#L28)_
+*Defined in [types/posting.photo.options.ts:5](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/posting.photo.options.ts#L5)*
 
----
+___
 
-### file
+###  file
 
-• **file**: _`Buffer`_
+• **file**: *`Buffer`*
 
-_Defined in [types/posting.photo.options.ts:27](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/types/posting.photo.options.ts#L27)_
+*Defined in [types/posting.photo.options.ts:4](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/posting.photo.options.ts#L4)*
 
----
+___
 
 ### `Optional` location
 
-• **location**? : _[PostingLocation](\_types_posting_photo_options_.postinglocation.md)\_
+• **location**? : *[PostingLocation](_types_posting_options_.postinglocation.md)*
 
-_Defined in [types/posting.photo.options.ts:30](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/types/posting.photo.options.ts#L30)_
+*Defined in [types/posting.photo.options.ts:7](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/posting.photo.options.ts#L7)*
 
----
+___
 
 ### `Optional` usertags
 
-• **usertags**? : _[PostingUsertags](\_types_posting_photo_options_.postingusertags.md)\_
+• **usertags**? : *[PostingUsertags](_types_posting_options_.postingusertags.md)*
 
-_Defined in [types/posting.photo.options.ts:29](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/types/posting.photo.options.ts#L29)_
+*Defined in [types/posting.photo.options.ts:6](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/posting.photo.options.ts#L6)*

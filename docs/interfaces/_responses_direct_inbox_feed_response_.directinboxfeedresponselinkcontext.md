@@ -6,45 +6,45 @@
 
 ## Hierarchy
 
-- **DirectInboxFeedResponseLinkContext**
+* **DirectInboxFeedResponseLinkContext**
 
 ## Index
 
 ### Properties
 
-- [link_image_url](_responses_direct_inbox_feed_response_.directinboxfeedresponselinkcontext.md#link_image_url)
-- [link_summary](_responses_direct_inbox_feed_response_.directinboxfeedresponselinkcontext.md#link_summary)
-- [link_title](_responses_direct_inbox_feed_response_.directinboxfeedresponselinkcontext.md#link_title)
-- [link_url](_responses_direct_inbox_feed_response_.directinboxfeedresponselinkcontext.md#link_url)
+* [link_image_url](_responses_direct_inbox_feed_response_.directinboxfeedresponselinkcontext.md#link_image_url)
+* [link_summary](_responses_direct_inbox_feed_response_.directinboxfeedresponselinkcontext.md#link_summary)
+* [link_title](_responses_direct_inbox_feed_response_.directinboxfeedresponselinkcontext.md#link_title)
+* [link_url](_responses_direct_inbox_feed_response_.directinboxfeedresponselinkcontext.md#link_url)
 
 ## Properties
 
-### link_image_url
+###  link_image_url
 
-• **link_image_url**: _string_
+• **link_image_url**: *string*
 
-_Defined in [responses/direct-inbox.feed.response.ts:123](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-inbox.feed.response.ts#L123)_
+*Defined in [responses/direct-inbox.feed.response.ts:123](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-inbox.feed.response.ts#L123)*
 
----
+___
 
-### link_summary
+###  link_summary
 
-• **link_summary**: _string_
+• **link_summary**: *string*
 
-_Defined in [responses/direct-inbox.feed.response.ts:122](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-inbox.feed.response.ts#L122)_
+*Defined in [responses/direct-inbox.feed.response.ts:122](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-inbox.feed.response.ts#L122)*
 
----
+___
 
-### link_title
+###  link_title
 
-• **link_title**: _string_
+• **link_title**: *string*
 
-_Defined in [responses/direct-inbox.feed.response.ts:121](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-inbox.feed.response.ts#L121)_
+*Defined in [responses/direct-inbox.feed.response.ts:121](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-inbox.feed.response.ts#L121)*
 
----
+___
 
-### link_url
+###  link_url
 
-• **link_url**: _string_
+• **link_url**: *string*
 
-_Defined in [responses/direct-inbox.feed.response.ts:120](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-inbox.feed.response.ts#L120)_
+*Defined in [responses/direct-inbox.feed.response.ts:120](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-inbox.feed.response.ts#L120)*

@@ -6,63 +6,63 @@
 
 ## Hierarchy
 
-- **DirectInboxFeedResponseFriendshipStatus**
+* **DirectInboxFeedResponseFriendshipStatus**
 
 ## Index
 
 ### Properties
 
-- [blocking](_responses_direct_inbox_feed_response_.directinboxfeedresponsefriendshipstatus.md#blocking)
-- [following](_responses_direct_inbox_feed_response_.directinboxfeedresponsefriendshipstatus.md#following)
-- [incoming_request](_responses_direct_inbox_feed_response_.directinboxfeedresponsefriendshipstatus.md#incoming_request)
-- [is_bestie](_responses_direct_inbox_feed_response_.directinboxfeedresponsefriendshipstatus.md#is_bestie)
-- [is_private](_responses_direct_inbox_feed_response_.directinboxfeedresponsefriendshipstatus.md#is_private)
-- [outgoing_request](_responses_direct_inbox_feed_response_.directinboxfeedresponsefriendshipstatus.md#outgoing_request)
+* [blocking](_responses_direct_inbox_feed_response_.directinboxfeedresponsefriendshipstatus.md#blocking)
+* [following](_responses_direct_inbox_feed_response_.directinboxfeedresponsefriendshipstatus.md#following)
+* [incoming_request](_responses_direct_inbox_feed_response_.directinboxfeedresponsefriendshipstatus.md#incoming_request)
+* [is_bestie](_responses_direct_inbox_feed_response_.directinboxfeedresponsefriendshipstatus.md#is_bestie)
+* [is_private](_responses_direct_inbox_feed_response_.directinboxfeedresponsefriendshipstatus.md#is_private)
+* [outgoing_request](_responses_direct_inbox_feed_response_.directinboxfeedresponsefriendshipstatus.md#outgoing_request)
 
 ## Properties
 
-### blocking
+###  blocking
 
-• **blocking**: _boolean_
+• **blocking**: *boolean*
 
-_Defined in [responses/direct-inbox.feed.response.ts:69](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-inbox.feed.response.ts#L69)_
+*Defined in [responses/direct-inbox.feed.response.ts:69](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-inbox.feed.response.ts#L69)*
 
----
+___
 
-### following
+###  following
 
-• **following**: _boolean_
+• **following**: *boolean*
 
-_Defined in [responses/direct-inbox.feed.response.ts:68](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-inbox.feed.response.ts#L68)_
+*Defined in [responses/direct-inbox.feed.response.ts:68](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-inbox.feed.response.ts#L68)*
 
----
+___
 
-### incoming_request
+###  incoming_request
 
-• **incoming_request**: _boolean_
+• **incoming_request**: *boolean*
 
-_Defined in [responses/direct-inbox.feed.response.ts:71](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-inbox.feed.response.ts#L71)_
+*Defined in [responses/direct-inbox.feed.response.ts:71](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-inbox.feed.response.ts#L71)*
 
----
+___
 
-### is_bestie
+###  is_bestie
 
-• **is_bestie**: _boolean_
+• **is_bestie**: *boolean*
 
-_Defined in [responses/direct-inbox.feed.response.ts:73](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-inbox.feed.response.ts#L73)_
+*Defined in [responses/direct-inbox.feed.response.ts:73](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-inbox.feed.response.ts#L73)*
 
----
+___
 
-### is_private
+###  is_private
 
-• **is_private**: _boolean_
+• **is_private**: *boolean*
 
-_Defined in [responses/direct-inbox.feed.response.ts:70](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-inbox.feed.response.ts#L70)_
+*Defined in [responses/direct-inbox.feed.response.ts:70](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-inbox.feed.response.ts#L70)*
 
----
+___
 
-### outgoing_request
+###  outgoing_request
 
-• **outgoing_request**: _boolean_
+• **outgoing_request**: *boolean*
 
-_Defined in [responses/direct-inbox.feed.response.ts:72](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-inbox.feed.response.ts#L72)_
+*Defined in [responses/direct-inbox.feed.response.ts:72](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-inbox.feed.response.ts#L72)*

@@ -6,135 +6,135 @@
 
 ## Hierarchy
 
-- **UserFeedResponseUser**
+* **UserFeedResponseUser**
 
 ## Index
 
 ### Properties
 
-- [allowed_commenter_type](_responses_user_feed_response_.userfeedresponseuser.md#optional-allowed_commenter_type)
-- [can_boost_post](_responses_user_feed_response_.userfeedresponseuser.md#optional-can_boost_post)
-- [can_see_organic_insights](_responses_user_feed_response_.userfeedresponseuser.md#optional-can_see_organic_insights)
-- [full_name](_responses_user_feed_response_.userfeedresponseuser.md#full_name)
-- [has_anonymous_profile_picture](_responses_user_feed_response_.userfeedresponseuser.md#optional-has_anonymous_profile_picture)
-- [is_private](_responses_user_feed_response_.userfeedresponseuser.md#is_private)
-- [is_unpublished](_responses_user_feed_response_.userfeedresponseuser.md#optional-is_unpublished)
-- [is_verified](_responses_user_feed_response_.userfeedresponseuser.md#is_verified)
-- [pk](_responses_user_feed_response_.userfeedresponseuser.md#pk)
-- [profile_pic_id](_responses_user_feed_response_.userfeedresponseuser.md#optional-profile_pic_id)
-- [profile_pic_url](_responses_user_feed_response_.userfeedresponseuser.md#profile_pic_url)
-- [reel_auto_archive](_responses_user_feed_response_.userfeedresponseuser.md#optional-reel_auto_archive)
-- [show_insights_terms](_responses_user_feed_response_.userfeedresponseuser.md#optional-show_insights_terms)
-- [username](_responses_user_feed_response_.userfeedresponseuser.md#username)
+* [allowed_commenter_type](_responses_user_feed_response_.userfeedresponseuser.md#optional-allowed_commenter_type)
+* [can_boost_post](_responses_user_feed_response_.userfeedresponseuser.md#optional-can_boost_post)
+* [can_see_organic_insights](_responses_user_feed_response_.userfeedresponseuser.md#optional-can_see_organic_insights)
+* [full_name](_responses_user_feed_response_.userfeedresponseuser.md#full_name)
+* [has_anonymous_profile_picture](_responses_user_feed_response_.userfeedresponseuser.md#optional-has_anonymous_profile_picture)
+* [is_private](_responses_user_feed_response_.userfeedresponseuser.md#is_private)
+* [is_unpublished](_responses_user_feed_response_.userfeedresponseuser.md#optional-is_unpublished)
+* [is_verified](_responses_user_feed_response_.userfeedresponseuser.md#is_verified)
+* [pk](_responses_user_feed_response_.userfeedresponseuser.md#pk)
+* [profile_pic_id](_responses_user_feed_response_.userfeedresponseuser.md#optional-profile_pic_id)
+* [profile_pic_url](_responses_user_feed_response_.userfeedresponseuser.md#profile_pic_url)
+* [reel_auto_archive](_responses_user_feed_response_.userfeedresponseuser.md#optional-reel_auto_archive)
+* [show_insights_terms](_responses_user_feed_response_.userfeedresponseuser.md#optional-show_insights_terms)
+* [username](_responses_user_feed_response_.userfeedresponseuser.md#username)
 
 ## Properties
 
 ### `Optional` allowed_commenter_type
 
-• **allowed_commenter_type**? : _string_
+• **allowed_commenter_type**? : *string*
 
-_Defined in [responses/user.feed.response.ts:78](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/user.feed.response.ts#L78)_
+*Defined in [responses/user.feed.response.ts:78](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/user.feed.response.ts#L78)*
 
----
+___
 
 ### `Optional` can_boost_post
 
-• **can_boost_post**? : _boolean_
+• **can_boost_post**? : *boolean*
 
-_Defined in [responses/user.feed.response.ts:73](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/user.feed.response.ts#L73)_
+*Defined in [responses/user.feed.response.ts:73](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/user.feed.response.ts#L73)*
 
----
+___
 
 ### `Optional` can_see_organic_insights
 
-• **can_see_organic_insights**? : _boolean_
+• **can_see_organic_insights**? : *boolean*
 
-_Defined in [responses/user.feed.response.ts:74](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/user.feed.response.ts#L74)_
+*Defined in [responses/user.feed.response.ts:74](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/user.feed.response.ts#L74)*
 
----
+___
 
-### full_name
+###  full_name
 
-• **full_name**: _string_
+• **full_name**: *string*
 
-_Defined in [responses/user.feed.response.ts:67](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/user.feed.response.ts#L67)_
+*Defined in [responses/user.feed.response.ts:67](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/user.feed.response.ts#L67)*
 
----
+___
 
 ### `Optional` has_anonymous_profile_picture
 
-• **has_anonymous_profile_picture**? : _boolean_
+• **has_anonymous_profile_picture**? : *boolean*
 
-_Defined in [responses/user.feed.response.ts:72](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/user.feed.response.ts#L72)_
+*Defined in [responses/user.feed.response.ts:72](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/user.feed.response.ts#L72)*
 
----
+___
 
-### is_private
+###  is_private
 
-• **is_private**: _boolean_
+• **is_private**: *boolean*
 
-_Defined in [responses/user.feed.response.ts:68](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/user.feed.response.ts#L68)_
+*Defined in [responses/user.feed.response.ts:68](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/user.feed.response.ts#L68)*
 
----
+___
 
 ### `Optional` is_unpublished
 
-• **is_unpublished**? : _boolean_
+• **is_unpublished**? : *boolean*
 
-_Defined in [responses/user.feed.response.ts:77](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/user.feed.response.ts#L77)_
+*Defined in [responses/user.feed.response.ts:77](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/user.feed.response.ts#L77)*
 
----
+___
 
-### is_verified
+###  is_verified
 
-• **is_verified**: _boolean_
+• **is_verified**: *boolean*
 
-_Defined in [responses/user.feed.response.ts:71](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/user.feed.response.ts#L71)_
+*Defined in [responses/user.feed.response.ts:71](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/user.feed.response.ts#L71)*
 
----
+___
 
-### pk
+###  pk
 
-• **pk**: _number_
+• **pk**: *number*
 
-_Defined in [responses/user.feed.response.ts:65](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/user.feed.response.ts#L65)_
+*Defined in [responses/user.feed.response.ts:65](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/user.feed.response.ts#L65)*
 
----
+___
 
 ### `Optional` profile_pic_id
 
-• **profile_pic_id**? : _string_
+• **profile_pic_id**? : *string*
 
-_Defined in [responses/user.feed.response.ts:70](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/user.feed.response.ts#L70)_
+*Defined in [responses/user.feed.response.ts:70](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/user.feed.response.ts#L70)*
 
----
+___
 
-### profile_pic_url
+###  profile_pic_url
 
-• **profile_pic_url**: _string_
+• **profile_pic_url**: *string*
 
-_Defined in [responses/user.feed.response.ts:69](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/user.feed.response.ts#L69)_
+*Defined in [responses/user.feed.response.ts:69](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/user.feed.response.ts#L69)*
 
----
+___
 
 ### `Optional` reel_auto_archive
 
-• **reel_auto_archive**? : _string_
+• **reel_auto_archive**? : *string*
 
-_Defined in [responses/user.feed.response.ts:76](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/user.feed.response.ts#L76)_
+*Defined in [responses/user.feed.response.ts:76](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/user.feed.response.ts#L76)*
 
----
+___
 
 ### `Optional` show_insights_terms
 
-• **show_insights_terms**? : _boolean_
+• **show_insights_terms**? : *boolean*
 
-_Defined in [responses/user.feed.response.ts:75](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/user.feed.response.ts#L75)_
+*Defined in [responses/user.feed.response.ts:75](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/user.feed.response.ts#L75)*
 
----
+___
 
-### username
+###  username
 
-• **username**: _string_
+• **username**: *string*
 
-_Defined in [responses/user.feed.response.ts:66](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/user.feed.response.ts#L66)_
+*Defined in [responses/user.feed.response.ts:66](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/user.feed.response.ts#L66)*

@@ -6,54 +6,54 @@
 
 ## Hierarchy
 
-- **FbsearchRepositoryTopsearchFlatResponsePlace**
+* **FbsearchRepositoryTopsearchFlatResponsePlace**
 
 ## Index
 
 ### Properties
 
-- [header_media](_responses_fbsearch_repository_topsearch_flat_response_.fbsearchrepositorytopsearchflatresponseplace.md#header_media)
-- [location](_responses_fbsearch_repository_topsearch_flat_response_.fbsearchrepositorytopsearchflatresponseplace.md#location)
-- [media_bundles](_responses_fbsearch_repository_topsearch_flat_response_.fbsearchrepositorytopsearchflatresponseplace.md#media_bundles)
-- [subtitle](_responses_fbsearch_repository_topsearch_flat_response_.fbsearchrepositorytopsearchflatresponseplace.md#subtitle)
-- [title](_responses_fbsearch_repository_topsearch_flat_response_.fbsearchrepositorytopsearchflatresponseplace.md#title)
+* [header_media](_responses_fbsearch_repository_topsearch_flat_response_.fbsearchrepositorytopsearchflatresponseplace.md#header_media)
+* [location](_responses_fbsearch_repository_topsearch_flat_response_.fbsearchrepositorytopsearchflatresponseplace.md#location)
+* [media_bundles](_responses_fbsearch_repository_topsearch_flat_response_.fbsearchrepositorytopsearchflatresponseplace.md#media_bundles)
+* [subtitle](_responses_fbsearch_repository_topsearch_flat_response_.fbsearchrepositorytopsearchflatresponseplace.md#subtitle)
+* [title](_responses_fbsearch_repository_topsearch_flat_response_.fbsearchrepositorytopsearchflatresponseplace.md#title)
 
 ## Properties
 
-### header_media
+###  header_media
 
-• **header_media**: _[FbsearchRepositoryTopsearchFlatResponseHeader_media](\_responses_fbsearch_repository_topsearch_flat_response_.fbsearchrepositorytopsearchflatresponseheader*media.md)*
+• **header_media**: *[FbsearchRepositoryTopsearchFlatResponseHeader_media](_responses_fbsearch_repository_topsearch_flat_response_.fbsearchrepositorytopsearchflatresponseheader_media.md)*
 
-_Defined in [responses/fbsearch.repository.topsearch-flat.response.ts:19](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/fbsearch.repository.topsearch-flat.response.ts#L19)_
+*Defined in [responses/fbsearch.repository.topsearch-flat.response.ts:19](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/fbsearch.repository.topsearch-flat.response.ts#L19)*
 
----
+___
 
-### location
+###  location
 
-• **location**: _[FbsearchRepositoryTopsearchFlatResponseLocation](\_responses_fbsearch_repository_topsearch_flat_response_.fbsearchrepositorytopsearchflatresponselocation.md)\_
+• **location**: *[FbsearchRepositoryTopsearchFlatResponseLocation](_responses_fbsearch_repository_topsearch_flat_response_.fbsearchrepositorytopsearchflatresponselocation.md)*
 
-_Defined in [responses/fbsearch.repository.topsearch-flat.response.ts:15](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/fbsearch.repository.topsearch-flat.response.ts#L15)_
+*Defined in [responses/fbsearch.repository.topsearch-flat.response.ts:15](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/fbsearch.repository.topsearch-flat.response.ts#L15)*
 
----
+___
 
-### media_bundles
+###  media_bundles
 
-• **media_bundles**: _any[]_
+• **media_bundles**: *any[]*
 
-_Defined in [responses/fbsearch.repository.topsearch-flat.response.ts:18](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/fbsearch.repository.topsearch-flat.response.ts#L18)_
+*Defined in [responses/fbsearch.repository.topsearch-flat.response.ts:18](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/fbsearch.repository.topsearch-flat.response.ts#L18)*
 
----
+___
 
-### subtitle
+###  subtitle
 
-• **subtitle**: _string_
+• **subtitle**: *string*
 
-_Defined in [responses/fbsearch.repository.topsearch-flat.response.ts:17](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/fbsearch.repository.topsearch-flat.response.ts#L17)_
+*Defined in [responses/fbsearch.repository.topsearch-flat.response.ts:17](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/fbsearch.repository.topsearch-flat.response.ts#L17)*
 
----
+___
 
-### title
+###  title
 
-• **title**: _string_
+• **title**: *string*
 
-_Defined in [responses/fbsearch.repository.topsearch-flat.response.ts:16](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/fbsearch.repository.topsearch-flat.response.ts#L16)_
+*Defined in [responses/fbsearch.repository.topsearch-flat.response.ts:16](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/fbsearch.repository.topsearch-flat.response.ts#L16)*

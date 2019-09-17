@@ -1,7 +1,6 @@
-import { IgApiClient } from '../src';
+import { IgApiClient, StorySticker } from '../src';
 import Bluebird = require('bluebird');
 import { readFile } from 'fs';
-import { StorySticker } from '../src/types/media.configure.options';
 
 const ig = new IgApiClient();
 

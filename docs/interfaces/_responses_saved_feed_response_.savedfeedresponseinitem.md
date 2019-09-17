@@ -6,45 +6,54 @@
 
 ## Hierarchy
 
-- **SavedFeedResponseInItem**
+* **SavedFeedResponseInItem**
 
 ## Index
 
 ### Properties
 
-- [duration_in_video_in_sec](_responses_saved_feed_response_.savedfeedresponseinitem.md#duration_in_video_in_sec)
-- [position](_responses_saved_feed_response_.savedfeedresponseinitem.md#position)
-- [start_time_in_video_in_sec](_responses_saved_feed_response_.savedfeedresponseinitem.md#start_time_in_video_in_sec)
-- [user](_responses_saved_feed_response_.savedfeedresponseinitem.md#user)
+* [duration_in_video_in_sec](_responses_saved_feed_response_.savedfeedresponseinitem.md#optional-duration_in_video_in_sec)
+* [position](_responses_saved_feed_response_.savedfeedresponseinitem.md#position)
+* [product](_responses_saved_feed_response_.savedfeedresponseinitem.md#optional-product)
+* [start_time_in_video_in_sec](_responses_saved_feed_response_.savedfeedresponseinitem.md#optional-start_time_in_video_in_sec)
+* [user](_responses_saved_feed_response_.savedfeedresponseinitem.md#optional-user)
 
 ## Properties
 
-### duration_in_video_in_sec
+### `Optional` duration_in_video_in_sec
 
-• **duration_in_video_in_sec**: _null_
+• **duration_in_video_in_sec**? : *null*
 
-_Defined in [responses/saved.feed.response.ts:143](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/saved.feed.response.ts#L143)_
+*Defined in [responses/saved.feed.response.ts:119](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/saved.feed.response.ts#L119)*
 
----
+___
 
-### position
+###  position
 
-• **position**: _number[] | string | number[]_
+• **position**: *string[] | number[]*
 
-_Defined in [responses/saved.feed.response.ts:141](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/saved.feed.response.ts#L141)_
+*Defined in [responses/saved.feed.response.ts:116](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/saved.feed.response.ts#L116)*
 
----
+___
 
-### start_time_in_video_in_sec
+### `Optional` product
 
-• **start_time_in_video_in_sec**: _null_
+• **product**? : *[SavedFeedResponseProduct](_responses_saved_feed_response_.savedfeedresponseproduct.md)*
 
-_Defined in [responses/saved.feed.response.ts:142](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/saved.feed.response.ts#L142)_
+*Defined in [responses/saved.feed.response.ts:115](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/saved.feed.response.ts#L115)*
 
----
+___
 
-### user
+### `Optional` start_time_in_video_in_sec
 
-• **user**: _[SavedFeedResponseUser](\_responses_saved_feed_response_.savedfeedresponseuser.md)\_
+• **start_time_in_video_in_sec**? : *null*
 
-_Defined in [responses/saved.feed.response.ts:140](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/saved.feed.response.ts#L140)_
+*Defined in [responses/saved.feed.response.ts:118](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/saved.feed.response.ts#L118)*
+
+___
+
+### `Optional` user
+
+• **user**? : *[SavedFeedResponseUser](_responses_saved_feed_response_.savedfeedresponseuser.md)*
+
+*Defined in [responses/saved.feed.response.ts:117](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/saved.feed.response.ts#L117)*

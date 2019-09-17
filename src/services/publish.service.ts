@@ -1,7 +1,23 @@
 import { Repository } from '../core/repository';
-import { PostingPhotoOptions, PostingStoryOptions } from '../types/posting.photo.options';
 import sizeOf = require('image-size');
-import { MediaConfigureStoryOptions, MediaConfigureTimelineOptions } from '../types/media.configure.options';
+import {
+  MediaConfigureTimelineOptions,
+  MediaConfigureTimelineVideoOptions,
+  PostingPhotoOptions,
+  PostingStoryPhotoOptions,
+  PostingVideoOptions,
+  PostingAlbumItem,
+  PostingAlbumOptions,
+  PostingAlbumPhotoItem,
+  PostingAlbumVideoItem,
+  PostingStoryVideoOptions,
+  MediaConfigureStoryBaseOptions,
+  IgResponse,
+} from '../types';
+import { PostingLocation, PostingStoryOptions } from '../types/posting.options';
+import Bluebird = require('bluebird');
+import { IgConfigureVideoError, IgResponseError, IgUploadVideoError } from '../errors';
+import { UploadRepositoryVideoResponseRootObject } from '../responses';
 
 export class PublishService extends Repository {
   /**
@@ -18,13 +34,155 @@ export class PublishService extends Repository {
       width: imageSize.width,
       height: imageSize.height,
       caption: options.caption,
+      ...PublishService.makeLocationOptions(options.location),
     };
     if (typeof options.usertags !== 'undefined') {
       configureOptions.usertags = options.usertags;
     }
-    if (typeof options.location !== 'undefined') {
-      const { lat, lng, external_id_source, external_id, name, address } = options.location;
-      configureOptions.location = {
+    return await this.client.media.configure(configureOptions);
+  }
+
+  /**
+   * The current way of handling the 202 - Accepted; Transcode pending -error
+   * @param videoInfo The video info for debugging reasons
+   * @param transcodeDelayInMs The delay for instagram to transcode the video
+   */
+  private catchTranscodeError(videoInfo, transcodeDelayInMs: number) {
+    return error => {
+      if (error.response.statusCode === 202) {
+        return Bluebird.delay(transcodeDelayInMs);
+      } else {
+        throw new IgUploadVideoError(error.response as IgResponse<UploadRepositoryVideoResponseRootObject>, videoInfo);
+      }
+    };
+  }
+
+  public async video(options: PostingVideoOptions) {
+    const uploadId = Date.now().toString();
+    const videoInfo = PublishService.getVideoInfo(options.video);
+    await Bluebird.try(() =>
+      this.client.upload.video({
+        video: options.video,
+        uploadId,
+        ...videoInfo,
+      }),
+    ).catch(IgResponseError, error => {
+      throw new IgUploadVideoError(error.response as IgResponse<UploadRepositoryVideoResponseRootObject>, videoInfo);
+    });
+    await this.client.upload.photo({
+      file: options.coverImage,
+      uploadId: uploadId.toString(),
+    });
+
+    await Bluebird.try(() =>
+      this.client.media.uploadFinish({
+        upload_id: uploadId,
+        source_type: '4',
+        video: { length: videoInfo.duration / 1000.0 },
+      }),
+    ).catch(IgResponseError, this.catchTranscodeError(videoInfo, options.transcodeDelay || 5000));
+
+    const configureOptions: MediaConfigureTimelineVideoOptions = {
+      upload_id: uploadId.toString(),
+      caption: options.caption,
+      length: videoInfo.duration / 1000.0,
+      width: videoInfo.width,
+      height: videoInfo.height,
+      clips: [
+        {
+          length: videoInfo.duration / 1000.0,
+          source_type: '4',
+        },
+      ],
+      ...PublishService.makeLocationOptions(options.location),
+    };
+
+    if (typeof options.usertags !== 'undefined') {
+      configureOptions.usertags = options.usertags;
+    }
+
+    return Bluebird.try(() => this.client.media.configureVideo(configureOptions)).catch(IgResponseError, error => {
+      throw new IgConfigureVideoError(error.response as IgResponse<UploadRepositoryVideoResponseRootObject>, videoInfo);
+    });
+  }
+
+  public async album(options: PostingAlbumOptions) {
+    const isPhoto = (arg: PostingAlbumItem): arg is PostingAlbumPhotoItem =>
+      (arg as PostingAlbumPhotoItem).file !== undefined;
+    const isVideo = (arg: PostingAlbumItem): arg is PostingAlbumVideoItem =>
+      (arg as PostingAlbumVideoItem).video !== undefined;
+
+    for (const item of options.items) {
+      if (isPhoto(item)) {
+        const uploadedPhoto = await this.client.upload.photo({
+          file: item.file,
+          uploadId: item.uploadId,
+          isSidecar: true,
+        });
+        const { width, height } = await sizeOf(item.file);
+        item.width = width;
+        item.height = height;
+        item.uploadId = uploadedPhoto.upload_id;
+      } else if (isVideo(item)) {
+        item.videoInfo = PublishService.getVideoInfo(item.video);
+        item.uploadId = Date.now().toString();
+        await Bluebird.try(() =>
+          this.client.upload.video({
+            video: item.video,
+            uploadId: item.uploadId,
+            isSidecar: true,
+            ...item.videoInfo,
+          }),
+        ).catch(IgResponseError, error => {
+          throw new IgConfigureVideoError(
+            error.response as IgResponse<UploadRepositoryVideoResponseRootObject>,
+            item.videoInfo,
+          );
+        });
+        await this.client.upload.photo({
+          file: item.coverImage,
+          uploadId: item.uploadId,
+          isSidecar: true,
+        });
+        await Bluebird.try(() =>
+          this.client.media.uploadFinish({
+            upload_id: item.uploadId,
+            source_type: '4',
+            video: { length: item.videoInfo.duration / 1000.0 },
+          }),
+        ).catch(IgResponseError, this.catchTranscodeError(item.videoInfo, item.transcodeDelay));
+      }
+    }
+
+    return await this.client.media.configureSidecar({
+      caption: options.caption,
+      children_metadata: options.items.map(item => {
+        if (isVideo(item)) {
+          return {
+            upload_id: item.uploadId,
+            width: item.videoInfo.width,
+            height: item.videoInfo.height,
+            length: item.videoInfo.duration,
+            usertags: item.usertags,
+          };
+        } else if (isPhoto(item)) {
+          return {
+            upload_id: item.uploadId,
+            width: item.width,
+            height: item.height,
+            usertags: item.usertags,
+          };
+        }
+      }),
+      ...PublishService.makeLocationOptions(options.location),
+    });
+  }
+
+  private static makeLocationOptions(location?: PostingLocation): any {
+    const options: any = {};
+    if (typeof location !== 'undefined') {
+      const { lat, lng, external_id_source, external_id, name, address } = location;
+      options.location = {
         name,
         lat,
         lng,
@@ -32,39 +190,100 @@ export class PublishService extends Repository {
         external_source: external_id_source,
         external_id,
       };
-      configureOptions.location[external_id_source + '_id'] = external_id;
-      configureOptions.geotag_enabled = '1';
-      configureOptions.media_latitude = lat.toString();
-      configureOptions.media_longitude = lng.toString();
-      configureOptions.posting_latitude = lat.toString();
-      configureOptions.posting_longitude = lng.toString();
+      options.location[external_id_source + '_id'] = external_id;
+      options.geotag_enabled = '1';
+      options.media_latitude = lat.toString();
+      options.media_longitude = lng.toString();
+      options.posting_latitude = lat.toString();
+      options.posting_longitude = lng.toString();
     }
-    return await this.client.media.configure(configureOptions);
+    return options;
   }
 
-  public async story(options: PostingStoryOptions) {
-    const uploadedPhoto = await this.client.upload.photo({
-      file: options.file,
-    });
+  private async uploadAndConfigureStoryPhoto(
+    options: PostingStoryPhotoOptions,
+    configureOptions: MediaConfigureStoryBaseOptions,
+  ) {
+    const uploadId = Date.now().toString();
     const imageSize = await sizeOf(options.file);
-    const storyStickerIds = [];
-    const configureOptions: MediaConfigureStoryOptions = {
-      upload_id: uploadedPhoto.upload_id,
+    await this.client.upload.photo({
+      file: options.file,
+      uploadId,
+    });
+    return await this.client.media.configureToStory({
+      ...configureOptions,
+      upload_id: uploadId,
       width: imageSize.width,
       height: imageSize.height,
-      configure_mode: 1,
+    });
+  }
+
+  private async uploadAndConfigureStoryVideo(
+    options: PostingStoryVideoOptions,
+    configureOptions: MediaConfigureStoryBaseOptions,
+  ) {
+    const uploadId = Date.now().toString();
+    const videoInfo = PublishService.getVideoInfo(options.video);
+    await Bluebird.try(() =>
+      this.client.upload.video({
+        video: options.video,
+        uploadId,
+        forAlbum: true,
+        ...videoInfo,
+      }),
+    ).catch(IgResponseError, error => {
+      throw new IgConfigureVideoError(error.response as IgResponse<UploadRepositoryVideoResponseRootObject>, videoInfo);
+    });
+    await this.client.upload.photo({
+      file: options.coverImage,
+      uploadId,
+    });
+    await Bluebird.try(() =>
+      this.client.media.uploadFinish({
+        upload_id: uploadId,
+        source_type: '3',
+        video: { length: videoInfo.duration / 1000.0 },
+      }),
+    ).catch(IgResponseError, this.catchTranscodeError(videoInfo, options.transcodeDelay));
+    return Bluebird.try(() =>
+      this.client.media.configureToStoryVideo({
+        upload_id: uploadId,
+        length: videoInfo.duration / 1000.0,
+        width: videoInfo.width,
+        height: videoInfo.height,
+        ...configureOptions,
+      }),
+    ).catch(IgResponseError, error => {
+      throw new IgConfigureVideoError(error.response as IgResponse<UploadRepositoryVideoResponseRootObject>, videoInfo);
+    });
+  }
+
+  public async story(options: PostingStoryPhotoOptions | PostingStoryVideoOptions) {
+    const isPhoto = (arg: PostingStoryOptions): arg is PostingStoryPhotoOptions =>
+      (arg as PostingStoryPhotoOptions).file !== undefined;
+
+    const storyStickerIds = [];
+    const configureOptions: MediaConfigureStoryBaseOptions = {
+      configure_mode: '1',
     };
 
+    const uploadAndConfigure = () =>
+      isPhoto(options)
+        ? this.uploadAndConfigureStoryPhoto(options, configureOptions)
+        : this.uploadAndConfigureStoryVideo(options, configureOptions);
+
     // check for directThread => no stickers supported
-    if (typeof options.threadIds !== 'undefined') {
-      configureOptions.thread_ids = options.threadIds;
-      configureOptions.configure_mode = 2;
-      return await this.client.media.configureToStory(configureOptions);
-    }
-    if (typeof options.recipientUsers !== 'undefined') {
-      configureOptions.recipient_users = options.recipientUsers;
-      configureOptions.configure_mode = 2;
-      return await this.client.media.configureToStory(configureOptions);
+    const threadIds = typeof options.threadIds !== 'undefined';
+    const recipients = typeof options.recipientUsers !== 'undefined';
+    if (recipients || threadIds) {
+      configureOptions.configure_mode = '2';
+      if (recipients) {
+        configureOptions.recipient_users = options.recipientUsers;
+      }
+      if (threadIds) {
+        configureOptions.thread_ids = options.threadIds;
+      }
+      return uploadAndConfigure();
     }
 
     // story goes to story-feed
@@ -132,6 +351,10 @@ export class PublishService extends Repository {
       configureOptions.story_chats = [options.chat];
       storyStickerIds.push('chat_sticker_id');
     }
+    if (typeof options.quiz !== 'undefined') {
+      configureOptions.story_quizs = [options.quiz];
+      storyStickerIds.push('quiz_story_sticker_default');
+    }
     if (typeof options.link !== 'undefined' && options.link.length > 0) {
       configureOptions.story_cta = [
         {
@@ -140,9 +363,56 @@ export class PublishService extends Repository {
       ];
     }
 
-    if (configureOptions.story_sticker_ids.length > 0) {
+    if (storyStickerIds.length > 0) {
       configureOptions.story_sticker_ids = storyStickerIds.join(',');
     }
-    return await this.client.media.configureToStory(configureOptions);
+    return await uploadAndConfigure();
+  }
+
+  /**
+   * Gets duration in ms, width and height info for a video in the mp4 container
+   * @param buffer Buffer, containing the video-file
+   * @returns duration in ms, width and height in px
+   */
+  public static getVideoInfo(buffer: Buffer): { duration: number; width: number; height: number } {
+    const timescale = PublishService.read32(buffer, ['moov', 'mvhd'], 12);
+    const length = PublishService.read32(buffer, ['moov', 'mvhd'], 12 + 4);
+    const width = PublishService.read16(buffer, ['moov', 'trak', 'stbl', 'avc1'], 24);
+    const height = PublishService.read16(buffer, ['moov', 'trak', 'stbl', 'avc1'], 26);
+    return {
+      duration: Math.floor((length / timescale) * 1000.0),
+      width,
+      height,
+    };
+  }
+
+  /**
+   * Reads a 32bit unsigned integer from a given Buffer by walking along the keys and getting the value with the given offset
+   * ref: https://gist.github.com/OllieJones/5ffb011fa3a11964154975582360391c#file-streampeek-js-L9
+   * @param buffer  The buffer to read from
+   * @param keys  Keys the 'walker' should pass (stopping at the last key)
+   * @param offset  Offset from the ast key to read the uint32
+   */
+  private static read32(buffer: Buffer, keys: string[], offset: number) {
+    let start = 0;
+    for (const key of keys) {
+      start = buffer.indexOf(Buffer.from(key), start) + key.length;
+    }
+    return buffer.readUInt32BE(start + offset);
+  }
+
+  /**
+   * Reads a 16bit unsigned integer from a given Buffer by walking along the keys and getting the value with the given offset
+   * ref: https://gist.github.com/OllieJones/5ffb011fa3a11964154975582360391c#file-streampeek-js-L25
+   * @param buffer  The buffer to read from
+   * @param keys  Keys the 'walker' should pass (stopping at the last key)
+   * @param offset  Offset from the ast key to read the uint16
+   */
+  private static read16(buffer: Buffer, keys: string[], offset: number) {
+    let start = 0;
+    for (const key of keys) {
+      start = buffer.indexOf(Buffer.from(key), start) + key.length;
+    }
+    return buffer.readUInt16BE(start + offset);
   }
 }

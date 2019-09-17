@@ -6,27 +6,27 @@
 
 ## Hierarchy
 
-- **TimelineFeedResponseHideReasonsV2Item**
+* **TimelineFeedResponseHideReasonsV2Item**
 
 ## Index
 
 ### Properties
 
-- [reason](_responses_timeline_feed_response_.timelinefeedresponsehidereasonsv2item.md#reason)
-- [text](_responses_timeline_feed_response_.timelinefeedresponsehidereasonsv2item.md#text)
+* [reason](_responses_timeline_feed_response_.timelinefeedresponsehidereasonsv2item.md#reason)
+* [text](_responses_timeline_feed_response_.timelinefeedresponsehidereasonsv2item.md#text)
 
 ## Properties
 
-### reason
+###  reason
 
-• **reason**: _string | null_
+• **reason**: *string | null*
 
-_Defined in [responses/timeline.feed.response.ts:173](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/timeline.feed.response.ts#L173)_
+*Defined in [responses/timeline.feed.response.ts:173](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/timeline.feed.response.ts#L173)*
 
----
+___
 
-### text
+###  text
 
-• **text**: _string_
+• **text**: *string*
 
-_Defined in [responses/timeline.feed.response.ts:172](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/timeline.feed.response.ts#L172)_
+*Defined in [responses/timeline.feed.response.ts:172](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/timeline.feed.response.ts#L172)*

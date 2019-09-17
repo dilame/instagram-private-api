@@ -6,44 +6,44 @@
 
 ## Hierarchy
 
-- [Repository](_core_repository_.repository.md)
+* [Repository](_core_repository_.repository.md)
 
-  - **LinkedAccountRepository**
+  * **LinkedAccountRepository**
 
 ## Index
 
 ### Constructors
 
-- [constructor](_repositories_linked_account_repository_.linkedaccountrepository.md#constructor)
+* [constructor](_repositories_linked_account_repository_.linkedaccountrepository.md#constructor)
 
 ### Methods
 
-- [getLinkageStatus](_repositories_linked_account_repository_.linkedaccountrepository.md#getlinkagestatus)
+* [getLinkageStatus](_repositories_linked_account_repository_.linkedaccountrepository.md#getlinkagestatus)
 
 ## Constructors
 
-### constructor
+###  constructor
 
-\+ **new LinkedAccountRepository**(`client`: [IgApiClient](_core_client_.igapiclient.md)): _[LinkedAccountRepository](\_repositories_linked_account_repository_.linkedaccountrepository.md)\_
+\+ **new LinkedAccountRepository**(`client`: [IgApiClient](_core_client_.igapiclient.md)): *[LinkedAccountRepository](_repositories_linked_account_repository_.linkedaccountrepository.md)*
 
-_Inherited from [Repository](\_core_repository_.repository.md).[constructor](_core_repository_.repository.md#constructor)\_
+*Inherited from [Repository](_core_repository_.repository.md).[constructor](_core_repository_.repository.md#constructor)*
 
-_Defined in [core/repository.ts:6](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/repository.ts#L6)_
+*Defined in [core/repository.ts:6](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/repository.ts#L6)*
 
 **Parameters:**
 
-| Name     | Type                                        |
-| -------- | ------------------------------------------- |
-| `client` | [IgApiClient](_core_client_.igapiclient.md) |
+Name | Type |
+------ | ------ |
+`client` | [IgApiClient](_core_client_.igapiclient.md) |
 
-**Returns:** _[LinkedAccountRepository](\_repositories_linked_account_repository_.linkedaccountrepository.md)\_
+**Returns:** *[LinkedAccountRepository](_repositories_linked_account_repository_.linkedaccountrepository.md)*
 
 ## Methods
 
-### getLinkageStatus
+###  getLinkageStatus
 
-▸ **getLinkageStatus**(): _`Promise<any>`_
+▸ **getLinkageStatus**(): *`Promise<any>`*
 
-_Defined in [repositories/linked-account.repository.ts:4](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/repositories/linked-account.repository.ts#L4)_
+*Defined in [repositories/linked-account.repository.ts:4](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/linked-account.repository.ts#L4)*
 
-**Returns:** _`Promise<any>`_
+**Returns:** *`Promise<any>`*

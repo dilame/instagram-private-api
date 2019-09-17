@@ -6,45 +6,45 @@
 
 ## Hierarchy
 
-- **TimelineFeedsOptions**
+* **TimelineFeedsOptions**
 
 ## Index
 
 ### Properties
 
-- [latestStoryPk](_types_timeline_feed_types_.timelinefeedsoptions.md#optional-lateststorypk)
-- [pushDisabled](_types_timeline_feed_types_.timelinefeedsoptions.md#optional-pushdisabled)
-- [reason](_types_timeline_feed_types_.timelinefeedsoptions.md#optional-reason)
-- [recoveredFromCrash](_types_timeline_feed_types_.timelinefeedsoptions.md#optional-recoveredfromcrash)
+* [latestStoryPk](_types_timeline_feed_types_.timelinefeedsoptions.md#optional-lateststorypk)
+* [pushDisabled](_types_timeline_feed_types_.timelinefeedsoptions.md#optional-pushdisabled)
+* [reason](_types_timeline_feed_types_.timelinefeedsoptions.md#optional-reason)
+* [recoveredFromCrash](_types_timeline_feed_types_.timelinefeedsoptions.md#optional-recoveredfromcrash)
 
 ## Properties
 
 ### `Optional` latestStoryPk
 
-• **latestStoryPk**? : _string | number_
+• **latestStoryPk**? : *string | number*
 
-_Defined in [types/timeline-feed.types.ts:7](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/types/timeline-feed.types.ts#L7)_
+*Defined in [types/timeline-feed.types.ts:7](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/timeline-feed.types.ts#L7)*
 
----
+___
 
 ### `Optional` pushDisabled
 
-• **pushDisabled**? : _boolean_
+• **pushDisabled**? : *boolean*
 
-_Defined in [types/timeline-feed.types.ts:6](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/types/timeline-feed.types.ts#L6)_
+*Defined in [types/timeline-feed.types.ts:6](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/timeline-feed.types.ts#L6)*
 
----
+___
 
 ### `Optional` reason
 
-• **reason**? : _[TimelineFeedReason](../modules/\_types_timeline_feed_types_.md#timelinefeedreason)\_
+• **reason**? : *[TimelineFeedReason](../modules/_types_timeline_feed_types_.md#timelinefeedreason)*
 
-_Defined in [types/timeline-feed.types.ts:4](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/types/timeline-feed.types.ts#L4)_
+*Defined in [types/timeline-feed.types.ts:4](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/timeline-feed.types.ts#L4)*
 
----
+___
 
 ### `Optional` recoveredFromCrash
 
-• **recoveredFromCrash**? : _string_
+• **recoveredFromCrash**? : *string*
 
-_Defined in [types/timeline-feed.types.ts:5](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/types/timeline-feed.types.ts#L5)_
+*Defined in [types/timeline-feed.types.ts:5](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/timeline-feed.types.ts#L5)*

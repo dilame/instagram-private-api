@@ -6,36 +6,36 @@
 
 ## Hierarchy
 
-- **DirectThreadRepositoryUpdateTitleResponseActionLog**
+* **DirectThreadRepositoryUpdateTitleResponseActionLog**
 
 ## Index
 
 ### Properties
 
-- [bold](_responses_direct_thread_repository_update_title_response_.directthreadrepositoryupdatetitleresponseactionlog.md#bold)
-- [description](_responses_direct_thread_repository_update_title_response_.directthreadrepositoryupdatetitleresponseactionlog.md#description)
-- [text_attributes](_responses_direct_thread_repository_update_title_response_.directthreadrepositoryupdatetitleresponseactionlog.md#text_attributes)
+* [bold](_responses_direct_thread_repository_update_title_response_.directthreadrepositoryupdatetitleresponseactionlog.md#bold)
+* [description](_responses_direct_thread_repository_update_title_response_.directthreadrepositoryupdatetitleresponseactionlog.md#description)
+* [text_attributes](_responses_direct_thread_repository_update_title_response_.directthreadrepositoryupdatetitleresponseactionlog.md#text_attributes)
 
 ## Properties
 
-### bold
+###  bold
 
-• **bold**: _[DirectThreadRepositoryUpdateTitleResponseBoldItem](\_responses_direct_thread_repository_update_title_response_.directthreadrepositoryupdatetitleresponsebolditem.md)[]\_
+• **bold**: *[DirectThreadRepositoryUpdateTitleResponseBoldItem](_responses_direct_thread_repository_update_title_response_.directthreadrepositoryupdatetitleresponsebolditem.md)[]*
 
-_Defined in [responses/direct-thread.repository.update-title.response.ts:83](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.repository.update-title.response.ts#L83)_
+*Defined in [responses/direct-thread.repository.update-title.response.ts:83](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-thread.repository.update-title.response.ts#L83)*
 
----
+___
 
-### description
+###  description
 
-• **description**: _string_
+• **description**: *string*
 
-_Defined in [responses/direct-thread.repository.update-title.response.ts:82](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.repository.update-title.response.ts#L82)_
+*Defined in [responses/direct-thread.repository.update-title.response.ts:82](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-thread.repository.update-title.response.ts#L82)*
 
----
+___
 
-### text_attributes
+###  text_attributes
 
-• **text_attributes**: _[DirectThreadRepositoryUpdateTitleResponseTextAttributesItem](\_responses_direct_thread_repository_update_title_response_.directthreadrepositoryupdatetitleresponsetextattributesitem.md)[]\_
+• **text_attributes**: *[DirectThreadRepositoryUpdateTitleResponseTextAttributesItem](_responses_direct_thread_repository_update_title_response_.directthreadrepositoryupdatetitleresponsetextattributesitem.md)[]*
 
-_Defined in [responses/direct-thread.repository.update-title.response.ts:84](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.repository.update-title.response.ts#L84)_
+*Defined in [responses/direct-thread.repository.update-title.response.ts:84](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-thread.repository.update-title.response.ts#L84)*

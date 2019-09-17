@@ -6,90 +6,90 @@
 
 ## Hierarchy
 
-- **LiveInfoResponseFriendship_status**
+* **LiveInfoResponseFriendship_status**
 
 ## Index
 
 ### Properties
 
-- [blocking](_responses_live_info_response_.liveinforesponsefriendship_status.md#blocking)
-- [followed_by](_responses_live_info_response_.liveinforesponsefriendship_status.md#followed_by)
-- [following](_responses_live_info_response_.liveinforesponsefriendship_status.md#following)
-- [incoming_request](_responses_live_info_response_.liveinforesponsefriendship_status.md#incoming_request)
-- [is_bestie](_responses_live_info_response_.liveinforesponsefriendship_status.md#is_bestie)
-- [is_private](_responses_live_info_response_.liveinforesponsefriendship_status.md#is_private)
-- [is_restricted](_responses_live_info_response_.liveinforesponsefriendship_status.md#is_restricted)
-- [muting](_responses_live_info_response_.liveinforesponsefriendship_status.md#muting)
-- [outgoing_request](_responses_live_info_response_.liveinforesponsefriendship_status.md#outgoing_request)
+* [blocking](_responses_live_info_response_.liveinforesponsefriendship_status.md#blocking)
+* [followed_by](_responses_live_info_response_.liveinforesponsefriendship_status.md#followed_by)
+* [following](_responses_live_info_response_.liveinforesponsefriendship_status.md#following)
+* [incoming_request](_responses_live_info_response_.liveinforesponsefriendship_status.md#incoming_request)
+* [is_bestie](_responses_live_info_response_.liveinforesponsefriendship_status.md#is_bestie)
+* [is_private](_responses_live_info_response_.liveinforesponsefriendship_status.md#is_private)
+* [is_restricted](_responses_live_info_response_.liveinforesponsefriendship_status.md#is_restricted)
+* [muting](_responses_live_info_response_.liveinforesponsefriendship_status.md#muting)
+* [outgoing_request](_responses_live_info_response_.liveinforesponsefriendship_status.md#outgoing_request)
 
 ## Properties
 
-### blocking
+###  blocking
 
-• **blocking**: _boolean_
+• **blocking**: *boolean*
 
-_Defined in [responses/live.info.response.ts:34](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/live.info.response.ts#L34)_
+*Defined in [responses/live.info.response.ts:34](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.info.response.ts#L34)*
 
----
+___
 
-### followed_by
+###  followed_by
 
-• **followed_by**: _boolean_
+• **followed_by**: *boolean*
 
-_Defined in [responses/live.info.response.ts:33](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/live.info.response.ts#L33)_
+*Defined in [responses/live.info.response.ts:33](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.info.response.ts#L33)*
 
----
+___
 
-### following
+###  following
 
-• **following**: _boolean_
+• **following**: *boolean*
 
-_Defined in [responses/live.info.response.ts:32](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/live.info.response.ts#L32)_
+*Defined in [responses/live.info.response.ts:32](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.info.response.ts#L32)*
 
----
+___
 
-### incoming_request
+###  incoming_request
 
-• **incoming_request**: _boolean_
+• **incoming_request**: *boolean*
 
-_Defined in [responses/live.info.response.ts:37](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/live.info.response.ts#L37)_
+*Defined in [responses/live.info.response.ts:37](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.info.response.ts#L37)*
 
----
+___
 
-### is_bestie
+###  is_bestie
 
-• **is_bestie**: _boolean_
+• **is_bestie**: *boolean*
 
-_Defined in [responses/live.info.response.ts:39](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/live.info.response.ts#L39)_
+*Defined in [responses/live.info.response.ts:39](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.info.response.ts#L39)*
 
----
+___
 
-### is_private
+###  is_private
 
-• **is_private**: _boolean_
+• **is_private**: *boolean*
 
-_Defined in [responses/live.info.response.ts:36](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/live.info.response.ts#L36)_
+*Defined in [responses/live.info.response.ts:36](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.info.response.ts#L36)*
 
----
+___
 
-### is_restricted
+###  is_restricted
 
-• **is_restricted**: _boolean_
+• **is_restricted**: *boolean*
 
-_Defined in [responses/live.info.response.ts:40](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/live.info.response.ts#L40)_
+*Defined in [responses/live.info.response.ts:40](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.info.response.ts#L40)*
 
----
+___
 
-### muting
+###  muting
 
-• **muting**: _boolean_
+• **muting**: *boolean*
 
-_Defined in [responses/live.info.response.ts:35](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/live.info.response.ts#L35)_
+*Defined in [responses/live.info.response.ts:35](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.info.response.ts#L35)*
 
----
+___
 
-### outgoing_request
+###  outgoing_request
 
-• **outgoing_request**: _boolean_
+• **outgoing_request**: *boolean*
 
-_Defined in [responses/live.info.response.ts:38](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/live.info.response.ts#L38)_
+*Defined in [responses/live.info.response.ts:38](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.info.response.ts#L38)*

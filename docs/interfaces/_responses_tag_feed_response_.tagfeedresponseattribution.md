@@ -6,18 +6,18 @@
 
 ## Hierarchy
 
-- **TagFeedResponseAttribution**
+* **TagFeedResponseAttribution**
 
 ## Index
 
 ### Properties
 
-- [name](_responses_tag_feed_response_.tagfeedresponseattribution.md#name)
+* [name](_responses_tag_feed_response_.tagfeedresponseattribution.md#name)
 
 ## Properties
 
-### name
+###  name
 
-• **name**: _string_
+• **name**: *string*
 
-_Defined in [responses/tag.feed.response.ts:220](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/tag.feed.response.ts#L220)_
+*Defined in [responses/tag.feed.response.ts:220](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/tag.feed.response.ts#L220)*

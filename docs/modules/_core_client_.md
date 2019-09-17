@@ -8,4 +8,4 @@
 
 ### Classes
 
-- [IgApiClient](../classes/_core_client_.igapiclient.md)
+* [IgApiClient](../classes/_core_client_.igapiclient.md)

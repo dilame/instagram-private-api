@@ -6,54 +6,54 @@
 
 ## Hierarchy
 
-- **UserFeedResponseVideoVersionsItem**
+* **UserFeedResponseVideoVersionsItem**
 
 ## Index
 
 ### Properties
 
-- [height](_responses_user_feed_response_.userfeedresponsevideoversionsitem.md#height)
-- [id](_responses_user_feed_response_.userfeedresponsevideoversionsitem.md#id)
-- [type](_responses_user_feed_response_.userfeedresponsevideoversionsitem.md#type)
-- [url](_responses_user_feed_response_.userfeedresponsevideoversionsitem.md#url)
-- [width](_responses_user_feed_response_.userfeedresponsevideoversionsitem.md#width)
+* [height](_responses_user_feed_response_.userfeedresponsevideoversionsitem.md#height)
+* [id](_responses_user_feed_response_.userfeedresponsevideoversionsitem.md#id)
+* [type](_responses_user_feed_response_.userfeedresponsevideoversionsitem.md#type)
+* [url](_responses_user_feed_response_.userfeedresponsevideoversionsitem.md#url)
+* [width](_responses_user_feed_response_.userfeedresponsevideoversionsitem.md#width)
 
 ## Properties
 
-### height
+###  height
 
-• **height**: _number_
+• **height**: *number*
 
-_Defined in [responses/user.feed.response.ts:139](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/user.feed.response.ts#L139)_
+*Defined in [responses/user.feed.response.ts:139](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/user.feed.response.ts#L139)*
 
----
+___
 
-### id
+###  id
 
-• **id**: _string_
+• **id**: *string*
 
-_Defined in [responses/user.feed.response.ts:141](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/user.feed.response.ts#L141)_
+*Defined in [responses/user.feed.response.ts:141](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/user.feed.response.ts#L141)*
 
----
+___
 
-### type
+###  type
 
-• **type**: _number_
+• **type**: *number*
 
-_Defined in [responses/user.feed.response.ts:137](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/user.feed.response.ts#L137)_
+*Defined in [responses/user.feed.response.ts:137](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/user.feed.response.ts#L137)*
 
----
+___
 
-### url
+###  url
 
-• **url**: _string_
+• **url**: *string*
 
-_Defined in [responses/user.feed.response.ts:140](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/user.feed.response.ts#L140)_
+*Defined in [responses/user.feed.response.ts:140](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/user.feed.response.ts#L140)*
 
----
+___
 
-### width
+###  width
 
-• **width**: _number_
+• **width**: *number*
 
-_Defined in [responses/user.feed.response.ts:138](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/user.feed.response.ts#L138)_
+*Defined in [responses/user.feed.response.ts:138](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/user.feed.response.ts#L138)*

@@ -6,90 +6,90 @@
 
 ## Hierarchy
 
-- **TimelineFeedResponseLocation**
+* **TimelineFeedResponseLocation**
 
 ## Index
 
 ### Properties
 
-- [address](_responses_timeline_feed_response_.timelinefeedresponselocation.md#address)
-- [city](_responses_timeline_feed_response_.timelinefeedresponselocation.md#city)
-- [external_source](_responses_timeline_feed_response_.timelinefeedresponselocation.md#external_source)
-- [facebook_places_id](_responses_timeline_feed_response_.timelinefeedresponselocation.md#facebook_places_id)
-- [lat](_responses_timeline_feed_response_.timelinefeedresponselocation.md#lat)
-- [lng](_responses_timeline_feed_response_.timelinefeedresponselocation.md#lng)
-- [name](_responses_timeline_feed_response_.timelinefeedresponselocation.md#name)
-- [pk](_responses_timeline_feed_response_.timelinefeedresponselocation.md#pk)
-- [short_name](_responses_timeline_feed_response_.timelinefeedresponselocation.md#short_name)
+* [address](_responses_timeline_feed_response_.timelinefeedresponselocation.md#address)
+* [city](_responses_timeline_feed_response_.timelinefeedresponselocation.md#city)
+* [external_source](_responses_timeline_feed_response_.timelinefeedresponselocation.md#external_source)
+* [facebook_places_id](_responses_timeline_feed_response_.timelinefeedresponselocation.md#facebook_places_id)
+* [lat](_responses_timeline_feed_response_.timelinefeedresponselocation.md#lat)
+* [lng](_responses_timeline_feed_response_.timelinefeedresponselocation.md#lng)
+* [name](_responses_timeline_feed_response_.timelinefeedresponselocation.md#name)
+* [pk](_responses_timeline_feed_response_.timelinefeedresponselocation.md#pk)
+* [short_name](_responses_timeline_feed_response_.timelinefeedresponselocation.md#short_name)
 
 ## Properties
 
-### address
+###  address
 
-• **address**: _string_
+• **address**: *string*
 
-_Defined in [responses/timeline.feed.response.ts:194](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/timeline.feed.response.ts#L194)_
+*Defined in [responses/timeline.feed.response.ts:194](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/timeline.feed.response.ts#L194)*
 
----
+___
 
-### city
+###  city
 
-• **city**: _string_
+• **city**: *string*
 
-_Defined in [responses/timeline.feed.response.ts:195](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/timeline.feed.response.ts#L195)_
+*Defined in [responses/timeline.feed.response.ts:195](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/timeline.feed.response.ts#L195)*
 
----
+___
 
-### external_source
+###  external_source
 
-• **external_source**: _string_
+• **external_source**: *string*
 
-_Defined in [responses/timeline.feed.response.ts:199](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/timeline.feed.response.ts#L199)_
+*Defined in [responses/timeline.feed.response.ts:199](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/timeline.feed.response.ts#L199)*
 
----
+___
 
-### facebook_places_id
+###  facebook_places_id
 
-• **facebook_places_id**: _number | string_
+• **facebook_places_id**: *number | string*
 
-_Defined in [responses/timeline.feed.response.ts:200](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/timeline.feed.response.ts#L200)_
+*Defined in [responses/timeline.feed.response.ts:200](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/timeline.feed.response.ts#L200)*
 
----
+___
 
-### lat
+###  lat
 
-• **lat**: _number_
+• **lat**: *number*
 
-_Defined in [responses/timeline.feed.response.ts:198](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/timeline.feed.response.ts#L198)_
+*Defined in [responses/timeline.feed.response.ts:198](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/timeline.feed.response.ts#L198)*
 
----
+___
 
-### lng
+###  lng
 
-• **lng**: _number_
+• **lng**: *number*
 
-_Defined in [responses/timeline.feed.response.ts:197](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/timeline.feed.response.ts#L197)_
+*Defined in [responses/timeline.feed.response.ts:197](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/timeline.feed.response.ts#L197)*
 
----
+___
 
-### name
+###  name
 
-• **name**: _string_
+• **name**: *string*
 
-_Defined in [responses/timeline.feed.response.ts:193](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/timeline.feed.response.ts#L193)_
+*Defined in [responses/timeline.feed.response.ts:193](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/timeline.feed.response.ts#L193)*
 
----
+___
 
-### pk
+###  pk
 
-• **pk**: _number | string_
+• **pk**: *number | string*
 
-_Defined in [responses/timeline.feed.response.ts:192](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/timeline.feed.response.ts#L192)_
+*Defined in [responses/timeline.feed.response.ts:192](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/timeline.feed.response.ts#L192)*
 
----
+___
 
-### short_name
+###  short_name
 
-• **short_name**: _string_
+• **short_name**: *string*
 
-_Defined in [responses/timeline.feed.response.ts:196](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/timeline.feed.response.ts#L196)_
+*Defined in [responses/timeline.feed.response.ts:196](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/timeline.feed.response.ts#L196)*

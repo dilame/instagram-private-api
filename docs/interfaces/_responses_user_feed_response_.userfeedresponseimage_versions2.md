@@ -6,18 +6,18 @@
 
 ## Hierarchy
 
-- **UserFeedResponseImage_versions2**
+* **UserFeedResponseImage_versions2**
 
 ## Index
 
 ### Properties
 
-- [candidates](_responses_user_feed_response_.userfeedresponseimage_versions2.md#candidates)
+* [candidates](_responses_user_feed_response_.userfeedresponseimage_versions2.md#candidates)
 
 ## Properties
 
-### candidates
+###  candidates
 
-• **candidates**: _[UserFeedResponseCandidatesItem](\_responses_user_feed_response_.userfeedresponsecandidatesitem.md)[]\_
+• **candidates**: *[UserFeedResponseCandidatesItem](_responses_user_feed_response_.userfeedresponsecandidatesitem.md)[]*
 
-_Defined in [responses/user.feed.response.ts:57](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/user.feed.response.ts#L57)_
+*Defined in [responses/user.feed.response.ts:57](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/user.feed.response.ts#L57)*

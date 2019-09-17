@@ -6,63 +6,63 @@
 
 ## Hierarchy
 
-- **DirectThreadFeedResponseLast_permanent_item**
+* **DirectThreadFeedResponseLast_permanent_item**
 
 ## Index
 
 ### Properties
 
-- [client_context](_responses_direct_thread_feed_response_.directthreadfeedresponselast_permanent_item.md#client_context)
-- [item_id](_responses_direct_thread_feed_response_.directthreadfeedresponselast_permanent_item.md#item_id)
-- [item_type](_responses_direct_thread_feed_response_.directthreadfeedresponselast_permanent_item.md#item_type)
-- [text](_responses_direct_thread_feed_response_.directthreadfeedresponselast_permanent_item.md#text)
-- [timestamp](_responses_direct_thread_feed_response_.directthreadfeedresponselast_permanent_item.md#timestamp)
-- [user_id](_responses_direct_thread_feed_response_.directthreadfeedresponselast_permanent_item.md#user_id)
+* [client_context](_responses_direct_thread_feed_response_.directthreadfeedresponselast_permanent_item.md#client_context)
+* [item_id](_responses_direct_thread_feed_response_.directthreadfeedresponselast_permanent_item.md#item_id)
+* [item_type](_responses_direct_thread_feed_response_.directthreadfeedresponselast_permanent_item.md#item_type)
+* [text](_responses_direct_thread_feed_response_.directthreadfeedresponselast_permanent_item.md#text)
+* [timestamp](_responses_direct_thread_feed_response_.directthreadfeedresponselast_permanent_item.md#timestamp)
+* [user_id](_responses_direct_thread_feed_response_.directthreadfeedresponselast_permanent_item.md#user_id)
 
 ## Properties
 
-### client_context
+###  client_context
 
-• **client_context**: _string_
+• **client_context**: *string*
 
-_Defined in [responses/direct-thread.feed.response.ts:70](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.feed.response.ts#L70)_
+*Defined in [responses/direct-thread.feed.response.ts:70](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-thread.feed.response.ts#L70)*
 
----
+___
 
-### item_id
+###  item_id
 
-• **item_id**: _string_
+• **item_id**: *string*
 
-_Defined in [responses/direct-thread.feed.response.ts:65](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.feed.response.ts#L65)_
+*Defined in [responses/direct-thread.feed.response.ts:65](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-thread.feed.response.ts#L65)*
 
----
+___
 
-### item_type
+###  item_type
 
-• **item_type**: _string_
+• **item_type**: *string*
 
-_Defined in [responses/direct-thread.feed.response.ts:68](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.feed.response.ts#L68)_
+*Defined in [responses/direct-thread.feed.response.ts:68](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-thread.feed.response.ts#L68)*
 
----
+___
 
-### text
+###  text
 
-• **text**: _string_
+• **text**: *string*
 
-_Defined in [responses/direct-thread.feed.response.ts:69](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.feed.response.ts#L69)_
+*Defined in [responses/direct-thread.feed.response.ts:69](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-thread.feed.response.ts#L69)*
 
----
+___
 
-### timestamp
+###  timestamp
 
-• **timestamp**: _string_
+• **timestamp**: *string*
 
-_Defined in [responses/direct-thread.feed.response.ts:67](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.feed.response.ts#L67)_
+*Defined in [responses/direct-thread.feed.response.ts:67](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-thread.feed.response.ts#L67)*
 
----
+___
 
-### user_id
+###  user_id
 
-• **user_id**: _number_
+• **user_id**: *number*
 
-_Defined in [responses/direct-thread.feed.response.ts:66](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.feed.response.ts#L66)_
+*Defined in [responses/direct-thread.feed.response.ts:66](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-thread.feed.response.ts#L66)*

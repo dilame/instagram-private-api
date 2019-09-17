@@ -6,27 +6,27 @@
 
 ## Hierarchy
 
-- **MediaRepositoryBlockedResponse**
+* **MediaRepositoryBlockedResponse**
 
 ## Index
 
 ### Properties
 
-- [media_ids](_responses_media_repository_blocked_response_.mediarepositoryblockedresponse.md#media_ids)
-- [status](_responses_media_repository_blocked_response_.mediarepositoryblockedresponse.md#status)
+* [media_ids](_responses_media_repository_blocked_response_.mediarepositoryblockedresponse.md#media_ids)
+* [status](_responses_media_repository_blocked_response_.mediarepositoryblockedresponse.md#status)
 
 ## Properties
 
-### media_ids
+###  media_ids
 
-• **media_ids**: _string[]_
+• **media_ids**: *string[]*
 
-_Defined in [responses/media.repository.blocked.response.ts:2](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/media.repository.blocked.response.ts#L2)_
+*Defined in [responses/media.repository.blocked.response.ts:2](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.blocked.response.ts#L2)*
 
----
+___
 
-### status
+###  status
 
-• **status**: _string_
+• **status**: *string*
 
-_Defined in [responses/media.repository.blocked.response.ts:3](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/media.repository.blocked.response.ts#L3)_
+*Defined in [responses/media.repository.blocked.response.ts:3](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.blocked.response.ts#L3)*

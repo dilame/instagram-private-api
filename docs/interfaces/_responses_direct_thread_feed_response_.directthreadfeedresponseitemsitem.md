@@ -6,63 +6,63 @@
 
 ## Hierarchy
 
-- **DirectThreadFeedResponseItemsItem**
+* **DirectThreadFeedResponseItemsItem**
 
 ## Index
 
 ### Properties
 
-- [client_context](_responses_direct_thread_feed_response_.directthreadfeedresponseitemsitem.md#client_context)
-- [item_id](_responses_direct_thread_feed_response_.directthreadfeedresponseitemsitem.md#item_id)
-- [item_type](_responses_direct_thread_feed_response_.directthreadfeedresponseitemsitem.md#item_type)
-- [text](_responses_direct_thread_feed_response_.directthreadfeedresponseitemsitem.md#text)
-- [timestamp](_responses_direct_thread_feed_response_.directthreadfeedresponseitemsitem.md#timestamp)
-- [user_id](_responses_direct_thread_feed_response_.directthreadfeedresponseitemsitem.md#user_id)
+* [client_context](_responses_direct_thread_feed_response_.directthreadfeedresponseitemsitem.md#client_context)
+* [item_id](_responses_direct_thread_feed_response_.directthreadfeedresponseitemsitem.md#item_id)
+* [item_type](_responses_direct_thread_feed_response_.directthreadfeedresponseitemsitem.md#item_type)
+* [text](_responses_direct_thread_feed_response_.directthreadfeedresponseitemsitem.md#text)
+* [timestamp](_responses_direct_thread_feed_response_.directthreadfeedresponseitemsitem.md#timestamp)
+* [user_id](_responses_direct_thread_feed_response_.directthreadfeedresponseitemsitem.md#user_id)
 
 ## Properties
 
-### client_context
+###  client_context
 
-• **client_context**: _string_
+• **client_context**: *string*
 
-_Defined in [responses/direct-thread.feed.response.ts:43](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.feed.response.ts#L43)_
+*Defined in [responses/direct-thread.feed.response.ts:43](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-thread.feed.response.ts#L43)*
 
----
+___
 
-### item_id
+###  item_id
 
-• **item_id**: _string_
+• **item_id**: *string*
 
-_Defined in [responses/direct-thread.feed.response.ts:38](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.feed.response.ts#L38)_
+*Defined in [responses/direct-thread.feed.response.ts:38](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-thread.feed.response.ts#L38)*
 
----
+___
 
-### item_type
+###  item_type
 
-• **item_type**: _string_
+• **item_type**: *string*
 
-_Defined in [responses/direct-thread.feed.response.ts:41](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.feed.response.ts#L41)_
+*Defined in [responses/direct-thread.feed.response.ts:41](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-thread.feed.response.ts#L41)*
 
----
+___
 
-### text
+###  text
 
-• **text**: _string_
+• **text**: *string*
 
-_Defined in [responses/direct-thread.feed.response.ts:42](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.feed.response.ts#L42)_
+*Defined in [responses/direct-thread.feed.response.ts:42](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-thread.feed.response.ts#L42)*
 
----
+___
 
-### timestamp
+###  timestamp
 
-• **timestamp**: _string_
+• **timestamp**: *string*
 
-_Defined in [responses/direct-thread.feed.response.ts:40](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.feed.response.ts#L40)_
+*Defined in [responses/direct-thread.feed.response.ts:40](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-thread.feed.response.ts#L40)*
 
----
+___
 
-### user_id
+###  user_id
 
-• **user_id**: _number_
+• **user_id**: *number*
 
-_Defined in [responses/direct-thread.feed.response.ts:39](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.feed.response.ts#L39)_
+*Defined in [responses/direct-thread.feed.response.ts:39](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-thread.feed.response.ts#L39)*

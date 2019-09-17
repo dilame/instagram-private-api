@@ -6,50 +6,50 @@
 
 ## Hierarchy
 
-- [Entity](_core_entity_.entity.md)
+  * [Entity](_core_entity_.entity.md)
 
-- **MediaEntity**
+  * **MediaEntity**
 
 ## Index
 
 ### Constructors
 
-- [constructor](_entities_media_entity_.mediaentity.md#constructor)
+* [constructor](_entities_media_entity_.mediaentity.md#constructor)
 
 ### Methods
 
-- [oembed](_entities_media_entity_.mediaentity.md#static-oembed)
+* [oembed](_entities_media_entity_.mediaentity.md#static-oembed)
 
 ## Constructors
 
-### constructor
+###  constructor
 
-\+ **new MediaEntity**(`client`: [IgApiClient](_core_client_.igapiclient.md)): _[MediaEntity](\_entities_media_entity_.mediaentity.md)\_
+\+ **new MediaEntity**(`client`: [IgApiClient](_core_client_.igapiclient.md)): *[MediaEntity](_entities_media_entity_.mediaentity.md)*
 
-_Inherited from [Repository](\_core_repository_.repository.md).[constructor](_core_repository_.repository.md#constructor)\_
+*Inherited from [Repository](_core_repository_.repository.md).[constructor](_core_repository_.repository.md#constructor)*
 
-_Defined in [core/repository.ts:6](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/repository.ts#L6)_
+*Defined in [core/repository.ts:6](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/repository.ts#L6)*
 
 **Parameters:**
 
-| Name     | Type                                        |
-| -------- | ------------------------------------------- |
-| `client` | [IgApiClient](_core_client_.igapiclient.md) |
+Name | Type |
+------ | ------ |
+`client` | [IgApiClient](_core_client_.igapiclient.md) |
 
-**Returns:** _[MediaEntity](\_entities_media_entity_.mediaentity.md)\_
+**Returns:** *[MediaEntity](_entities_media_entity_.mediaentity.md)*
 
 ## Methods
 
 ### `Static` oembed
 
-▸ **oembed**(`url`: string): _`Promise<MediaEntityOembedResponse>`_
+▸ **oembed**(`url`: string): *`Promise<MediaEntityOembedResponse>`*
 
-_Defined in [entities/media.entity.ts:6](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/entities/media.entity.ts#L6)_
+*Defined in [entities/media.entity.ts:6](https://github.com/dilame/instagram-private-api/blob/173bc62/src/entities/media.entity.ts#L6)*
 
 **Parameters:**
 
-| Name  | Type   |
-| ----- | ------ |
-| `url` | string |
+Name | Type |
+------ | ------ |
+`url` | string |
 
-**Returns:** _`Promise<MediaEntityOembedResponse>`_
+**Returns:** *`Promise<MediaEntityOembedResponse>`*

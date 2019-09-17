@@ -6,99 +6,99 @@
 
 ## Hierarchy
 
-- **SpamResponse**
+* **SpamResponse**
 
 ## Index
 
 ### Properties
 
-- [error_type](_responses_spam_response_.spamresponse.md#optional-error_type)
-- [feedback_action](_responses_spam_response_.spamresponse.md#feedback_action)
-- [feedback_appeal_label](_responses_spam_response_.spamresponse.md#feedback_appeal_label)
-- [feedback_ignore_label](_responses_spam_response_.spamresponse.md#feedback_ignore_label)
-- [feedback_message](_responses_spam_response_.spamresponse.md#feedback_message)
-- [feedback_title](_responses_spam_response_.spamresponse.md#feedback_title)
-- [feedback_url](_responses_spam_response_.spamresponse.md#feedback_url)
-- [message](_responses_spam_response_.spamresponse.md#message)
-- [spam](_responses_spam_response_.spamresponse.md#spam)
-- [status](_responses_spam_response_.spamresponse.md#status)
+* [error_type](_responses_spam_response_.spamresponse.md#optional-error_type)
+* [feedback_action](_responses_spam_response_.spamresponse.md#feedback_action)
+* [feedback_appeal_label](_responses_spam_response_.spamresponse.md#feedback_appeal_label)
+* [feedback_ignore_label](_responses_spam_response_.spamresponse.md#feedback_ignore_label)
+* [feedback_message](_responses_spam_response_.spamresponse.md#feedback_message)
+* [feedback_title](_responses_spam_response_.spamresponse.md#feedback_title)
+* [feedback_url](_responses_spam_response_.spamresponse.md#feedback_url)
+* [message](_responses_spam_response_.spamresponse.md#message)
+* [spam](_responses_spam_response_.spamresponse.md#spam)
+* [status](_responses_spam_response_.spamresponse.md#status)
 
 ## Properties
 
 ### `Optional` error_type
 
-• **error_type**? : _string_
+• **error_type**? : *string*
 
-_Defined in [responses/spam.response.ts:11](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/spam.response.ts#L11)_
+*Defined in [responses/spam.response.ts:11](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/spam.response.ts#L11)*
 
----
+___
 
-### feedback_action
+###  feedback_action
 
-• **feedback_action**: _string_
+• **feedback_action**: *string*
 
-_Defined in [responses/spam.response.ts:9](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/spam.response.ts#L9)_
+*Defined in [responses/spam.response.ts:9](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/spam.response.ts#L9)*
 
----
+___
 
-### feedback_appeal_label
+###  feedback_appeal_label
 
-• **feedback_appeal_label**: _string_
+• **feedback_appeal_label**: *string*
 
-_Defined in [responses/spam.response.ts:7](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/spam.response.ts#L7)_
+*Defined in [responses/spam.response.ts:7](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/spam.response.ts#L7)*
 
----
+___
 
-### feedback_ignore_label
+###  feedback_ignore_label
 
-• **feedback_ignore_label**: _string_
+• **feedback_ignore_label**: *string*
 
-_Defined in [responses/spam.response.ts:8](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/spam.response.ts#L8)_
+*Defined in [responses/spam.response.ts:8](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/spam.response.ts#L8)*
 
----
+___
 
-### feedback_message
+###  feedback_message
 
-• **feedback_message**: _string_
+• **feedback_message**: *string*
 
-_Defined in [responses/spam.response.ts:5](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/spam.response.ts#L5)_
+*Defined in [responses/spam.response.ts:5](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/spam.response.ts#L5)*
 
----
+___
 
-### feedback_title
+###  feedback_title
 
-• **feedback_title**: _string_
+• **feedback_title**: *string*
 
-_Defined in [responses/spam.response.ts:4](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/spam.response.ts#L4)_
+*Defined in [responses/spam.response.ts:4](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/spam.response.ts#L4)*
 
----
+___
 
-### feedback_url
+###  feedback_url
 
-• **feedback_url**: _string_
+• **feedback_url**: *string*
 
-_Defined in [responses/spam.response.ts:6](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/spam.response.ts#L6)_
+*Defined in [responses/spam.response.ts:6](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/spam.response.ts#L6)*
 
----
+___
 
-### message
+###  message
 
-• **message**: _"feedback_required"_
+• **message**: *"feedback_required"*
 
-_Defined in [responses/spam.response.ts:2](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/spam.response.ts#L2)_
+*Defined in [responses/spam.response.ts:2](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/spam.response.ts#L2)*
 
----
+___
 
-### spam
+###  spam
 
-• **spam**: _true_
+• **spam**: *true*
 
-_Defined in [responses/spam.response.ts:3](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/spam.response.ts#L3)_
+*Defined in [responses/spam.response.ts:3](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/spam.response.ts#L3)*
 
----
+___
 
-### status
+###  status
 
-• **status**: _"fail"_
+• **status**: *"fail"*
 
-_Defined in [responses/spam.response.ts:10](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/spam.response.ts#L10)_
+*Defined in [responses/spam.response.ts:10](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/spam.response.ts#L10)*

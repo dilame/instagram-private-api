@@ -6,78 +6,78 @@
 
 ## Hierarchy
 
-- [Entity](_core_entity_.entity.md)
+  * [Entity](_core_entity_.entity.md)
 
-- **NewsFeedResponseStoriesItem**
+  * **NewsFeedResponseStoriesItem**
 
 ## Index
 
 ### Constructors
 
-- [constructor](_responses_news_feed_response_.newsfeedresponsestoriesitem.md#constructor)
+* [constructor](_responses_news_feed_response_.newsfeedresponsestoriesitem.md#constructor)
 
 ### Properties
 
-- [args](_responses_news_feed_response_.newsfeedresponsestoriesitem.md#args)
-- [counts](_responses_news_feed_response_.newsfeedresponsestoriesitem.md#counts)
-- [pk](_responses_news_feed_response_.newsfeedresponsestoriesitem.md#pk)
-- [story_type](_responses_news_feed_response_.newsfeedresponsestoriesitem.md#story_type)
-- [type](_responses_news_feed_response_.newsfeedresponsestoriesitem.md#type)
+* [args](_responses_news_feed_response_.newsfeedresponsestoriesitem.md#args)
+* [counts](_responses_news_feed_response_.newsfeedresponsestoriesitem.md#counts)
+* [pk](_responses_news_feed_response_.newsfeedresponsestoriesitem.md#pk)
+* [story_type](_responses_news_feed_response_.newsfeedresponsestoriesitem.md#story_type)
+* [type](_responses_news_feed_response_.newsfeedresponsestoriesitem.md#type)
 
 ## Constructors
 
-### constructor
+###  constructor
 
-\+ **new NewsFeedResponseStoriesItem**(`client`: [IgApiClient](_core_client_.igapiclient.md)): _[NewsFeedResponseStoriesItem](\_responses_news_feed_response_.newsfeedresponsestoriesitem.md)\_
+\+ **new NewsFeedResponseStoriesItem**(`client`: [IgApiClient](_core_client_.igapiclient.md)): *[NewsFeedResponseStoriesItem](_responses_news_feed_response_.newsfeedresponsestoriesitem.md)*
 
-_Inherited from [Repository](\_core_repository_.repository.md).[constructor](_core_repository_.repository.md#constructor)\_
+*Inherited from [Repository](_core_repository_.repository.md).[constructor](_core_repository_.repository.md#constructor)*
 
-_Defined in [core/repository.ts:6](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/repository.ts#L6)_
+*Defined in [core/repository.ts:6](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/repository.ts#L6)*
 
 **Parameters:**
 
-| Name     | Type                                        |
-| -------- | ------------------------------------------- |
-| `client` | [IgApiClient](_core_client_.igapiclient.md) |
+Name | Type |
+------ | ------ |
+`client` | [IgApiClient](_core_client_.igapiclient.md) |
 
-**Returns:** _[NewsFeedResponseStoriesItem](\_responses_news_feed_response_.newsfeedresponsestoriesitem.md)\_
+**Returns:** *[NewsFeedResponseStoriesItem](_responses_news_feed_response_.newsfeedresponsestoriesitem.md)*
 
 ## Properties
 
-### args
+###  args
 
-• **args**: _[NewsFeedResponseArgs](../interfaces/\_responses_news_feed_response_.newsfeedresponseargs.md)\_
+• **args**: *[NewsFeedResponseArgs](../interfaces/_responses_news_feed_response_.newsfeedresponseargs.md)*
 
-_Defined in [responses/news.feed.response.ts:12](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/news.feed.response.ts#L12)_
+*Defined in [responses/news.feed.response.ts:12](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/news.feed.response.ts#L12)*
 
----
+___
 
-### counts
+###  counts
 
-• **counts**: _[NewsFeedResponseCounts](../interfaces/\_responses_news_feed_response_.newsfeedresponsecounts.md)\_
+• **counts**: *[NewsFeedResponseCounts](../interfaces/_responses_news_feed_response_.newsfeedresponsecounts.md)*
 
-_Defined in [responses/news.feed.response.ts:13](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/news.feed.response.ts#L13)_
+*Defined in [responses/news.feed.response.ts:13](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/news.feed.response.ts#L13)*
 
----
+___
 
-### pk
+###  pk
 
-• **pk**: _string_
+• **pk**: *string*
 
-_Defined in [responses/news.feed.response.ts:14](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/news.feed.response.ts#L14)_
+*Defined in [responses/news.feed.response.ts:14](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/news.feed.response.ts#L14)*
 
----
+___
 
-### story_type
+###  story_type
 
-• **story_type**: _number_
+• **story_type**: *number*
 
-_Defined in [responses/news.feed.response.ts:11](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/news.feed.response.ts#L11)_
+*Defined in [responses/news.feed.response.ts:11](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/news.feed.response.ts#L11)*
 
----
+___
 
-### type
+###  type
 
-• **type**: _number_
+• **type**: *number*
 
-_Defined in [responses/news.feed.response.ts:10](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/news.feed.response.ts#L10)_
+*Defined in [responses/news.feed.response.ts:10](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/news.feed.response.ts#L10)*

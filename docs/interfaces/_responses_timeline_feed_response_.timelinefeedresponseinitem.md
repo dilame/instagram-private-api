@@ -6,45 +6,45 @@
 
 ## Hierarchy
 
-- **TimelineFeedResponseInItem**
+* **TimelineFeedResponseInItem**
 
 ## Index
 
 ### Properties
 
-- [duration_in_video_in_sec](_responses_timeline_feed_response_.timelinefeedresponseinitem.md#duration_in_video_in_sec)
-- [position](_responses_timeline_feed_response_.timelinefeedresponseinitem.md#position)
-- [start_time_in_video_in_sec](_responses_timeline_feed_response_.timelinefeedresponseinitem.md#start_time_in_video_in_sec)
-- [user](_responses_timeline_feed_response_.timelinefeedresponseinitem.md#user)
+* [duration_in_video_in_sec](_responses_timeline_feed_response_.timelinefeedresponseinitem.md#duration_in_video_in_sec)
+* [position](_responses_timeline_feed_response_.timelinefeedresponseinitem.md#position)
+* [start_time_in_video_in_sec](_responses_timeline_feed_response_.timelinefeedresponseinitem.md#start_time_in_video_in_sec)
+* [user](_responses_timeline_feed_response_.timelinefeedresponseinitem.md#user)
 
 ## Properties
 
-### duration_in_video_in_sec
+###  duration_in_video_in_sec
 
-• **duration_in_video_in_sec**: _null_
+• **duration_in_video_in_sec**: *null*
 
-_Defined in [responses/timeline.feed.response.ts:234](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/timeline.feed.response.ts#L234)_
+*Defined in [responses/timeline.feed.response.ts:234](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/timeline.feed.response.ts#L234)*
 
----
+___
 
-### position
+###  position
 
-• **position**: _number[] | string | number[]_
+• **position**: *number[] | string | number[]*
 
-_Defined in [responses/timeline.feed.response.ts:232](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/timeline.feed.response.ts#L232)_
+*Defined in [responses/timeline.feed.response.ts:232](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/timeline.feed.response.ts#L232)*
 
----
+___
 
-### start_time_in_video_in_sec
+###  start_time_in_video_in_sec
 
-• **start_time_in_video_in_sec**: _null_
+• **start_time_in_video_in_sec**: *null*
 
-_Defined in [responses/timeline.feed.response.ts:233](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/timeline.feed.response.ts#L233)_
+*Defined in [responses/timeline.feed.response.ts:233](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/timeline.feed.response.ts#L233)*
 
----
+___
 
-### user
+###  user
 
-• **user**: _[TimelineFeedResponseUser](\_responses_timeline_feed_response_.timelinefeedresponseuser.md)\_
+• **user**: *[TimelineFeedResponseUser](_responses_timeline_feed_response_.timelinefeedresponseuser.md)*
 
-_Defined in [responses/timeline.feed.response.ts:231](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/timeline.feed.response.ts#L231)_
+*Defined in [responses/timeline.feed.response.ts:231](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/timeline.feed.response.ts#L231)*

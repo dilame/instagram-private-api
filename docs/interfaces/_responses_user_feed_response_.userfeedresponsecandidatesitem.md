@@ -6,36 +6,36 @@
 
 ## Hierarchy
 
-- **UserFeedResponseCandidatesItem**
+* **UserFeedResponseCandidatesItem**
 
 ## Index
 
 ### Properties
 
-- [height](_responses_user_feed_response_.userfeedresponsecandidatesitem.md#height)
-- [url](_responses_user_feed_response_.userfeedresponsecandidatesitem.md#url)
-- [width](_responses_user_feed_response_.userfeedresponsecandidatesitem.md#width)
+* [height](_responses_user_feed_response_.userfeedresponsecandidatesitem.md#height)
+* [url](_responses_user_feed_response_.userfeedresponsecandidatesitem.md#url)
+* [width](_responses_user_feed_response_.userfeedresponsecandidatesitem.md#width)
 
 ## Properties
 
-### height
+###  height
 
-• **height**: _number_
+• **height**: *number*
 
-_Defined in [responses/user.feed.response.ts:61](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/user.feed.response.ts#L61)_
+*Defined in [responses/user.feed.response.ts:61](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/user.feed.response.ts#L61)*
 
----
+___
 
-### url
+###  url
 
-• **url**: _string_
+• **url**: *string*
 
-_Defined in [responses/user.feed.response.ts:62](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/user.feed.response.ts#L62)_
+*Defined in [responses/user.feed.response.ts:62](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/user.feed.response.ts#L62)*
 
----
+___
 
-### width
+###  width
 
-• **width**: _number_
+• **width**: *number*
 
-_Defined in [responses/user.feed.response.ts:60](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/user.feed.response.ts#L60)_
+*Defined in [responses/user.feed.response.ts:60](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/user.feed.response.ts#L60)*

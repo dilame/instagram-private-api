@@ -6,36 +6,36 @@
 
 ## Hierarchy
 
-- **LiveFinalViewersResponseRootObject**
+* **LiveFinalViewersResponseRootObject**
 
 ## Index
 
 ### Properties
 
-- [status](_responses_live_final_viewers_response_.livefinalviewersresponserootobject.md#status)
-- [total_unique_viewer_count](_responses_live_final_viewers_response_.livefinalviewersresponserootobject.md#total_unique_viewer_count)
-- [users](_responses_live_final_viewers_response_.livefinalviewersresponserootobject.md#users)
+* [status](_responses_live_final_viewers_response_.livefinalviewersresponserootobject.md#status)
+* [total_unique_viewer_count](_responses_live_final_viewers_response_.livefinalviewersresponserootobject.md#total_unique_viewer_count)
+* [users](_responses_live_final_viewers_response_.livefinalviewersresponserootobject.md#users)
 
 ## Properties
 
-### status
+###  status
 
-• **status**: _string_
+• **status**: *string*
 
-_Defined in [responses/live.final-viewers.response.ts:4](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/live.final-viewers.response.ts#L4)_
+*Defined in [responses/live.final-viewers.response.ts:4](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.final-viewers.response.ts#L4)*
 
----
+___
 
-### total_unique_viewer_count
+###  total_unique_viewer_count
 
-• **total_unique_viewer_count**: _number_
+• **total_unique_viewer_count**: *number*
 
-_Defined in [responses/live.final-viewers.response.ts:3](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/live.final-viewers.response.ts#L3)_
+*Defined in [responses/live.final-viewers.response.ts:3](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.final-viewers.response.ts#L3)*
 
----
+___
 
-### users
+###  users
 
-• **users**: _[LiveFinalViewersResponseUsersItem](\_responses_live_final_viewers_response_.livefinalviewersresponseusersitem.md)[]\_
+• **users**: *[LiveFinalViewersResponseUsersItem](_responses_live_final_viewers_response_.livefinalviewersresponseusersitem.md)[]*
 
-_Defined in [responses/live.final-viewers.response.ts:2](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/live.final-viewers.response.ts#L2)_
+*Defined in [responses/live.final-viewers.response.ts:2](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.final-viewers.response.ts#L2)*

@@ -6,27 +6,27 @@
 
 ## Hierarchy
 
-- **LiveStartBroadcastResponseRootObject**
+* **LiveStartBroadcastResponseRootObject**
 
 ## Index
 
 ### Properties
 
-- [media_id](_responses_live_start_broadcast_response_.livestartbroadcastresponserootobject.md#media_id)
-- [status](_responses_live_start_broadcast_response_.livestartbroadcastresponserootobject.md#status)
+* [media_id](_responses_live_start_broadcast_response_.livestartbroadcastresponserootobject.md#media_id)
+* [status](_responses_live_start_broadcast_response_.livestartbroadcastresponserootobject.md#status)
 
 ## Properties
 
-### media_id
+###  media_id
 
-• **media_id**: _string_
+• **media_id**: *string*
 
-_Defined in [responses/live.start-broadcast.response.ts:2](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/live.start-broadcast.response.ts#L2)_
+*Defined in [responses/live.start-broadcast.response.ts:2](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.start-broadcast.response.ts#L2)*
 
----
+___
 
-### status
+###  status
 
-• **status**: _string_
+• **status**: *string*
 
-_Defined in [responses/live.start-broadcast.response.ts:3](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/live.start-broadcast.response.ts#L3)_
+*Defined in [responses/live.start-broadcast.response.ts:3](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.start-broadcast.response.ts#L3)*

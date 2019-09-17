@@ -6,90 +6,90 @@
 
 ## Hierarchy
 
-- **TagFeedResponseLocation**
+* **TagFeedResponseLocation**
 
 ## Index
 
 ### Properties
 
-- [address](_responses_tag_feed_response_.tagfeedresponselocation.md#address)
-- [city](_responses_tag_feed_response_.tagfeedresponselocation.md#city)
-- [external_source](_responses_tag_feed_response_.tagfeedresponselocation.md#external_source)
-- [facebook_places_id](_responses_tag_feed_response_.tagfeedresponselocation.md#facebook_places_id)
-- [lat](_responses_tag_feed_response_.tagfeedresponselocation.md#lat)
-- [lng](_responses_tag_feed_response_.tagfeedresponselocation.md#lng)
-- [name](_responses_tag_feed_response_.tagfeedresponselocation.md#name)
-- [pk](_responses_tag_feed_response_.tagfeedresponselocation.md#pk)
-- [short_name](_responses_tag_feed_response_.tagfeedresponselocation.md#short_name)
+* [address](_responses_tag_feed_response_.tagfeedresponselocation.md#address)
+* [city](_responses_tag_feed_response_.tagfeedresponselocation.md#city)
+* [external_source](_responses_tag_feed_response_.tagfeedresponselocation.md#external_source)
+* [facebook_places_id](_responses_tag_feed_response_.tagfeedresponselocation.md#facebook_places_id)
+* [lat](_responses_tag_feed_response_.tagfeedresponselocation.md#lat)
+* [lng](_responses_tag_feed_response_.tagfeedresponselocation.md#lng)
+* [name](_responses_tag_feed_response_.tagfeedresponselocation.md#name)
+* [pk](_responses_tag_feed_response_.tagfeedresponselocation.md#pk)
+* [short_name](_responses_tag_feed_response_.tagfeedresponselocation.md#short_name)
 
 ## Properties
 
-### address
+###  address
 
-• **address**: _string_
+• **address**: *string*
 
-_Defined in [responses/tag.feed.response.ts:87](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/tag.feed.response.ts#L87)_
+*Defined in [responses/tag.feed.response.ts:87](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/tag.feed.response.ts#L87)*
 
----
+___
 
-### city
+###  city
 
-• **city**: _string_
+• **city**: *string*
 
-_Defined in [responses/tag.feed.response.ts:88](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/tag.feed.response.ts#L88)_
+*Defined in [responses/tag.feed.response.ts:88](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/tag.feed.response.ts#L88)*
 
----
+___
 
-### external_source
+###  external_source
 
-• **external_source**: _string_
+• **external_source**: *string*
 
-_Defined in [responses/tag.feed.response.ts:92](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/tag.feed.response.ts#L92)_
+*Defined in [responses/tag.feed.response.ts:92](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/tag.feed.response.ts#L92)*
 
----
+___
 
-### facebook_places_id
+###  facebook_places_id
 
-• **facebook_places_id**: _string | number_
+• **facebook_places_id**: *string | number*
 
-_Defined in [responses/tag.feed.response.ts:93](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/tag.feed.response.ts#L93)_
+*Defined in [responses/tag.feed.response.ts:93](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/tag.feed.response.ts#L93)*
 
----
+___
 
-### lat
+###  lat
 
-• **lat**: _number | string_
+• **lat**: *number | string*
 
-_Defined in [responses/tag.feed.response.ts:91](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/tag.feed.response.ts#L91)_
+*Defined in [responses/tag.feed.response.ts:91](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/tag.feed.response.ts#L91)*
 
----
+___
 
-### lng
+###  lng
 
-• **lng**: _number | string_
+• **lng**: *number | string*
 
-_Defined in [responses/tag.feed.response.ts:90](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/tag.feed.response.ts#L90)_
+*Defined in [responses/tag.feed.response.ts:90](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/tag.feed.response.ts#L90)*
 
----
+___
 
-### name
+###  name
 
-• **name**: _string_
+• **name**: *string*
 
-_Defined in [responses/tag.feed.response.ts:86](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/tag.feed.response.ts#L86)_
+*Defined in [responses/tag.feed.response.ts:86](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/tag.feed.response.ts#L86)*
 
----
+___
 
-### pk
+###  pk
 
-• **pk**: _number | string_
+• **pk**: *number | string*
 
-_Defined in [responses/tag.feed.response.ts:85](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/tag.feed.response.ts#L85)_
+*Defined in [responses/tag.feed.response.ts:85](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/tag.feed.response.ts#L85)*
 
----
+___
 
-### short_name
+###  short_name
 
-• **short_name**: _string_
+• **short_name**: *string*
 
-_Defined in [responses/tag.feed.response.ts:89](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/tag.feed.response.ts#L89)_
+*Defined in [responses/tag.feed.response.ts:89](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/tag.feed.response.ts#L89)*

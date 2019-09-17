@@ -6,72 +6,72 @@
 
 ## Hierarchy
 
-- **DirectThreadRepositoryAddUserResponseFriendshipStatus**
+* **DirectThreadRepositoryAddUserResponseFriendshipStatus**
 
 ## Index
 
 ### Properties
 
-- [blocking](_responses_direct_thread_repository_add_user_response_.directthreadrepositoryadduserresponsefriendshipstatus.md#blocking)
-- [following](_responses_direct_thread_repository_add_user_response_.directthreadrepositoryadduserresponsefriendshipstatus.md#following)
-- [incoming_request](_responses_direct_thread_repository_add_user_response_.directthreadrepositoryadduserresponsefriendshipstatus.md#incoming_request)
-- [is_bestie](_responses_direct_thread_repository_add_user_response_.directthreadrepositoryadduserresponsefriendshipstatus.md#is_bestie)
-- [is_private](_responses_direct_thread_repository_add_user_response_.directthreadrepositoryadduserresponsefriendshipstatus.md#is_private)
-- [is_restricted](_responses_direct_thread_repository_add_user_response_.directthreadrepositoryadduserresponsefriendshipstatus.md#is_restricted)
-- [outgoing_request](_responses_direct_thread_repository_add_user_response_.directthreadrepositoryadduserresponsefriendshipstatus.md#outgoing_request)
+* [blocking](_responses_direct_thread_repository_add_user_response_.directthreadrepositoryadduserresponsefriendshipstatus.md#blocking)
+* [following](_responses_direct_thread_repository_add_user_response_.directthreadrepositoryadduserresponsefriendshipstatus.md#following)
+* [incoming_request](_responses_direct_thread_repository_add_user_response_.directthreadrepositoryadduserresponsefriendshipstatus.md#incoming_request)
+* [is_bestie](_responses_direct_thread_repository_add_user_response_.directthreadrepositoryadduserresponsefriendshipstatus.md#is_bestie)
+* [is_private](_responses_direct_thread_repository_add_user_response_.directthreadrepositoryadduserresponsefriendshipstatus.md#is_private)
+* [is_restricted](_responses_direct_thread_repository_add_user_response_.directthreadrepositoryadduserresponsefriendshipstatus.md#is_restricted)
+* [outgoing_request](_responses_direct_thread_repository_add_user_response_.directthreadrepositoryadduserresponsefriendshipstatus.md#outgoing_request)
 
 ## Properties
 
-### blocking
+###  blocking
 
-• **blocking**: _boolean_
+• **blocking**: *boolean*
 
-_Defined in [responses/direct-thread.repository.add-user.response.ts:58](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.repository.add-user.response.ts#L58)_
+*Defined in [responses/direct-thread.repository.add-user.response.ts:58](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-thread.repository.add-user.response.ts#L58)*
 
----
+___
 
-### following
+###  following
 
-• **following**: _boolean_
+• **following**: *boolean*
 
-_Defined in [responses/direct-thread.repository.add-user.response.ts:57](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.repository.add-user.response.ts#L57)_
+*Defined in [responses/direct-thread.repository.add-user.response.ts:57](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-thread.repository.add-user.response.ts#L57)*
 
----
+___
 
-### incoming_request
+###  incoming_request
 
-• **incoming_request**: _boolean_
+• **incoming_request**: *boolean*
 
-_Defined in [responses/direct-thread.repository.add-user.response.ts:60](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.repository.add-user.response.ts#L60)_
+*Defined in [responses/direct-thread.repository.add-user.response.ts:60](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-thread.repository.add-user.response.ts#L60)*
 
----
+___
 
-### is_bestie
+###  is_bestie
 
-• **is_bestie**: _boolean_
+• **is_bestie**: *boolean*
 
-_Defined in [responses/direct-thread.repository.add-user.response.ts:62](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.repository.add-user.response.ts#L62)_
+*Defined in [responses/direct-thread.repository.add-user.response.ts:62](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-thread.repository.add-user.response.ts#L62)*
 
----
+___
 
-### is_private
+###  is_private
 
-• **is_private**: _boolean_
+• **is_private**: *boolean*
 
-_Defined in [responses/direct-thread.repository.add-user.response.ts:59](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.repository.add-user.response.ts#L59)_
+*Defined in [responses/direct-thread.repository.add-user.response.ts:59](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-thread.repository.add-user.response.ts#L59)*
 
----
+___
 
-### is_restricted
+###  is_restricted
 
-• **is_restricted**: _boolean_
+• **is_restricted**: *boolean*
 
-_Defined in [responses/direct-thread.repository.add-user.response.ts:63](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.repository.add-user.response.ts#L63)_
+*Defined in [responses/direct-thread.repository.add-user.response.ts:63](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-thread.repository.add-user.response.ts#L63)*
 
----
+___
 
-### outgoing_request
+###  outgoing_request
 
-• **outgoing_request**: _boolean_
+• **outgoing_request**: *boolean*
 
-_Defined in [responses/direct-thread.repository.add-user.response.ts:61](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.repository.add-user.response.ts#L61)_
+*Defined in [responses/direct-thread.repository.add-user.response.ts:61](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-thread.repository.add-user.response.ts#L61)*

@@ -6,88 +6,96 @@
 
 ## Hierarchy
 
-- **Repository**
+* **Repository**
 
-  - [AccountRepository](_repositories_account_repository_.accountrepository.md)
+  * [Entity](_core_entity_.entity.md)
 
-  - [MediaRepository](_repositories_media_repository_.mediarepository.md)
+  * [Feed](_core_feed_.feed.md)
 
-  - [ChallengeRepository](_repositories_challenge_repository_.challengerepository.md)
+  * [AccountRepository](_repositories_account_repository_.accountrepository.md)
 
-  - [FriendshipRepository](_repositories_friendship_repository_.friendshiprepository.md)
+  * [MediaRepository](_repositories_media_repository_.mediarepository.md)
 
-  - [UploadRepository](_repositories_upload_repository_.uploadrepository.md)
+  * [ChallengeRepository](_repositories_challenge_repository_.challengerepository.md)
 
-  - [PublishService](_services_publish_service_.publishservice.md)
+  * [FriendshipRepository](_repositories_friendship_repository_.friendshiprepository.md)
 
-  - [DirectThreadRepository](_repositories_direct_thread_repository_.directthreadrepository.md)
+  * [UploadRepository](_repositories_upload_repository_.uploadrepository.md)
 
-  - [EntityFactory](_core_entity_factory_.entityfactory.md)
+  * [PublishService](_services_publish_service_.publishservice.md)
 
-  - [QeRepository](_repositories_qe_repository_.qerepository.md)
+  * [DirectThreadRepository](_repositories_direct_thread_repository_.directthreadrepository.md)
 
-  - [ZrRepository](_repositories_zr_repository_.zrrepository.md)
+  * [EntityFactory](_core_entity_factory_.entityfactory.md)
 
-  - [LauncherRepository](_repositories_launcher_repository_.launcherrepository.md)
+  * [QeRepository](_repositories_qe_repository_.qerepository.md)
 
-  - [DirectRepository](_repositories_direct_repository_.directrepository.md)
+  * [ZrRepository](_repositories_zr_repository_.zrrepository.md)
 
-  - [LoomRepository](_repositories_loom_repository_.loomrepository.md)
+  * [LauncherRepository](_repositories_launcher_repository_.launcherrepository.md)
 
-  - [QpRepository](_repositories_qp_repository_.qprepository.md)
+  * [DirectRepository](_repositories_direct_repository_.directrepository.md)
 
-  - [CreativesRepository](_repositories_creatives_repository_.creativesrepository.md)
+  * [LoomRepository](_repositories_loom_repository_.loomrepository.md)
 
-  - [LinkedAccountRepository](_repositories_linked_account_repository_.linkedaccountrepository.md)
+  * [QpRepository](_repositories_qp_repository_.qprepository.md)
 
-  - [AttributionRepository](_repositories_attribution_repository_.attributionrepository.md)
+  * [CreativesRepository](_repositories_creatives_repository_.creativesrepository.md)
 
-  - [FbsearchRepository](_repositories_fbsearch_repository_.fbsearchrepository.md)
+  * [LinkedAccountRepository](_repositories_linked_account_repository_.linkedaccountrepository.md)
 
-  - [SimulateService](_services_simulate_service_.simulateservice.md)
+  * [AttributionRepository](_repositories_attribution_repository_.attributionrepository.md)
 
-  - [DiscoverRepository](_repositories_discover_repository_.discoverrepository.md)
+  * [FbsearchRepository](_repositories_fbsearch_repository_.fbsearchrepository.md)
 
-  - [ConsentRepository](_repositories_consent_repository_.consentrepository.md)
+  * [SimulateService](_services_simulate_service_.simulateservice.md)
 
-  - [UserRepository](_repositories_user_repository_.userrepository.md)
+  * [DiscoverRepository](_repositories_discover_repository_.discoverrepository.md)
 
-  - [TagRepository](_repositories_tag_repository_.tagrepository.md)
+  * [ConsentRepository](_repositories_consent_repository_.consentrepository.md)
 
-  - [SearchService](_services_search_service_.searchservice.md)
+  * [UserRepository](_repositories_user_repository_.userrepository.md)
 
-  - [StoryService](_services_story_service_.storyservice.md)
+  * [TagRepository](_repositories_tag_repository_.tagrepository.md)
 
-  - [LiveRepository](_repositories_live_repository_.liverepository.md)
+  * [SearchService](_services_search_service_.searchservice.md)
 
-  - [LocationRepository](_repositories_location_repository_.locationrepository.md)
+  * [StoryService](_services_story_service_.storyservice.md)
 
-  - [LocationSearch](_repositories_location_search_repository_.locationsearch.md)
+  * [LiveRepository](_repositories_live_repository_.liverepository.md)
 
-  - [MusicRepository](_repositories_music_repository_.musicrepository.md)
+  * [LocationRepository](_repositories_location_repository_.locationrepository.md)
 
-  - [Entity](_core_entity_.entity.md)
+  * [LocationSearch](_repositories_location_search_repository_.locationsearch.md)
 
-  - [Feed](_core_feed_.feed.md)
+  * [MusicRepository](_repositories_music_repository_.musicrepository.md)
+
+  * [NewsRepository](_repositories_news_repository_.newsrepository.md)
+
+  * [HighlightsRepository](_repositories_highlights_repository_.highlightsrepository.md)
+
+  * [AdsRepository](_repositories_ads_repository_.adsrepository.md)
+
+  * [InsightsService](_services_insights_service_.insightsservice.md)
 
 ## Index
 
 ### Constructors
 
-- [constructor](_core_repository_.repository.md#constructor)
+* [constructor](_core_repository_.repository.md#constructor)
 
 ## Constructors
 
-### constructor
+###  constructor
 
-\+ **new Repository**(`client`: [IgApiClient](_core_client_.igapiclient.md)): _[Repository](\_core_repository_.repository.md)\_
+\+ **new Repository**(`client`: [IgApiClient](_core_client_.igapiclient.md)): *[Repository](_core_repository_.repository.md)*
 
-_Defined in [core/repository.ts:6](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/repository.ts#L6)_
+*Defined in [core/repository.ts:6](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/repository.ts#L6)*
 
 **Parameters:**
 
-| Name     | Type                                        |
-| -------- | ------------------------------------------- |
-| `client` | [IgApiClient](_core_client_.igapiclient.md) |
+Name | Type |
+------ | ------ |
+`client` | [IgApiClient](_core_client_.igapiclient.md) |
 
-**Returns:** _[Repository](\_core_repository_.repository.md)\_
+**Returns:** *[Repository](_core_repository_.repository.md)*

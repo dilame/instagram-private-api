@@ -6,45 +6,45 @@
 
 ## Hierarchy
 
-- **ReelsTrayFeedResponseCandidatesItem**
+* **ReelsTrayFeedResponseCandidatesItem**
 
 ## Index
 
 ### Properties
 
-- [estimated_scans_sizes](_responses_reels_tray_feed_response_.reelstrayfeedresponsecandidatesitem.md#estimated_scans_sizes)
-- [height](_responses_reels_tray_feed_response_.reelstrayfeedresponsecandidatesitem.md#height)
-- [url](_responses_reels_tray_feed_response_.reelstrayfeedresponsecandidatesitem.md#url)
-- [width](_responses_reels_tray_feed_response_.reelstrayfeedresponsecandidatesitem.md#width)
+* [estimated_scans_sizes](_responses_reels_tray_feed_response_.reelstrayfeedresponsecandidatesitem.md#estimated_scans_sizes)
+* [height](_responses_reels_tray_feed_response_.reelstrayfeedresponsecandidatesitem.md#height)
+* [url](_responses_reels_tray_feed_response_.reelstrayfeedresponsecandidatesitem.md#url)
+* [width](_responses_reels_tray_feed_response_.reelstrayfeedresponsecandidatesitem.md#width)
 
 ## Properties
 
-### estimated_scans_sizes
+###  estimated_scans_sizes
 
-• **estimated_scans_sizes**: _number[]_
+• **estimated_scans_sizes**: *number[]*
 
-_Defined in [responses/reels-tray.feed.response.ts:103](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/reels-tray.feed.response.ts#L103)_
+*Defined in [responses/reels-tray.feed.response.ts:103](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-tray.feed.response.ts#L103)*
 
----
+___
 
-### height
+###  height
 
-• **height**: _number_
+• **height**: *number*
 
-_Defined in [responses/reels-tray.feed.response.ts:101](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/reels-tray.feed.response.ts#L101)_
+*Defined in [responses/reels-tray.feed.response.ts:101](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-tray.feed.response.ts#L101)*
 
----
+___
 
-### url
+###  url
 
-• **url**: _string_
+• **url**: *string*
 
-_Defined in [responses/reels-tray.feed.response.ts:102](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/reels-tray.feed.response.ts#L102)_
+*Defined in [responses/reels-tray.feed.response.ts:102](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-tray.feed.response.ts#L102)*
 
----
+___
 
-### width
+###  width
 
-• **width**: _number_
+• **width**: *number*
 
-_Defined in [responses/reels-tray.feed.response.ts:100](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/reels-tray.feed.response.ts#L100)_
+*Defined in [responses/reels-tray.feed.response.ts:100](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-tray.feed.response.ts#L100)*

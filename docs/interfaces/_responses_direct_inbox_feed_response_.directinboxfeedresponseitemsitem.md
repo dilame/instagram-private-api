@@ -6,99 +6,99 @@
 
 ## Hierarchy
 
-- **DirectInboxFeedResponseItemsItem**
+* **DirectInboxFeedResponseItemsItem**
 
 ## Index
 
 ### Properties
 
-- [client_context](_responses_direct_inbox_feed_response_.directinboxfeedresponseitemsitem.md#optional-client_context)
-- [item_id](_responses_direct_inbox_feed_response_.directinboxfeedresponseitemsitem.md#item_id)
-- [item_type](_responses_direct_inbox_feed_response_.directinboxfeedresponseitemsitem.md#item_type)
-- [link](_responses_direct_inbox_feed_response_.directinboxfeedresponseitemsitem.md#optional-link)
-- [placeholder](_responses_direct_inbox_feed_response_.directinboxfeedresponseitemsitem.md#optional-placeholder)
-- [profile](_responses_direct_inbox_feed_response_.directinboxfeedresponseitemsitem.md#optional-profile)
-- [reel_share](_responses_direct_inbox_feed_response_.directinboxfeedresponseitemsitem.md#optional-reel_share)
-- [text](_responses_direct_inbox_feed_response_.directinboxfeedresponseitemsitem.md#optional-text)
-- [timestamp](_responses_direct_inbox_feed_response_.directinboxfeedresponseitemsitem.md#timestamp)
-- [user_id](_responses_direct_inbox_feed_response_.directinboxfeedresponseitemsitem.md#user_id)
+* [client_context](_responses_direct_inbox_feed_response_.directinboxfeedresponseitemsitem.md#optional-client_context)
+* [item_id](_responses_direct_inbox_feed_response_.directinboxfeedresponseitemsitem.md#item_id)
+* [item_type](_responses_direct_inbox_feed_response_.directinboxfeedresponseitemsitem.md#item_type)
+* [link](_responses_direct_inbox_feed_response_.directinboxfeedresponseitemsitem.md#optional-link)
+* [placeholder](_responses_direct_inbox_feed_response_.directinboxfeedresponseitemsitem.md#optional-placeholder)
+* [profile](_responses_direct_inbox_feed_response_.directinboxfeedresponseitemsitem.md#optional-profile)
+* [reel_share](_responses_direct_inbox_feed_response_.directinboxfeedresponseitemsitem.md#optional-reel_share)
+* [text](_responses_direct_inbox_feed_response_.directinboxfeedresponseitemsitem.md#optional-text)
+* [timestamp](_responses_direct_inbox_feed_response_.directinboxfeedresponseitemsitem.md#timestamp)
+* [user_id](_responses_direct_inbox_feed_response_.directinboxfeedresponseitemsitem.md#user_id)
 
 ## Properties
 
 ### `Optional` client_context
 
-• **client_context**? : _string_
+• **client_context**? : *string*
 
-_Defined in [responses/direct-inbox.feed.response.ts:82](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-inbox.feed.response.ts#L82)_
+*Defined in [responses/direct-inbox.feed.response.ts:82](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-inbox.feed.response.ts#L82)*
 
----
+___
 
-### item_id
+###  item_id
 
-• **item_id**: _string_
+• **item_id**: *string*
 
-_Defined in [responses/direct-inbox.feed.response.ts:76](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-inbox.feed.response.ts#L76)_
+*Defined in [responses/direct-inbox.feed.response.ts:76](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-inbox.feed.response.ts#L76)*
 
----
+___
 
-### item_type
+###  item_type
 
-• **item_type**: _string_
+• **item_type**: *string*
 
-_Defined in [responses/direct-inbox.feed.response.ts:79](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-inbox.feed.response.ts#L79)_
+*Defined in [responses/direct-inbox.feed.response.ts:79](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-inbox.feed.response.ts#L79)*
 
----
+___
 
 ### `Optional` link
 
-• **link**? : _[DirectInboxFeedResponseLink](\_responses_direct_inbox_feed_response_.directinboxfeedresponselink.md)\_
+• **link**? : *[DirectInboxFeedResponseLink](_responses_direct_inbox_feed_response_.directinboxfeedresponselink.md)*
 
-_Defined in [responses/direct-inbox.feed.response.ts:81](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-inbox.feed.response.ts#L81)_
+*Defined in [responses/direct-inbox.feed.response.ts:81](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-inbox.feed.response.ts#L81)*
 
----
+___
 
 ### `Optional` placeholder
 
-• **placeholder**? : _[DirectInboxFeedResponsePlaceholder](\_responses_direct_inbox_feed_response_.directinboxfeedresponseplaceholder.md)\_
+• **placeholder**? : *[DirectInboxFeedResponsePlaceholder](_responses_direct_inbox_feed_response_.directinboxfeedresponseplaceholder.md)*
 
-_Defined in [responses/direct-inbox.feed.response.ts:85](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-inbox.feed.response.ts#L85)_
+*Defined in [responses/direct-inbox.feed.response.ts:85](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-inbox.feed.response.ts#L85)*
 
----
+___
 
 ### `Optional` profile
 
-• **profile**? : _[DirectInboxFeedResponseProfile](\_responses_direct_inbox_feed_response_.directinboxfeedresponseprofile.md)\_
+• **profile**? : *[DirectInboxFeedResponseProfile](_responses_direct_inbox_feed_response_.directinboxfeedresponseprofile.md)*
 
-_Defined in [responses/direct-inbox.feed.response.ts:84](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-inbox.feed.response.ts#L84)_
+*Defined in [responses/direct-inbox.feed.response.ts:84](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-inbox.feed.response.ts#L84)*
 
----
+___
 
 ### `Optional` reel_share
 
-• **reel_share**? : _[DirectInboxFeedResponseReelShare](\_responses_direct_inbox_feed_response_.directinboxfeedresponsereelshare.md)\_
+• **reel_share**? : *[DirectInboxFeedResponseReelShare](_responses_direct_inbox_feed_response_.directinboxfeedresponsereelshare.md)*
 
-_Defined in [responses/direct-inbox.feed.response.ts:83](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-inbox.feed.response.ts#L83)_
+*Defined in [responses/direct-inbox.feed.response.ts:83](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-inbox.feed.response.ts#L83)*
 
----
+___
 
 ### `Optional` text
 
-• **text**? : _string_
+• **text**? : *string*
 
-_Defined in [responses/direct-inbox.feed.response.ts:80](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-inbox.feed.response.ts#L80)_
+*Defined in [responses/direct-inbox.feed.response.ts:80](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-inbox.feed.response.ts#L80)*
 
----
+___
 
-### timestamp
+###  timestamp
 
-• **timestamp**: _string_
+• **timestamp**: *string*
 
-_Defined in [responses/direct-inbox.feed.response.ts:78](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-inbox.feed.response.ts#L78)_
+*Defined in [responses/direct-inbox.feed.response.ts:78](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-inbox.feed.response.ts#L78)*
 
----
+___
 
-### user_id
+###  user_id
 
-• **user_id**: _number_
+• **user_id**: *number*
 
-_Defined in [responses/direct-inbox.feed.response.ts:77](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-inbox.feed.response.ts#L77)_
+*Defined in [responses/direct-inbox.feed.response.ts:77](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-inbox.feed.response.ts#L77)*

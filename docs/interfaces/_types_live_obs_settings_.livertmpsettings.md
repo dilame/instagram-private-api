@@ -6,27 +6,27 @@
 
 ## Hierarchy
 
-- **LiveRtmpSettings**
+* **LiveRtmpSettings**
 
 ## Index
 
 ### Properties
 
-- [stream_key](_types_live_obs_settings_.livertmpsettings.md#stream_key)
-- [stream_url](_types_live_obs_settings_.livertmpsettings.md#stream_url)
+* [stream_key](_types_live_obs_settings_.livertmpsettings.md#stream_key)
+* [stream_url](_types_live_obs_settings_.livertmpsettings.md#stream_url)
 
 ## Properties
 
-### stream_key
+###  stream_key
 
-• **stream_key**: _string_
+• **stream_key**: *string*
 
-_Defined in [types/live.obs-settings.ts:3](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/types/live.obs-settings.ts#L3)_
+*Defined in [types/live.obs-settings.ts:3](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/live.obs-settings.ts#L3)*
 
----
+___
 
-### stream_url
+###  stream_url
 
-• **stream_url**: _string_
+• **stream_url**: *string*
 
-_Defined in [types/live.obs-settings.ts:2](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/types/live.obs-settings.ts#L2)_
+*Defined in [types/live.obs-settings.ts:2](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/live.obs-settings.ts#L2)*

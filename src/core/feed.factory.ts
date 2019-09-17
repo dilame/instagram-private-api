@@ -7,6 +7,7 @@ import {
   DirectPendingInboxFeed,
   DirectThreadFeed,
   DiscoverFeed,
+  PostsInsightsFeed,
   LocationFeed,
   MediaCommentsFeed,
   MusicGenreFeed,
@@ -18,7 +19,9 @@ import {
   ReelsMediaFeed,
   ReelsTrayFeed,
   SavedFeed,
+  StoriesInsightsFeed,
   TagFeed,
+  TagsFeed,
   TimelineFeed,
   UserFeed,
   UsertagsFeed,
@@ -28,6 +31,8 @@ import { TimelineFeedReason } from '../types/timeline-feed.types';
 import { IgAppModule } from '../types/common.types';
 import { plainToClassFromExist } from 'class-transformer';
 import * as Chance from 'chance';
+import { PostsInsightsFeedOptions } from '../types';
+import { UserStoryFeed } from '../feeds/user-story.feed';
 
 export class FeedFactory {
   constructor(private client: IgApiClient) {}
@@ -91,6 +96,13 @@ export class FeedFactory {
     return feed;
   }
 
+  public tags(tag: string, tab: 'top' | 'recent' | 'places' = 'top'): TagsFeed {
+    const feed = new TagsFeed(this.client);
+    feed.tag = tag;
+    feed.tab = tab;
+    return feed;
+  }
+
   public location(id: string | number, tab: 'recent' | 'ranked' = 'ranked'): LocationFeed {
     const feed = new LocationFeed(this.client);
     feed.id = id;
@@ -106,6 +118,10 @@ export class FeedFactory {
 
   public reelsMedia(options: { userIds: Array<number | string>; source?: IgAppModule }): ReelsMediaFeed {
     return plainToClassFromExist(new ReelsMediaFeed(this.client), options);
+  }
+
+  public userStory(userId: string | number): UserStoryFeed {
+    return plainToClassFromExist(new UserStoryFeed(this.client), { userId });
   }
 
   public reelsTray(reason: 'pull_to_refresh' | 'cold_start' = 'cold_start'): ReelsTrayFeed {
@@ -155,6 +171,14 @@ export class FeedFactory {
 
   public usertags(id: number | string): UsertagsFeed {
     return plainToClassFromExist(new UsertagsFeed(this.client), { id });
+  }
+
+  public postsInsightsFeed(options: PostsInsightsFeedOptions) {
+    return plainToClassFromExist(new PostsInsightsFeed(this.client), { options });
+  }
+
+  public storiesInsights(timeframe: 'ONE_DAY' | 'ONE_WEEK' | 'TWO_WEEKS') {
+    return plainToClassFromExist(new StoriesInsightsFeed(this.client), { timeframe });
   }
 
   public saved(): SavedFeed {

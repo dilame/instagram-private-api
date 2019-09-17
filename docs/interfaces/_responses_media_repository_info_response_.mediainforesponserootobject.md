@@ -6,54 +6,54 @@
 
 ## Hierarchy
 
-- **MediaInfoResponseRootObject**
+* **MediaInfoResponseRootObject**
 
 ## Index
 
 ### Properties
 
-- [auto_load_more_enabled](_responses_media_repository_info_response_.mediainforesponserootobject.md#auto_load_more_enabled)
-- [items](_responses_media_repository_info_response_.mediainforesponserootobject.md#items)
-- [more_available](_responses_media_repository_info_response_.mediainforesponserootobject.md#more_available)
-- [num_results](_responses_media_repository_info_response_.mediainforesponserootobject.md#num_results)
-- [status](_responses_media_repository_info_response_.mediainforesponserootobject.md#status)
+* [auto_load_more_enabled](_responses_media_repository_info_response_.mediainforesponserootobject.md#auto_load_more_enabled)
+* [items](_responses_media_repository_info_response_.mediainforesponserootobject.md#items)
+* [more_available](_responses_media_repository_info_response_.mediainforesponserootobject.md#more_available)
+* [num_results](_responses_media_repository_info_response_.mediainforesponserootobject.md#num_results)
+* [status](_responses_media_repository_info_response_.mediainforesponserootobject.md#status)
 
 ## Properties
 
-### auto_load_more_enabled
+###  auto_load_more_enabled
 
-• **auto_load_more_enabled**: _boolean_
+• **auto_load_more_enabled**: *boolean*
 
-_Defined in [responses/media.repository.info.response.ts:5](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/media.repository.info.response.ts#L5)_
+*Defined in [responses/media.repository.info.response.ts:5](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.info.response.ts#L5)*
 
----
+___
 
-### items
+###  items
 
-• **items**: _[MediaInfoResponseItemsItem](\_responses_media_repository_info_response_.mediainforesponseitemsitem.md)[]\_
+• **items**: *[MediaInfoResponseItemsItem](_responses_media_repository_info_response_.mediainforesponseitemsitem.md)[]*
 
-_Defined in [responses/media.repository.info.response.ts:2](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/media.repository.info.response.ts#L2)_
+*Defined in [responses/media.repository.info.response.ts:2](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.info.response.ts#L2)*
 
----
+___
 
-### more_available
+###  more_available
 
-• **more_available**: _boolean_
+• **more_available**: *boolean*
 
-_Defined in [responses/media.repository.info.response.ts:4](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/media.repository.info.response.ts#L4)_
+*Defined in [responses/media.repository.info.response.ts:4](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.info.response.ts#L4)*
 
----
+___
 
-### num_results
+###  num_results
 
-• **num_results**: _number_
+• **num_results**: *number*
 
-_Defined in [responses/media.repository.info.response.ts:3](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/media.repository.info.response.ts#L3)_
+*Defined in [responses/media.repository.info.response.ts:3](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.info.response.ts#L3)*
 
----
+___
 
-### status
+###  status
 
-• **status**: _string_
+• **status**: *string*
 
-_Defined in [responses/media.repository.info.response.ts:6](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/media.repository.info.response.ts#L6)_
+*Defined in [responses/media.repository.info.response.ts:6](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.info.response.ts#L6)*

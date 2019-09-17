@@ -34,4 +34,6 @@ async function login() {
 
 (async function mainAsync() {
   await login();
+
+  console.log();
 })();

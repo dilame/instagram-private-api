@@ -6,57 +6,94 @@
 
 ## Hierarchy
 
-- [IgResponseError](_errors_ig_response_error_.igresponseerror.md)‹_[SpamResponse](../interfaces/\_responses_spam_response_.spamresponse.md)\_›
+  * [IgResponseError](_errors_ig_response_error_.igresponseerror.md)‹*[SpamResponse](../interfaces/_responses_spam_response_.spamresponse.md)*›
 
-- **IgSignupBlockError**
+  * **IgSignupBlockError**
 
 ## Index
 
 ### Constructors
 
-- [constructor](_errors_ig_signup_block_error_.igsignupblockerror.md#constructor)
+* [constructor](_errors_ig_signup_block_error_.igsignupblockerror.md#constructor)
 
 ### Properties
 
-- [response](_errors_ig_signup_block_error_.igsignupblockerror.md#response)
-- [text](_errors_ig_signup_block_error_.igsignupblockerror.md#text)
+* [message](_errors_ig_signup_block_error_.igsignupblockerror.md#message)
+* [name](_errors_ig_signup_block_error_.igsignupblockerror.md#name)
+* [response](_errors_ig_signup_block_error_.igsignupblockerror.md#response)
+* [stack](_errors_ig_signup_block_error_.igsignupblockerror.md#optional-stack)
+* [text](_errors_ig_signup_block_error_.igsignupblockerror.md#text)
 
 ## Constructors
 
-### constructor
+###  constructor
 
-\+ **new IgSignupBlockError**(`response`: [IgResponse](../modules/_types_common_types_.md#igresponse)‹_[SpamResponse](../interfaces/\_responses_spam_response_.spamresponse.md)_›): _[IgSignupBlockError](_errors_ig_signup_block_error_.igsignupblockerror.md)\_
+\+ **new IgSignupBlockError**(`response`: [IgResponse](../modules/_types_common_types_.md#igresponse)‹*[SpamResponse](../interfaces/_responses_spam_response_.spamresponse.md)*›): *[IgSignupBlockError](_errors_ig_signup_block_error_.igsignupblockerror.md)*
 
-_Inherited from [IgResponseError](\_errors_ig_response_error_.igresponseerror.md).[constructor](_errors_ig_response_error_.igresponseerror.md#constructor)\_
+*Inherited from [IgResponseError](_errors_ig_response_error_.igresponseerror.md).[constructor](_errors_ig_response_error_.igresponseerror.md#constructor)*
 
-_Overrides [IgClientError](\_errors_ig_client_error_.igclienterror.md).[constructor](_errors_ig_client_error_.igclienterror.md#constructor)\_
+*Overrides [IgClientError](_errors_ig_client_error_.igclienterror.md).[constructor](_errors_ig_client_error_.igclienterror.md#constructor)*
 
-_Defined in [errors/ig-response.error.ts:9](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/errors/ig-response.error.ts#L9)_
+*Defined in [errors/ig-response.error.ts:9](https://github.com/dilame/instagram-private-api/blob/173bc62/src/errors/ig-response.error.ts#L9)*
 
 **Parameters:**
 
-| Name       | Type                                                                                                                                     |
-| ---------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| `response` | [IgResponse](../modules/_types_common_types_.md#igresponse)‹_[SpamResponse](../interfaces/\_responses_spam_response_.spamresponse.md)\_› |
+Name | Type |
+------ | ------ |
+`response` | [IgResponse](../modules/_types_common_types_.md#igresponse)‹*[SpamResponse](../interfaces/_responses_spam_response_.spamresponse.md)*› |
 
-**Returns:** _[IgSignupBlockError](\_errors_ig_signup_block_error_.igsignupblockerror.md)\_
+**Returns:** *[IgSignupBlockError](_errors_ig_signup_block_error_.igsignupblockerror.md)*
 
 ## Properties
 
-### response
+###  message
 
-• **response**: _[IgResponse](../modules/\_types_common_types_.md#igresponse)‹_[SpamResponse](../interfaces/\_responses_spam_response_.spamresponse.md)_›_
+• **message**: *string*
 
-_Inherited from [IgResponseError](\_errors_ig_response_error_.igresponseerror.md).[response](_errors_ig_response_error_.igresponseerror.md#response)\_
+*Inherited from void*
 
-_Defined in [errors/ig-response.error.ts:9](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/errors/ig-response.error.ts#L9)_
+Defined in /Users/bowzee/WebstormProjects/instagram-private-api/node_modules/typedoc/node_modules/typescript/lib/lib.es5.d.ts:974
 
----
+___
 
-### text
+###  name
 
-• **text**: _string_
+• **name**: *string*
 
-_Inherited from [IgResponseError](\_errors_ig_response_error_.igresponseerror.md).[text](_errors_ig_response_error_.igresponseerror.md#text)\_
+*Inherited from void*
 
-_Defined in [errors/ig-response.error.ts:7](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/errors/ig-response.error.ts#L7)_
+*Overrides void*
+
+Defined in /Users/bowzee/WebstormProjects/instagram-private-api/node_modules/ts-custom-error/dist/custom-error.d.ts:2
+
+___
+
+###  response
+
+• **response**: *[IgResponse](../modules/_types_common_types_.md#igresponse)‹*[SpamResponse](../interfaces/_responses_spam_response_.spamresponse.md)*›*
+
+*Inherited from [IgResponseError](_errors_ig_response_error_.igresponseerror.md).[response](_errors_ig_response_error_.igresponseerror.md#response)*
+
+*Defined in [errors/ig-response.error.ts:9](https://github.com/dilame/instagram-private-api/blob/173bc62/src/errors/ig-response.error.ts#L9)*
+
+___
+
+### `Optional` stack
+
+• **stack**? : *string*
+
+*Inherited from void*
+
+*Overrides void*
+
+Defined in /Users/bowzee/WebstormProjects/instagram-private-api/node_modules/typedoc/node_modules/typescript/lib/lib.es5.d.ts:975
+
+___
+
+###  text
+
+• **text**: *string*
+
+*Inherited from [IgResponseError](_errors_ig_response_error_.igresponseerror.md).[text](_errors_ig_response_error_.igresponseerror.md#text)*
+
+*Defined in [errors/ig-response.error.ts:7](https://github.com/dilame/instagram-private-api/blob/173bc62/src/errors/ig-response.error.ts#L7)*

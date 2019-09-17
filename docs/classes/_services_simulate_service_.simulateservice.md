@@ -6,69 +6,69 @@
 
 ## Hierarchy
 
-- [Repository](_core_repository_.repository.md)
+* [Repository](_core_repository_.repository.md)
 
-  - **SimulateService**
+  * **SimulateService**
 
 ## Index
 
 ### Constructors
 
-- [constructor](_services_simulate_service_.simulateservice.md#constructor)
+* [constructor](_services_simulate_service_.simulateservice.md#constructor)
 
 ### Methods
 
-- [postLoginFlow](_services_simulate_service_.simulateservice.md#postloginflow)
-- [preLoginFlow](_services_simulate_service_.simulateservice.md#preloginflow)
+* [postLoginFlow](_services_simulate_service_.simulateservice.md#postloginflow)
+* [preLoginFlow](_services_simulate_service_.simulateservice.md#preloginflow)
 
 ## Constructors
 
-### constructor
+###  constructor
 
-\+ **new SimulateService**(`client`: [IgApiClient](_core_client_.igapiclient.md)): _[SimulateService](\_services_simulate_service_.simulateservice.md)\_
+\+ **new SimulateService**(`client`: [IgApiClient](_core_client_.igapiclient.md)): *[SimulateService](_services_simulate_service_.simulateservice.md)*
 
-_Inherited from [Repository](\_core_repository_.repository.md).[constructor](_core_repository_.repository.md#constructor)\_
+*Inherited from [Repository](_core_repository_.repository.md).[constructor](_core_repository_.repository.md#constructor)*
 
-_Defined in [core/repository.ts:6](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/repository.ts#L6)_
+*Defined in [core/repository.ts:6](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/repository.ts#L6)*
 
 **Parameters:**
 
-| Name     | Type                                        |
-| -------- | ------------------------------------------- |
-| `client` | [IgApiClient](_core_client_.igapiclient.md) |
+Name | Type |
+------ | ------ |
+`client` | [IgApiClient](_core_client_.igapiclient.md) |
 
-**Returns:** _[SimulateService](\_services_simulate_service_.simulateservice.md)\_
+**Returns:** *[SimulateService](_services_simulate_service_.simulateservice.md)*
 
 ## Methods
 
-### postLoginFlow
+###  postLoginFlow
 
-▸ **postLoginFlow**(`concurrency?`: number, `toShuffle?`: boolean): _`Promise<void>`_
+▸ **postLoginFlow**(`concurrency?`: number, `toShuffle?`: boolean): *`Promise<void>`*
 
-_Defined in [services/simulate.service.ts:71](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/services/simulate.service.ts#L71)_
-
-**Parameters:**
-
-| Name           | Type    |
-| -------------- | ------- |
-| `concurrency?` | number  |
-| `toShuffle?`   | boolean |
-
-**Returns:** _`Promise<void>`_
-
----
-
-### preLoginFlow
-
-▸ **preLoginFlow**(`concurrency?`: number, `toShuffle?`: boolean): _`Promise<void>`_
-
-_Defined in [services/simulate.service.ts:63](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/services/simulate.service.ts#L63)_
+*Defined in [services/simulate.service.ts:71](https://github.com/dilame/instagram-private-api/blob/173bc62/src/services/simulate.service.ts#L71)*
 
 **Parameters:**
 
-| Name           | Type    |
-| -------------- | ------- |
-| `concurrency?` | number  |
-| `toShuffle?`   | boolean |
+Name | Type |
+------ | ------ |
+`concurrency?` | number |
+`toShuffle?` | boolean |
 
-**Returns:** _`Promise<void>`_
+**Returns:** *`Promise<void>`*
+
+___
+
+###  preLoginFlow
+
+▸ **preLoginFlow**(`concurrency?`: number, `toShuffle?`: boolean): *`Promise<void>`*
+
+*Defined in [services/simulate.service.ts:63](https://github.com/dilame/instagram-private-api/blob/173bc62/src/services/simulate.service.ts#L63)*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`concurrency?` | number |
+`toShuffle?` | boolean |
+
+**Returns:** *`Promise<void>`*

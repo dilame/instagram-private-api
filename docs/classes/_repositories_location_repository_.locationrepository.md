@@ -6,50 +6,50 @@
 
 ## Hierarchy
 
-- [Repository](_core_repository_.repository.md)
+* [Repository](_core_repository_.repository.md)
 
-  - **LocationRepository**
+  * **LocationRepository**
 
 ## Index
 
 ### Constructors
 
-- [constructor](_repositories_location_repository_.locationrepository.md#constructor)
+* [constructor](_repositories_location_repository_.locationrepository.md#constructor)
 
 ### Methods
 
-- [info](_repositories_location_repository_.locationrepository.md#info)
+* [info](_repositories_location_repository_.locationrepository.md#info)
 
 ## Constructors
 
-### constructor
+###  constructor
 
-\+ **new LocationRepository**(`client`: [IgApiClient](_core_client_.igapiclient.md)): _[LocationRepository](\_repositories_location_repository_.locationrepository.md)\_
+\+ **new LocationRepository**(`client`: [IgApiClient](_core_client_.igapiclient.md)): *[LocationRepository](_repositories_location_repository_.locationrepository.md)*
 
-_Inherited from [Repository](\_core_repository_.repository.md).[constructor](_core_repository_.repository.md#constructor)\_
+*Inherited from [Repository](_core_repository_.repository.md).[constructor](_core_repository_.repository.md#constructor)*
 
-_Defined in [core/repository.ts:6](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/repository.ts#L6)_
+*Defined in [core/repository.ts:6](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/repository.ts#L6)*
 
 **Parameters:**
 
-| Name     | Type                                        |
-| -------- | ------------------------------------------- |
-| `client` | [IgApiClient](_core_client_.igapiclient.md) |
+Name | Type |
+------ | ------ |
+`client` | [IgApiClient](_core_client_.igapiclient.md) |
 
-**Returns:** _[LocationRepository](\_repositories_location_repository_.locationrepository.md)\_
+**Returns:** *[LocationRepository](_repositories_location_repository_.locationrepository.md)*
 
 ## Methods
 
-### info
+###  info
 
-▸ **info**(`id`: number | string): _`Promise<LocationRepositoryInfoResponseRootObject>`_
+▸ **info**(`id`: number | string): *`Promise<LocationRepositoryInfoResponseRootObject>`*
 
-_Defined in [repositories/location.repository.ts:5](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/repositories/location.repository.ts#L5)_
+*Defined in [repositories/location.repository.ts:5](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/location.repository.ts#L5)*
 
 **Parameters:**
 
-| Name | Type             |
-| ---- | ---------------- |
-| `id` | number \| string |
+Name | Type |
+------ | ------ |
+`id` | number \| string |
 
-**Returns:** _`Promise<LocationRepositoryInfoResponseRootObject>`_
+**Returns:** *`Promise<LocationRepositoryInfoResponseRootObject>`*

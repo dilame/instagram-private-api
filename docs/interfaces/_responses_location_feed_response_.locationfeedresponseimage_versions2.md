@@ -6,18 +6,18 @@
 
 ## Hierarchy
 
-- **LocationFeedResponseImage_versions2**
+* **LocationFeedResponseImage_versions2**
 
 ## Index
 
 ### Properties
 
-- [candidates](_responses_location_feed_response_.locationfeedresponseimage_versions2.md#candidates)
+* [candidates](_responses_location_feed_response_.locationfeedresponseimage_versions2.md#candidates)
 
 ## Properties
 
-### candidates
+###  candidates
 
-• **candidates**: _[LocationFeedResponseCandidatesItem](\_responses_location_feed_response_.locationfeedresponsecandidatesitem.md)[]\_
+• **candidates**: *[LocationFeedResponseCandidatesItem](_responses_location_feed_response_.locationfeedresponsecandidatesitem.md)[]*
 
-_Defined in [responses/location.feed.response.ts:115](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/location.feed.response.ts#L115)_
+*Defined in [responses/location.feed.response.ts:115](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/location.feed.response.ts#L115)*

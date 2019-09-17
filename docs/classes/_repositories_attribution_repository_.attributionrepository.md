@@ -6,55 +6,55 @@
 
 ## Hierarchy
 
-- [Repository](_core_repository_.repository.md)
+* [Repository](_core_repository_.repository.md)
 
-  - **AttributionRepository**
+  * **AttributionRepository**
 
 ## Index
 
 ### Constructors
 
-- [constructor](_repositories_attribution_repository_.attributionrepository.md#constructor)
+* [constructor](_repositories_attribution_repository_.attributionrepository.md#constructor)
 
 ### Methods
 
-- [logAttribution](_repositories_attribution_repository_.attributionrepository.md#logattribution)
-- [logResurrectAttribution](_repositories_attribution_repository_.attributionrepository.md#logresurrectattribution)
+* [logAttribution](_repositories_attribution_repository_.attributionrepository.md#logattribution)
+* [logResurrectAttribution](_repositories_attribution_repository_.attributionrepository.md#logresurrectattribution)
 
 ## Constructors
 
-### constructor
+###  constructor
 
-\+ **new AttributionRepository**(`client`: [IgApiClient](_core_client_.igapiclient.md)): _[AttributionRepository](\_repositories_attribution_repository_.attributionrepository.md)\_
+\+ **new AttributionRepository**(`client`: [IgApiClient](_core_client_.igapiclient.md)): *[AttributionRepository](_repositories_attribution_repository_.attributionrepository.md)*
 
-_Inherited from [Repository](\_core_repository_.repository.md).[constructor](_core_repository_.repository.md#constructor)\_
+*Inherited from [Repository](_core_repository_.repository.md).[constructor](_core_repository_.repository.md#constructor)*
 
-_Defined in [core/repository.ts:6](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/repository.ts#L6)_
+*Defined in [core/repository.ts:6](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/repository.ts#L6)*
 
 **Parameters:**
 
-| Name     | Type                                        |
-| -------- | ------------------------------------------- |
-| `client` | [IgApiClient](_core_client_.igapiclient.md) |
+Name | Type |
+------ | ------ |
+`client` | [IgApiClient](_core_client_.igapiclient.md) |
 
-**Returns:** _[AttributionRepository](\_repositories_attribution_repository_.attributionrepository.md)\_
+**Returns:** *[AttributionRepository](_repositories_attribution_repository_.attributionrepository.md)*
 
 ## Methods
 
-### logAttribution
+###  logAttribution
 
-▸ **logAttribution**(): _`Promise<any>`_
+▸ **logAttribution**(): *`Promise<any>`*
 
-_Defined in [repositories/attribution.repository.ts:4](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/repositories/attribution.repository.ts#L4)_
+*Defined in [repositories/attribution.repository.ts:4](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/attribution.repository.ts#L4)*
 
-**Returns:** _`Promise<any>`_
+**Returns:** *`Promise<any>`*
 
----
+___
 
-### logResurrectAttribution
+###  logResurrectAttribution
 
-▸ **logResurrectAttribution**(): _`Promise<any>`_
+▸ **logResurrectAttribution**(): *`Promise<any>`*
 
-_Defined in [repositories/attribution.repository.ts:16](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/repositories/attribution.repository.ts#L16)_
+*Defined in [repositories/attribution.repository.ts:16](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/attribution.repository.ts#L16)*
 
-**Returns:** _`Promise<any>`_
+**Returns:** *`Promise<any>`*

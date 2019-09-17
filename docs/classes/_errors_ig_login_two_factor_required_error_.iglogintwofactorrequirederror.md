@@ -6,57 +6,94 @@
 
 ## Hierarchy
 
-- [IgResponseError](_errors_ig_response_error_.igresponseerror.md)‹_[AccountRepositoryLoginErrorResponse](../interfaces/\_responses_account_repository_login_error_response_.accountrepositoryloginerrorresponse.md)\_›
+  * [IgResponseError](_errors_ig_response_error_.igresponseerror.md)‹*[AccountRepositoryLoginErrorResponse](../interfaces/_responses_account_repository_login_error_response_.accountrepositoryloginerrorresponse.md)*›
 
-- **IgLoginTwoFactorRequiredError**
+  * **IgLoginTwoFactorRequiredError**
 
 ## Index
 
 ### Constructors
 
-- [constructor](_errors_ig_login_two_factor_required_error_.iglogintwofactorrequirederror.md#constructor)
+* [constructor](_errors_ig_login_two_factor_required_error_.iglogintwofactorrequirederror.md#constructor)
 
 ### Properties
 
-- [response](_errors_ig_login_two_factor_required_error_.iglogintwofactorrequirederror.md#response)
-- [text](_errors_ig_login_two_factor_required_error_.iglogintwofactorrequirederror.md#text)
+* [message](_errors_ig_login_two_factor_required_error_.iglogintwofactorrequirederror.md#message)
+* [name](_errors_ig_login_two_factor_required_error_.iglogintwofactorrequirederror.md#name)
+* [response](_errors_ig_login_two_factor_required_error_.iglogintwofactorrequirederror.md#response)
+* [stack](_errors_ig_login_two_factor_required_error_.iglogintwofactorrequirederror.md#optional-stack)
+* [text](_errors_ig_login_two_factor_required_error_.iglogintwofactorrequirederror.md#text)
 
 ## Constructors
 
-### constructor
+###  constructor
 
-\+ **new IgLoginTwoFactorRequiredError**(`response`: [IgResponse](../modules/_types_common_types_.md#igresponse)‹_[AccountRepositoryLoginErrorResponse](../interfaces/\_responses_account_repository_login_error_response_.accountrepositoryloginerrorresponse.md)_›): _[IgLoginTwoFactorRequiredError](_errors_ig_login_two_factor_required_error_.iglogintwofactorrequirederror.md)\_
+\+ **new IgLoginTwoFactorRequiredError**(`response`: [IgResponse](../modules/_types_common_types_.md#igresponse)‹*[AccountRepositoryLoginErrorResponse](../interfaces/_responses_account_repository_login_error_response_.accountrepositoryloginerrorresponse.md)*›): *[IgLoginTwoFactorRequiredError](_errors_ig_login_two_factor_required_error_.iglogintwofactorrequirederror.md)*
 
-_Inherited from [IgResponseError](\_errors_ig_response_error_.igresponseerror.md).[constructor](_errors_ig_response_error_.igresponseerror.md#constructor)\_
+*Inherited from [IgResponseError](_errors_ig_response_error_.igresponseerror.md).[constructor](_errors_ig_response_error_.igresponseerror.md#constructor)*
 
-_Overrides [IgClientError](\_errors_ig_client_error_.igclienterror.md).[constructor](_errors_ig_client_error_.igclienterror.md#constructor)\_
+*Overrides [IgClientError](_errors_ig_client_error_.igclienterror.md).[constructor](_errors_ig_client_error_.igclienterror.md#constructor)*
 
-_Defined in [errors/ig-response.error.ts:9](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/errors/ig-response.error.ts#L9)_
+*Defined in [errors/ig-response.error.ts:9](https://github.com/dilame/instagram-private-api/blob/173bc62/src/errors/ig-response.error.ts#L9)*
 
 **Parameters:**
 
-| Name       | Type                                                                                                                                                                                                             |
-| ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `response` | [IgResponse](../modules/_types_common_types_.md#igresponse)‹_[AccountRepositoryLoginErrorResponse](../interfaces/\_responses_account_repository_login_error_response_.accountrepositoryloginerrorresponse.md)\_› |
+Name | Type |
+------ | ------ |
+`response` | [IgResponse](../modules/_types_common_types_.md#igresponse)‹*[AccountRepositoryLoginErrorResponse](../interfaces/_responses_account_repository_login_error_response_.accountrepositoryloginerrorresponse.md)*› |
 
-**Returns:** _[IgLoginTwoFactorRequiredError](\_errors_ig_login_two_factor_required_error_.iglogintwofactorrequirederror.md)\_
+**Returns:** *[IgLoginTwoFactorRequiredError](_errors_ig_login_two_factor_required_error_.iglogintwofactorrequirederror.md)*
 
 ## Properties
 
-### response
+###  message
 
-• **response**: _[IgResponse](../modules/\_types_common_types_.md#igresponse)‹_[AccountRepositoryLoginErrorResponse](../interfaces/\_responses_account_repository_login_error_response_.accountrepositoryloginerrorresponse.md)_›_
+• **message**: *string*
 
-_Inherited from [IgResponseError](\_errors_ig_response_error_.igresponseerror.md).[response](_errors_ig_response_error_.igresponseerror.md#response)\_
+*Inherited from void*
 
-_Defined in [errors/ig-response.error.ts:9](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/errors/ig-response.error.ts#L9)_
+Defined in /Users/bowzee/WebstormProjects/instagram-private-api/node_modules/typedoc/node_modules/typescript/lib/lib.es5.d.ts:974
 
----
+___
 
-### text
+###  name
 
-• **text**: _string_
+• **name**: *string*
 
-_Inherited from [IgResponseError](\_errors_ig_response_error_.igresponseerror.md).[text](_errors_ig_response_error_.igresponseerror.md#text)\_
+*Inherited from void*
 
-_Defined in [errors/ig-response.error.ts:7](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/errors/ig-response.error.ts#L7)_
+*Overrides void*
+
+Defined in /Users/bowzee/WebstormProjects/instagram-private-api/node_modules/ts-custom-error/dist/custom-error.d.ts:2
+
+___
+
+###  response
+
+• **response**: *[IgResponse](../modules/_types_common_types_.md#igresponse)‹*[AccountRepositoryLoginErrorResponse](../interfaces/_responses_account_repository_login_error_response_.accountrepositoryloginerrorresponse.md)*›*
+
+*Inherited from [IgResponseError](_errors_ig_response_error_.igresponseerror.md).[response](_errors_ig_response_error_.igresponseerror.md#response)*
+
+*Defined in [errors/ig-response.error.ts:9](https://github.com/dilame/instagram-private-api/blob/173bc62/src/errors/ig-response.error.ts#L9)*
+
+___
+
+### `Optional` stack
+
+• **stack**? : *string*
+
+*Inherited from void*
+
+*Overrides void*
+
+Defined in /Users/bowzee/WebstormProjects/instagram-private-api/node_modules/typedoc/node_modules/typescript/lib/lib.es5.d.ts:975
+
+___
+
+###  text
+
+• **text**: *string*
+
+*Inherited from [IgResponseError](_errors_ig_response_error_.igresponseerror.md).[text](_errors_ig_response_error_.igresponseerror.md#text)*
+
+*Defined in [errors/ig-response.error.ts:7](https://github.com/dilame/instagram-private-api/blob/173bc62/src/errors/ig-response.error.ts#L7)*

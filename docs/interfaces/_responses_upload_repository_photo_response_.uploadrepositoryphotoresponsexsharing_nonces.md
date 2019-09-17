@@ -6,4 +6,4 @@
 
 ## Hierarchy
 
-- **UploadRepositoryPhotoResponseXsharing_nonces**
+* **UploadRepositoryPhotoResponseXsharing_nonces**

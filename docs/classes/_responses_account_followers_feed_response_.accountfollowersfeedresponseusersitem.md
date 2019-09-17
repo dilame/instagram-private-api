@@ -6,145 +6,145 @@
 
 ## Hierarchy
 
-- [ProfileEntity](_entities_profile_entity_.profileentity.md)
+  * [ProfileEntity](_entities_profile_entity_.profileentity.md)
 
-- **AccountFollowersFeedResponseUsersItem**
+  * **AccountFollowersFeedResponseUsersItem**
 
 ## Index
 
 ### Constructors
 
-- [constructor](_responses_account_followers_feed_response_.accountfollowersfeedresponseusersitem.md#constructor)
+* [constructor](_responses_account_followers_feed_response_.accountfollowersfeedresponseusersitem.md#constructor)
 
 ### Properties
 
-- [full_name](_responses_account_followers_feed_response_.accountfollowersfeedresponseusersitem.md#full_name)
-- [has_anonymous_profile_picture](_responses_account_followers_feed_response_.accountfollowersfeedresponseusersitem.md#has_anonymous_profile_picture)
-- [is_private](_responses_account_followers_feed_response_.accountfollowersfeedresponseusersitem.md#is_private)
-- [is_verified](_responses_account_followers_feed_response_.accountfollowersfeedresponseusersitem.md#is_verified)
-- [latest_reel_media](_responses_account_followers_feed_response_.accountfollowersfeedresponseusersitem.md#optional-latest_reel_media)
-- [pk](_responses_account_followers_feed_response_.accountfollowersfeedresponseusersitem.md#pk)
-- [profile_pic_id](_responses_account_followers_feed_response_.accountfollowersfeedresponseusersitem.md#optional-profile_pic_id)
-- [profile_pic_url](_responses_account_followers_feed_response_.accountfollowersfeedresponseusersitem.md#profile_pic_url)
-- [username](_responses_account_followers_feed_response_.accountfollowersfeedresponseusersitem.md#username)
+* [full_name](_responses_account_followers_feed_response_.accountfollowersfeedresponseusersitem.md#full_name)
+* [has_anonymous_profile_picture](_responses_account_followers_feed_response_.accountfollowersfeedresponseusersitem.md#has_anonymous_profile_picture)
+* [is_private](_responses_account_followers_feed_response_.accountfollowersfeedresponseusersitem.md#is_private)
+* [is_verified](_responses_account_followers_feed_response_.accountfollowersfeedresponseusersitem.md#is_verified)
+* [latest_reel_media](_responses_account_followers_feed_response_.accountfollowersfeedresponseusersitem.md#optional-latest_reel_media)
+* [pk](_responses_account_followers_feed_response_.accountfollowersfeedresponseusersitem.md#pk)
+* [profile_pic_id](_responses_account_followers_feed_response_.accountfollowersfeedresponseusersitem.md#optional-profile_pic_id)
+* [profile_pic_url](_responses_account_followers_feed_response_.accountfollowersfeedresponseusersitem.md#profile_pic_url)
+* [username](_responses_account_followers_feed_response_.accountfollowersfeedresponseusersitem.md#username)
 
 ### Methods
 
-- [checkFollow](_responses_account_followers_feed_response_.accountfollowersfeedresponseusersitem.md#checkfollow)
-- [checkUnfollow](_responses_account_followers_feed_response_.accountfollowersfeedresponseusersitem.md#checkunfollow)
+* [checkFollow](_responses_account_followers_feed_response_.accountfollowersfeedresponseusersitem.md#checkfollow)
+* [checkUnfollow](_responses_account_followers_feed_response_.accountfollowersfeedresponseusersitem.md#checkunfollow)
 
 ## Constructors
 
-### constructor
+###  constructor
 
-\+ **new AccountFollowersFeedResponseUsersItem**(`client`: [IgApiClient](_core_client_.igapiclient.md)): _[AccountFollowersFeedResponseUsersItem](\_responses_account_followers_feed_response_.accountfollowersfeedresponseusersitem.md)\_
+\+ **new AccountFollowersFeedResponseUsersItem**(`client`: [IgApiClient](_core_client_.igapiclient.md)): *[AccountFollowersFeedResponseUsersItem](_responses_account_followers_feed_response_.accountfollowersfeedresponseusersitem.md)*
 
-_Inherited from [Repository](\_core_repository_.repository.md).[constructor](_core_repository_.repository.md#constructor)\_
+*Inherited from [Repository](_core_repository_.repository.md).[constructor](_core_repository_.repository.md#constructor)*
 
-_Defined in [core/repository.ts:6](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/repository.ts#L6)_
+*Defined in [core/repository.ts:6](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/repository.ts#L6)*
 
 **Parameters:**
 
-| Name     | Type                                        |
-| -------- | ------------------------------------------- |
-| `client` | [IgApiClient](_core_client_.igapiclient.md) |
+Name | Type |
+------ | ------ |
+`client` | [IgApiClient](_core_client_.igapiclient.md) |
 
-**Returns:** _[AccountFollowersFeedResponseUsersItem](\_responses_account_followers_feed_response_.accountfollowersfeedresponseusersitem.md)\_
+**Returns:** *[AccountFollowersFeedResponseUsersItem](_responses_account_followers_feed_response_.accountfollowersfeedresponseusersitem.md)*
 
 ## Properties
 
-### full_name
+###  full_name
 
-• **full_name**: _string_
+• **full_name**: *string*
 
-_Defined in [responses/account-followers.feed.response.ts:14](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/account-followers.feed.response.ts#L14)_
+*Defined in [responses/account-followers.feed.response.ts:14](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/account-followers.feed.response.ts#L14)*
 
----
+___
 
-### has_anonymous_profile_picture
+###  has_anonymous_profile_picture
 
-• **has_anonymous_profile_picture**: _boolean_
+• **has_anonymous_profile_picture**: *boolean*
 
-_Defined in [responses/account-followers.feed.response.ts:19](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/account-followers.feed.response.ts#L19)_
+*Defined in [responses/account-followers.feed.response.ts:19](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/account-followers.feed.response.ts#L19)*
 
----
+___
 
-### is_private
+###  is_private
 
-• **is_private**: _boolean_
+• **is_private**: *boolean*
 
-_Defined in [responses/account-followers.feed.response.ts:15](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/account-followers.feed.response.ts#L15)_
+*Defined in [responses/account-followers.feed.response.ts:15](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/account-followers.feed.response.ts#L15)*
 
----
+___
 
-### is_verified
+###  is_verified
 
-• **is_verified**: _boolean_
+• **is_verified**: *boolean*
 
-_Defined in [responses/account-followers.feed.response.ts:18](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/account-followers.feed.response.ts#L18)_
+*Defined in [responses/account-followers.feed.response.ts:18](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/account-followers.feed.response.ts#L18)*
 
----
+___
 
 ### `Optional` latest_reel_media
 
-• **latest_reel_media**? : _number_
+• **latest_reel_media**? : *number*
 
-_Defined in [responses/account-followers.feed.response.ts:20](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/account-followers.feed.response.ts#L20)_
+*Defined in [responses/account-followers.feed.response.ts:20](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/account-followers.feed.response.ts#L20)*
 
----
+___
 
-### pk
+###  pk
 
-• **pk**: _number_
+• **pk**: *number*
 
-_Overrides [ProfileEntity](\_entities_profile_entity_.profileentity.md).[pk](_entities_profile_entity_.profileentity.md#pk)\_
+*Overrides [ProfileEntity](_entities_profile_entity_.profileentity.md).[pk](_entities_profile_entity_.profileentity.md#pk)*
 
-_Defined in [responses/account-followers.feed.response.ts:12](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/account-followers.feed.response.ts#L12)_
+*Defined in [responses/account-followers.feed.response.ts:12](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/account-followers.feed.response.ts#L12)*
 
----
+___
 
 ### `Optional` profile_pic_id
 
-• **profile_pic_id**? : _string_
+• **profile_pic_id**? : *string*
 
-_Defined in [responses/account-followers.feed.response.ts:17](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/account-followers.feed.response.ts#L17)_
+*Defined in [responses/account-followers.feed.response.ts:17](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/account-followers.feed.response.ts#L17)*
 
----
+___
 
-### profile_pic_url
+###  profile_pic_url
 
-• **profile_pic_url**: _string_
+• **profile_pic_url**: *string*
 
-_Defined in [responses/account-followers.feed.response.ts:16](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/account-followers.feed.response.ts#L16)_
+*Defined in [responses/account-followers.feed.response.ts:16](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/account-followers.feed.response.ts#L16)*
 
----
+___
 
-### username
+###  username
 
-• **username**: _string_
+• **username**: *string*
 
-_Defined in [responses/account-followers.feed.response.ts:13](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/account-followers.feed.response.ts#L13)_
+*Defined in [responses/account-followers.feed.response.ts:13](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/account-followers.feed.response.ts#L13)*
 
 ## Methods
 
-### checkFollow
+###  checkFollow
 
-▸ **checkFollow**(): _`Promise<any>`_
+▸ **checkFollow**(): *`Promise<FriendshipRepositoryChangeResponseFriendship_status>`*
 
-_Inherited from [ProfileEntity](\_entities_profile_entity_.profileentity.md).[checkFollow](_entities_profile_entity_.profileentity.md#checkfollow)\_
+*Inherited from [ProfileEntity](_entities_profile_entity_.profileentity.md).[checkFollow](_entities_profile_entity_.profileentity.md#checkfollow)*
 
-_Defined in [entities/profile.entity.ts:5](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/entities/profile.entity.ts#L5)_
+*Defined in [entities/profile.entity.ts:5](https://github.com/dilame/instagram-private-api/blob/173bc62/src/entities/profile.entity.ts#L5)*
 
-**Returns:** _`Promise<any>`_
+**Returns:** *`Promise<FriendshipRepositoryChangeResponseFriendship_status>`*
 
----
+___
 
-### checkUnfollow
+###  checkUnfollow
 
-▸ **checkUnfollow**(): _`Promise<any>`_
+▸ **checkUnfollow**(): *`Promise<FriendshipRepositoryChangeResponseFriendship_status>`*
 
-_Inherited from [ProfileEntity](\_entities_profile_entity_.profileentity.md).[checkUnfollow](_entities_profile_entity_.profileentity.md#checkunfollow)\_
+*Inherited from [ProfileEntity](_entities_profile_entity_.profileentity.md).[checkUnfollow](_entities_profile_entity_.profileentity.md#checkunfollow)*
 
-_Defined in [entities/profile.entity.ts:10](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/entities/profile.entity.ts#L10)_
+*Defined in [entities/profile.entity.ts:10](https://github.com/dilame/instagram-private-api/blob/173bc62/src/entities/profile.entity.ts#L10)*
 
-**Returns:** _`Promise<any>`_
+**Returns:** *`Promise<FriendshipRepositoryChangeResponseFriendship_status>`*

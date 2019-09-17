@@ -6,73 +6,73 @@
 
 ## Hierarchy
 
-- **State**
+* **State**
 
 ## Index
 
 ### Properties
 
-- [adid](_core_state_.state.md#adid)
-- [appVersion](_core_state_.state.md#appversion)
-- [appVersionCode](_core_state_.state.md#appversioncode)
-- [build](_core_state_.state.md#build)
-- [capabilitiesHeader](_core_state_.state.md#capabilitiesheader)
-- [challenge](_core_state_.state.md#challenge)
-- [checkpoint](_core_state_.state.md#checkpoint)
-- [clientSessionIdLifetime](_core_state_.state.md#clientsessionidlifetime)
-- [connectionTypeHeader](_core_state_.state.md#connectiontypeheader)
-- [cookieJar](_core_state_.state.md#cookiejar)
-- [cookieStore](_core_state_.state.md#cookiestore)
-- [deviceId](_core_state_.state.md#deviceid)
-- [deviceString](_core_state_.state.md#devicestring)
-- [experiments](_core_state_.state.md#experiments)
-- [fbAnalyticsApplicationId](_core_state_.state.md#fbanalyticsapplicationid)
-- [fbOrcaApplicationId](_core_state_.state.md#fborcaapplicationid)
-- [fbOtaFields](_core_state_.state.md#fbotafields)
-- [language](_core_state_.state.md#language)
-- [loginExperiments](_core_state_.state.md#loginexperiments)
-- [phoneId](_core_state_.state.md#phoneid)
-- [pigeonSessionIdLifetime](_core_state_.state.md#pigeonsessionidlifetime)
-- [proxyUrl](_core_state_.state.md#proxyurl)
-- [radioType](_core_state_.state.md#radiotype)
-- [signatureKey](_core_state_.state.md#signaturekey)
-- [signatureVersion](_core_state_.state.md#signatureversion)
-- [supportedCapabilities](_core_state_.state.md#supportedcapabilities)
-- [timezoneOffset](_core_state_.state.md#timezoneoffset)
-- [userBreadcrumbKey](_core_state_.state.md#userbreadcrumbkey)
-- [uuid](_core_state_.state.md#uuid)
+* [adid](_core_state_.state.md#adid)
+* [appVersion](_core_state_.state.md#appversion)
+* [appVersionCode](_core_state_.state.md#appversioncode)
+* [build](_core_state_.state.md#build)
+* [capabilitiesHeader](_core_state_.state.md#capabilitiesheader)
+* [challenge](_core_state_.state.md#challenge)
+* [checkpoint](_core_state_.state.md#checkpoint)
+* [clientSessionIdLifetime](_core_state_.state.md#clientsessionidlifetime)
+* [connectionTypeHeader](_core_state_.state.md#connectiontypeheader)
+* [cookieJar](_core_state_.state.md#cookiejar)
+* [cookieStore](_core_state_.state.md#cookiestore)
+* [deviceId](_core_state_.state.md#deviceid)
+* [deviceString](_core_state_.state.md#devicestring)
+* [experiments](_core_state_.state.md#experiments)
+* [fbAnalyticsApplicationId](_core_state_.state.md#fbanalyticsapplicationid)
+* [fbOrcaApplicationId](_core_state_.state.md#fborcaapplicationid)
+* [fbOtaFields](_core_state_.state.md#fbotafields)
+* [language](_core_state_.state.md#language)
+* [loginExperiments](_core_state_.state.md#loginexperiments)
+* [phoneId](_core_state_.state.md#phoneid)
+* [pigeonSessionIdLifetime](_core_state_.state.md#pigeonsessionidlifetime)
+* [proxyUrl](_core_state_.state.md#proxyurl)
+* [radioType](_core_state_.state.md#radiotype)
+* [signatureKey](_core_state_.state.md#signaturekey)
+* [signatureVersion](_core_state_.state.md#signatureversion)
+* [supportedCapabilities](_core_state_.state.md#supportedcapabilities)
+* [timezoneOffset](_core_state_.state.md#timezoneoffset)
+* [userBreadcrumbKey](_core_state_.state.md#userbreadcrumbkey)
+* [uuid](_core_state_.state.md#uuid)
 
 ### Accessors
 
-- [appUserAgent](_core_state_.state.md#appuseragent)
-- [batteryLevel](_core_state_.state.md#batterylevel)
-- [challengeUrl](_core_state_.state.md#challengeurl)
-- [clientSessionId](_core_state_.state.md#clientsessionid)
-- [cookieCsrfToken](_core_state_.state.md#cookiecsrftoken)
-- [cookieUserId](_core_state_.state.md#cookieuserid)
-- [cookieUsername](_core_state_.state.md#cookieusername)
-- [devicePayload](_core_state_.state.md#devicepayload)
-- [isCharging](_core_state_.state.md#ischarging)
-- [pigeonSessionId](_core_state_.state.md#pigeonsessionid)
-- [webUserAgent](_core_state_.state.md#webuseragent)
+* [appUserAgent](_core_state_.state.md#appuseragent)
+* [batteryLevel](_core_state_.state.md#batterylevel)
+* [challengeUrl](_core_state_.state.md#challengeurl)
+* [clientSessionId](_core_state_.state.md#clientsessionid)
+* [cookieCsrfToken](_core_state_.state.md#cookiecsrftoken)
+* [cookieUserId](_core_state_.state.md#cookieuserid)
+* [cookieUsername](_core_state_.state.md#cookieusername)
+* [devicePayload](_core_state_.state.md#devicepayload)
+* [isCharging](_core_state_.state.md#ischarging)
+* [pigeonSessionId](_core_state_.state.md#pigeonsessionid)
+* [webUserAgent](_core_state_.state.md#webuseragent)
 
 ### Methods
 
-- [deserializeCookieJar](_core_state_.state.md#deserializecookiejar)
-- [extractCookie](_core_state_.state.md#extractcookie)
-- [extractCookieValue](_core_state_.state.md#extractcookievalue)
-- [extractUserId](_core_state_.state.md#extractuserid)
-- [generateDevice](_core_state_.state.md#generatedevice)
-- [isExperimentEnabled](_core_state_.state.md#isexperimentenabled)
-- [serializeCookieJar](_core_state_.state.md#serializecookiejar)
+* [deserializeCookieJar](_core_state_.state.md#deserializecookiejar)
+* [extractCookie](_core_state_.state.md#extractcookie)
+* [extractCookieValue](_core_state_.state.md#extractcookievalue)
+* [extractUserId](_core_state_.state.md#extractuserid)
+* [generateDevice](_core_state_.state.md#generatedevice)
+* [isExperimentEnabled](_core_state_.state.md#isexperimentenabled)
+* [serializeCookieJar](_core_state_.state.md#serializecookiejar)
 
 ## Properties
 
-### adid
+###  adid
 
-• **adid**: _string_
+• **adid**: *string*
 
-_Defined in [core/state.ts:54](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/state.ts#L54)_
+*Defined in [core/state.ts:54](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L54)*
 
 Google Play Advertising ID.
 
@@ -81,267 +81,267 @@ Play services for use in Google Play apps. Used by Instagram.
 
 **`see`** https://support.google.com/googleplay/android-developer/answer/6048248?hl=en
 
----
+___
 
-### appVersion
+###  appVersion
 
-• **appVersion**: _string_ = APP_VERSION
+• **appVersion**: *string* =  APP_VERSION
 
-_Defined in [core/state.ts:29](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/state.ts#L29)_
+*Defined in [core/state.ts:29](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L29)*
 
----
+___
 
-### appVersionCode
+###  appVersionCode
 
-• **appVersionCode**: _string_ = APP_VERSION_CODE
+• **appVersionCode**: *string* =  APP_VERSION_CODE
 
-_Defined in [core/state.ts:30](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/state.ts#L30)_
+*Defined in [core/state.ts:30](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L30)*
 
----
+___
 
-### build
+###  build
 
-• **build**: _string_
+• **build**: *string*
 
-_Defined in [core/state.ts:43](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/state.ts#L43)_
+*Defined in [core/state.ts:43](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L43)*
 
----
+___
 
-### capabilitiesHeader
+###  capabilitiesHeader
 
-• **capabilitiesHeader**: _string_ = "3brTvw=="
+• **capabilitiesHeader**: *string* = "3brTvw=="
 
-_Defined in [core/state.ts:40](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/state.ts#L40)_
+*Defined in [core/state.ts:40](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L40)*
 
----
+___
 
-### challenge
+###  challenge
 
-• **challenge**: _[ChallengeStateResponse](../interfaces/\_responses_challenge_state_response_.challengestateresponse.md) | null\_ = null
+• **challenge**: *[ChallengeStateResponse](../interfaces/_responses_challenge_state_response_.challengestateresponse.md) | null* =  null
 
-_Defined in [core/state.ts:60](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/state.ts#L60)_
+*Defined in [core/state.ts:60](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L60)*
 
----
+___
 
-### checkpoint
+###  checkpoint
 
-• **checkpoint**: _[CheckpointResponse](../interfaces/\_responses_checkpoint_response_.checkpointresponse.md) | null\_ = null
+• **checkpoint**: *[CheckpointResponse](../interfaces/_responses_checkpoint_response_.checkpointresponse.md) | null* =  null
 
-_Defined in [core/state.ts:59](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/state.ts#L59)_
+*Defined in [core/state.ts:59](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L59)*
 
----
+___
 
-### clientSessionIdLifetime
+###  clientSessionIdLifetime
 
-• **clientSessionIdLifetime**: _number_ = 1200000
+• **clientSessionIdLifetime**: *number* = 1200000
 
-_Defined in [core/state.ts:61](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/state.ts#L61)_
+*Defined in [core/state.ts:61](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L61)*
 
----
+___
 
-### connectionTypeHeader
+###  connectionTypeHeader
 
-• **connectionTypeHeader**: _string_ = "WIFI"
+• **connectionTypeHeader**: *string* = "WIFI"
 
-_Defined in [core/state.ts:41](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/state.ts#L41)_
+*Defined in [core/state.ts:41](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L41)*
 
----
+___
 
-### cookieJar
+###  cookieJar
 
-• **cookieJar**: _any_ = jar(this.cookieStore)
+• **cookieJar**: *`CookieJar`* =  jar(this.cookieStore)
 
-_Defined in [core/state.ts:58](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/state.ts#L58)_
+*Defined in [core/state.ts:58](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L58)*
 
----
+___
 
-### cookieStore
+###  cookieStore
 
-• **cookieStore**: _`MemoryCookieStore`_ = new MemoryCookieStore()
+• **cookieStore**: *`MemoryCookieStore`* =  new MemoryCookieStore()
 
-_Defined in [core/state.ts:57](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/state.ts#L57)_
+*Defined in [core/state.ts:57](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L57)*
 
----
+___
 
-### deviceId
+###  deviceId
 
-• **deviceId**: _string_
+• **deviceId**: *string*
 
-_Defined in [core/state.ts:55](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/state.ts#L55)_
+*Defined in [core/state.ts:55](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L55)*
 
----
+___
 
-### deviceString
+###  deviceString
 
-• **deviceString**: _string_
+• **deviceString**: *string*
 
-_Defined in [core/state.ts:42](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/state.ts#L42)_
+*Defined in [core/state.ts:42](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L42)*
 
----
+___
 
-### experiments
+###  experiments
 
-• **experiments**: _string_ = EXPERIMENTS
+• **experiments**: *string* =  EXPERIMENTS
 
-_Defined in [core/state.ts:35](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/state.ts#L35)_
+*Defined in [core/state.ts:35](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L35)*
 
----
+___
 
-### fbAnalyticsApplicationId
+###  fbAnalyticsApplicationId
 
-• **fbAnalyticsApplicationId**: _string_ = FACEBOOK_ANALYTICS_APPLICATION_ID
+• **fbAnalyticsApplicationId**: *string* =  FACEBOOK_ANALYTICS_APPLICATION_ID
 
-_Defined in [core/state.ts:31](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/state.ts#L31)_
+*Defined in [core/state.ts:31](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L31)*
 
----
+___
 
-### fbOrcaApplicationId
+###  fbOrcaApplicationId
 
-• **fbOrcaApplicationId**: _string_ = FACEBOOK_ORCA_APPLICATION_ID
+• **fbOrcaApplicationId**: *string* =  FACEBOOK_ORCA_APPLICATION_ID
 
-_Defined in [core/state.ts:33](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/state.ts#L33)_
+*Defined in [core/state.ts:33](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L33)*
 
----
+___
 
-### fbOtaFields
+###  fbOtaFields
 
-• **fbOtaFields**: _string_ = FACEBOOK_OTA_FIELDS
+• **fbOtaFields**: *string* =  FACEBOOK_OTA_FIELDS
 
-_Defined in [core/state.ts:32](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/state.ts#L32)_
+*Defined in [core/state.ts:32](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L32)*
 
----
+___
 
-### language
+###  language
 
-• **language**: _string_ = "en_US"
+• **language**: *string* = "en_US"
 
-_Defined in [core/state.ts:37](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/state.ts#L37)_
+*Defined in [core/state.ts:37](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L37)*
 
----
+___
 
-### loginExperiments
+###  loginExperiments
 
-• **loginExperiments**: _string_ = LOGIN_EXPERIMENTS
+• **loginExperiments**: *string* =  LOGIN_EXPERIMENTS
 
-_Defined in [core/state.ts:34](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/state.ts#L34)_
+*Defined in [core/state.ts:34](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L34)*
 
----
+___
 
-### phoneId
+###  phoneId
 
-• **phoneId**: _string_
+• **phoneId**: *string*
 
-_Defined in [core/state.ts:45](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/state.ts#L45)_
+*Defined in [core/state.ts:45](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L45)*
 
----
+___
 
-### pigeonSessionIdLifetime
+###  pigeonSessionIdLifetime
 
-• **pigeonSessionIdLifetime**: _number_ = 1200000
+• **pigeonSessionIdLifetime**: *number* = 1200000
 
-_Defined in [core/state.ts:62](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/state.ts#L62)_
+*Defined in [core/state.ts:62](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L62)*
 
----
+___
 
-### proxyUrl
+###  proxyUrl
 
-• **proxyUrl**: _string_
+• **proxyUrl**: *string*
 
-_Defined in [core/state.ts:56](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/state.ts#L56)_
+*Defined in [core/state.ts:56](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L56)*
 
----
+___
 
-### radioType
+###  radioType
 
-• **radioType**: _string_ = "wifi-none"
+• **radioType**: *string* = "wifi-none"
 
-_Defined in [core/state.ts:39](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/state.ts#L39)_
+*Defined in [core/state.ts:39](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L39)*
 
----
+___
 
-### signatureKey
+###  signatureKey
 
-• **signatureKey**: _string_ = SIGNATURE_KEY
+• **signatureKey**: *string* =  SIGNATURE_KEY
 
-_Defined in [core/state.ts:26](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/state.ts#L26)_
+*Defined in [core/state.ts:26](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L26)*
 
----
+___
 
-### signatureVersion
+###  signatureVersion
 
-• **signatureVersion**: _string_ = SIGNATURE_VERSION
+• **signatureVersion**: *string* =  SIGNATURE_VERSION
 
-_Defined in [core/state.ts:27](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/state.ts#L27)_
+*Defined in [core/state.ts:27](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L27)*
 
----
+___
 
-### supportedCapabilities
+###  supportedCapabilities
 
-• **supportedCapabilities**: _any_ = supportedCapabilities
+• **supportedCapabilities**: *object | object[]* =  supportedCapabilities
 
-_Defined in [core/state.ts:36](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/state.ts#L36)_
+*Defined in [core/state.ts:36](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L36)*
 
----
+___
 
-### timezoneOffset
+###  timezoneOffset
 
-• **timezoneOffset**: _string_ = String(new Date().getTimezoneOffset() \* -60)
+• **timezoneOffset**: *string* =  String(new Date().getTimezoneOffset() * -60)
 
-_Defined in [core/state.ts:38](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/state.ts#L38)_
+*Defined in [core/state.ts:38](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L38)*
 
----
+___
 
-### userBreadcrumbKey
+###  userBreadcrumbKey
 
-• **userBreadcrumbKey**: _string_ = BREADCRUMB_KEY
+• **userBreadcrumbKey**: *string* =  BREADCRUMB_KEY
 
-_Defined in [core/state.ts:28](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/state.ts#L28)_
+*Defined in [core/state.ts:28](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L28)*
 
----
+___
 
-### uuid
+###  uuid
 
-• **uuid**: _string_
+• **uuid**: *string*
 
-_Defined in [core/state.ts:44](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/state.ts#L44)_
+*Defined in [core/state.ts:44](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L44)*
 
 ## Accessors
 
-### appUserAgent
+###  appUserAgent
 
-• **get appUserAgent**(): _string_
+• **get appUserAgent**(): *string*
 
-_Defined in [core/state.ts:80](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/state.ts#L80)_
+*Defined in [core/state.ts:80](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L80)*
 
-**Returns:** _string_
+**Returns:** *string*
 
----
+___
 
-### batteryLevel
+###  batteryLevel
 
-• **get batteryLevel**(): _number_
+• **get batteryLevel**(): *number*
 
-_Defined in [core/state.ts:105](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/state.ts#L105)_
+*Defined in [core/state.ts:105](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L105)*
 
-**Returns:** _number_
+**Returns:** *number*
 
----
+___
 
-### challengeUrl
+###  challengeUrl
 
-• **get challengeUrl**(): _string_
+• **get challengeUrl**(): *string*
 
-_Defined in [core/state.ts:116](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/state.ts#L116)_
+*Defined in [core/state.ts:116](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L116)*
 
-**Returns:** _string_
+**Returns:** *string*
 
----
+___
 
-### clientSessionId
+###  clientSessionId
 
-• **get clientSessionId**(): _string_
+• **get clientSessionId**(): *string*
 
-_Defined in [core/state.ts:72](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/state.ts#L72)_
+*Defined in [core/state.ts:72](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L72)*
 
 The current application session ID.
 
@@ -350,174 +350,174 @@ user closes and re-opens the Instagram application or switches account.
 
 We will update it once an hour
 
-**Returns:** _string_
+**Returns:** *string*
 
----
+___
 
-### cookieCsrfToken
+###  cookieCsrfToken
 
-• **get cookieCsrfToken**(): _string_
+• **get cookieCsrfToken**(): *string*
 
-_Defined in [core/state.ts:123](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/state.ts#L123)_
+*Defined in [core/state.ts:123](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L123)*
 
-**Returns:** _string_
+**Returns:** *string*
 
----
+___
 
-### cookieUserId
+###  cookieUserId
 
-• **get cookieUserId**(): _string_
+• **get cookieUserId**(): *string*
 
-_Defined in [core/state.ts:131](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/state.ts#L131)_
+*Defined in [core/state.ts:131](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L131)*
 
-**Returns:** _string_
+**Returns:** *string*
 
----
+___
 
-### cookieUsername
+###  cookieUsername
 
-• **get cookieUsername**(): _string_
+• **get cookieUsername**(): *string*
 
-_Defined in [core/state.ts:135](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/state.ts#L135)_
+*Defined in [core/state.ts:135](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L135)*
 
-**Returns:** _string_
+**Returns:** *string*
 
----
+___
 
-### devicePayload
+###  devicePayload
 
-• **get devicePayload**(): _object_
+• **get devicePayload**(): *object*
 
-_Defined in [core/state.ts:92](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/state.ts#L92)_
+*Defined in [core/state.ts:92](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L92)*
 
-**Returns:** _object_
+**Returns:** *object*
 
----
+___
 
-### isCharging
+###  isCharging
 
-• **get isCharging**(): _boolean_
+• **get isCharging**(): *boolean*
 
-_Defined in [core/state.ts:111](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/state.ts#L111)_
+*Defined in [core/state.ts:111](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L111)*
 
-**Returns:** _boolean_
+**Returns:** *boolean*
 
----
+___
 
-### pigeonSessionId
+###  pigeonSessionId
 
-• **get pigeonSessionId**(): _string_
+• **get pigeonSessionId**(): *string*
 
-_Defined in [core/state.ts:76](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/state.ts#L76)_
+*Defined in [core/state.ts:76](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L76)*
 
-**Returns:** _string_
+**Returns:** *string*
 
----
+___
 
-### webUserAgent
+###  webUserAgent
 
-• **get webUserAgent**(): _string_
+• **get webUserAgent**(): *string*
 
-_Defined in [core/state.ts:84](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/state.ts#L84)_
+*Defined in [core/state.ts:84](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L84)*
 
-**Returns:** _string_
+**Returns:** *string*
 
 ## Methods
 
-### deserializeCookieJar
+###  deserializeCookieJar
 
-▸ **deserializeCookieJar**(`cookies`: string): _`Promise<void>`_
+▸ **deserializeCookieJar**(`cookies`: string): *`Promise<void>`*
 
-_Defined in [core/state.ts:167](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/state.ts#L167)_
-
-**Parameters:**
-
-| Name      | Type   |
-| --------- | ------ |
-| `cookies` | string |
-
-**Returns:** _`Promise<void>`_
-
----
-
-### extractCookie
-
-▸ **extractCookie**(`key`: string): _`Cookie` | null_
-
-_Defined in [core/state.ts:143](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/state.ts#L143)_
+*Defined in [core/state.ts:167](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L167)*
 
 **Parameters:**
 
-| Name  | Type   |
-| ----- | ------ |
-| `key` | string |
+Name | Type |
+------ | ------ |
+`cookies` | string |
 
-**Returns:** _`Cookie` | null_
+**Returns:** *`Promise<void>`*
 
----
+___
 
-### extractCookieValue
+###  extractCookie
 
-▸ **extractCookieValue**(`key`: string): _string_
+▸ **extractCookie**(`key`: string): *`Cookie` | null*
 
-_Defined in [core/state.ts:148](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/state.ts#L148)_
-
-**Parameters:**
-
-| Name  | Type   |
-| ----- | ------ |
-| `key` | string |
-
-**Returns:** _string_
-
----
-
-### extractUserId
-
-▸ **extractUserId**(): _string_
-
-_Defined in [core/state.ts:156](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/state.ts#L156)_
-
-**Returns:** _string_
-
----
-
-### generateDevice
-
-▸ **generateDevice**(`seed`: string): _void_
-
-_Defined in [core/state.ts:175](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/state.ts#L175)_
+*Defined in [core/state.ts:143](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L143)*
 
 **Parameters:**
 
-| Name   | Type   |
-| ------ | ------ |
-| `seed` | string |
+Name | Type |
+------ | ------ |
+`key` | string |
 
-**Returns:** _void_
+**Returns:** *`Cookie` | null*
 
----
+___
 
-### isExperimentEnabled
+###  extractCookieValue
 
-▸ **isExperimentEnabled**(`experiment`: any): _boolean_
+▸ **extractCookieValue**(`key`: string): *string*
 
-_Defined in [core/state.ts:139](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/state.ts#L139)_
+*Defined in [core/state.ts:148](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L148)*
 
 **Parameters:**
 
-| Name         | Type |
-| ------------ | ---- |
-| `experiment` | any  |
+Name | Type |
+------ | ------ |
+`key` | string |
 
-**Returns:** _boolean_
+**Returns:** *string*
 
----
+___
 
-### serializeCookieJar
+###  extractUserId
 
-▸ **serializeCookieJar**(): _`Promise<Serialized>`_
+▸ **extractUserId**(): *string*
 
-_Defined in [core/state.ts:171](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/state.ts#L171)_
+*Defined in [core/state.ts:156](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L156)*
 
-**Returns:** _`Promise<Serialized>`_
+**Returns:** *string*
+
+___
+
+###  generateDevice
+
+▸ **generateDevice**(`seed`: string): *void*
+
+*Defined in [core/state.ts:175](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L175)*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`seed` | string |
+
+**Returns:** *void*
+
+___
+
+###  isExperimentEnabled
+
+▸ **isExperimentEnabled**(`experiment`: any): *boolean*
+
+*Defined in [core/state.ts:139](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L139)*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`experiment` | any |
+
+**Returns:** *boolean*
+
+___
+
+###  serializeCookieJar
+
+▸ **serializeCookieJar**(): *`Promise<Serialized>`*
+
+*Defined in [core/state.ts:171](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L171)*
+
+**Returns:** *`Promise<Serialized>`*

@@ -6,45 +6,45 @@
 
 ## Hierarchy
 
-- **NewsFeedResponseLinksItem**
+* **NewsFeedResponseLinksItem**
 
 ## Index
 
 ### Properties
 
-- [end](_responses_news_feed_response_.newsfeedresponselinksitem.md#end)
-- [id](_responses_news_feed_response_.newsfeedresponselinksitem.md#id)
-- [start](_responses_news_feed_response_.newsfeedresponselinksitem.md#start)
-- [type](_responses_news_feed_response_.newsfeedresponselinksitem.md#type)
+* [end](_responses_news_feed_response_.newsfeedresponselinksitem.md#end)
+* [id](_responses_news_feed_response_.newsfeedresponselinksitem.md#id)
+* [start](_responses_news_feed_response_.newsfeedresponselinksitem.md#start)
+* [type](_responses_news_feed_response_.newsfeedresponselinksitem.md#type)
 
 ## Properties
 
-### end
+###  end
 
-• **end**: _number_
+• **end**: *number*
 
-_Defined in [responses/news.feed.response.ts:32](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/news.feed.response.ts#L32)_
+*Defined in [responses/news.feed.response.ts:32](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/news.feed.response.ts#L32)*
 
----
+___
 
-### id
+###  id
 
-• **id**: _string_
+• **id**: *string*
 
-_Defined in [responses/news.feed.response.ts:34](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/news.feed.response.ts#L34)_
+*Defined in [responses/news.feed.response.ts:34](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/news.feed.response.ts#L34)*
 
----
+___
 
-### start
+###  start
 
-• **start**: _number_
+• **start**: *number*
 
-_Defined in [responses/news.feed.response.ts:31](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/news.feed.response.ts#L31)_
+*Defined in [responses/news.feed.response.ts:31](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/news.feed.response.ts#L31)*
 
----
+___
 
-### type
+###  type
 
-• **type**: _string_
+• **type**: *string*
 
-_Defined in [responses/news.feed.response.ts:33](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/news.feed.response.ts#L33)_
+*Defined in [responses/news.feed.response.ts:33](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/news.feed.response.ts#L33)*

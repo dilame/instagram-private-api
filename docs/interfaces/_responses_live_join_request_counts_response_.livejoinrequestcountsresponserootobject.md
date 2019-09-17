@@ -6,63 +6,63 @@
 
 ## Hierarchy
 
-- **LiveJoinRequestCountsResponseRootObject**
+* **LiveJoinRequestCountsResponseRootObject**
 
 ## Index
 
 ### Properties
 
-- [fetch_ts](_responses_live_join_request_counts_response_.livejoinrequestcountsresponserootobject.md#fetch_ts)
-- [num_new_requests](_responses_live_join_request_counts_response_.livejoinrequestcountsresponserootobject.md#num_new_requests)
-- [num_total_requests](_responses_live_join_request_counts_response_.livejoinrequestcountsresponserootobject.md#num_total_requests)
-- [num_unseen_requests](_responses_live_join_request_counts_response_.livejoinrequestcountsresponserootobject.md#num_unseen_requests)
-- [status](_responses_live_join_request_counts_response_.livejoinrequestcountsresponserootobject.md#status)
-- [users](_responses_live_join_request_counts_response_.livejoinrequestcountsresponserootobject.md#users)
+* [fetch_ts](_responses_live_join_request_counts_response_.livejoinrequestcountsresponserootobject.md#fetch_ts)
+* [num_new_requests](_responses_live_join_request_counts_response_.livejoinrequestcountsresponserootobject.md#num_new_requests)
+* [num_total_requests](_responses_live_join_request_counts_response_.livejoinrequestcountsresponserootobject.md#num_total_requests)
+* [num_unseen_requests](_responses_live_join_request_counts_response_.livejoinrequestcountsresponserootobject.md#num_unseen_requests)
+* [status](_responses_live_join_request_counts_response_.livejoinrequestcountsresponserootobject.md#status)
+* [users](_responses_live_join_request_counts_response_.livejoinrequestcountsresponserootobject.md#users)
 
 ## Properties
 
-### fetch_ts
+###  fetch_ts
 
-• **fetch_ts**: _number_
+• **fetch_ts**: *number*
 
-_Defined in [responses/live.join-request-counts.response.ts:2](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/live.join-request-counts.response.ts#L2)_
+*Defined in [responses/live.join-request-counts.response.ts:2](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.join-request-counts.response.ts#L2)*
 
----
+___
 
-### num_new_requests
+###  num_new_requests
 
-• **num_new_requests**: _number_
+• **num_new_requests**: *number*
 
-_Defined in [responses/live.join-request-counts.response.ts:4](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/live.join-request-counts.response.ts#L4)_
+*Defined in [responses/live.join-request-counts.response.ts:4](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.join-request-counts.response.ts#L4)*
 
----
+___
 
-### num_total_requests
+###  num_total_requests
 
-• **num_total_requests**: _number_
+• **num_total_requests**: *number*
 
-_Defined in [responses/live.join-request-counts.response.ts:3](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/live.join-request-counts.response.ts#L3)_
+*Defined in [responses/live.join-request-counts.response.ts:3](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.join-request-counts.response.ts#L3)*
 
----
+___
 
-### num_unseen_requests
+###  num_unseen_requests
 
-• **num_unseen_requests**: _number_
+• **num_unseen_requests**: *number*
 
-_Defined in [responses/live.join-request-counts.response.ts:6](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/live.join-request-counts.response.ts#L6)_
+*Defined in [responses/live.join-request-counts.response.ts:6](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.join-request-counts.response.ts#L6)*
 
----
+___
 
-### status
+###  status
 
-• **status**: _string_
+• **status**: *string*
 
-_Defined in [responses/live.join-request-counts.response.ts:7](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/live.join-request-counts.response.ts#L7)_
+*Defined in [responses/live.join-request-counts.response.ts:7](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.join-request-counts.response.ts#L7)*
 
----
+___
 
-### users
+###  users
 
-• **users**: _[LiveJoinRequestCountsResponseUsersItem](\_responses_live_join_request_counts_response_.livejoinrequestcountsresponseusersitem.md)[]\_
+• **users**: *[LiveJoinRequestCountsResponseUsersItem](_responses_live_join_request_counts_response_.livejoinrequestcountsresponseusersitem.md)[]*
 
-_Defined in [responses/live.join-request-counts.response.ts:5](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/live.join-request-counts.response.ts#L5)_
+*Defined in [responses/live.join-request-counts.response.ts:5](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.join-request-counts.response.ts#L5)*

@@ -6,45 +6,45 @@
 
 ## Hierarchy
 
-- **MusicSearchFeedResponseRootObject**
+* **MusicSearchFeedResponseRootObject**
 
 ## Index
 
 ### Properties
 
-- [alacorn_session_id](_responses_music_search_feed_response_.musicsearchfeedresponserootobject.md#alacorn_session_id)
-- [items](_responses_music_search_feed_response_.musicsearchfeedresponserootobject.md#items)
-- [page_info](_responses_music_search_feed_response_.musicsearchfeedresponserootobject.md#page_info)
-- [status](_responses_music_search_feed_response_.musicsearchfeedresponserootobject.md#status)
+* [alacorn_session_id](_responses_music_search_feed_response_.musicsearchfeedresponserootobject.md#alacorn_session_id)
+* [items](_responses_music_search_feed_response_.musicsearchfeedresponserootobject.md#items)
+* [page_info](_responses_music_search_feed_response_.musicsearchfeedresponserootobject.md#page_info)
+* [status](_responses_music_search_feed_response_.musicsearchfeedresponserootobject.md#status)
 
 ## Properties
 
-### alacorn_session_id
+###  alacorn_session_id
 
-• **alacorn_session_id**: _string_
+• **alacorn_session_id**: *string*
 
-_Defined in [responses/music-search.feed.response.ts:4](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/music-search.feed.response.ts#L4)_
+*Defined in [responses/music-search.feed.response.ts:4](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/music-search.feed.response.ts#L4)*
 
----
+___
 
-### items
+###  items
 
-• **items**: _[MusicSearchFeedResponseItemsItem](\_responses_music_search_feed_response_.musicsearchfeedresponseitemsitem.md)[]\_
+• **items**: *[MusicSearchFeedResponseItemsItem](_responses_music_search_feed_response_.musicsearchfeedresponseitemsitem.md)[]*
 
-_Defined in [responses/music-search.feed.response.ts:2](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/music-search.feed.response.ts#L2)_
+*Defined in [responses/music-search.feed.response.ts:2](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/music-search.feed.response.ts#L2)*
 
----
+___
 
-### page_info
+###  page_info
 
-• **page_info**: _[MusicSearchFeedResponsePage_info](\_responses_music_search_feed_response_.musicsearchfeedresponsepage*info.md)*
+• **page_info**: *[MusicSearchFeedResponsePage_info](_responses_music_search_feed_response_.musicsearchfeedresponsepage_info.md)*
 
-_Defined in [responses/music-search.feed.response.ts:3](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/music-search.feed.response.ts#L3)_
+*Defined in [responses/music-search.feed.response.ts:3](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/music-search.feed.response.ts#L3)*
 
----
+___
 
-### status
+###  status
 
-• **status**: _string_
+• **status**: *string*
 
-_Defined in [responses/music-search.feed.response.ts:5](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/music-search.feed.response.ts#L5)_
+*Defined in [responses/music-search.feed.response.ts:5](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/music-search.feed.response.ts#L5)*

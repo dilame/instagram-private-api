@@ -6,36 +6,36 @@
 
 ## Hierarchy
 
-- **UploadRepositoryPhotoResponseRootObject**
+* **UploadRepositoryPhotoResponseRootObject**
 
 ## Index
 
 ### Properties
 
-- [status](_responses_upload_repository_photo_response_.uploadrepositoryphotoresponserootobject.md#status)
-- [upload_id](_responses_upload_repository_photo_response_.uploadrepositoryphotoresponserootobject.md#upload_id)
-- [xsharing_nonces](_responses_upload_repository_photo_response_.uploadrepositoryphotoresponserootobject.md#xsharing_nonces)
+* [status](_responses_upload_repository_photo_response_.uploadrepositoryphotoresponserootobject.md#status)
+* [upload_id](_responses_upload_repository_photo_response_.uploadrepositoryphotoresponserootobject.md#upload_id)
+* [xsharing_nonces](_responses_upload_repository_photo_response_.uploadrepositoryphotoresponserootobject.md#xsharing_nonces)
 
 ## Properties
 
-### status
+###  status
 
-• **status**: _string_
+• **status**: *string*
 
-_Defined in [responses/upload.repository.photo.response.ts:4](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/upload.repository.photo.response.ts#L4)_
+*Defined in [responses/upload.repository.photo.response.ts:4](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/upload.repository.photo.response.ts#L4)*
 
----
+___
 
-### upload_id
+###  upload_id
 
-• **upload_id**: _string_
+• **upload_id**: *string*
 
-_Defined in [responses/upload.repository.photo.response.ts:2](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/upload.repository.photo.response.ts#L2)_
+*Defined in [responses/upload.repository.photo.response.ts:2](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/upload.repository.photo.response.ts#L2)*
 
----
+___
 
-### xsharing_nonces
+###  xsharing_nonces
 
-• **xsharing_nonces**: _[UploadRepositoryPhotoResponseXsharing_nonces](\_responses_upload_repository_photo_response_.uploadrepositoryphotoresponsexsharing*nonces.md)*
+• **xsharing_nonces**: *[UploadRepositoryPhotoResponseXsharing_nonces](_responses_upload_repository_photo_response_.uploadrepositoryphotoresponsexsharing_nonces.md)*
 
-_Defined in [responses/upload.repository.photo.response.ts:3](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/upload.repository.photo.response.ts#L3)_
+*Defined in [responses/upload.repository.photo.response.ts:3](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/upload.repository.photo.response.ts#L3)*

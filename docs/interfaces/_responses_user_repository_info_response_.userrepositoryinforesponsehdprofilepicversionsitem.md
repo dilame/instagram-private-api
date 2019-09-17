@@ -6,36 +6,36 @@
 
 ## Hierarchy
 
-- **UserRepositoryInfoResponseHdProfilePicVersionsItem**
+* **UserRepositoryInfoResponseHdProfilePicVersionsItem**
 
 ## Index
 
 ### Properties
 
-- [height](_responses_user_repository_info_response_.userrepositoryinforesponsehdprofilepicversionsitem.md#height)
-- [url](_responses_user_repository_info_response_.userrepositoryinforesponsehdprofilepicversionsitem.md#url)
-- [width](_responses_user_repository_info_response_.userrepositoryinforesponsehdprofilepicversionsitem.md#width)
+* [height](_responses_user_repository_info_response_.userrepositoryinforesponsehdprofilepicversionsitem.md#height)
+* [url](_responses_user_repository_info_response_.userrepositoryinforesponsehdprofilepicversionsitem.md#url)
+* [width](_responses_user_repository_info_response_.userrepositoryinforesponsehdprofilepicversionsitem.md#width)
 
 ## Properties
 
-### height
+###  height
 
-• **height**: _number_
+• **height**: *number*
 
-_Defined in [responses/user.repository.info.response.ts:79](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/user.repository.info.response.ts#L79)_
+*Defined in [responses/user.repository.info.response.ts:79](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/user.repository.info.response.ts#L79)*
 
----
+___
 
-### url
+###  url
 
-• **url**: _string_
+• **url**: *string*
 
-_Defined in [responses/user.repository.info.response.ts:80](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/user.repository.info.response.ts#L80)_
+*Defined in [responses/user.repository.info.response.ts:80](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/user.repository.info.response.ts#L80)*
 
----
+___
 
-### width
+###  width
 
-• **width**: _number_
+• **width**: *number*
 
-_Defined in [responses/user.repository.info.response.ts:78](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/user.repository.info.response.ts#L78)_
+*Defined in [responses/user.repository.info.response.ts:78](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/user.repository.info.response.ts#L78)*

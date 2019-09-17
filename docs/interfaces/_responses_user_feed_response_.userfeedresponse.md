@@ -6,63 +6,63 @@
 
 ## Hierarchy
 
-- **UserFeedResponse**
+* **UserFeedResponse**
 
 ## Index
 
 ### Properties
 
-- [auto_load_more_enabled](_responses_user_feed_response_.userfeedresponse.md#auto_load_more_enabled)
-- [items](_responses_user_feed_response_.userfeedresponse.md#items)
-- [more_available](_responses_user_feed_response_.userfeedresponse.md#more_available)
-- [next_max_id](_responses_user_feed_response_.userfeedresponse.md#next_max_id)
-- [num_results](_responses_user_feed_response_.userfeedresponse.md#num_results)
-- [status](_responses_user_feed_response_.userfeedresponse.md#status)
+* [auto_load_more_enabled](_responses_user_feed_response_.userfeedresponse.md#auto_load_more_enabled)
+* [items](_responses_user_feed_response_.userfeedresponse.md#items)
+* [more_available](_responses_user_feed_response_.userfeedresponse.md#more_available)
+* [next_max_id](_responses_user_feed_response_.userfeedresponse.md#next_max_id)
+* [num_results](_responses_user_feed_response_.userfeedresponse.md#num_results)
+* [status](_responses_user_feed_response_.userfeedresponse.md#status)
 
 ## Properties
 
-### auto_load_more_enabled
+###  auto_load_more_enabled
 
-• **auto_load_more_enabled**: _boolean_
+• **auto_load_more_enabled**: *boolean*
 
-_Defined in [responses/user.feed.response.ts:6](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/user.feed.response.ts#L6)_
+*Defined in [responses/user.feed.response.ts:6](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/user.feed.response.ts#L6)*
 
----
+___
 
-### items
+###  items
 
-• **items**: _[UserFeedResponseItemsItem](\_responses_user_feed_response_.userfeedresponseitemsitem.md)[]\_
+• **items**: *[UserFeedResponseItemsItem](_responses_user_feed_response_.userfeedresponseitemsitem.md)[]*
 
-_Defined in [responses/user.feed.response.ts:2](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/user.feed.response.ts#L2)_
+*Defined in [responses/user.feed.response.ts:2](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/user.feed.response.ts#L2)*
 
----
+___
 
-### more_available
+###  more_available
 
-• **more_available**: _boolean_
+• **more_available**: *boolean*
 
-_Defined in [responses/user.feed.response.ts:4](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/user.feed.response.ts#L4)_
+*Defined in [responses/user.feed.response.ts:4](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/user.feed.response.ts#L4)*
 
----
+___
 
-### next_max_id
+###  next_max_id
 
-• **next_max_id**: _string_
+• **next_max_id**: *string*
 
-_Defined in [responses/user.feed.response.ts:5](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/user.feed.response.ts#L5)_
+*Defined in [responses/user.feed.response.ts:5](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/user.feed.response.ts#L5)*
 
----
+___
 
-### num_results
+###  num_results
 
-• **num_results**: _number_
+• **num_results**: *number*
 
-_Defined in [responses/user.feed.response.ts:3](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/user.feed.response.ts#L3)_
+*Defined in [responses/user.feed.response.ts:3](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/user.feed.response.ts#L3)*
 
----
+___
 
-### status
+###  status
 
-• **status**: _string_
+• **status**: *string*
 
-_Defined in [responses/user.feed.response.ts:7](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/user.feed.response.ts#L7)_
+*Defined in [responses/user.feed.response.ts:7](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/user.feed.response.ts#L7)*

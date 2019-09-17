@@ -6,81 +6,81 @@
 
 ## Hierarchy
 
-- **FriendshipRepositoryChangeResponseFriendship_status**
+* **FriendshipRepositoryChangeResponseFriendship_status**
 
 ## Index
 
 ### Properties
 
-- [blocking](_responses_friendship_repository_change_response_.friendshiprepositorychangeresponsefriendship_status.md#blocking)
-- [followed_by](_responses_friendship_repository_change_response_.friendshiprepositorychangeresponsefriendship_status.md#followed_by)
-- [following](_responses_friendship_repository_change_response_.friendshiprepositorychangeresponsefriendship_status.md#following)
-- [incoming_request](_responses_friendship_repository_change_response_.friendshiprepositorychangeresponsefriendship_status.md#incoming_request)
-- [is_bestie](_responses_friendship_repository_change_response_.friendshiprepositorychangeresponsefriendship_status.md#is_bestie)
-- [is_private](_responses_friendship_repository_change_response_.friendshiprepositorychangeresponsefriendship_status.md#is_private)
-- [muting](_responses_friendship_repository_change_response_.friendshiprepositorychangeresponsefriendship_status.md#muting)
-- [outgoing_request](_responses_friendship_repository_change_response_.friendshiprepositorychangeresponsefriendship_status.md#outgoing_request)
+* [blocking](_responses_friendship_repository_change_response_.friendshiprepositorychangeresponsefriendship_status.md#blocking)
+* [followed_by](_responses_friendship_repository_change_response_.friendshiprepositorychangeresponsefriendship_status.md#followed_by)
+* [following](_responses_friendship_repository_change_response_.friendshiprepositorychangeresponsefriendship_status.md#following)
+* [incoming_request](_responses_friendship_repository_change_response_.friendshiprepositorychangeresponsefriendship_status.md#incoming_request)
+* [is_bestie](_responses_friendship_repository_change_response_.friendshiprepositorychangeresponsefriendship_status.md#is_bestie)
+* [is_private](_responses_friendship_repository_change_response_.friendshiprepositorychangeresponsefriendship_status.md#is_private)
+* [muting](_responses_friendship_repository_change_response_.friendshiprepositorychangeresponsefriendship_status.md#muting)
+* [outgoing_request](_responses_friendship_repository_change_response_.friendshiprepositorychangeresponsefriendship_status.md#outgoing_request)
 
 ## Properties
 
-### blocking
+###  blocking
 
-• **blocking**: _boolean_
+• **blocking**: *boolean*
 
-_Defined in [responses/friendship.repository.change.response.ts:8](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/friendship.repository.change.response.ts#L8)_
+*Defined in [responses/friendship.repository.change.response.ts:8](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/friendship.repository.change.response.ts#L8)*
 
----
+___
 
-### followed_by
+###  followed_by
 
-• **followed_by**: _boolean_
+• **followed_by**: *boolean*
 
-_Defined in [responses/friendship.repository.change.response.ts:7](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/friendship.repository.change.response.ts#L7)_
+*Defined in [responses/friendship.repository.change.response.ts:7](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/friendship.repository.change.response.ts#L7)*
 
----
+___
 
-### following
+###  following
 
-• **following**: _boolean_
+• **following**: *boolean*
 
-_Defined in [responses/friendship.repository.change.response.ts:6](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/friendship.repository.change.response.ts#L6)_
+*Defined in [responses/friendship.repository.change.response.ts:6](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/friendship.repository.change.response.ts#L6)*
 
----
+___
 
-### incoming_request
+###  incoming_request
 
-• **incoming_request**: _boolean_
+• **incoming_request**: *boolean*
 
-_Defined in [responses/friendship.repository.change.response.ts:11](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/friendship.repository.change.response.ts#L11)_
+*Defined in [responses/friendship.repository.change.response.ts:11](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/friendship.repository.change.response.ts#L11)*
 
----
+___
 
-### is_bestie
+###  is_bestie
 
-• **is_bestie**: _boolean_
+• **is_bestie**: *boolean*
 
-_Defined in [responses/friendship.repository.change.response.ts:13](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/friendship.repository.change.response.ts#L13)_
+*Defined in [responses/friendship.repository.change.response.ts:13](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/friendship.repository.change.response.ts#L13)*
 
----
+___
 
-### is_private
+###  is_private
 
-• **is_private**: _boolean_
+• **is_private**: *boolean*
 
-_Defined in [responses/friendship.repository.change.response.ts:10](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/friendship.repository.change.response.ts#L10)_
+*Defined in [responses/friendship.repository.change.response.ts:10](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/friendship.repository.change.response.ts#L10)*
 
----
+___
 
-### muting
+###  muting
 
-• **muting**: _boolean_
+• **muting**: *boolean*
 
-_Defined in [responses/friendship.repository.change.response.ts:9](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/friendship.repository.change.response.ts#L9)_
+*Defined in [responses/friendship.repository.change.response.ts:9](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/friendship.repository.change.response.ts#L9)*
 
----
+___
 
-### outgoing_request
+###  outgoing_request
 
-• **outgoing_request**: _boolean_
+• **outgoing_request**: *boolean*
 
-_Defined in [responses/friendship.repository.change.response.ts:12](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/friendship.repository.change.response.ts#L12)_
+*Defined in [responses/friendship.repository.change.response.ts:12](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/friendship.repository.change.response.ts#L12)*

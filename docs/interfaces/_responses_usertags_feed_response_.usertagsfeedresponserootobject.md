@@ -6,90 +6,90 @@
 
 ## Hierarchy
 
-- **UsertagsFeedResponseRootObject**
+* **UsertagsFeedResponseRootObject**
 
 ## Index
 
 ### Properties
 
-- [auto_load_more_enabled](_responses_usertags_feed_response_.usertagsfeedresponserootobject.md#auto_load_more_enabled)
-- [items](_responses_usertags_feed_response_.usertagsfeedresponserootobject.md#items)
-- [more_available](_responses_usertags_feed_response_.usertagsfeedresponserootobject.md#more_available)
-- [new_photos](_responses_usertags_feed_response_.usertagsfeedresponserootobject.md#new_photos)
-- [next_max_id](_responses_usertags_feed_response_.usertagsfeedresponserootobject.md#next_max_id)
-- [num_results](_responses_usertags_feed_response_.usertagsfeedresponserootobject.md#num_results)
-- [requires_review](_responses_usertags_feed_response_.usertagsfeedresponserootobject.md#requires_review)
-- [status](_responses_usertags_feed_response_.usertagsfeedresponserootobject.md#status)
-- [total_count](_responses_usertags_feed_response_.usertagsfeedresponserootobject.md#total_count)
+* [auto_load_more_enabled](_responses_usertags_feed_response_.usertagsfeedresponserootobject.md#auto_load_more_enabled)
+* [items](_responses_usertags_feed_response_.usertagsfeedresponserootobject.md#items)
+* [more_available](_responses_usertags_feed_response_.usertagsfeedresponserootobject.md#more_available)
+* [new_photos](_responses_usertags_feed_response_.usertagsfeedresponserootobject.md#new_photos)
+* [next_max_id](_responses_usertags_feed_response_.usertagsfeedresponserootobject.md#next_max_id)
+* [num_results](_responses_usertags_feed_response_.usertagsfeedresponserootobject.md#num_results)
+* [requires_review](_responses_usertags_feed_response_.usertagsfeedresponserootobject.md#requires_review)
+* [status](_responses_usertags_feed_response_.usertagsfeedresponserootobject.md#status)
+* [total_count](_responses_usertags_feed_response_.usertagsfeedresponserootobject.md#total_count)
 
 ## Properties
 
-### auto_load_more_enabled
+###  auto_load_more_enabled
 
-• **auto_load_more_enabled**: _boolean_
+• **auto_load_more_enabled**: *boolean*
 
-_Defined in [responses/usertags.feed.response.ts:5](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/usertags.feed.response.ts#L5)_
+*Defined in [responses/usertags.feed.response.ts:5](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/usertags.feed.response.ts#L5)*
 
----
+___
 
-### items
+###  items
 
-• **items**: _[UsertagsFeedResponseItemsItem](\_responses_usertags_feed_response_.usertagsfeedresponseitemsitem.md)[]\_
+• **items**: *[UsertagsFeedResponseItemsItem](_responses_usertags_feed_response_.usertagsfeedresponseitemsitem.md)[]*
 
-_Defined in [responses/usertags.feed.response.ts:2](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/usertags.feed.response.ts#L2)_
+*Defined in [responses/usertags.feed.response.ts:2](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/usertags.feed.response.ts#L2)*
 
----
+___
 
-### more_available
+###  more_available
 
-• **more_available**: _boolean_
+• **more_available**: *boolean*
 
-_Defined in [responses/usertags.feed.response.ts:4](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/usertags.feed.response.ts#L4)_
+*Defined in [responses/usertags.feed.response.ts:4](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/usertags.feed.response.ts#L4)*
 
----
+___
 
-### new_photos
+###  new_photos
 
-• **new_photos**: _any[]_
+• **new_photos**: *any[]*
 
-_Defined in [responses/usertags.feed.response.ts:7](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/usertags.feed.response.ts#L7)_
+*Defined in [responses/usertags.feed.response.ts:7](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/usertags.feed.response.ts#L7)*
 
----
+___
 
-### next_max_id
+###  next_max_id
 
-• **next_max_id**: _string_
+• **next_max_id**: *string*
 
-_Defined in [responses/usertags.feed.response.ts:6](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/usertags.feed.response.ts#L6)_
+*Defined in [responses/usertags.feed.response.ts:6](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/usertags.feed.response.ts#L6)*
 
----
+___
 
-### num_results
+###  num_results
 
-• **num_results**: _number_
+• **num_results**: *number*
 
-_Defined in [responses/usertags.feed.response.ts:3](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/usertags.feed.response.ts#L3)_
+*Defined in [responses/usertags.feed.response.ts:3](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/usertags.feed.response.ts#L3)*
 
----
+___
 
-### requires_review
+###  requires_review
 
-• **requires_review**: _boolean_
+• **requires_review**: *boolean*
 
-_Defined in [responses/usertags.feed.response.ts:8](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/usertags.feed.response.ts#L8)_
+*Defined in [responses/usertags.feed.response.ts:8](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/usertags.feed.response.ts#L8)*
 
----
+___
 
-### status
+###  status
 
-• **status**: _string_
+• **status**: *string*
 
-_Defined in [responses/usertags.feed.response.ts:10](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/usertags.feed.response.ts#L10)_
+*Defined in [responses/usertags.feed.response.ts:10](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/usertags.feed.response.ts#L10)*
 
----
+___
 
-### total_count
+###  total_count
 
-• **total_count**: _number_
+• **total_count**: *number*
 
-_Defined in [responses/usertags.feed.response.ts:9](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/usertags.feed.response.ts#L9)_
+*Defined in [responses/usertags.feed.response.ts:9](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/usertags.feed.response.ts#L9)*

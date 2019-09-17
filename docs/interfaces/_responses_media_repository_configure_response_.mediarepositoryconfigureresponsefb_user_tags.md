@@ -6,18 +6,18 @@
 
 ## Hierarchy
 
-- **MediaRepositoryConfigureResponseFb_user_tags**
+* **MediaRepositoryConfigureResponseFb_user_tags**
 
 ## Index
 
 ### Properties
 
-- [in](_responses_media_repository_configure_response_.mediarepositoryconfigureresponsefb_user_tags.md#in)
+* [in](_responses_media_repository_configure_response_.mediarepositoryconfigureresponsefb_user_tags.md#in)
 
 ## Properties
 
-### in
+###  in
 
-• **in**: _any[]_
+• **in**: *any[]*
 
-_Defined in [responses/media.repository.configure.response.ts:63](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/media.repository.configure.response.ts#L63)_
+*Defined in [responses/media.repository.configure.response.ts:63](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.configure.response.ts#L63)*

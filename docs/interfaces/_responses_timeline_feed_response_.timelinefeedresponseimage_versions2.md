@@ -6,18 +6,18 @@
 
 ## Hierarchy
 
-- **TimelineFeedResponseImage_versions2**
+* **TimelineFeedResponseImage_versions2**
 
 ## Index
 
 ### Properties
 
-- [candidates](_responses_timeline_feed_response_.timelinefeedresponseimage_versions2.md#candidates)
+* [candidates](_responses_timeline_feed_response_.timelinefeedresponseimage_versions2.md#candidates)
 
 ## Properties
 
-### candidates
+###  candidates
 
-• **candidates**: _[TimelineFeedResponseCandidatesItem](\_responses_timeline_feed_response_.timelinefeedresponsecandidatesitem.md)[]\_
+• **candidates**: *[TimelineFeedResponseCandidatesItem](_responses_timeline_feed_response_.timelinefeedresponsecandidatesitem.md)[]*
 
-_Defined in [responses/timeline.feed.response.ts:100](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/timeline.feed.response.ts#L100)_
+*Defined in [responses/timeline.feed.response.ts:100](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/timeline.feed.response.ts#L100)*

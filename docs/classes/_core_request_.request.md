@@ -6,78 +6,78 @@
 
 ## Hierarchy
 
-- **Request**
+* **Request**
 
 ## Index
 
 ### Constructors
 
-- [constructor](_core_request_.request.md#constructor)
+* [constructor](_core_request_.request.md#constructor)
 
 ### Properties
 
-- [defaults](_core_request_.request.md#defaults)
-- [end\$](_core_request_.request.md#end$)
-- [error\$](_core_request_.request.md#error$)
+* [defaults](_core_request_.request.md#defaults)
+* [end$](_core_request_.request.md#end$)
+* [error$](_core_request_.request.md#error$)
 
 ### Methods
 
-- [send](_core_request_.request.md#send)
-- [sign](_core_request_.request.md#sign)
-- [signature](_core_request_.request.md#signature)
-- [userBreadcrumb](_core_request_.request.md#userbreadcrumb)
+* [send](_core_request_.request.md#send)
+* [sign](_core_request_.request.md#sign)
+* [signature](_core_request_.request.md#signature)
+* [userBreadcrumb](_core_request_.request.md#userbreadcrumb)
 
 ### Object literals
 
-- [attemptOptions](_core_request_.request.md#attemptoptions)
+* [attemptOptions](_core_request_.request.md#attemptoptions)
 
 ## Constructors
 
-### constructor
+###  constructor
 
-\+ **new Request**(`client`: [IgApiClient](_core_client_.igapiclient.md)): _[Request](\_core_request_.request.md)\_
+\+ **new Request**(`client`: [IgApiClient](_core_client_.igapiclient.md)): *[Request](_core_request_.request.md)*
 
-_Defined in [core/request.ts:37](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/request.ts#L37)_
+*Defined in [core/request.ts:38](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/request.ts#L38)*
 
 **Parameters:**
 
-| Name     | Type                                        |
-| -------- | ------------------------------------------- |
-| `client` | [IgApiClient](_core_client_.igapiclient.md) |
+Name | Type |
+------ | ------ |
+`client` | [IgApiClient](_core_client_.igapiclient.md) |
 
-**Returns:** _[Request](\_core_request_.request.md)\_
+**Returns:** *[Request](_core_request_.request.md)*
 
 ## Properties
 
-### defaults
+###  defaults
 
-• **defaults**: _`Partial<Options>`_
+• **defaults**: *`Partial<Options>`*
 
-_Defined in [core/request.ts:37](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/request.ts#L37)_
+*Defined in [core/request.ts:38](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/request.ts#L38)*
 
----
+___
 
-### end\$
+###  end$
 
-• **end\$**: _any_ = new Subject()
+• **end$**: *`Subject<unknown>`* =  new Subject()
 
-_Defined in [core/request.ts:32](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/request.ts#L32)_
+*Defined in [core/request.ts:33](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/request.ts#L33)*
 
----
+___
 
-### error\$
+###  error$
 
-• **error\$**: _any_ = new Subject<IgClientError>()
+• **error$**: *`Subject<IgClientError>`* =  new Subject<IgClientError>()
 
-_Defined in [core/request.ts:33](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/request.ts#L33)_
+*Defined in [core/request.ts:34](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/request.ts#L34)*
 
 ## Methods
 
-### send
+###  send
 
-▸ **send**<**T**>(`userOptions`: `Options`): _`Promise<IgResponse<T>>`_
+▸ **send**<**T**>(`userOptions`: `Options`, `onlyCheckHttpStatus?`: boolean): *`Promise<IgResponse<T>>`*
 
-_Defined in [core/request.ts:54](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/request.ts#L54)_
+*Defined in [core/request.ts:55](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/request.ts#L55)*
 
 **Type parameters:**
 
@@ -85,70 +85,71 @@ _Defined in [core/request.ts:54](https://github.com/realinstadude/instagram-priv
 
 **Parameters:**
 
-| Name          | Type      |
-| ------------- | --------- |
-| `userOptions` | `Options` |
+Name | Type |
+------ | ------ |
+`userOptions` | `Options` |
+`onlyCheckHttpStatus?` | boolean |
 
-**Returns:** _`Promise<IgResponse<T>>`_
+**Returns:** *`Promise<IgResponse<T>>`*
 
----
+___
 
-### sign
+###  sign
 
-▸ **sign**(`payload`: `Payload`): _`SignedPost`_
+▸ **sign**(`payload`: `Payload`): *`SignedPost`*
 
-_Defined in [core/request.ts:85](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/request.ts#L85)_
-
-**Parameters:**
-
-| Name      | Type      |
-| --------- | --------- |
-| `payload` | `Payload` |
-
-**Returns:** _`SignedPost`_
-
----
-
-### signature
-
-▸ **signature**(`data`: string): _string_
-
-_Defined in [core/request.ts:79](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/request.ts#L79)_
+*Defined in [core/request.ts:86](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/request.ts#L86)*
 
 **Parameters:**
 
-| Name   | Type   |
-| ------ | ------ |
-| `data` | string |
+Name | Type |
+------ | ------ |
+`payload` | `Payload` |
 
-**Returns:** _string_
+**Returns:** *`SignedPost`*
 
----
+___
 
-### userBreadcrumb
+###  signature
 
-▸ **userBreadcrumb**(`size`: number): _string_
+▸ **signature**(`data`: string): *string*
 
-_Defined in [core/request.ts:94](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/request.ts#L94)_
+*Defined in [core/request.ts:80](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/request.ts#L80)*
 
 **Parameters:**
 
-| Name   | Type   |
-| ------ | ------ |
-| `size` | number |
+Name | Type |
+------ | ------ |
+`data` | string |
 
-**Returns:** _string_
+**Returns:** *string*
+
+___
+
+###  userBreadcrumb
+
+▸ **userBreadcrumb**(`size`: number): *string*
+
+*Defined in [core/request.ts:95](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/request.ts#L95)*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`size` | number |
+
+**Returns:** *string*
 
 ## Object literals
 
-### attemptOptions
+###  attemptOptions
 
-### ▪ **attemptOptions**: _object_
+### ▪ **attemptOptions**: *object*
 
-_Defined in [core/request.ts:34](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/request.ts#L34)_
+*Defined in [core/request.ts:35](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/request.ts#L35)*
 
-### maxAttempts
+###  maxAttempts
 
-• **maxAttempts**: _number_ = 1
+• **maxAttempts**: *number* = 1
 
-_Defined in [core/request.ts:35](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/request.ts#L35)_
+*Defined in [core/request.ts:36](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/request.ts#L36)*

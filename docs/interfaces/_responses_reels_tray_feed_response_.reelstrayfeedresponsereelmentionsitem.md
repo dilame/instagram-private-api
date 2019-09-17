@@ -6,108 +6,108 @@
 
 ## Hierarchy
 
-- **ReelsTrayFeedResponseReelMentionsItem**
+* **ReelsTrayFeedResponseReelMentionsItem**
 
 ## Index
 
 ### Properties
 
-- [display_type](_responses_reels_tray_feed_response_.reelstrayfeedresponsereelmentionsitem.md#display_type)
-- [height](_responses_reels_tray_feed_response_.reelstrayfeedresponsereelmentionsitem.md#height)
-- [is_hidden](_responses_reels_tray_feed_response_.reelstrayfeedresponsereelmentionsitem.md#is_hidden)
-- [is_pinned](_responses_reels_tray_feed_response_.reelstrayfeedresponsereelmentionsitem.md#is_pinned)
-- [is_sticker](_responses_reels_tray_feed_response_.reelstrayfeedresponsereelmentionsitem.md#is_sticker)
-- [rotation](_responses_reels_tray_feed_response_.reelstrayfeedresponsereelmentionsitem.md#rotation)
-- [user](_responses_reels_tray_feed_response_.reelstrayfeedresponsereelmentionsitem.md#user)
-- [width](_responses_reels_tray_feed_response_.reelstrayfeedresponsereelmentionsitem.md#width)
-- [x](_responses_reels_tray_feed_response_.reelstrayfeedresponsereelmentionsitem.md#x)
-- [y](_responses_reels_tray_feed_response_.reelstrayfeedresponsereelmentionsitem.md#y)
-- [z](_responses_reels_tray_feed_response_.reelstrayfeedresponsereelmentionsitem.md#z)
+* [display_type](_responses_reels_tray_feed_response_.reelstrayfeedresponsereelmentionsitem.md#display_type)
+* [height](_responses_reels_tray_feed_response_.reelstrayfeedresponsereelmentionsitem.md#height)
+* [is_hidden](_responses_reels_tray_feed_response_.reelstrayfeedresponsereelmentionsitem.md#is_hidden)
+* [is_pinned](_responses_reels_tray_feed_response_.reelstrayfeedresponsereelmentionsitem.md#is_pinned)
+* [is_sticker](_responses_reels_tray_feed_response_.reelstrayfeedresponsereelmentionsitem.md#is_sticker)
+* [rotation](_responses_reels_tray_feed_response_.reelstrayfeedresponsereelmentionsitem.md#rotation)
+* [user](_responses_reels_tray_feed_response_.reelstrayfeedresponsereelmentionsitem.md#user)
+* [width](_responses_reels_tray_feed_response_.reelstrayfeedresponsereelmentionsitem.md#width)
+* [x](_responses_reels_tray_feed_response_.reelstrayfeedresponsereelmentionsitem.md#x)
+* [y](_responses_reels_tray_feed_response_.reelstrayfeedresponsereelmentionsitem.md#y)
+* [z](_responses_reels_tray_feed_response_.reelstrayfeedresponsereelmentionsitem.md#z)
 
 ## Properties
 
-### display_type
+###  display_type
 
-• **display_type**: _string_
+• **display_type**: *string*
 
-_Defined in [responses/reels-tray.feed.response.ts:173](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/reels-tray.feed.response.ts#L173)_
+*Defined in [responses/reels-tray.feed.response.ts:173](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-tray.feed.response.ts#L173)*
 
----
+___
 
-### height
+###  height
 
-• **height**: _number | string_
+• **height**: *number | string*
 
-_Defined in [responses/reels-tray.feed.response.ts:169](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/reels-tray.feed.response.ts#L169)_
+*Defined in [responses/reels-tray.feed.response.ts:169](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-tray.feed.response.ts#L169)*
 
----
+___
 
-### is_hidden
+###  is_hidden
 
-• **is_hidden**: _number_
+• **is_hidden**: *number*
 
-_Defined in [responses/reels-tray.feed.response.ts:172](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/reels-tray.feed.response.ts#L172)_
+*Defined in [responses/reels-tray.feed.response.ts:172](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-tray.feed.response.ts#L172)*
 
----
+___
 
-### is_pinned
+###  is_pinned
 
-• **is_pinned**: _number_
+• **is_pinned**: *number*
 
-_Defined in [responses/reels-tray.feed.response.ts:171](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/reels-tray.feed.response.ts#L171)_
+*Defined in [responses/reels-tray.feed.response.ts:171](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-tray.feed.response.ts#L171)*
 
----
+___
 
-### is_sticker
+###  is_sticker
 
-• **is_sticker**: _number_
+• **is_sticker**: *number*
 
-_Defined in [responses/reels-tray.feed.response.ts:174](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/reels-tray.feed.response.ts#L174)_
+*Defined in [responses/reels-tray.feed.response.ts:174](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-tray.feed.response.ts#L174)*
 
----
+___
 
-### rotation
+###  rotation
 
-• **rotation**: _string | number_
+• **rotation**: *string | number*
 
-_Defined in [responses/reels-tray.feed.response.ts:170](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/reels-tray.feed.response.ts#L170)_
+*Defined in [responses/reels-tray.feed.response.ts:170](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-tray.feed.response.ts#L170)*
 
----
+___
 
-### user
+###  user
 
-• **user**: _[ReelsTrayFeedResponseUser](\_responses_reels_tray_feed_response_.reelstrayfeedresponseuser.md)\_
+• **user**: *[ReelsTrayFeedResponseUser](_responses_reels_tray_feed_response_.reelstrayfeedresponseuser.md)*
 
-_Defined in [responses/reels-tray.feed.response.ts:175](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/reels-tray.feed.response.ts#L175)_
+*Defined in [responses/reels-tray.feed.response.ts:175](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-tray.feed.response.ts#L175)*
 
----
+___
 
-### width
+###  width
 
-• **width**: _number_
+• **width**: *number*
 
-_Defined in [responses/reels-tray.feed.response.ts:168](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/reels-tray.feed.response.ts#L168)_
+*Defined in [responses/reels-tray.feed.response.ts:168](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-tray.feed.response.ts#L168)*
 
----
+___
 
-### x
+###  x
 
-• **x**: _number_
+• **x**: *number*
 
-_Defined in [responses/reels-tray.feed.response.ts:165](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/reels-tray.feed.response.ts#L165)_
+*Defined in [responses/reels-tray.feed.response.ts:165](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-tray.feed.response.ts#L165)*
 
----
+___
 
-### y
+###  y
 
-• **y**: _string | number_
+• **y**: *string | number*
 
-_Defined in [responses/reels-tray.feed.response.ts:166](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/reels-tray.feed.response.ts#L166)_
+*Defined in [responses/reels-tray.feed.response.ts:166](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-tray.feed.response.ts#L166)*
 
----
+___
 
-### z
+###  z
 
-• **z**: _number_
+• **z**: *number*
 
-_Defined in [responses/reels-tray.feed.response.ts:167](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/reels-tray.feed.response.ts#L167)_
+*Defined in [responses/reels-tray.feed.response.ts:167](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-tray.feed.response.ts#L167)*

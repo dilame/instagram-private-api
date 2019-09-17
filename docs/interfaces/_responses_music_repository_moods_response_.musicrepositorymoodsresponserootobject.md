@@ -6,27 +6,27 @@
 
 ## Hierarchy
 
-- **MusicRepositoryMoodsResponseRootObject**
+* **MusicRepositoryMoodsResponseRootObject**
 
 ## Index
 
 ### Properties
 
-- [items](_responses_music_repository_moods_response_.musicrepositorymoodsresponserootobject.md#items)
-- [status](_responses_music_repository_moods_response_.musicrepositorymoodsresponserootobject.md#status)
+* [items](_responses_music_repository_moods_response_.musicrepositorymoodsresponserootobject.md#items)
+* [status](_responses_music_repository_moods_response_.musicrepositorymoodsresponserootobject.md#status)
 
 ## Properties
 
-### items
+###  items
 
-• **items**: _[MusicRepositoryMoodsResponseItemsItem](\_responses_music_repository_moods_response_.musicrepositorymoodsresponseitemsitem.md)[]\_
+• **items**: *[MusicRepositoryMoodsResponseItemsItem](_responses_music_repository_moods_response_.musicrepositorymoodsresponseitemsitem.md)[]*
 
-_Defined in [responses/music.repository.moods.response.ts:2](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/music.repository.moods.response.ts#L2)_
+*Defined in [responses/music.repository.moods.response.ts:2](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/music.repository.moods.response.ts#L2)*
 
----
+___
 
-### status
+###  status
 
-• **status**: _string_
+• **status**: *string*
 
-_Defined in [responses/music.repository.moods.response.ts:3](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/music.repository.moods.response.ts#L3)_
+*Defined in [responses/music.repository.moods.response.ts:3](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/music.repository.moods.response.ts#L3)*

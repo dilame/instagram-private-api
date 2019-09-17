@@ -6,44 +6,44 @@
 
 ## Hierarchy
 
-- [Repository](_core_repository_.repository.md)
+* [Repository](_core_repository_.repository.md)
 
-  - **CreativesRepository**
+  * **CreativesRepository**
 
 ## Index
 
 ### Constructors
 
-- [constructor](_repositories_creatives_repository_.creativesrepository.md#constructor)
+* [constructor](_repositories_creatives_repository_.creativesrepository.md#constructor)
 
 ### Methods
 
-- [writeSupportedCapabilities](_repositories_creatives_repository_.creativesrepository.md#writesupportedcapabilities)
+* [writeSupportedCapabilities](_repositories_creatives_repository_.creativesrepository.md#writesupportedcapabilities)
 
 ## Constructors
 
-### constructor
+###  constructor
 
-\+ **new CreativesRepository**(`client`: [IgApiClient](_core_client_.igapiclient.md)): _[CreativesRepository](\_repositories_creatives_repository_.creativesrepository.md)\_
+\+ **new CreativesRepository**(`client`: [IgApiClient](_core_client_.igapiclient.md)): *[CreativesRepository](_repositories_creatives_repository_.creativesrepository.md)*
 
-_Inherited from [Repository](\_core_repository_.repository.md).[constructor](_core_repository_.repository.md#constructor)\_
+*Inherited from [Repository](_core_repository_.repository.md).[constructor](_core_repository_.repository.md#constructor)*
 
-_Defined in [core/repository.ts:6](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/repository.ts#L6)_
+*Defined in [core/repository.ts:6](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/repository.ts#L6)*
 
 **Parameters:**
 
-| Name     | Type                                        |
-| -------- | ------------------------------------------- |
-| `client` | [IgApiClient](_core_client_.igapiclient.md) |
+Name | Type |
+------ | ------ |
+`client` | [IgApiClient](_core_client_.igapiclient.md) |
 
-**Returns:** _[CreativesRepository](\_repositories_creatives_repository_.creativesrepository.md)\_
+**Returns:** *[CreativesRepository](_repositories_creatives_repository_.creativesrepository.md)*
 
 ## Methods
 
-### writeSupportedCapabilities
+###  writeSupportedCapabilities
 
-▸ **writeSupportedCapabilities**(): _`Promise<any>`_
+▸ **writeSupportedCapabilities**(): *`Promise<any>`*
 
-_Defined in [repositories/creatives.repository.ts:4](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/repositories/creatives.repository.ts#L4)_
+*Defined in [repositories/creatives.repository.ts:4](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/creatives.repository.ts#L4)*
 
-**Returns:** _`Promise<any>`_
+**Returns:** *`Promise<any>`*

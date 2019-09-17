@@ -6,333 +6,333 @@
 
 ## Hierarchy
 
-- **MediaRepositoryListReelMediaViewerResponseUpdated_media**
+* **MediaRepositoryListReelMediaViewerResponseUpdated_media**
 
 ## Index
 
 ### Properties
 
-- [can_reply](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponseupdated_media.md#can_reply)
-- [can_reshare](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponseupdated_media.md#can_reshare)
-- [can_viewer_save](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponseupdated_media.md#can_viewer_save)
-- [caption](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponseupdated_media.md#caption)
-- [caption_is_edited](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponseupdated_media.md#caption_is_edited)
-- [caption_position](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponseupdated_media.md#caption_position)
-- [client_cache_key](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponseupdated_media.md#client_cache_key)
-- [code](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponseupdated_media.md#code)
-- [device_timestamp](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponseupdated_media.md#device_timestamp)
-- [expiring_at](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponseupdated_media.md#expiring_at)
-- [fb_user_tags](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponseupdated_media.md#fb_user_tags)
-- [filter_type](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponseupdated_media.md#filter_type)
-- [has_shared_to_fb](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponseupdated_media.md#has_shared_to_fb)
-- [id](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponseupdated_media.md#id)
-- [image_versions2](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponseupdated_media.md#image_versions2)
-- [is_pride_media](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponseupdated_media.md#is_pride_media)
-- [is_reel_media](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponseupdated_media.md#is_reel_media)
-- [media_type](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponseupdated_media.md#media_type)
-- [multi_author_reel_names](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponseupdated_media.md#multi_author_reel_names)
-- [organic_tracking_token](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponseupdated_media.md#organic_tracking_token)
-- [original_height](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponseupdated_media.md#original_height)
-- [original_width](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponseupdated_media.md#original_width)
-- [photo_of_you](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponseupdated_media.md#photo_of_you)
-- [pk](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponseupdated_media.md#pk)
-- [show_one_tap_fb_share_tooltip](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponseupdated_media.md#show_one_tap_fb_share_tooltip)
-- [story_chat_request_infos](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponseupdated_media.md#story_chat_request_infos)
-- [story_chats](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponseupdated_media.md#story_chats)
-- [story_is_saved_to_archive](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponseupdated_media.md#story_is_saved_to_archive)
-- [supports_reel_reactions](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponseupdated_media.md#supports_reel_reactions)
-- [taken_at](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponseupdated_media.md#taken_at)
-- [timezone_offset](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponseupdated_media.md#timezone_offset)
-- [total_viewer_count](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponseupdated_media.md#total_viewer_count)
-- [user](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponseupdated_media.md#user)
-- [viewer_count](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponseupdated_media.md#viewer_count)
-- [viewer_cursor](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponseupdated_media.md#viewer_cursor)
-- [viewers](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponseupdated_media.md#viewers)
+* [can_reply](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponseupdated_media.md#can_reply)
+* [can_reshare](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponseupdated_media.md#can_reshare)
+* [can_viewer_save](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponseupdated_media.md#can_viewer_save)
+* [caption](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponseupdated_media.md#caption)
+* [caption_is_edited](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponseupdated_media.md#caption_is_edited)
+* [caption_position](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponseupdated_media.md#caption_position)
+* [client_cache_key](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponseupdated_media.md#client_cache_key)
+* [code](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponseupdated_media.md#code)
+* [device_timestamp](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponseupdated_media.md#device_timestamp)
+* [expiring_at](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponseupdated_media.md#expiring_at)
+* [fb_user_tags](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponseupdated_media.md#fb_user_tags)
+* [filter_type](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponseupdated_media.md#filter_type)
+* [has_shared_to_fb](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponseupdated_media.md#has_shared_to_fb)
+* [id](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponseupdated_media.md#id)
+* [image_versions2](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponseupdated_media.md#image_versions2)
+* [is_pride_media](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponseupdated_media.md#is_pride_media)
+* [is_reel_media](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponseupdated_media.md#is_reel_media)
+* [media_type](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponseupdated_media.md#media_type)
+* [multi_author_reel_names](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponseupdated_media.md#multi_author_reel_names)
+* [organic_tracking_token](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponseupdated_media.md#organic_tracking_token)
+* [original_height](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponseupdated_media.md#original_height)
+* [original_width](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponseupdated_media.md#original_width)
+* [photo_of_you](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponseupdated_media.md#photo_of_you)
+* [pk](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponseupdated_media.md#pk)
+* [show_one_tap_fb_share_tooltip](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponseupdated_media.md#show_one_tap_fb_share_tooltip)
+* [story_chat_request_infos](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponseupdated_media.md#story_chat_request_infos)
+* [story_chats](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponseupdated_media.md#story_chats)
+* [story_is_saved_to_archive](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponseupdated_media.md#story_is_saved_to_archive)
+* [supports_reel_reactions](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponseupdated_media.md#supports_reel_reactions)
+* [taken_at](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponseupdated_media.md#taken_at)
+* [timezone_offset](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponseupdated_media.md#timezone_offset)
+* [total_viewer_count](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponseupdated_media.md#total_viewer_count)
+* [user](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponseupdated_media.md#user)
+* [viewer_count](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponseupdated_media.md#viewer_count)
+* [viewer_cursor](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponseupdated_media.md#viewer_cursor)
+* [viewers](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponseupdated_media.md#viewers)
 
 ## Properties
 
-### can_reply
+###  can_reply
 
-• **can_reply**: _boolean_
+• **can_reply**: *boolean*
 
-_Defined in [responses/media.repository.list-reel-media-viewer.response.ts:52](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/media.repository.list-reel-media-viewer.response.ts#L52)_
+*Defined in [responses/media.repository.list-reel-media-viewer.response.ts:52](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.list-reel-media-viewer.response.ts#L52)*
 
----
+___
 
-### can_reshare
+###  can_reshare
 
-• **can_reshare**: _boolean_
+• **can_reshare**: *boolean*
 
-_Defined in [responses/media.repository.list-reel-media-viewer.response.ts:51](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/media.repository.list-reel-media-viewer.response.ts#L51)_
+*Defined in [responses/media.repository.list-reel-media-viewer.response.ts:51](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.list-reel-media-viewer.response.ts#L51)*
 
----
+___
 
-### can_viewer_save
+###  can_viewer_save
 
-• **can_viewer_save**: _boolean_
+• **can_viewer_save**: *boolean*
 
-_Defined in [responses/media.repository.list-reel-media-viewer.response.ts:48](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/media.repository.list-reel-media-viewer.response.ts#L48)_
+*Defined in [responses/media.repository.list-reel-media-viewer.response.ts:48](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.list-reel-media-viewer.response.ts#L48)*
 
----
+___
 
-### caption
+###  caption
 
-• **caption**: _null_
+• **caption**: *null*
 
-_Defined in [responses/media.repository.list-reel-media-viewer.response.ts:46](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/media.repository.list-reel-media-viewer.response.ts#L46)_
+*Defined in [responses/media.repository.list-reel-media-viewer.response.ts:46](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.list-reel-media-viewer.response.ts#L46)*
 
----
+___
 
-### caption_is_edited
+###  caption_is_edited
 
-• **caption_is_edited**: _boolean_
+• **caption_is_edited**: *boolean*
 
-_Defined in [responses/media.repository.list-reel-media-viewer.response.ts:41](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/media.repository.list-reel-media-viewer.response.ts#L41)_
+*Defined in [responses/media.repository.list-reel-media-viewer.response.ts:41](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.list-reel-media-viewer.response.ts#L41)*
 
----
+___
 
-### caption_position
+###  caption_position
 
-• **caption_position**: _number_
+• **caption_position**: *number*
 
-_Defined in [responses/media.repository.list-reel-media-viewer.response.ts:42](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/media.repository.list-reel-media-viewer.response.ts#L42)_
+*Defined in [responses/media.repository.list-reel-media-viewer.response.ts:42](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.list-reel-media-viewer.response.ts#L42)*
 
----
+___
 
-### client_cache_key
+###  client_cache_key
 
-• **client_cache_key**: _string_
+• **client_cache_key**: *string*
 
-_Defined in [responses/media.repository.list-reel-media-viewer.response.ts:35](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/media.repository.list-reel-media-viewer.response.ts#L35)_
+*Defined in [responses/media.repository.list-reel-media-viewer.response.ts:35](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.list-reel-media-viewer.response.ts#L35)*
 
----
+___
 
-### code
+###  code
 
-• **code**: _string_
+• **code**: *string*
 
-_Defined in [responses/media.repository.list-reel-media-viewer.response.ts:34](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/media.repository.list-reel-media-viewer.response.ts#L34)_
+*Defined in [responses/media.repository.list-reel-media-viewer.response.ts:34](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.list-reel-media-viewer.response.ts#L34)*
 
----
+___
 
-### device_timestamp
+###  device_timestamp
 
-• **device_timestamp**: _number_
+• **device_timestamp**: *number*
 
-_Defined in [responses/media.repository.list-reel-media-viewer.response.ts:32](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/media.repository.list-reel-media-viewer.response.ts#L32)_
+*Defined in [responses/media.repository.list-reel-media-viewer.response.ts:32](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.list-reel-media-viewer.response.ts#L32)*
 
----
+___
 
-### expiring_at
+###  expiring_at
 
-• **expiring_at**: _number_
+• **expiring_at**: *number*
 
-_Defined in [responses/media.repository.list-reel-media-viewer.response.ts:50](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/media.repository.list-reel-media-viewer.response.ts#L50)_
+*Defined in [responses/media.repository.list-reel-media-viewer.response.ts:50](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.list-reel-media-viewer.response.ts#L50)*
 
----
+___
 
-### fb_user_tags
+###  fb_user_tags
 
-• **fb_user_tags**: _[MediaRepositoryListReelMediaViewerResponseFb_user_tags](\_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponsefb*user_tags.md)*
+• **fb_user_tags**: *[MediaRepositoryListReelMediaViewerResponseFb_user_tags](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponsefb_user_tags.md)*
 
-_Defined in [responses/media.repository.list-reel-media-viewer.response.ts:47](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/media.repository.list-reel-media-viewer.response.ts#L47)_
+*Defined in [responses/media.repository.list-reel-media-viewer.response.ts:47](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.list-reel-media-viewer.response.ts#L47)*
 
----
+___
 
-### filter_type
+###  filter_type
 
-• **filter_type**: _number_
+• **filter_type**: *number*
 
-_Defined in [responses/media.repository.list-reel-media-viewer.response.ts:36](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/media.repository.list-reel-media-viewer.response.ts#L36)_
+*Defined in [responses/media.repository.list-reel-media-viewer.response.ts:36](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.list-reel-media-viewer.response.ts#L36)*
 
----
+___
 
-### has_shared_to_fb
+###  has_shared_to_fb
 
-• **has_shared_to_fb**: _number_
+• **has_shared_to_fb**: *number*
 
-_Defined in [responses/media.repository.list-reel-media-viewer.response.ts:64](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/media.repository.list-reel-media-viewer.response.ts#L64)_
+*Defined in [responses/media.repository.list-reel-media-viewer.response.ts:64](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.list-reel-media-viewer.response.ts#L64)*
 
----
+___
 
-### id
+###  id
 
-• **id**: _string_
+• **id**: *string*
 
-_Defined in [responses/media.repository.list-reel-media-viewer.response.ts:31](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/media.repository.list-reel-media-viewer.response.ts#L31)_
+*Defined in [responses/media.repository.list-reel-media-viewer.response.ts:31](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.list-reel-media-viewer.response.ts#L31)*
 
----
+___
 
-### image_versions2
+###  image_versions2
 
-• **image_versions2**: _[MediaRepositoryListReelMediaViewerResponseImage_versions2](\_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponseimage*versions2.md)*
+• **image_versions2**: *[MediaRepositoryListReelMediaViewerResponseImage_versions2](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponseimage_versions2.md)*
 
-_Defined in [responses/media.repository.list-reel-media-viewer.response.ts:37](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/media.repository.list-reel-media-viewer.response.ts#L37)_
+*Defined in [responses/media.repository.list-reel-media-viewer.response.ts:37](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.list-reel-media-viewer.response.ts#L37)*
 
----
+___
 
-### is_pride_media
+###  is_pride_media
 
-• **is_pride_media**: _boolean_
+• **is_pride_media**: *boolean*
 
-_Defined in [responses/media.repository.list-reel-media-viewer.response.ts:53](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/media.repository.list-reel-media-viewer.response.ts#L53)_
+*Defined in [responses/media.repository.list-reel-media-viewer.response.ts:53](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.list-reel-media-viewer.response.ts#L53)*
 
----
+___
 
-### is_reel_media
+###  is_reel_media
 
-• **is_reel_media**: _boolean_
+• **is_reel_media**: *boolean*
 
-_Defined in [responses/media.repository.list-reel-media-viewer.response.ts:43](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/media.repository.list-reel-media-viewer.response.ts#L43)_
+*Defined in [responses/media.repository.list-reel-media-viewer.response.ts:43](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.list-reel-media-viewer.response.ts#L43)*
 
----
+___
 
-### media_type
+###  media_type
 
-• **media_type**: _number_
+• **media_type**: *number*
 
-_Defined in [responses/media.repository.list-reel-media-viewer.response.ts:33](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/media.repository.list-reel-media-viewer.response.ts#L33)_
+*Defined in [responses/media.repository.list-reel-media-viewer.response.ts:33](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.list-reel-media-viewer.response.ts#L33)*
 
----
+___
 
-### multi_author_reel_names
+###  multi_author_reel_names
 
-• **multi_author_reel_names**: _any[]_
+• **multi_author_reel_names**: *any[]*
 
-_Defined in [responses/media.repository.list-reel-media-viewer.response.ts:61](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/media.repository.list-reel-media-viewer.response.ts#L61)_
+*Defined in [responses/media.repository.list-reel-media-viewer.response.ts:61](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.list-reel-media-viewer.response.ts#L61)*
 
----
+___
 
-### organic_tracking_token
+###  organic_tracking_token
 
-• **organic_tracking_token**: _string_
+• **organic_tracking_token**: *string*
 
-_Defined in [responses/media.repository.list-reel-media-viewer.response.ts:49](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/media.repository.list-reel-media-viewer.response.ts#L49)_
+*Defined in [responses/media.repository.list-reel-media-viewer.response.ts:49](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.list-reel-media-viewer.response.ts#L49)*
 
----
+___
 
-### original_height
+###  original_height
 
-• **original_height**: _number_
+• **original_height**: *number*
 
-_Defined in [responses/media.repository.list-reel-media-viewer.response.ts:39](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/media.repository.list-reel-media-viewer.response.ts#L39)_
+*Defined in [responses/media.repository.list-reel-media-viewer.response.ts:39](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.list-reel-media-viewer.response.ts#L39)*
 
----
+___
 
-### original_width
+###  original_width
 
-• **original_width**: _number_
+• **original_width**: *number*
 
-_Defined in [responses/media.repository.list-reel-media-viewer.response.ts:38](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/media.repository.list-reel-media-viewer.response.ts#L38)_
+*Defined in [responses/media.repository.list-reel-media-viewer.response.ts:38](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.list-reel-media-viewer.response.ts#L38)*
 
----
+___
 
-### photo_of_you
+###  photo_of_you
 
-• **photo_of_you**: _boolean_
+• **photo_of_you**: *boolean*
 
-_Defined in [responses/media.repository.list-reel-media-viewer.response.ts:45](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/media.repository.list-reel-media-viewer.response.ts#L45)_
+*Defined in [responses/media.repository.list-reel-media-viewer.response.ts:45](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.list-reel-media-viewer.response.ts#L45)*
 
----
+___
 
-### pk
+###  pk
 
-• **pk**: _string_
+• **pk**: *string*
 
-_Defined in [responses/media.repository.list-reel-media-viewer.response.ts:30](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/media.repository.list-reel-media-viewer.response.ts#L30)_
+*Defined in [responses/media.repository.list-reel-media-viewer.response.ts:30](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.list-reel-media-viewer.response.ts#L30)*
 
----
+___
 
-### show_one_tap_fb_share_tooltip
+###  show_one_tap_fb_share_tooltip
 
-• **show_one_tap_fb_share_tooltip**: _boolean_
+• **show_one_tap_fb_share_tooltip**: *boolean*
 
-_Defined in [responses/media.repository.list-reel-media-viewer.response.ts:63](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/media.repository.list-reel-media-viewer.response.ts#L63)_
+*Defined in [responses/media.repository.list-reel-media-viewer.response.ts:63](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.list-reel-media-viewer.response.ts#L63)*
 
----
+___
 
-### story_chat_request_infos
+###  story_chat_request_infos
 
-• **story_chat_request_infos**: _[MediaRepositoryListReelMediaViewerResponseStoryChatRequestInfosItem](\_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponsestorychatrequestinfositem.md)[]\_
+• **story_chat_request_infos**: *[MediaRepositoryListReelMediaViewerResponseStoryChatRequestInfosItem](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponsestorychatrequestinfositem.md)[]*
 
-_Defined in [responses/media.repository.list-reel-media-viewer.response.ts:56](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/media.repository.list-reel-media-viewer.response.ts#L56)_
+*Defined in [responses/media.repository.list-reel-media-viewer.response.ts:56](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.list-reel-media-viewer.response.ts#L56)*
 
----
+___
 
-### story_chats
+###  story_chats
 
-• **story_chats**: _[MediaRepositoryListReelMediaViewerResponseStoryChatsItem](\_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponsestorychatsitem.md)[]\_
+• **story_chats**: *[MediaRepositoryListReelMediaViewerResponseStoryChatsItem](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponsestorychatsitem.md)[]*
 
-_Defined in [responses/media.repository.list-reel-media-viewer.response.ts:55](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/media.repository.list-reel-media-viewer.response.ts#L55)_
+*Defined in [responses/media.repository.list-reel-media-viewer.response.ts:55](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.list-reel-media-viewer.response.ts#L55)*
 
----
+___
 
-### story_is_saved_to_archive
+###  story_is_saved_to_archive
 
-• **story_is_saved_to_archive**: _boolean_
+• **story_is_saved_to_archive**: *boolean*
 
-_Defined in [responses/media.repository.list-reel-media-viewer.response.ts:54](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/media.repository.list-reel-media-viewer.response.ts#L54)_
+*Defined in [responses/media.repository.list-reel-media-viewer.response.ts:54](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.list-reel-media-viewer.response.ts#L54)*
 
----
+___
 
-### supports_reel_reactions
+###  supports_reel_reactions
 
-• **supports_reel_reactions**: _boolean_
+• **supports_reel_reactions**: *boolean*
 
-_Defined in [responses/media.repository.list-reel-media-viewer.response.ts:62](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/media.repository.list-reel-media-viewer.response.ts#L62)_
+*Defined in [responses/media.repository.list-reel-media-viewer.response.ts:62](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.list-reel-media-viewer.response.ts#L62)*
 
----
+___
 
-### taken_at
+###  taken_at
 
-• **taken_at**: _number_
+• **taken_at**: *number*
 
-_Defined in [responses/media.repository.list-reel-media-viewer.response.ts:29](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/media.repository.list-reel-media-viewer.response.ts#L29)_
+*Defined in [responses/media.repository.list-reel-media-viewer.response.ts:29](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.list-reel-media-viewer.response.ts#L29)*
 
----
+___
 
-### timezone_offset
+###  timezone_offset
 
-• **timezone_offset**: _number_
+• **timezone_offset**: *number*
 
-_Defined in [responses/media.repository.list-reel-media-viewer.response.ts:44](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/media.repository.list-reel-media-viewer.response.ts#L44)_
+*Defined in [responses/media.repository.list-reel-media-viewer.response.ts:44](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.list-reel-media-viewer.response.ts#L44)*
 
----
+___
 
-### total_viewer_count
+###  total_viewer_count
 
-• **total_viewer_count**: _number_
+• **total_viewer_count**: *number*
 
-_Defined in [responses/media.repository.list-reel-media-viewer.response.ts:60](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/media.repository.list-reel-media-viewer.response.ts#L60)_
+*Defined in [responses/media.repository.list-reel-media-viewer.response.ts:60](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.list-reel-media-viewer.response.ts#L60)*
 
----
+___
 
-### user
+###  user
 
-• **user**: _[MediaRepositoryListReelMediaViewerResponseUser](\_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponseuser.md)\_
+• **user**: *[MediaRepositoryListReelMediaViewerResponseUser](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponseuser.md)*
 
-_Defined in [responses/media.repository.list-reel-media-viewer.response.ts:40](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/media.repository.list-reel-media-viewer.response.ts#L40)_
+*Defined in [responses/media.repository.list-reel-media-viewer.response.ts:40](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.list-reel-media-viewer.response.ts#L40)*
 
----
+___
 
-### viewer_count
+###  viewer_count
 
-• **viewer_count**: _number_
+• **viewer_count**: *number*
 
-_Defined in [responses/media.repository.list-reel-media-viewer.response.ts:58](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/media.repository.list-reel-media-viewer.response.ts#L58)_
+*Defined in [responses/media.repository.list-reel-media-viewer.response.ts:58](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.list-reel-media-viewer.response.ts#L58)*
 
----
+___
 
-### viewer_cursor
+###  viewer_cursor
 
-• **viewer_cursor**: _null_
+• **viewer_cursor**: *null*
 
-_Defined in [responses/media.repository.list-reel-media-viewer.response.ts:59](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/media.repository.list-reel-media-viewer.response.ts#L59)_
+*Defined in [responses/media.repository.list-reel-media-viewer.response.ts:59](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.list-reel-media-viewer.response.ts#L59)*
 
----
+___
 
-### viewers
+###  viewers
 
-• **viewers**: _[MediaRepositoryListReelMediaViewerResponseViewersItem](\_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponseviewersitem.md)[]\_
+• **viewers**: *[MediaRepositoryListReelMediaViewerResponseViewersItem](_responses_media_repository_list_reel_media_viewer_response_.mediarepositorylistreelmediaviewerresponseviewersitem.md)[]*
 
-_Defined in [responses/media.repository.list-reel-media-viewer.response.ts:57](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/media.repository.list-reel-media-viewer.response.ts#L57)_
+*Defined in [responses/media.repository.list-reel-media-viewer.response.ts:57](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.list-reel-media-viewer.response.ts#L57)*

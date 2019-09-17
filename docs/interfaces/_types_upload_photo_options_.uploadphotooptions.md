@@ -6,27 +6,36 @@
 
 ## Hierarchy
 
-- **UploadPhotoOptions**
+* **UploadPhotoOptions**
 
 ## Index
 
 ### Properties
 
-- [file](_types_upload_photo_options_.uploadphotooptions.md#file)
-- [uploadId](_types_upload_photo_options_.uploadphotooptions.md#optional-uploadid)
+* [file](_types_upload_photo_options_.uploadphotooptions.md#file)
+* [isSidecar](_types_upload_photo_options_.uploadphotooptions.md#optional-issidecar)
+* [uploadId](_types_upload_photo_options_.uploadphotooptions.md#optional-uploadid)
 
 ## Properties
 
-### file
+###  file
 
-• **file**: _`Buffer`_
+• **file**: *`Buffer`*
 
-_Defined in [types/upload.photo.options.ts:3](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/types/upload.photo.options.ts#L3)_
+*Defined in [types/upload.photo.options.ts:3](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/upload.photo.options.ts#L3)*
 
----
+___
+
+### `Optional` isSidecar
+
+• **isSidecar**? : *boolean*
+
+*Defined in [types/upload.photo.options.ts:4](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/upload.photo.options.ts#L4)*
+
+___
 
 ### `Optional` uploadId
 
-• **uploadId**? : _string_
+• **uploadId**? : *string*
 
-_Defined in [types/upload.photo.options.ts:2](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/types/upload.photo.options.ts#L2)_
+*Defined in [types/upload.photo.options.ts:2](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/upload.photo.options.ts#L2)*

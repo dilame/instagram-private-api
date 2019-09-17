@@ -6,18 +6,18 @@
 
 ## Hierarchy
 
-- **MusicMoodFeedResponseItemsItem**
+* **MusicMoodFeedResponseItemsItem**
 
 ## Index
 
 ### Properties
 
-- [track](_responses_music_mood_feed_response_.musicmoodfeedresponseitemsitem.md#track)
+* [track](_responses_music_mood_feed_response_.musicmoodfeedresponseitemsitem.md#track)
 
 ## Properties
 
-### track
+###  track
 
-• **track**: _[MusicMoodFeedResponseTrack](\_responses_music_mood_feed_response_.musicmoodfeedresponsetrack.md)\_
+• **track**: *[MusicMoodFeedResponseTrack](_responses_music_mood_feed_response_.musicmoodfeedresponsetrack.md)*
 
-_Defined in [responses/music-mood.feed.response.ts:8](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/music-mood.feed.response.ts#L8)_
+*Defined in [responses/music-mood.feed.response.ts:8](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/music-mood.feed.response.ts#L8)*

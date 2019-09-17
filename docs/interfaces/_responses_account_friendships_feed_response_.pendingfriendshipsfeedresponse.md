@@ -6,63 +6,63 @@
 
 ## Hierarchy
 
-- **PendingFriendshipsFeedResponse**
+* **PendingFriendshipsFeedResponse**
 
 ## Index
 
 ### Properties
 
-- [big_list](_responses_account_friendships_feed_response_.pendingfriendshipsfeedresponse.md#big_list)
-- [next_max_id](_responses_account_friendships_feed_response_.pendingfriendshipsfeedresponse.md#next_max_id)
-- [page_size](_responses_account_friendships_feed_response_.pendingfriendshipsfeedresponse.md#page_size)
-- [sections](_responses_account_friendships_feed_response_.pendingfriendshipsfeedresponse.md#sections)
-- [status](_responses_account_friendships_feed_response_.pendingfriendshipsfeedresponse.md#status)
-- [users](_responses_account_friendships_feed_response_.pendingfriendshipsfeedresponse.md#users)
+* [big_list](_responses_account_friendships_feed_response_.pendingfriendshipsfeedresponse.md#big_list)
+* [next_max_id](_responses_account_friendships_feed_response_.pendingfriendshipsfeedresponse.md#next_max_id)
+* [page_size](_responses_account_friendships_feed_response_.pendingfriendshipsfeedresponse.md#page_size)
+* [sections](_responses_account_friendships_feed_response_.pendingfriendshipsfeedresponse.md#sections)
+* [status](_responses_account_friendships_feed_response_.pendingfriendshipsfeedresponse.md#status)
+* [users](_responses_account_friendships_feed_response_.pendingfriendshipsfeedresponse.md#users)
 
 ## Properties
 
-### big_list
+###  big_list
 
-• **big_list**: _boolean_
+• **big_list**: *boolean*
 
-_Defined in [responses/account-friendships.feed.response.ts:6](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/account-friendships.feed.response.ts#L6)_
+*Defined in [responses/account-friendships.feed.response.ts:6](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/account-friendships.feed.response.ts#L6)*
 
----
+___
 
-### next_max_id
+###  next_max_id
 
-• **next_max_id**: _null_
+• **next_max_id**: *null*
 
-_Defined in [responses/account-friendships.feed.response.ts:7](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/account-friendships.feed.response.ts#L7)_
+*Defined in [responses/account-friendships.feed.response.ts:7](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/account-friendships.feed.response.ts#L7)*
 
----
+___
 
-### page_size
+###  page_size
 
-• **page_size**: _number_
+• **page_size**: *number*
 
-_Defined in [responses/account-friendships.feed.response.ts:8](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/account-friendships.feed.response.ts#L8)_
+*Defined in [responses/account-friendships.feed.response.ts:8](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/account-friendships.feed.response.ts#L8)*
 
----
+___
 
-### sections
+###  sections
 
-• **sections**: _null_
+• **sections**: *null*
 
-_Defined in [responses/account-friendships.feed.response.ts:4](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/account-friendships.feed.response.ts#L4)_
+*Defined in [responses/account-friendships.feed.response.ts:4](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/account-friendships.feed.response.ts#L4)*
 
----
+___
 
-### status
+###  status
 
-• **status**: _string_
+• **status**: *string*
 
-_Defined in [responses/account-friendships.feed.response.ts:9](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/account-friendships.feed.response.ts#L9)_
+*Defined in [responses/account-friendships.feed.response.ts:9](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/account-friendships.feed.response.ts#L9)*
 
----
+___
 
-### users
+###  users
 
-• **users**: _[PendingFriendshipsFeedResponseUsersItem](../classes/\_responses_account_friendships_feed_response_.pendingfriendshipsfeedresponseusersitem.md)[]\_
+• **users**: *[PendingFriendshipsFeedResponseUsersItem](../classes/_responses_account_friendships_feed_response_.pendingfriendshipsfeedresponseusersitem.md)[]*
 
-_Defined in [responses/account-friendships.feed.response.ts:5](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/account-friendships.feed.response.ts#L5)_
+*Defined in [responses/account-friendships.feed.response.ts:5](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/account-friendships.feed.response.ts#L5)*

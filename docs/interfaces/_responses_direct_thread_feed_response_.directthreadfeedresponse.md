@@ -6,27 +6,27 @@
 
 ## Hierarchy
 
-- **DirectThreadFeedResponse**
+* **DirectThreadFeedResponse**
 
 ## Index
 
 ### Properties
 
-- [status](_responses_direct_thread_feed_response_.directthreadfeedresponse.md#status)
-- [thread](_responses_direct_thread_feed_response_.directthreadfeedresponse.md#thread)
+* [status](_responses_direct_thread_feed_response_.directthreadfeedresponse.md#status)
+* [thread](_responses_direct_thread_feed_response_.directthreadfeedresponse.md#thread)
 
 ## Properties
 
-### status
+###  status
 
-• **status**: _string_
+• **status**: *string*
 
-_Defined in [responses/direct-thread.feed.response.ts:3](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.feed.response.ts#L3)_
+*Defined in [responses/direct-thread.feed.response.ts:3](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-thread.feed.response.ts#L3)*
 
----
+___
 
-### thread
+###  thread
 
-• **thread**: _[DirectThreadFeedResponseThread](\_responses_direct_thread_feed_response_.directthreadfeedresponsethread.md)\_
+• **thread**: *[DirectThreadFeedResponseThread](_responses_direct_thread_feed_response_.directthreadfeedresponsethread.md)*
 
-_Defined in [responses/direct-thread.feed.response.ts:2](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-thread.feed.response.ts#L2)_
+*Defined in [responses/direct-thread.feed.response.ts:2](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-thread.feed.response.ts#L2)*

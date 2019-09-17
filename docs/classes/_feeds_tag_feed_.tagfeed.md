@@ -6,243 +6,233 @@
 
 ## Hierarchy
 
-- [Feed](_core_feed_.feed.md)‹_[TagFeedResponse](../interfaces/\_responses_tag_feed_response_.tagfeedresponse.md)_, _[TagFeedResponseItemsItem](../interfaces/_responses_tag_feed_response_.tagfeedresponseitemsitem.md)\_›
+  * [Feed](_core_feed_.feed.md)‹*[TagFeedResponse](../interfaces/_responses_tag_feed_response_.tagfeedresponse.md)*, *[TagFeedResponseItemsItem](../interfaces/_responses_tag_feed_response_.tagfeedresponseitemsitem.md)*›
 
-- **TagFeed**
+  * **TagFeed**
 
 ## Index
 
 ### Constructors
 
-- [constructor](_feeds_tag_feed_.tagfeed.md#constructor)
+* [constructor](_feeds_tag_feed_.tagfeed.md#constructor)
 
 ### Properties
 
-- [items\$](_feeds_tag_feed_.tagfeed.md#items$)
-- [tag](_feeds_tag_feed_.tagfeed.md#tag)
+* [tag](_feeds_tag_feed_.tagfeed.md#tag)
 
 ### Accessors
 
-- [state](_feeds_tag_feed_.tagfeed.md#state)
+* [items$](_feeds_tag_feed_.tagfeed.md#items$)
+* [state](_feeds_tag_feed_.tagfeed.md#state)
 
 ### Methods
 
-- [deserialize](_feeds_tag_feed_.tagfeed.md#deserialize)
-- [isMoreAvailable](_feeds_tag_feed_.tagfeed.md#ismoreavailable)
-- [items](_feeds_tag_feed_.tagfeed.md#items)
-- [request](_feeds_tag_feed_.tagfeed.md#request)
-- [serialize](_feeds_tag_feed_.tagfeed.md#serialize)
-- [toPlain](_feeds_tag_feed_.tagfeed.md#toplain)
+* [deserialize](_feeds_tag_feed_.tagfeed.md#deserialize)
+* [isMoreAvailable](_feeds_tag_feed_.tagfeed.md#ismoreavailable)
+* [items](_feeds_tag_feed_.tagfeed.md#items)
+* [observable](_feeds_tag_feed_.tagfeed.md#observable)
+* [request](_feeds_tag_feed_.tagfeed.md#request)
+* [serialize](_feeds_tag_feed_.tagfeed.md#serialize)
+* [toPlain](_feeds_tag_feed_.tagfeed.md#toplain)
 
 ### Object literals
 
-- [attemptOptions](_feeds_tag_feed_.tagfeed.md#attemptoptions)
+* [attemptOptions](_feeds_tag_feed_.tagfeed.md#attemptoptions)
 
 ## Constructors
 
-### constructor
+###  constructor
 
-\+ **new TagFeed**(`client`: [IgApiClient](_core_client_.igapiclient.md)): _[TagFeed](\_feeds_tag_feed_.tagfeed.md)\_
+\+ **new TagFeed**(`client`: [IgApiClient](_core_client_.igapiclient.md)): *[TagFeed](_feeds_tag_feed_.tagfeed.md)*
 
-_Inherited from [Repository](\_core_repository_.repository.md).[constructor](_core_repository_.repository.md#constructor)\_
+*Inherited from [Repository](_core_repository_.repository.md).[constructor](_core_repository_.repository.md#constructor)*
 
-_Defined in [core/repository.ts:6](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/repository.ts#L6)_
+*Defined in [core/repository.ts:6](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/repository.ts#L6)*
 
 **Parameters:**
 
-| Name     | Type                                        |
-| -------- | ------------------------------------------- |
-| `client` | [IgApiClient](_core_client_.igapiclient.md) |
+Name | Type |
+------ | ------ |
+`client` | [IgApiClient](_core_client_.igapiclient.md) |
 
-**Returns:** _[TagFeed](\_feeds_tag_feed_.tagfeed.md)\_
+**Returns:** *[TagFeed](_feeds_tag_feed_.tagfeed.md)*
 
 ## Properties
 
-### items\$
+###  tag
 
-• **items\$**: _any_ = new Observable<Item[]>(observer => {
-let subscribed = true;
-process.nextTick(async () => {
-do {
-try {
-await retry(
-async () => {
-const items = await this.items();
-observer.next(items);
-},
-{
-handleError(error, context) {
-// If instagram just tells us to wait - we are waiting.
-if (
-error instanceof IgResponseError &&
-error.response.statusCode === 400 &&
-error.response.body.status === 'fail'
-) {
-return;
-} else {
-context.abort();
-}
-},
-...this.attemptOptions,
-},
-);
-} catch (e) {
-observer.error(e);
-}
-} while (this.isMoreAvailable() && subscribed);
-observer.complete();
-});
-return () => (subscribed = false);
-})
+• **tag**: *string*
 
-_Inherited from [Feed](\_core_feed_.feed.md).[items\$](_core_feed_.feed.md#items$)\_
-
-_Defined in [core/feed.ts:18](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/feed.ts#L18)_
-
----
-
-### tag
-
-• **tag**: _string_
-
-_Defined in [feeds/tag.feed.ts:6](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/feeds/tag.feed.ts#L6)_
+*Defined in [feeds/tag.feed.ts:6](https://github.com/dilame/instagram-private-api/blob/173bc62/src/feeds/tag.feed.ts#L6)*
 
 ## Accessors
 
-### state
+###  items$
 
-• **set state**(`body`: [TagFeedResponse](../interfaces/_responses_tag_feed_response_.tagfeedresponse.md)): _void_
+• **get items$**(): *`Observable<Item[]>`*
 
-_Defined in [feeds/tag.feed.ts:10](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/feeds/tag.feed.ts#L10)_
+*Inherited from [Feed](_core_feed_.feed.md).[items$](_core_feed_.feed.md#items$)*
+
+*Defined in [core/feed.ts:18](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/feed.ts#L18)*
+
+**Returns:** *`Observable<Item[]>`*
+
+___
+
+###  state
+
+• **set state**(`body`: [TagFeedResponse](../interfaces/_responses_tag_feed_response_.tagfeedresponse.md)): *void*
+
+*Defined in [feeds/tag.feed.ts:10](https://github.com/dilame/instagram-private-api/blob/173bc62/src/feeds/tag.feed.ts#L10)*
 
 **Parameters:**
 
-| Name   | Type                                                                              |
-| ------ | --------------------------------------------------------------------------------- |
-| `body` | [TagFeedResponse](../interfaces/_responses_tag_feed_response_.tagfeedresponse.md) |
+Name | Type |
+------ | ------ |
+`body` | [TagFeedResponse](../interfaces/_responses_tag_feed_response_.tagfeedresponse.md) |
 
-**Returns:** _void_
+**Returns:** *void*
 
 ## Methods
 
-### deserialize
+###  deserialize
 
-▸ **deserialize**(`data`: string): _void_
+▸ **deserialize**(`data`: string): *void*
 
-_Inherited from [Feed](\_core_feed_.feed.md).[deserialize](_core_feed_.feed.md#deserialize)\_
+*Inherited from [Feed](_core_feed_.feed.md).[deserialize](_core_feed_.feed.md#deserialize)*
 
-_Defined in [core/feed.ts:69](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/feed.ts#L69)_
+*Defined in [core/feed.ts:79](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/feed.ts#L79)*
 
 **Parameters:**
 
-| Name   | Type   |
-| ------ | ------ |
-| `data` | string |
+Name | Type |
+------ | ------ |
+`data` | string |
 
-**Returns:** _void_
+**Returns:** *void*
 
----
+___
 
-### isMoreAvailable
+###  isMoreAvailable
 
-▸ **isMoreAvailable**(): _boolean_
+▸ **isMoreAvailable**(): *boolean*
 
-_Inherited from [Feed](\_core_feed_.feed.md).[isMoreAvailable](_core_feed_.feed.md#ismoreavailable)\_
+*Inherited from [Feed](_core_feed_.feed.md).[isMoreAvailable](_core_feed_.feed.md#ismoreavailable)*
 
-_Defined in [core/feed.ts:77](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/feed.ts#L77)_
+*Defined in [core/feed.ts:87](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/feed.ts#L87)*
 
-**Returns:** _boolean_
+**Returns:** *boolean*
 
----
+___
 
-### items
+###  items
 
-▸ **items**(): _`Promise<any>`_
+▸ **items**(): *`Promise<TagFeedResponseItemsItem[]>`*
 
-_Overrides [Feed](\_core_feed_.feed.md).[items](_core_feed_.feed.md#abstract-items)\_
+*Overrides [Feed](_core_feed_.feed.md).[items](_core_feed_.feed.md#abstract-items)*
 
-_Defined in [feeds/tag.feed.ts:27](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/feeds/tag.feed.ts#L27)_
+*Defined in [feeds/tag.feed.ts:27](https://github.com/dilame/instagram-private-api/blob/173bc62/src/feeds/tag.feed.ts#L27)*
 
-**Returns:** _`Promise<any>`_
+**Returns:** *`Promise<TagFeedResponseItemsItem[]>`*
 
----
+___
 
-### request
+###  observable
 
-▸ **request**(): _`Promise<any>`_
+▸ **observable**(`semaphore?`: function, `attemptOptions?`: `Partial<AttemptOptions<any>>`): *`Observable<Item[]>`*
 
-_Overrides [Feed](\_core_feed_.feed.md).[request](_core_feed_.feed.md#abstract-request)\_
+*Inherited from [Feed](_core_feed_.feed.md).[observable](_core_feed_.feed.md#observable)*
 
-_Defined in [feeds/tag.feed.ts:15](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/feeds/tag.feed.ts#L15)_
+*Defined in [core/feed.ts:21](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/feed.ts#L21)*
 
-**Returns:** _`Promise<any>`_
+**Parameters:**
 
----
+▪`Optional`  **semaphore**: *function*
 
-### serialize
+▸ (): *`Promise<any>`*
 
-▸ **serialize**(): _any_
+▪`Optional`  **attemptOptions**: *`Partial<AttemptOptions<any>>`*
 
-_Inherited from [Feed](\_core_feed_.feed.md).[serialize](_core_feed_.feed.md#serialize)\_
+**Returns:** *`Observable<Item[]>`*
 
-_Defined in [core/feed.ts:65](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/feed.ts#L65)_
+___
 
-**Returns:** _any_
+###  request
 
----
+▸ **request**(): *`Promise<TagFeedResponse>`*
 
-### toPlain
+*Overrides [Feed](_core_feed_.feed.md).[request](_core_feed_.feed.md#abstract-request)*
 
-▸ **toPlain**(): _any_
+*Defined in [feeds/tag.feed.ts:15](https://github.com/dilame/instagram-private-api/blob/173bc62/src/feeds/tag.feed.ts#L15)*
 
-_Inherited from [Feed](\_core_feed_.feed.md).[toPlain](_core_feed_.feed.md#toplain)\_
+**Returns:** *`Promise<TagFeedResponse>`*
 
-_Defined in [core/feed.ts:73](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/feed.ts#L73)_
+___
 
-**Returns:** _any_
+###  serialize
+
+▸ **serialize**(): *string*
+
+*Inherited from [Feed](_core_feed_.feed.md).[serialize](_core_feed_.feed.md#serialize)*
+
+*Defined in [core/feed.ts:75](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/feed.ts#L75)*
+
+**Returns:** *string*
+
+___
+
+###  toPlain
+
+▸ **toPlain**(): *`Object`*
+
+*Inherited from [Feed](_core_feed_.feed.md).[toPlain](_core_feed_.feed.md#toplain)*
+
+*Defined in [core/feed.ts:83](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/feed.ts#L83)*
+
+**Returns:** *`Object`*
 
 ## Object literals
 
-### attemptOptions
+###  attemptOptions
 
-### ▪ **attemptOptions**: _object_
+### ▪ **attemptOptions**: *object*
 
-_Inherited from [Feed](\_core_feed_.feed.md).[attemptOptions](_core_feed_.feed.md#attemptoptions)\_
+*Inherited from [Feed](_core_feed_.feed.md).[attemptOptions](_core_feed_.feed.md#attemptoptions)*
 
-_Defined in [core/feed.ts:10](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/feed.ts#L10)_
+*Defined in [core/feed.ts:10](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/feed.ts#L10)*
 
-### delay
+###  delay
 
-• **delay**: _number_ = 60000
+• **delay**: *number* = 60000
 
-_Defined in [core/feed.ts:11](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/feed.ts#L11)_
+*Defined in [core/feed.ts:11](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/feed.ts#L11)*
 
-### factor
+###  factor
 
-• **factor**: _number_ = 1.5
+• **factor**: *number* = 1.5
 
-_Defined in [core/feed.ts:12](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/feed.ts#L12)_
+*Defined in [core/feed.ts:12](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/feed.ts#L12)*
 
-### jitter
+###  jitter
 
-• **jitter**: _boolean_ = true
+• **jitter**: *true* = true
 
-_Defined in [core/feed.ts:16](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/feed.ts#L16)_
+*Defined in [core/feed.ts:16](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/feed.ts#L16)*
 
-### maxAttempts
+###  maxAttempts
 
-• **maxAttempts**: _number_ = 10
+• **maxAttempts**: *number* = 10
 
-_Defined in [core/feed.ts:13](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/feed.ts#L13)_
+*Defined in [core/feed.ts:13](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/feed.ts#L13)*
 
-### maxDelay
+###  maxDelay
 
-• **maxDelay**: _number_ = 300000
+• **maxDelay**: *number* = 300000
 
-_Defined in [core/feed.ts:15](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/feed.ts#L15)_
+*Defined in [core/feed.ts:15](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/feed.ts#L15)*
 
-### minDelay
+###  minDelay
 
-• **minDelay**: _number_ = 60000
+• **minDelay**: *number* = 60000
 
-_Defined in [core/feed.ts:14](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/feed.ts#L14)_
+*Defined in [core/feed.ts:14](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/feed.ts#L14)*

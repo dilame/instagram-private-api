@@ -6,4 +6,4 @@
 
 ## Hierarchy
 
-- **MediaRepositoryListReelMediaViewerResponseRequester_usernames**
+* **MediaRepositoryListReelMediaViewerResponseRequester_usernames**

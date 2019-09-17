@@ -6,81 +6,81 @@
 
 ## Hierarchy
 
-- **LiveViewerListResponseUsersItem**
+* **LiveViewerListResponseUsersItem**
 
 ## Index
 
 ### Properties
 
-- [full_name](_responses_live_viewer_list_response_.liveviewerlistresponseusersitem.md#full_name)
-- [is_private](_responses_live_viewer_list_response_.liveviewerlistresponseusersitem.md#is_private)
-- [is_verified](_responses_live_viewer_list_response_.liveviewerlistresponseusersitem.md#is_verified)
-- [live_with_eligibility](_responses_live_viewer_list_response_.liveviewerlistresponseusersitem.md#live_with_eligibility)
-- [pk](_responses_live_viewer_list_response_.liveviewerlistresponseusersitem.md#pk)
-- [profile_pic_id](_responses_live_viewer_list_response_.liveviewerlistresponseusersitem.md#profile_pic_id)
-- [profile_pic_url](_responses_live_viewer_list_response_.liveviewerlistresponseusersitem.md#profile_pic_url)
-- [username](_responses_live_viewer_list_response_.liveviewerlistresponseusersitem.md#username)
+* [full_name](_responses_live_viewer_list_response_.liveviewerlistresponseusersitem.md#full_name)
+* [is_private](_responses_live_viewer_list_response_.liveviewerlistresponseusersitem.md#is_private)
+* [is_verified](_responses_live_viewer_list_response_.liveviewerlistresponseusersitem.md#is_verified)
+* [live_with_eligibility](_responses_live_viewer_list_response_.liveviewerlistresponseusersitem.md#live_with_eligibility)
+* [pk](_responses_live_viewer_list_response_.liveviewerlistresponseusersitem.md#pk)
+* [profile_pic_id](_responses_live_viewer_list_response_.liveviewerlistresponseusersitem.md#profile_pic_id)
+* [profile_pic_url](_responses_live_viewer_list_response_.liveviewerlistresponseusersitem.md#profile_pic_url)
+* [username](_responses_live_viewer_list_response_.liveviewerlistresponseusersitem.md#username)
 
 ## Properties
 
-### full_name
+###  full_name
 
-• **full_name**: _string_
+• **full_name**: *string*
 
-_Defined in [responses/live.viewer-list.response.ts:8](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/live.viewer-list.response.ts#L8)_
+*Defined in [responses/live.viewer-list.response.ts:8](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.viewer-list.response.ts#L8)*
 
----
+___
 
-### is_private
+###  is_private
 
-• **is_private**: _boolean_
+• **is_private**: *boolean*
 
-_Defined in [responses/live.viewer-list.response.ts:9](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/live.viewer-list.response.ts#L9)_
+*Defined in [responses/live.viewer-list.response.ts:9](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.viewer-list.response.ts#L9)*
 
----
+___
 
-### is_verified
+###  is_verified
 
-• **is_verified**: _boolean_
+• **is_verified**: *boolean*
 
-_Defined in [responses/live.viewer-list.response.ts:12](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/live.viewer-list.response.ts#L12)_
+*Defined in [responses/live.viewer-list.response.ts:12](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.viewer-list.response.ts#L12)*
 
----
+___
 
-### live_with_eligibility
+###  live_with_eligibility
 
-• **live_with_eligibility**: _string_
+• **live_with_eligibility**: *string*
 
-_Defined in [responses/live.viewer-list.response.ts:13](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/live.viewer-list.response.ts#L13)_
+*Defined in [responses/live.viewer-list.response.ts:13](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.viewer-list.response.ts#L13)*
 
----
+___
 
-### pk
+###  pk
 
-• **pk**: _number_
+• **pk**: *number*
 
-_Defined in [responses/live.viewer-list.response.ts:6](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/live.viewer-list.response.ts#L6)_
+*Defined in [responses/live.viewer-list.response.ts:6](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.viewer-list.response.ts#L6)*
 
----
+___
 
-### profile_pic_id
+###  profile_pic_id
 
-• **profile_pic_id**: _string_
+• **profile_pic_id**: *string*
 
-_Defined in [responses/live.viewer-list.response.ts:11](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/live.viewer-list.response.ts#L11)_
+*Defined in [responses/live.viewer-list.response.ts:11](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.viewer-list.response.ts#L11)*
 
----
+___
 
-### profile_pic_url
+###  profile_pic_url
 
-• **profile_pic_url**: _string_
+• **profile_pic_url**: *string*
 
-_Defined in [responses/live.viewer-list.response.ts:10](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/live.viewer-list.response.ts#L10)_
+*Defined in [responses/live.viewer-list.response.ts:10](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.viewer-list.response.ts#L10)*
 
----
+___
 
-### username
+###  username
 
-• **username**: _string_
+• **username**: *string*
 
-_Defined in [responses/live.viewer-list.response.ts:7](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/live.viewer-list.response.ts#L7)_
+*Defined in [responses/live.viewer-list.response.ts:7](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.viewer-list.response.ts#L7)*

@@ -6,139 +6,156 @@
 
 ## Hierarchy
 
-- [Repository](_core_repository_.repository.md)
+* [Repository](_core_repository_.repository.md)
 
-  - **FriendshipRepository**
+  * **FriendshipRepository**
 
 ## Index
 
 ### Constructors
 
-- [constructor](_repositories_friendship_repository_.friendshiprepository.md#constructor)
+* [constructor](_repositories_friendship_repository_.friendshiprepository.md#constructor)
 
 ### Methods
 
-- [approve](_repositories_friendship_repository_.friendshiprepository.md#approve)
-- [create](_repositories_friendship_repository_.friendshiprepository.md#create)
-- [deny](_repositories_friendship_repository_.friendshiprepository.md#deny)
-- [destroy](_repositories_friendship_repository_.friendshiprepository.md#destroy)
-- [removeFollower](_repositories_friendship_repository_.friendshiprepository.md#removefollower)
-- [show](_repositories_friendship_repository_.friendshiprepository.md#show)
+* [approve](_repositories_friendship_repository_.friendshiprepository.md#approve)
+* [create](_repositories_friendship_repository_.friendshiprepository.md#create)
+* [deny](_repositories_friendship_repository_.friendshiprepository.md#deny)
+* [destroy](_repositories_friendship_repository_.friendshiprepository.md#destroy)
+* [removeFollower](_repositories_friendship_repository_.friendshiprepository.md#removefollower)
+* [show](_repositories_friendship_repository_.friendshiprepository.md#show)
+* [showMany](_repositories_friendship_repository_.friendshiprepository.md#showmany)
 
 ## Constructors
 
-### constructor
+###  constructor
 
-\+ **new FriendshipRepository**(`client`: [IgApiClient](_core_client_.igapiclient.md)): _[FriendshipRepository](\_repositories_friendship_repository_.friendshiprepository.md)\_
+\+ **new FriendshipRepository**(`client`: [IgApiClient](_core_client_.igapiclient.md)): *[FriendshipRepository](_repositories_friendship_repository_.friendshiprepository.md)*
 
-_Inherited from [Repository](\_core_repository_.repository.md).[constructor](_core_repository_.repository.md#constructor)\_
+*Inherited from [Repository](_core_repository_.repository.md).[constructor](_core_repository_.repository.md#constructor)*
 
-_Defined in [core/repository.ts:6](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/core/repository.ts#L6)_
+*Defined in [core/repository.ts:6](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/repository.ts#L6)*
 
 **Parameters:**
 
-| Name     | Type                                        |
-| -------- | ------------------------------------------- |
-| `client` | [IgApiClient](_core_client_.igapiclient.md) |
+Name | Type |
+------ | ------ |
+`client` | [IgApiClient](_core_client_.igapiclient.md) |
 
-**Returns:** _[FriendshipRepository](\_repositories_friendship_repository_.friendshiprepository.md)\_
+**Returns:** *[FriendshipRepository](_repositories_friendship_repository_.friendshiprepository.md)*
 
 ## Methods
 
-### approve
+###  approve
 
-▸ **approve**(`id`: string | number, `mediaIdAttribution?`: string): _`Promise<any>`_
+▸ **approve**(`id`: string | number, `mediaIdAttribution?`: string): *`Promise<FriendshipRepositoryChangeResponseFriendship_status>`*
 
-_Defined in [repositories/friendship.repository.ts:20](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/repositories/friendship.repository.ts#L20)_
-
-**Parameters:**
-
-| Name                  | Type             |
-| --------------------- | ---------------- |
-| `id`                  | string \| number |
-| `mediaIdAttribution?` | string           |
-
-**Returns:** _`Promise<any>`_
-
----
-
-### create
-
-▸ **create**(`id`: string | number, `mediaIdAttribution?`: string): _`Promise<any>`_
-
-_Defined in [repositories/friendship.repository.ts:12](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/repositories/friendship.repository.ts#L12)_
+*Defined in [repositories/friendship.repository.ts:33](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/friendship.repository.ts#L33)*
 
 **Parameters:**
 
-| Name                  | Type             |
-| --------------------- | ---------------- |
-| `id`                  | string \| number |
-| `mediaIdAttribution?` | string           |
+Name | Type |
+------ | ------ |
+`id` | string \| number |
+`mediaIdAttribution?` | string |
 
-**Returns:** _`Promise<any>`_
+**Returns:** *`Promise<FriendshipRepositoryChangeResponseFriendship_status>`*
 
----
+___
 
-### deny
+###  create
 
-▸ **deny**(`id`: string | number, `mediaIdAttribution?`: string): _`Promise<any>`_
+▸ **create**(`id`: string | number, `mediaIdAttribution?`: string): *`Promise<FriendshipRepositoryChangeResponseFriendship_status>`*
 
-_Defined in [repositories/friendship.repository.ts:24](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/repositories/friendship.repository.ts#L24)_
-
-**Parameters:**
-
-| Name                  | Type             |
-| --------------------- | ---------------- |
-| `id`                  | string \| number |
-| `mediaIdAttribution?` | string           |
-
-**Returns:** _`Promise<any>`_
-
----
-
-### destroy
-
-▸ **destroy**(`id`: string | number, `mediaIdAttribution?`: string): _`Promise<any>`_
-
-_Defined in [repositories/friendship.repository.ts:16](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/repositories/friendship.repository.ts#L16)_
+*Defined in [repositories/friendship.repository.ts:25](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/friendship.repository.ts#L25)*
 
 **Parameters:**
 
-| Name                  | Type             |
-| --------------------- | ---------------- |
-| `id`                  | string \| number |
-| `mediaIdAttribution?` | string           |
+Name | Type |
+------ | ------ |
+`id` | string \| number |
+`mediaIdAttribution?` | string |
 
-**Returns:** _`Promise<any>`_
+**Returns:** *`Promise<FriendshipRepositoryChangeResponseFriendship_status>`*
 
----
+___
 
-### removeFollower
+###  deny
 
-▸ **removeFollower**(`id`: string | number): _`Promise<any>`_
+▸ **deny**(`id`: string | number, `mediaIdAttribution?`: string): *`Promise<FriendshipRepositoryChangeResponseFriendship_status>`*
 
-_Defined in [repositories/friendship.repository.ts:28](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/repositories/friendship.repository.ts#L28)_
-
-**Parameters:**
-
-| Name | Type             |
-| ---- | ---------------- |
-| `id` | string \| number |
-
-**Returns:** _`Promise<any>`_
-
----
-
-### show
-
-▸ **show**(`id`: string | number): _`Promise<any>`_
-
-_Defined in [repositories/friendship.repository.ts:5](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/repositories/friendship.repository.ts#L5)_
+*Defined in [repositories/friendship.repository.ts:37](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/friendship.repository.ts#L37)*
 
 **Parameters:**
 
-| Name | Type             |
-| ---- | ---------------- |
-| `id` | string \| number |
+Name | Type |
+------ | ------ |
+`id` | string \| number |
+`mediaIdAttribution?` | string |
 
-**Returns:** _`Promise<any>`_
+**Returns:** *`Promise<FriendshipRepositoryChangeResponseFriendship_status>`*
+
+___
+
+###  destroy
+
+▸ **destroy**(`id`: string | number, `mediaIdAttribution?`: string): *`Promise<FriendshipRepositoryChangeResponseFriendship_status>`*
+
+*Defined in [repositories/friendship.repository.ts:29](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/friendship.repository.ts#L29)*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`id` | string \| number |
+`mediaIdAttribution?` | string |
+
+**Returns:** *`Promise<FriendshipRepositoryChangeResponseFriendship_status>`*
+
+___
+
+###  removeFollower
+
+▸ **removeFollower**(`id`: string | number): *`Promise<FriendshipRepositoryChangeResponseFriendship_status>`*
+
+*Defined in [repositories/friendship.repository.ts:41](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/friendship.repository.ts#L41)*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`id` | string \| number |
+
+**Returns:** *`Promise<FriendshipRepositoryChangeResponseFriendship_status>`*
+
+___
+
+###  show
+
+▸ **show**(`id`: string | number): *`Promise<FriendshipRepositoryShowResponseRootObject>`*
+
+*Defined in [repositories/friendship.repository.ts:5](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/friendship.repository.ts#L5)*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`id` | string \| number |
+
+**Returns:** *`Promise<FriendshipRepositoryShowResponseRootObject>`*
+
+___
+
+###  showMany
+
+▸ **showMany**(`userIds`: string[] | number[]): *`Promise<any>`*
+
+*Defined in [repositories/friendship.repository.ts:12](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/friendship.repository.ts#L12)*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`userIds` | string[] \| number[] |
+
+**Returns:** *`Promise<any>`*

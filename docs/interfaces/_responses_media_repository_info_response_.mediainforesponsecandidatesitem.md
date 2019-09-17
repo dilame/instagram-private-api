@@ -6,36 +6,36 @@
 
 ## Hierarchy
 
-- **MediaInfoResponseCandidatesItem**
+* **MediaInfoResponseCandidatesItem**
 
 ## Index
 
 ### Properties
 
-- [height](_responses_media_repository_info_response_.mediainforesponsecandidatesitem.md#height)
-- [url](_responses_media_repository_info_response_.mediainforesponsecandidatesitem.md#url)
-- [width](_responses_media_repository_info_response_.mediainforesponsecandidatesitem.md#width)
+* [height](_responses_media_repository_info_response_.mediainforesponsecandidatesitem.md#height)
+* [url](_responses_media_repository_info_response_.mediainforesponsecandidatesitem.md#url)
+* [width](_responses_media_repository_info_response_.mediainforesponsecandidatesitem.md#width)
 
 ## Properties
 
-### height
+###  height
 
-• **height**: _number_
+• **height**: *number*
 
-_Defined in [responses/media.repository.info.response.ts:45](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/media.repository.info.response.ts#L45)_
+*Defined in [responses/media.repository.info.response.ts:45](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.info.response.ts#L45)*
 
----
+___
 
-### url
+###  url
 
-• **url**: _string_
+• **url**: *string*
 
-_Defined in [responses/media.repository.info.response.ts:46](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/media.repository.info.response.ts#L46)_
+*Defined in [responses/media.repository.info.response.ts:46](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.info.response.ts#L46)*
 
----
+___
 
-### width
+###  width
 
-• **width**: _number_
+• **width**: *number*
 
-_Defined in [responses/media.repository.info.response.ts:44](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/media.repository.info.response.ts#L44)_
+*Defined in [responses/media.repository.info.response.ts:44](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.info.response.ts#L44)*

@@ -6,18 +6,18 @@
 
 ## Hierarchy
 
-- **LocationFeedResponseMediasItem**
+* **LocationFeedResponseMediasItem**
 
 ## Index
 
 ### Properties
 
-- [media](_responses_location_feed_response_.locationfeedresponsemediasitem.md#media)
+* [media](_responses_location_feed_response_.locationfeedresponsemediasitem.md#media)
 
 ## Properties
 
-### media
+###  media
 
-• **media**: _[LocationFeedResponseMedia](\_responses_location_feed_response_.locationfeedresponsemedia.md)\_
+• **media**: *[LocationFeedResponseMedia](_responses_location_feed_response_.locationfeedresponsemedia.md)*
 
-_Defined in [responses/location.feed.response.ts:19](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/location.feed.response.ts#L19)_
+*Defined in [responses/location.feed.response.ts:19](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/location.feed.response.ts#L19)*

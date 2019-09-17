@@ -6,18 +6,18 @@
 
 ## Hierarchy
 
-- **MusicRepositoryMoodsResponseItemsItem**
+* **MusicRepositoryMoodsResponseItemsItem**
 
 ## Index
 
 ### Properties
 
-- [mood](_responses_music_repository_moods_response_.musicrepositorymoodsresponseitemsitem.md#mood)
+* [mood](_responses_music_repository_moods_response_.musicrepositorymoodsresponseitemsitem.md#mood)
 
 ## Properties
 
-### mood
+###  mood
 
-• **mood**: _[MusicRepositoryMoodsResponseMood](\_responses_music_repository_moods_response_.musicrepositorymoodsresponsemood.md)\_
+• **mood**: *[MusicRepositoryMoodsResponseMood](_responses_music_repository_moods_response_.musicrepositorymoodsresponsemood.md)*
 
-_Defined in [responses/music.repository.moods.response.ts:6](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/music.repository.moods.response.ts#L6)_
+*Defined in [responses/music.repository.moods.response.ts:6](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/music.repository.moods.response.ts#L6)*

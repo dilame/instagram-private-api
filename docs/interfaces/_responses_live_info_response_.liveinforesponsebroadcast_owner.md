@@ -6,81 +6,81 @@
 
 ## Hierarchy
 
-- **LiveInfoResponseBroadcast_owner**
+* **LiveInfoResponseBroadcast_owner**
 
 ## Index
 
 ### Properties
 
-- [friendship_status](_responses_live_info_response_.liveinforesponsebroadcast_owner.md#friendship_status)
-- [full_name](_responses_live_info_response_.liveinforesponsebroadcast_owner.md#full_name)
-- [is_private](_responses_live_info_response_.liveinforesponsebroadcast_owner.md#is_private)
-- [is_verified](_responses_live_info_response_.liveinforesponsebroadcast_owner.md#is_verified)
-- [pk](_responses_live_info_response_.liveinforesponsebroadcast_owner.md#pk)
-- [profile_pic_id](_responses_live_info_response_.liveinforesponsebroadcast_owner.md#profile_pic_id)
-- [profile_pic_url](_responses_live_info_response_.liveinforesponsebroadcast_owner.md#profile_pic_url)
-- [username](_responses_live_info_response_.liveinforesponsebroadcast_owner.md#username)
+* [friendship_status](_responses_live_info_response_.liveinforesponsebroadcast_owner.md#friendship_status)
+* [full_name](_responses_live_info_response_.liveinforesponsebroadcast_owner.md#full_name)
+* [is_private](_responses_live_info_response_.liveinforesponsebroadcast_owner.md#is_private)
+* [is_verified](_responses_live_info_response_.liveinforesponsebroadcast_owner.md#is_verified)
+* [pk](_responses_live_info_response_.liveinforesponsebroadcast_owner.md#pk)
+* [profile_pic_id](_responses_live_info_response_.liveinforesponsebroadcast_owner.md#profile_pic_id)
+* [profile_pic_url](_responses_live_info_response_.liveinforesponsebroadcast_owner.md#profile_pic_url)
+* [username](_responses_live_info_response_.liveinforesponsebroadcast_owner.md#username)
 
 ## Properties
 
-### friendship_status
+###  friendship_status
 
-• **friendship_status**: _[LiveInfoResponseFriendship_status](\_responses_live_info_response_.liveinforesponsefriendship*status.md)*
+• **friendship_status**: *[LiveInfoResponseFriendship_status](_responses_live_info_response_.liveinforesponsefriendship_status.md)*
 
-_Defined in [responses/live.info.response.ts:28](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/live.info.response.ts#L28)_
+*Defined in [responses/live.info.response.ts:28](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.info.response.ts#L28)*
 
----
+___
 
-### full_name
+###  full_name
 
-• **full_name**: _string_
+• **full_name**: *string*
 
-_Defined in [responses/live.info.response.ts:24](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/live.info.response.ts#L24)_
+*Defined in [responses/live.info.response.ts:24](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.info.response.ts#L24)*
 
----
+___
 
-### is_private
+###  is_private
 
-• **is_private**: _boolean_
+• **is_private**: *boolean*
 
-_Defined in [responses/live.info.response.ts:25](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/live.info.response.ts#L25)_
+*Defined in [responses/live.info.response.ts:25](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.info.response.ts#L25)*
 
----
+___
 
-### is_verified
+###  is_verified
 
-• **is_verified**: _boolean_
+• **is_verified**: *boolean*
 
-_Defined in [responses/live.info.response.ts:29](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/live.info.response.ts#L29)_
+*Defined in [responses/live.info.response.ts:29](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.info.response.ts#L29)*
 
----
+___
 
-### pk
+###  pk
 
-• **pk**: _number_
+• **pk**: *number*
 
-_Defined in [responses/live.info.response.ts:22](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/live.info.response.ts#L22)_
+*Defined in [responses/live.info.response.ts:22](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.info.response.ts#L22)*
 
----
+___
 
-### profile_pic_id
+###  profile_pic_id
 
-• **profile_pic_id**: _string_
+• **profile_pic_id**: *string*
 
-_Defined in [responses/live.info.response.ts:27](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/live.info.response.ts#L27)_
+*Defined in [responses/live.info.response.ts:27](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.info.response.ts#L27)*
 
----
+___
 
-### profile_pic_url
+###  profile_pic_url
 
-• **profile_pic_url**: _string_
+• **profile_pic_url**: *string*
 
-_Defined in [responses/live.info.response.ts:26](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/live.info.response.ts#L26)_
+*Defined in [responses/live.info.response.ts:26](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.info.response.ts#L26)*
 
----
+___
 
-### username
+###  username
 
-• **username**: _string_
+• **username**: *string*
 
-_Defined in [responses/live.info.response.ts:23](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/live.info.response.ts#L23)_
+*Defined in [responses/live.info.response.ts:23](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.info.response.ts#L23)*

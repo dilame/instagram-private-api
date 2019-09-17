@@ -6,99 +6,99 @@
 
 ## Hierarchy
 
-- **DirectInboxFeedResponseInviter**
+* **DirectInboxFeedResponseInviter**
 
 ## Index
 
 ### Properties
 
-- [allowed_commenter_type](_responses_direct_inbox_feed_response_.directinboxfeedresponseinviter.md#optional-allowed_commenter_type)
-- [full_name](_responses_direct_inbox_feed_response_.directinboxfeedresponseinviter.md#full_name)
-- [has_anonymous_profile_picture](_responses_direct_inbox_feed_response_.directinboxfeedresponseinviter.md#has_anonymous_profile_picture)
-- [is_private](_responses_direct_inbox_feed_response_.directinboxfeedresponseinviter.md#is_private)
-- [is_verified](_responses_direct_inbox_feed_response_.directinboxfeedresponseinviter.md#is_verified)
-- [pk](_responses_direct_inbox_feed_response_.directinboxfeedresponseinviter.md#pk)
-- [profile_pic_id](_responses_direct_inbox_feed_response_.directinboxfeedresponseinviter.md#optional-profile_pic_id)
-- [profile_pic_url](_responses_direct_inbox_feed_response_.directinboxfeedresponseinviter.md#profile_pic_url)
-- [reel_auto_archive](_responses_direct_inbox_feed_response_.directinboxfeedresponseinviter.md#optional-reel_auto_archive)
-- [username](_responses_direct_inbox_feed_response_.directinboxfeedresponseinviter.md#username)
+* [allowed_commenter_type](_responses_direct_inbox_feed_response_.directinboxfeedresponseinviter.md#optional-allowed_commenter_type)
+* [full_name](_responses_direct_inbox_feed_response_.directinboxfeedresponseinviter.md#full_name)
+* [has_anonymous_profile_picture](_responses_direct_inbox_feed_response_.directinboxfeedresponseinviter.md#has_anonymous_profile_picture)
+* [is_private](_responses_direct_inbox_feed_response_.directinboxfeedresponseinviter.md#is_private)
+* [is_verified](_responses_direct_inbox_feed_response_.directinboxfeedresponseinviter.md#is_verified)
+* [pk](_responses_direct_inbox_feed_response_.directinboxfeedresponseinviter.md#pk)
+* [profile_pic_id](_responses_direct_inbox_feed_response_.directinboxfeedresponseinviter.md#optional-profile_pic_id)
+* [profile_pic_url](_responses_direct_inbox_feed_response_.directinboxfeedresponseinviter.md#profile_pic_url)
+* [reel_auto_archive](_responses_direct_inbox_feed_response_.directinboxfeedresponseinviter.md#optional-reel_auto_archive)
+* [username](_responses_direct_inbox_feed_response_.directinboxfeedresponseinviter.md#username)
 
 ## Properties
 
 ### `Optional` allowed_commenter_type
 
-• **allowed_commenter_type**? : _string_
+• **allowed_commenter_type**? : *string*
 
-_Defined in [responses/direct-inbox.feed.response.ts:97](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-inbox.feed.response.ts#L97)_
+*Defined in [responses/direct-inbox.feed.response.ts:97](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-inbox.feed.response.ts#L97)*
 
----
+___
 
-### full_name
+###  full_name
 
-• **full_name**: _string_
+• **full_name**: *string*
 
-_Defined in [responses/direct-inbox.feed.response.ts:90](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-inbox.feed.response.ts#L90)_
+*Defined in [responses/direct-inbox.feed.response.ts:90](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-inbox.feed.response.ts#L90)*
 
----
+___
 
-### has_anonymous_profile_picture
+###  has_anonymous_profile_picture
 
-• **has_anonymous_profile_picture**: _boolean_
+• **has_anonymous_profile_picture**: *boolean*
 
-_Defined in [responses/direct-inbox.feed.response.ts:95](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-inbox.feed.response.ts#L95)_
+*Defined in [responses/direct-inbox.feed.response.ts:95](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-inbox.feed.response.ts#L95)*
 
----
+___
 
-### is_private
+###  is_private
 
-• **is_private**: _boolean_
+• **is_private**: *boolean*
 
-_Defined in [responses/direct-inbox.feed.response.ts:91](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-inbox.feed.response.ts#L91)_
+*Defined in [responses/direct-inbox.feed.response.ts:91](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-inbox.feed.response.ts#L91)*
 
----
+___
 
-### is_verified
+###  is_verified
 
-• **is_verified**: _boolean_
+• **is_verified**: *boolean*
 
-_Defined in [responses/direct-inbox.feed.response.ts:94](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-inbox.feed.response.ts#L94)_
+*Defined in [responses/direct-inbox.feed.response.ts:94](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-inbox.feed.response.ts#L94)*
 
----
+___
 
-### pk
+###  pk
 
-• **pk**: _number_
+• **pk**: *number*
 
-_Defined in [responses/direct-inbox.feed.response.ts:88](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-inbox.feed.response.ts#L88)_
+*Defined in [responses/direct-inbox.feed.response.ts:88](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-inbox.feed.response.ts#L88)*
 
----
+___
 
 ### `Optional` profile_pic_id
 
-• **profile_pic_id**? : _string_
+• **profile_pic_id**? : *string*
 
-_Defined in [responses/direct-inbox.feed.response.ts:93](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-inbox.feed.response.ts#L93)_
+*Defined in [responses/direct-inbox.feed.response.ts:93](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-inbox.feed.response.ts#L93)*
 
----
+___
 
-### profile_pic_url
+###  profile_pic_url
 
-• **profile_pic_url**: _string_
+• **profile_pic_url**: *string*
 
-_Defined in [responses/direct-inbox.feed.response.ts:92](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-inbox.feed.response.ts#L92)_
+*Defined in [responses/direct-inbox.feed.response.ts:92](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-inbox.feed.response.ts#L92)*
 
----
+___
 
 ### `Optional` reel_auto_archive
 
-• **reel_auto_archive**? : _string_
+• **reel_auto_archive**? : *string*
 
-_Defined in [responses/direct-inbox.feed.response.ts:96](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-inbox.feed.response.ts#L96)_
+*Defined in [responses/direct-inbox.feed.response.ts:96](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-inbox.feed.response.ts#L96)*
 
----
+___
 
-### username
+###  username
 
-• **username**: _string_
+• **username**: *string*
 
-_Defined in [responses/direct-inbox.feed.response.ts:89](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/direct-inbox.feed.response.ts#L89)_
+*Defined in [responses/direct-inbox.feed.response.ts:89](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-inbox.feed.response.ts#L89)*

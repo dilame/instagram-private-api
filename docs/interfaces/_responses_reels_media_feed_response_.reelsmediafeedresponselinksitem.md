@@ -6,99 +6,99 @@
 
 ## Hierarchy
 
-- **ReelsMediaFeedResponseLinksItem**
+* **ReelsMediaFeedResponseLinksItem**
 
 ## Index
 
 ### Properties
 
-- [androidClass](_responses_reels_media_feed_response_.reelsmediafeedresponselinksitem.md#androidclass)
-- [appInstallObjectiveInvalidationBehavior](_responses_reels_media_feed_response_.reelsmediafeedresponselinksitem.md#appinstallobjectiveinvalidationbehavior)
-- [callToActionTitle](_responses_reels_media_feed_response_.reelsmediafeedresponselinksitem.md#calltoactiontitle)
-- [deeplinkUri](_responses_reels_media_feed_response_.reelsmediafeedresponselinksitem.md#deeplinkuri)
-- [igUserId](_responses_reels_media_feed_response_.reelsmediafeedresponselinksitem.md#iguserid)
-- [leadGenFormId](_responses_reels_media_feed_response_.reelsmediafeedresponselinksitem.md#leadgenformid)
-- [linkType](_responses_reels_media_feed_response_.reelsmediafeedresponselinksitem.md#linktype)
-- [package](_responses_reels_media_feed_response_.reelsmediafeedresponselinksitem.md#package)
-- [redirectUri](_responses_reels_media_feed_response_.reelsmediafeedresponselinksitem.md#redirecturi)
-- [webUri](_responses_reels_media_feed_response_.reelsmediafeedresponselinksitem.md#weburi)
+* [androidClass](_responses_reels_media_feed_response_.reelsmediafeedresponselinksitem.md#androidclass)
+* [appInstallObjectiveInvalidationBehavior](_responses_reels_media_feed_response_.reelsmediafeedresponselinksitem.md#appinstallobjectiveinvalidationbehavior)
+* [callToActionTitle](_responses_reels_media_feed_response_.reelsmediafeedresponselinksitem.md#calltoactiontitle)
+* [deeplinkUri](_responses_reels_media_feed_response_.reelsmediafeedresponselinksitem.md#deeplinkuri)
+* [igUserId](_responses_reels_media_feed_response_.reelsmediafeedresponselinksitem.md#iguserid)
+* [leadGenFormId](_responses_reels_media_feed_response_.reelsmediafeedresponselinksitem.md#leadgenformid)
+* [linkType](_responses_reels_media_feed_response_.reelsmediafeedresponselinksitem.md#linktype)
+* [package](_responses_reels_media_feed_response_.reelsmediafeedresponselinksitem.md#package)
+* [redirectUri](_responses_reels_media_feed_response_.reelsmediafeedresponselinksitem.md#redirecturi)
+* [webUri](_responses_reels_media_feed_response_.reelsmediafeedresponselinksitem.md#weburi)
 
 ## Properties
 
-### androidClass
+###  androidClass
 
-• **androidClass**: _string_
+• **androidClass**: *string*
 
-_Defined in [responses/reels-media.feed.response.ts:109](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/reels-media.feed.response.ts#L109)_
+*Defined in [responses/reels-media.feed.response.ts:109](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-media.feed.response.ts#L109)*
 
----
+___
 
-### appInstallObjectiveInvalidationBehavior
+###  appInstallObjectiveInvalidationBehavior
 
-• **appInstallObjectiveInvalidationBehavior**: _null_
+• **appInstallObjectiveInvalidationBehavior**: *null*
 
-_Defined in [responses/reels-media.feed.response.ts:116](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/reels-media.feed.response.ts#L116)_
+*Defined in [responses/reels-media.feed.response.ts:116](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-media.feed.response.ts#L116)*
 
----
+___
 
-### callToActionTitle
+###  callToActionTitle
 
-• **callToActionTitle**: _string_
+• **callToActionTitle**: *string*
 
-_Defined in [responses/reels-media.feed.response.ts:112](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/reels-media.feed.response.ts#L112)_
+*Defined in [responses/reels-media.feed.response.ts:112](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-media.feed.response.ts#L112)*
 
----
+___
 
-### deeplinkUri
+###  deeplinkUri
 
-• **deeplinkUri**: _string_
+• **deeplinkUri**: *string*
 
-_Defined in [responses/reels-media.feed.response.ts:111](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/reels-media.feed.response.ts#L111)_
+*Defined in [responses/reels-media.feed.response.ts:111](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-media.feed.response.ts#L111)*
 
----
+___
 
-### igUserId
+###  igUserId
 
-• **igUserId**: _string_
+• **igUserId**: *string*
 
-_Defined in [responses/reels-media.feed.response.ts:115](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/reels-media.feed.response.ts#L115)_
+*Defined in [responses/reels-media.feed.response.ts:115](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-media.feed.response.ts#L115)*
 
----
+___
 
-### leadGenFormId
+###  leadGenFormId
 
-• **leadGenFormId**: _string_
+• **leadGenFormId**: *string*
 
-_Defined in [responses/reels-media.feed.response.ts:114](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/reels-media.feed.response.ts#L114)_
+*Defined in [responses/reels-media.feed.response.ts:114](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-media.feed.response.ts#L114)*
 
----
+___
 
-### linkType
+###  linkType
 
-• **linkType**: _number_
+• **linkType**: *number*
 
-_Defined in [responses/reels-media.feed.response.ts:107](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/reels-media.feed.response.ts#L107)_
+*Defined in [responses/reels-media.feed.response.ts:107](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-media.feed.response.ts#L107)*
 
----
+___
 
-### package
+###  package
 
-• **package**: _string_
+• **package**: *string*
 
-_Defined in [responses/reels-media.feed.response.ts:110](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/reels-media.feed.response.ts#L110)_
+*Defined in [responses/reels-media.feed.response.ts:110](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-media.feed.response.ts#L110)*
 
----
+___
 
-### redirectUri
+###  redirectUri
 
-• **redirectUri**: _null_
+• **redirectUri**: *null*
 
-_Defined in [responses/reels-media.feed.response.ts:113](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/reels-media.feed.response.ts#L113)_
+*Defined in [responses/reels-media.feed.response.ts:113](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-media.feed.response.ts#L113)*
 
----
+___
 
-### webUri
+###  webUri
 
-• **webUri**: _string_
+• **webUri**: *string*
 
-_Defined in [responses/reels-media.feed.response.ts:108](https://github.com/realinstadude/instagram-private-api/blob/4ae8fec/src/responses/reels-media.feed.response.ts#L108)_
+*Defined in [responses/reels-media.feed.response.ts:108](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-media.feed.response.ts#L108)*

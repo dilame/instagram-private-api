@@ -6,9 +6,9 @@ import {
   DirectThreadRepositoryUpdateTitleResponseRootObject,
   StatusResponse,
 } from '../responses';
-import { DirectThreadBroadcastOptions } from '../types/direct-thread.broadcast.options';
+import { DirectThreadBroadcastOptions } from '../types';
 import Chance = require('chance');
-import { DirectThreadRepositoryApproveParticipantRequestResponseRootObject } from '../responses/direct-thread.repository.approve-participant-request.response';
+import { DirectThreadRepositoryApproveParticipantRequestResponseRootObject } from '../responses';
 
 export class DirectThreadRepository extends Repository {
   public async approve(threadId: string | number): Promise<StatusResponse> {
@@ -221,6 +221,18 @@ export class DirectThreadRepository extends Repository {
         mutation_token: mutationToken,
         _uuid: this.client.state.uuid,
         ...options.form,
+      },
+    });
+    return body;
+  }
+
+  public async deleteItem(threadId: string | number, itemId: string | number): Promise<StatusResponse> {
+    const { body } = await this.client.request.send({
+      url: `/api/v1/direct_v2/threads/${threadId}/items/${itemId}/delete/`,
+      method: 'POST',
+      form: {
+        _csrftoken: this.client.state.cookieCsrfToken,
+        _uuid: this.client.state.uuid,
       },
     });
     return body;
