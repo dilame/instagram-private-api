@@ -44,7 +44,7 @@ export * from './media.entity.oembed.response';
 export * from './media.repository.blocked.response';
 export * from './media.repository.comment.response';
 export * from './media.repository.likers.response';
-export * from './media.repository.list-reel-media-viewer.response';
+export * from './list-reel-media-viewer.feed.response';
 export * from './media-comments.feed.response';
 export * from './reels-media.feed.response';
 export * from './spam.response';

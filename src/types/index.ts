@@ -2,7 +2,7 @@ export * from './account.edit-profile.options';
 export * from './account.two-factor-login.options';
 export * from './common.types';
 export * from './direct-thread.broadcast.options';
-export * from './direct-thread.broadcast-photo.options';
+export * from './direct-thread.broadcast-media.options';
 export * from './live.obs-settings';
 export * from './media.like.options';
 export * from './stories.types';

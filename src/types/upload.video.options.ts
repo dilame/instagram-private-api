@@ -6,4 +6,6 @@ export interface UploadVideoOptions {
   height: number;
   isSidecar?: boolean;
   forAlbum?: boolean;
+  isDirect?: boolean;
+  mediaType?: string;
 }
