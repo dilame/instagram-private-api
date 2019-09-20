@@ -33,6 +33,7 @@ import { plainToClassFromExist } from 'class-transformer';
 import * as Chance from 'chance';
 import { PostsInsightsFeedOptions } from '../types';
 import { UserStoryFeed } from '../feeds/user-story.feed';
+import { ListReelMediaViewerFeed } from '../feeds/list-reel-media-viewer.feed';
 
 export class FeedFactory {
   constructor(private client: IgApiClient) {}
@@ -183,5 +184,9 @@ export class FeedFactory {
 
   public saved(): SavedFeed {
     return new SavedFeed(this.client);
+  }
+
+  public listReelMediaViewers(mediaId: string): ListReelMediaViewerFeed {
+    return plainToClassFromExist(new ListReelMediaViewerFeed(this.client), { mediaId });
   }
 }

@@ -1,8 +1,9 @@
 import * as urlRegex from 'url-regex';
 import { Entity } from '../core/entity';
-import { DirectThreadBroadcastPhotoOptions } from '../types';
+import { DirectThreadBroadcastPhotoOptions, DirectThreadBroadcastVideoOptions } from '../types';
 import { DirectThreadBroadcastOptions } from '../types';
 import { IgClientError } from '../errors';
+import { PublishService } from '../services/publish.service';
 
 export class DirectThreadEntity extends Entity {
   threadId: string = null;
@@ -57,6 +58,26 @@ export class DirectThreadEntity extends Entity {
       form: {
         allow_full_aspect_ratio: options.allowFullAspectRatio || true,
         upload_id,
+      },
+    });
+  }
+
+  public async broadcastVideo(options: DirectThreadBroadcastVideoOptions) {
+    const uploadId = options.uploadId || Date.now().toString();
+    const videoInfo = PublishService.getVideoInfo(options.video);
+    await this.client.upload.video({
+      video: options.video,
+      uploadId,
+      isDirect: true,
+      ...videoInfo,
+    });
+
+    return await this.broadcast({
+      item: 'configure_video',
+      form: {
+        video_result: '',
+        upload_id: uploadId,
+        sampled: typeof options.sampled !== 'undefined' ? options.sampled : true,
       },
     });
   }
