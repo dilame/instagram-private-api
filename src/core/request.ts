@@ -19,7 +19,6 @@ import {
   IgResponseError,
   IgSentryBlockError,
 } from '../errors';
-import { IgResponse } from '../types/common.types';
 import JSONbigInt = require('json-bigint');
 import { IgResponse } from '../types/common.types';
 import * as url from 'url';
@@ -77,7 +76,7 @@ export class Request {
     return resolveWithFullResponse ? response : response.body;
   }
 
-  public async send<T = any>(userOptions: Options & { isReg?: boolean }): Promise<IgResponse<T>> {
+  public async send<T = any>(userOptions: Options & { isReg?: boolean }, onlyCheckHttpStatus?: boolean): Promise<IgResponse<T>> {
     const parsedUrl = url.parse('https://instagram.com/');
     const cookies = this.client.state.cookieJar.getCookies(parsedUrl);
     const keepCookies = userOptions.isReg ? ['sessionid'] : ['mid', 'rur', 'csrftoken', 'sessionid', 'shbid', 'shbts'];
