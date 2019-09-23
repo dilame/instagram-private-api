@@ -188,7 +188,7 @@ export class Request {
     // TODO: unquoted Host and Connection?!
     return {
       'User-Agent': this.client.state.appUserAgent,
-      'Accept-Language': 'Accept-Language': `${this.client.state.language.split('_')[0]};q=1, ${this.client.state.language.replace('_', '-')};q=0.9`,,
+      'Accept-Language': 'Accept-Language': `${this.client.state.language.split('_')[0]};q=1, ${this.client.state.language.replace('_', '-')};q=0.9`,
       /*'X-Pigeon-Session-Id': this.client.state.pigeonSessionId,
       'X-Pigeon-Rawclienttime': (Date.now() / 1000).toFixed(3),
       'X-IG-Connection-Speed': `${lodash_1.random(1000, 3700)}kbps`,
