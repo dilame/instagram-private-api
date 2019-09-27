@@ -21,7 +21,7 @@ import {
 } from '../errors';
 import JSONbigInt = require('json-bigint');
 import { IgResponse } from '../types/common.types';
-import * as url from 'url';
+//import * as url from 'url';
 
 const JSONbigString = JSONbigInt({ storeAsString: true });
 
@@ -77,13 +77,13 @@ export class Request {
   }
 
   public async send<T = any>(userOptions: Options & { isReg?: boolean }, onlyCheckHttpStatus?: boolean): Promise<IgResponse<T>> {
-    const parsedUrl = url.parse('https://instagram.com/');
+    /*const parsedUrl = url.parse('https://i.instagram.com/');
     const cookies = this.client.state.cookieJar.getCookies(parsedUrl);
     const keepCookies = userOptions.isReg ? ['sessionid'] : ['mid', 'rur', 'csrftoken', 'sessionid', 'shbid', 'shbts'];
     const newCookies = cookies.filter(cookie => keepCookies.includes(cookie.key));
 
     const newCookieJar = request.jar();
-    newCookies.forEach(cookie => newCookieJar.setCookie(cookie.toString(), parsedUrl));
+    newCookies.forEach(cookie => newCookieJar.setCookie(cookie.toString(), parsedUrl));*/
 
     const options = defaultsDeep(
       userOptions,
@@ -93,7 +93,7 @@ export class Request {
         proxy: this.client.state.proxyUrl,
         simple: false,
         transform: Request.requestTransform,
-        jar: newCookieJar,
+        jar: this.client.state.cookieJar,
         strictSSL: false,
         gzip: true,
         headers: this.getDefaultHeaders(),
@@ -108,12 +108,11 @@ export class Request {
     }
 
     const response = userOptions.isReg ? await saveTrafficRequest(options) : await this.faultTolerantRequest(options);
-    newCookieJar
-      .getCookies(parsedUrl)
-      .forEach(cookie => this.client.state.cookieJar.setCookie(cookie.toString(), parsedUrl));
-
     process.nextTick(() => this.end$.next());
     if (response.body.status === 'ok' || (onlyCheckHttpStatus && response.statusCode === 200)) {
+      /*newCookieJar
+        .getCookies(parsedUrl)
+        .forEach(cookie => this.client.state.cookieJar.setCookie(cookie.toString(), parsedUrl));*/
       return response;
     }
     const error = this.handleResponseError(response);
