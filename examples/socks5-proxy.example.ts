@@ -2,15 +2,16 @@
 import 'dotenv/config';
 import { IgApiClient } from '../src';
 // tslint:disable-next-line:no-var-requires
-const shttps = require('socks5-https-client/lib/Agent'); // you should install SOCKS5 client via: npm i socks5-https-client
+const shttps = require('socks-proxy-agent'); // you should install SOCKS5 client via: npm i socks-proxy-agent
 (async () => {
   const ig = new IgApiClient();
   ig.state.generateDevice(process.env.IG_USERNAME);
   ig.request.defaults.agentClass = shttps; // apply agent class to request library defaults
   ig.request.defaults.agentOptions = {
     // @ts-ignore
-    socksHost: '127.0.0.1', // proxy hostname
-    socksPort: 8000, // proxy port
+    hostname: '127.0.0.1', // proxy hostname
+    port: 8000, // proxy port
+    protocol: 'socks:' // supported: 'socks:' , 'socks4:' , 'socks4a:' , 'socks5:' , 'socks5h:' 
   };
   // Now we can perform authorization using our SOCKS5 proxy.
   const auth = await ig.account.login(process.env.IG_USERNAME, process.env.IG_PASSWORD);
