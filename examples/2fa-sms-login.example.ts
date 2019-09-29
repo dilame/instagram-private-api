@@ -33,7 +33,7 @@ import inquirer = require('inquirer');
         username: process.env.IG_USERNAME,
         verificationCode: code,
         twoFactorIdentifier,
-        verificationMethod: '1', // '1' = SMS, can be omitted as '1' is used by default
+        verificationMethod: '1', // '1' = SMS (default), '0' = OTP
         trustThisDevice: '1', // Can be omitted as '1' is used by default
       });
     },
