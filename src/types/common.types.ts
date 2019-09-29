@@ -28,6 +28,7 @@ export type IgAppModule =
   | 'story_viewer_profile'
   | 'story_viewer_default'
   | 'find_friends_contacts'
+  | 'explore_people'
   | string;
 
 export type IgResponse<Body> = Pick<Response, Exclude<keyof Response, 'body'>> & { body: Body };

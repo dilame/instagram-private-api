@@ -1,6 +1,22 @@
 import { Repository } from '../core/repository';
+import { DiscoverRepositoryChainingResponseRootObject } from '../responses/discover.repository.chaining.response';
 
 export class DiscoverRepository extends Repository {
+
+  /**
+   * Gets the suggestions based on a user
+   * @param targetId user id/pk
+   */
+  async chaining(targetId: string): Promise<DiscoverRepositoryChainingResponseRootObject> {
+    const {body} = await this.client.request.send<DiscoverRepositoryChainingResponseRootObject>({
+      url: '/api/v1/discover/chaining/',
+      qs: {
+        target_id: targetId,
+      },
+    });
+    return body;
+  }
+
   async topicalExplore() {
     const { body } = await this.client.request.send({
       url: '/api/v1/discover/topical_explore/',
