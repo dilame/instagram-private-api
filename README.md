@@ -8,6 +8,20 @@
 [![Join the chat at https://gitter.im/instagram-private-api/Lobby](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/instagram-private-api/Lobby)
 
 ---
+# Table of Contents
+- [Install](#install)
+- [Support us](#support-us)
+- [Examples](#examples)
+- [Basic Concepts](#basic-concepts)
+  - [Feeds](#feeds)
+  - [Repositories](#repositories)
+  - [Services](#services)
+- [Contribution](#contribution)
+- [Useful Links](#useful-links)
+  - [Special Thanks](#special-thanks)
+  - [Thanks to Contributors](#thanks-to-contributors)
+  - [End User License Agreement (EULA)](#end-user-license-agreement-eula)
+
 
 # Install
 
