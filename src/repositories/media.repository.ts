@@ -167,10 +167,12 @@ export class MediaRepository extends Repository {
   public async comment({
     mediaId,
     text,
+    replyToCommentId,
     module = 'self_comments_v2',
   }: {
     mediaId: string;
     text: string;
+    replyToCommentId?: string;
     module?: string;
   }) {
     const { body } = await this.client.request.send<MediaRepositoryCommentResponse>({
@@ -186,6 +188,7 @@ export class MediaRepository extends Repository {
         _uuid: this.client.state.uuid,
         comment_text: text,
         containermodule: module,
+        replied_to_comment_id: replyToCommentId,
       }),
     });
     return body.comment;
