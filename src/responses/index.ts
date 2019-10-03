@@ -22,6 +22,7 @@ export * from './direct-thread.repository.update-title.response';
 export * from './direct-thread.repository.approve-participant-request.response';
 export * from './fbsearch.repository.places.response';
 export * from './fbsearch.repository.topsearch-flat.response';
+export * from './fbsearch.repository.explore.response';
 export * from './friendship.repository.change.response';
 export * from './friendship.repository.show.response';
 export * from './live.comments.response';
