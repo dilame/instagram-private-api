@@ -11,6 +11,8 @@ interface CreateThreadOptions {
 interface DirectTreadBroadcastBaseOptions {
   item: string;
   form?: { [x: string]: any };
+  qs?: { [x: string]: any };
+  signed?: boolean;
 }
 
 export type DirectThreadBroadcastOptions = DirectTreadBroadcastBaseOptions &

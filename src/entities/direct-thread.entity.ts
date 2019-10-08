@@ -1,6 +1,11 @@
 import * as urlRegex from 'url-regex';
 import { Entity } from '../core/entity';
-import { DirectThreadBroadcastPhotoOptions, DirectThreadBroadcastVideoOptions } from '../types';
+import {
+  DirectThreadBroadcastPhotoOptions,
+  DirectThreadBroadcastReelOptions,
+  DirectThreadBroadcastStoryOptions,
+  DirectThreadBroadcastVideoOptions,
+} from '../types';
 import { DirectThreadBroadcastOptions } from '../types';
 import { IgClientError } from '../errors';
 import { PublishService } from '../services/publish.service';
@@ -26,6 +31,36 @@ export class DirectThreadEntity extends Entity {
       form: {
         text,
       },
+    });
+  }
+
+  public async broadcastReel(options: DirectThreadBroadcastReelOptions) {
+    return await this.broadcast({
+      item: 'reel_share',
+      form: {
+        media_id: options.mediaId,
+        reel_id: options.reelId || options.mediaId.split('_')[1],
+        text: options.text,
+        entry: 'reel',
+      },
+      qs: {
+        media_type: options.mediaType || 'photo',
+      },
+    });
+  }
+
+  public async broadcastUserStory(options: DirectThreadBroadcastReelOptions) {
+    return await this.broadcast({
+      item: 'story_share',
+      form: {
+        story_media_id: options.mediaId,
+        reel_id: options.reelId || options.mediaId.split('_')[1],
+        text: options.text,
+      },
+      qs: {
+        media_type: options.mediaType || 'photo',
+      },
+      signed: true,
     });
   }
 
@@ -133,6 +168,8 @@ export class DirectThreadEntity extends Entity {
     const baseParams = {
       item: options.item,
       form: options.form,
+      qs: options.qs,
+      signed: options.signed,
     };
     let params;
     if (this.threadId) {
