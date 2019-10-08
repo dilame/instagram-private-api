@@ -394,7 +394,6 @@ export class MediaRepository extends Repository {
       width,
       height,
 
-      upload_id: Date.now().toString(),
       source_type: '3',
       configure_mode: '1',
       client_shared_at: now.toString(),
@@ -409,6 +408,11 @@ export class MediaRepository extends Repository {
 
     if (form.configure_mode === '1') {
       MediaRepository.stringifyStoryStickers(form);
+    } else if (form.configure_mode === '2') {
+      if (typeof form.recipient_users !== 'string') {
+        form.recipient_users = JSON.stringify(form.recipient_users ? [form.recipient_users.map(x => Number(x))] : []);
+      }
+      form.thread_ids = JSON.stringify(form.thread_ids || []);
     }
 
     const { body } = await this.client.request.send({

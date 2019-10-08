@@ -34,6 +34,10 @@ export class DirectThreadEntity extends Entity {
     });
   }
 
+  /**
+   * This is used when replying to a story (swiping up) and it's creator
+   * @param options
+   */
   public async broadcastReel(options: DirectThreadBroadcastReelOptions) {
     return await this.broadcast({
       item: 'reel_share',
@@ -49,6 +53,10 @@ export class DirectThreadEntity extends Entity {
     });
   }
 
+  /**
+   * This is used when sharing a story (app: plane/share button) to a thread
+   * @param options
+   */
   public async broadcastUserStory(options: DirectThreadBroadcastReelOptions) {
     return await this.broadcast({
       item: 'story_share',
@@ -117,16 +125,32 @@ export class DirectThreadEntity extends Entity {
     });
   }
 
-  public async broadcastStory(file: Buffer) {
-    if (this.threadId === null) {
+  /**
+   * Uploads a story to the thread
+   * The story is either destroyable (view 'once') or 'replayable'
+   * @param options
+   */
+  public async broadcastStory(options: DirectThreadBroadcastStoryOptions) {
+    if (typeof options.file === 'undefined') {
+      // TODO: remove in future releases
+      throw new IgClientError(
+        'Deprecated: DirectThreadEntity.broadcastStory() no longer accepts a Buffer, use {file: Buffer} instead.',
+      );
+    }
+    const baseOptions = {
+      file: options.file,
+      viewMode: options.viewMode || 'replayable',
+      replyType: options.replyType,
+    };
+    if (this.threadId !== null) {
       return await this.client.publish.story({
-        file,
+        ...baseOptions,
         threadIds: [this.threadId],
       });
     }
-    if (this.userIds === null) {
+    if (this.userIds !== null) {
       return await this.client.publish.story({
-        file,
+        ...baseOptions,
         recipientUsers: this.userIds,
       });
     }

@@ -9,3 +9,9 @@ export interface DirectThreadBroadcastVideoOptions {
   uploadId?: string;
   sampled?: boolean;
 }
+
+export interface DirectThreadBroadcastStoryOptions {
+  file: Buffer;
+  viewMode?: 'replayable' | 'once' | string;
+  replyType?: 'story' | string;
+}

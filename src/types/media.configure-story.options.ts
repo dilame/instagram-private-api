@@ -8,8 +8,14 @@ export interface MediaConfigureStoryBaseOptions {
   // 1 = story-reel, 2 = direct-story (does not support stickers)
   configure_mode: '1' | '2';
   camera_position?: string;
-  thread_ids?: string[];
-  recipient_users?: string[];
+  allow_multi_configures?: '0' | '1';
+
+  // direct-story share options
+  thread_ids?: string[] | string;
+  recipient_users?: string[] | string;
+  client_context?: string;
+  view_mode?: 'replayable' | 'once' | string;
+  reply_type?: 'story' | string;
 
   caption?: string;
   mas_opt_in?: 'NOT_PROMPTED';
