@@ -33,7 +33,7 @@
 
 • **bit_flags**: *number*
 
-*Defined in [responses/media.repository.configure-sidecar.response.ts:102](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.configure-sidecar.response.ts#L102)*
+*Defined in [responses/media.repository.configure-sidecar.response.ts:102](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/media.repository.configure-sidecar.response.ts#L102)*
 
 ___
 
@@ -41,7 +41,7 @@ ___
 
 • **content_type**: *string*
 
-*Defined in [responses/media.repository.configure-sidecar.response.ts:100](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.configure-sidecar.response.ts#L100)*
+*Defined in [responses/media.repository.configure-sidecar.response.ts:100](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/media.repository.configure-sidecar.response.ts#L100)*
 
 ___
 
@@ -49,7 +49,7 @@ ___
 
 • **created_at**: *number*
 
-*Defined in [responses/media.repository.configure-sidecar.response.ts:98](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.configure-sidecar.response.ts#L98)*
+*Defined in [responses/media.repository.configure-sidecar.response.ts:98](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/media.repository.configure-sidecar.response.ts#L98)*
 
 ___
 
@@ -57,7 +57,7 @@ ___
 
 • **created_at_utc**: *number*
 
-*Defined in [responses/media.repository.configure-sidecar.response.ts:99](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.configure-sidecar.response.ts#L99)*
+*Defined in [responses/media.repository.configure-sidecar.response.ts:99](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/media.repository.configure-sidecar.response.ts#L99)*
 
 ___
 
@@ -65,7 +65,7 @@ ___
 
 • **did_report_as_spam**: *boolean*
 
-*Defined in [responses/media.repository.configure-sidecar.response.ts:104](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.configure-sidecar.response.ts#L104)*
+*Defined in [responses/media.repository.configure-sidecar.response.ts:104](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/media.repository.configure-sidecar.response.ts#L104)*
 
 ___
 
@@ -73,7 +73,7 @@ ___
 
 • **has_translation**: *boolean*
 
-*Defined in [responses/media.repository.configure-sidecar.response.ts:107](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.configure-sidecar.response.ts#L107)*
+*Defined in [responses/media.repository.configure-sidecar.response.ts:107](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/media.repository.configure-sidecar.response.ts#L107)*
 
 ___
 
@@ -81,7 +81,7 @@ ___
 
 • **media_id**: *string*
 
-*Defined in [responses/media.repository.configure-sidecar.response.ts:106](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.configure-sidecar.response.ts#L106)*
+*Defined in [responses/media.repository.configure-sidecar.response.ts:106](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/media.repository.configure-sidecar.response.ts#L106)*
 
 ___
 
@@ -89,7 +89,7 @@ ___
 
 • **pk**: *string*
 
-*Defined in [responses/media.repository.configure-sidecar.response.ts:94](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.configure-sidecar.response.ts#L94)*
+*Defined in [responses/media.repository.configure-sidecar.response.ts:94](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/media.repository.configure-sidecar.response.ts#L94)*
 
 ___
 
@@ -97,7 +97,7 @@ ___
 
 • **share_enabled**: *boolean*
 
-*Defined in [responses/media.repository.configure-sidecar.response.ts:105](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.configure-sidecar.response.ts#L105)*
+*Defined in [responses/media.repository.configure-sidecar.response.ts:105](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/media.repository.configure-sidecar.response.ts#L105)*
 
 ___
 
@@ -105,7 +105,7 @@ ___
 
 • **status**: *string*
 
-*Defined in [responses/media.repository.configure-sidecar.response.ts:101](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.configure-sidecar.response.ts#L101)*
+*Defined in [responses/media.repository.configure-sidecar.response.ts:101](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/media.repository.configure-sidecar.response.ts#L101)*
 
 ___
 
@@ -113,7 +113,7 @@ ___
 
 • **text**: *string*
 
-*Defined in [responses/media.repository.configure-sidecar.response.ts:96](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.configure-sidecar.response.ts#L96)*
+*Defined in [responses/media.repository.configure-sidecar.response.ts:96](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/media.repository.configure-sidecar.response.ts#L96)*
 
 ___
 
@@ -121,7 +121,7 @@ ___
 
 • **type**: *number*
 
-*Defined in [responses/media.repository.configure-sidecar.response.ts:97](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.configure-sidecar.response.ts#L97)*
+*Defined in [responses/media.repository.configure-sidecar.response.ts:97](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/media.repository.configure-sidecar.response.ts#L97)*
 
 ___
 
@@ -129,7 +129,7 @@ ___
 
 • **user**: *[MediaRepositoryConfigureSidecarResponseUser](_responses_media_repository_configure_sidecar_response_.mediarepositoryconfiguresidecarresponseuser.md)*
 
-*Defined in [responses/media.repository.configure-sidecar.response.ts:103](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.configure-sidecar.response.ts#L103)*
+*Defined in [responses/media.repository.configure-sidecar.response.ts:103](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/media.repository.configure-sidecar.response.ts#L103)*
 
 ___
 
@@ -137,4 +137,4 @@ ___
 
 • **user_id**: *number*
 
-*Defined in [responses/media.repository.configure-sidecar.response.ts:95](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.configure-sidecar.response.ts#L95)*
+*Defined in [responses/media.repository.configure-sidecar.response.ts:95](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/media.repository.configure-sidecar.response.ts#L95)*

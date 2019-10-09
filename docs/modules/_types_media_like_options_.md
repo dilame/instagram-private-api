@@ -19,7 +19,7 @@
 
 Ƭ **LikeModuleInfoOption**: *`FeedTimeline` | `FeedContextualHashtag` | `FeedContextualLocation` | `Profile` | `MediaViewProfile` | `VideoViewProfile` | `PhotoViewProfile` & object*
 
-*Defined in [types/media.like.options.ts:36](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/media.like.options.ts#L36)*
+*Defined in [types/media.like.options.ts:36](https://github.com/dilame/instagram-private-api/blob/3e16058/src/types/media.like.options.ts#L36)*
 
 ___
 
@@ -27,7 +27,7 @@ ___
 
 Ƭ **LikeRequestOptions**: *`LikeOrUnlikeBaseOptions` & object*
 
-*Defined in [types/media.like.options.ts:50](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/media.like.options.ts#L50)*
+*Defined in [types/media.like.options.ts:50](https://github.com/dilame/instagram-private-api/blob/3e16058/src/types/media.like.options.ts#L50)*
 
 ___
 
@@ -35,7 +35,7 @@ ___
 
 Ƭ **MediaLikeOrUnlikeOptions**: *`LikeOrUnlikeBaseOptions` & object*
 
-*Defined in [types/media.like.options.ts:58](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/media.like.options.ts#L58)*
+*Defined in [types/media.like.options.ts:58](https://github.com/dilame/instagram-private-api/blob/3e16058/src/types/media.like.options.ts#L58)*
 
 ___
 
@@ -43,4 +43,4 @@ ___
 
 Ƭ **UnlikeRequestOptions**: *`LikeOrUnlikeBaseOptions` & object*
 
-*Defined in [types/media.like.options.ts:54](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/media.like.options.ts#L54)*
+*Defined in [types/media.like.options.ts:54](https://github.com/dilame/instagram-private-api/blob/3e16058/src/types/media.like.options.ts#L54)*

@@ -21,7 +21,7 @@
 
 • **headers**: *string[]*
 
-*Defined in [responses/news.repository.inbox.response.ts:114](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/news.repository.inbox.response.ts#L114)*
+*Defined in [responses/news.repository.inbox.response.ts:114](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/news.repository.inbox.response.ts#L114)*
 
 ___
 
@@ -29,4 +29,4 @@ ___
 
 • **indices**: *number[]*
 
-*Defined in [responses/news.repository.inbox.response.ts:115](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/news.repository.inbox.response.ts#L115)*
+*Defined in [responses/news.repository.inbox.response.ts:115](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/news.repository.inbox.response.ts#L115)*

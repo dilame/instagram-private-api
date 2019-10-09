@@ -21,7 +21,7 @@
 
 • **subtitle**: *string*
 
-*Defined in [responses/news.repository.inbox.response.ts:122](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/news.repository.inbox.response.ts#L122)*
+*Defined in [responses/news.repository.inbox.response.ts:122](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/news.repository.inbox.response.ts#L122)*
 
 ___
 
@@ -29,4 +29,4 @@ ___
 
 • **title**: *string*
 
-*Defined in [responses/news.repository.inbox.response.ts:121](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/news.repository.inbox.response.ts#L121)*
+*Defined in [responses/news.repository.inbox.response.ts:121](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/news.repository.inbox.response.ts#L121)*

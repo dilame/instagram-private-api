@@ -22,7 +22,7 @@
 
 • **comment_threading_enabled**? : *boolean*
 
-*Defined in [responses/news.repository.inbox.response.ts:96](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/news.repository.inbox.response.ts#L96)*
+*Defined in [responses/news.repository.inbox.response.ts:96](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/news.repository.inbox.response.ts#L96)*
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 • **id**: *string*
 
-*Defined in [responses/news.repository.inbox.response.ts:94](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/news.repository.inbox.response.ts#L94)*
+*Defined in [responses/news.repository.inbox.response.ts:94](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/news.repository.inbox.response.ts#L94)*
 
 ___
 
@@ -38,4 +38,4 @@ ___
 
 • **image**: *string*
 
-*Defined in [responses/news.repository.inbox.response.ts:95](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/news.repository.inbox.response.ts#L95)*
+*Defined in [responses/news.repository.inbox.response.ts:95](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/news.repository.inbox.response.ts#L95)*

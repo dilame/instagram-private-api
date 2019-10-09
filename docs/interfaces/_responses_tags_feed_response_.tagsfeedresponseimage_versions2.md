@@ -20,4 +20,4 @@
 
 • **candidates**: *[TagsFeedResponseCandidatesItem](_responses_tags_feed_response_.tagsfeedresponsecandidatesitem.md)[]*
 
-*Defined in [responses/tags.feed.response.ts:115](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/tags.feed.response.ts#L115)*
+*Defined in [responses/tags.feed.response.ts:115](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/tags.feed.response.ts#L115)*

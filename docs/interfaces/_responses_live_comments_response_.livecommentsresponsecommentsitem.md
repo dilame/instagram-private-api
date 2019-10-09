@@ -32,7 +32,7 @@
 
 • **bit_flags**: *number*
 
-*Defined in [responses/live.comments.response.ts:26](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.comments.response.ts#L26)*
+*Defined in [responses/live.comments.response.ts:26](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/live.comments.response.ts#L26)*
 
 ___
 
@@ -40,7 +40,7 @@ ___
 
 • **content_type**: *string*
 
-*Defined in [responses/live.comments.response.ts:24](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.comments.response.ts#L24)*
+*Defined in [responses/live.comments.response.ts:24](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/live.comments.response.ts#L24)*
 
 ___
 
@@ -48,7 +48,7 @@ ___
 
 • **created_at**: *number*
 
-*Defined in [responses/live.comments.response.ts:22](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.comments.response.ts#L22)*
+*Defined in [responses/live.comments.response.ts:22](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/live.comments.response.ts#L22)*
 
 ___
 
@@ -56,7 +56,7 @@ ___
 
 • **created_at_utc**: *number*
 
-*Defined in [responses/live.comments.response.ts:23](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.comments.response.ts#L23)*
+*Defined in [responses/live.comments.response.ts:23](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/live.comments.response.ts#L23)*
 
 ___
 
@@ -64,7 +64,7 @@ ___
 
 • **did_report_as_spam**: *boolean*
 
-*Defined in [responses/live.comments.response.ts:28](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.comments.response.ts#L28)*
+*Defined in [responses/live.comments.response.ts:28](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/live.comments.response.ts#L28)*
 
 ___
 
@@ -72,7 +72,7 @@ ___
 
 • **inline_composer_display_condition**: *string*
 
-*Defined in [responses/live.comments.response.ts:30](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.comments.response.ts#L30)*
+*Defined in [responses/live.comments.response.ts:30](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/live.comments.response.ts#L30)*
 
 ___
 
@@ -80,7 +80,7 @@ ___
 
 • **pk**: *string*
 
-*Defined in [responses/live.comments.response.ts:18](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.comments.response.ts#L18)*
+*Defined in [responses/live.comments.response.ts:18](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/live.comments.response.ts#L18)*
 
 ___
 
@@ -88,7 +88,7 @@ ___
 
 • **share_enabled**: *boolean*
 
-*Defined in [responses/live.comments.response.ts:29](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.comments.response.ts#L29)*
+*Defined in [responses/live.comments.response.ts:29](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/live.comments.response.ts#L29)*
 
 ___
 
@@ -96,7 +96,7 @@ ___
 
 • **status**: *string*
 
-*Defined in [responses/live.comments.response.ts:25](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.comments.response.ts#L25)*
+*Defined in [responses/live.comments.response.ts:25](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/live.comments.response.ts#L25)*
 
 ___
 
@@ -104,7 +104,7 @@ ___
 
 • **text**: *string*
 
-*Defined in [responses/live.comments.response.ts:20](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.comments.response.ts#L20)*
+*Defined in [responses/live.comments.response.ts:20](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/live.comments.response.ts#L20)*
 
 ___
 
@@ -112,7 +112,7 @@ ___
 
 • **type**: *number*
 
-*Defined in [responses/live.comments.response.ts:21](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.comments.response.ts#L21)*
+*Defined in [responses/live.comments.response.ts:21](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/live.comments.response.ts#L21)*
 
 ___
 
@@ -120,7 +120,7 @@ ___
 
 • **user**: *[LiveCommentsResponseUser](_responses_live_comments_response_.livecommentsresponseuser.md)*
 
-*Defined in [responses/live.comments.response.ts:27](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.comments.response.ts#L27)*
+*Defined in [responses/live.comments.response.ts:27](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/live.comments.response.ts#L27)*
 
 ___
 
@@ -128,4 +128,4 @@ ___
 
 • **user_id**: *number*
 
-*Defined in [responses/live.comments.response.ts:19](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.comments.response.ts#L19)*
+*Defined in [responses/live.comments.response.ts:19](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/live.comments.response.ts#L19)*

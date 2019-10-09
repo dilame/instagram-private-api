@@ -25,7 +25,7 @@
 
 • **big_list**: *boolean*
 
-*Defined in [responses/account-friendships.feed.response.ts:6](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/account-friendships.feed.response.ts#L6)*
+*Defined in [responses/account-friendships.feed.response.ts:6](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/account-friendships.feed.response.ts#L6)*
 
 ___
 
@@ -33,7 +33,7 @@ ___
 
 • **next_max_id**: *null*
 
-*Defined in [responses/account-friendships.feed.response.ts:7](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/account-friendships.feed.response.ts#L7)*
+*Defined in [responses/account-friendships.feed.response.ts:7](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/account-friendships.feed.response.ts#L7)*
 
 ___
 
@@ -41,7 +41,7 @@ ___
 
 • **page_size**: *number*
 
-*Defined in [responses/account-friendships.feed.response.ts:8](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/account-friendships.feed.response.ts#L8)*
+*Defined in [responses/account-friendships.feed.response.ts:8](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/account-friendships.feed.response.ts#L8)*
 
 ___
 
@@ -49,7 +49,7 @@ ___
 
 • **sections**: *null*
 
-*Defined in [responses/account-friendships.feed.response.ts:4](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/account-friendships.feed.response.ts#L4)*
+*Defined in [responses/account-friendships.feed.response.ts:4](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/account-friendships.feed.response.ts#L4)*
 
 ___
 
@@ -57,7 +57,7 @@ ___
 
 • **status**: *string*
 
-*Defined in [responses/account-friendships.feed.response.ts:9](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/account-friendships.feed.response.ts#L9)*
+*Defined in [responses/account-friendships.feed.response.ts:9](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/account-friendships.feed.response.ts#L9)*
 
 ___
 
@@ -65,4 +65,4 @@ ___
 
 • **users**: *[PendingFriendshipsFeedResponseUsersItem](../classes/_responses_account_friendships_feed_response_.pendingfriendshipsfeedresponseusersitem.md)[]*
 
-*Defined in [responses/account-friendships.feed.response.ts:5](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/account-friendships.feed.response.ts#L5)*
+*Defined in [responses/account-friendships.feed.response.ts:5](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/account-friendships.feed.response.ts#L5)*

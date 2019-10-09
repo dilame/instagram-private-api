@@ -20,4 +20,4 @@
 
 • **suggestions**: *[DiscoverFeedResponseSuggestionsItem](_responses_discover_feed_response_.discoverfeedresponsesuggestionsitem.md)[]*
 
-*Defined in [responses/discover.feed.response.ts:12](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/discover.feed.response.ts#L12)*
+*Defined in [responses/discover.feed.response.ts:12](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/discover.feed.response.ts#L12)*

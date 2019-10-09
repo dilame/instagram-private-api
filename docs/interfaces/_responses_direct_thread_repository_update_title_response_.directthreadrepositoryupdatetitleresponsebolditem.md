@@ -21,7 +21,7 @@
 
 • **end**: *number*
 
-*Defined in [responses/direct-thread.repository.update-title.response.ts:89](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-thread.repository.update-title.response.ts#L89)*
+*Defined in [responses/direct-thread.repository.update-title.response.ts:89](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/direct-thread.repository.update-title.response.ts#L89)*
 
 ___
 
@@ -29,4 +29,4 @@ ___
 
 • **start**: *number*
 
-*Defined in [responses/direct-thread.repository.update-title.response.ts:88](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-thread.repository.update-title.response.ts#L88)*
+*Defined in [responses/direct-thread.repository.update-title.response.ts:88](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/direct-thread.repository.update-title.response.ts#L88)*

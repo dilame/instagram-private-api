@@ -21,7 +21,7 @@
 
 • **logged_in_user**: *[AccountRepositoryLoginResponseLogged_in_user](_responses_account_repository_login_response_.accountrepositoryloginresponselogged_in_user.md)*
 
-*Defined in [responses/account.repository.login.response.ts:2](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/account.repository.login.response.ts#L2)*
+*Defined in [responses/account.repository.login.response.ts:2](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/account.repository.login.response.ts#L2)*
 
 ___
 
@@ -29,4 +29,4 @@ ___
 
 • **status**: *string*
 
-*Defined in [responses/account.repository.login.response.ts:3](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/account.repository.login.response.ts#L3)*
+*Defined in [responses/account.repository.login.response.ts:3](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/account.repository.login.response.ts#L3)*

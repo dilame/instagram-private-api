@@ -21,5 +21,6 @@
 * [StoryPoll](../interfaces/_types_media_configure_story_options_.storypoll.md)
 * [StoryPollTallie](../interfaces/_types_media_configure_story_options_.storypolltallie.md)
 * [StoryQuestion](../interfaces/_types_media_configure_story_options_.storyquestion.md)
+* [StoryQuiz](../interfaces/_types_media_configure_story_options_.storyquiz.md)
 * [StorySlider](../interfaces/_types_media_configure_story_options_.storyslider.md)
 * [StorySticker](../interfaces/_types_media_configure_story_options_.storysticker.md)

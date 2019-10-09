@@ -23,7 +23,7 @@
 
 • **duration_in_video_in_sec**: *null*
 
-*Defined in [responses/usertags.feed.response.ts:102](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/usertags.feed.response.ts#L102)*
+*Defined in [responses/usertags.feed.response.ts:102](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/usertags.feed.response.ts#L102)*
 
 ___
 
@@ -31,7 +31,7 @@ ___
 
 • **position**: *number[] | string | number[]*
 
-*Defined in [responses/usertags.feed.response.ts:100](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/usertags.feed.response.ts#L100)*
+*Defined in [responses/usertags.feed.response.ts:100](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/usertags.feed.response.ts#L100)*
 
 ___
 
@@ -39,7 +39,7 @@ ___
 
 • **start_time_in_video_in_sec**: *null*
 
-*Defined in [responses/usertags.feed.response.ts:101](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/usertags.feed.response.ts#L101)*
+*Defined in [responses/usertags.feed.response.ts:101](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/usertags.feed.response.ts#L101)*
 
 ___
 
@@ -47,4 +47,4 @@ ___
 
 • **user**: *[UsertagsFeedResponseUser](_responses_usertags_feed_response_.usertagsfeedresponseuser.md)*
 
-*Defined in [responses/usertags.feed.response.ts:99](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/usertags.feed.response.ts#L99)*
+*Defined in [responses/usertags.feed.response.ts:99](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/usertags.feed.response.ts#L99)*

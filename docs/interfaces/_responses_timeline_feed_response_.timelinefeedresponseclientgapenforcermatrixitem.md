@@ -20,4 +20,4 @@
 
 • **list**: *number[]*
 
-*Defined in [responses/timeline.feed.response.ts:287](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/timeline.feed.response.ts#L287)*
+*Defined in [responses/timeline.feed.response.ts:287](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/timeline.feed.response.ts#L287)*

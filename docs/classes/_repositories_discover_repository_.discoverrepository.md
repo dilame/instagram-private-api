@@ -18,6 +18,7 @@
 
 ### Methods
 
+* [chaining](_repositories_discover_repository_.discoverrepository.md#chaining)
 * [markSuSeen](_repositories_discover_repository_.discoverrepository.md#marksuseen)
 * [profileSuBadge](_repositories_discover_repository_.discoverrepository.md#profilesubadge)
 * [topicalExplore](_repositories_discover_repository_.discoverrepository.md#topicalexplore)
@@ -30,7 +31,7 @@
 
 *Inherited from [Repository](_core_repository_.repository.md).[constructor](_core_repository_.repository.md#constructor)*
 
-*Defined in [core/repository.ts:6](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/repository.ts#L6)*
+*Defined in [core/repository.ts:6](https://github.com/dilame/instagram-private-api/blob/3e16058/src/core/repository.ts#L6)*
 
 **Parameters:**
 
@@ -42,11 +43,29 @@ Name | Type |
 
 ## Methods
 
+###  chaining
+
+▸ **chaining**(`targetId`: string): *`Promise<DiscoverRepositoryChainingResponseRootObject>`*
+
+*Defined in [repositories/discover.repository.ts:9](https://github.com/dilame/instagram-private-api/blob/3e16058/src/repositories/discover.repository.ts#L9)*
+
+Gets the suggestions based on a user
+
+**Parameters:**
+
+Name | Type | Description |
+------ | ------ | ------ |
+`targetId` | string | user id/pk  |
+
+**Returns:** *`Promise<DiscoverRepositoryChainingResponseRootObject>`*
+
+___
+
 ###  markSuSeen
 
 ▸ **markSuSeen**(): *`Promise<any>`*
 
-*Defined in [repositories/discover.repository.ts:19](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/discover.repository.ts#L19)*
+*Defined in [repositories/discover.repository.ts:34](https://github.com/dilame/instagram-private-api/blob/3e16058/src/repositories/discover.repository.ts#L34)*
 
 **Returns:** *`Promise<any>`*
 
@@ -56,7 +75,7 @@ ___
 
 ▸ **profileSuBadge**(): *`Promise<any>`*
 
-*Defined in [repositories/discover.repository.ts:31](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/discover.repository.ts#L31)*
+*Defined in [repositories/discover.repository.ts:46](https://github.com/dilame/instagram-private-api/blob/3e16058/src/repositories/discover.repository.ts#L46)*
 
 **Returns:** *`Promise<any>`*
 
@@ -66,6 +85,6 @@ ___
 
 ▸ **topicalExplore**(): *`Promise<any>`*
 
-*Defined in [repositories/discover.repository.ts:4](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/discover.repository.ts#L4)*
+*Defined in [repositories/discover.repository.ts:19](https://github.com/dilame/instagram-private-api/blob/3e16058/src/repositories/discover.repository.ts#L19)*
 
 **Returns:** *`Promise<any>`*

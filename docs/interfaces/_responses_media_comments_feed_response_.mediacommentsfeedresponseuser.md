@@ -28,7 +28,7 @@
 
 • **full_name**: *string*
 
-*Defined in [responses/media-comments.feed.response.ts:50](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media-comments.feed.response.ts#L50)*
+*Defined in [responses/media-comments.feed.response.ts:50](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/media-comments.feed.response.ts#L50)*
 
 ___
 
@@ -36,7 +36,7 @@ ___
 
 • **has_anonymous_profile_picture**? : *boolean*
 
-*Defined in [responses/media-comments.feed.response.ts:56](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media-comments.feed.response.ts#L56)*
+*Defined in [responses/media-comments.feed.response.ts:56](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/media-comments.feed.response.ts#L56)*
 
 ___
 
@@ -44,7 +44,7 @@ ___
 
 • **is_private**: *boolean*
 
-*Defined in [responses/media-comments.feed.response.ts:51](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media-comments.feed.response.ts#L51)*
+*Defined in [responses/media-comments.feed.response.ts:51](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/media-comments.feed.response.ts#L51)*
 
 ___
 
@@ -52,7 +52,7 @@ ___
 
 • **is_verified**: *boolean*
 
-*Defined in [responses/media-comments.feed.response.ts:54](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media-comments.feed.response.ts#L54)*
+*Defined in [responses/media-comments.feed.response.ts:54](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/media-comments.feed.response.ts#L54)*
 
 ___
 
@@ -60,7 +60,7 @@ ___
 
 • **latest_reel_media**? : *number*
 
-*Defined in [responses/media-comments.feed.response.ts:55](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media-comments.feed.response.ts#L55)*
+*Defined in [responses/media-comments.feed.response.ts:55](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/media-comments.feed.response.ts#L55)*
 
 ___
 
@@ -68,7 +68,7 @@ ___
 
 • **pk**: *number*
 
-*Defined in [responses/media-comments.feed.response.ts:48](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media-comments.feed.response.ts#L48)*
+*Defined in [responses/media-comments.feed.response.ts:48](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/media-comments.feed.response.ts#L48)*
 
 ___
 
@@ -76,7 +76,7 @@ ___
 
 • **profile_pic_id**? : *string*
 
-*Defined in [responses/media-comments.feed.response.ts:53](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media-comments.feed.response.ts#L53)*
+*Defined in [responses/media-comments.feed.response.ts:53](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/media-comments.feed.response.ts#L53)*
 
 ___
 
@@ -84,7 +84,7 @@ ___
 
 • **profile_pic_url**: *string*
 
-*Defined in [responses/media-comments.feed.response.ts:52](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media-comments.feed.response.ts#L52)*
+*Defined in [responses/media-comments.feed.response.ts:52](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/media-comments.feed.response.ts#L52)*
 
 ___
 
@@ -92,4 +92,4 @@ ___
 
 • **username**: *string*
 
-*Defined in [responses/media-comments.feed.response.ts:49](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media-comments.feed.response.ts#L49)*
+*Defined in [responses/media-comments.feed.response.ts:49](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/media-comments.feed.response.ts#L49)*

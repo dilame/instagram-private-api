@@ -31,7 +31,7 @@
 
 • **comment_id**? : *string*
 
-*Defined in [responses/news.feed.response.ts:27](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/news.feed.response.ts#L27)*
+*Defined in [responses/news.feed.response.ts:27](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/news.feed.response.ts#L27)*
 
 ___
 
@@ -39,7 +39,7 @@ ___
 
 • **comment_ids**? : *string[]*
 
-*Defined in [responses/news.feed.response.ts:28](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/news.feed.response.ts#L28)*
+*Defined in [responses/news.feed.response.ts:28](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/news.feed.response.ts#L28)*
 
 ___
 
@@ -47,7 +47,7 @@ ___
 
 • **links**: *[NewsFeedResponseLinksItem](_responses_news_feed_response_.newsfeedresponselinksitem.md)[]*
 
-*Defined in [responses/news.feed.response.ts:18](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/news.feed.response.ts#L18)*
+*Defined in [responses/news.feed.response.ts:18](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/news.feed.response.ts#L18)*
 
 ___
 
@@ -55,7 +55,7 @@ ___
 
 • **media**? : *[NewsFeedResponseMediaItem](_responses_news_feed_response_.newsfeedresponsemediaitem.md)[]*
 
-*Defined in [responses/news.feed.response.ts:21](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/news.feed.response.ts#L21)*
+*Defined in [responses/news.feed.response.ts:21](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/news.feed.response.ts#L21)*
 
 ___
 
@@ -63,7 +63,7 @@ ___
 
 • **profile_id**: *number*
 
-*Defined in [responses/news.feed.response.ts:19](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/news.feed.response.ts#L19)*
+*Defined in [responses/news.feed.response.ts:19](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/news.feed.response.ts#L19)*
 
 ___
 
@@ -71,7 +71,7 @@ ___
 
 • **profile_image**: *string*
 
-*Defined in [responses/news.feed.response.ts:20](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/news.feed.response.ts#L20)*
+*Defined in [responses/news.feed.response.ts:20](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/news.feed.response.ts#L20)*
 
 ___
 
@@ -79,7 +79,7 @@ ___
 
 • **profile_image_destination**? : *string*
 
-*Defined in [responses/news.feed.response.ts:26](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/news.feed.response.ts#L26)*
+*Defined in [responses/news.feed.response.ts:26](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/news.feed.response.ts#L26)*
 
 ___
 
@@ -87,7 +87,7 @@ ___
 
 • **second_profile_id**? : *number*
 
-*Defined in [responses/news.feed.response.ts:24](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/news.feed.response.ts#L24)*
+*Defined in [responses/news.feed.response.ts:24](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/news.feed.response.ts#L24)*
 
 ___
 
@@ -95,7 +95,7 @@ ___
 
 • **second_profile_image**? : *string*
 
-*Defined in [responses/news.feed.response.ts:25](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/news.feed.response.ts#L25)*
+*Defined in [responses/news.feed.response.ts:25](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/news.feed.response.ts#L25)*
 
 ___
 
@@ -103,7 +103,7 @@ ___
 
 • **text**: *string*
 
-*Defined in [responses/news.feed.response.ts:17](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/news.feed.response.ts#L17)*
+*Defined in [responses/news.feed.response.ts:17](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/news.feed.response.ts#L17)*
 
 ___
 
@@ -111,7 +111,7 @@ ___
 
 • **timestamp**: *number*
 
-*Defined in [responses/news.feed.response.ts:22](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/news.feed.response.ts#L22)*
+*Defined in [responses/news.feed.response.ts:22](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/news.feed.response.ts#L22)*
 
 ___
 
@@ -119,4 +119,4 @@ ___
 
 • **tuuid**: *string*
 
-*Defined in [responses/news.feed.response.ts:23](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/news.feed.response.ts#L23)*
+*Defined in [responses/news.feed.response.ts:23](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/news.feed.response.ts#L23)*

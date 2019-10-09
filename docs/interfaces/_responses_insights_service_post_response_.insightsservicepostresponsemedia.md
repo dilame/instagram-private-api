@@ -36,7 +36,7 @@
 
 • **ad_media**: *null*
 
-*Defined in [responses/insights.service.post.response.ts:21](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.post.response.ts#L21)*
+*Defined in [responses/insights.service.post.response.ts:21](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/insights.service.post.response.ts#L21)*
 
 ___
 
@@ -44,7 +44,7 @@ ___
 
 • **comment_count**: *number*
 
-*Defined in [responses/insights.service.post.response.ts:18](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.post.response.ts#L18)*
+*Defined in [responses/insights.service.post.response.ts:18](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/insights.service.post.response.ts#L18)*
 
 ___
 
@@ -52,7 +52,7 @@ ___
 
 • **creation_time**: *number*
 
-*Defined in [responses/insights.service.post.response.ts:9](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.post.response.ts#L9)*
+*Defined in [responses/insights.service.post.response.ts:9](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/insights.service.post.response.ts#L9)*
 
 ___
 
@@ -60,7 +60,7 @@ ___
 
 • **display_url**: *string*
 
-*Defined in [responses/insights.service.post.response.ts:15](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.post.response.ts#L15)*
+*Defined in [responses/insights.service.post.response.ts:15](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/insights.service.post.response.ts#L15)*
 
 ___
 
@@ -68,7 +68,7 @@ ___
 
 • **has_product_tags**: *boolean*
 
-*Defined in [responses/insights.service.post.response.ts:10](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.post.response.ts#L10)*
+*Defined in [responses/insights.service.post.response.ts:10](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/insights.service.post.response.ts#L10)*
 
 ___
 
@@ -76,7 +76,7 @@ ___
 
 • **id**: *string*
 
-*Defined in [responses/insights.service.post.response.ts:8](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.post.response.ts#L8)*
+*Defined in [responses/insights.service.post.response.ts:8](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/insights.service.post.response.ts#L8)*
 
 ___
 
@@ -84,7 +84,7 @@ ___
 
 • **image**: *[InsightsServicePostResponseImage](_responses_insights_service_post_response_.insightsservicepostresponseimage.md)*
 
-*Defined in [responses/insights.service.post.response.ts:17](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.post.response.ts#L17)*
+*Defined in [responses/insights.service.post.response.ts:17](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/insights.service.post.response.ts#L17)*
 
 ___
 
@@ -92,7 +92,7 @@ ___
 
 • **inline_insights_node**: *[InsightsServicePostResponseInline_insights_node](_responses_insights_service_post_response_.insightsservicepostresponseinline_insights_node.md)*
 
-*Defined in [responses/insights.service.post.response.ts:14](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.post.response.ts#L14)*
+*Defined in [responses/insights.service.post.response.ts:14](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/insights.service.post.response.ts#L14)*
 
 ___
 
@@ -100,7 +100,7 @@ ___
 
 • **instagram_actor**: *[InsightsServicePostResponseInstagram_actor](_responses_insights_service_post_response_.insightsservicepostresponseinstagram_actor.md)*
 
-*Defined in [responses/insights.service.post.response.ts:13](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.post.response.ts#L13)*
+*Defined in [responses/insights.service.post.response.ts:13](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/insights.service.post.response.ts#L13)*
 
 ___
 
@@ -108,7 +108,7 @@ ___
 
 • **instagram_media_id**: *string*
 
-*Defined in [responses/insights.service.post.response.ts:11](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.post.response.ts#L11)*
+*Defined in [responses/insights.service.post.response.ts:11](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/insights.service.post.response.ts#L11)*
 
 ___
 
@@ -116,7 +116,7 @@ ___
 
 • **instagram_media_owner_id**: *string*
 
-*Defined in [responses/insights.service.post.response.ts:12](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.post.response.ts#L12)*
+*Defined in [responses/insights.service.post.response.ts:12](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/insights.service.post.response.ts#L12)*
 
 ___
 
@@ -124,7 +124,7 @@ ___
 
 • **instagram_media_type**: *string*
 
-*Defined in [responses/insights.service.post.response.ts:16](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.post.response.ts#L16)*
+*Defined in [responses/insights.service.post.response.ts:16](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/insights.service.post.response.ts#L16)*
 
 ___
 
@@ -132,7 +132,7 @@ ___
 
 • **like_count**: *number*
 
-*Defined in [responses/insights.service.post.response.ts:19](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.post.response.ts#L19)*
+*Defined in [responses/insights.service.post.response.ts:19](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/insights.service.post.response.ts#L19)*
 
 ___
 
@@ -140,7 +140,7 @@ ___
 
 • **organic_instagram_media_id**: *string*
 
-*Defined in [responses/insights.service.post.response.ts:22](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.post.response.ts#L22)*
+*Defined in [responses/insights.service.post.response.ts:22](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/insights.service.post.response.ts#L22)*
 
 ___
 
@@ -148,7 +148,7 @@ ___
 
 • **save_count**: *number*
 
-*Defined in [responses/insights.service.post.response.ts:20](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.post.response.ts#L20)*
+*Defined in [responses/insights.service.post.response.ts:20](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/insights.service.post.response.ts#L20)*
 
 ___
 
@@ -156,7 +156,7 @@ ___
 
 • **shopping_outbound_click_count**: *number*
 
-*Defined in [responses/insights.service.post.response.ts:23](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.post.response.ts#L23)*
+*Defined in [responses/insights.service.post.response.ts:23](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/insights.service.post.response.ts#L23)*
 
 ___
 
@@ -164,4 +164,4 @@ ___
 
 • **shopping_product_click_count**: *number*
 
-*Defined in [responses/insights.service.post.response.ts:24](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.post.response.ts#L24)*
+*Defined in [responses/insights.service.post.response.ts:24](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/insights.service.post.response.ts#L24)*

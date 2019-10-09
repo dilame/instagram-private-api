@@ -25,7 +25,7 @@
 
 • **more_available**: *boolean*
 
-*Defined in [responses/location.feed.response.ts:3](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/location.feed.response.ts#L3)*
+*Defined in [responses/location.feed.response.ts:3](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/location.feed.response.ts#L3)*
 
 ___
 
@@ -33,7 +33,7 @@ ___
 
 • **next_max_id**: *string*
 
-*Defined in [responses/location.feed.response.ts:6](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/location.feed.response.ts#L6)*
+*Defined in [responses/location.feed.response.ts:6](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/location.feed.response.ts#L6)*
 
 ___
 
@@ -41,7 +41,7 @@ ___
 
 • **next_media_ids**: *string[]*
 
-*Defined in [responses/location.feed.response.ts:5](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/location.feed.response.ts#L5)*
+*Defined in [responses/location.feed.response.ts:5](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/location.feed.response.ts#L5)*
 
 ___
 
@@ -49,7 +49,7 @@ ___
 
 • **next_page**: *number*
 
-*Defined in [responses/location.feed.response.ts:4](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/location.feed.response.ts#L4)*
+*Defined in [responses/location.feed.response.ts:4](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/location.feed.response.ts#L4)*
 
 ___
 
@@ -57,7 +57,7 @@ ___
 
 • **sections**: *[LocationFeedResponseSectionsItem](_responses_location_feed_response_.locationfeedresponsesectionsitem.md)[]*
 
-*Defined in [responses/location.feed.response.ts:2](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/location.feed.response.ts#L2)*
+*Defined in [responses/location.feed.response.ts:2](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/location.feed.response.ts#L2)*
 
 ___
 
@@ -65,4 +65,4 @@ ___
 
 • **status**: *string*
 
-*Defined in [responses/location.feed.response.ts:7](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/location.feed.response.ts#L7)*
+*Defined in [responses/location.feed.response.ts:7](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/location.feed.response.ts#L7)*

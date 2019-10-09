@@ -32,7 +32,7 @@
 
 *Overrides void*
 
-*Defined in [errors/ig-client.error.ts:3](https://github.com/dilame/instagram-private-api/blob/173bc62/src/errors/ig-client.error.ts#L3)*
+*Defined in [errors/ig-client.error.ts:3](https://github.com/dilame/instagram-private-api/blob/3e16058/src/errors/ig-client.error.ts#L3)*
 
 **Parameters:**
 

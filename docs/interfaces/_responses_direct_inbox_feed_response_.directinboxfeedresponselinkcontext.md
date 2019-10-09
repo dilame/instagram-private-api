@@ -23,7 +23,7 @@
 
 • **link_image_url**: *string*
 
-*Defined in [responses/direct-inbox.feed.response.ts:123](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-inbox.feed.response.ts#L123)*
+*Defined in [responses/direct-inbox.feed.response.ts:123](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/direct-inbox.feed.response.ts#L123)*
 
 ___
 
@@ -31,7 +31,7 @@ ___
 
 • **link_summary**: *string*
 
-*Defined in [responses/direct-inbox.feed.response.ts:122](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-inbox.feed.response.ts#L122)*
+*Defined in [responses/direct-inbox.feed.response.ts:122](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/direct-inbox.feed.response.ts#L122)*
 
 ___
 
@@ -39,7 +39,7 @@ ___
 
 • **link_title**: *string*
 
-*Defined in [responses/direct-inbox.feed.response.ts:121](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-inbox.feed.response.ts#L121)*
+*Defined in [responses/direct-inbox.feed.response.ts:121](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/direct-inbox.feed.response.ts#L121)*
 
 ___
 
@@ -47,4 +47,4 @@ ___
 
 • **link_url**: *string*
 
-*Defined in [responses/direct-inbox.feed.response.ts:120](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-inbox.feed.response.ts#L120)*
+*Defined in [responses/direct-inbox.feed.response.ts:120](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/direct-inbox.feed.response.ts#L120)*

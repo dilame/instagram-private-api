@@ -21,7 +21,7 @@
 
 • **count**: *number*
 
-*Defined in [responses/highlights.repository.edit-reel.response.ts:150](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/highlights.repository.edit-reel.response.ts#L150)*
+*Defined in [responses/highlights.repository.edit-reel.response.ts:150](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/highlights.repository.edit-reel.response.ts#L150)*
 
 ___
 
@@ -29,4 +29,4 @@ ___
 
 • **text**: *string*
 
-*Defined in [responses/highlights.repository.edit-reel.response.ts:149](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/highlights.repository.edit-reel.response.ts#L149)*
+*Defined in [responses/highlights.repository.edit-reel.response.ts:149](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/highlights.repository.edit-reel.response.ts#L149)*

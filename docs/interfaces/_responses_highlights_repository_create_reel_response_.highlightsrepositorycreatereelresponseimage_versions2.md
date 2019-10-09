@@ -20,4 +20,4 @@
 
 • **candidates**: *[HighlightsRepositoryCreateReelResponseCandidatesItem](_responses_highlights_repository_create_reel_response_.highlightsrepositorycreatereelresponsecandidatesitem.md)[]*
 
-*Defined in [responses/highlights.repository.create-reel.response.ts:104](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/highlights.repository.create-reel.response.ts#L104)*
+*Defined in [responses/highlights.repository.create-reel.response.ts:104](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/highlights.repository.create-reel.response.ts#L104)*

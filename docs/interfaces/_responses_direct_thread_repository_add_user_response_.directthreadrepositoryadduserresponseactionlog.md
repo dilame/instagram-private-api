@@ -22,7 +22,7 @@
 
 • **bold**: *[DirectThreadRepositoryAddUserResponseBoldItem](_responses_direct_thread_repository_add_user_response_.directthreadrepositoryadduserresponsebolditem.md)[]*
 
-*Defined in [responses/direct-thread.repository.add-user.response.ts:89](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-thread.repository.add-user.response.ts#L89)*
+*Defined in [responses/direct-thread.repository.add-user.response.ts:89](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/direct-thread.repository.add-user.response.ts#L89)*
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 • **description**: *string*
 
-*Defined in [responses/direct-thread.repository.add-user.response.ts:88](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-thread.repository.add-user.response.ts#L88)*
+*Defined in [responses/direct-thread.repository.add-user.response.ts:88](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/direct-thread.repository.add-user.response.ts#L88)*
 
 ___
 
@@ -38,4 +38,4 @@ ___
 
 • **text_attributes**: *[DirectThreadRepositoryAddUserResponseTextAttributesItem](_responses_direct_thread_repository_add_user_response_.directthreadrepositoryadduserresponsetextattributesitem.md)[]*
 
-*Defined in [responses/direct-thread.repository.add-user.response.ts:90](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-thread.repository.add-user.response.ts#L90)*
+*Defined in [responses/direct-thread.repository.add-user.response.ts:90](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/direct-thread.repository.add-user.response.ts#L90)*

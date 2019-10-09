@@ -24,7 +24,7 @@
 
 • **id**: *string*
 
-*Defined in [responses/saved.feed.response.ts:155](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/saved.feed.response.ts#L155)*
+*Defined in [responses/saved.feed.response.ts:155](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/saved.feed.response.ts#L155)*
 
 ___
 
@@ -32,7 +32,7 @@ ___
 
 • **is_preselected**: *boolean*
 
-*Defined in [responses/saved.feed.response.ts:158](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/saved.feed.response.ts#L158)*
+*Defined in [responses/saved.feed.response.ts:158](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/saved.feed.response.ts#L158)*
 
 ___
 
@@ -40,7 +40,7 @@ ___
 
 • **name**: *string*
 
-*Defined in [responses/saved.feed.response.ts:157](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/saved.feed.response.ts#L157)*
+*Defined in [responses/saved.feed.response.ts:157](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/saved.feed.response.ts#L157)*
 
 ___
 
@@ -48,7 +48,7 @@ ___
 
 • **value**: *string*
 
-*Defined in [responses/saved.feed.response.ts:156](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/saved.feed.response.ts#L156)*
+*Defined in [responses/saved.feed.response.ts:156](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/saved.feed.response.ts#L156)*
 
 ___
 
@@ -56,4 +56,4 @@ ___
 
 • **visual_style**: *string*
 
-*Defined in [responses/saved.feed.response.ts:159](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/saved.feed.response.ts#L159)*
+*Defined in [responses/saved.feed.response.ts:159](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/saved.feed.response.ts#L159)*

@@ -21,7 +21,7 @@
 
 • **metrics**: *null*
 
-*Defined in [responses/insights.service.story.response.ts:20](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.story.response.ts#L20)*
+*Defined in [responses/insights.service.story.response.ts:20](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/insights.service.story.response.ts#L20)*
 
 ___
 
@@ -29,4 +29,4 @@ ___
 
 • **state**: *string*
 
-*Defined in [responses/insights.service.story.response.ts:19](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.story.response.ts#L19)*
+*Defined in [responses/insights.service.story.response.ts:19](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/insights.service.story.response.ts#L19)*

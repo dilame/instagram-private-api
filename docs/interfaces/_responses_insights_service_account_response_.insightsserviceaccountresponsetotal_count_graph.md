@@ -21,7 +21,7 @@
 
 • **data_points**: *[InsightsServiceAccountResponseDataPointsItem](_responses_insights_service_account_response_.insightsserviceaccountresponsedatapointsitem.md)[]*
 
-*Defined in [responses/insights.service.account.response.ts:61](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.account.response.ts#L61)*
+*Defined in [responses/insights.service.account.response.ts:61](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/insights.service.account.response.ts#L61)*
 
 ___
 
@@ -29,4 +29,4 @@ ___
 
 • **graph_name**: *string*
 
-*Defined in [responses/insights.service.account.response.ts:60](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.account.response.ts#L60)*
+*Defined in [responses/insights.service.account.response.ts:60](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/insights.service.account.response.ts#L60)*

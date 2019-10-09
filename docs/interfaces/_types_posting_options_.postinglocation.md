@@ -25,7 +25,7 @@
 
 • **address**: *string*
 
-*Defined in [types/posting.options.ts:23](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/posting.options.ts#L23)*
+*Defined in [types/posting.options.ts:24](https://github.com/dilame/instagram-private-api/blob/3e16058/src/types/posting.options.ts#L24)*
 
 ___
 
@@ -33,7 +33,7 @@ ___
 
 • **external_id**: *string*
 
-*Defined in [types/posting.options.ts:22](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/posting.options.ts#L22)*
+*Defined in [types/posting.options.ts:23](https://github.com/dilame/instagram-private-api/blob/3e16058/src/types/posting.options.ts#L23)*
 
 ___
 
@@ -41,7 +41,7 @@ ___
 
 • **external_id_source**: *string*
 
-*Defined in [types/posting.options.ts:21](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/posting.options.ts#L21)*
+*Defined in [types/posting.options.ts:22](https://github.com/dilame/instagram-private-api/blob/3e16058/src/types/posting.options.ts#L22)*
 
 ___
 
@@ -49,7 +49,7 @@ ___
 
 • **lat**: *number*
 
-*Defined in [types/posting.options.ts:19](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/posting.options.ts#L19)*
+*Defined in [types/posting.options.ts:20](https://github.com/dilame/instagram-private-api/blob/3e16058/src/types/posting.options.ts#L20)*
 
 ___
 
@@ -57,7 +57,7 @@ ___
 
 • **lng**: *number*
 
-*Defined in [types/posting.options.ts:20](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/posting.options.ts#L20)*
+*Defined in [types/posting.options.ts:21](https://github.com/dilame/instagram-private-api/blob/3e16058/src/types/posting.options.ts#L21)*
 
 ___
 
@@ -65,4 +65,4 @@ ___
 
 • **name**: *string*
 
-*Defined in [types/posting.options.ts:18](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/posting.options.ts#L18)*
+*Defined in [types/posting.options.ts:19](https://github.com/dilame/instagram-private-api/blob/3e16058/src/types/posting.options.ts#L19)*

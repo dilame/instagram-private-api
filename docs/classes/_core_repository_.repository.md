@@ -10,6 +10,8 @@
 
   * [Entity](_core_entity_.entity.md)
 
+  * [PublishService](_services_publish_service_.publishservice.md)
+
   * [Feed](_core_feed_.feed.md)
 
   * [AccountRepository](_repositories_account_repository_.accountrepository.md)
@@ -21,8 +23,6 @@
   * [FriendshipRepository](_repositories_friendship_repository_.friendshiprepository.md)
 
   * [UploadRepository](_repositories_upload_repository_.uploadrepository.md)
-
-  * [PublishService](_services_publish_service_.publishservice.md)
 
   * [DirectThreadRepository](_repositories_direct_thread_repository_.directthreadrepository.md)
 
@@ -78,6 +78,10 @@
 
   * [InsightsService](_services_insights_service_.insightsservice.md)
 
+  * [RestrictActionRepository](_repositories_restrict_action_repository_.restrictactionrepository.md)
+
+  * [AddressBookRepository](_repositories_address_book_repository_.addressbookrepository.md)
+
 ## Index
 
 ### Constructors
@@ -90,7 +94,7 @@
 
 \+ **new Repository**(`client`: [IgApiClient](_core_client_.igapiclient.md)): *[Repository](_core_repository_.repository.md)*
 
-*Defined in [core/repository.ts:6](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/repository.ts#L6)*
+*Defined in [core/repository.ts:6](https://github.com/dilame/instagram-private-api/blob/3e16058/src/core/repository.ts#L6)*
 
 **Parameters:**
 

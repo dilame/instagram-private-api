@@ -31,7 +31,7 @@
 
 • **audio_asset_id**: *null*
 
-*Defined in [responses/music-genre.feed.response.ts:22](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/music-genre.feed.response.ts#L22)*
+*Defined in [responses/music-genre.feed.response.ts:22](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/music-genre.feed.response.ts#L22)*
 
 ___
 
@@ -39,7 +39,7 @@ ___
 
 • **cover_artwork_thumbnail_uri**: *string*
 
-*Defined in [responses/music-genre.feed.response.ts:16](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/music-genre.feed.response.ts#L16)*
+*Defined in [responses/music-genre.feed.response.ts:16](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/music-genre.feed.response.ts#L16)*
 
 ___
 
@@ -47,7 +47,7 @@ ___
 
 • **cover_artwork_uri**: *string*
 
-*Defined in [responses/music-genre.feed.response.ts:15](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/music-genre.feed.response.ts#L15)*
+*Defined in [responses/music-genre.feed.response.ts:15](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/music-genre.feed.response.ts#L15)*
 
 ___
 
@@ -55,7 +55,7 @@ ___
 
 • **dash_manifest**: *string*
 
-*Defined in [responses/music-genre.feed.response.ts:20](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/music-genre.feed.response.ts#L20)*
+*Defined in [responses/music-genre.feed.response.ts:20](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/music-genre.feed.response.ts#L20)*
 
 ___
 
@@ -63,7 +63,7 @@ ___
 
 • **display_artist**: *string*
 
-*Defined in [responses/music-genre.feed.response.ts:14](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/music-genre.feed.response.ts#L14)*
+*Defined in [responses/music-genre.feed.response.ts:14](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/music-genre.feed.response.ts#L14)*
 
 ___
 
@@ -71,7 +71,7 @@ ___
 
 • **has_lyrics**: *boolean*
 
-*Defined in [responses/music-genre.feed.response.ts:21](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/music-genre.feed.response.ts#L21)*
+*Defined in [responses/music-genre.feed.response.ts:21](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/music-genre.feed.response.ts#L21)*
 
 ___
 
@@ -79,7 +79,7 @@ ___
 
 • **highlight_start_times_in_ms**: *number[]*
 
-*Defined in [responses/music-genre.feed.response.ts:18](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/music-genre.feed.response.ts#L18)*
+*Defined in [responses/music-genre.feed.response.ts:18](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/music-genre.feed.response.ts#L18)*
 
 ___
 
@@ -87,7 +87,7 @@ ___
 
 • **id**: *string*
 
-*Defined in [responses/music-genre.feed.response.ts:11](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/music-genre.feed.response.ts#L11)*
+*Defined in [responses/music-genre.feed.response.ts:11](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/music-genre.feed.response.ts#L11)*
 
 ___
 
@@ -95,7 +95,7 @@ ___
 
 • **is_explicit**: *boolean*
 
-*Defined in [responses/music-genre.feed.response.ts:19](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/music-genre.feed.response.ts#L19)*
+*Defined in [responses/music-genre.feed.response.ts:19](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/music-genre.feed.response.ts#L19)*
 
 ___
 
@@ -103,7 +103,7 @@ ___
 
 • **progressive_download_url**: *string*
 
-*Defined in [responses/music-genre.feed.response.ts:17](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/music-genre.feed.response.ts#L17)*
+*Defined in [responses/music-genre.feed.response.ts:17](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/music-genre.feed.response.ts#L17)*
 
 ___
 
@@ -111,7 +111,7 @@ ___
 
 • **subtitle**: *string*
 
-*Defined in [responses/music-genre.feed.response.ts:13](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/music-genre.feed.response.ts#L13)*
+*Defined in [responses/music-genre.feed.response.ts:13](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/music-genre.feed.response.ts#L13)*
 
 ___
 
@@ -119,4 +119,4 @@ ___
 
 • **title**: *string*
 
-*Defined in [responses/music-genre.feed.response.ts:12](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/music-genre.feed.response.ts#L12)*
+*Defined in [responses/music-genre.feed.response.ts:12](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/music-genre.feed.response.ts#L12)*

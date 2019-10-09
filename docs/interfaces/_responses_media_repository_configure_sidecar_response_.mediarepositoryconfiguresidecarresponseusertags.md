@@ -20,4 +20,4 @@
 
 • **in**: *[MediaRepositoryConfigureSidecarResponseInItem](_responses_media_repository_configure_sidecar_response_.mediarepositoryconfiguresidecarresponseinitem.md)[]*
 
-*Defined in [responses/media.repository.configure-sidecar.response.ts:65](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.configure-sidecar.response.ts#L65)*
+*Defined in [responses/media.repository.configure-sidecar.response.ts:65](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/media.repository.configure-sidecar.response.ts#L65)*

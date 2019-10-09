@@ -21,7 +21,7 @@
 
 • **cursor**: *null*
 
-*Defined in [responses/stories-insights.feed.response.ts:23](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/stories-insights.feed.response.ts#L23)*
+*Defined in [responses/stories-insights.feed.response.ts:23](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/stories-insights.feed.response.ts#L23)*
 
 ___
 
@@ -29,4 +29,4 @@ ___
 
 • **node**: *[StoriesInsightsFeedResponseNode](_responses_stories_insights_feed_response_.storiesinsightsfeedresponsenode.md)*
 
-*Defined in [responses/stories-insights.feed.response.ts:22](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/stories-insights.feed.response.ts#L22)*
+*Defined in [responses/stories-insights.feed.response.ts:22](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/stories-insights.feed.response.ts#L22)*

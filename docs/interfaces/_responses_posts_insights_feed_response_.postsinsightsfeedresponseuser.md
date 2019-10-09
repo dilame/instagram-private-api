@@ -21,7 +21,7 @@
 
 • **business_manager**: *[PostsInsightsFeedResponseBusiness_manager](_responses_posts_insights_feed_response_.postsinsightsfeedresponsebusiness_manager.md)*
 
-*Defined in [responses/posts-insights.feed.response.ts:9](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/posts-insights.feed.response.ts#L9)*
+*Defined in [responses/posts-insights.feed.response.ts:9](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/posts-insights.feed.response.ts#L9)*
 
 ___
 
@@ -29,4 +29,4 @@ ___
 
 • **id**: *string*
 
-*Defined in [responses/posts-insights.feed.response.ts:8](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/posts-insights.feed.response.ts#L8)*
+*Defined in [responses/posts-insights.feed.response.ts:8](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/posts-insights.feed.response.ts#L8)*

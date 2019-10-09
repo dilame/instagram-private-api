@@ -26,7 +26,7 @@
 
 • **action**: *string*
 
-*Defined in [responses/challenge.state.response.ts:9](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/challenge.state.response.ts#L9)*
+*Defined in [responses/challenge.state.response.ts:9](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/challenge.state.response.ts#L9)*
 
 ___
 
@@ -34,7 +34,7 @@ ___
 
 • **logged_in_user**? : *[AccountRepositoryLoginResponseLogged_in_user](_responses_account_repository_login_response_.accountrepositoryloginresponselogged_in_user.md)*
 
-*Defined in [responses/challenge.state.response.ts:6](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/challenge.state.response.ts#L6)*
+*Defined in [responses/challenge.state.response.ts:6](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/challenge.state.response.ts#L6)*
 
 ___
 
@@ -42,7 +42,7 @@ ___
 
 • **nonce_code**: *string*
 
-*Defined in [responses/challenge.state.response.ts:8](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/challenge.state.response.ts#L8)*
+*Defined in [responses/challenge.state.response.ts:8](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/challenge.state.response.ts#L8)*
 
 ___
 
@@ -50,7 +50,7 @@ ___
 
 • **status**: *string*
 
-*Defined in [responses/challenge.state.response.ts:10](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/challenge.state.response.ts#L10)*
+*Defined in [responses/challenge.state.response.ts:10](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/challenge.state.response.ts#L10)*
 
 ___
 
@@ -58,7 +58,7 @@ ___
 
 • **step_data**: *[ChallengeRepositoryStateResponseStepData](_responses_challenge_state_response_.challengerepositorystateresponsestepdata.md)*
 
-*Defined in [responses/challenge.state.response.ts:5](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/challenge.state.response.ts#L5)*
+*Defined in [responses/challenge.state.response.ts:5](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/challenge.state.response.ts#L5)*
 
 ___
 
@@ -66,7 +66,7 @@ ___
 
 • **step_name**: *string*
 
-*Defined in [responses/challenge.state.response.ts:4](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/challenge.state.response.ts#L4)*
+*Defined in [responses/challenge.state.response.ts:4](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/challenge.state.response.ts#L4)*
 
 ___
 
@@ -74,4 +74,4 @@ ___
 
 • **user_id**: *number*
 
-*Defined in [responses/challenge.state.response.ts:7](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/challenge.state.response.ts#L7)*
+*Defined in [responses/challenge.state.response.ts:7](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/challenge.state.response.ts#L7)*

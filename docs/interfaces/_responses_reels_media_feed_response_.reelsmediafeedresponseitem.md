@@ -56,7 +56,7 @@
 
 • **ad_action**? : *string*
 
-*Defined in [responses/reels-media.feed.response.ts:72](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-media.feed.response.ts#L72)*
+*Defined in [responses/reels-media.feed.response.ts:72](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/reels-media.feed.response.ts#L72)*
 
 ___
 
@@ -64,7 +64,7 @@ ___
 
 • **can_reply**: *boolean*
 
-*Defined in [responses/reels-media.feed.response.ts:67](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-media.feed.response.ts#L67)*
+*Defined in [responses/reels-media.feed.response.ts:67](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/reels-media.feed.response.ts#L67)*
 
 ___
 
@@ -72,7 +72,7 @@ ___
 
 • **can_reshare**: *boolean*
 
-*Defined in [responses/reels-media.feed.response.ts:66](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-media.feed.response.ts#L66)*
+*Defined in [responses/reels-media.feed.response.ts:66](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/reels-media.feed.response.ts#L66)*
 
 ___
 
@@ -80,7 +80,7 @@ ___
 
 • **can_viewer_save**: *boolean*
 
-*Defined in [responses/reels-media.feed.response.ts:63](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-media.feed.response.ts#L63)*
+*Defined in [responses/reels-media.feed.response.ts:63](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/reels-media.feed.response.ts#L63)*
 
 ___
 
@@ -88,7 +88,7 @@ ___
 
 • **caption**: *null*
 
-*Defined in [responses/reels-media.feed.response.ts:62](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-media.feed.response.ts#L62)*
+*Defined in [responses/reels-media.feed.response.ts:62](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/reels-media.feed.response.ts#L62)*
 
 ___
 
@@ -96,7 +96,7 @@ ___
 
 • **caption_is_edited**: *boolean*
 
-*Defined in [responses/reels-media.feed.response.ts:60](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-media.feed.response.ts#L60)*
+*Defined in [responses/reels-media.feed.response.ts:60](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/reels-media.feed.response.ts#L60)*
 
 ___
 
@@ -104,7 +104,7 @@ ___
 
 • **caption_position**: *number*
 
-*Defined in [responses/reels-media.feed.response.ts:50](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-media.feed.response.ts#L50)*
+*Defined in [responses/reels-media.feed.response.ts:50](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/reels-media.feed.response.ts#L50)*
 
 ___
 
@@ -112,7 +112,7 @@ ___
 
 • **client_cache_key**: *string*
 
-*Defined in [responses/reels-media.feed.response.ts:45](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-media.feed.response.ts#L45)*
+*Defined in [responses/reels-media.feed.response.ts:45](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/reels-media.feed.response.ts#L45)*
 
 ___
 
@@ -120,7 +120,7 @@ ___
 
 • **code**: *string*
 
-*Defined in [responses/reels-media.feed.response.ts:44](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-media.feed.response.ts#L44)*
+*Defined in [responses/reels-media.feed.response.ts:44](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/reels-media.feed.response.ts#L44)*
 
 ___
 
@@ -128,7 +128,7 @@ ___
 
 • **device_timestamp**: *string*
 
-*Defined in [responses/reels-media.feed.response.ts:42](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-media.feed.response.ts#L42)*
+*Defined in [responses/reels-media.feed.response.ts:42](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/reels-media.feed.response.ts#L42)*
 
 ___
 
@@ -136,7 +136,7 @@ ___
 
 • **expiring_at**: *number*
 
-*Defined in [responses/reels-media.feed.response.ts:65](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-media.feed.response.ts#L65)*
+*Defined in [responses/reels-media.feed.response.ts:65](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/reels-media.feed.response.ts#L65)*
 
 ___
 
@@ -144,7 +144,7 @@ ___
 
 • **filter_type**: *number*
 
-*Defined in [responses/reels-media.feed.response.ts:46](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-media.feed.response.ts#L46)*
+*Defined in [responses/reels-media.feed.response.ts:46](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/reels-media.feed.response.ts#L46)*
 
 ___
 
@@ -152,7 +152,7 @@ ___
 
 • **has_audio**: *boolean*
 
-*Defined in [responses/reels-media.feed.response.ts:57](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-media.feed.response.ts#L57)*
+*Defined in [responses/reels-media.feed.response.ts:57](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/reels-media.feed.response.ts#L57)*
 
 ___
 
@@ -160,7 +160,7 @@ ___
 
 • **has_shared_to_fb**: *number*
 
-*Defined in [responses/reels-media.feed.response.ts:71](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-media.feed.response.ts#L71)*
+*Defined in [responses/reels-media.feed.response.ts:71](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/reels-media.feed.response.ts#L71)*
 
 ___
 
@@ -168,7 +168,7 @@ ___
 
 • **id**: *string*
 
-*Defined in [responses/reels-media.feed.response.ts:41](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-media.feed.response.ts#L41)*
+*Defined in [responses/reels-media.feed.response.ts:41](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/reels-media.feed.response.ts#L41)*
 
 ___
 
@@ -176,7 +176,7 @@ ___
 
 • **image_versions2**: *[ReelsMediaFeedResponseImageVersions2](_responses_reels_media_feed_response_.reelsmediafeedresponseimageversions2.md)*
 
-*Defined in [responses/reels-media.feed.response.ts:47](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-media.feed.response.ts#L47)*
+*Defined in [responses/reels-media.feed.response.ts:47](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/reels-media.feed.response.ts#L47)*
 
 ___
 
@@ -184,7 +184,7 @@ ___
 
 • **imported_taken_at**? : *number*
 
-*Defined in [responses/reels-media.feed.response.ts:75](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-media.feed.response.ts#L75)*
+*Defined in [responses/reels-media.feed.response.ts:75](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/reels-media.feed.response.ts#L75)*
 
 ___
 
@@ -192,7 +192,7 @@ ___
 
 • **is_dash_eligible**: *number*
 
-*Defined in [responses/reels-media.feed.response.ts:52](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-media.feed.response.ts#L52)*
+*Defined in [responses/reels-media.feed.response.ts:52](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/reels-media.feed.response.ts#L52)*
 
 ___
 
@@ -200,7 +200,7 @@ ___
 
 • **is_reel_media**: *boolean*
 
-*Defined in [responses/reels-media.feed.response.ts:51](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-media.feed.response.ts#L51)*
+*Defined in [responses/reels-media.feed.response.ts:51](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/reels-media.feed.response.ts#L51)*
 
 ___
 
@@ -208,7 +208,7 @@ ___
 
 • **link_text**? : *string*
 
-*Defined in [responses/reels-media.feed.response.ts:73](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-media.feed.response.ts#L73)*
+*Defined in [responses/reels-media.feed.response.ts:73](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/reels-media.feed.response.ts#L73)*
 
 ___
 
@@ -216,7 +216,7 @@ ___
 
 • **media_type**: *number*
 
-*Defined in [responses/reels-media.feed.response.ts:43](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-media.feed.response.ts#L43)*
+*Defined in [responses/reels-media.feed.response.ts:43](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/reels-media.feed.response.ts#L43)*
 
 ___
 
@@ -224,7 +224,7 @@ ___
 
 • **number_of_qualities**: *number*
 
-*Defined in [responses/reels-media.feed.response.ts:55](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-media.feed.response.ts#L55)*
+*Defined in [responses/reels-media.feed.response.ts:55](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/reels-media.feed.response.ts#L55)*
 
 ___
 
@@ -232,7 +232,7 @@ ___
 
 • **organic_tracking_token**: *string*
 
-*Defined in [responses/reels-media.feed.response.ts:64](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-media.feed.response.ts#L64)*
+*Defined in [responses/reels-media.feed.response.ts:64](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/reels-media.feed.response.ts#L64)*
 
 ___
 
@@ -240,7 +240,7 @@ ___
 
 • **original_height**: *number*
 
-*Defined in [responses/reels-media.feed.response.ts:49](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-media.feed.response.ts#L49)*
+*Defined in [responses/reels-media.feed.response.ts:49](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/reels-media.feed.response.ts#L49)*
 
 ___
 
@@ -248,7 +248,7 @@ ___
 
 • **original_width**: *number*
 
-*Defined in [responses/reels-media.feed.response.ts:48](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-media.feed.response.ts#L48)*
+*Defined in [responses/reels-media.feed.response.ts:48](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/reels-media.feed.response.ts#L48)*
 
 ___
 
@@ -256,7 +256,7 @@ ___
 
 • **photo_of_you**: *boolean*
 
-*Defined in [responses/reels-media.feed.response.ts:61](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-media.feed.response.ts#L61)*
+*Defined in [responses/reels-media.feed.response.ts:61](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/reels-media.feed.response.ts#L61)*
 
 ___
 
@@ -264,7 +264,7 @@ ___
 
 • **pk**: *string*
 
-*Defined in [responses/reels-media.feed.response.ts:40](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-media.feed.response.ts#L40)*
+*Defined in [responses/reels-media.feed.response.ts:40](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/reels-media.feed.response.ts#L40)*
 
 ___
 
@@ -272,7 +272,7 @@ ___
 
 • **reel_mentions**? : *[ReelsMediaFeedResponseReelMentionsItem](_responses_reels_media_feed_response_.reelsmediafeedresponsereelmentionsitem.md)[]*
 
-*Defined in [responses/reels-media.feed.response.ts:68](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-media.feed.response.ts#L68)*
+*Defined in [responses/reels-media.feed.response.ts:68](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/reels-media.feed.response.ts#L68)*
 
 ___
 
@@ -280,7 +280,7 @@ ___
 
 • **show_one_tap_fb_share_tooltip**: *boolean*
 
-*Defined in [responses/reels-media.feed.response.ts:70](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-media.feed.response.ts#L70)*
+*Defined in [responses/reels-media.feed.response.ts:70](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/reels-media.feed.response.ts#L70)*
 
 ___
 
@@ -288,7 +288,7 @@ ___
 
 • **story_cta**? : *[ReelsMediaFeedResponseStoryCtaItem](_responses_reels_media_feed_response_.reelsmediafeedresponsestoryctaitem.md)[]*
 
-*Defined in [responses/reels-media.feed.response.ts:74](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-media.feed.response.ts#L74)*
+*Defined in [responses/reels-media.feed.response.ts:74](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/reels-media.feed.response.ts#L74)*
 
 ___
 
@@ -296,7 +296,7 @@ ___
 
 • **supports_reel_reactions**: *boolean*
 
-*Defined in [responses/reels-media.feed.response.ts:69](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-media.feed.response.ts#L69)*
+*Defined in [responses/reels-media.feed.response.ts:69](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/reels-media.feed.response.ts#L69)*
 
 ___
 
@@ -304,7 +304,7 @@ ___
 
 • **taken_at**: *number*
 
-*Defined in [responses/reels-media.feed.response.ts:39](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-media.feed.response.ts#L39)*
+*Defined in [responses/reels-media.feed.response.ts:39](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/reels-media.feed.response.ts#L39)*
 
 ___
 
@@ -312,7 +312,7 @@ ___
 
 • **user**: *[ReelsMediaFeedResponseUser](_responses_reels_media_feed_response_.reelsmediafeedresponseuser.md)*
 
-*Defined in [responses/reels-media.feed.response.ts:59](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-media.feed.response.ts#L59)*
+*Defined in [responses/reels-media.feed.response.ts:59](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/reels-media.feed.response.ts#L59)*
 
 ___
 
@@ -320,7 +320,7 @@ ___
 
 • **video_codec**: *string*
 
-*Defined in [responses/reels-media.feed.response.ts:54](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-media.feed.response.ts#L54)*
+*Defined in [responses/reels-media.feed.response.ts:54](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/reels-media.feed.response.ts#L54)*
 
 ___
 
@@ -328,7 +328,7 @@ ___
 
 • **video_dash_manifest**: *string*
 
-*Defined in [responses/reels-media.feed.response.ts:53](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-media.feed.response.ts#L53)*
+*Defined in [responses/reels-media.feed.response.ts:53](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/reels-media.feed.response.ts#L53)*
 
 ___
 
@@ -336,7 +336,7 @@ ___
 
 • **video_duration**: *number*
 
-*Defined in [responses/reels-media.feed.response.ts:58](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-media.feed.response.ts#L58)*
+*Defined in [responses/reels-media.feed.response.ts:58](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/reels-media.feed.response.ts#L58)*
 
 ___
 
@@ -344,4 +344,4 @@ ___
 
 • **video_versions**: *[ReelsMediaFeedResponseVideoVersionsItem](_responses_reels_media_feed_response_.reelsmediafeedresponsevideoversionsitem.md)[]*
 
-*Defined in [responses/reels-media.feed.response.ts:56](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-media.feed.response.ts#L56)*
+*Defined in [responses/reels-media.feed.response.ts:56](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/reels-media.feed.response.ts#L56)*
