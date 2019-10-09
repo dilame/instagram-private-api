@@ -128,15 +128,10 @@ export class DirectThreadEntity extends Entity {
   /**
    * Uploads a story to the thread
    * The story is either destroyable (view 'once') or 'replayable'
-   * @param options
+   * @param input
    */
-  public async broadcastStory(options: DirectThreadBroadcastStoryOptions) {
-    if (typeof options.file === 'undefined') {
-      // TODO: remove in future releases
-      throw new IgClientError(
-        'Deprecated: DirectThreadEntity.broadcastStory() no longer accepts a Buffer, use {file: Buffer} instead.',
-      );
-    }
+  public async broadcastStory(input: Buffer | DirectThreadBroadcastStoryOptions) {
+    const options = input instanceof Buffer ? { file: input } : input;
     const baseOptions = {
       file: options.file,
       viewMode: options.viewMode || 'replayable',
