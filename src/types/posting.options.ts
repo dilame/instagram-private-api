@@ -29,6 +29,8 @@ export interface PostingStoryOptions {
   toBesties?: boolean;
   threadIds?: string[];
   recipientUsers?: string[];
+  viewMode?: 'replayable' | 'once' | string;
+  replyType?: 'story' | string;
 
   // stickers
   location?: PostingStoryLocationSticker;

@@ -18,6 +18,7 @@ import { PostingLocation, PostingStoryOptions } from '../types/posting.options';
 import Bluebird = require('bluebird');
 import { IgConfigureVideoError, IgResponseError, IgUploadVideoError } from '../errors';
 import { UploadRepositoryVideoResponseRootObject } from '../responses';
+import Chance = require('chance');
 
 export class PublishService extends Repository {
   /**
@@ -277,12 +278,13 @@ export class PublishService extends Repository {
     const recipients = typeof options.recipientUsers !== 'undefined';
     if (recipients || threadIds) {
       configureOptions.configure_mode = '2';
+      configureOptions.view_mode = options.viewMode;
+      configureOptions.reply_type = options.replyType;
+      configureOptions.client_context = new Chance().guid();
       if (recipients) {
         configureOptions.recipient_users = options.recipientUsers;
       }
-      if (threadIds) {
-        configureOptions.thread_ids = options.threadIds;
-      }
+      configureOptions.thread_ids = threadIds ? options.threadIds : [];
       return uploadAndConfigure();
     }
 

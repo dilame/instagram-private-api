@@ -1,6 +1,11 @@
 import * as urlRegex from 'url-regex';
 import { Entity } from '../core/entity';
-import { DirectThreadBroadcastPhotoOptions, DirectThreadBroadcastVideoOptions } from '../types';
+import {
+  DirectThreadBroadcastPhotoOptions,
+  DirectThreadBroadcastReelOptions,
+  DirectThreadBroadcastStoryOptions,
+  DirectThreadBroadcastVideoOptions,
+} from '../types';
 import { DirectThreadBroadcastOptions } from '../types';
 import { IgClientError } from '../errors';
 import { PublishService } from '../services/publish.service';
@@ -26,6 +31,44 @@ export class DirectThreadEntity extends Entity {
       form: {
         text,
       },
+    });
+  }
+
+  /**
+   * This is used when replying to a story (swiping up) and it's creator
+   * @param options
+   */
+  public async broadcastReel(options: DirectThreadBroadcastReelOptions) {
+    return await this.broadcast({
+      item: 'reel_share',
+      form: {
+        media_id: options.mediaId,
+        reel_id: options.reelId || options.mediaId.split('_')[1],
+        text: options.text,
+        entry: 'reel',
+      },
+      qs: {
+        media_type: options.mediaType || 'photo',
+      },
+    });
+  }
+
+  /**
+   * This is used when sharing a story (app: plane/share button) to a thread
+   * @param options
+   */
+  public async broadcastUserStory(options: DirectThreadBroadcastReelOptions) {
+    return await this.broadcast({
+      item: 'story_share',
+      form: {
+        story_media_id: options.mediaId,
+        reel_id: options.reelId || options.mediaId.split('_')[1],
+        text: options.text,
+      },
+      qs: {
+        media_type: options.mediaType || 'photo',
+      },
+      signed: true,
     });
   }
 
@@ -82,16 +125,27 @@ export class DirectThreadEntity extends Entity {
     });
   }
 
-  public async broadcastStory(file: Buffer) {
-    if (this.threadId === null) {
+  /**
+   * Uploads a story to the thread
+   * The story is either destroyable (view 'once') or 'replayable'
+   * @param input
+   */
+  public async broadcastStory(input: Buffer | DirectThreadBroadcastStoryOptions) {
+    const options = input instanceof Buffer ? { file: input } : input;
+    const baseOptions = {
+      file: options.file,
+      viewMode: options.viewMode || 'replayable',
+      replyType: options.replyType,
+    };
+    if (this.threadId !== null) {
       return await this.client.publish.story({
-        file,
+        ...baseOptions,
         threadIds: [this.threadId],
       });
     }
-    if (this.userIds === null) {
+    if (this.userIds !== null) {
       return await this.client.publish.story({
-        file,
+        ...baseOptions,
         recipientUsers: this.userIds,
       });
     }
@@ -133,6 +187,8 @@ export class DirectThreadEntity extends Entity {
     const baseParams = {
       item: options.item,
       form: options.form,
+      qs: options.qs,
+      signed: options.signed,
     };
     let params;
     if (this.threadId) {

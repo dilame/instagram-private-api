@@ -20,3 +20,4 @@ export * from './create-highlights-reel.options';
 export * from './edit-highlights-reel.options';
 export * from './graphql-request.options';
 export * from './insights.options';
+export * from './direct-thread.broadcast-reel.options';
