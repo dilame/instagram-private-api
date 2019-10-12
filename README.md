@@ -8,6 +8,20 @@
 [![Join the chat at https://gitter.im/instagram-private-api/Lobby](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/instagram-private-api/Lobby)
 
 ---
+# Table of Contents
+- [Install](#install)
+- [Support us](#support-us)
+- [Examples](#examples)
+- [Basic Concepts](#basic-concepts)
+  - [Feeds](#feeds)
+  - [Repositories](#repositories)
+  - [Services](#services)
+- [Contribution](#contribution)
+- [Useful Links](#useful-links)
+  - [Special Thanks](#special-thanks)
+  - [Thanks to Contributors](#thanks-to-contributors)
+  - [End User License Agreement (EULA)](#end-user-license-agreement-eula)
+
 
 # Install
 
@@ -143,10 +157,3 @@ Plus we need some documentation, so if you are good in it - you are welcome.
 ## Thanks to contributors
 
 - [Nerixyz](https://github.com/Nerixyz), for writing a huge amount of code for this library.
-
-## End User License Agreement (EULA)
-
-1. _You will not use_ this repository for sending mass spam or any other malicious activity
-2. _We / You will not support_ anyone who is violating this EULA conditions
-3. _Repository is just for learning / personal purposes_ thus should not be part of any
-   service available on the Internet that is trying to do any malicious activity (mass bulk request, spam etc.)

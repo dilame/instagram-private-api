@@ -20,6 +20,7 @@
 * [client_sidecar_id](_types_media_configure_sidecar_options_.mediaconfiguresidecaroptions.md#optional-client_sidecar_id)
 * [device](_types_media_configure_sidecar_options_.mediaconfiguresidecaroptions.md#optional-device)
 * [device_id](_types_media_configure_sidecar_options_.mediaconfiguresidecaroptions.md#optional-device_id)
+* [location](_types_media_configure_sidecar_options_.mediaconfiguresidecaroptions.md#optional-location)
 * [source_type](_types_media_configure_sidecar_options_.mediaconfiguresidecaroptions.md#optional-source_type)
 * [timezone_offset](_types_media_configure_sidecar_options_.mediaconfiguresidecaroptions.md#optional-timezone_offset)
 * [upload_id](_types_media_configure_sidecar_options_.mediaconfiguresidecaroptions.md#optional-upload_id)
@@ -30,7 +31,7 @@
 
 • **_csrftoken**? : *string*
 
-*Defined in [types/media.configure-sidecar.options.ts:4](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/media.configure-sidecar.options.ts#L4)*
+*Defined in [types/media.configure-sidecar.options.ts:5](https://github.com/dilame/instagram-private-api/blob/3e16058/src/types/media.configure-sidecar.options.ts#L5)*
 
 ___
 
@@ -38,7 +39,7 @@ ___
 
 • **_uid**? : *string*
 
-*Defined in [types/media.configure-sidecar.options.ts:5](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/media.configure-sidecar.options.ts#L5)*
+*Defined in [types/media.configure-sidecar.options.ts:6](https://github.com/dilame/instagram-private-api/blob/3e16058/src/types/media.configure-sidecar.options.ts#L6)*
 
 ___
 
@@ -46,7 +47,7 @@ ___
 
 • **_uuid**? : *string*
 
-*Defined in [types/media.configure-sidecar.options.ts:6](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/media.configure-sidecar.options.ts#L6)*
+*Defined in [types/media.configure-sidecar.options.ts:7](https://github.com/dilame/instagram-private-api/blob/3e16058/src/types/media.configure-sidecar.options.ts#L7)*
 
 ___
 
@@ -54,7 +55,7 @@ ___
 
 • **caption**? : *string*
 
-*Defined in [types/media.configure-sidecar.options.ts:10](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/media.configure-sidecar.options.ts#L10)*
+*Defined in [types/media.configure-sidecar.options.ts:11](https://github.com/dilame/instagram-private-api/blob/3e16058/src/types/media.configure-sidecar.options.ts#L11)*
 
 ___
 
@@ -62,7 +63,7 @@ ___
 
 • **children_metadata**: *[MediaConfigureSidecarItem](_types_media_configure_sidecar_options_.mediaconfiguresidecaritem.md)[]*
 
-*Defined in [types/media.configure-sidecar.options.ts:19](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/media.configure-sidecar.options.ts#L19)*
+*Defined in [types/media.configure-sidecar.options.ts:20](https://github.com/dilame/instagram-private-api/blob/3e16058/src/types/media.configure-sidecar.options.ts#L20)*
 
 ___
 
@@ -70,7 +71,7 @@ ___
 
 • **client_sidecar_id**? : *string*
 
-*Defined in [types/media.configure-sidecar.options.ts:11](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/media.configure-sidecar.options.ts#L11)*
+*Defined in [types/media.configure-sidecar.options.ts:12](https://github.com/dilame/instagram-private-api/blob/3e16058/src/types/media.configure-sidecar.options.ts#L12)*
 
 ___
 
@@ -78,7 +79,7 @@ ___
 
 • **device**? : *object*
 
-*Defined in [types/media.configure-sidecar.options.ts:13](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/media.configure-sidecar.options.ts#L13)*
+*Defined in [types/media.configure-sidecar.options.ts:14](https://github.com/dilame/instagram-private-api/blob/3e16058/src/types/media.configure-sidecar.options.ts#L14)*
 
 #### Type declaration:
 
@@ -88,7 +89,15 @@ ___
 
 • **device_id**? : *string*
 
-*Defined in [types/media.configure-sidecar.options.ts:9](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/media.configure-sidecar.options.ts#L9)*
+*Defined in [types/media.configure-sidecar.options.ts:10](https://github.com/dilame/instagram-private-api/blob/3e16058/src/types/media.configure-sidecar.options.ts#L10)*
+
+___
+
+### `Optional` location
+
+• **location**? : *[MediaLocation](_types_media_configure_options_.medialocation.md) | string*
+
+*Defined in [types/media.configure-sidecar.options.ts:21](https://github.com/dilame/instagram-private-api/blob/3e16058/src/types/media.configure-sidecar.options.ts#L21)*
 
 ___
 
@@ -96,7 +105,7 @@ ___
 
 • **source_type**? : *string*
 
-*Defined in [types/media.configure-sidecar.options.ts:8](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/media.configure-sidecar.options.ts#L8)*
+*Defined in [types/media.configure-sidecar.options.ts:9](https://github.com/dilame/instagram-private-api/blob/3e16058/src/types/media.configure-sidecar.options.ts#L9)*
 
 ___
 
@@ -104,7 +113,7 @@ ___
 
 • **timezone_offset**? : *string*
 
-*Defined in [types/media.configure-sidecar.options.ts:7](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/media.configure-sidecar.options.ts#L7)*
+*Defined in [types/media.configure-sidecar.options.ts:8](https://github.com/dilame/instagram-private-api/blob/3e16058/src/types/media.configure-sidecar.options.ts#L8)*
 
 ___
 
@@ -112,4 +121,4 @@ ___
 
 • **upload_id**? : *string*
 
-*Defined in [types/media.configure-sidecar.options.ts:12](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/media.configure-sidecar.options.ts#L12)*
+*Defined in [types/media.configure-sidecar.options.ts:13](https://github.com/dilame/instagram-private-api/blob/3e16058/src/types/media.configure-sidecar.options.ts#L13)*

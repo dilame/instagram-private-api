@@ -23,7 +23,7 @@
 
 • **alacorn_session_id**: *string*
 
-*Defined in [responses/music-trending.feed.response.ts:4](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/music-trending.feed.response.ts#L4)*
+*Defined in [responses/music-trending.feed.response.ts:4](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/music-trending.feed.response.ts#L4)*
 
 ___
 
@@ -31,7 +31,7 @@ ___
 
 • **items**: *[MusicTrendingFeedResponseItemsItem](_responses_music_trending_feed_response_.musictrendingfeedresponseitemsitem.md)[]*
 
-*Defined in [responses/music-trending.feed.response.ts:2](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/music-trending.feed.response.ts#L2)*
+*Defined in [responses/music-trending.feed.response.ts:2](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/music-trending.feed.response.ts#L2)*
 
 ___
 
@@ -39,7 +39,7 @@ ___
 
 • **page_info**: *[MusicTrendingFeedResponsePage_info](_responses_music_trending_feed_response_.musictrendingfeedresponsepage_info.md)*
 
-*Defined in [responses/music-trending.feed.response.ts:3](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/music-trending.feed.response.ts#L3)*
+*Defined in [responses/music-trending.feed.response.ts:3](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/music-trending.feed.response.ts#L3)*
 
 ___
 
@@ -47,4 +47,4 @@ ___
 
 • **status**: *string*
 
-*Defined in [responses/music-trending.feed.response.ts:5](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/music-trending.feed.response.ts#L5)*
+*Defined in [responses/music-trending.feed.response.ts:5](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/music-trending.feed.response.ts#L5)*

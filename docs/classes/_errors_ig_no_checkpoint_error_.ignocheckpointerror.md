@@ -30,7 +30,7 @@
 
 *Overrides [IgClientError](_errors_ig_client_error_.igclienterror.md).[constructor](_errors_ig_client_error_.igclienterror.md#constructor)*
 
-*Defined in [errors/ig-no-checkpoint.error.ts:3](https://github.com/dilame/instagram-private-api/blob/173bc62/src/errors/ig-no-checkpoint.error.ts#L3)*
+*Defined in [errors/ig-no-checkpoint.error.ts:3](https://github.com/dilame/instagram-private-api/blob/3e16058/src/errors/ig-no-checkpoint.error.ts#L3)*
 
 **Parameters:**
 

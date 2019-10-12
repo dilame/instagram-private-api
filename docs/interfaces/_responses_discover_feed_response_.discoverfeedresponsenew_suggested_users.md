@@ -20,4 +20,4 @@
 
 • **suggestions**: *any[]*
 
-*Defined in [responses/discover.feed.response.ts:40](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/discover.feed.response.ts#L40)*
+*Defined in [responses/discover.feed.response.ts:40](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/discover.feed.response.ts#L40)*

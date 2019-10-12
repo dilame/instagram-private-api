@@ -72,7 +72,7 @@
 
 • **adid**: *string*
 
-*Defined in [core/state.ts:54](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L54)*
+*Defined in [core/state.ts:54](https://github.com/dilame/instagram-private-api/blob/3e16058/src/core/state.ts#L54)*
 
 Google Play Advertising ID.
 
@@ -87,7 +87,7 @@ ___
 
 • **appVersion**: *string* =  APP_VERSION
 
-*Defined in [core/state.ts:29](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L29)*
+*Defined in [core/state.ts:29](https://github.com/dilame/instagram-private-api/blob/3e16058/src/core/state.ts#L29)*
 
 ___
 
@@ -95,7 +95,7 @@ ___
 
 • **appVersionCode**: *string* =  APP_VERSION_CODE
 
-*Defined in [core/state.ts:30](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L30)*
+*Defined in [core/state.ts:30](https://github.com/dilame/instagram-private-api/blob/3e16058/src/core/state.ts#L30)*
 
 ___
 
@@ -103,7 +103,7 @@ ___
 
 • **build**: *string*
 
-*Defined in [core/state.ts:43](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L43)*
+*Defined in [core/state.ts:43](https://github.com/dilame/instagram-private-api/blob/3e16058/src/core/state.ts#L43)*
 
 ___
 
@@ -111,7 +111,7 @@ ___
 
 • **capabilitiesHeader**: *string* = "3brTvw=="
 
-*Defined in [core/state.ts:40](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L40)*
+*Defined in [core/state.ts:40](https://github.com/dilame/instagram-private-api/blob/3e16058/src/core/state.ts#L40)*
 
 ___
 
@@ -119,7 +119,7 @@ ___
 
 • **challenge**: *[ChallengeStateResponse](../interfaces/_responses_challenge_state_response_.challengestateresponse.md) | null* =  null
 
-*Defined in [core/state.ts:60](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L60)*
+*Defined in [core/state.ts:60](https://github.com/dilame/instagram-private-api/blob/3e16058/src/core/state.ts#L60)*
 
 ___
 
@@ -127,7 +127,7 @@ ___
 
 • **checkpoint**: *[CheckpointResponse](../interfaces/_responses_checkpoint_response_.checkpointresponse.md) | null* =  null
 
-*Defined in [core/state.ts:59](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L59)*
+*Defined in [core/state.ts:59](https://github.com/dilame/instagram-private-api/blob/3e16058/src/core/state.ts#L59)*
 
 ___
 
@@ -135,7 +135,7 @@ ___
 
 • **clientSessionIdLifetime**: *number* = 1200000
 
-*Defined in [core/state.ts:61](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L61)*
+*Defined in [core/state.ts:61](https://github.com/dilame/instagram-private-api/blob/3e16058/src/core/state.ts#L61)*
 
 ___
 
@@ -143,7 +143,7 @@ ___
 
 • **connectionTypeHeader**: *string* = "WIFI"
 
-*Defined in [core/state.ts:41](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L41)*
+*Defined in [core/state.ts:41](https://github.com/dilame/instagram-private-api/blob/3e16058/src/core/state.ts#L41)*
 
 ___
 
@@ -151,7 +151,7 @@ ___
 
 • **cookieJar**: *`CookieJar`* =  jar(this.cookieStore)
 
-*Defined in [core/state.ts:58](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L58)*
+*Defined in [core/state.ts:58](https://github.com/dilame/instagram-private-api/blob/3e16058/src/core/state.ts#L58)*
 
 ___
 
@@ -159,7 +159,7 @@ ___
 
 • **cookieStore**: *`MemoryCookieStore`* =  new MemoryCookieStore()
 
-*Defined in [core/state.ts:57](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L57)*
+*Defined in [core/state.ts:57](https://github.com/dilame/instagram-private-api/blob/3e16058/src/core/state.ts#L57)*
 
 ___
 
@@ -167,7 +167,7 @@ ___
 
 • **deviceId**: *string*
 
-*Defined in [core/state.ts:55](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L55)*
+*Defined in [core/state.ts:55](https://github.com/dilame/instagram-private-api/blob/3e16058/src/core/state.ts#L55)*
 
 ___
 
@@ -175,7 +175,7 @@ ___
 
 • **deviceString**: *string*
 
-*Defined in [core/state.ts:42](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L42)*
+*Defined in [core/state.ts:42](https://github.com/dilame/instagram-private-api/blob/3e16058/src/core/state.ts#L42)*
 
 ___
 
@@ -183,7 +183,7 @@ ___
 
 • **experiments**: *string* =  EXPERIMENTS
 
-*Defined in [core/state.ts:35](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L35)*
+*Defined in [core/state.ts:35](https://github.com/dilame/instagram-private-api/blob/3e16058/src/core/state.ts#L35)*
 
 ___
 
@@ -191,7 +191,7 @@ ___
 
 • **fbAnalyticsApplicationId**: *string* =  FACEBOOK_ANALYTICS_APPLICATION_ID
 
-*Defined in [core/state.ts:31](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L31)*
+*Defined in [core/state.ts:31](https://github.com/dilame/instagram-private-api/blob/3e16058/src/core/state.ts#L31)*
 
 ___
 
@@ -199,7 +199,7 @@ ___
 
 • **fbOrcaApplicationId**: *string* =  FACEBOOK_ORCA_APPLICATION_ID
 
-*Defined in [core/state.ts:33](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L33)*
+*Defined in [core/state.ts:33](https://github.com/dilame/instagram-private-api/blob/3e16058/src/core/state.ts#L33)*
 
 ___
 
@@ -207,7 +207,7 @@ ___
 
 • **fbOtaFields**: *string* =  FACEBOOK_OTA_FIELDS
 
-*Defined in [core/state.ts:32](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L32)*
+*Defined in [core/state.ts:32](https://github.com/dilame/instagram-private-api/blob/3e16058/src/core/state.ts#L32)*
 
 ___
 
@@ -215,7 +215,7 @@ ___
 
 • **language**: *string* = "en_US"
 
-*Defined in [core/state.ts:37](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L37)*
+*Defined in [core/state.ts:37](https://github.com/dilame/instagram-private-api/blob/3e16058/src/core/state.ts#L37)*
 
 ___
 
@@ -223,7 +223,7 @@ ___
 
 • **loginExperiments**: *string* =  LOGIN_EXPERIMENTS
 
-*Defined in [core/state.ts:34](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L34)*
+*Defined in [core/state.ts:34](https://github.com/dilame/instagram-private-api/blob/3e16058/src/core/state.ts#L34)*
 
 ___
 
@@ -231,7 +231,7 @@ ___
 
 • **phoneId**: *string*
 
-*Defined in [core/state.ts:45](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L45)*
+*Defined in [core/state.ts:45](https://github.com/dilame/instagram-private-api/blob/3e16058/src/core/state.ts#L45)*
 
 ___
 
@@ -239,7 +239,7 @@ ___
 
 • **pigeonSessionIdLifetime**: *number* = 1200000
 
-*Defined in [core/state.ts:62](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L62)*
+*Defined in [core/state.ts:62](https://github.com/dilame/instagram-private-api/blob/3e16058/src/core/state.ts#L62)*
 
 ___
 
@@ -247,7 +247,7 @@ ___
 
 • **proxyUrl**: *string*
 
-*Defined in [core/state.ts:56](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L56)*
+*Defined in [core/state.ts:56](https://github.com/dilame/instagram-private-api/blob/3e16058/src/core/state.ts#L56)*
 
 ___
 
@@ -255,7 +255,7 @@ ___
 
 • **radioType**: *string* = "wifi-none"
 
-*Defined in [core/state.ts:39](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L39)*
+*Defined in [core/state.ts:39](https://github.com/dilame/instagram-private-api/blob/3e16058/src/core/state.ts#L39)*
 
 ___
 
@@ -263,7 +263,7 @@ ___
 
 • **signatureKey**: *string* =  SIGNATURE_KEY
 
-*Defined in [core/state.ts:26](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L26)*
+*Defined in [core/state.ts:26](https://github.com/dilame/instagram-private-api/blob/3e16058/src/core/state.ts#L26)*
 
 ___
 
@@ -271,7 +271,7 @@ ___
 
 • **signatureVersion**: *string* =  SIGNATURE_VERSION
 
-*Defined in [core/state.ts:27](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L27)*
+*Defined in [core/state.ts:27](https://github.com/dilame/instagram-private-api/blob/3e16058/src/core/state.ts#L27)*
 
 ___
 
@@ -279,7 +279,7 @@ ___
 
 • **supportedCapabilities**: *object | object[]* =  supportedCapabilities
 
-*Defined in [core/state.ts:36](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L36)*
+*Defined in [core/state.ts:36](https://github.com/dilame/instagram-private-api/blob/3e16058/src/core/state.ts#L36)*
 
 ___
 
@@ -287,7 +287,7 @@ ___
 
 • **timezoneOffset**: *string* =  String(new Date().getTimezoneOffset() * -60)
 
-*Defined in [core/state.ts:38](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L38)*
+*Defined in [core/state.ts:38](https://github.com/dilame/instagram-private-api/blob/3e16058/src/core/state.ts#L38)*
 
 ___
 
@@ -295,7 +295,7 @@ ___
 
 • **userBreadcrumbKey**: *string* =  BREADCRUMB_KEY
 
-*Defined in [core/state.ts:28](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L28)*
+*Defined in [core/state.ts:28](https://github.com/dilame/instagram-private-api/blob/3e16058/src/core/state.ts#L28)*
 
 ___
 
@@ -303,7 +303,7 @@ ___
 
 • **uuid**: *string*
 
-*Defined in [core/state.ts:44](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L44)*
+*Defined in [core/state.ts:44](https://github.com/dilame/instagram-private-api/blob/3e16058/src/core/state.ts#L44)*
 
 ## Accessors
 
@@ -311,7 +311,7 @@ ___
 
 • **get appUserAgent**(): *string*
 
-*Defined in [core/state.ts:80](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L80)*
+*Defined in [core/state.ts:80](https://github.com/dilame/instagram-private-api/blob/3e16058/src/core/state.ts#L80)*
 
 **Returns:** *string*
 
@@ -321,7 +321,7 @@ ___
 
 • **get batteryLevel**(): *number*
 
-*Defined in [core/state.ts:105](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L105)*
+*Defined in [core/state.ts:105](https://github.com/dilame/instagram-private-api/blob/3e16058/src/core/state.ts#L105)*
 
 **Returns:** *number*
 
@@ -331,7 +331,7 @@ ___
 
 • **get challengeUrl**(): *string*
 
-*Defined in [core/state.ts:116](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L116)*
+*Defined in [core/state.ts:116](https://github.com/dilame/instagram-private-api/blob/3e16058/src/core/state.ts#L116)*
 
 **Returns:** *string*
 
@@ -341,7 +341,7 @@ ___
 
 • **get clientSessionId**(): *string*
 
-*Defined in [core/state.ts:72](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L72)*
+*Defined in [core/state.ts:72](https://github.com/dilame/instagram-private-api/blob/3e16058/src/core/state.ts#L72)*
 
 The current application session ID.
 
@@ -358,7 +358,7 @@ ___
 
 • **get cookieCsrfToken**(): *string*
 
-*Defined in [core/state.ts:123](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L123)*
+*Defined in [core/state.ts:123](https://github.com/dilame/instagram-private-api/blob/3e16058/src/core/state.ts#L123)*
 
 **Returns:** *string*
 
@@ -368,7 +368,7 @@ ___
 
 • **get cookieUserId**(): *string*
 
-*Defined in [core/state.ts:131](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L131)*
+*Defined in [core/state.ts:131](https://github.com/dilame/instagram-private-api/blob/3e16058/src/core/state.ts#L131)*
 
 **Returns:** *string*
 
@@ -378,7 +378,7 @@ ___
 
 • **get cookieUsername**(): *string*
 
-*Defined in [core/state.ts:135](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L135)*
+*Defined in [core/state.ts:135](https://github.com/dilame/instagram-private-api/blob/3e16058/src/core/state.ts#L135)*
 
 **Returns:** *string*
 
@@ -388,7 +388,7 @@ ___
 
 • **get devicePayload**(): *object*
 
-*Defined in [core/state.ts:92](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L92)*
+*Defined in [core/state.ts:92](https://github.com/dilame/instagram-private-api/blob/3e16058/src/core/state.ts#L92)*
 
 **Returns:** *object*
 
@@ -398,7 +398,7 @@ ___
 
 • **get isCharging**(): *boolean*
 
-*Defined in [core/state.ts:111](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L111)*
+*Defined in [core/state.ts:111](https://github.com/dilame/instagram-private-api/blob/3e16058/src/core/state.ts#L111)*
 
 **Returns:** *boolean*
 
@@ -408,7 +408,7 @@ ___
 
 • **get pigeonSessionId**(): *string*
 
-*Defined in [core/state.ts:76](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L76)*
+*Defined in [core/state.ts:76](https://github.com/dilame/instagram-private-api/blob/3e16058/src/core/state.ts#L76)*
 
 **Returns:** *string*
 
@@ -418,7 +418,7 @@ ___
 
 • **get webUserAgent**(): *string*
 
-*Defined in [core/state.ts:84](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L84)*
+*Defined in [core/state.ts:84](https://github.com/dilame/instagram-private-api/blob/3e16058/src/core/state.ts#L84)*
 
 **Returns:** *string*
 
@@ -428,7 +428,7 @@ ___
 
 ▸ **deserializeCookieJar**(`cookies`: string): *`Promise<void>`*
 
-*Defined in [core/state.ts:167](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L167)*
+*Defined in [core/state.ts:167](https://github.com/dilame/instagram-private-api/blob/3e16058/src/core/state.ts#L167)*
 
 **Parameters:**
 
@@ -444,7 +444,7 @@ ___
 
 ▸ **extractCookie**(`key`: string): *`Cookie` | null*
 
-*Defined in [core/state.ts:143](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L143)*
+*Defined in [core/state.ts:143](https://github.com/dilame/instagram-private-api/blob/3e16058/src/core/state.ts#L143)*
 
 **Parameters:**
 
@@ -460,7 +460,7 @@ ___
 
 ▸ **extractCookieValue**(`key`: string): *string*
 
-*Defined in [core/state.ts:148](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L148)*
+*Defined in [core/state.ts:148](https://github.com/dilame/instagram-private-api/blob/3e16058/src/core/state.ts#L148)*
 
 **Parameters:**
 
@@ -476,7 +476,7 @@ ___
 
 ▸ **extractUserId**(): *string*
 
-*Defined in [core/state.ts:156](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L156)*
+*Defined in [core/state.ts:156](https://github.com/dilame/instagram-private-api/blob/3e16058/src/core/state.ts#L156)*
 
 **Returns:** *string*
 
@@ -486,7 +486,7 @@ ___
 
 ▸ **generateDevice**(`seed`: string): *void*
 
-*Defined in [core/state.ts:175](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L175)*
+*Defined in [core/state.ts:175](https://github.com/dilame/instagram-private-api/blob/3e16058/src/core/state.ts#L175)*
 
 **Parameters:**
 
@@ -502,7 +502,7 @@ ___
 
 ▸ **isExperimentEnabled**(`experiment`: any): *boolean*
 
-*Defined in [core/state.ts:139](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L139)*
+*Defined in [core/state.ts:139](https://github.com/dilame/instagram-private-api/blob/3e16058/src/core/state.ts#L139)*
 
 **Parameters:**
 
@@ -518,6 +518,6 @@ ___
 
 ▸ **serializeCookieJar**(): *`Promise<Serialized>`*
 
-*Defined in [core/state.ts:171](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/state.ts#L171)*
+*Defined in [core/state.ts:171](https://github.com/dilame/instagram-private-api/blob/3e16058/src/core/state.ts#L171)*
 
 **Returns:** *`Promise<Serialized>`*

@@ -25,7 +25,7 @@
 
 • **is_reel_persisted**: *boolean*
 
-*Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:75](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-thread.repository.approve-participant-request.response.ts#L75)*
+*Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:75](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/direct-thread.repository.approve-participant-request.response.ts#L75)*
 
 ___
 
@@ -33,7 +33,7 @@ ___
 
 • **media**: *[DirectThreadRepositoryApproveParticipantRequestResponseMedia](_responses_direct_thread_repository_approve_participant_request_response_.directthreadrepositoryapproveparticipantrequestresponsemedia.md)*
 
-*Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:72](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-thread.repository.approve-participant-request.response.ts#L72)*
+*Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:72](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/direct-thread.repository.approve-participant-request.response.ts#L72)*
 
 ___
 
@@ -41,7 +41,7 @@ ___
 
 • **reel_id**: *number*
 
-*Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:73](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-thread.repository.approve-participant-request.response.ts#L73)*
+*Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:73](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/direct-thread.repository.approve-participant-request.response.ts#L73)*
 
 ___
 
@@ -49,7 +49,7 @@ ___
 
 • **reel_type**: *string*
 
-*Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:74](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-thread.repository.approve-participant-request.response.ts#L74)*
+*Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:74](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/direct-thread.repository.approve-participant-request.response.ts#L74)*
 
 ___
 
@@ -57,7 +57,7 @@ ___
 
 • **story_share_type**: *string*
 
-*Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:76](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-thread.repository.approve-participant-request.response.ts#L76)*
+*Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:76](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/direct-thread.repository.approve-participant-request.response.ts#L76)*
 
 ___
 
@@ -65,4 +65,4 @@ ___
 
 • **text**: *null*
 
-*Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:77](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-thread.repository.approve-participant-request.response.ts#L77)*
+*Defined in [responses/direct-thread.repository.approve-participant-request.response.ts:77](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/direct-thread.repository.approve-participant-request.response.ts#L77)*

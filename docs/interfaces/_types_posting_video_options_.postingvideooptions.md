@@ -25,7 +25,7 @@
 
 • **caption**? : *string*
 
-*Defined in [types/posting.video.options.ts:6](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/posting.video.options.ts#L6)*
+*Defined in [types/posting.video.options.ts:6](https://github.com/dilame/instagram-private-api/blob/3e16058/src/types/posting.video.options.ts#L6)*
 
 ___
 
@@ -33,7 +33,7 @@ ___
 
 • **coverImage**: *`Buffer`*
 
-*Defined in [types/posting.video.options.ts:5](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/posting.video.options.ts#L5)*
+*Defined in [types/posting.video.options.ts:5](https://github.com/dilame/instagram-private-api/blob/3e16058/src/types/posting.video.options.ts#L5)*
 
 ___
 
@@ -41,7 +41,7 @@ ___
 
 • **location**? : *[PostingLocation](_types_posting_options_.postinglocation.md)*
 
-*Defined in [types/posting.video.options.ts:8](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/posting.video.options.ts#L8)*
+*Defined in [types/posting.video.options.ts:8](https://github.com/dilame/instagram-private-api/blob/3e16058/src/types/posting.video.options.ts#L8)*
 
 ___
 
@@ -49,7 +49,7 @@ ___
 
 • **transcodeDelay**? : *number*
 
-*Defined in [types/posting.video.options.ts:9](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/posting.video.options.ts#L9)*
+*Defined in [types/posting.video.options.ts:9](https://github.com/dilame/instagram-private-api/blob/3e16058/src/types/posting.video.options.ts#L9)*
 
 ___
 
@@ -57,7 +57,7 @@ ___
 
 • **usertags**? : *[PostingUsertags](_types_posting_options_.postingusertags.md)*
 
-*Defined in [types/posting.video.options.ts:7](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/posting.video.options.ts#L7)*
+*Defined in [types/posting.video.options.ts:7](https://github.com/dilame/instagram-private-api/blob/3e16058/src/types/posting.video.options.ts#L7)*
 
 ___
 
@@ -65,4 +65,4 @@ ___
 
 • **video**: *`Buffer`*
 
-*Defined in [types/posting.video.options.ts:4](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/posting.video.options.ts#L4)*
+*Defined in [types/posting.video.options.ts:4](https://github.com/dilame/instagram-private-api/blob/3e16058/src/types/posting.video.options.ts#L4)*

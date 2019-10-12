@@ -33,7 +33,7 @@
 
 *Inherited from [StorySticker](_types_media_configure_story_options_.storysticker.md).[height](_types_media_configure_story_options_.storysticker.md#height)*
 
-*Defined in [types/media.configure-story.options.ts:67](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/media.configure-story.options.ts#L67)*
+*Defined in [types/media.configure-story.options.ts:75](https://github.com/dilame/instagram-private-api/blob/3e16058/src/types/media.configure-story.options.ts#L75)*
 
 ___
 
@@ -41,7 +41,7 @@ ___
 
 • **is_sticker**: *true*
 
-*Defined in [types/media.configure-story.options.ts:125](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/media.configure-story.options.ts#L125)*
+*Defined in [types/media.configure-story.options.ts:133](https://github.com/dilame/instagram-private-api/blob/3e16058/src/types/media.configure-story.options.ts#L133)*
 
 ___
 
@@ -49,7 +49,7 @@ ___
 
 • **question**: *string*
 
-*Defined in [types/media.configure-story.options.ts:122](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/media.configure-story.options.ts#L122)*
+*Defined in [types/media.configure-story.options.ts:130](https://github.com/dilame/instagram-private-api/blob/3e16058/src/types/media.configure-story.options.ts#L130)*
 
 ___
 
@@ -59,7 +59,7 @@ ___
 
 *Inherited from [StorySticker](_types_media_configure_story_options_.storysticker.md).[rotation](_types_media_configure_story_options_.storysticker.md#rotation)*
 
-*Defined in [types/media.configure-story.options.ts:68](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/media.configure-story.options.ts#L68)*
+*Defined in [types/media.configure-story.options.ts:76](https://github.com/dilame/instagram-private-api/blob/3e16058/src/types/media.configure-story.options.ts#L76)*
 
 ___
 
@@ -67,7 +67,7 @@ ___
 
 • **tallies**: *[[StoryPollTallie](_types_media_configure_story_options_.storypolltallie.md), [StoryPollTallie](_types_media_configure_story_options_.storypolltallie.md)]*
 
-*Defined in [types/media.configure-story.options.ts:126](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/media.configure-story.options.ts#L126)*
+*Defined in [types/media.configure-story.options.ts:134](https://github.com/dilame/instagram-private-api/blob/3e16058/src/types/media.configure-story.options.ts#L134)*
 
 ___
 
@@ -75,7 +75,7 @@ ___
 
 • **viewer_can_vote**: *true*
 
-*Defined in [types/media.configure-story.options.ts:124](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/media.configure-story.options.ts#L124)*
+*Defined in [types/media.configure-story.options.ts:132](https://github.com/dilame/instagram-private-api/blob/3e16058/src/types/media.configure-story.options.ts#L132)*
 
 ___
 
@@ -83,7 +83,7 @@ ___
 
 • **viewer_vote**: *`0`*
 
-*Defined in [types/media.configure-story.options.ts:123](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/media.configure-story.options.ts#L123)*
+*Defined in [types/media.configure-story.options.ts:131](https://github.com/dilame/instagram-private-api/blob/3e16058/src/types/media.configure-story.options.ts#L131)*
 
 ___
 
@@ -93,7 +93,7 @@ ___
 
 *Inherited from [StorySticker](_types_media_configure_story_options_.storysticker.md).[width](_types_media_configure_story_options_.storysticker.md#width)*
 
-*Defined in [types/media.configure-story.options.ts:66](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/media.configure-story.options.ts#L66)*
+*Defined in [types/media.configure-story.options.ts:74](https://github.com/dilame/instagram-private-api/blob/3e16058/src/types/media.configure-story.options.ts#L74)*
 
 ___
 
@@ -103,7 +103,7 @@ ___
 
 *Inherited from [StorySticker](_types_media_configure_story_options_.storysticker.md).[x](_types_media_configure_story_options_.storysticker.md#x)*
 
-*Defined in [types/media.configure-story.options.ts:64](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/media.configure-story.options.ts#L64)*
+*Defined in [types/media.configure-story.options.ts:72](https://github.com/dilame/instagram-private-api/blob/3e16058/src/types/media.configure-story.options.ts#L72)*
 
 ___
 
@@ -113,4 +113,4 @@ ___
 
 *Inherited from [StorySticker](_types_media_configure_story_options_.storysticker.md).[y](_types_media_configure_story_options_.storysticker.md#y)*
 
-*Defined in [types/media.configure-story.options.ts:65](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/media.configure-story.options.ts#L65)*
+*Defined in [types/media.configure-story.options.ts:73](https://github.com/dilame/instagram-private-api/blob/3e16058/src/types/media.configure-story.options.ts#L73)*

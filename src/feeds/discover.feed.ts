@@ -7,8 +7,8 @@ export class DiscoverFeed extends Feed<DiscoverFeedResponseRootObject, DiscoverF
   private nextMaxId: string;
 
   set state(body: DiscoverFeedResponseRootObject) {
-    this.moreAvailable = !!body.next_max_id;
-    this.nextMaxId = body.next_max_id;
+    this.moreAvailable = body.more_available;
+    this.nextMaxId = body.max_id;
   }
 
   async request() {

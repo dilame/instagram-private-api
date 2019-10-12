@@ -21,7 +21,7 @@
 
 • **group_id**: *null*
 
-*Defined in [responses/timeline.feed.response.ts:284](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/timeline.feed.response.ts#L284)*
+*Defined in [responses/timeline.feed.response.ts:284](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/timeline.feed.response.ts#L284)*
 
 ___
 
@@ -29,4 +29,4 @@ ___
 
 • **source**: *null*
 
-*Defined in [responses/timeline.feed.response.ts:283](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/timeline.feed.response.ts#L283)*
+*Defined in [responses/timeline.feed.response.ts:283](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/timeline.feed.response.ts#L283)*

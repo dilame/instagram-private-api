@@ -21,7 +21,7 @@
 
 • **lyrics**: *[MusicRepositoryLyricsResponseLyrics](_responses_music_repository_lyrics_response_.musicrepositorylyricsresponselyrics.md)*
 
-*Defined in [responses/music.repository.lyrics.response.ts:2](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/music.repository.lyrics.response.ts#L2)*
+*Defined in [responses/music.repository.lyrics.response.ts:2](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/music.repository.lyrics.response.ts#L2)*
 
 ___
 
@@ -29,4 +29,4 @@ ___
 
 • **status**: *string*
 
-*Defined in [responses/music.repository.lyrics.response.ts:3](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/music.repository.lyrics.response.ts#L3)*
+*Defined in [responses/music.repository.lyrics.response.ts:3](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/music.repository.lyrics.response.ts#L3)*

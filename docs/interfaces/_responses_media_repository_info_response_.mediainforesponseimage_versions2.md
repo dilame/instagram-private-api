@@ -20,4 +20,4 @@
 
 • **candidates**: *[MediaInfoResponseCandidatesItem](_responses_media_repository_info_response_.mediainforesponsecandidatesitem.md)[]*
 
-*Defined in [responses/media.repository.info.response.ts:41](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.info.response.ts#L41)*
+*Defined in [responses/media.repository.info.response.ts:41](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/media.repository.info.response.ts#L41)*

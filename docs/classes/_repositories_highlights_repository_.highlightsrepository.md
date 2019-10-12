@@ -31,7 +31,7 @@
 
 *Inherited from [Repository](_core_repository_.repository.md).[constructor](_core_repository_.repository.md#constructor)*
 
-*Defined in [core/repository.ts:6](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/repository.ts#L6)*
+*Defined in [core/repository.ts:6](https://github.com/dilame/instagram-private-api/blob/3e16058/src/core/repository.ts#L6)*
 
 **Parameters:**
 
@@ -47,7 +47,7 @@ Name | Type |
 
 ▸ **createReel**(`options`: [CreateHighlightsReelOptions](../interfaces/_types_create_highlights_reel_options_.createhighlightsreeloptions.md)): *`Promise<HighlightsRepositoryCreateReelResponseRootObject>`*
 
-*Defined in [repositories/highlights.repository.ts:25](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/highlights.repository.ts#L25)*
+*Defined in [repositories/highlights.repository.ts:25](https://github.com/dilame/instagram-private-api/blob/3e16058/src/repositories/highlights.repository.ts#L25)*
 
 **Parameters:**
 
@@ -63,7 +63,7 @@ ___
 
 ▸ **deleteReel**(`highlightId`: string): *`Promise<StatusResponse>`*
 
-*Defined in [repositories/highlights.repository.ts:67](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/highlights.repository.ts#L67)*
+*Defined in [repositories/highlights.repository.ts:67](https://github.com/dilame/instagram-private-api/blob/3e16058/src/repositories/highlights.repository.ts#L67)*
 
 **Parameters:**
 
@@ -79,7 +79,7 @@ ___
 
 ▸ **editReel**(`options`: [EditHighlightsReelOptions](../interfaces/_types_edit_highlights_reel_options_.edithighlightsreeloptions.md)): *`Promise<HighlightsRepositoryEditReelResponseRootObject>`*
 
-*Defined in [repositories/highlights.repository.ts:47](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/highlights.repository.ts#L47)*
+*Defined in [repositories/highlights.repository.ts:47](https://github.com/dilame/instagram-private-api/blob/3e16058/src/repositories/highlights.repository.ts#L47)*
 
 **Parameters:**
 
@@ -95,7 +95,7 @@ ___
 
 ▸ **highlightsTray**(`userId`: string | number): *`Promise<HighlightsRepositoryHighlightsTrayResponseRootObject>`*
 
-*Defined in [repositories/highlights.repository.ts:11](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/highlights.repository.ts#L11)*
+*Defined in [repositories/highlights.repository.ts:11](https://github.com/dilame/instagram-private-api/blob/3e16058/src/repositories/highlights.repository.ts#L11)*
 
 **Parameters:**
 

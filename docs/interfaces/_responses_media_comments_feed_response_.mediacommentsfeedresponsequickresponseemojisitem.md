@@ -20,4 +20,4 @@
 
 • **unicode**: *string*
 
-*Defined in [responses/media-comments.feed.response.ts:93](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media-comments.feed.response.ts#L93)*
+*Defined in [responses/media-comments.feed.response.ts:93](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/media-comments.feed.response.ts#L93)*

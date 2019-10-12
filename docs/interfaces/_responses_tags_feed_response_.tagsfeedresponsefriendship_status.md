@@ -22,7 +22,7 @@
 
 • **following**: *boolean*
 
-*Defined in [responses/tags.feed.response.ts:134](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/tags.feed.response.ts#L134)*
+*Defined in [responses/tags.feed.response.ts:134](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/tags.feed.response.ts#L134)*
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 • **is_bestie**: *boolean*
 
-*Defined in [responses/tags.feed.response.ts:136](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/tags.feed.response.ts#L136)*
+*Defined in [responses/tags.feed.response.ts:136](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/tags.feed.response.ts#L136)*
 
 ___
 
@@ -38,4 +38,4 @@ ___
 
 • **outgoing_request**: *boolean*
 
-*Defined in [responses/tags.feed.response.ts:135](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/tags.feed.response.ts#L135)*
+*Defined in [responses/tags.feed.response.ts:135](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/tags.feed.response.ts#L135)*

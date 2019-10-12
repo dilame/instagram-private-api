@@ -29,7 +29,7 @@
 
 • **height**: *number*
 
-*Defined in [responses/reels-tray.feed.response.ts:110](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-tray.feed.response.ts#L110)*
+*Defined in [responses/reels-tray.feed.response.ts:110](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/reels-tray.feed.response.ts#L110)*
 
 ___
 
@@ -37,7 +37,7 @@ ___
 
 • **is_hidden**: *number*
 
-*Defined in [responses/reels-tray.feed.response.ts:113](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-tray.feed.response.ts#L113)*
+*Defined in [responses/reels-tray.feed.response.ts:113](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/reels-tray.feed.response.ts#L113)*
 
 ___
 
@@ -45,7 +45,7 @@ ___
 
 • **is_pinned**: *number*
 
-*Defined in [responses/reels-tray.feed.response.ts:112](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-tray.feed.response.ts#L112)*
+*Defined in [responses/reels-tray.feed.response.ts:112](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/reels-tray.feed.response.ts#L112)*
 
 ___
 
@@ -53,7 +53,7 @@ ___
 
 • **is_sticker**: *number*
 
-*Defined in [responses/reels-tray.feed.response.ts:114](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-tray.feed.response.ts#L114)*
+*Defined in [responses/reels-tray.feed.response.ts:114](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/reels-tray.feed.response.ts#L114)*
 
 ___
 
@@ -61,7 +61,7 @@ ___
 
 • **quiz_sticker**: *[ReelsTrayFeedResponseQuiz_sticker](_responses_reels_tray_feed_response_.reelstrayfeedresponsequiz_sticker.md)*
 
-*Defined in [responses/reels-tray.feed.response.ts:115](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-tray.feed.response.ts#L115)*
+*Defined in [responses/reels-tray.feed.response.ts:115](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/reels-tray.feed.response.ts#L115)*
 
 ___
 
@@ -69,7 +69,7 @@ ___
 
 • **rotation**: *string*
 
-*Defined in [responses/reels-tray.feed.response.ts:111](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-tray.feed.response.ts#L111)*
+*Defined in [responses/reels-tray.feed.response.ts:111](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/reels-tray.feed.response.ts#L111)*
 
 ___
 
@@ -77,7 +77,7 @@ ___
 
 • **width**: *number*
 
-*Defined in [responses/reels-tray.feed.response.ts:109](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-tray.feed.response.ts#L109)*
+*Defined in [responses/reels-tray.feed.response.ts:109](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/reels-tray.feed.response.ts#L109)*
 
 ___
 
@@ -85,7 +85,7 @@ ___
 
 • **x**: *string*
 
-*Defined in [responses/reels-tray.feed.response.ts:106](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-tray.feed.response.ts#L106)*
+*Defined in [responses/reels-tray.feed.response.ts:106](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/reels-tray.feed.response.ts#L106)*
 
 ___
 
@@ -93,7 +93,7 @@ ___
 
 • **y**: *number*
 
-*Defined in [responses/reels-tray.feed.response.ts:107](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-tray.feed.response.ts#L107)*
+*Defined in [responses/reels-tray.feed.response.ts:107](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/reels-tray.feed.response.ts#L107)*
 
 ___
 
@@ -101,4 +101,4 @@ ___
 
 • **z**: *number*
 
-*Defined in [responses/reels-tray.feed.response.ts:108](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/reels-tray.feed.response.ts#L108)*
+*Defined in [responses/reels-tray.feed.response.ts:108](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/reels-tray.feed.response.ts#L108)*

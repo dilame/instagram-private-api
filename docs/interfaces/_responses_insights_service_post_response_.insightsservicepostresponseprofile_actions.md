@@ -20,4 +20,4 @@
 
 • **actions**: *[InsightsServicePostResponseActions](_responses_insights_service_post_response_.insightsservicepostresponseactions.md)*
 
-*Defined in [responses/insights.service.post.response.ts:63](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.post.response.ts#L63)*
+*Defined in [responses/insights.service.post.response.ts:63](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/insights.service.post.response.ts#L63)*

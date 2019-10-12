@@ -25,7 +25,7 @@
 
 • **qid**: *string*
 
-*Defined in [responses/live.get-questions.response.ts:7](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.get-questions.response.ts#L7)*
+*Defined in [responses/live.get-questions.response.ts:7](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/live.get-questions.response.ts#L7)*
 
 ___
 
@@ -33,7 +33,7 @@ ___
 
 • **source**: *string*
 
-*Defined in [responses/live.get-questions.response.ts:8](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.get-questions.response.ts#L8)*
+*Defined in [responses/live.get-questions.response.ts:8](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/live.get-questions.response.ts#L8)*
 
 ___
 
@@ -41,7 +41,7 @@ ___
 
 • **story_sticker_text**: *string*
 
-*Defined in [responses/live.get-questions.response.ts:10](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.get-questions.response.ts#L10)*
+*Defined in [responses/live.get-questions.response.ts:10](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/live.get-questions.response.ts#L10)*
 
 ___
 
@@ -49,7 +49,7 @@ ___
 
 • **text**: *string*
 
-*Defined in [responses/live.get-questions.response.ts:6](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.get-questions.response.ts#L6)*
+*Defined in [responses/live.get-questions.response.ts:6](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/live.get-questions.response.ts#L6)*
 
 ___
 
@@ -57,7 +57,7 @@ ___
 
 • **timestamp**: *number*
 
-*Defined in [responses/live.get-questions.response.ts:11](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.get-questions.response.ts#L11)*
+*Defined in [responses/live.get-questions.response.ts:11](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/live.get-questions.response.ts#L11)*
 
 ___
 
@@ -65,4 +65,4 @@ ___
 
 • **user**: *[LiveGetQuestionsResponseUser](_responses_live_get_questions_response_.livegetquestionsresponseuser.md)*
 
-*Defined in [responses/live.get-questions.response.ts:9](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.get-questions.response.ts#L9)*
+*Defined in [responses/live.get-questions.response.ts:9](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/live.get-questions.response.ts#L9)*

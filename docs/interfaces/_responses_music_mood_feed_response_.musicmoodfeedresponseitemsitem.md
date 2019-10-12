@@ -20,4 +20,4 @@
 
 • **track**: *[MusicMoodFeedResponseTrack](_responses_music_mood_feed_response_.musicmoodfeedresponsetrack.md)*
 
-*Defined in [responses/music-mood.feed.response.ts:8](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/music-mood.feed.response.ts#L8)*
+*Defined in [responses/music-mood.feed.response.ts:8](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/music-mood.feed.response.ts#L8)*

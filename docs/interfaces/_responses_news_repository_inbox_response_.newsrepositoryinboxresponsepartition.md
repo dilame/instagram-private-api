@@ -20,4 +20,4 @@
 
 • **time_bucket**: *[NewsRepositoryInboxResponseTime_bucket](_responses_news_repository_inbox_response_.newsrepositoryinboxresponsetime_bucket.md)*
 
-*Defined in [responses/news.repository.inbox.response.ts:111](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/news.repository.inbox.response.ts#L111)*
+*Defined in [responses/news.repository.inbox.response.ts:111](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/news.repository.inbox.response.ts#L111)*

@@ -23,7 +23,7 @@
 
 • **accessToken**? : *string*
 
-*Defined in [types/graphql-request.options.ts:3](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/graphql-request.options.ts#L3)*
+*Defined in [types/graphql-request.options.ts:3](https://github.com/dilame/instagram-private-api/blob/3e16058/src/types/graphql-request.options.ts#L3)*
 
 ___
 
@@ -31,7 +31,7 @@ ___
 
 • **documentId**: *string*
 
-*Defined in [types/graphql-request.options.ts:4](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/graphql-request.options.ts#L4)*
+*Defined in [types/graphql-request.options.ts:4](https://github.com/dilame/instagram-private-api/blob/3e16058/src/types/graphql-request.options.ts#L4)*
 
 ___
 
@@ -39,7 +39,7 @@ ___
 
 • **surface**: *object*
 
-*Defined in [types/graphql-request.options.ts:2](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/graphql-request.options.ts#L2)*
+*Defined in [types/graphql-request.options.ts:2](https://github.com/dilame/instagram-private-api/blob/3e16058/src/types/graphql-request.options.ts#L2)*
 
 #### Type declaration:
 
@@ -49,4 +49,4 @@ ___
 
 • **variables**: *any*
 
-*Defined in [types/graphql-request.options.ts:5](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/graphql-request.options.ts#L5)*
+*Defined in [types/graphql-request.options.ts:5](https://github.com/dilame/instagram-private-api/blob/3e16058/src/types/graphql-request.options.ts#L5)*

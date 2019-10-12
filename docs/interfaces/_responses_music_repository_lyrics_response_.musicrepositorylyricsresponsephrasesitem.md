@@ -21,7 +21,7 @@
 
 • **phrase**: *string*
 
-*Defined in [responses/music.repository.lyrics.response.ts:10](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/music.repository.lyrics.response.ts#L10)*
+*Defined in [responses/music.repository.lyrics.response.ts:10](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/music.repository.lyrics.response.ts#L10)*
 
 ___
 
@@ -29,4 +29,4 @@ ___
 
 • **start_time_in_ms**: *number*
 
-*Defined in [responses/music.repository.lyrics.response.ts:9](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/music.repository.lyrics.response.ts#L9)*
+*Defined in [responses/music.repository.lyrics.response.ts:9](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/music.repository.lyrics.response.ts#L9)*

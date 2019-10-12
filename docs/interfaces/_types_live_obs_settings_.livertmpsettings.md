@@ -21,7 +21,7 @@
 
 • **stream_key**: *string*
 
-*Defined in [types/live.obs-settings.ts:3](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/live.obs-settings.ts#L3)*
+*Defined in [types/live.obs-settings.ts:3](https://github.com/dilame/instagram-private-api/blob/3e16058/src/types/live.obs-settings.ts#L3)*
 
 ___
 
@@ -29,4 +29,4 @@ ___
 
 • **stream_url**: *string*
 
-*Defined in [types/live.obs-settings.ts:2](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/live.obs-settings.ts#L2)*
+*Defined in [types/live.obs-settings.ts:2](https://github.com/dilame/instagram-private-api/blob/3e16058/src/types/live.obs-settings.ts#L2)*

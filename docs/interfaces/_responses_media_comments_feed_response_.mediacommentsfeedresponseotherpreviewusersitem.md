@@ -21,7 +21,7 @@
 
 • **id**: *number*
 
-*Defined in [responses/media-comments.feed.response.ts:74](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media-comments.feed.response.ts#L74)*
+*Defined in [responses/media-comments.feed.response.ts:74](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/media-comments.feed.response.ts#L74)*
 
 ___
 
@@ -29,4 +29,4 @@ ___
 
 • **profile_pic_url**: *string*
 
-*Defined in [responses/media-comments.feed.response.ts:75](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media-comments.feed.response.ts#L75)*
+*Defined in [responses/media-comments.feed.response.ts:75](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/media-comments.feed.response.ts#L75)*

@@ -20,4 +20,4 @@
 
 • **medias**: *[LocationFeedResponseMediasItem](_responses_location_feed_response_.locationfeedresponsemediasitem.md)[]*
 
-*Defined in [responses/location.feed.response.ts:16](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/location.feed.response.ts#L16)*
+*Defined in [responses/location.feed.response.ts:16](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/location.feed.response.ts#L16)*

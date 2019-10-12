@@ -21,7 +21,7 @@
 
 • **metrics**: *[PostsInsightsFeedResponseMetrics](_responses_posts_insights_feed_response_.postsinsightsfeedresponsemetrics.md)*
 
-*Defined in [responses/posts-insights.feed.response.ts:47](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/posts-insights.feed.response.ts#L47)*
+*Defined in [responses/posts-insights.feed.response.ts:47](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/posts-insights.feed.response.ts#L47)*
 
 ___
 
@@ -29,4 +29,4 @@ ___
 
 • **state**: *string*
 
-*Defined in [responses/posts-insights.feed.response.ts:48](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/posts-insights.feed.response.ts#L48)*
+*Defined in [responses/posts-insights.feed.response.ts:48](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/posts-insights.feed.response.ts#L48)*

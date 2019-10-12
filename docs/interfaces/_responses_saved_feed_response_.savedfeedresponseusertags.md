@@ -20,4 +20,4 @@
 
 • **in**: *[SavedFeedResponseInItem](_responses_saved_feed_response_.savedfeedresponseinitem.md)[]*
 
-*Defined in [responses/saved.feed.response.ts:178](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/saved.feed.response.ts#L178)*
+*Defined in [responses/saved.feed.response.ts:178](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/saved.feed.response.ts#L178)*

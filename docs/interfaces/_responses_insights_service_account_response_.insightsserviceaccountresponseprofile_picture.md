@@ -20,4 +20,4 @@
 
 • **uri**: *string*
 
-*Defined in [responses/insights.service.account.response.ts:171](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.account.response.ts#L171)*
+*Defined in [responses/insights.service.account.response.ts:171](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/insights.service.account.response.ts#L171)*

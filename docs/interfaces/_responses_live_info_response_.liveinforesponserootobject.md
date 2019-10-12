@@ -37,7 +37,7 @@
 
 • **broadcast_message**: *string*
 
-*Defined in [responses/live.info.response.ts:17](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.info.response.ts#L17)*
+*Defined in [responses/live.info.response.ts:17](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/live.info.response.ts#L17)*
 
 ___
 
@@ -45,7 +45,7 @@ ___
 
 • **broadcast_owner**: *[LiveInfoResponseBroadcast_owner](_responses_live_info_response_.liveinforesponsebroadcast_owner.md)*
 
-*Defined in [responses/live.info.response.ts:13](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.info.response.ts#L13)*
+*Defined in [responses/live.info.response.ts:13](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/live.info.response.ts#L13)*
 
 ___
 
@@ -53,7 +53,7 @@ ___
 
 • **broadcast_status**: *string*
 
-*Defined in [responses/live.info.response.ts:7](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.info.response.ts#L7)*
+*Defined in [responses/live.info.response.ts:7](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/live.info.response.ts#L7)*
 
 ___
 
@@ -61,7 +61,7 @@ ___
 
 • **cobroadcasters**: *any[]*
 
-*Defined in [responses/live.info.response.ts:10](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.info.response.ts#L10)*
+*Defined in [responses/live.info.response.ts:10](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/live.info.response.ts#L10)*
 
 ___
 
@@ -69,7 +69,7 @@ ___
 
 • **dash_abr_playback_url**: *null*
 
-*Defined in [responses/live.info.response.ts:5](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.info.response.ts#L5)*
+*Defined in [responses/live.info.response.ts:5](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/live.info.response.ts#L5)*
 
 ___
 
@@ -77,7 +77,7 @@ ___
 
 • **dash_live_predictive_playback_url**: *string*
 
-*Defined in [responses/live.info.response.ts:6](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.info.response.ts#L6)*
+*Defined in [responses/live.info.response.ts:6](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/live.info.response.ts#L6)*
 
 ___
 
@@ -85,7 +85,7 @@ ___
 
 • **dash_playback_url**: *string*
 
-*Defined in [responses/live.info.response.ts:4](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.info.response.ts#L4)*
+*Defined in [responses/live.info.response.ts:4](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/live.info.response.ts#L4)*
 
 ___
 
@@ -93,7 +93,7 @@ ___
 
 • **hide_from_feed_unit**: *boolean*
 
-*Defined in [responses/live.info.response.ts:15](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.info.response.ts#L15)*
+*Defined in [responses/live.info.response.ts:15](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/live.info.response.ts#L15)*
 
 ___
 
@@ -101,7 +101,7 @@ ___
 
 • **id**: *string*
 
-*Defined in [responses/live.info.response.ts:2](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.info.response.ts#L2)*
+*Defined in [responses/live.info.response.ts:2](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/live.info.response.ts#L2)*
 
 ___
 
@@ -109,7 +109,7 @@ ___
 
 • **internal_only**: *boolean*
 
-*Defined in [responses/live.info.response.ts:9](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.info.response.ts#L9)*
+*Defined in [responses/live.info.response.ts:9](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/live.info.response.ts#L9)*
 
 ___
 
@@ -117,7 +117,7 @@ ___
 
 • **is_gaming_content**: *boolean*
 
-*Defined in [responses/live.info.response.ts:12](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.info.response.ts#L12)*
+*Defined in [responses/live.info.response.ts:12](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/live.info.response.ts#L12)*
 
 ___
 
@@ -125,7 +125,7 @@ ___
 
 • **is_player_live_trace_enabled**: *number*
 
-*Defined in [responses/live.info.response.ts:11](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.info.response.ts#L11)*
+*Defined in [responses/live.info.response.ts:11](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/live.info.response.ts#L11)*
 
 ___
 
@@ -133,7 +133,7 @@ ___
 
 • **media_id**: *string*
 
-*Defined in [responses/live.info.response.ts:16](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.info.response.ts#L16)*
+*Defined in [responses/live.info.response.ts:16](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/live.info.response.ts#L16)*
 
 ___
 
@@ -141,7 +141,7 @@ ___
 
 • **organic_tracking_token**: *string*
 
-*Defined in [responses/live.info.response.ts:18](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.info.response.ts#L18)*
+*Defined in [responses/live.info.response.ts:18](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/live.info.response.ts#L18)*
 
 ___
 
@@ -149,7 +149,7 @@ ___
 
 • **published_time**: *number*
 
-*Defined in [responses/live.info.response.ts:14](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.info.response.ts#L14)*
+*Defined in [responses/live.info.response.ts:14](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/live.info.response.ts#L14)*
 
 ___
 
@@ -157,7 +157,7 @@ ___
 
 • **rtmp_playback_url**: *string*
 
-*Defined in [responses/live.info.response.ts:3](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.info.response.ts#L3)*
+*Defined in [responses/live.info.response.ts:3](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/live.info.response.ts#L3)*
 
 ___
 
@@ -165,7 +165,7 @@ ___
 
 • **status**: *string*
 
-*Defined in [responses/live.info.response.ts:19](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.info.response.ts#L19)*
+*Defined in [responses/live.info.response.ts:19](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/live.info.response.ts#L19)*
 
 ___
 
@@ -173,4 +173,4 @@ ___
 
 • **viewer_count**: *number*
 
-*Defined in [responses/live.info.response.ts:8](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/live.info.response.ts#L8)*
+*Defined in [responses/live.info.response.ts:8](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/live.info.response.ts#L8)*

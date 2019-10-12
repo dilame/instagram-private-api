@@ -22,7 +22,7 @@
 
 • **last_week_posts_count**: *number*
 
-*Defined in [responses/insights.service.account.response.ts:144](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.account.response.ts#L144)*
+*Defined in [responses/insights.service.account.response.ts:144](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/insights.service.account.response.ts#L144)*
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 • **top_posts**: *[InsightsServiceAccountResponseTop_posts](_responses_insights_service_account_response_.insightsserviceaccountresponsetop_posts.md)*
 
-*Defined in [responses/insights.service.account.response.ts:146](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.account.response.ts#L146)*
+*Defined in [responses/insights.service.account.response.ts:146](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/insights.service.account.response.ts#L146)*
 
 ___
 
@@ -38,4 +38,4 @@ ___
 
 • **week_over_week_posts_delta**: *number*
 
-*Defined in [responses/insights.service.account.response.ts:145](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.account.response.ts#L145)*
+*Defined in [responses/insights.service.account.response.ts:145](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/insights.service.account.response.ts#L145)*

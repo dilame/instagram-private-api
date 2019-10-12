@@ -20,4 +20,4 @@
 
 • **value**: *number*
 
-*Defined in [responses/posts-insights.feed.response.ts:68](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/posts-insights.feed.response.ts#L68)*
+*Defined in [responses/posts-insights.feed.response.ts:68](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/posts-insights.feed.response.ts#L68)*

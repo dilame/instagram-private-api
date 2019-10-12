@@ -19,6 +19,7 @@
 ### Methods
 
 * [info](_repositories_location_repository_.locationrepository.md#info)
+* [story](_repositories_location_repository_.locationrepository.md#story)
 
 ## Constructors
 
@@ -28,7 +29,7 @@
 
 *Inherited from [Repository](_core_repository_.repository.md).[constructor](_core_repository_.repository.md#constructor)*
 
-*Defined in [core/repository.ts:6](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/repository.ts#L6)*
+*Defined in [core/repository.ts:6](https://github.com/dilame/instagram-private-api/blob/3e16058/src/core/repository.ts#L6)*
 
 **Parameters:**
 
@@ -44,7 +45,7 @@ Name | Type |
 
 ▸ **info**(`id`: number | string): *`Promise<LocationRepositoryInfoResponseRootObject>`*
 
-*Defined in [repositories/location.repository.ts:5](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/location.repository.ts#L5)*
+*Defined in [repositories/location.repository.ts:6](https://github.com/dilame/instagram-private-api/blob/3e16058/src/repositories/location.repository.ts#L6)*
 
 **Parameters:**
 
@@ -53,3 +54,19 @@ Name | Type |
 `id` | number \| string |
 
 **Returns:** *`Promise<LocationRepositoryInfoResponseRootObject>`*
+
+___
+
+###  story
+
+▸ **story**(`id`: number | string): *`Promise<LocationRepositoryStoryResponseRootObject>`*
+
+*Defined in [repositories/location.repository.ts:14](https://github.com/dilame/instagram-private-api/blob/3e16058/src/repositories/location.repository.ts#L14)*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`id` | number \| string |
+
+**Returns:** *`Promise<LocationRepositoryStoryResponseRootObject>`*

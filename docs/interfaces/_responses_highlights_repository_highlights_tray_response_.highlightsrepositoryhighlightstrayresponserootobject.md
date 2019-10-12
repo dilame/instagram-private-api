@@ -23,7 +23,7 @@
 
 • **show_empty_state**: *boolean*
 
-*Defined in [responses/highlights.repository.highlights-tray.response.ts:3](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/highlights.repository.highlights-tray.response.ts#L3)*
+*Defined in [responses/highlights.repository.highlights-tray.response.ts:3](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/highlights.repository.highlights-tray.response.ts#L3)*
 
 ___
 
@@ -31,7 +31,7 @@ ___
 
 • **status**: *string*
 
-*Defined in [responses/highlights.repository.highlights-tray.response.ts:5](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/highlights.repository.highlights-tray.response.ts#L5)*
+*Defined in [responses/highlights.repository.highlights-tray.response.ts:5](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/highlights.repository.highlights-tray.response.ts#L5)*
 
 ___
 
@@ -39,7 +39,7 @@ ___
 
 • **tray**: *[HighlightsRepositoryHighlightsTrayResponseTrayItem](_responses_highlights_repository_highlights_tray_response_.highlightsrepositoryhighlightstrayresponsetrayitem.md)[]*
 
-*Defined in [responses/highlights.repository.highlights-tray.response.ts:2](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/highlights.repository.highlights-tray.response.ts#L2)*
+*Defined in [responses/highlights.repository.highlights-tray.response.ts:2](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/highlights.repository.highlights-tray.response.ts#L2)*
 
 ___
 
@@ -47,4 +47,4 @@ ___
 
 • **tv_channel**: *[HighlightsRepositoryHighlightsTrayResponseTv_channel](_responses_highlights_repository_highlights_tray_response_.highlightsrepositoryhighlightstrayresponsetv_channel.md)*
 
-*Defined in [responses/highlights.repository.highlights-tray.response.ts:4](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/highlights.repository.highlights-tray.response.ts#L4)*
+*Defined in [responses/highlights.repository.highlights-tray.response.ts:4](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/highlights.repository.highlights-tray.response.ts#L4)*

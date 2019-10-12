@@ -43,7 +43,7 @@
 
 • **account_actions_graph**: *[InsightsServiceAccountResponseAccount_actions_graph](_responses_insights_service_account_response_.insightsserviceaccountresponseaccount_actions_graph.md)*
 
-*Defined in [responses/insights.service.account.response.ts:27](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.account.response.ts#L27)*
+*Defined in [responses/insights.service.account.response.ts:27](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/insights.service.account.response.ts#L27)*
 
 ___
 
@@ -51,7 +51,7 @@ ___
 
 • **account_discovery_graph**: *[InsightsServiceAccountResponseAccount_discovery_graph](_responses_insights_service_account_response_.insightsserviceaccountresponseaccount_discovery_graph.md)*
 
-*Defined in [responses/insights.service.account.response.ts:40](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.account.response.ts#L40)*
+*Defined in [responses/insights.service.account.response.ts:40](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/insights.service.account.response.ts#L40)*
 
 ___
 
@@ -59,7 +59,7 @@ ___
 
 • **aymt_instagram_account_insights_channel**: *[InsightsServiceAccountResponseAymt_instagram_account_insights_channel](_responses_insights_service_account_response_.insightsserviceaccountresponseaymt_instagram_account_insights_channel.md)*
 
-*Defined in [responses/insights.service.account.response.ts:26](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.account.response.ts#L26)*
+*Defined in [responses/insights.service.account.response.ts:26](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/insights.service.account.response.ts#L26)*
 
 ___
 
@@ -67,7 +67,7 @@ ___
 
 • **call_metric_count**: *number*
 
-*Defined in [responses/insights.service.account.response.ts:36](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.account.response.ts#L36)*
+*Defined in [responses/insights.service.account.response.ts:36](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/insights.service.account.response.ts#L36)*
 
 ___
 
@@ -75,7 +75,7 @@ ___
 
 • **call_metric_delta**: *number*
 
-*Defined in [responses/insights.service.account.response.ts:37](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.account.response.ts#L37)*
+*Defined in [responses/insights.service.account.response.ts:37](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/insights.service.account.response.ts#L37)*
 
 ___
 
@@ -83,7 +83,7 @@ ___
 
 • **email_metric_count**: *number*
 
-*Defined in [responses/insights.service.account.response.ts:32](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.account.response.ts#L32)*
+*Defined in [responses/insights.service.account.response.ts:32](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/insights.service.account.response.ts#L32)*
 
 ___
 
@@ -91,7 +91,7 @@ ___
 
 • **email_metric_delta**: *number*
 
-*Defined in [responses/insights.service.account.response.ts:33](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.account.response.ts#L33)*
+*Defined in [responses/insights.service.account.response.ts:33](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/insights.service.account.response.ts#L33)*
 
 ___
 
@@ -99,7 +99,7 @@ ___
 
 • **get_direction_metric_count**: *number*
 
-*Defined in [responses/insights.service.account.response.ts:34](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.account.response.ts#L34)*
+*Defined in [responses/insights.service.account.response.ts:34](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/insights.service.account.response.ts#L34)*
 
 ___
 
@@ -107,7 +107,7 @@ ___
 
 • **get_direction_metric_delta**: *number*
 
-*Defined in [responses/insights.service.account.response.ts:35](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.account.response.ts#L35)*
+*Defined in [responses/insights.service.account.response.ts:35](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/insights.service.account.response.ts#L35)*
 
 ___
 
@@ -115,7 +115,7 @@ ___
 
 • **graph**: *[InsightsServiceAccountResponseGraph](_responses_insights_service_account_response_.insightsserviceaccountresponsegraph.md)*
 
-*Defined in [responses/insights.service.account.response.ts:48](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.account.response.ts#L48)*
+*Defined in [responses/insights.service.account.response.ts:48](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/insights.service.account.response.ts#L48)*
 
 ___
 
@@ -123,7 +123,7 @@ ___
 
 • **hashtags_impressions**: *[InsightsServiceAccountResponseHashtags_impressions](_responses_insights_service_account_response_.insightsserviceaccountresponsehashtags_impressions.md)*
 
-*Defined in [responses/insights.service.account.response.ts:47](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.account.response.ts#L47)*
+*Defined in [responses/insights.service.account.response.ts:47](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/insights.service.account.response.ts#L47)*
 
 ___
 
@@ -131,7 +131,7 @@ ___
 
 • **hashtags_reach**: *[InsightsServiceAccountResponseHashtags_reach](_responses_insights_service_account_response_.insightsserviceaccountresponsehashtags_reach.md)*
 
-*Defined in [responses/insights.service.account.response.ts:45](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.account.response.ts#L45)*
+*Defined in [responses/insights.service.account.response.ts:45](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/insights.service.account.response.ts#L45)*
 
 ___
 
@@ -139,7 +139,7 @@ ___
 
 • **impressions_metric_count**: *number*
 
-*Defined in [responses/insights.service.account.response.ts:41](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.account.response.ts#L41)*
+*Defined in [responses/insights.service.account.response.ts:41](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/insights.service.account.response.ts#L41)*
 
 ___
 
@@ -147,7 +147,7 @@ ___
 
 • **impressions_metric_delta**: *number*
 
-*Defined in [responses/insights.service.account.response.ts:42](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.account.response.ts#L42)*
+*Defined in [responses/insights.service.account.response.ts:42](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/insights.service.account.response.ts#L42)*
 
 ___
 
@@ -155,7 +155,7 @@ ___
 
 • **last_week_impressions**: *number*
 
-*Defined in [responses/insights.service.account.response.ts:46](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.account.response.ts#L46)*
+*Defined in [responses/insights.service.account.response.ts:46](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/insights.service.account.response.ts#L46)*
 
 ___
 
@@ -163,7 +163,7 @@ ___
 
 • **metric_graph**: *[InsightsServiceAccountResponseMetric_graph](_responses_insights_service_account_response_.insightsserviceaccountresponsemetric_graph.md)*
 
-*Defined in [responses/insights.service.account.response.ts:49](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.account.response.ts#L49)*
+*Defined in [responses/insights.service.account.response.ts:49](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/insights.service.account.response.ts#L49)*
 
 ___
 
@@ -171,7 +171,7 @@ ___
 
 • **profile_visits_metric_count**: *number*
 
-*Defined in [responses/insights.service.account.response.ts:28](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.account.response.ts#L28)*
+*Defined in [responses/insights.service.account.response.ts:28](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/insights.service.account.response.ts#L28)*
 
 ___
 
@@ -179,7 +179,7 @@ ___
 
 • **profile_visits_metric_delta**: *number*
 
-*Defined in [responses/insights.service.account.response.ts:29](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.account.response.ts#L29)*
+*Defined in [responses/insights.service.account.response.ts:29](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/insights.service.account.response.ts#L29)*
 
 ___
 
@@ -187,7 +187,7 @@ ___
 
 • **reach_metric_count**: *number*
 
-*Defined in [responses/insights.service.account.response.ts:43](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.account.response.ts#L43)*
+*Defined in [responses/insights.service.account.response.ts:43](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/insights.service.account.response.ts#L43)*
 
 ___
 
@@ -195,7 +195,7 @@ ___
 
 • **reach_metric_delta**: *number*
 
-*Defined in [responses/insights.service.account.response.ts:44](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.account.response.ts#L44)*
+*Defined in [responses/insights.service.account.response.ts:44](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/insights.service.account.response.ts#L44)*
 
 ___
 
@@ -203,7 +203,7 @@ ___
 
 • **text_metric_count**: *number*
 
-*Defined in [responses/insights.service.account.response.ts:38](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.account.response.ts#L38)*
+*Defined in [responses/insights.service.account.response.ts:38](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/insights.service.account.response.ts#L38)*
 
 ___
 
@@ -211,7 +211,7 @@ ___
 
 • **text_metric_delta**: *number*
 
-*Defined in [responses/insights.service.account.response.ts:39](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.account.response.ts#L39)*
+*Defined in [responses/insights.service.account.response.ts:39](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/insights.service.account.response.ts#L39)*
 
 ___
 
@@ -219,7 +219,7 @@ ___
 
 • **website_visits_metric_count**: *number*
 
-*Defined in [responses/insights.service.account.response.ts:30](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.account.response.ts#L30)*
+*Defined in [responses/insights.service.account.response.ts:30](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/insights.service.account.response.ts#L30)*
 
 ___
 
@@ -227,4 +227,4 @@ ___
 
 • **website_visits_metric_delta**: *number*
 
-*Defined in [responses/insights.service.account.response.ts:31](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.account.response.ts#L31)*
+*Defined in [responses/insights.service.account.response.ts:31](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/insights.service.account.response.ts#L31)*

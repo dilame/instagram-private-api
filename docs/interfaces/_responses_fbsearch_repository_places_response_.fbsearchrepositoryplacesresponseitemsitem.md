@@ -24,7 +24,7 @@
 
 • **header_media**: *[FbsearchRepositoryPlacesResponseHeader_media](_responses_fbsearch_repository_places_response_.fbsearchrepositoryplacesresponseheader_media.md)*
 
-*Defined in [responses/fbsearch.repository.places.response.ts:12](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/fbsearch.repository.places.response.ts#L12)*
+*Defined in [responses/fbsearch.repository.places.response.ts:12](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/fbsearch.repository.places.response.ts#L12)*
 
 ___
 
@@ -32,7 +32,7 @@ ___
 
 • **location**: *[FbsearchRepositoryPlacesResponseLocation](_responses_fbsearch_repository_places_response_.fbsearchrepositoryplacesresponselocation.md)*
 
-*Defined in [responses/fbsearch.repository.places.response.ts:8](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/fbsearch.repository.places.response.ts#L8)*
+*Defined in [responses/fbsearch.repository.places.response.ts:8](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/fbsearch.repository.places.response.ts#L8)*
 
 ___
 
@@ -40,7 +40,7 @@ ___
 
 • **media_bundles**: *any[]*
 
-*Defined in [responses/fbsearch.repository.places.response.ts:11](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/fbsearch.repository.places.response.ts#L11)*
+*Defined in [responses/fbsearch.repository.places.response.ts:11](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/fbsearch.repository.places.response.ts#L11)*
 
 ___
 
@@ -48,7 +48,7 @@ ___
 
 • **subtitle**: *string*
 
-*Defined in [responses/fbsearch.repository.places.response.ts:10](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/fbsearch.repository.places.response.ts#L10)*
+*Defined in [responses/fbsearch.repository.places.response.ts:10](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/fbsearch.repository.places.response.ts#L10)*
 
 ___
 
@@ -56,4 +56,4 @@ ___
 
 • **title**: *string*
 
-*Defined in [responses/fbsearch.repository.places.response.ts:9](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/fbsearch.repository.places.response.ts#L9)*
+*Defined in [responses/fbsearch.repository.places.response.ts:9](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/fbsearch.repository.places.response.ts#L9)*

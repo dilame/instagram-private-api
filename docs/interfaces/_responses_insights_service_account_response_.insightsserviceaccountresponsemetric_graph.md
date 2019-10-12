@@ -20,4 +20,4 @@
 
 • **nodes**: *[InsightsServiceAccountResponseNodesItem](_responses_insights_service_account_response_.insightsserviceaccountresponsenodesitem.md)[]*
 
-*Defined in [responses/insights.service.account.response.ts:101](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.account.response.ts#L101)*
+*Defined in [responses/insights.service.account.response.ts:101](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/insights.service.account.response.ts#L101)*

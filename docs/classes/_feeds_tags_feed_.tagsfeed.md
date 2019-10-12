@@ -47,7 +47,7 @@
 
 *Inherited from [Repository](_core_repository_.repository.md).[constructor](_core_repository_.repository.md#constructor)*
 
-*Defined in [core/repository.ts:6](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/repository.ts#L6)*
+*Defined in [core/repository.ts:6](https://github.com/dilame/instagram-private-api/blob/3e16058/src/core/repository.ts#L6)*
 
 **Parameters:**
 
@@ -63,7 +63,7 @@ Name | Type |
 
 • **tab**: *"top" | "recent" | "places"*
 
-*Defined in [feeds/tags.feed.ts:8](https://github.com/dilame/instagram-private-api/blob/173bc62/src/feeds/tags.feed.ts#L8)*
+*Defined in [feeds/tags.feed.ts:8](https://github.com/dilame/instagram-private-api/blob/3e16058/src/feeds/tags.feed.ts#L8)*
 
 ___
 
@@ -71,7 +71,7 @@ ___
 
 • **tag**: *string*
 
-*Defined in [feeds/tags.feed.ts:7](https://github.com/dilame/instagram-private-api/blob/173bc62/src/feeds/tags.feed.ts#L7)*
+*Defined in [feeds/tags.feed.ts:7](https://github.com/dilame/instagram-private-api/blob/3e16058/src/feeds/tags.feed.ts#L7)*
 
 ## Accessors
 
@@ -81,7 +81,7 @@ ___
 
 *Inherited from [Feed](_core_feed_.feed.md).[items$](_core_feed_.feed.md#items$)*
 
-*Defined in [core/feed.ts:18](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/feed.ts#L18)*
+*Defined in [core/feed.ts:18](https://github.com/dilame/instagram-private-api/blob/3e16058/src/core/feed.ts#L18)*
 
 **Returns:** *`Observable<Item[]>`*
 
@@ -93,7 +93,7 @@ ___
 
 *Inherited from [Feed](_core_feed_.feed.md).[deserialize](_core_feed_.feed.md#deserialize)*
 
-*Defined in [core/feed.ts:79](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/feed.ts#L79)*
+*Defined in [core/feed.ts:79](https://github.com/dilame/instagram-private-api/blob/3e16058/src/core/feed.ts#L79)*
 
 **Parameters:**
 
@@ -111,7 +111,7 @@ ___
 
 *Inherited from [Feed](_core_feed_.feed.md).[isMoreAvailable](_core_feed_.feed.md#ismoreavailable)*
 
-*Defined in [core/feed.ts:87](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/feed.ts#L87)*
+*Defined in [core/feed.ts:87](https://github.com/dilame/instagram-private-api/blob/3e16058/src/core/feed.ts#L87)*
 
 **Returns:** *boolean*
 
@@ -123,7 +123,7 @@ ___
 
 *Overrides [Feed](_core_feed_.feed.md).[items](_core_feed_.feed.md#abstract-items)*
 
-*Defined in [feeds/tags.feed.ts:41](https://github.com/dilame/instagram-private-api/blob/173bc62/src/feeds/tags.feed.ts#L41)*
+*Defined in [feeds/tags.feed.ts:41](https://github.com/dilame/instagram-private-api/blob/3e16058/src/feeds/tags.feed.ts#L41)*
 
 **Returns:** *`Promise<TagsFeedResponseMedia[]>`*
 
@@ -135,7 +135,7 @@ ___
 
 *Inherited from [Feed](_core_feed_.feed.md).[observable](_core_feed_.feed.md#observable)*
 
-*Defined in [core/feed.ts:21](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/feed.ts#L21)*
+*Defined in [core/feed.ts:21](https://github.com/dilame/instagram-private-api/blob/3e16058/src/core/feed.ts#L21)*
 
 **Parameters:**
 
@@ -155,7 +155,7 @@ ___
 
 *Overrides [Feed](_core_feed_.feed.md).[request](_core_feed_.feed.md#abstract-request)*
 
-*Defined in [feeds/tags.feed.ts:23](https://github.com/dilame/instagram-private-api/blob/173bc62/src/feeds/tags.feed.ts#L23)*
+*Defined in [feeds/tags.feed.ts:23](https://github.com/dilame/instagram-private-api/blob/3e16058/src/feeds/tags.feed.ts#L23)*
 
 **Returns:** *`Promise<TagsFeedResponse>`*
 
@@ -167,7 +167,7 @@ ___
 
 *Inherited from [Feed](_core_feed_.feed.md).[serialize](_core_feed_.feed.md#serialize)*
 
-*Defined in [core/feed.ts:75](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/feed.ts#L75)*
+*Defined in [core/feed.ts:75](https://github.com/dilame/instagram-private-api/blob/3e16058/src/core/feed.ts#L75)*
 
 **Returns:** *string*
 
@@ -179,7 +179,7 @@ ___
 
 *Inherited from [Feed](_core_feed_.feed.md).[toPlain](_core_feed_.feed.md#toplain)*
 
-*Defined in [core/feed.ts:83](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/feed.ts#L83)*
+*Defined in [core/feed.ts:83](https://github.com/dilame/instagram-private-api/blob/3e16058/src/core/feed.ts#L83)*
 
 **Returns:** *`Object`*
 
@@ -191,40 +191,40 @@ ___
 
 *Inherited from [Feed](_core_feed_.feed.md).[attemptOptions](_core_feed_.feed.md#attemptoptions)*
 
-*Defined in [core/feed.ts:10](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/feed.ts#L10)*
+*Defined in [core/feed.ts:10](https://github.com/dilame/instagram-private-api/blob/3e16058/src/core/feed.ts#L10)*
 
 ###  delay
 
 • **delay**: *number* = 60000
 
-*Defined in [core/feed.ts:11](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/feed.ts#L11)*
+*Defined in [core/feed.ts:11](https://github.com/dilame/instagram-private-api/blob/3e16058/src/core/feed.ts#L11)*
 
 ###  factor
 
 • **factor**: *number* = 1.5
 
-*Defined in [core/feed.ts:12](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/feed.ts#L12)*
+*Defined in [core/feed.ts:12](https://github.com/dilame/instagram-private-api/blob/3e16058/src/core/feed.ts#L12)*
 
 ###  jitter
 
 • **jitter**: *true* = true
 
-*Defined in [core/feed.ts:16](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/feed.ts#L16)*
+*Defined in [core/feed.ts:16](https://github.com/dilame/instagram-private-api/blob/3e16058/src/core/feed.ts#L16)*
 
 ###  maxAttempts
 
 • **maxAttempts**: *number* = 10
 
-*Defined in [core/feed.ts:13](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/feed.ts#L13)*
+*Defined in [core/feed.ts:13](https://github.com/dilame/instagram-private-api/blob/3e16058/src/core/feed.ts#L13)*
 
 ###  maxDelay
 
 • **maxDelay**: *number* = 300000
 
-*Defined in [core/feed.ts:15](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/feed.ts#L15)*
+*Defined in [core/feed.ts:15](https://github.com/dilame/instagram-private-api/blob/3e16058/src/core/feed.ts#L15)*
 
 ###  minDelay
 
 • **minDelay**: *number* = 60000
 
-*Defined in [core/feed.ts:14](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/feed.ts#L14)*
+*Defined in [core/feed.ts:14](https://github.com/dilame/instagram-private-api/blob/3e16058/src/core/feed.ts#L14)*

@@ -20,4 +20,4 @@
 
 • **in**: *any[]*
 
-*Defined in [responses/media.repository.configure-sidecar.response.ts:91](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.configure-sidecar.response.ts#L91)*
+*Defined in [responses/media.repository.configure-sidecar.response.ts:91](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/media.repository.configure-sidecar.response.ts#L91)*

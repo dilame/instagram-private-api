@@ -28,7 +28,7 @@
 
 *Inherited from [Repository](_core_repository_.repository.md).[constructor](_core_repository_.repository.md#constructor)*
 
-*Defined in [core/repository.ts:6](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/repository.ts#L6)*
+*Defined in [core/repository.ts:6](https://github.com/dilame/instagram-private-api/blob/3e16058/src/core/repository.ts#L6)*
 
 **Parameters:**
 
@@ -44,7 +44,7 @@ Name | Type |
 
 ▸ **graphQL**<**T**>(`options`: [GraphQLRequestOptions](../interfaces/_types_graphql_request_options_.graphqlrequestoptions.md)): *`Promise<T>`*
 
-*Defined in [repositories/ads.repository.ts:5](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/ads.repository.ts#L5)*
+*Defined in [repositories/ads.repository.ts:5](https://github.com/dilame/instagram-private-api/blob/3e16058/src/repositories/ads.repository.ts#L5)*
 
 **Type parameters:**
 

@@ -20,4 +20,4 @@
 
 • **items**: *[StoryServiceSeenInputItems](_types_stories_types_.storyserviceseeninputitems.md)[]*
 
-*Defined in [types/stories.types.ts:10](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/stories.types.ts#L10)*
+*Defined in [types/stories.types.ts:10](https://github.com/dilame/instagram-private-api/blob/3e16058/src/types/stories.types.ts#L10)*

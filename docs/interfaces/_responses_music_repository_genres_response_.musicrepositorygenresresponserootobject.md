@@ -21,7 +21,7 @@
 
 • **items**: *[MusicRepositoryGenresResponseItemsItem](_responses_music_repository_genres_response_.musicrepositorygenresresponseitemsitem.md)[]*
 
-*Defined in [responses/music.repository.genres.response.ts:2](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/music.repository.genres.response.ts#L2)*
+*Defined in [responses/music.repository.genres.response.ts:2](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/music.repository.genres.response.ts#L2)*
 
 ___
 
@@ -29,4 +29,4 @@ ___
 
 • **status**: *string*
 
-*Defined in [responses/music.repository.genres.response.ts:3](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/music.repository.genres.response.ts#L3)*
+*Defined in [responses/music.repository.genres.response.ts:3](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/music.repository.genres.response.ts#L3)*

@@ -21,7 +21,7 @@
 
 • **count**: *number*
 
-*Defined in [responses/insights.service.account.response.ts:158](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.account.response.ts#L158)*
+*Defined in [responses/insights.service.account.response.ts:158](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/insights.service.account.response.ts#L158)*
 
 ___
 
@@ -29,4 +29,4 @@ ___
 
 • **edges**: *any[]*
 
-*Defined in [responses/insights.service.account.response.ts:159](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.account.response.ts#L159)*
+*Defined in [responses/insights.service.account.response.ts:159](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/insights.service.account.response.ts#L159)*

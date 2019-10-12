@@ -21,7 +21,7 @@
 
 • **id**: *string*
 
-*Defined in [responses/insights.service.post.response.ts:28](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.post.response.ts#L28)*
+*Defined in [responses/insights.service.post.response.ts:28](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/insights.service.post.response.ts#L28)*
 
 ___
 
@@ -29,4 +29,4 @@ ___
 
 • **instagram_actor_id**: *string*
 
-*Defined in [responses/insights.service.post.response.ts:27](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.post.response.ts#L27)*
+*Defined in [responses/insights.service.post.response.ts:27](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/insights.service.post.response.ts#L27)*

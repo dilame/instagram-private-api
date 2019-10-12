@@ -25,7 +25,7 @@
 
 • **impression_count**: *number*
 
-*Defined in [responses/posts-insights.feed.response.ts:51](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/posts-insights.feed.response.ts#L51)*
+*Defined in [responses/posts-insights.feed.response.ts:51](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/posts-insights.feed.response.ts#L51)*
 
 ___
 
@@ -33,7 +33,7 @@ ___
 
 • **owner_account_follows_count**: *number*
 
-*Defined in [responses/posts-insights.feed.response.ts:52](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/posts-insights.feed.response.ts#L52)*
+*Defined in [responses/posts-insights.feed.response.ts:52](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/posts-insights.feed.response.ts#L52)*
 
 ___
 
@@ -41,7 +41,7 @@ ___
 
 • **owner_profile_views_count**: *number*
 
-*Defined in [responses/posts-insights.feed.response.ts:53](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/posts-insights.feed.response.ts#L53)*
+*Defined in [responses/posts-insights.feed.response.ts:53](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/posts-insights.feed.response.ts#L53)*
 
 ___
 
@@ -49,7 +49,7 @@ ___
 
 • **profile_actions**: *[PostsInsightsFeedResponseProfile_actions](_responses_posts_insights_feed_response_.postsinsightsfeedresponseprofile_actions.md)*
 
-*Defined in [responses/posts-insights.feed.response.ts:55](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/posts-insights.feed.response.ts#L55)*
+*Defined in [responses/posts-insights.feed.response.ts:55](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/posts-insights.feed.response.ts#L55)*
 
 ___
 
@@ -57,7 +57,7 @@ ___
 
 • **reach_count**: *number*
 
-*Defined in [responses/posts-insights.feed.response.ts:54](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/posts-insights.feed.response.ts#L54)*
+*Defined in [responses/posts-insights.feed.response.ts:54](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/posts-insights.feed.response.ts#L54)*
 
 ___
 
@@ -65,4 +65,4 @@ ___
 
 • **share_count**: *[PostsInsightsFeedResponseShare_count](_responses_posts_insights_feed_response_.postsinsightsfeedresponseshare_count.md)*
 
-*Defined in [responses/posts-insights.feed.response.ts:56](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/posts-insights.feed.response.ts#L56)*
+*Defined in [responses/posts-insights.feed.response.ts:56](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/posts-insights.feed.response.ts#L56)*

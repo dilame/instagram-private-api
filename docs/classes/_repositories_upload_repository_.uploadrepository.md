@@ -29,7 +29,7 @@
 
 *Inherited from [Repository](_core_repository_.repository.md).[constructor](_core_repository_.repository.md#constructor)*
 
-*Defined in [core/repository.ts:6](https://github.com/dilame/instagram-private-api/blob/173bc62/src/core/repository.ts#L6)*
+*Defined in [core/repository.ts:6](https://github.com/dilame/instagram-private-api/blob/3e16058/src/core/repository.ts#L6)*
 
 **Parameters:**
 
@@ -45,7 +45,7 @@ Name | Type |
 
 ▸ **photo**(`options`: [UploadPhotoOptions](../interfaces/_types_upload_photo_options_.uploadphotooptions.md)): *`Promise<UploadRepositoryPhotoResponseRootObject>`*
 
-*Defined in [repositories/upload.repository.ts:11](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/upload.repository.ts#L11)*
+*Defined in [repositories/upload.repository.ts:11](https://github.com/dilame/instagram-private-api/blob/3e16058/src/repositories/upload.repository.ts#L11)*
 
 **Parameters:**
 
@@ -61,7 +61,7 @@ ___
 
 ▸ **video**(`options`: [UploadVideoOptions](../interfaces/_types_upload_video_options_.uploadvideooptions.md)): *`Promise<any>`*
 
-*Defined in [repositories/upload.repository.ts:47](https://github.com/dilame/instagram-private-api/blob/173bc62/src/repositories/upload.repository.ts#L47)*
+*Defined in [repositories/upload.repository.ts:47](https://github.com/dilame/instagram-private-api/blob/3e16058/src/repositories/upload.repository.ts#L47)*
 
 Uploads a video (container: mp4 with h264 and aac)
 

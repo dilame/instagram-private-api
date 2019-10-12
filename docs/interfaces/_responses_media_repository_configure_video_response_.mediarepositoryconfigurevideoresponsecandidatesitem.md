@@ -23,7 +23,7 @@
 
 • **estimated_scans_sizes**: *number[]*
 
-*Defined in [responses/media.repository.configure-video.response.ts:42](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.configure-video.response.ts#L42)*
+*Defined in [responses/media.repository.configure-video.response.ts:42](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/media.repository.configure-video.response.ts#L42)*
 
 ___
 
@@ -31,7 +31,7 @@ ___
 
 • **height**: *number*
 
-*Defined in [responses/media.repository.configure-video.response.ts:40](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.configure-video.response.ts#L40)*
+*Defined in [responses/media.repository.configure-video.response.ts:40](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/media.repository.configure-video.response.ts#L40)*
 
 ___
 
@@ -39,7 +39,7 @@ ___
 
 • **url**: *string*
 
-*Defined in [responses/media.repository.configure-video.response.ts:41](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.configure-video.response.ts#L41)*
+*Defined in [responses/media.repository.configure-video.response.ts:41](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/media.repository.configure-video.response.ts#L41)*
 
 ___
 
@@ -47,4 +47,4 @@ ___
 
 • **width**: *number*
 
-*Defined in [responses/media.repository.configure-video.response.ts:39](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/media.repository.configure-video.response.ts#L39)*
+*Defined in [responses/media.repository.configure-video.response.ts:39](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/media.repository.configure-video.response.ts#L39)*

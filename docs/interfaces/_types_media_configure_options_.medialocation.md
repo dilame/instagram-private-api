@@ -25,7 +25,7 @@
 
 • **address**: *string*
 
-*Defined in [types/media.configure.options.ts:52](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/media.configure.options.ts#L52)*
+*Defined in [types/media.configure.options.ts:52](https://github.com/dilame/instagram-private-api/blob/3e16058/src/types/media.configure.options.ts#L52)*
 
 ___
 
@@ -33,7 +33,7 @@ ___
 
 • **external_id**: *string*
 
-*Defined in [types/media.configure.options.ts:54](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/media.configure.options.ts#L54)*
+*Defined in [types/media.configure.options.ts:54](https://github.com/dilame/instagram-private-api/blob/3e16058/src/types/media.configure.options.ts#L54)*
 
 ___
 
@@ -41,7 +41,7 @@ ___
 
 • **external_source**: *string*
 
-*Defined in [types/media.configure.options.ts:53](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/media.configure.options.ts#L53)*
+*Defined in [types/media.configure.options.ts:53](https://github.com/dilame/instagram-private-api/blob/3e16058/src/types/media.configure.options.ts#L53)*
 
 ___
 
@@ -49,7 +49,7 @@ ___
 
 • **lat**: *number*
 
-*Defined in [types/media.configure.options.ts:50](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/media.configure.options.ts#L50)*
+*Defined in [types/media.configure.options.ts:50](https://github.com/dilame/instagram-private-api/blob/3e16058/src/types/media.configure.options.ts#L50)*
 
 ___
 
@@ -57,7 +57,7 @@ ___
 
 • **lng**: *number*
 
-*Defined in [types/media.configure.options.ts:51](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/media.configure.options.ts#L51)*
+*Defined in [types/media.configure.options.ts:51](https://github.com/dilame/instagram-private-api/blob/3e16058/src/types/media.configure.options.ts#L51)*
 
 ___
 
@@ -65,4 +65,4 @@ ___
 
 • **name**: *string*
 
-*Defined in [types/media.configure.options.ts:49](https://github.com/dilame/instagram-private-api/blob/173bc62/src/types/media.configure.options.ts#L49)*
+*Defined in [types/media.configure.options.ts:49](https://github.com/dilame/instagram-private-api/blob/3e16058/src/types/media.configure.options.ts#L49)*

@@ -21,7 +21,7 @@
 
 • **nodes**: *[InsightsServicePostResponseNodesItem](_responses_insights_service_post_response_.insightsservicepostresponsenodesitem.md)[]*
 
-*Defined in [responses/insights.service.post.response.ts:67](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.post.response.ts#L67)*
+*Defined in [responses/insights.service.post.response.ts:67](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/insights.service.post.response.ts#L67)*
 
 ___
 
@@ -29,4 +29,4 @@ ___
 
 • **value**: *number*
 
-*Defined in [responses/insights.service.post.response.ts:66](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/insights.service.post.response.ts#L66)*
+*Defined in [responses/insights.service.post.response.ts:66](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/insights.service.post.response.ts#L66)*

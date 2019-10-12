@@ -22,7 +22,7 @@
 
 • **camera_facing**: *string*
 
-*Defined in [responses/highlights.repository.edit-reel.response.ts:121](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/highlights.repository.edit-reel.response.ts#L121)*
+*Defined in [responses/highlights.repository.edit-reel.response.ts:121](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/highlights.repository.edit-reel.response.ts#L121)*
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 • **capture_type**: *string*
 
-*Defined in [responses/highlights.repository.edit-reel.response.ts:120](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/highlights.repository.edit-reel.response.ts#L120)*
+*Defined in [responses/highlights.repository.edit-reel.response.ts:120](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/highlights.repository.edit-reel.response.ts#L120)*
 
 ___
 
@@ -38,4 +38,4 @@ ___
 
 • **should_render_try_it_on**: *boolean*
 
-*Defined in [responses/highlights.repository.edit-reel.response.ts:122](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/highlights.repository.edit-reel.response.ts#L122)*
+*Defined in [responses/highlights.repository.edit-reel.response.ts:122](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/highlights.repository.edit-reel.response.ts#L122)*

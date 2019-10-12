@@ -20,4 +20,4 @@
 
 • **media**: *[TagsFeedResponseMedia](_responses_tags_feed_response_.tagsfeedresponsemedia.md)*
 
-*Defined in [responses/tags.feed.response.ts:19](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/tags.feed.response.ts#L19)*
+*Defined in [responses/tags.feed.response.ts:19](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/tags.feed.response.ts#L19)*

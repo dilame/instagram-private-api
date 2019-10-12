@@ -21,7 +21,7 @@
 
 • **expiring_at**: *number*
 
-*Defined in [responses/direct-inbox.feed.response.ts:136](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-inbox.feed.response.ts#L136)*
+*Defined in [responses/direct-inbox.feed.response.ts:136](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/direct-inbox.feed.response.ts#L136)*
 
 ___
 
@@ -29,4 +29,4 @@ ___
 
 • **user**: *[DirectInboxFeedResponseUser](_responses_direct_inbox_feed_response_.directinboxfeedresponseuser.md)*
 
-*Defined in [responses/direct-inbox.feed.response.ts:135](https://github.com/dilame/instagram-private-api/blob/173bc62/src/responses/direct-inbox.feed.response.ts#L135)*
+*Defined in [responses/direct-inbox.feed.response.ts:135](https://github.com/dilame/instagram-private-api/blob/3e16058/src/responses/direct-inbox.feed.response.ts#L135)*
