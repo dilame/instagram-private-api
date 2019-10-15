@@ -39,7 +39,7 @@
     "@lifeomic/attempt": "^3.0.0",
     "@types/chance": "^1.0.2",
     "@types/request-promise": "^4.1.43",
-    "bluebird": "^3.5.4",
+    "bluebird": "^3.7.1",
     "chance": "^1.0.18",
     "class-transformer": "^0.2.0",
     "image-size": "^0.7.3",
