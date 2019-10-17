@@ -146,6 +146,8 @@ If you need features that is not implemented - feel free to implement and create
 
 Plus we need some documentation, so if you are good in it - you are welcome.
 
+Setting up your environment is described [here](CONTRIBUTING.md).
+
 # Useful links
 
 [instagram-id-to-url-segment](https://www.npmjs.com/package/instagram-id-to-url-segment) - convert the image url fragment to the media ID
