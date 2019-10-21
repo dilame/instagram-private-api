@@ -26,7 +26,7 @@ export class ReelsMediaFeed extends Feed<ReelsMediaFeedResponseRootObject, Reels
     return body;
   }
 
-  async items() {
+  async items(): Promise<ReelsMediaFeedResponseItem[]> {
     const body = await this.request();
     return Object.values(body.reels).reduce(
       (accumulator, current: ReelsMediaFeedResponse) => accumulator.concat(current.items),
