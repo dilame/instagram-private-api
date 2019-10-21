@@ -146,6 +146,8 @@ If you need features that is not implemented - feel free to implement and create
 
 Plus we need some documentation, so if you are good in it - you are welcome.
 
+Setting up your environment is described [here](CONTRIBUTING.md).
+
 # Useful links
 
 [instagram-id-to-url-segment](https://www.npmjs.com/package/instagram-id-to-url-segment) - convert the image url fragment to the media ID
@@ -157,10 +159,3 @@ Plus we need some documentation, so if you are good in it - you are welcome.
 ## Thanks to contributors
 
 - [Nerixyz](https://github.com/Nerixyz), for writing a huge amount of code for this library.
-
-## End User License Agreement (EULA)
-
-1. _You will not use_ this repository for sending mass spam or any other malicious activity
-2. _We / You will not support_ anyone who is violating this EULA conditions
-3. _Repository is just for learning / personal purposes_ thus should not be part of any
-   service available on the Internet that is trying to do any malicious activity (mass bulk request, spam etc.)
