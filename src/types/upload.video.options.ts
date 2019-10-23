@@ -8,4 +8,5 @@ export interface UploadVideoOptions {
   forAlbum?: boolean;
   isDirect?: boolean;
   mediaType?: string;
+  forDirectStory?: boolean;
 }

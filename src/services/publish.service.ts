@@ -229,7 +229,7 @@ export class PublishService extends Repository {
       this.client.upload.video({
         video: options.video,
         uploadId,
-        forAlbum: true,
+        forDirectStory: configureOptions.configure_mode === '2',
         ...videoInfo,
       }),
     ).catch(IgResponseError, error => {
