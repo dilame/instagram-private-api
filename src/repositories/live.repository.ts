@@ -344,7 +344,7 @@ export class LiveRepository extends Repository {
    * Shows all online users, ready to watch your stream
    */
   public async getLivePresence(): Promise<any> {
-    const {body} = await this.client.request.send({
+    const { body } = await this.client.request.send({
       url: '/api/v1/live/get_live_presence/',
       method: 'GET',
     });

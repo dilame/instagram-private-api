@@ -1,9 +1,11 @@
 import * as urlRegex from 'url-regex';
 import { Entity } from '../core/entity';
 import {
-  DirectThreadBroadcastPhotoOptions, DirectThreadBroadcastPhotoStoryOptions,
+  DirectThreadBroadcastPhotoOptions,
+  DirectThreadBroadcastPhotoStoryOptions,
   DirectThreadBroadcastReelOptions,
-  DirectThreadBroadcastVideoOptions, DirectThreadBroadcastVideoStoryOptions,
+  DirectThreadBroadcastVideoOptions,
+  DirectThreadBroadcastVideoStoryOptions,
 } from '../types';
 import { DirectThreadBroadcastOptions } from '../types';
 import { IgClientError, IgResponseError } from '../errors';
@@ -138,7 +140,9 @@ export class DirectThreadEntity extends Entity {
    * The story is either destroyable (view 'once') or 'replayable'
    * @param input
    */
-  public async broadcastStory(input: Buffer | DirectThreadBroadcastPhotoStoryOptions | DirectThreadBroadcastVideoStoryOptions) {
+  public async broadcastStory(
+    input: Buffer | DirectThreadBroadcastPhotoStoryOptions | DirectThreadBroadcastVideoStoryOptions,
+  ) {
     const options = input instanceof Buffer ? { file: input } : input;
     const baseOptions = {
       ...options,
