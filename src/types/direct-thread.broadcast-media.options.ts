@@ -8,6 +8,7 @@ export interface DirectThreadBroadcastVideoOptions {
   video: Buffer;
   uploadId?: string;
   sampled?: boolean;
+  transcodeDelay?: number;
 }
 
 export interface DirectThreadBroadcastStoryOptions {
