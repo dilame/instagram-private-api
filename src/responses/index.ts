@@ -85,3 +85,4 @@ export * from './restrict-action.repository.restrict.response';
 export * from './address-book.repository.link.response';
 export * from './location.repository.story.response';
 export * from './user-story.feed.response';
+export * from './media.inline-child-comments.feed.response';

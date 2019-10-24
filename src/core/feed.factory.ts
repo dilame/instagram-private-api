@@ -34,6 +34,7 @@ import * as Chance from 'chance';
 import { PostsInsightsFeedOptions } from '../types';
 import { UserStoryFeed } from '../feeds/user-story.feed';
 import { ListReelMediaViewerFeed } from '../feeds/list-reel-media-viewer.feed';
+import { MediaInlineChildCommentsFeed } from '../feeds/media.inline-child-comments.feed';
 
 export class FeedFactory {
   constructor(private client: IgApiClient) {}
@@ -188,5 +189,13 @@ export class FeedFactory {
 
   public listReelMediaViewers(mediaId: string): ListReelMediaViewerFeed {
     return plainToClassFromExist(new ListReelMediaViewerFeed(this.client), { mediaId });
+  }
+
+  public mediaInlineChildComments(mediaId: string, commentId: string, minId?: string): MediaInlineChildCommentsFeed {
+    return plainToClassFromExist(new MediaInlineChildCommentsFeed(this.client), {
+      mediaId,
+      commentId,
+      nextMinId: minId,
+    });
   }
 }
