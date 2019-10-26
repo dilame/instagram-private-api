@@ -2,13 +2,15 @@ import * as urlRegex from 'url-regex';
 import { Entity } from '../core/entity';
 import {
   DirectThreadBroadcastPhotoOptions,
+  DirectThreadBroadcastPhotoStoryOptions,
   DirectThreadBroadcastReelOptions,
-  DirectThreadBroadcastStoryOptions,
   DirectThreadBroadcastVideoOptions,
+  DirectThreadBroadcastVideoStoryOptions,
 } from '../types';
 import { DirectThreadBroadcastOptions } from '../types';
-import { IgClientError } from '../errors';
+import { IgClientError, IgResponseError } from '../errors';
 import { PublishService } from '../services/publish.service';
+import * as Bluebird from 'bluebird';
 
 export class DirectThreadEntity extends Entity {
   threadId: string = null;
@@ -115,6 +117,14 @@ export class DirectThreadEntity extends Entity {
       ...videoInfo,
     });
 
+    await Bluebird.try(() =>
+      this.client.media.uploadFinish({
+        upload_id: uploadId,
+        source_type: '2',
+        video: { length: videoInfo.duration / 1000.0 },
+      }),
+    ).catch(IgResponseError, PublishService.catchTranscodeError(videoInfo, options.transcodeDelay || 4 * 1000));
+
     return await this.broadcast({
       item: 'configure_video',
       form: {
@@ -130,10 +140,12 @@ export class DirectThreadEntity extends Entity {
    * The story is either destroyable (view 'once') or 'replayable'
    * @param input
    */
-  public async broadcastStory(input: Buffer | DirectThreadBroadcastStoryOptions) {
+  public async broadcastStory(
+    input: Buffer | DirectThreadBroadcastPhotoStoryOptions | DirectThreadBroadcastVideoStoryOptions,
+  ) {
     const options = input instanceof Buffer ? { file: input } : input;
     const baseOptions = {
-      file: options.file,
+      ...options,
       viewMode: options.viewMode || 'replayable',
       replyType: options.replyType,
     };

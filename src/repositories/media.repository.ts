@@ -463,6 +463,11 @@ export class MediaRepository extends Repository {
 
     if (form.configure_mode === '1') {
       MediaRepository.stringifyStoryStickers(form);
+    } else if (form.configure_mode === '2') {
+      if (typeof form.recipient_users !== 'string') {
+        form.recipient_users = JSON.stringify(form.recipient_users ? [form.recipient_users.map(x => Number(x))] : []);
+      }
+      form.thread_ids = JSON.stringify(form.thread_ids || []);
     }
     const { body } = await this.client.request.send({
       url: '/api/v1/media/configure_to_story/',

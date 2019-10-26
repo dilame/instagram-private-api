@@ -69,6 +69,10 @@ export class UploadRepository extends Repository {
     if (options.isDirect) {
       ruploadParams.direct_v2 = '1';
     }
+    if (options.forDirectStory) {
+      ruploadParams.for_direct_story = '1';
+      ruploadParams.content_tags = '';
+    }
 
     const { body } = await this.client.request.send({
       url: `/rupload_igvideo/${name}/`,
