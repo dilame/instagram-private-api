@@ -193,6 +193,32 @@ export class MediaRepository extends Repository {
     });
     return body.comment;
   }
+  
+  async commentsDisable(mediaId) {
+    const { body } = await this.client.request.send({
+      url: `/api/v1/media/${mediaId}/disable_comments/`,
+      method: 'POST',
+      form: this.client.request.sign({
+        _csrftoken: this.client.state.cookieCsrfToken,
+        _uid: this.client.state.cookieUserId,
+        _uuid: this.client.state.uuid,
+      }),
+    });
+    return body;
+  }
+  
+  async commentsEnable(mediaId) {
+    const { body } = await this.client.request.send({
+      url: `/api/v1/media/${mediaId}/enable_comments/`,
+      method: 'POST',
+      form: this.client.request.sign({
+        _csrftoken: this.client.state.cookieCsrfToken,
+        _uid: this.client.state.cookieUserId,
+        _uuid: this.client.state.uuid,
+      }),
+    });
+    return body;
+  }
 
   public async likers(id: string): Promise<MediaRepositoryLikersResponseRootObject> {
     const { body } = await this.client.request.send<MediaRepositoryLikersResponseRootObject>({
