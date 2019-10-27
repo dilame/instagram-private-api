@@ -10,8 +10,9 @@ Read the [Notes](#notes) and fill out the form.
 
 ## Notes
 Your issue will be closed if you violate any rule below.
- - You need to include a meaningful section of your code (not your entire project and not a single line)
- - Please **do not add screenshots** as they're not easy to work with
+ - You need to include a meaningful section of your code
+  (not your entire project and not a single line).
+ - Please **do not add screenshots** as they're not easy to work with.
  - Errors like `IgActionSpamError (feedback_required)`, `IgCheckpointError (challenge_required)`, `checkpont_required`, `login_required`
     are "common" and there are multiple issues, [search here](https://github.com/dilame/instagram-private-api/issues).
  - You can delete this section after reading it.

@@ -10,7 +10,8 @@ Switch to `Preview` for reading.
 
 ## Notes
 Your issue will be closed if you violate any rule below.
- - You need to include a meaningful descriptions and e.g. a screenshot (not of your code)
+ - You need to include a meaningful descriptions and e.g. a screenshot.
+ - You **do not** include screenshots of your code.
  - Read the [Docs](https://github.com/dilame/instagram-private-api/tree/master/docs).
  - Capturing endpoints and similar can be found [here](https://github.com/dilame/instagram-private-api/blob/master/CONTRIBUTING.md)
  (read it if you are going to ask about it).
@@ -24,6 +25,6 @@ Put an `[x]` if you meet the condition, else leave `[ ]`.
  
 ## Question
 A **specific** question, so it's understandable to anyone.
-You can add pictures.
+You may add pictures.
 
 **YOUR QUESTION HERE**
