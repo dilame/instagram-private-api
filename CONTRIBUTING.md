@@ -4,10 +4,25 @@ This is based on information seen [here](https://github.com/mgp25/Instagram-API/
 
 #### Table of contents
 
- 1. [Capturing Endpoints](#capturing-endpoints)
- 2. [Reading the Signature Key](#reading-the-signature-key)
- 3. [Capturing MQTT (Notifications)](#capturing-tls-requests)
+ 1. [Common Errors](#common-errors)
+ 2. [Capturing Endpoints](#capturing-endpoints)
+ 3. [Reading the Signature Key](#reading-the-signature-key)
+ 4. [Capturing MQTT (Notifications)](#capturing-tls-requests)
  
+## Common Errors
+### IgActionSpamError or feedback_required
+Occurs as the name suggests after a large amount of requests (in a short amount of time).
+
+**Fix:** Add a delay between the requests and/or use proxies for multiple accounts.
+
+### IgCheckpointError or challenge_required
+See [this](https://github.com/dilame/instagram-private-api/blob/master/examples/checkpoint.example.ts).
+ 
+### login_required
+This is thrown whenever your session is invalid.
+You can fix it by not loading the session/cookies. 
+Most of the time you'll face another error afterwards.
+
 ## Capturing Endpoints
 
 In order to capture endpoints you have to monitor the requests using a proxy.
