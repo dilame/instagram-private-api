@@ -188,23 +188,24 @@ export class Request {
     // TODO: unquoted Host and Connection?!
     return {
       'User-Agent': this.client.state.appUserAgent,
-      'Accept-Language': `${this.client.state.language.split('_')[0]};q=1, ${this.client.state.language.replace(
-        '_',
-        '-',
-      )};q=0.9`,
-      /*'X-Pigeon-Session-Id': this.client.state.pigeonSessionId,
+      'Accept-Language': this.client.state.language,
+      'X-Pigeon-Session-Id': this.client.state.pigeonSessionId,
       'X-Pigeon-Rawclienttime': (Date.now() / 1000).toFixed(3),
-      'X-IG-Connection-Speed': `${lodash_1.random(1000, 3700)}kbps`,
+      'X-IG-Connection-Speed': `-1kbps`,
       'X-IG-Bandwidth-Speed-KBPS': '-1.000',
       'X-IG-Bandwidth-TotalBytes-B': '0',
       'X-IG-Bandwidth-TotalTime-MS': '0',
       'X-IG-Connection-Type': this.client.state.connectionTypeHeader,
       'X-IG-Capabilities': this.client.state.capabilitiesHeader,
       'X-IG-App-ID': this.client.state.fbAnalyticsApplicationId,
-      'X-IG-VP9-Capable': true,
       Host: 'i.instagram.com',
-      'Accept-Encoding': 'gzip',
-      Connection: 'Keep-Alive',*/
+      'Accept-Encoding': 'gzip, deflate',
+      Connection: 'Keep-Alive'
+      
+      /*'Accept-Language': `${this.client.state.language.split('_')[0]};q=1, ${this.client.state.language.replace(
+        '_',
+        '-',
+      )};q=0.9`,
       'X-IG-Capabilities': '36r/Fw==',
       'X-IG-App-ID': 1099655813402622,
       'X-IG-Connection-Type': 'WiFi',
@@ -213,7 +214,7 @@ export class Request {
       'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
       'X-IG-ABR-Connection-Speed-KBPS': 0,
       Connection: 'close',
-      'Accept-Encoding': 'gzip, deflate',
+      'Accept-Encoding': 'gzip, deflate',*/
     };
   }
 }
