@@ -58,8 +58,11 @@ export class State {
   cookieJar = jar(this.cookieStore);
   checkpoint: CheckpointResponse | null = null;
   challenge: ChallengeStateResponse | null = null;
+  fixedSessionId: null = null; // to use when we want to pass exact value instead of generating it
   clientSessionIdLifetime: number = 1200000;
   pigeonSessionIdLifetime: number = 1200000;
+  clientSessionIdSalt: string = `${Date.now()}`;
+  pigeonSessionIdSalt: string = `${Date.now()}`;
 
   /**
    * The current application session ID.
@@ -70,15 +73,44 @@ export class State {
    * We will update it once an hour
    */
   public get clientSessionId(): string {
-    return this.generateTemporaryGuid('clientSessionId', this.clientSessionIdLifetime);
+    return this.generateSaltyGuid('clientSessionId', this.clientSessionIdSalt);
+  }
+
+  // return set session id if it's present
+  public get fixedClientSessionId(): string {
+    return this.fixedSessionId || this.clientSessionId;
   }
 
   public get pigeonSessionId(): string {
-    return this.generateTemporaryGuid('pigeonSessionId', this.pigeonSessionIdLifetime);
+    return this.generateSaltyGuid('pigeonSessionId', this.pigeonSessionIdSalt);
   }
 
   public get appUserAgent() {
     return `Instagram ${this.appVersion} Android (${this.deviceString}; ${this.language}; ${this.appVersionCode})`;
+  }
+
+  public get deviceAndroidRelease() {
+    return this.deviceString.split('; ')[0];
+  }
+
+  public get dpi() {
+    return Number(this.deviceString.split('; ')[1].replace('dpi', ''));
+  }
+
+  public get resolution() {
+    let res = this.deviceString.split('; ')[2].split('x');
+    return {
+      height: res[1],
+      width: res[0]
+    }
+  }
+
+  public get deviceManufacturer() {
+    return this.deviceString.split('; ')[3];
+  }
+
+  public get deviceModel() {
+    return this.deviceString.split('; ')[4];
   }
 
   public get webUserAgent() {
@@ -88,6 +120,35 @@ export class State {
       this.appUserAgent
     }`;
   }
+
+  public get fbUserAgent() {
+    let resolution = this.resolution;
+    
+    let props = {
+      'FBAN': 'InstagramForAndroid',
+      'FBAV': this.appVersion,
+      'FBBV': this.appVersionCode,
+      'FBDM': `{density=4.0,width=${resolution.width},height=${resolution.height}}`,
+      'FBLC': this.language,
+      'FBCR': '',
+      'FBMF': this.deviceManufacturer.toUpperCase(),
+      'FBBD': this.deviceManufacturer.toUpperCase(),
+      'FBPN': 'com.instagram.android',
+      'FBDV': this.deviceModel.toUpperCase(),
+      'FBSV': '7.0',
+      'FBBK': 1,
+      'FBCA': 'armeabi-v7a:armeabi'
+    };
+
+    let result = '';
+    for (let key in props) {
+      if (props.hasOwnProperty(key)) {
+        result += `${key}/${props[key]};`;
+      }
+    }
+
+    return `[${result}]`;
+  }  
 
   public get devicePayload() {
     const deviceParts = this.deviceString.split(';');
@@ -180,13 +241,13 @@ export class State {
       length: 16,
     });
     this.deviceId = `android-${id}`;
-    this.uuid = chance.guid();
-    this.phoneId = chance.guid();
-    this.adid = chance.guid();
+    this.uuid = chance.guid({ version: 4 });
+    this.phoneId = chance.guid({ version: 4 });
+    this.adid = chance.guid({ version: 4 });
     this.build = chance.pickone(builds);
   }
 
-  private generateTemporaryGuid(seed: string, lifetime: number) {
-    return new Chance(`${seed}${this.deviceId}${Math.round(Date.now() / lifetime)}`).guid();
+  private generateSaltyGuid(seed: string, salt: string) {
+    return new Chance(`${seed}${this.deviceId}${salt}`).guid({ version: 4 });
   }
 }

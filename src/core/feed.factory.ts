@@ -146,7 +146,7 @@ export class FeedFactory {
     const options = {
       query,
       product,
-      searchSessionId: new Chance(query).guid(),
+      searchSessionId: new Chance(query).guid({version: 4}),
     };
     return plainToClassFromExist(new MusicSearchFeed(this.client), options);
   }

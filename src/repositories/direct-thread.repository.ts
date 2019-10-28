@@ -204,7 +204,7 @@ export class DirectThreadRepository extends Repository {
   public async broadcast(
     options: DirectThreadBroadcastOptions,
   ): Promise<DirectThreadRepositoryBroadcastResponseRootObject> {
-    const mutationToken = new Chance().guid();
+    const mutationToken = new Chance().guid({ version: 4 });
     const recipients = options.threadIds || options.userIds;
     const recipientsType = options.threadIds ? 'thread_ids' : 'recipient_users';
     const recipientsIds = recipients instanceof Array ? recipients : [recipients];

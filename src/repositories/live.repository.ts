@@ -287,7 +287,7 @@ export class LiveRepository extends Repository {
       method: 'POST',
       form: this.client.request.sign({
         user_breadcrumb: this.client.request.userBreadcrumb(message.length),
-        idempotence_token: new Chance().guid(),
+        idempotence_token: new Chance().guid({ version: 4 }),
         comment_text: message,
         live_or_vod: '1',
         offset_to_video_start: '0',

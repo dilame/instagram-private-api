@@ -17,16 +17,16 @@ export class UploadRepository extends Repository {
       xsharing_user_ids: JSON.stringify([]),
       image_compression: JSON.stringify({ lib_name: 'moz', lib_version: '3.1.m', quality: '80' }),
     };
+    const name = options.uploadName || `${uploadId}_0_-${random(1000000000, 9999999999)}`;
     if (options.isSidecar) {
       ruploadParams.is_sidecar = '1';
     }
-    const name = `${uploadId}_0_-${random(1000000000, 9999999999)}`;
     const contentLength = options.file.byteLength;
     const { body } = await this.client.request.send<UploadRepositoryPhotoResponseRootObject>({
       url: `/rupload_igphoto/${name}`,
       method: 'POST',
       headers: {
-        X_FB_PHOTO_WATERFALL_ID: this.chance.guid(),
+        X_FB_PHOTO_WATERFALL_ID: this.chance.guid({ version: 4 }),
         'X-Entity-Type': 'image/jpeg',
         Offset: 0,
         'X-Instagram-Rupload-Params': JSON.stringify(ruploadParams),
