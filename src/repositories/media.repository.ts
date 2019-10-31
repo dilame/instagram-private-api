@@ -193,7 +193,7 @@ export class MediaRepository extends Repository {
     });
     return body.comment;
   }
-  
+
   async commentsDisable(mediaId) {
     const { body } = await this.client.request.send({
       url: `/api/v1/media/${mediaId}/disable_comments/`,
@@ -206,7 +206,7 @@ export class MediaRepository extends Repository {
     });
     return body;
   }
-  
+
   async commentsEnable(mediaId) {
     const { body } = await this.client.request.send({
       url: `/api/v1/media/${mediaId}/enable_comments/`,
