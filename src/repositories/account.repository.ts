@@ -1,4 +1,3 @@
-import { ReadStream } from 'fs';
 import { Repository } from '../core/repository';
 import {
   AccountRepositoryCurrentUserResponseRootObject,
@@ -155,24 +154,20 @@ export class AccountRepository extends Repository {
     return body.user;
   }
 
-  public async changeProfilePicture(stream: ReadStream): Promise<AccountRepositoryCurrentUserResponseRootObject> {
-    const signedParameters = this.client.request.sign({
-      _csrftoken: this.client.state.cookieCsrfToken,
-      _uid: this.client.state.cookieUserId,
-      _uuid: this.client.state.uuid,
+  public async changeProfilePicture(picture: Buffer): Promise<AccountRepositoryCurrentUserResponseRootObject> {
+    const uploadId = Date.now().toString();
+    await this.client.upload.photo({
+      file: picture,
+      uploadId,
     });
     const { body } = await this.client.request.send<AccountRepositoryCurrentUserResponseRootObject>({
       url: '/api/v1/accounts/change_profile_picture/',
       method: 'POST',
-      formData: {
-        ...signedParameters,
-        profile_pic: {
-          value: stream,
-          options: {
-            filename: 'profile_pic',
-            contentType: 'application/octet-stream',
-          },
-        },
+      form: {
+        _csrftoken: this.client.state.cookieCsrfToken,
+        _uuid: this.client.state.uuid,
+        use_fbuploader: true,
+        upload_id: uploadId,
       },
     });
     return body;
