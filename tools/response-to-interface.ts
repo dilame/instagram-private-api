@@ -1,27 +1,26 @@
 /* tslint:disable:no-console */
 import 'dotenv/config';
 import { IgApiClient } from '../src';
-import * as Bluebird from 'bluebird';
 import { json2ts } from 'json-ts/dist';
 import { camelCase } from 'lodash';
-import { writeFile } from 'fs';
+import * as fs from 'fs';
+import { promisify } from 'util';
+
+/* async fs functions - uncomment the needed wrappers */
+// const readFileAsync = promisify(fs.readFile);
+const writeFileAsync = promisify(fs.writeFile);
 
 const ig = new IgApiClient();
 
-// Modify this function as you wish to get needed json
-async function getResponse(request: Promise<any>) {
-  return await request;
-}
-
 // @ts-ignore
 async function createInterface(request: Promise<any>, outputName: string) {
-  const json = await getResponse(request);
+  const json = await request;
   const camelCasedOutputName = camelCase(outputName);
   let interfaces = json2ts(JSON.stringify(json), {
     prefix: camelCasedOutputName.charAt(0).toUpperCase() + camelCasedOutputName.slice(1) + 'Response',
   });
   interfaces = interfaces.replace(/interface/g, 'export interface');
-  await Bluebird.fromCallback(cb => writeFile(`./src/responses/${outputName}.response.ts`, interfaces, cb));
+  await writeFileAsync(`./src/responses/${outputName}.response.ts`, interfaces);
   console.log('Success');
   return json;
 }
