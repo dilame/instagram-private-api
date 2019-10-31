@@ -13,9 +13,7 @@ import {
   IgLoginTwoFactorRequiredError,
   IgResponseError,
 } from '../errors';
-import { AccountEditProfileOptions } from '../types/account.edit-profile.options';
-import { IgResponse } from '../types/common.types';
-import { AccountTwoFactorLoginOptions } from '../types/account.two-factor-login.options';
+import { IgResponse, AccountEditProfileOptions, AccountTwoFactorLoginOptions } from '../types';
 import { defaultsDeep } from 'lodash';
 import { IgSignupBlockError } from '../errors/ig-signup-block.error';
 import Bluebird = require('bluebird');
@@ -85,13 +83,13 @@ export class AccountRepository extends Repository {
     const { body } = await this.client.request.send<StatusResponse>({
       method: 'POST',
       url: '/api/v1/accounts/logout/',
-      form: this.client.request.sign({
+      form: {
         guid: this.client.state.uuid,
         phone_id: this.client.state.phoneId,
         _csrftoken: this.client.state.cookieCsrfToken,
         device_id: this.client.state.deviceId,
         _uuid: this.client.state.uuid,
-      }),
+      },
     });
     return body;
   }
