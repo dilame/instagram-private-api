@@ -188,7 +188,14 @@ export class Request {
     // TODO: unquoted Host and Connection?!
     return {
       'User-Agent': this.client.state.appUserAgent,
-      'Accept-Language': this.client.state.language,
+      'Accept-Language': this.client.state.language.replace('_', '-'),
+      'X-IG-App-Locale': this.client.state.language,
+      'X-IG-Device-Locale': this.client.state.language,
+      'X-Bloks-Version-Id': 'e64770370706cb0f5f58260398fb5592f4679a12b61a5be4291af7f562331e5f',
+      'X-Bloks-Is-Layout-RTL': 'false',
+      'X-IG-Device-ID': this.client.state.uuid,
+      'X-IG-Android-ID': this.client.state.deviceId,
+      'X-FB-HTTP-Engine': 'Liger',
       'X-Pigeon-Session-Id': this.client.state.pigeonSessionId,
       'X-Pigeon-Rawclienttime': (Date.now() / 1000).toFixed(3),
       'X-IG-Connection-Speed': `-1kbps`,
@@ -200,7 +207,7 @@ export class Request {
       'X-IG-App-ID': this.client.state.fbAnalyticsApplicationId,
       Host: 'i.instagram.com',
       'Accept-Encoding': 'gzip, deflate',
-      Connection: 'Keep-Alive'
+      Connection: 'close'
       
       /*'Accept-Language': `${this.client.state.language.split('_')[0]};q=1, ${this.client.state.language.replace(
         '_',
