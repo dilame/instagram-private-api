@@ -76,14 +76,6 @@ export class Request {
   }
 
   public async send<T = any>(userOptions: Options & { isReg?: boolean }): Promise<IgResponse<T>> {
-    const parsedUrl = url.parse('https://instagram.com/');
-    const cookies = this.client.state.cookieJar.getCookies(parsedUrl);
-    const keepCookies = userOptions.isReg ? ['sessionid'] : ['mid', 'rur', 'csrftoken', 'sessionid', 'shbid', 'shbts'];
-    const newCookies = cookies.filter(cookie => keepCookies.includes(cookie.key));
-
-    const newCookieJar = request.jar();
-    newCookies.forEach(cookie => newCookieJar.setCookie(cookie.toString(), parsedUrl));
-
     const options = defaultsDeep(
       userOptions,
       {
@@ -92,7 +84,7 @@ export class Request {
         proxy: this.client.state.proxyUrl,
         simple: false,
         transform: Request.requestTransform,
-        jar: newCookieJar,
+        jar: this.client.state.cookieJar,
         strictSSL: false,
         gzip: true,
         headers: this.getDefaultHeaders(),
@@ -107,9 +99,6 @@ export class Request {
     }
 
     const response = userOptions.isReg ? await saveTrafficRequest(options) : await this.faultTolerantRequest(options);
-    newCookieJar
-      .getCookies(parsedUrl)
-      .forEach(cookie => this.client.state.cookieJar.setCookie(cookie.toString(), parsedUrl));
 
     process.nextTick(() => this.end$.next());
     if (response.body.status === 'ok') {
@@ -207,8 +196,8 @@ export class Request {
       'X-IG-App-ID': this.client.state.fbAnalyticsApplicationId,
       Host: 'i.instagram.com',
       'Accept-Encoding': 'gzip, deflate',
-      Connection: 'close'
-      
+      Connection: 'close',
+
       /*'Accept-Language': `${this.client.state.language.split('_')[0]};q=1, ${this.client.state.language.replace(
         '_',
         '-',
