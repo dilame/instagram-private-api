@@ -21,7 +21,6 @@ import {
 } from '../errors';
 import JSONbigInt = require('json-bigint');
 import { IgResponse } from '../types/common.types';
-//import * as url from 'url';
 
 const JSONbigString = JSONbigInt({ storeAsString: true });
 
@@ -76,15 +75,7 @@ export class Request {
     return resolveWithFullResponse ? response : response.body;
   }
 
-  public async send<T = any>(userOptions: Options & { isReg?: boolean }, onlyCheckHttpStatus?: boolean): Promise<IgResponse<T>> {
-    /*const parsedUrl = url.parse('https://i.instagram.com/');
-    const cookies = this.client.state.cookieJar.getCookies(parsedUrl);
-    const keepCookies = userOptions.isReg ? ['sessionid'] : ['mid', 'rur', 'csrftoken', 'sessionid', 'shbid', 'shbts'];
-    const newCookies = cookies.filter(cookie => keepCookies.includes(cookie.key));
-
-    const newCookieJar = request.jar();
-    newCookies.forEach(cookie => newCookieJar.setCookie(cookie.toString(), parsedUrl));*/
-
+  public async send<T = any>(userOptions: Options & { isReg?: boolean }): Promise<IgResponse<T>> {
     const options = defaultsDeep(
       userOptions,
       {
@@ -108,6 +99,7 @@ export class Request {
     }
 
     const response = userOptions.isReg ? await saveTrafficRequest(options) : await this.faultTolerantRequest(options);
+
     process.nextTick(() => this.end$.next());
     if (response.body.status === 'ok' || (onlyCheckHttpStatus && response.statusCode === 200)) {
       /*newCookieJar
@@ -191,23 +183,32 @@ export class Request {
     // TODO: unquoted Host and Connection?!
     return {
       'User-Agent': this.client.state.appUserAgent,
-      'Accept-Language': `${this.client.state.language.split('_')[0]};q=1, ${this.client.state.language.replace(
-        '_',
-        '-',
-      )};q=0.9`,
-      /*'X-Pigeon-Session-Id': this.client.state.pigeonSessionId,
+      'Accept-Language': this.client.state.language.replace('_', '-'),
+      'X-IG-App-Locale': this.client.state.language,
+      'X-IG-Device-Locale': this.client.state.language,
+      'X-Bloks-Version-Id': '0a3ae4c88248863609Connectionc67e278f34af44673cff300bc76add965a9fb036bd3ca3',
+      'X-IG-WWW-Claim': '0',
+      'X-Bloks-Is-Layout-RTL': 'false',
+      'X-IG-Device-ID': this.client.state.uuid,
+      'X-IG-Android-ID': this.client.state.deviceId,
+      'X-FB-HTTP-Engine': 'Liger',
+      'X-Pigeon-Session-Id': this.client.state.pigeonSessionId,
       'X-Pigeon-Rawclienttime': (Date.now() / 1000).toFixed(3),
-      'X-IG-Connection-Speed': `${lodash_1.random(1000, 3700)}kbps`,
+      'X-IG-Connection-Speed': `-1kbps`,
       'X-IG-Bandwidth-Speed-KBPS': '-1.000',
       'X-IG-Bandwidth-TotalBytes-B': '0',
       'X-IG-Bandwidth-TotalTime-MS': '0',
       'X-IG-Connection-Type': this.client.state.connectionTypeHeader,
       'X-IG-Capabilities': this.client.state.capabilitiesHeader,
       'X-IG-App-ID': this.client.state.fbAnalyticsApplicationId,
-      'X-IG-VP9-Capable': true,
       Host: 'i.instagram.com',
-      'Accept-Encoding': 'gzip',
-      Connection: 'Keep-Alive',*/
+      'Accept-Encoding': 'gzip, deflate',
+      Connection: 'close',
+
+      /*'Accept-Language': `${this.client.state.language.split('_')[0]};q=1, ${this.client.state.language.replace(
+        '_',
+        '-',
+      )};q=0.9`,
       'X-IG-Capabilities': '36r/Fw==',
       'X-IG-App-ID': 1099655813402622,
       'X-IG-Connection-Type': 'WiFi',
@@ -216,7 +217,7 @@ export class Request {
       'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
       'X-IG-ABR-Connection-Speed-KBPS': 0,
       Connection: 'close',
-      'Accept-Encoding': 'gzip, deflate',
+      'Accept-Encoding': 'gzip, deflate',*/
     };
   }
 }
