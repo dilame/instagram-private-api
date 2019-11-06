@@ -7,7 +7,7 @@ import * as fs from 'fs';
 import { promisify } from 'util';
 
 /* async fs functions - uncomment the needed wrappers */
-// const readFileAsync = promisify(fs.readFile);
+//const readFileAsync = promisify(fs.readFile);
 const writeFileAsync = promisify(fs.writeFile);
 
 const ig = new IgApiClient();
@@ -20,7 +20,8 @@ async function createInterface(request: Promise<any>, outputName: string) {
     prefix: camelCasedOutputName.charAt(0).toUpperCase() + camelCasedOutputName.slice(1) + 'Response',
   });
   interfaces = interfaces.replace(/interface/g, 'export interface');
-  await writeFileAsync(`./src/responses/${outputName}.response.ts`, interfaces);
+  const fileName = `${outputName}.response`;
+  await writeFileAsync(`./src/responses/${fileName}.ts`, interfaces);
   console.log('Success');
   return json;
 }
@@ -34,5 +35,9 @@ async function login() {
 (async function mainAsync() {
   await login();
 
-  console.log();
+  try {
+
+  } catch (e) {
+    console.error(e);
+  }
 })();
