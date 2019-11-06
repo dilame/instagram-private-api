@@ -3,7 +3,12 @@ import { Repository } from '../core/repository';
 import { UploadPhotoOptions } from '../types/upload.photo.options';
 import Chance = require('chance');
 import { StatusResponse, UploadRepositoryPhotoResponseRootObject } from '../responses';
-import { SEGMENT_DIVIDERS, UploadRetryContext, UploadSegmentedVideoOptions, UploadVideoOptions } from '../types/upload.video.options';
+import {
+  SEGMENT_DIVIDERS,
+  UploadRetryContext,
+  UploadSegmentedVideoOptions,
+  UploadVideoOptions,
+} from '../types/upload.video.options';
 
 export class UploadRepository extends Repository {
   private chance = new Chance();
@@ -62,7 +67,9 @@ export class UploadRepository extends Repository {
     return body;
   }
 
-  public async segmentedVideoUpload(options: UploadSegmentedVideoOptions): Promise<StatusResponse & { retryContext: UploadRetryContext }> {
+  public async segmentedVideoUpload(
+    options: UploadSegmentedVideoOptions,
+  ): Promise<StatusResponse & { retryContext: UploadRetryContext }> {
     const segmentDivider = options.segmentDivider || SEGMENT_DIVIDERS.sectionSize(Math.pow(2, 24));
     const uploadId = options.uploadId || Date.now().toString();
     const retryContext = options.retryContext || { num_step_auto_retry: 0, num_reupload: 0, num_step_manual_retry: 0 };
@@ -180,10 +187,16 @@ export class UploadRepository extends Repository {
     return ruploadParams;
   }
 
-  private static createVideoRuploadParams(options: UploadVideoOptions, uploadId: number | string, retryContext?: UploadRetryContext) {
+  private static createVideoRuploadParams(
+    options: UploadVideoOptions,
+    uploadId: number | string,
+    retryContext?: UploadRetryContext,
+  ) {
     const { duration, width, height } = options;
     const ruploadParams: any = {
-      retry_context: JSON.stringify(retryContext || { num_step_auto_retry: 0, num_reupload: 0, num_step_manual_retry: 0 }),
+      retry_context: JSON.stringify(
+        retryContext || { num_step_auto_retry: 0, num_reupload: 0, num_step_manual_retry: 0 },
+      ),
       media_type: options.mediaType || '2',
       xsharing_user_ids: JSON.stringify([]),
       upload_id: uploadId.toString(),

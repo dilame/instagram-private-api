@@ -378,8 +378,10 @@ export class PublishService extends Repository {
     const uploadId = Date.now().toString();
     const uploadResult = await this.client.upload.segmentedVideoUpload({
       video: options.video,
-      isIgtvVideo: true, ...videoInfo,
-      uploadId, ...options.uploadOptions,
+      isIgtvVideo: true,
+      ...videoInfo,
+      uploadId,
+      ...options.uploadOptions,
     });
     await this.client.upload.photo({ uploadId, file: options.coverFrame });
     // await this.resolveTranscode(videoInfo, uploadId, options.transcodeDelay, options.maxTranscodeTries);
@@ -405,7 +407,12 @@ export class PublishService extends Repository {
         if (ratio > 1) {
           throw new Error('Received invalid video ratio. Try specifying feedPreviewCrop directly.');
         }
-        form.feed_preview_crop = { crop_left: 0.0, crop_right: 1.0, crop_top: (1 - ratio) / 2, crop_bottom: ratio + (1 - ratio) / 2 };
+        form.feed_preview_crop = {
+          crop_left: 0.0,
+          crop_right: 1.0,
+          crop_top: (1 - ratio) / 2,
+          crop_bottom: ratio + (1 - ratio) / 2,
+        };
       }
     }
     const finalInput = { ...form, ...options.configureOptions };

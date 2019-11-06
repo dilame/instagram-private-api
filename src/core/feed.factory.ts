@@ -24,7 +24,8 @@ import {
   TagsFeed,
   TimelineFeed,
   UserFeed,
-  UsertagsFeed, IgtvBrowseFeed,
+  UsertagsFeed,
+  IgtvBrowseFeed,
 } from '../feeds';
 import { DirectInboxFeedResponseThreadsItem } from '../responses';
 import { TimelineFeedReason } from '../types/timeline-feed.types';

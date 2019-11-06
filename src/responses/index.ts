@@ -87,3 +87,4 @@ export * from './location.repository.story.response';
 export * from './user-story.feed.response';
 export * from './media.inline-child-comments.feed.response';
 export * from './igtv.browse.feed.response';
+export * from './media.updated-media.response';

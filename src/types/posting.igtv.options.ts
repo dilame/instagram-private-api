@@ -15,7 +15,10 @@ export interface PostingIgtvOptions {
 
   shareToFeed?: boolean;
   feedPreviewCrop?: {
-    left: number, right: number, top: number, bottom: number,
+    left: number;
+    right: number;
+    top: number;
+    bottom: number;
   };
 
   // default = 2000ms
