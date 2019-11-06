@@ -87,7 +87,7 @@ export class Request {
         jar: this.client.state.cookieJar,
         strictSSL: false,
         gzip: true,
-        headers: this.getDefaultHeaders(),
+        headers: this.getDefaultHeaders(userOptions),
       },
       this.defaults,
     );
@@ -179,10 +179,10 @@ export class Request {
     }
   }
 
-  private getDefaultHeaders() {
+  private getDefaultHeaders(options = {}) {
     // TODO: unquoted Host and Connection?!
     return {
-      'User-Agent': this.client.state.appUserAgent,
+      'User-Agent': options.userAgent || this.client.state.appUserAgent,
       'Accept-Language': this.client.state.language.replace('_', '-'),
       'X-IG-App-Locale': this.client.state.language,
       'X-IG-Device-Locale': this.client.state.language,

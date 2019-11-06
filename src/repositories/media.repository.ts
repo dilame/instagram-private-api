@@ -198,9 +198,10 @@ export class MediaRepository extends Repository {
     return body;
   }
 
-  public async blocked() {
+  public async blocked(options = {}) {
     const { body } = await this.client.request.send<MediaRepositoryBlockedResponse>({
       url: `/api/v1/media/blocked/`,
+      userAgent: options.userAgent,
     });
     return body.media_ids;
   }

@@ -22,11 +22,16 @@ import { IgSignupBlockError } from '../errors/ig-signup-block.error';
 import Bluebird = require('bluebird');
 
 export class AccountRepository extends Repository {
-  public async login(username: string, password: string): Promise<AccountRepositoryLoginResponseLogged_in_user> {
+  public async login(
+    username: string,
+    password: string,
+    options = {},
+  ): Promise<AccountRepositoryLoginResponseLogged_in_user> {
     const response = await Bluebird.try(() =>
       this.client.request.send<AccountRepositoryLoginResponseRootObject>({
         method: 'POST',
         url: '/api/v1/accounts/login/',
+        userAgent: options.userAgent,
         form: this.client.request.sign({
           username,
           password,
