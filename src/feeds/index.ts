@@ -23,3 +23,4 @@ export * from './music-genre.feed';
 export * from './usertags.feed';
 export * from './posts-insights.feed';
 export * from './stories-insights.feed';
+export * from './igtv.browse.feed';

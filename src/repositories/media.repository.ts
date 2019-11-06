@@ -22,7 +22,7 @@ import {
   MediaConfigureSidecarItem,
   MediaConfigureSidecarOptions,
   MediaConfigureSidecarVideoItem,
-  MediaConfigureTimelineVideoOptions,
+  MediaConfigureTimelineVideoOptions, MediaConfigureToIgtvOptions,
 } from '../types';
 import { MediaRepositoryConfigureResponseRootObject } from '../responses';
 import Chance = require('chance');
@@ -465,9 +465,9 @@ export class MediaRepository extends Repository {
       video_result: '',
       _uid: this.client.state.cookieUserId,
       date_time_original:
-        DateTime.local()
-          .toISO()
-          .replace(/[-:]/g, '') + 'Z',
+        new Date()
+          .toISOString()
+          .replace(/[-:]/g, ''),
       device_id: this.client.state.deviceId,
       _uuid: this.client.state.uuid,
       device: devicePayload,
@@ -572,6 +572,46 @@ export class MediaRepository extends Repository {
       url: '/api/v1/media/configure_sidecar/',
       method: 'POST',
       form: this.client.request.sign(options),
+    });
+    return body;
+  }
+
+  public async configureToIgtv(options: MediaConfigureToIgtvOptions) {
+    const form: MediaConfigureToIgtvOptions = defaultsDeep(options, {
+      caption: '',
+      date_time_original:  new Date().toISOString().replace(/[-:]/g, ''),
+      igtv_share_preview_to_feed: '0',
+      clips: [{
+        length: options.length,
+        source_type: options.source_type || '4',
+      }],
+      audio_muted: false,
+      poster_frame_index: 0,
+      filter_type: '0',
+      timezone_offset: this.client.state.timezoneOffset,
+      media_folder: options.source_type !== '4' ? 'Camera' : undefined,
+      source_type: '4',
+      device:  this.client.state.devicePayload,
+      retryContext: { num_step_auto_retry: 0, num_reupload: 0, num_step_manual_retry: 0 },
+    });
+    const retryContext = options.retryContext;
+    delete form.retryContext;
+    const {body} = await this.client.request.send({
+      url: '/api/v1/media/configure_to_igtv/',
+      method: 'POST',
+      qs: {
+        video: '1',
+      },
+      headers: {
+        is_igtv_video: '1',
+        retry_context: JSON.stringify(retryContext),
+      },
+      form: this.client.request.sign({
+        ...form,
+        _csrftoken: this.client.state.cookieCsrfToken,
+        _uid: this.client.state.cookieUserId,
+        _uuid: this.client.state.uuid,
+      }),
     });
     return body;
   }

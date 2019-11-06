@@ -146,8 +146,7 @@ export class Request {
     }
   }
 
-  private getDefaultHeaders() {
-    // TODO: unquoted Host and Connection?!
+  public getDefaultHeaders() {
     return {
       'User-Agent': this.client.state.appUserAgent,
       'X-Pigeon-Session-Id': this.client.state.pigeonSessionId,
@@ -160,6 +159,8 @@ export class Request {
       'X-IG-Capabilities': this.client.state.capabilitiesHeader,
       'X-IG-App-ID': this.client.state.fbAnalyticsApplicationId,
       'X-IG-VP9-Capable': true,
+      'X-IG-Device-ID': this.client.state.phoneId,
+      'X-IG-Android-ID': this.client.state.deviceId,
       'Accept-Language': this.client.state.language.replace('_', '-'),
       Host: 'i.instagram.com',
       'Accept-Encoding': 'gzip',

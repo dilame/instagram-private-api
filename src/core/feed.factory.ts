@@ -24,7 +24,7 @@ import {
   TagsFeed,
   TimelineFeed,
   UserFeed,
-  UsertagsFeed,
+  UsertagsFeed, IgtvBrowseFeed,
 } from '../feeds';
 import { DirectInboxFeedResponseThreadsItem } from '../responses';
 import { TimelineFeedReason } from '../types/timeline-feed.types';
@@ -196,6 +196,12 @@ export class FeedFactory {
       mediaId,
       commentId,
       nextMinId: minId,
+    });
+  }
+
+  public igtvBrowse(isPrefetch?: boolean): IgtvBrowseFeed {
+    return plainToClassFromExist(new IgtvBrowseFeed(this.client), {
+      isPrefetch: !!isPrefetch,
     });
   }
 }

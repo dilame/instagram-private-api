@@ -1,23 +1,25 @@
 import { Repository } from '../core/repository';
-import sizeOf = require('image-size');
 import {
+  IgResponse,
+  MediaConfigureStoryBaseOptions,
   MediaConfigureTimelineOptions,
   MediaConfigureTimelineVideoOptions,
-  PostingPhotoOptions,
-  PostingStoryPhotoOptions,
-  PostingVideoOptions,
+  MediaConfigureToIgtvOptions,
   PostingAlbumItem,
   PostingAlbumOptions,
   PostingAlbumPhotoItem,
   PostingAlbumVideoItem,
+  PostingPhotoOptions,
+  PostingStoryPhotoOptions,
   PostingStoryVideoOptions,
-  MediaConfigureStoryBaseOptions,
-  IgResponse,
+  PostingVideoOptions,
 } from '../types';
 import { PostingLocation, PostingStoryOptions } from '../types/posting.options';
-import Bluebird = require('bluebird');
 import { IgConfigureVideoError, IgResponseError, IgUploadVideoError } from '../errors';
 import { UploadRepositoryVideoResponseRootObject } from '../responses';
+import { PostingIgtvOptions } from '../types/posting.igtv.options';
+import sizeOf = require('image-size');
+import Bluebird = require('bluebird');
 import Chance = require('chance');
 
 export class PublishService extends Repository {
@@ -369,6 +371,54 @@ export class PublishService extends Repository {
       configureOptions.story_sticker_ids = storyStickerIds.join(',');
     }
     return uploadAndConfigure();
+  }
+
+  public async igtvVideo(options: PostingIgtvOptions) {
+    const videoInfo = PublishService.getVideoInfo(options.video);
+    const uploadId = Date.now().toString();
+    const uploadResult = await this.client.upload.segmentedVideoUpload({
+      video: options.video,
+      isIgtvVideo: true, ...videoInfo,
+      uploadId, ...options.uploadOptions,
+    });
+    await this.client.upload.photo({ uploadId, file: options.coverFrame });
+    // await this.resolveTranscode(videoInfo, uploadId, options.transcodeDelay, options.maxTranscodeTries);
+    const form: MediaConfigureToIgtvOptions = {
+      upload_id: uploadId,
+      title: options.title,
+      caption: options.caption,
+      audio_muted: options.audioMuted,
+      length: videoInfo.duration / 1000.0,
+      extra: {
+        source_width: videoInfo.width,
+        source_height: videoInfo.height,
+      },
+      retryContext: uploadResult.retryContext,
+    };
+    if (options.shareToFeed) {
+      form.igtv_share_preview_to_feed = '1';
+      if (options.feedPreviewCrop) {
+        const { left, right, top, bottom } = options.feedPreviewCrop;
+        form.feed_preview_crop = { crop_left: left, crop_bottom: bottom, crop_right: right, crop_top: top };
+      } else {
+        const ratio = videoInfo.width / videoInfo.height;
+        if (ratio > 1) {
+          throw new Error('Received invalid video ratio. Try specifying feedPreviewCrop directly.');
+        }
+        form.feed_preview_crop = { crop_left: 0.0, crop_right: 1.0, crop_top: (1 - ratio) / 2, crop_bottom: ratio + (1 - ratio) / 2 };
+      }
+    }
+    const finalInput = { ...form, ...options.configureOptions };
+    for (let i = 0; i < 6; i++) {
+      try {
+        return await this.client.media.configureToIgtv(finalInput);
+      } catch (e) {
+        if (i >= 6) {
+          throw new IgConfigureVideoError(e.response, finalInput);
+        }
+        await Bluebird.delay((i + 1) * 2 * 1000);
+      }
+    }
   }
 
   /**
