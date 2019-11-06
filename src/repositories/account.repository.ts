@@ -25,7 +25,7 @@ export class AccountRepository extends Repository {
   public async login(
     username: string,
     password: string,
-    options = {},
+    options = { userAgent: '' },
   ): Promise<AccountRepositoryLoginResponseLogged_in_user> {
     const response = await Bluebird.try(() =>
       this.client.request.send<AccountRepositoryLoginResponseRootObject>({

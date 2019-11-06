@@ -75,7 +75,7 @@ export class Request {
     return resolveWithFullResponse ? response : response.body;
   }
 
-  public async send<T = any>(userOptions: Options & { isReg?: boolean }): Promise<IgResponse<T>> {
+  public async send<T = any>(userOptions: Options & { isReg?: boolean; userAgent?: string }): Promise<IgResponse<T>> {
     const options = defaultsDeep(
       userOptions,
       {
@@ -101,7 +101,7 @@ export class Request {
     const response = userOptions.isReg ? await saveTrafficRequest(options) : await this.faultTolerantRequest(options);
 
     process.nextTick(() => this.end$.next());
-    if (response.body.status === 'ok' || (onlyCheckHttpStatus && response.statusCode === 200)) {
+    if (response.body.status === 'ok' || response.statusCode === 200) {
       /*newCookieJar
         .getCookies(parsedUrl)
         .forEach(cookie => this.client.state.cookieJar.setCookie(cookie.toString(), parsedUrl));*/
@@ -179,7 +179,7 @@ export class Request {
     }
   }
 
-  private getDefaultHeaders(options = {}) {
+  private getDefaultHeaders(options: Options & { isReg?: boolean; userAgent?: string }) {
     // TODO: unquoted Host and Connection?!
     return {
       'User-Agent': options.userAgent || this.client.state.appUserAgent,
