@@ -103,6 +103,7 @@ export class MediaRepository extends Repository {
     });
 
     const { body } = await this.client.request.send({
+      userAgent: options.userAgent,
       url: `/api/v1/media/${options.mediaId}/${options.action}/`,
       method: 'POST',
       form: {

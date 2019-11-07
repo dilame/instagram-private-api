@@ -57,6 +57,7 @@ export type UnlikeRequestOptions = LikeOrUnlikeBaseOptions & {
 
 export type MediaLikeOrUnlikeOptions = LikeOrUnlikeBaseOptions & {
   action: 'like' | 'unlike';
+  userAgent?: string;
   // d - means double-tap. If you liked post by double tap then d=1. You cant unlike post by double tap
   d?: 1 | 0;
 };
