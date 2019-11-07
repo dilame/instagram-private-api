@@ -190,7 +190,7 @@ export class State {
   }
 
   public get cookieUserId() {
-    return this.extractCookieValue('ds_user_id');
+    return '0';//this.extractCookieValue('ds_user_id');
   }
 
   public get cookieUsername() {
