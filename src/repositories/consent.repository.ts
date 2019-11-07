@@ -9,37 +9,53 @@ export class ConsentRepository extends Repository {
       return response;
     }
     const dob = new Chance().birthday();
+
     await Bluebird.try(() => this.existingUserFlowIntro()).catch(() => {});
     await Bluebird.try(() => this.existingUserFlowTosAndTwoAgeButton()).catch(() => {});
     await Bluebird.try(() => this.existingUserFlowDob(dob.getFullYear(), dob.getMonth(), dob.getDay())).catch(() => {});
     return true;
   }
 
-  public existingUserFlowIntro() {
-    return this.existingUserFlow({
-      current_screen_key: 'qp_intro',
-      updates: JSON.stringify({ existing_user_intro_state: '2' }),
-    });
+  public existingUserFlowIntro(data = { userAgent: '' }) {
+    return this.existingUserFlow(
+      {
+        current_screen_key: 'qp_intro',
+        updates: JSON.stringify({ existing_user_intro_state: '2' }),
+      },
+      data,
+    );
   }
 
-  public existingUserFlowDob(year: string | number, month: string | number, day: string | number) {
-    return this.existingUserFlow({
-      current_screen_key: 'dob',
-      day: String(day),
-      month: String(month),
-      year: String(year),
-    });
+  public existingUserFlowDob(
+    year: string | number,
+    month: string | number,
+    day: string | number,
+    data = { userAgent: '' },
+  ) {
+    return this.existingUserFlow(
+      {
+        current_screen_key: 'dob',
+        day: String(day),
+        month: String(month),
+        year: String(year),
+      },
+      data,
+    );
   }
 
-  public existingUserFlowTosAndTwoAgeButton() {
-    return this.existingUserFlow({
-      current_screen_key: 'tos_and_two_age_button',
-      updates: JSON.stringify({ age_consent_state: '2', tos_data_policy_consent_state: '2' }),
-    });
+  public existingUserFlowTosAndTwoAgeButton(data = { userAgent: '' }) {
+    return this.existingUserFlow(
+      {
+        current_screen_key: 'tos_and_two_age_button',
+        updates: JSON.stringify({ age_consent_state: '2', tos_data_policy_consent_state: '2' }),
+      },
+      data,
+    );
   }
 
-  public async existingUserFlow(data?: { [x: string]: any }) {
+  public async existingUserFlow(data?: { [x: string]: any }, options = { userAgent: '' }) {
     const { body } = await this.client.request.send({
+      userAgent: options.userAgent,
       url: '/api/v1/consent/existing_user_flow/',
       method: 'POST',
       form: this.client.request.sign({
