@@ -182,7 +182,7 @@ export class Request {
   private getDefaultHeaders(options: Options & { isReg?: boolean; userAgent?: string }) {
     // TODO: unquoted Host and Connection?!
     return {
-      'User-Agent': options.userAgent || this.client.state.appUserAgent,
+      'User-Agent': options.userAgent || this.client.state.userAgent || this.client.state.appUserAgent,
       'Accept-Language': this.client.state.language.replace('_', '-'),
       'X-IG-App-Locale': this.client.state.language,
       'X-IG-Device-Locale': this.client.state.language,

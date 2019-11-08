@@ -43,6 +43,7 @@ export class State {
   build: string;
   uuid: string;
   phoneId: string;
+  userAgent: string;
   /**
    * Google Play Advertising ID.
    *
@@ -101,8 +102,8 @@ export class State {
     let res = this.deviceString.split('; ')[2].split('x');
     return {
       height: res[1],
-      width: res[0]
-    }
+      width: res[0],
+    };
   }
 
   public get deviceManufacturer() {
@@ -123,21 +124,21 @@ export class State {
 
   public get fbUserAgent() {
     let resolution = this.resolution;
-    
+
     let props = {
-      'FBAN': 'InstagramForAndroid',
-      'FBAV': this.appVersion,
-      'FBBV': this.appVersionCode,
-      'FBDM': `{density=4.0,width=${resolution.width},height=${resolution.height}}`,
-      'FBLC': this.language,
-      'FBCR': '',
-      'FBMF': this.deviceManufacturer.toUpperCase(),
-      'FBBD': this.deviceManufacturer.toUpperCase(),
-      'FBPN': 'com.instagram.android',
-      'FBDV': this.deviceModel.toUpperCase(),
-      'FBSV': '7.0',
-      'FBBK': 1,
-      'FBCA': 'armeabi-v7a:armeabi'
+      FBAN: 'InstagramForAndroid',
+      FBAV: this.appVersion,
+      FBBV: this.appVersionCode,
+      FBDM: `{density=4.0,width=${resolution.width},height=${resolution.height}}`,
+      FBLC: this.language,
+      FBCR: '',
+      FBMF: this.deviceManufacturer.toUpperCase(),
+      FBBD: this.deviceManufacturer.toUpperCase(),
+      FBPN: 'com.instagram.android',
+      FBDV: this.deviceModel.toUpperCase(),
+      FBSV: '7.0',
+      FBBK: 1,
+      FBCA: 'armeabi-v7a:armeabi',
     };
 
     let result = '';
@@ -148,7 +149,7 @@ export class State {
     }
 
     return `[${result}]`;
-  }  
+  }
 
   public get devicePayload() {
     const deviceParts = this.deviceString.split(';');
