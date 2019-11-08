@@ -7,3 +7,4 @@ export * from './entities';
 export * from './errors';
 export * from './feeds';
 export * from './types';
+export * from './responses'
