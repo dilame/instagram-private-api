@@ -191,7 +191,11 @@ export class State {
   }
 
   public get cookieUserId() {
-    return '0'; //this.extractCookieValue('ds_user_id');
+    try {
+      return this.extractCookieValue('ds_user_id');
+    } catch (e) {
+      return '0';
+    }
   }
 
   public get cookieUsername() {
