@@ -208,13 +208,13 @@ export class Request {
       'Accept-Language': this.client.state.language.replace('_', '-'),
       'X-IG-Capabilities': this.client.state.capabilitiesHeader,
       'X-IG-App-ID': 124024574287414,
-      'X-IG-Connection-Type': 'WiFi',
+      'X-IG-Connection-Type': 'WIFI',
       'X-IG-Connection-Speed': '-1kbps',
       Host: 'i.instagram.com',
       'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
       'X-IG-ABR-Connection-Speed-KBPS': 0,
       Connection: 'close',
-      'Accept-Encoding': 'gzip, deflate',
+      'Accept-Encoding': 'gzip, deflate, br',
     };
   }
 }
