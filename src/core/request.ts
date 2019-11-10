@@ -205,10 +205,7 @@ export class Request {
       'Accept-Encoding': 'gzip, deflate',
       Connection: 'close',*/
 
-      'Accept-Language': `${this.client.state.language.split('_')[0]};q=1, ${this.client.state.language.replace(
-        '_',
-        '-',
-      )};q=0.9`,
+      'Accept-Language': this.client.state.language.replace('_', '-'),
       'X-IG-Capabilities': this.client.state.capabilitiesHeader,
       'X-IG-App-ID': 124024574287414,
       'X-IG-Connection-Type': 'WiFi',
