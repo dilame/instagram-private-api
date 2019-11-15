@@ -180,6 +180,16 @@ export class Request {
   }
 
   private getDefaultHeaders(options: Options & { isReg?: boolean; userAgent?: string }) {
+    let auth = null;
+    if (this.client.state.cookieUserId && this.client.state.extractCookie('sessionid')) {
+      auth =
+        'Bearer IGT:2:' +
+        Buffer.from(
+          `{"ds_user_id":"${this.client.state.cookieUserId}","sessionid":"${this.client.state.extractCookieValue(
+            'sessionid',
+          )}"}`,
+        ).toString('base64');
+    }
     // TODO: unquoted Host and Connection?!
     return {
       'User-Agent': options.userAgent || this.client.state.userAgent || this.client.state.appUserAgent,
@@ -216,6 +226,8 @@ export class Request {
       'X-IG-ABR-Connection-Speed-KBPS': 0,
       Connection: 'close',
       'Accept-Encoding': 'gzip, deflate, br',*/
+
+      Authorization: auth ? auth : void 0,
     };
   }
 }
