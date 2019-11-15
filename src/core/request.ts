@@ -183,7 +183,8 @@ export class Request {
     // TODO: unquoted Host and Connection?!
     return {
       'User-Agent': options.userAgent || this.client.state.userAgent || this.client.state.appUserAgent,
-      /*'Accept-Language': this.client.state.language.replace('_', '-'),
+
+      'Accept-Language': this.client.state.language.replace('_', '-'),
       'X-IG-App-Locale': this.client.state.language,
       'X-IG-Device-Locale': this.client.state.language,
       'X-Bloks-Version-Id': '0a3ae4c88248863609Connectionc67e278f34af44673cff300bc76add965a9fb036bd3ca3',
@@ -203,9 +204,9 @@ export class Request {
       'X-IG-App-ID': this.client.state.fbAnalyticsApplicationId,
       Host: 'i.instagram.com',
       'Accept-Encoding': 'gzip, deflate',
-      Connection: 'close',*/
+      Connection: 'close',
 
-      'Accept-Language': this.client.state.language.replace('_', '-'),
+      /*'Accept-Language': this.client.state.language.replace('_', '-'),
       'X-IG-Capabilities': this.client.state.capabilitiesHeader,
       'X-IG-App-ID': 124024574287414,
       'X-IG-Connection-Type': 'WiFi',
@@ -214,7 +215,7 @@ export class Request {
       'Content-Type': 'application/x-www-form-urlencoded',
       'X-IG-ABR-Connection-Speed-KBPS': 0,
       Connection: 'close',
-      'Accept-Encoding': 'gzip, deflate, br',
+      'Accept-Encoding': 'gzip, deflate, br',*/
     };
   }
 }
