@@ -164,7 +164,7 @@ export class State {
     }
   }
 
-  public async deserializeCookieJar(cookies: string) {
+  public async deserializeCookieJar(cookies: string | CookieJar.Serialized) {
     this.cookieJar['_jar'] = await Bluebird.fromCallback(cb => CookieJar.deserialize(cookies, this.cookieStore, cb));
   }
 
