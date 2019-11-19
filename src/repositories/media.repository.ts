@@ -48,9 +48,9 @@ export class MediaRepository extends Repository {
   }
 
   public async editMedia({
-                           mediaId,
-                           captionText,
-                         }: {
+    mediaId,
+    captionText,
+  }: {
     mediaId: string;
     captionText: string;
   }): Promise<MediaEditResponseRootObject> {
@@ -70,9 +70,9 @@ export class MediaRepository extends Repository {
   }
 
   public async delete({
-                        mediaId,
-                        mediaType = 'PHOTO',
-                      }: {
+    mediaId,
+    mediaType = 'PHOTO',
+  }: {
     mediaId: string;
     mediaType?: 'PHOTO' | 'VIDEO' | 'CAROUSEL';
   }) {
@@ -168,11 +168,11 @@ export class MediaRepository extends Repository {
   }
 
   public async comment({
-                         mediaId,
-                         text,
-                         replyToCommentId,
-                         module = 'self_comments_v2',
-                       }: {
+    mediaId,
+    text,
+    replyToCommentId,
+    module = 'self_comments_v2',
+  }: {
     mediaId: string;
     text: string;
     replyToCommentId?: string;

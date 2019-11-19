@@ -50,7 +50,6 @@ export class StickerService extends Repository {
 export type StickerConfig = any & { story_sticker_ids };
 
 export class StickerFactory {
-
   private stickers: InstaSticker[] = [];
 
   public add(sticker: InstaSticker): this {
@@ -437,7 +436,7 @@ class QuizSticker extends InstaSticker {
   public options: QuizStickerOptions;
 
   public constructor(options: QuizStickerOptions) {
-    super(0.7291667, 0.11824318 + (options.options.length * 0.10304056));
+    super(0.7291667, 0.11824318 + options.options.length * 0.10304056);
     this.options = defaults(options, {
       textColor: '#ffffff',
       startBackgroundColor: '#262626',
