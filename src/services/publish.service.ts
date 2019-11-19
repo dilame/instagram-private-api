@@ -268,6 +268,7 @@ export class PublishService extends Repository {
     const storyStickerIds = [];
     const configureOptions: MediaConfigureStoryBaseOptions = {
       configure_mode: '1',
+      ...(options.stickerConfig ? options.stickerConfig : {}),
     };
 
     const uploadAndConfigure = () =>

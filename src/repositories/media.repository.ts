@@ -48,9 +48,9 @@ export class MediaRepository extends Repository {
   }
 
   public async editMedia({
-    mediaId,
-    captionText,
-  }: {
+                           mediaId,
+                           captionText,
+                         }: {
     mediaId: string;
     captionText: string;
   }): Promise<MediaEditResponseRootObject> {
@@ -70,9 +70,9 @@ export class MediaRepository extends Repository {
   }
 
   public async delete({
-    mediaId,
-    mediaType = 'PHOTO',
-  }: {
+                        mediaId,
+                        mediaType = 'PHOTO',
+                      }: {
     mediaId: string;
     mediaType?: 'PHOTO' | 'VIDEO' | 'CAROUSEL';
   }) {
@@ -168,11 +168,11 @@ export class MediaRepository extends Repository {
   }
 
   public async comment({
-    mediaId,
-    text,
-    replyToCommentId,
-    module = 'self_comments_v2',
-  }: {
+                         mediaId,
+                         text,
+                         replyToCommentId,
+                         module = 'self_comments_v2',
+                       }: {
     mediaId: string;
     text: string;
     replyToCommentId?: string;
@@ -383,39 +383,23 @@ export class MediaRepository extends Repository {
   }
 
   private static stringifyStoryStickers(form: MediaConfigureStoryBaseOptions) {
-    if (typeof form.story_hashtags !== 'undefined') {
-      form.story_hashtags = JSON.stringify(form.story_hashtags);
-    }
-    if (typeof form.story_locations !== 'undefined') {
-      form.story_locations = JSON.stringify(form.story_locations);
-    }
-    if (typeof form.reel_mentions !== 'undefined') {
-      form.reel_mentions = JSON.stringify(form.reel_mentions);
-    }
-    if (typeof form.story_polls !== 'undefined') {
-      form.story_polls = JSON.stringify(form.story_polls);
-    }
-    if (typeof form.story_sliders !== 'undefined') {
-      form.story_sliders = JSON.stringify(form.story_sliders);
-    }
-    if (typeof form.story_questions !== 'undefined') {
-      form.story_questions = JSON.stringify(form.story_questions);
-    }
-    if (typeof form.story_countdowns !== 'undefined') {
-      form.story_countdowns = JSON.stringify(form.story_countdowns);
-    }
-    if (typeof form.attached_media !== 'undefined') {
-      form.attached_media = JSON.stringify(form.attached_media);
-    }
-    if (typeof form.story_cta !== 'undefined') {
-      form.story_cta = JSON.stringify(form.story_cta);
-    }
-    if (typeof form.story_chats !== 'undefined') {
-      form.story_chats = JSON.stringify(form.story_chats);
-    }
-    if (typeof form.story_quizs !== 'undefined') {
-      form.story_quizs = JSON.stringify(form.story_quizs);
-    }
+    const serialize = (obj: any | undefined) => {
+      if (typeof obj !== 'undefined' && Array.isArray(obj) && obj.length > 0 && typeof obj[0] !== 'string') {
+        return JSON.stringify(obj);
+      }
+      return obj;
+    };
+    form.story_hashtags = serialize(form.story_hashtags);
+    form.story_locations = serialize(form.story_locations);
+    form.reel_mentions = serialize(form.reel_mentions);
+    form.story_polls = serialize(form.story_polls);
+    form.story_sliders = serialize(form.story_sliders);
+    form.story_questions = serialize(form.story_questions);
+    form.story_countdowns = serialize(form.story_countdowns);
+    form.attached_media = serialize(form.attached_media);
+    form.story_cta = serialize(form.story_cta);
+    form.story_chats = serialize(form.story_chats);
+    form.story_quizs = serialize(form.story_quizs);
   }
 
   public async configureToStory(options: MediaConfigureStoryPhotoOptions) {
