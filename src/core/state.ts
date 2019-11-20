@@ -9,6 +9,7 @@ import * as supportedCapabilities from '../samples/supported-capabilities.json';
 import {
   APP_VERSION,
   APP_VERSION_CODE,
+  BLOKS_VERSION_ID,
   BREADCRUMB_KEY,
   EXPERIMENTS,
   FACEBOOK_ANALYTICS_APPLICATION_ID,
@@ -33,12 +34,18 @@ export class State {
   fbOrcaApplicationId: string = FACEBOOK_ORCA_APPLICATION_ID;
   loginExperiments: string = LOGIN_EXPERIMENTS;
   experiments: string = EXPERIMENTS;
+  bloksVersionId: string = BLOKS_VERSION_ID;
   supportedCapabilities = supportedCapabilities;
   language: string = 'en_US';
   timezoneOffset: string = String(new Date().getTimezoneOffset() * -60);
   radioType = 'wifi-none';
-  capabilitiesHeader = '3brTvw==';
+  capabilitiesHeader = '3brTvwE=';
   connectionTypeHeader = 'WIFI';
+  isLayoutRTL: boolean = false;
+  euDCEnabled?: boolean = undefined;
+  adsOptOut: boolean = false;
+  thumbnailCacheBustingValue: number = 1000;
+  igWWWClaim?: string;
   deviceString: string;
   build: string;
   uuid: string;
@@ -82,11 +89,7 @@ export class State {
   }
 
   public get webUserAgent() {
-    return `Mozilla/5.0 (Linux; Android ${this.devicePayload.android_release}; ${this.devicePayload.model} Build/${
-      this.build
-    }; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/70.0.3538.110 Mobile Safari/537.36 ${
-      this.appUserAgent
-    }`;
+    return `Mozilla/5.0 (Linux; Android ${this.devicePayload.android_release}; ${this.devicePayload.model} Build/${this.build}; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/70.0.3538.110 Mobile Safari/537.36 ${this.appUserAgent}`;
   }
 
   public get devicePayload() {

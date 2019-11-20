@@ -1,6 +1,5 @@
 import { random } from 'lodash';
 import { Repository } from '../core/repository';
-import { UploadPhotoOptions } from '../types/upload.photo.options';
 import Chance = require('chance');
 import { StatusResponse, UploadRepositoryPhotoResponseRootObject } from '../responses';
 import {
@@ -8,7 +7,8 @@ import {
   UploadRetryContext,
   UploadSegmentedVideoOptions,
   UploadVideoOptions,
-} from '../types/upload.video.options';
+  UploadPhotoOptions,
+} from '../types';
 
 export class UploadRepository extends Repository {
   private chance = new Chance();

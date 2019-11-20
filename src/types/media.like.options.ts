@@ -40,7 +40,8 @@ export type LikeModuleInfoOption = (
   | Profile
   | MediaViewProfile
   | VideoViewProfile
-  | PhotoViewProfile) & { [x: string]: any };
+  | PhotoViewProfile
+) & { [x: string]: any };
 
 type LikeOrUnlikeBaseOptions = {
   mediaId: string;
