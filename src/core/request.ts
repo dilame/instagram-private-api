@@ -197,7 +197,7 @@ export class Request {
       'Accept-Language': this.client.state.language.replace('_', '-'),
       'X-IG-App-Locale': this.client.state.language,
       'X-IG-Device-Locale': this.client.state.language,
-      'X-Bloks-Version-Id': '0a3ae4c88248863609Connectionc67e278f34af44673cff300bc76add965a9fb036bd3ca3',
+      'X-Bloks-Version-Id': '0a3ae4c88248863609c67e278f34af44673cff300bc76add965a9fb036bd3ca3',
       'X-IG-WWW-Claim': this.client.state['www-claim'] ? this.client.state['www-claim'] : void 0,
       'X-Bloks-Is-Layout-RTL': 'false',
       'X-IG-Device-ID': this.client.state.uuid,
