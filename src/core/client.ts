@@ -37,6 +37,7 @@ import { InsightsService } from '../services/insights.service';
 import { RestrictActionRepository } from '../repositories/restrict-action.repository';
 import { AddressBookRepository } from '../repositories/address-book.repository';
 import { StickerService } from '../services/sticker.service';
+import { StatusRepository } from '../repositories/status.repository';
 
 export class IgApiClient {
   public state = new State();
@@ -73,6 +74,7 @@ export class IgApiClient {
   public ads = new AdsRepository(this);
   public restrictAction = new RestrictActionRepository(this);
   public addressBook = new AddressBookRepository(this);
+  public status = new StatusRepository(this);
   /* Services */
   public publish = new PublishService(this);
   public search = new SearchService(this);

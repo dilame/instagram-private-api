@@ -42,6 +42,7 @@ export class SimulateService extends Repository {
       () => this.client.discover.topicalExplore(),
       () => this.client.discover.markSuSeen(),
       () => this.facebookOta(),
+      () => this.client.status.getViewableStatuses(),
     ];
   }
 

@@ -155,7 +155,7 @@ export class Request {
     return new IgResponseError(response);
   }
 
-  private async faultTolerantRequest(options: Options) {
+  protected async faultTolerantRequest(options: Options) {
     try {
       return await retry(async () => request(options), this.attemptOptions);
     } catch (err) {
@@ -178,9 +178,7 @@ export class Request {
       'X-IG-Bandwidth-Speed-KBPS': '-1.000',
       'X-IG-Bandwidth-TotalBytes-B': '0',
       'X-IG-Bandwidth-TotalTime-MS': '0',
-      ...(typeof this.client.state.euDCEnabled === 'undefined'
-        ? {}
-        : { 'X-IG-EU-DC-ENABLED': this.client.state.euDCEnabled }),
+      'X-IG-EU-DC-ENABLED': typeof this.client.state.euDCEnabled === 'undefined' ? void 0 : this.client.state.euDCEnabled.toString(),
       'X-IG-Extended-CDN-Thumbnail-Cache-Busting-Value': this.client.state.thumbnailCacheBustingValue.toString(),
       'X-Bloks-Version-Id': this.client.state.bloksVersionId,
       'X-MID': this.client.state.extractCookie('mid')?.value,
@@ -192,9 +190,10 @@ export class Request {
       'X-IG-Device-ID': this.client.state.uuid,
       'X-IG-Android-ID': this.client.state.deviceId,
       'Accept-Language': this.client.state.language.replace('_', '-'),
+      'X-FB-HTTP-Engine': 'Liger',
       Host: 'i.instagram.com',
       'Accept-Encoding': 'gzip',
-      Connection: 'Keep-Alive',
+      Connection: 'close',
     };
   }
 }
