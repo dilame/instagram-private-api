@@ -31,9 +31,11 @@ export class AccountRepository extends Repository {
           phone_id: this.client.state.phoneId,
           _csrftoken: this.client.state.cookieCsrfToken,
           device_id: this.client.state.deviceId,
-          adid: this.client.state.adid,
+          adid: '' /*this.client.state.adid ? not set on pre-login*/,
           google_tokens: '[]',
           login_attempt_count: 0,
+          country_codes: JSON.stringify([{ country_code: '1', source: 'default' }]),
+          jazoest: AccountRepository.createJazoest(this.client.state.phoneId),
         }),
       }),
     ).catch(IgResponseError, error => {
@@ -53,6 +55,15 @@ export class AccountRepository extends Repository {
       }
     });
     return response.body.logged_in_user;
+  }
+
+  private static createJazoest(input: string): string {
+    const buf = Buffer.from(input, 'ascii');
+    let sum = 0;
+    for (let i = 0; i < buf.byteLength; i++) {
+      sum += buf.readUInt8(i);
+    }
+    return `2${sum}`;
   }
 
   public async twoFactorLogin(
@@ -290,6 +301,21 @@ export class AccountRepository extends Repository {
         device_id: this.client.state.uuid,
         _uuid: this.client.state.uuid,
         google_tokens: '[]',
+      }),
+    });
+    return body;
+  }
+
+  public async sendRecoveryFlowEmail(query: string) {
+    const { body } = await this.client.request.send({
+      url: `/api/v1/accounts/send_recovery_flow_email/`,
+      method: 'POST',
+      form: this.client.request.sign({
+        _csrftoken: this.client.state.cookieCsrfToken,
+        adid: ''/*this.client.state.adid ? not available on pre-login?*/,
+        guid: this.client.state.uuid,
+        device_id: this.client.state.deviceId,
+        query,
       }),
     });
     return body;
