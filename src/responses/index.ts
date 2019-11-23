@@ -88,3 +88,7 @@ export * from './user-story.feed.response';
 export * from './media.inline-child-comments.feed.response';
 export * from './igtv.browse.feed.response';
 export * from './media.updated-media.response';
+export * from './story-poll-voters.feed.response';
+export * from './story-question-responses.feed.response';
+export * from './story-quiz-participants.feed.response';
+export * from './story-slider-voters.feed.response.response';

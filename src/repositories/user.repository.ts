@@ -102,8 +102,8 @@ export class UserRepository extends Repository {
       directlySignIn: true,
       countryCodes: [{ country_code: '1', source: ['default'] }],
     });
-    const {body} = await this.client.request.send({
-      url: `/api/v1/users/lookup/`,
+    const { body } = await this.client.request.send({
+      url: '/api/v1/users/lookup/',
       method: 'POST',
       form: this.client.request.sign({
         country_codes: JSON.stringify(options.countryCodes),

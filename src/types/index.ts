@@ -23,3 +23,4 @@ export * from './insights.options';
 export * from './direct-thread.broadcast-reel.options';
 export * from './media.configure-to-igtv.options';
 export * from './upload.video.options';
+export * from './user.lookup.options';

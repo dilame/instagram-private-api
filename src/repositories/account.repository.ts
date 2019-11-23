@@ -308,11 +308,11 @@ export class AccountRepository extends Repository {
 
   public async sendRecoveryFlowEmail(query: string) {
     const { body } = await this.client.request.send({
-      url: `/api/v1/accounts/send_recovery_flow_email/`,
+      url: '/api/v1/accounts/send_recovery_flow_email/',
       method: 'POST',
       form: this.client.request.sign({
         _csrftoken: this.client.state.cookieCsrfToken,
-        adid: ''/*this.client.state.adid ? not available on pre-login?*/,
+        adid: '' /*this.client.state.adid ? not available on pre-login?*/,
         guid: this.client.state.uuid,
         device_id: this.client.state.deviceId,
         query,

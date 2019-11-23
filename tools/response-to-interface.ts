@@ -36,7 +36,7 @@ async function login() {
 (async function mainAsync() {
   await login();
   try {
-    console.log(await createInterface(ig.igtv.suggestedSearches(), 'igtv.repository.suggested-searches'));
+
   } catch (e) {
     console.error(e);
   }
