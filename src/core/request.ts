@@ -66,14 +66,6 @@ export class Request {
         strictSSL: false,
         gzip: true,
         headers: this.getDefaultHeaders(),
-        auth: {
-          bearer: `IGT:2:${Buffer.from(
-            JSON.stringify({
-              ds_user_id: this.client.state.extractCookie('ds_user_id')?.value || '',
-              sessionid: this.client.state.extractCookie('sessionid')?.value || '',
-            }),
-          ).toString('base64')}`,
-        },
       },
       this.defaults,
     );
@@ -89,9 +81,23 @@ export class Request {
   }
 
   private updateState(response: IgResponse<any>) {
-    const wwwClaim = response.headers['x-ig-set-www-claim'];
+    const {
+      'x-ig-set-www-claim': wwwClaim,
+      'ig-set-authorization': auth,
+      'ig-set-password-encryption-key-id': pwKeyId,
+      'ig-set-password-encryption-pub-key': pwPubKey,
+    } = response.headers;
     if (typeof wwwClaim === 'string') {
       this.client.state.igWWWClaim = wwwClaim;
+    }
+    if (typeof auth === 'string' && !auth.endsWith(':')) {
+      this.client.state.authorization = auth;
+    }
+    if (typeof pwKeyId === 'string') {
+      this.client.state.passwordEncryptionKeyId = pwKeyId;
+    }
+    if (typeof pwPubKey === 'string') {
+      this.client.state.passwordEncryptionPubKey = pwPubKey;
     }
   }
 
@@ -183,7 +189,7 @@ export class Request {
       'X-IG-Extended-CDN-Thumbnail-Cache-Busting-Value': this.client.state.thumbnailCacheBustingValue.toString(),
       'X-Bloks-Version-Id': this.client.state.bloksVersionId,
       'X-MID': this.client.state.extractCookie('mid')?.value,
-      'X-IG-WWW-Claim': this.client.state.igWWWClaim,
+      'X-IG-WWW-Claim': this.client.state.igWWWClaim || '0',
       'X-Bloks-Is-Layout-RTL': this.client.state.isLayoutRTL.toString(),
       'X-IG-Connection-Type': this.client.state.connectionTypeHeader,
       'X-IG-Capabilities': this.client.state.capabilitiesHeader,
@@ -192,6 +198,7 @@ export class Request {
       'X-IG-Android-ID': this.client.state.deviceId,
       'Accept-Language': this.client.state.language.replace('_', '-'),
       'X-FB-HTTP-Engine': 'Liger',
+      Authorization: this.client.state.authorization,
       Host: 'i.instagram.com',
       'Accept-Encoding': 'gzip',
       Connection: 'close',

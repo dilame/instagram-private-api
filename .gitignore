@@ -11,3 +11,4 @@ Untitled*
 .idea
 .env
 dist
+tools/state.json
