@@ -222,7 +222,7 @@ export class State {
       this.constants = obj.constants;
       delete obj.constants;
     }
-    if (obj._cookies) {
+    if (obj.cookies) {
       await this.deserializeCookieJar(obj.cookies);
       delete obj.cookies;
     }
