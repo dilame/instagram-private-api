@@ -205,19 +205,19 @@ export class State {
     return Bluebird.fromCallback(cb => this.cookieJar['_jar'].serialize(cb));
   }
 
-  public async exportState(withConstants: boolean = false): Promise<string> {
+  public async serialize(): Promise<{ constants; cookies } & any> {
     const obj = {
-      constants: withConstants ? this.constants : void 0,
+      constants: this.constants,
       cookies: JSON.stringify(await this.serializeCookieJar()),
     };
     for (const [key, value] of Object.entries(this)) {
       obj[key] = value;
     }
-    return JSON.stringify(obj);
+    return obj;
   }
 
-  public async importState(state: string): Promise<void> {
-    const obj = JSON.parse(state);
+  public async importState(state: string | any): Promise<void> {
+    const obj = typeof state === 'string' ? JSON.parse(state) : state;
     if (obj.constants) {
       this.constants = obj.constants;
       delete obj.constants;

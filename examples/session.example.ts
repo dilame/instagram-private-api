@@ -1,8 +1,9 @@
 import 'dotenv/config';
 import { IgApiClient } from '../src';
 
-function fakeSave(data: string) {
+function fakeSave(data: object) {
   // here you would save it to a file/database etc.
+  // you could save it to a file: writeFile(path, JSON.stringify(data))
   return data;
 }
 
@@ -22,9 +23,13 @@ function fakeLoad() {
   ig.state.proxyUrl = process.env.IG_PROXY;
   // This function executes after every request
   ig.request.end$.subscribe(async () => {
-    fakeSave(await ig.state.exportState(/*here you can pass true if you want to also save the version*/));
+    const serialized = await ig.state.serialize();
+    delete serialized.constants; // this deletes the version info, so you'll always use the version provided by the library
+    fakeSave(serialized);
   });
   if (fakeExists()) {
+    // import state accepts both a string as well as an object
+    // the string should be a JSON object
     await ig.state.importState(fakeLoad());
   }
   // This call will provoke request.$end stream
