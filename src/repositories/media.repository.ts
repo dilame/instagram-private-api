@@ -602,6 +602,34 @@ export class MediaRepository extends Repository {
     return body;
   }
 
+  public async onlyMe(mediaId: string): Promise<StatusResponse> {
+    const {body} = await this.client.request.send({
+      url: `/api/v1/media/${mediaId}/only_me/`,
+      method: 'POST',
+      form: this.client.request.sign({
+        media_id: mediaId,
+        _csrftoken: this.client.state.cookieCsrfToken,
+        _uid: this.client.state.cookieUserId,
+        _uuid: this.client.state.uuid,
+      }),
+    });
+    return body;
+  }
+
+  public async undoOnlyMe(mediaId: string): Promise<StatusResponse> {
+    const {body} = await this.client.request.send({
+      url: `/api/v1/media/${mediaId}/undo_only_me/`,
+      method: 'POST',
+      form: this.client.request.sign({
+        media_id: mediaId,
+        _csrftoken: this.client.state.cookieCsrfToken,
+        _uid: this.client.state.cookieUserId,
+        _uuid: this.client.state.uuid,
+      }),
+    });
+    return body;
+  }
+
   async seen(
     reels: {
       [item: string]: [string];
