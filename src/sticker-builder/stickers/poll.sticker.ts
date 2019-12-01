@@ -17,10 +17,8 @@ export class PollSticker extends InstaSticker implements PollStickerOptions {
   viewerVote: number = 0;
   viewerCanVote: boolean = true;
   isSharedResult: boolean = false;
-
-  public constructor() {
-    super(0.49934897, 0.1266892);
-  }
+  width = 0.49934897;
+  height = 0.1266892;
 
   get id(): string {
     return 'polling_sticker_vibrant';

@@ -8,10 +8,8 @@ export interface HashtagStickerOptions {
 
 export class HashtagSticker extends InstaSticker implements HashtagStickerOptions {
   public tagName: string;
-
-  public constructor() {
-    super(0.47, 0.11);
-  }
+  width = 0.47;
+  height = 0.11;
 
   get id(): string {
     return 'hashtag_sticker_vibrant';

@@ -17,10 +17,8 @@ export class SliderSticker extends InstaSticker implements SliderStickerOptions 
   sliderVoteCount: number = 0;
   viewerVote: number = -1.0;
   sliderVoteAverage: number = 0.0;
-
-  public constructor() {
-    super(0.7291667, 0.22212838);
-  }
+  width = 0.7291667;
+  height = 0.22212838;
 
   get id(): string {
     return `emoji_slider_${this.emoji}`;
