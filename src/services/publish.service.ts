@@ -228,9 +228,9 @@ export class PublishService extends Repository {
   ) {
     const uploadId = random(100000000000, 999999999999).toString();
     const videoInfo = PublishService.getVideoInfo(options.video);
-    const waterfallId = new Chance().guid({version: 4});
+    const waterfallId = new Chance().guid({ version: 4 });
     await Bluebird.try(() =>
-       this.client.upload.video({
+      this.client.upload.video({
         video: options.video,
         uploadId,
         forDirectStory: configureOptions.configure_mode === '2',

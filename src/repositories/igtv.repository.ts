@@ -1,8 +1,7 @@
 import { Repository } from '../core/repository';
-import { IgtvWriteSeenStateOptions } from '../types/igtv.write-seen-state.options';
+import { IgtvWriteSeenStateOptions } from '../types';
 import { defaults } from 'lodash';
-import { StatusResponse } from '../responses';
-import { IgtvSearchResponseRootObject } from '../responses/igtv.search.response';
+import { StatusResponse, IgtvSearchResponseRootObject } from '../responses';
 import * as Chance from 'chance';
 
 export class IgtvRepository extends Repository {
@@ -69,5 +68,4 @@ export class IgtvRepository extends Repository {
     });
     return body;
   }
-
 }

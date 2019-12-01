@@ -25,14 +25,13 @@ import {
   TimelineFeed,
   UserFeed,
   UsertagsFeed,
-  IgtvBrowseFeed, IgtvChannelFeed,
+  IgtvBrowseFeed,
+  IgtvChannelFeed,
 } from '../feeds';
 import { DirectInboxFeedResponseThreadsItem } from '../responses';
-import { TimelineFeedReason } from '../types/timeline-feed.types';
-import { IgAppModule } from '../types/common.types';
 import { plainToClassFromExist } from 'class-transformer';
 import * as Chance from 'chance';
-import { PostsInsightsFeedOptions } from '../types';
+import { PostsInsightsFeedOptions, TimelineFeedReason, IgAppModule } from '../types';
 import { UserStoryFeed } from '../feeds/user-story.feed';
 import { ListReelMediaViewerFeed } from '../feeds/list-reel-media-viewer.feed';
 import { MediaInlineChildCommentsFeed } from '../feeds/media.inline-child-comments.feed';
@@ -285,5 +284,13 @@ export class FeedFactory {
     return plainToClassFromExist(new IgtvChannelFeed(this.client), {
       channelId: id,
     });
+  }
+
+  /**
+   * Returns the suggested videos after the current (id) one
+   * @param id pk of the video
+   */
+  public igtvChaining(id: string | number) {
+    return this.igtvChannel(`chaining_${id}`);
   }
 }

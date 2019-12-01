@@ -15,7 +15,8 @@ import {
   QuestionSticker,
   QuestionStickerOptions,
   QuizSticker,
-  QuizStickerOptions, SliderSticker,
+  QuizStickerOptions,
+  SliderSticker,
   SliderStickerOptions,
 } from './stickers';
 

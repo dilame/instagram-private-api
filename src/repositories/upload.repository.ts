@@ -44,19 +44,22 @@ export class UploadRepository extends Repository {
     const uploadId = options.uploadId || Date.now();
     const name = `${uploadId}_0_${random(1000000000, 9999999999)}`;
     const contentLength = video.byteLength;
-    const waterfallId = options.waterfallId || this.chance.guid({version: 4});
+    const waterfallId = options.waterfallId || this.chance.guid({ version: 4 });
     const ruploadParams = UploadRepository.createVideoRuploadParams(options, uploadId);
 
-    const {body: start} = await this.client.request.send({
-      url: `/rupload_igvideo/${name}`,
-      method: 'GET',
-      headers: {
-        ...this.getBaseHeaders(ruploadParams),
-        X_FB_VIDEO_WATERFALL_ID: waterfallId,
-        'X-Entity-Type': 'video/mp4',
-        'Accept-Encoding': 'gzip',
+    const { body: start } = await this.client.request.send(
+      {
+        url: `/rupload_igvideo/${name}`,
+        method: 'GET',
+        headers: {
+          ...this.getBaseHeaders(ruploadParams),
+          X_FB_VIDEO_WATERFALL_ID: waterfallId,
+          'X-Entity-Type': 'video/mp4',
+          'Accept-Encoding': 'gzip',
+        },
       },
-    }, true);
+      true,
+    );
 
     const { body } = await this.client.request.send({
       url: `/rupload_igvideo/${name}`,
