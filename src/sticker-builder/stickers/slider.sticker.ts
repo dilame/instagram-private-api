@@ -1,5 +1,4 @@
 import { InstaSticker } from './insta-sticker';
-import { defaults } from 'lodash';
 
 export interface SliderStickerOptions {
   question: string;
@@ -8,30 +7,23 @@ export interface SliderStickerOptions {
   textColor?: string;
 }
 
-export class SliderSticker extends InstaSticker {
-  public options: SliderStickerOptions;
+export class SliderSticker extends InstaSticker implements SliderStickerOptions {
+  question: string;
+  emoji: string;
+  backgroundColor: string = '#ffffff';
+  textColor: string = '#000000';
 
-  public constructor(options: SliderStickerOptions) {
+  viewerCanVote: boolean = false;
+  sliderVoteCount: number = 0;
+  viewerVote: number = -1.0;
+  sliderVoteAverage: number = 0.0;
+
+  public constructor() {
     super(0.7291667, 0.22212838);
-    this.options = defaults(options, {
-      backgroundColor: '#ffffff',
-      textColor: '#000000',
-    });
-  }
-
-  public toJSON() {
-    return {
-      ...super.toJSON(),
-      viewer_can_vote: false,
-      slider_vote_count: 0,
-      viewer_vote: -1.0,
-      slider_vote_average: 0.0,
-      ...this.toSnakeCase(this.options),
-    };
   }
 
   get id(): string {
-    return `emoji_slider_${this.options.emoji}`;
+    return `emoji_slider_${this.emoji}`;
   }
 
   get key(): string {

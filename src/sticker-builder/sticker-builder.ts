@@ -19,6 +19,8 @@ import {
   SliderSticker,
   SliderStickerOptions,
 } from './stickers';
+import { plainToClassFromExist } from 'class-transformer';
+import { defaults } from 'lodash';
 
 export type StickerConfig = any & { story_sticker_ids };
 
@@ -52,39 +54,49 @@ export class StickerBuilder {
   }
 
   // wrappers, so you only have to import StickerBuilder
-  public static hashtag(options: HashtagStickerOptions) {
-    return new HashtagSticker(options);
+  public static hashtag(options: HashtagStickerOptions): HashtagSticker {
+    return plainToClassFromExist(new HashtagSticker(), options);
   }
 
-  public static mention(options: MentionStickerOptions) {
-    return new MentionSticker(options);
+  public static mention(options: MentionStickerOptions): MentionSticker {
+    return plainToClassFromExist(new MentionSticker(), options);
   }
 
-  public static location(options: LocationStickerOptions) {
-    return new LocationSticker(options);
+  public static location(options: LocationStickerOptions): LocationSticker {
+    return plainToClassFromExist(new LocationSticker(), options);
   }
 
-  public static countdown(options: CountdownStickerOptions) {
-    return new CountdownSticker(options);
+  public static countdown(options: CountdownStickerOptions): CountdownSticker {
+    // @ts-ignore
+    options.endTs = Math.floor(options.endTs.toUTC().toSeconds());
+    return plainToClassFromExist(new CountdownSticker(), options);
   }
 
-  public static chat(options: ChatStickerOptions) {
-    return new ChatSticker(options);
+  public static chat(options: ChatStickerOptions): ChatSticker {
+    return plainToClassFromExist(new ChatSticker(), options);
   }
 
-  public static poll(options: PollStickerOptions) {
-    return new PollSticker(options);
+  public static poll(options: PollStickerOptions): PollSticker {
+    // @ts-ignore
+    options.tallies = options.tallies.map(t => defaults(t, {fontSize: 28.0}));
+    return plainToClassFromExist(new PollSticker(), options);
   }
 
-  public static question(options: QuestionStickerOptions) {
-    return new QuestionSticker(options);
+  public static question(options: QuestionStickerOptions): QuestionSticker {
+    return plainToClassFromExist(new QuestionSticker(), options);
   }
 
-  public static quiz(options: QuizStickerOptions) {
-    return new QuizSticker(options);
+  public static quiz(options: QuizStickerOptions): QuizSticker {
+    // @ts-ignore
+    options.options = options.options.map(o => ({text: o, count: 0}));
+    return plainToClassFromExist(new QuizSticker(), {
+      width: 0.7291667,
+      height: 0.11824318 + options.options.length * 0.10304056,
+      options,
+    });
   }
 
-  public static slider(options: SliderStickerOptions) {
-    return new SliderSticker(options);
+  public static slider(options: SliderStickerOptions): SliderSticker {
+    return plainToClassFromExist(new SliderSticker(), options);
   }
 }

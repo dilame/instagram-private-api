@@ -1,4 +1,5 @@
 import { snakeCase } from 'lodash';
+import { classToPlain } from 'class-transformer';
 
 export abstract class InstaSticker {
   public width: number;
@@ -80,14 +81,6 @@ export abstract class InstaSticker {
   }
 
   public toJSON() {
-    return {
-      x: this.x,
-      y: this.y,
-      z: this.z,
-      width: this.width,
-      height: this.height,
-      rotation: this.rotation,
-      is_sticker: this.isSticker,
-    };
+    return this.toSnakeCase(classToPlain(this));
   }
 }

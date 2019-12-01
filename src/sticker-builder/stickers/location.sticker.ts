@@ -6,19 +6,11 @@ export interface LocationStickerOptions {
   height?: number;
 }
 
-export class LocationSticker extends InstaSticker {
+export class LocationSticker extends InstaSticker implements LocationStickerOptions {
   public locationId: string;
 
-  public constructor(options: LocationStickerOptions) {
-    super(options.width || 0.47, options.height || 0.111);
-    this.locationId = options.locationId;
-  }
-
-  public toJSON() {
-    return {
-      ...super.toJSON(),
-      ...this.toSnakeCase({locationId: this.locationId}),
-    };
+  public constructor() {
+    super(0.47, 0.111);
   }
 
   get id(): string {

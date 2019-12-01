@@ -1,6 +1,5 @@
 import { DateTime } from 'luxon';
 import { InstaSticker } from './insta-sticker';
-import { defaults } from 'lodash';
 
 export interface CountdownStickerOptions {
   endTs: DateTime;
@@ -12,28 +11,19 @@ export interface CountdownStickerOptions {
   digitCardColor?: string; // with alpha
 }
 
-export class CountdownSticker extends InstaSticker {
-  public options: CountdownStickerOptions;
+export class CountdownSticker extends InstaSticker implements CountdownStickerOptions {
+  // @ts-ignore
+  endTs: number;
+  text: string;
+  textColor: string = '#ffffff';
+  startBackgroundColor: string = '#ca2ee1';
+  endBackgroundColor: string = '#5eb1ff';
+  digitColor: string = '#7e0091';
+  digitCardColor: string = '#ffffffcc';
+  followingEnabled: boolean = true;
 
-  public constructor(options: CountdownStickerOptions) {
+  public constructor() {
     super(0.703125, 0.26013514);
-    this.options = defaults(options, {
-      textColor: '#ffffff',
-      startBackgroundColor: '#ca2ee1',
-      endBackgroundColor: '#5eb1ff',
-      digitColor: '#7e0091',
-      digitCardColor: '#ffffffcc',
-    });
-  }
-
-  public toJSON() {
-    return {
-      ...super.toJSON(),
-      following_enabled: true,
-      ...this.toSnakeCase(this.options),
-      // has to be overwritten
-      end_ts: Math.floor(this.options.endTs.toUTC().toSeconds()),
-    };
   }
 
   get id(): string {

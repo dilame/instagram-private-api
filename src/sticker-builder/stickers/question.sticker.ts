@@ -1,5 +1,4 @@
 import { InstaSticker } from './insta-sticker';
-import { defaults } from 'lodash';
 
 export interface QuestionStickerOptions {
   question: string;
@@ -9,25 +8,16 @@ export interface QuestionStickerOptions {
   profilePicUrl?: string;
 }
 
-export class QuestionSticker extends InstaSticker {
-  public options: QuestionStickerOptions;
+export class QuestionSticker extends InstaSticker implements QuestionStickerOptions {
+  question: string;
+  backgroundColor: string = '#ffffff';
+  textColor: string = '#000000';
+  profilePicUrl: string = '';
+  questionType: 'text' | 'music' = 'text';
+  viewerCanInteract: boolean = false;
 
-  public constructor(options: QuestionStickerOptions) {
+  public constructor() {
     super(0.7291667, 0.28716215);
-    this.options = defaults(options, {
-      backgroundColor: '#ffffff',
-      textColor: '#000000',
-      profilePicUrl: '',
-      questionType: 'text',
-    });
-  }
-
-  public toJSON() {
-    return {
-      ...super.toJSON(),
-      viewer_can_interact: false,
-      ...this.toSnakeCase(this.options),
-    };
   }
 
   get id(): string {

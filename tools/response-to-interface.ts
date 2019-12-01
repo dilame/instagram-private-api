@@ -47,6 +47,7 @@ async function login() {
 (async function mainAsync() {
   await login();
   try {
+    console.log();
   } catch (e) {
     console.error(e);
     console.error(e.response.body);
