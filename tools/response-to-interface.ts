@@ -5,6 +5,8 @@ import { json2ts } from 'json-ts/dist';
 import { camelCase } from 'lodash';
 import * as fs from 'fs';
 import { promisify } from 'util';
+import { StickerBuilder } from '../src/sticker-builder';
+import { DateTime } from 'luxon';
 
 /* async fs functions - uncomment the needed wrappers */
 // @ts-ignore
@@ -47,9 +49,20 @@ async function login() {
 (async function mainAsync() {
   await login();
   try {
-    console.log();
+    console.log(new StickerBuilder()
+      .add(StickerBuilder.chat({text: 'chat'}))
+      .add(StickerBuilder.countdown({endTs: DateTime.local(), text: 'end'}))
+      .add(StickerBuilder.hashtag({tagName: 'me_smile'}))
+      .add(StickerBuilder.location({locationId: '0'}))
+      .add(StickerBuilder.mention({userId: '1'}))
+      .add(StickerBuilder.poll({question: 'Question', tallies: [{text: '1'}, {text: '2', fontSize: 31.0}]}))
+      .add(StickerBuilder.question({question: 'qq'}))
+      .add(StickerBuilder.quiz({question: 'q', correctAnswer: 0, options: ['1', '2']}))
+      .add(StickerBuilder.slider({question: '11', emoji: '❤'}))
+      .build(),
+    );
   } catch (e) {
     console.error(e);
-    console.error(e.response.body);
+    // console.error(e.response.body);
   }
 })();
