@@ -12,6 +12,7 @@ export interface UploadVideoOptions {
   mediaType?: string;
   forDirectStory?: boolean;
   isIgtvVideo?: boolean;
+  waterfallId?: string;
 }
 
 export type SegmentDivider = (options: { buffer: Buffer; client: IgApiClient }) => Buffer[];

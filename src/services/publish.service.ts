@@ -21,6 +21,7 @@ import { PostingIgtvOptions } from '../types/posting.igtv.options';
 import sizeOf = require('image-size');
 import Bluebird = require('bluebird');
 import Chance = require('chance');
+import { random } from 'lodash';
 
 export class PublishService extends Repository {
   /**
@@ -225,13 +226,16 @@ export class PublishService extends Repository {
     options: PostingStoryVideoOptions,
     configureOptions: MediaConfigureStoryBaseOptions,
   ) {
-    const uploadId = Date.now().toString();
+    const uploadId = random(100000000000, 999999999999).toString();
     const videoInfo = PublishService.getVideoInfo(options.video);
+    const waterfallId = new Chance().guid({version: 4});
     await Bluebird.try(() =>
-      this.client.upload.video({
+       this.client.upload.video({
         video: options.video,
         uploadId,
         forDirectStory: configureOptions.configure_mode === '2',
+        waterfallId,
+        forAlbum: true,
         ...videoInfo,
       }),
     ).catch(IgResponseError, error => {
@@ -239,6 +243,7 @@ export class PublishService extends Repository {
     });
     await this.client.upload.photo({
       file: options.coverImage,
+      waterfallId,
       uploadId,
     });
     await Bluebird.try(() =>

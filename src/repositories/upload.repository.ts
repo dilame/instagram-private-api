@@ -15,13 +15,13 @@ export class UploadRepository extends Repository {
 
   public async photo(options: UploadPhotoOptions): Promise<UploadRepositoryPhotoResponseRootObject> {
     const uploadId = options.uploadId || Date.now();
-    const name = `${uploadId}_0_-${random(1000000000, 9999999999)}`;
+    const name = `${uploadId}_0_${random(1000000000, 9999999999)}`;
     const contentLength = options.file.byteLength;
     const { body } = await this.client.request.send<UploadRepositoryPhotoResponseRootObject>({
       url: `/rupload_igphoto/${name}`,
       method: 'POST',
       headers: {
-        X_FB_PHOTO_WATERFALL_ID: this.chance.guid(),
+        X_FB_PHOTO_WATERFALL_ID: options.waterfallId || this.chance.guid(),
         'X-Entity-Type': 'image/jpeg',
         Offset: 0,
         'X-Instagram-Rupload-Params': JSON.stringify(UploadRepository.createPhotoRuploadParams(options, uploadId)),
@@ -42,20 +42,33 @@ export class UploadRepository extends Repository {
   public async video(options: UploadVideoOptions) {
     const video = options.video;
     const uploadId = options.uploadId || Date.now();
-    const name = `${uploadId}_0_-${random(1000000000, 9999999999)}`;
+    const name = `${uploadId}_0_${random(1000000000, 9999999999)}`;
     const contentLength = video.byteLength;
+    const waterfallId = options.waterfallId || this.chance.guid({version: 4});
+    const ruploadParams = UploadRepository.createVideoRuploadParams(options, uploadId);
+
+    const {body: start} = await this.client.request.send({
+      url: `/rupload_igvideo/${name}`,
+      method: 'GET',
+      headers: {
+        ...this.getBaseHeaders(ruploadParams),
+        X_FB_VIDEO_WATERFALL_ID: waterfallId,
+        'X-Entity-Type': 'video/mp4',
+        'Accept-Encoding': 'gzip',
+      },
+    }, true);
 
     const { body } = await this.client.request.send({
-      url: `/rupload_igvideo/${name}/`,
+      url: `/rupload_igvideo/${name}`,
       method: 'POST',
       qs: {
-        target: this.client.state.extractCookieValue('rur'),
+        // target: this.client.state.extractCookieValue('rur'),
       },
       headers: {
-        X_FB_VIDEO_WATERFALL_ID: this.chance.guid(),
+        ...this.getBaseHeaders(ruploadParams),
+        X_FB_VIDEO_WATERFALL_ID: waterfallId,
         'X-Entity-Type': 'video/mp4',
-        Offset: 0,
-        'X-Instagram-Rupload-Params': JSON.stringify(UploadRepository.createVideoRuploadParams(options, uploadId)),
+        Offset: start.offset,
         'X-Entity-Name': name,
         'X-Entity-Length': contentLength,
         'Content-Type': 'application/octet-stream',
@@ -89,7 +102,7 @@ export class UploadRepository extends Repository {
       },
     });
     const streamId = start.stream_id;
-    const waterfallId = random(1000000000, 9999999999);
+    const waterfallId = options.waterfallId || random(1000000000, 9999999999);
     const segments = segmentDivider({ buffer: options.video, client: this.client });
     let startOffset = 0;
     for (const segment of segments) {
