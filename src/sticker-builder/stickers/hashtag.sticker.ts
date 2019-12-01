@@ -7,19 +7,17 @@ export interface HashtagStickerOptions {
 }
 
 export class HashtagSticker extends InstaSticker {
-  public options: HashtagStickerOptions;
+  public tagName: string;
 
   public constructor(options: HashtagStickerOptions) {
     super(options.width || 0.47, options.height || 0.11);
-    delete options.width;
-    delete options.height;
-    this.options = options;
+    this.tagName = options.tagName;
   }
 
   public toJSON() {
     return {
       ...super.toJSON(),
-      ...this.toSnakeCase(this.options),
+      ...this.toSnakeCase({tagName: this.tagName}),
     };
   }
 

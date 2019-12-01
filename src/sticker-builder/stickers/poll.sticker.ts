@@ -1,4 +1,5 @@
 import { InstaSticker } from './insta-sticker';
+import { defaults } from 'lodash';
 
 export interface PollStickerTallie {
   text: string;

@@ -7,20 +7,18 @@ export interface MentionStickerOptions {
 }
 
 export class MentionSticker extends InstaSticker {
-  public options: MentionStickerOptions;
+  public userId: string;
 
   public constructor(options: MentionStickerOptions) {
     super(options.width || 0.64, options.height || 0.125);
-    delete options.width;
-    delete options.height;
-    this.options = options;
+    this.userId = options.userId;
   }
 
   public toJSON() {
     return {
       ...super.toJSON(),
       display_type: 'mention_username',
-      ...this.toSnakeCase(this.options),
+      ...this.toSnakeCase({userId: this.userId}),
     };
   }
 

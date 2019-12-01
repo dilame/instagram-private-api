@@ -7,19 +7,17 @@ export interface LocationStickerOptions {
 }
 
 export class LocationSticker extends InstaSticker {
-  public options: LocationStickerOptions;
+  public locationId: string;
 
   public constructor(options: LocationStickerOptions) {
     super(options.width || 0.47, options.height || 0.111);
-    delete options.width;
-    delete options.height;
-    this.options = options;
+    this.locationId = options.locationId;
   }
 
   public toJSON() {
     return {
       ...super.toJSON(),
-      ...this.toSnakeCase(this.options),
+      ...this.toSnakeCase({locationId: this.locationId}),
     };
   }
 
