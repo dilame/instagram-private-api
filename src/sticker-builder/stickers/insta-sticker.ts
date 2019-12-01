@@ -9,17 +9,11 @@ export abstract class InstaSticker {
   public y: number = 0.0;
   public z: number = 0;
 
-  public isSticker: boolean;
+  public isSticker: boolean = true;
 
   public abstract get id(): string;
 
   public abstract get key(): string;
-
-  protected constructor(width: number, height: number, isSticker: boolean = true) {
-    this.width = width;
-    this.height = height;
-    this.isSticker = isSticker;
-  }
 
   public center(): this {
     this.x = 0.5;

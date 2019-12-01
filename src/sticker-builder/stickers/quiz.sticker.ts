@@ -19,10 +19,8 @@ export class QuizSticker extends InstaSticker implements QuizStickerOptions {
   endBackgroundColor: string = '#262626';
   viewerCanAnswer: boolean = false;
   viewerAnswer: number = -1;
-
-  public constructor() {
-    super(0.7291667, 0.11824318 + 2 * 0.10304056);
-  }
+  width = 0.7291667;
+  height = 0.11824318 + 2 * 0.10304056;
 
   get id(): string {
     return 'quiz_story_sticker_default';

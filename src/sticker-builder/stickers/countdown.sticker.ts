@@ -21,10 +21,8 @@ export class CountdownSticker extends InstaSticker implements CountdownStickerOp
   digitColor: string = '#7e0091';
   digitCardColor: string = '#ffffffcc';
   followingEnabled: boolean = true;
-
-  public constructor() {
-    super(0.703125, 0.26013514);
-  }
+  width = 0.703125;
+  height = 0.26013514;
 
   get id(): string {
     return 'countdown_sticker_time';

@@ -8,6 +8,8 @@ export interface LocationStickerOptions {
 
 export class LocationSticker extends InstaSticker implements LocationStickerOptions {
   public locationId: string;
+  width = 0.47;
+  height = 0.111;
 
   public constructor() {
     super(0.47, 0.111);

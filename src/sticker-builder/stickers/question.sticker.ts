@@ -15,10 +15,8 @@ export class QuestionSticker extends InstaSticker implements QuestionStickerOpti
   profilePicUrl: string = '';
   questionType: 'text' | 'music' = 'text';
   viewerCanInteract: boolean = false;
-
-  public constructor() {
-    super(0.7291667, 0.28716215);
-  }
+  width = 0.7291667;
+  height = 0.28716215;
 
   get id(): string {
     return 'question_sticker_ama';
