@@ -86,6 +86,7 @@ export class State {
    */
   adid: string;
   deviceId: string;
+  @Enumerable(false)
   proxyUrl: string;
   @Enumerable(false)
   cookieStore = new MemoryCookieStore();
@@ -216,7 +217,7 @@ export class State {
     return obj;
   }
 
-  public async importState(state: string | any): Promise<void> {
+  public async deserialize(state: string | any): Promise<void> {
     const obj = typeof state === 'string' ? JSON.parse(state) : state;
     if (obj.constants) {
       this.constants = obj.constants;

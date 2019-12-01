@@ -40,6 +40,22 @@ export class InsightsService extends Repository {
     });
   }
 
+  public igtv(mediaId: string) {
+    return this.client.ads.graphQL({
+      surface: {
+        name: 'igtv',
+        friendlyName: 'IgInsightsIGTVInsightsAppQuery',
+      },
+      documentId: '1744089735627228',
+      variables: {
+        query_params: {
+          access_token: '',
+          id: mediaId,
+        },
+      },
+    });
+  }
+
   public story(storyId: string): Promise<StoriesInsightsFeedResponseRootObject> {
     return this.client.ads.graphQL<StoriesInsightsFeedResponseRootObject>({
       surface: {

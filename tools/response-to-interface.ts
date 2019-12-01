@@ -32,11 +32,13 @@ async function createInterface(request: Promise<any>, outputName: string) {
 
 async function login() {
   ig.state.generateDevice(process.env.IG_USERNAME);
-  ig.state.proxyUrl = process.env.IG_PROXY;
-
-  ig.request.end$.subscribe(async () => await writeFileAsync(statePath, await ig.state.exportState(), {encoding: 'utf8'}));
+  ig.request.end$.subscribe(async () => {
+    const state = await ig.state.serialize();
+    delete state.constants;
+    await writeFileAsync(statePath, JSON.stringify(state), { encoding: 'utf8' });
+  });
   if (await existsAsync(statePath)) {
-    await ig.state.importState(await readFileAsync(statePath, {encoding: 'utf8'}));
+    await ig.state.deserialize(await readFileAsync(statePath, {encoding: 'utf8'}));
   } else {
     return await ig.account.login(process.env.IG_USERNAME, process.env.IG_PASSWORD);
   }
@@ -45,8 +47,8 @@ async function login() {
 (async function mainAsync() {
   await login();
   try {
-    await ig.user.info(ig.state.cookieUserId);
   } catch (e) {
     console.error(e);
+    console.error(e.response.body);
   }
 })();

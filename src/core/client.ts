@@ -38,6 +38,7 @@ import { RestrictActionRepository } from '../repositories/restrict-action.reposi
 import { AddressBookRepository } from '../repositories/address-book.repository';
 import { StickerService } from '../services/sticker.service';
 import { StatusRepository } from '../repositories/status.repository';
+import { IgtvRepository } from '../repositories/igtv.repository';
 
 export class IgApiClient {
   public state = new State();
@@ -75,6 +76,7 @@ export class IgApiClient {
   public restrictAction = new RestrictActionRepository(this);
   public addressBook = new AddressBookRepository(this);
   public status = new StatusRepository(this);
+  public igtv = new IgtvRepository(this);
   /* Services */
   public publish = new PublishService(this);
   public search = new SearchService(this);

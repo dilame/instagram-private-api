@@ -25,7 +25,7 @@ import {
   TimelineFeed,
   UserFeed,
   UsertagsFeed,
-  IgtvBrowseFeed,
+  IgtvBrowseFeed, IgtvChannelFeed,
 } from '../feeds';
 import { DirectInboxFeedResponseThreadsItem } from '../responses';
 import { TimelineFeedReason } from '../types/timeline-feed.types';
@@ -275,6 +275,15 @@ export class FeedFactory {
       name: 'story_slider_voters',
       rootName: 'voter_info',
       itemName: 'voters',
+    });
+  }
+
+  public igtvChannel(id: string | number) {
+    if (/[0-9]/.test(id.toString())) {
+      id = `user_${id}`;
+    }
+    return plainToClassFromExist(new IgtvChannelFeed(this.client), {
+      channelId: id,
     });
   }
 }

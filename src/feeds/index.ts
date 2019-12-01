@@ -24,3 +24,4 @@ export * from './usertags.feed';
 export * from './posts-insights.feed';
 export * from './stories-insights.feed';
 export * from './igtv.browse.feed';
+export * from './igtv.channel.feed';

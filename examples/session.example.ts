@@ -30,7 +30,7 @@ function fakeLoad() {
   if (fakeExists()) {
     // import state accepts both a string as well as an object
     // the string should be a JSON object
-    await ig.state.importState(fakeLoad());
+    await ig.state.deserialize(fakeLoad());
   }
   // This call will provoke request.$end stream
   await ig.account.login(process.env.IG_USERNAME, process.env.IG_PASSWORD);
