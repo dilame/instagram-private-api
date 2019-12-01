@@ -11,7 +11,6 @@ export interface PollStickerOptions {
 }
 
 export class PollSticker extends InstaSticker implements PollStickerOptions {
-
   question: string;
   tallies: [PollStickerTallie, PollStickerTallie];
   finished: boolean = false;

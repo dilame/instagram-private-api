@@ -78,7 +78,7 @@ export class StickerBuilder {
 
   public static poll(options: PollStickerOptions): PollSticker {
     // @ts-ignore
-    options.tallies = options.tallies.map(t => defaults(t, {fontSize: 28.0}));
+    options.tallies = options.tallies.map(t => defaults(t, { fontSize: 28.0 }));
     return plainToClassFromExist(new PollSticker(), options);
   }
 
@@ -88,7 +88,7 @@ export class StickerBuilder {
 
   public static quiz(options: QuizStickerOptions): QuizSticker {
     // @ts-ignore
-    options.options = options.options.map(o => ({text: o, count: 0}));
+    options.options = options.options.map(o => ({ text: o, count: 0 }));
     return plainToClassFromExist(new QuizSticker(), {
       width: 0.7291667,
       height: 0.11824318 + options.options.length * 0.10304056,

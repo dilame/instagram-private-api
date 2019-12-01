@@ -12,9 +12,9 @@ export interface QuizStickerOptions {
 export class QuizSticker extends InstaSticker implements QuizStickerOptions {
   question: string;
   // @ts-ignore
-  options: Array<{text: string, count: number}>;
+  options: Array<{ text: string; count: number }>;
   correctAnswer: number;
-  textColor: string =  '#ffffff';
+  textColor: string = '#ffffff';
   startBackgroundColor: string = '#262626';
   endBackgroundColor: string = '#262626';
   viewerCanAnswer: boolean = false;
