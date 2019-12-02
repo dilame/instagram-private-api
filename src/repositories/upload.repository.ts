@@ -1,11 +1,9 @@
 import { random } from 'lodash';
 import { Repository } from '../core/repository';
 import Chance = require('chance');
-import { StatusResponse, UploadRepositoryPhotoResponseRootObject } from '../responses';
+import { UploadRepositoryPhotoResponseRootObject } from '../responses';
 import {
-  SEGMENT_DIVIDERS,
   UploadRetryContext,
-  UploadSegmentedVideoOptions,
   UploadVideoOptions,
   UploadPhotoOptions,
   UploadVideoSegmentInitOptions,
