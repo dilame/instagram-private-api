@@ -603,7 +603,7 @@ export class MediaRepository extends Repository {
   }
 
   public async onlyMe(mediaId: string): Promise<StatusResponse> {
-    const {body} = await this.client.request.send({
+    const { body } = await this.client.request.send({
       url: `/api/v1/media/${mediaId}/only_me/`,
       method: 'POST',
       form: this.client.request.sign({
@@ -617,7 +617,7 @@ export class MediaRepository extends Repository {
   }
 
   public async undoOnlyMe(mediaId: string): Promise<StatusResponse> {
-    const {body} = await this.client.request.send({
+    const { body } = await this.client.request.send({
       url: `/api/v1/media/${mediaId}/undo_only_me/`,
       method: 'POST',
       form: this.client.request.sign({
