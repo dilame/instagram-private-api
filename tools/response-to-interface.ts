@@ -38,7 +38,7 @@ async function login() {
     await writeFileAsync(statePath, JSON.stringify(state), { encoding: 'utf8' });
   });
   if (await existsAsync(statePath)) {
-    await ig.state.deserialize(await readFileAsync(statePath, {encoding: 'utf8'}));
+    await ig.state.deserialize(await readFileAsync(statePath, { encoding: 'utf8' }));
   } else {
     return await ig.account.login(process.env.IG_USERNAME, process.env.IG_PASSWORD);
   }

@@ -13,6 +13,8 @@ export interface UploadVideoOptions {
   forDirectStory?: boolean;
   isIgtvVideo?: boolean;
   waterfallId?: string;
+  uploadName?: string;
+  offset?: number;
 }
 
 export interface UploadVideoSegmentInitOptions {

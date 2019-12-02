@@ -16,6 +16,7 @@ import {
   SEGMENT_DIVIDERS,
   UploadRetryContext,
   UploadSegmentedVideoOptions,
+  UploadVideoOptions,
 } from '../types';
 import { PostingLocation, PostingStoryOptions } from '../types/posting.options';
 import { IgConfigureVideoError, IgResponseError, IgUploadVideoError } from '../errors';
@@ -24,7 +25,7 @@ import { PostingIgtvOptions } from '../types/posting.igtv.options';
 import sizeOf = require('image-size');
 import Bluebird = require('bluebird');
 import Chance = require('chance');
-import { random } from 'lodash';
+import { random, defaults } from 'lodash';
 import { UploadRepository } from '../repositories/upload.repository';
 
 export class PublishService extends Repository {
@@ -71,7 +72,7 @@ export class PublishService extends Repository {
     const uploadId = Date.now().toString();
     const videoInfo = PublishService.getVideoInfo(options.video);
     await Bluebird.try(() =>
-      this.client.upload.video({
+      this.regularVideoUpload({
         video: options.video,
         uploadId,
         ...videoInfo,
@@ -111,9 +112,16 @@ export class PublishService extends Repository {
       configureOptions.usertags = options.usertags;
     }
 
-    return Bluebird.try(() => this.client.media.configureVideo(configureOptions)).catch(IgResponseError, error => {
-      throw new IgConfigureVideoError(error.response as IgResponse<UploadRepositoryVideoResponseRootObject>, videoInfo);
-    });
+    for (let i = 0; i < 6; i++) {
+      try {
+        return await this.client.media.configureVideo(configureOptions);
+      } catch (e) {
+        if (i >= 5 || e.response.statusCode >= 400) {
+          throw new IgConfigureVideoError(e.response, configureOptions);
+        }
+        await Bluebird.delay((i + 1) * 2 * 1000);
+      }
+    }
   }
 
   public async album(options: PostingAlbumOptions) {
@@ -137,7 +145,7 @@ export class PublishService extends Repository {
         item.videoInfo = PublishService.getVideoInfo(item.video);
         item.uploadId = Date.now().toString();
         await Bluebird.try(() =>
-          this.client.upload.video({
+          this.regularVideoUpload({
             video: item.video,
             uploadId: item.uploadId,
             isSidecar: true,
@@ -236,7 +244,7 @@ export class PublishService extends Repository {
     const videoInfo = PublishService.getVideoInfo(options.video);
     const waterfallId = this.chance.guid({ version: 4 });
     await Bluebird.try(() =>
-      this.client.upload.video({
+      this.regularVideoUpload({
         video: options.video,
         uploadId,
         forDirectStory: configureOptions.configure_mode === '2',
@@ -438,6 +446,21 @@ export class PublishService extends Repository {
         await Bluebird.delay((i + 1) * 2 * 1000);
       }
     }
+  }
+
+  public async regularVideoUpload(options: UploadVideoOptions) {
+    options = defaults(options, {
+      uploadId: Date.now(),
+      waterfallId: this.chance.guid({ version: 4 }),
+    });
+    options.uploadName = options.uploadName || `${options.uploadId}_0_${random(1000000000, 9999999999)}`;
+    const ruploadParams = UploadRepository.createVideoRuploadParams(options, options.uploadId);
+    const { offset } = await this.client.upload.initVideo({
+      name: options.uploadName,
+      ruploadParams,
+      waterfallId: options.waterfallId,
+    });
+    return this.client.upload.video({ offset, ...options });
   }
 
   public async segmentedVideoUpload(

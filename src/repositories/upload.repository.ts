@@ -42,12 +42,35 @@ export class UploadRepository extends Repository {
   public async video(options: UploadVideoOptions) {
     const video = options.video;
     const uploadId = options.uploadId || Date.now();
-    const name = `${uploadId}_0_${random(1000000000, 9999999999)}`;
+    const name = options.uploadName || `${uploadId}_0_${random(1000000000, 9999999999)}`;
     const contentLength = video.byteLength;
     const waterfallId = options.waterfallId || this.chance.guid({ version: 4 });
     const ruploadParams = UploadRepository.createVideoRuploadParams(options, uploadId);
 
-    const { body: start } = await this.client.request.send(
+    const { body } = await this.client.request.send({
+      url: `/rupload_igvideo/${name}`,
+      method: 'POST',
+      qs: {
+        // target: this.client.state.extractCookieValue('rur'),
+      },
+      headers: {
+        ...this.getBaseHeaders(ruploadParams),
+        X_FB_VIDEO_WATERFALL_ID: waterfallId,
+        'X-Entity-Type': 'video/mp4',
+        Offset: options.offset || 0,
+        'X-Entity-Name': name,
+        'X-Entity-Length': contentLength,
+        'Content-Type': 'application/octet-stream',
+        'Content-Length': contentLength,
+        'Accept-Encoding': 'gzip',
+      },
+      body: video,
+    });
+    return body;
+  }
+
+  public async initVideo({ name, ruploadParams, waterfallId }): Promise<{ offset: number }> {
+    const { body } = await this.client.request.send(
       {
         url: `/rupload_igvideo/${name}`,
         method: 'GET',
@@ -60,26 +83,6 @@ export class UploadRepository extends Repository {
       },
       true,
     );
-
-    const { body } = await this.client.request.send({
-      url: `/rupload_igvideo/${name}`,
-      method: 'POST',
-      qs: {
-        // target: this.client.state.extractCookieValue('rur'),
-      },
-      headers: {
-        ...this.getBaseHeaders(ruploadParams),
-        X_FB_VIDEO_WATERFALL_ID: waterfallId,
-        'X-Entity-Type': 'video/mp4',
-        Offset: start.offset,
-        'X-Entity-Name': name,
-        'X-Entity-Length': contentLength,
-        'Content-Type': 'application/octet-stream',
-        'Content-Length': contentLength,
-        'Accept-Encoding': 'gzip',
-      },
-      body: video,
-    });
     return body;
   }
 
