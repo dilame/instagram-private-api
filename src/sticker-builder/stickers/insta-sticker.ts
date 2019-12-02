@@ -1,4 +1,4 @@
-import { snakeCase } from 'lodash';
+import * as snakeCaseKeys from 'snakecase-keys';
 import { classToPlain } from 'class-transformer';
 
 export abstract class InstaSticker {
@@ -61,20 +61,8 @@ export abstract class InstaSticker {
     return this;
   }
 
-  protected toSnakeCase(obj: object): object {
-    const result = {};
-    const pairs = Object.entries(obj);
-    for (const [key, value] of pairs) {
-      if (Array.isArray(value)) {
-        Object.defineProperty(result, snakeCase(key), { value: value.map(x => this.toSnakeCase(x)), enumerable: true });
-      } else {
-        Object.defineProperty(result, snakeCase(key), { value, enumerable: true });
-      }
-    }
-    return result;
-  }
-
   public toJSON() {
-    return this.toSnakeCase(classToPlain(this));
+    // @ts-ignore
+    return snakeCaseKeys(classToPlain(this), { deep: true });
   }
 }

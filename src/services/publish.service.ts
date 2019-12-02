@@ -13,17 +13,23 @@ import {
   PostingStoryPhotoOptions,
   PostingStoryVideoOptions,
   PostingVideoOptions,
+  SEGMENT_DIVIDERS,
+  UploadRetryContext,
+  UploadSegmentedVideoOptions,
 } from '../types';
 import { PostingLocation, PostingStoryOptions } from '../types/posting.options';
 import { IgConfigureVideoError, IgResponseError, IgUploadVideoError } from '../errors';
-import { UploadRepositoryVideoResponseRootObject } from '../responses';
+import { StatusResponse, UploadRepositoryVideoResponseRootObject } from '../responses';
 import { PostingIgtvOptions } from '../types/posting.igtv.options';
 import sizeOf = require('image-size');
 import Bluebird = require('bluebird');
 import Chance = require('chance');
 import { random } from 'lodash';
+import { UploadRepository } from '../repositories/upload.repository';
 
 export class PublishService extends Repository {
+  private chance = new Chance();
+
   /**
    * Uploads a single photo to the timeline-feed
    * @param options - the options, containing caption and image-data
@@ -228,7 +234,7 @@ export class PublishService extends Repository {
   ) {
     const uploadId = random(100000000000, 999999999999).toString();
     const videoInfo = PublishService.getVideoInfo(options.video);
-    const waterfallId = new Chance().guid({ version: 4 });
+    const waterfallId = this.chance.guid({ version: 4 });
     await Bluebird.try(() =>
       this.client.upload.video({
         video: options.video,
@@ -288,7 +294,7 @@ export class PublishService extends Repository {
       configureOptions.configure_mode = '2';
       configureOptions.view_mode = options.viewMode;
       configureOptions.reply_type = options.replyType;
-      configureOptions.client_context = new Chance().guid();
+      configureOptions.client_context = this.chance.guid();
       if (recipients) {
         configureOptions.recipient_users = options.recipientUsers;
       }
@@ -382,7 +388,7 @@ export class PublishService extends Repository {
   public async igtvVideo(options: PostingIgtvOptions) {
     const videoInfo = PublishService.getVideoInfo(options.video);
     const uploadId = Date.now().toString();
-    const uploadResult = await this.client.upload.segmentedVideoUpload({
+    const uploadResult = await this.segmentedVideoUpload({
       video: options.video,
       isIgtvVideo: true,
       ...videoInfo,
@@ -432,6 +438,53 @@ export class PublishService extends Repository {
         await Bluebird.delay((i + 1) * 2 * 1000);
       }
     }
+  }
+
+  public async segmentedVideoUpload(
+    options: UploadSegmentedVideoOptions,
+  ): Promise<StatusResponse & { retryContext: UploadRetryContext; uploadId: string; waterfallId: string }> {
+    const uploadId = options.uploadId || Date.now().toString();
+    const retryContext = options.retryContext || { num_step_auto_retry: 0, num_reupload: 0, num_step_manual_retry: 0 };
+    const ruploadParams = UploadRepository.createVideoRuploadParams(options, uploadId, retryContext);
+    const waterfallId = options.waterfallId || random(1000000000, 9999999999).toString();
+
+    const { stream_id: streamId } = await this.client.upload.startSegmentedVideo(ruploadParams);
+
+    const segments =
+      options.segments ||
+      (options.segmentDivider || SEGMENT_DIVIDERS.sectionSize(Math.pow(2, 24)))({
+        buffer: options.video,
+        client: this.client,
+      });
+    let startOffset = 0;
+    for (const segment of segments) {
+      // this is an identifier not a guid, but has the same 'length' as a guid without '-'
+      const transferId = `${this.chance.guid({ version: 4 }).replace('-', '')}-0-${segment.byteLength}`;
+      const { offset: streamOffset } = await this.client.upload.videoSegmentInit({
+        waterfallId,
+        streamId,
+        startOffset,
+        ruploadParams,
+        transferId,
+      });
+      if (streamOffset !== 0) {
+        // TODO: implement offset != 0
+        throw new Error(
+          `Offset != 0 isn't implemented. Open an issue including your network config and other setup information to reproduce.`,
+        );
+      }
+      await this.client.upload.videoSegmentTransfer({
+        waterfallId,
+        streamId,
+        startOffset,
+        ruploadParams,
+        transferId,
+        segment,
+      });
+      startOffset += segment.byteLength;
+    }
+    const end = await this.client.upload.endSegmentedVideo({ ruploadParams, streamId });
+    return { ...end, retryContext, uploadId, waterfallId };
   }
 
   /**

@@ -1,13 +1,13 @@
 import { random } from 'lodash';
 import { Repository } from '../core/repository';
 import Chance = require('chance');
-import { StatusResponse, UploadRepositoryPhotoResponseRootObject } from '../responses';
+import { UploadRepositoryPhotoResponseRootObject } from '../responses';
 import {
-  SEGMENT_DIVIDERS,
   UploadRetryContext,
-  UploadSegmentedVideoOptions,
   UploadVideoOptions,
   UploadPhotoOptions,
+  UploadVideoSegmentInitOptions,
+  UploadVideoSegmentTransferOptions,
 } from '../types';
 
 export class UploadRepository extends Repository {
@@ -83,14 +83,8 @@ export class UploadRepository extends Repository {
     return body;
   }
 
-  public async segmentedVideoUpload(
-    options: UploadSegmentedVideoOptions,
-  ): Promise<StatusResponse & { retryContext: UploadRetryContext }> {
-    const segmentDivider = options.segmentDivider || SEGMENT_DIVIDERS.sectionSize(Math.pow(2, 24));
-    const uploadId = options.uploadId || Date.now().toString();
-    const retryContext = options.retryContext || { num_step_auto_retry: 0, num_reupload: 0, num_step_manual_retry: 0 };
-    const ruploadParams = UploadRepository.createVideoRuploadParams(options, uploadId, retryContext);
-    const { body: start } = await this.client.request.send({
+  public async startSegmentedVideo(ruploadParams): Promise<{ stream_id: string }> {
+    const { body } = await this.client.request.send({
       url: `/rupload_igvideo/${this.chance.guid({ version: 4 })}`,
       qs: {
         segmented: true,
@@ -104,63 +98,59 @@ export class UploadRepository extends Repository {
         'Content-Length': 0,
       },
     });
-    const streamId = start.stream_id;
-    const waterfallId = options.waterfallId || random(1000000000, 9999999999);
-    const segments = segmentDivider({ buffer: options.video, client: this.client });
-    let startOffset = 0;
-    for (const segment of segments) {
-      // this is an identifier not a guid, but has the same 'length' as a guid without '-'
-      const transferId = `${this.chance.guid({ version: 4 }).replace('-', '')}-0-${segment.byteLength}`;
-      const { body: transferInit } = await this.client.request.send(
-        {
-          url: `/rupload_igvideo/${transferId}`,
-          method: 'GET',
-          qs: {
-            segmented: true,
-            phase: 'transfer',
-          },
-          headers: {
-            ...this.getBaseHeaders(ruploadParams),
-            'Stream-Id': streamId,
-            'Segment-Start-Offset': startOffset,
-            X_FB_VIDEO_WATERFALL_ID: waterfallId,
-            'Segment-Type': '2',
-            'Accept-Encoding': 'gzip',
-          },
-        },
-        true,
-      );
-      if (transferInit.offset !== 0) {
-        // TODO: implement offset != 0
-        throw new Error(
-          `Offset != 0 isn't implemented. Open an issue including your network config and other setup information to reproduce.`,
-        );
-      }
-      await this.client.request.send({
-        url: `/rupload_igvideo/${transferId}`,
+    return body;
+  }
+
+  public async videoSegmentInit(options: UploadVideoSegmentInitOptions): Promise<{ offset: number }> {
+    const { body } = await this.client.request.send(
+      {
+        url: `/rupload_igvideo/${options.transferId}`,
+        method: 'GET',
         qs: {
           segmented: true,
           phase: 'transfer',
         },
-        method: 'POST',
         headers: {
-          ...this.getBaseHeaders(ruploadParams),
-          'X-Entity-Length': segment.byteLength,
-          'X-Entity-Name': transferId,
-          'Stream-Id': streamId,
-          'X-Entity-Type': 'video/mp4',
-          'Segment-Start-Offset': startOffset,
+          ...this.getBaseHeaders(options.ruploadParams),
+          'Stream-Id': options.streamId,
+          'Segment-Start-Offset': options.startOffset,
+          X_FB_VIDEO_WATERFALL_ID: options.waterfallId,
           'Segment-Type': '2',
-          X_FB_VIDEO_WATERFALL_ID: waterfallId,
-          // TODO: inspect offset
-          Offset: 0,
-          'Content-Length': segment.byteLength,
+          'Accept-Encoding': 'gzip',
         },
-        body: segment,
-      });
-      startOffset += segment.byteLength;
-    }
+      },
+      true,
+    );
+    return body;
+  }
 
+  public async videoSegmentTransfer(options: UploadVideoSegmentTransferOptions) {
+    const { body } = await this.client.request.send({
+      url: `/rupload_igvideo/${options.transferId}`,
+      qs: {
+        segmented: true,
+        phase: 'transfer',
+      },
+      method: 'POST',
+      headers: {
+        ...this.getBaseHeaders(options.ruploadParams),
+        'X-Entity-Length': options.segment.byteLength,
+        'X-Entity-Name': options.transferId,
+        'Stream-Id': options.streamId,
+        'X-Entity-Type': 'video/mp4',
+        'Segment-Start-Offset': options.startOffset,
+        'Segment-Type': '2',
+        X_FB_VIDEO_WATERFALL_ID: options.waterfallId,
+        // TODO: inspect offset
+        Offset: 0,
+        'Content-Length': options.segment.byteLength,
+      },
+      body: options.segment,
+    });
+    return body;
+  }
+
+  public async endSegmentedVideo({ ruploadParams, streamId }): Promise<any> {
     const { body } = await this.client.request.send({
       url: `/rupload_igvideo/${this.chance.guid({ version: 4 })}`,
       qs: {
@@ -176,7 +166,7 @@ export class UploadRepository extends Repository {
         'Stream-Id': streamId,
       },
     });
-    return { ...body, retryContext };
+    return body;
   }
 
   private getBaseHeaders(ruploadParams: string) {
@@ -203,7 +193,7 @@ export class UploadRepository extends Repository {
     return ruploadParams;
   }
 
-  private static createVideoRuploadParams(
+  public static createVideoRuploadParams(
     options: UploadVideoOptions,
     uploadId: number | string,
     retryContext?: UploadRetryContext,

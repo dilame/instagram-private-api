@@ -12,7 +12,7 @@ export class LocationSticker extends InstaSticker implements LocationStickerOpti
   height = 0.111;
 
   public constructor() {
-    super(0.47, 0.111);
+    super();
   }
 
   get id(): string {
