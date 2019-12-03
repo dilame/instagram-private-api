@@ -11,10 +11,6 @@ export class LocationSticker extends InstaSticker implements LocationStickerOpti
   width = 0.47;
   height = 0.111;
 
-  public constructor() {
-    super();
-  }
-
   get id(): string {
     return 'location_sticker_vibrant';
   }
