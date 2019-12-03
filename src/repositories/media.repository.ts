@@ -7,6 +7,7 @@ import {
   MediaRepositoryBlockedResponse,
   MediaRepositoryCommentResponse,
   MediaRepositoryLikersResponseRootObject,
+  MediaUpdatedMediaResponseRootObject,
   StatusResponse,
 } from '../responses';
 import {
@@ -23,10 +24,12 @@ import {
   MediaConfigureSidecarOptions,
   MediaConfigureSidecarVideoItem,
   MediaConfigureTimelineVideoOptions,
+  MediaConfigureToIgtvOptions,
 } from '../types';
 import { MediaRepositoryConfigureResponseRootObject } from '../responses';
 import Chance = require('chance');
 import { MediaRepositoryCheckOffensiveCommentResponseRootObject } from '../responses';
+import { StoryMusicQuestionResponse, StoryTextQuestionResponse } from '../types/story-response.options';
 
 export class MediaRepository extends Repository {
   public async info(mediaId: string): Promise<MediaInfoResponseRootObject> {
@@ -380,39 +383,23 @@ export class MediaRepository extends Repository {
   }
 
   private static stringifyStoryStickers(form: MediaConfigureStoryBaseOptions) {
-    if (typeof form.story_hashtags !== 'undefined') {
-      form.story_hashtags = JSON.stringify(form.story_hashtags);
-    }
-    if (typeof form.story_locations !== 'undefined') {
-      form.story_locations = JSON.stringify(form.story_locations);
-    }
-    if (typeof form.reel_mentions !== 'undefined') {
-      form.reel_mentions = JSON.stringify(form.reel_mentions);
-    }
-    if (typeof form.story_polls !== 'undefined') {
-      form.story_polls = JSON.stringify(form.story_polls);
-    }
-    if (typeof form.story_sliders !== 'undefined') {
-      form.story_sliders = JSON.stringify(form.story_sliders);
-    }
-    if (typeof form.story_questions !== 'undefined') {
-      form.story_questions = JSON.stringify(form.story_questions);
-    }
-    if (typeof form.story_countdowns !== 'undefined') {
-      form.story_countdowns = JSON.stringify(form.story_countdowns);
-    }
-    if (typeof form.attached_media !== 'undefined') {
-      form.attached_media = JSON.stringify(form.attached_media);
-    }
-    if (typeof form.story_cta !== 'undefined') {
-      form.story_cta = JSON.stringify(form.story_cta);
-    }
-    if (typeof form.story_chats !== 'undefined') {
-      form.story_chats = JSON.stringify(form.story_chats);
-    }
-    if (typeof form.story_quizs !== 'undefined') {
-      form.story_quizs = JSON.stringify(form.story_quizs);
-    }
+    const serialize = (obj: any | undefined) => {
+      if (typeof obj !== 'undefined' && Array.isArray(obj) && obj.length > 0 && typeof obj[0] !== 'string') {
+        return JSON.stringify(obj);
+      }
+      return obj;
+    };
+    form.story_hashtags = serialize(form.story_hashtags);
+    form.story_locations = serialize(form.story_locations);
+    form.reel_mentions = serialize(form.reel_mentions);
+    form.story_polls = serialize(form.story_polls);
+    form.story_sliders = serialize(form.story_sliders);
+    form.story_questions = serialize(form.story_questions);
+    form.story_countdowns = serialize(form.story_countdowns);
+    form.attached_media = serialize(form.attached_media);
+    form.story_cta = serialize(form.story_cta);
+    form.story_chats = serialize(form.story_chats);
+    form.story_quizs = serialize(form.story_quizs);
   }
 
   public async configureToStory(options: MediaConfigureStoryPhotoOptions) {
@@ -464,10 +451,7 @@ export class MediaRepository extends Repository {
       source_type: '3',
       video_result: '',
       _uid: this.client.state.cookieUserId,
-      date_time_original:
-        DateTime.local()
-          .toISO()
-          .replace(/[-:]/g, '') + 'Z',
+      date_time_original: new Date().toISOString().replace(/[-:]/g, ''),
       device_id: this.client.state.deviceId,
       _uuid: this.client.state.uuid,
       device: devicePayload,
@@ -576,6 +560,76 @@ export class MediaRepository extends Repository {
     return body;
   }
 
+  public async configureToIgtv(options: MediaConfigureToIgtvOptions) {
+    const form: MediaConfigureToIgtvOptions = defaultsDeep(options, {
+      caption: '',
+      date_time_original: new Date().toISOString().replace(/[-:]/g, ''),
+      igtv_share_preview_to_feed: '0',
+      clips: [
+        {
+          length: options.length,
+          source_type: options.source_type || '4',
+        },
+      ],
+      audio_muted: false,
+      poster_frame_index: 0,
+      filter_type: '0',
+      timezone_offset: this.client.state.timezoneOffset,
+      media_folder: options.source_type !== '4' ? 'Camera' : undefined,
+      source_type: '4',
+      device: this.client.state.devicePayload,
+      retryContext: { num_step_auto_retry: 0, num_reupload: 0, num_step_manual_retry: 0 },
+    });
+    const retryContext = options.retryContext;
+    delete form.retryContext;
+    const { body } = await this.client.request.send({
+      url: '/api/v1/media/configure_to_igtv/',
+      method: 'POST',
+      qs: {
+        video: '1',
+      },
+      headers: {
+        is_igtv_video: '1',
+        retry_context: JSON.stringify(retryContext),
+      },
+      form: this.client.request.sign({
+        ...form,
+        _csrftoken: this.client.state.cookieCsrfToken,
+        _uid: this.client.state.cookieUserId,
+        _uuid: this.client.state.uuid,
+      }),
+    });
+    return body;
+  }
+
+  public async onlyMe(mediaId: string): Promise<StatusResponse> {
+    const { body } = await this.client.request.send({
+      url: `/api/v1/media/${mediaId}/only_me/`,
+      method: 'POST',
+      form: this.client.request.sign({
+        media_id: mediaId,
+        _csrftoken: this.client.state.cookieCsrfToken,
+        _uid: this.client.state.cookieUserId,
+        _uuid: this.client.state.uuid,
+      }),
+    });
+    return body;
+  }
+
+  public async undoOnlyMe(mediaId: string): Promise<StatusResponse> {
+    const { body } = await this.client.request.send({
+      url: `/api/v1/media/${mediaId}/undo_only_me/`,
+      method: 'POST',
+      form: this.client.request.sign({
+        media_id: mediaId,
+        _csrftoken: this.client.state.cookieCsrfToken,
+        _uid: this.client.state.cookieUserId,
+        _uuid: this.client.state.uuid,
+      }),
+    });
+    return body;
+  }
+
   async seen(
     reels: {
       [item: string]: [string];
@@ -620,6 +674,92 @@ export class MediaRepository extends Repository {
     const { body } = await this.client.request.send({
       url: `/api/v1/media/${mediaId}/unsave/`,
       method: 'POST',
+    });
+    return body;
+  }
+
+  public async storyPollVote(
+    mediaId: string,
+    pollId: string | number,
+    vote: '0' | '1',
+  ): Promise<MediaUpdatedMediaResponseRootObject> {
+    const { body } = await this.client.request.send({
+      url: `/api/v1/media/${mediaId}/${pollId}/story_poll_vote/`,
+      method: 'POST',
+      form: this.client.request.sign({
+        _csrftoken: this.client.state.cookieCsrfToken,
+        radio_type: this.client.state.radioType,
+        _uid: this.client.state.cookieUserId,
+        vote,
+        _uuid: this.client.state.uuid,
+      }),
+    });
+    return body;
+  }
+
+  public async storyQuestionResponse(
+    mediaId: string,
+    questionId: string | number,
+    options: StoryTextQuestionResponse | StoryMusicQuestionResponse,
+  ): Promise<StatusResponse> {
+    const chance = new Chance();
+    // @ts-ignore
+    if (typeof options.response === 'undefined') {
+      options = defaultsDeep(options, { music_browse_session_id: chance.guid({ version: 4 }) });
+    }
+
+    const { body } = await this.client.request.send({
+      url: `/api/v1/media/${mediaId}/${questionId}/story_question_response/`,
+      method: 'POST',
+      form: this.client.request.sign({
+        client_context: chance.guid({ version: 4 }),
+        mutation_token: chance.guid({ version: 4 }),
+        _csrftoken: this.client.state.cookieCsrfToken,
+        _uid: this.client.state.cookieUserId,
+        _uuid: this.client.state.uuid,
+        ...options,
+      }),
+    });
+    return body;
+  }
+
+  public async storySliderVote(
+    mediaId: string,
+    sliderId: string | number,
+    vote: number,
+  ): Promise<MediaUpdatedMediaResponseRootObject> {
+    const { body } = await this.client.request.send({
+      url: `/api/v1/media/${mediaId}/${sliderId}/story_slider_vote/`,
+      method: 'POST',
+      form: this.client.request.sign({
+        _csrftoken: this.client.state.cookieCsrfToken,
+        _uid: this.client.state.cookieUserId,
+        _uuid: this.client.state.uuid,
+        vote: vote.toFixed(8),
+      }),
+    });
+    return body;
+  }
+
+  /**
+   * Answers a story quiz
+   * @param mediaId storyId
+   * @param quizId id of the quiz
+   * @param answer index (string is only for compatibility)
+   */
+  public async storyQuizAnswer(
+    mediaId: string,
+    quizId: string | number,
+    answer: '0' | '1' | '2' | '3' | string,
+  ): Promise<MediaUpdatedMediaResponseRootObject> {
+    const { body } = await this.client.request.send({
+      url: `/api/v1/media/${mediaId}/${quizId}/story_quiz_answer/`,
+      method: 'POST',
+      form: this.client.request.sign({
+        _csrftoken: this.client.state.cookieCsrfToken,
+        _uuid: this.client.state.uuid,
+        answer,
+      }),
     });
     return body;
   }

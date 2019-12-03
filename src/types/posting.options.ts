@@ -44,6 +44,8 @@ export interface PostingStoryOptions {
   chat?: StoryChat;
   quiz?: StoryQuiz;
   link?: string;
+
+  stickerConfig?: any & { story_sticker_ids };
 }
 
 export interface PostingStoryLocationSticker {

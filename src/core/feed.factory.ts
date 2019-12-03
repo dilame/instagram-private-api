@@ -25,16 +25,27 @@ import {
   TimelineFeed,
   UserFeed,
   UsertagsFeed,
+  IgtvBrowseFeed,
+  IgtvChannelFeed,
 } from '../feeds';
 import { DirectInboxFeedResponseThreadsItem } from '../responses';
-import { TimelineFeedReason } from '../types/timeline-feed.types';
-import { IgAppModule } from '../types/common.types';
 import { plainToClassFromExist } from 'class-transformer';
 import * as Chance from 'chance';
-import { PostsInsightsFeedOptions } from '../types';
+import { PostsInsightsFeedOptions, TimelineFeedReason, IgAppModule } from '../types';
 import { UserStoryFeed } from '../feeds/user-story.feed';
 import { ListReelMediaViewerFeed } from '../feeds/list-reel-media-viewer.feed';
 import { MediaInlineChildCommentsFeed } from '../feeds/media.inline-child-comments.feed';
+import { MediaStickerResponsesFeed } from '../feeds/media.sticker-responses.feed';
+import {
+  StorySliderVotersFeedResponseResponseRootObject,
+  StorySliderVotersFeedResponseResponseVotersItem,
+  StoryQuestionResponsesFeedResponseRespondersItem,
+  StoryQuestionResponsesFeedResponseRootObject,
+  StoryQuizParticipantsFeedResponseParticipantsItem,
+  StoryQuizParticipantsFeedResponseRootObject,
+  StoryPollVotersFeedResponseRootObject,
+  StoryPollVotersFeedResponseVotersItem,
+} from '../responses';
 
 export class FeedFactory {
   constructor(private client: IgApiClient) {}
@@ -197,5 +208,89 @@ export class FeedFactory {
       commentId,
       nextMinId: minId,
     });
+  }
+
+  public igtvBrowse(isPrefetch?: boolean): IgtvBrowseFeed {
+    return plainToClassFromExist(new IgtvBrowseFeed(this.client), {
+      isPrefetch: !!isPrefetch,
+    });
+  }
+
+  public storyQuestionResponses(
+    mediaId: string,
+    stickerId: string | number,
+  ): MediaStickerResponsesFeed<
+    StoryQuestionResponsesFeedResponseRootObject,
+    StoryQuestionResponsesFeedResponseRespondersItem
+  > {
+    return plainToClassFromExist(new MediaStickerResponsesFeed<any, any>(this.client), {
+      mediaId,
+      stickerId,
+      name: 'story_question_responses',
+      rootName: 'responder_info',
+      itemName: 'responders',
+    });
+  }
+
+  public storyPollVoters(
+    mediaId: string,
+    stickerId: string | number,
+  ): MediaStickerResponsesFeed<StoryPollVotersFeedResponseRootObject, StoryPollVotersFeedResponseVotersItem> {
+    return plainToClassFromExist(new MediaStickerResponsesFeed<any, any>(this.client), {
+      mediaId,
+      stickerId,
+      name: 'story_poll_voters',
+      rootName: 'voter_info',
+      itemName: 'voters',
+    });
+  }
+
+  public storyQuizParticipants(
+    mediaId: string,
+    stickerId: string | number,
+  ): MediaStickerResponsesFeed<
+    StoryQuizParticipantsFeedResponseRootObject,
+    StoryQuizParticipantsFeedResponseParticipantsItem
+  > {
+    return plainToClassFromExist(new MediaStickerResponsesFeed<any, any>(this.client), {
+      mediaId,
+      stickerId,
+      name: 'story_quiz_participants',
+      rootName: 'participant_info',
+      itemName: 'participants',
+    });
+  }
+
+  public storySliderVoters(
+    mediaId: string,
+    stickerId: string | number,
+  ): MediaStickerResponsesFeed<
+    StorySliderVotersFeedResponseResponseRootObject,
+    StorySliderVotersFeedResponseResponseVotersItem
+  > {
+    return plainToClassFromExist(new MediaStickerResponsesFeed<any, any>(this.client), {
+      mediaId,
+      stickerId,
+      name: 'story_slider_voters',
+      rootName: 'voter_info',
+      itemName: 'voters',
+    });
+  }
+
+  public igtvChannel(id: string | number) {
+    if (/[0-9]/.test(id.toString())) {
+      id = `user_${id}`;
+    }
+    return plainToClassFromExist(new IgtvChannelFeed(this.client), {
+      channelId: id,
+    });
+  }
+
+  /**
+   * Returns the suggested videos after the current (id) one
+   * @param id pk of the video
+   */
+  public igtvChaining(id: string | number) {
+    return this.igtvChannel(`chaining_${id}`);
   }
 }

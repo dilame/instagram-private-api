@@ -70,6 +70,7 @@ export class Request {
       this.defaults,
     );
     const response = await this.faultTolerantRequest(options);
+    this.updateState(response);
     process.nextTick(() => this.end$.next());
     if (response.body.status === 'ok' || (onlyCheckHttpStatus && response.statusCode === 200)) {
       return response;
@@ -78,6 +79,28 @@ export class Request {
     process.nextTick(() => this.error$.next(error));
     throw error;
   }
+
+  private updateState(response: IgResponse<any>) {
+    const {
+      'x-ig-set-www-claim': wwwClaim,
+      'ig-set-authorization': auth,
+      'ig-set-password-encryption-key-id': pwKeyId,
+      'ig-set-password-encryption-pub-key': pwPubKey,
+    } = response.headers;
+    if (typeof wwwClaim === 'string') {
+      this.client.state.igWWWClaim = wwwClaim;
+    }
+    if (typeof auth === 'string' && !auth.endsWith(':')) {
+      this.client.state.authorization = auth;
+    }
+    if (typeof pwKeyId === 'string') {
+      this.client.state.passwordEncryptionKeyId = pwKeyId;
+    }
+    if (typeof pwPubKey === 'string') {
+      this.client.state.passwordEncryptionPubKey = pwPubKey;
+    }
+  }
+
   public signature(data: string) {
     return createHmac('sha256', this.client.state.signatureKey)
       .update(data)
@@ -138,7 +161,7 @@ export class Request {
     return new IgResponseError(response);
   }
 
-  private async faultTolerantRequest(options: Options) {
+  protected async faultTolerantRequest(options: Options) {
     try {
       return await retry(async () => request(options), this.attemptOptions);
     } catch (err) {
@@ -146,24 +169,39 @@ export class Request {
     }
   }
 
-  private getDefaultHeaders() {
-    // TODO: unquoted Host and Connection?!
+  public getDefaultHeaders() {
     return {
       'User-Agent': this.client.state.appUserAgent,
+      'X-Ads-Opt-Out': this.client.state.adsOptOut ? '1' : '0',
+      // needed? 'X-DEVICE-ID': this.client.state.uuid,
+      'X-CM-Bandwidth-KBPS': '-1.000',
+      'X-CM-Latency': '-1.000',
+      'X-IG-App-Locale': this.client.state.language,
+      'X-IG-Device-Locale': this.client.state.language,
       'X-Pigeon-Session-Id': this.client.state.pigeonSessionId,
       'X-Pigeon-Rawclienttime': (Date.now() / 1000).toFixed(3),
       'X-IG-Connection-Speed': `${random(1000, 3700)}kbps`,
       'X-IG-Bandwidth-Speed-KBPS': '-1.000',
       'X-IG-Bandwidth-TotalBytes-B': '0',
       'X-IG-Bandwidth-TotalTime-MS': '0',
+      'X-IG-EU-DC-ENABLED':
+        typeof this.client.state.euDCEnabled === 'undefined' ? void 0 : this.client.state.euDCEnabled.toString(),
+      'X-IG-Extended-CDN-Thumbnail-Cache-Busting-Value': this.client.state.thumbnailCacheBustingValue.toString(),
+      'X-Bloks-Version-Id': this.client.state.bloksVersionId,
+      'X-MID': this.client.state.extractCookie('mid')?.value,
+      'X-IG-WWW-Claim': this.client.state.igWWWClaim || '0',
+      'X-Bloks-Is-Layout-RTL': this.client.state.isLayoutRTL.toString(),
       'X-IG-Connection-Type': this.client.state.connectionTypeHeader,
       'X-IG-Capabilities': this.client.state.capabilitiesHeader,
       'X-IG-App-ID': this.client.state.fbAnalyticsApplicationId,
-      'X-IG-VP9-Capable': true,
+      'X-IG-Device-ID': this.client.state.uuid,
+      'X-IG-Android-ID': this.client.state.deviceId,
       'Accept-Language': this.client.state.language.replace('_', '-'),
+      'X-FB-HTTP-Engine': 'Liger',
+      Authorization: this.client.state.authorization,
       Host: 'i.instagram.com',
       'Accept-Encoding': 'gzip',
-      Connection: 'Keep-Alive',
+      Connection: 'close',
     };
   }
 }
