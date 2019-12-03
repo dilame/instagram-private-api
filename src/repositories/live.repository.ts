@@ -340,6 +340,19 @@ export class LiveRepository extends Repository {
     return body;
   }
 
+  public async addToPostLive(broadcastId: string): Promise<any> {
+    const { body } = await this.client.request.send({
+      url: `/api/v1/live/${broadcastId}/add_to_post_live`,
+      method: 'POST',
+      form: this.client.request.sign({
+        _csrftoken: this.client.state.cookieCsrfToken,
+        _uid: this.client.state.cookieUserId,
+        _uuid: this.client.state.uuid,
+      }),
+    });
+    return body;
+  }
+
   /**
    * Shows all online users, ready to watch your stream
    */
