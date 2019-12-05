@@ -13,6 +13,7 @@ import {
   LiveLikeResponseRootObject,
   LiveLikeCountResponseRootObject,
   LiveJoinRequestCountsResponseRootObject,
+  LiveAddToPostResponse,
 } from '../responses';
 
 export class LiveRepository extends Repository {
@@ -335,6 +336,19 @@ export class LiveRepository extends Repository {
       method: 'POST',
       form: this.client.request.sign({
         sources: 'story_and_live',
+      }),
+    });
+    return body;
+  }
+
+  public async addToPostLive(broadcastId: string): Promise<LiveAddToPostResponse> {
+    const { body } = await this.client.request.send({
+      url: `/api/v1/live/${broadcastId}/add_to_post_live/`,
+      method: 'POST',
+      form: this.client.request.sign({
+        _csrftoken: this.client.state.cookieCsrfToken,
+        _uid: this.client.state.cookieUserId,
+        _uuid: this.client.state.uuid,
       }),
     });
     return body;
