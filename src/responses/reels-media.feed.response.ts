@@ -1,3 +1,4 @@
+import { StoryPoll, StoryCountdown, StorySlider, StoryQuiz } from '../types/media.configure-story.options';
 export interface ReelsMediaFeedResponseRootObject {
   reels: ReelsMediaFeedResponseReels;
   status: string;
@@ -73,6 +74,10 @@ export interface ReelsMediaFeedResponseItem {
   link_text?: string;
   story_cta?: ReelsMediaFeedResponseStoryCtaItem[];
   imported_taken_at?: number;
+  story_polls?: [StoryPoll] | string;
+  story_quizs?: [StoryQuiz] | string;
+  story_sliders?: [StorySlider] | string;
+  story_countdowns?: [StoryCountdown] | string;
 }
 export interface ReelsMediaFeedResponseImageVersions2 {
   candidates: ReelsMediaFeedResponseCandidatesItem[];
