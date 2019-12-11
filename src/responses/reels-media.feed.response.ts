@@ -1,4 +1,3 @@
-import { StoryPoll, StoryCountdown, StorySlider, StoryQuiz } from '../types/media.configure-story.options';
 export interface ReelsMediaFeedResponseRootObject {
   reels: ReelsMediaFeedResponseReels;
   status: string;
@@ -74,10 +73,105 @@ export interface ReelsMediaFeedResponseItem {
   link_text?: string;
   story_cta?: ReelsMediaFeedResponseStoryCtaItem[];
   imported_taken_at?: number;
-  story_polls?: [StoryPoll] | string;
-  story_quizs?: [StoryQuiz] | string;
-  story_sliders?: [StorySlider] | string;
-  story_countdowns?: [StoryCountdown] | string;
+  story_polls?: ReelsMediaFeedResponseStoryPollsItem[];
+  story_questions?: ReelsMediaFeedResponseStoryQuestionsItem[];
+  story_quizs?: ReelsMediaFeedResponseStoryQuizsItem[];
+  story_sliders?: ReelsMediaFeedResponseStorySlidersItem[];
+}
+export interface ReelsMediaFeedResponseStoryPollsItem {
+  x: number;
+  y: number;
+  z: number;
+  width: number;
+  height: number;
+  rotation: number;
+  is_pinned: number;
+  is_hidden: number;
+  is_sticker: number;
+  poll_sticker: ReelsMediaFeedResponsePollSticker;
+}
+export interface ReelsMediaFeedResponsePollSticker {
+  id: string;
+  poll_id: number;
+  question: string;
+  tallies: ReelsMediaFeedResponseTalliesItem[];
+  promotion_tallies: null;
+  viewer_can_vote: boolean;
+  is_shared_result: boolean;
+  finished: boolean;
+}
+export interface ReelsMediaFeedResponseTalliesItem {
+  text: string;
+  font_size?: number;
+  count: number;
+}
+export interface ReelsMediaFeedResponseStoryQuestionsItem {
+  x: number;
+  y: number;
+  z: number;
+  width: number;
+  height: number;
+  rotation: number;
+  is_pinned: number;
+  is_hidden: number;
+  is_sticker: number;
+  question_sticker: ReelsMediaFeedResponseQuestionSticker;
+}
+export interface ReelsMediaFeedResponseQuestionSticker {
+  question_type: string;
+  question_id: number;
+  question: string;
+  media_id: number;
+  text_color: string;
+  background_color: string;
+  viewer_can_interact: boolean;
+  profile_pic_url: string;
+}
+export interface ReelsMediaFeedResponseStoryQuizsItem {
+  x: number;
+  y: number;
+  z: number;
+  width: number;
+  height: number;
+  rotation: number;
+  is_pinned: number;
+  is_hidden: number;
+  is_sticker: number;
+  quiz_sticker: ReelsMediaFeedResponseQuizSticker;
+}
+export interface ReelsMediaFeedResponseQuizSticker {
+  id: string;
+  quiz_id: number;
+  question: string;
+  tallies: ReelsMediaFeedResponseTalliesItem[];
+  correct_answer: number;
+  viewer_can_answer: boolean;
+  finished: boolean;
+  text_color: string;
+  start_background_color: string;
+  end_background_color: string;
+}
+export interface ReelsMediaFeedResponseStorySlidersItem {
+  x: number;
+  y: number;
+  z: number;
+  width: number;
+  height: number;
+  rotation: number;
+  is_pinned: number;
+  is_hidden: number;
+  is_sticker: number;
+  slider_sticker: ReelsMediaFeedResponseSliderSticker;
+}
+export interface ReelsMediaFeedResponseSliderSticker {
+  slider_id: number;
+  question: string;
+  emoji: string;
+  text_color: string;
+  background_color: string;
+  viewer_can_vote: boolean;
+  slider_vote_average: null;
+  slider_vote_count: number;
 }
 export interface ReelsMediaFeedResponseImageVersions2 {
   candidates: ReelsMediaFeedResponseCandidatesItem[];
