@@ -92,7 +92,7 @@ export class StickerBuilder {
     return plainToClass(QuizSticker, {
       width: 0.7291667,
       height: 0.11824318 + options.options.length * 0.10304056,
-      options,
+      ...options,
     });
   }
 

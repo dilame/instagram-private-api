@@ -2,7 +2,10 @@ import { InstaSticker } from './insta-sticker';
 
 export interface QuizStickerOptions {
   question: string;
-  options: string[];
+  /**
+   * Array<{ text: string; count: number }> is only used internally, use string[]
+   */
+  options: string[] | Array<{ text: string; count: number }>;
   correctAnswer: number;
   textColor?: string;
   startBackgroundColor?: string;
@@ -11,7 +14,6 @@ export interface QuizStickerOptions {
 
 export class QuizSticker extends InstaSticker implements QuizStickerOptions {
   question: string;
-  // @ts-ignore
   options: Array<{ text: string; count: number }>;
   correctAnswer: number;
   textColor: string = '#ffffff';
