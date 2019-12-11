@@ -1,11 +1,7 @@
-import { DateTime } from 'luxon';
 import { InstaSticker } from './insta-sticker';
 
 export interface CountdownStickerOptions {
-  /**
-   * Use DateTime. 'number' is used internally.
-   */
-  endTs: DateTime | number;
+  endTs: number;
   text: string;
   textColor?: string;
   startBackgroundColor?: string;
