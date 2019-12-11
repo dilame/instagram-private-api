@@ -1,4 +1,3 @@
-import { StoryPoll, StoryCountdown, StorySlider, StoryQuiz } from '../types/media.configure-story.options';
 export interface ReelsMediaFeedResponseRootObject {
   reels: ReelsMediaFeedResponseReels;
   status: string;
