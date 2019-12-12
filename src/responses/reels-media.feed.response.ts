@@ -97,6 +97,7 @@ export interface ReelsMediaFeedResponsePollSticker {
   tallies: ReelsMediaFeedResponseTalliesItem[];
   promotion_tallies: null;
   viewer_can_vote: boolean;
+  viewer_vote: number;
   is_shared_result: boolean;
   finished: boolean;
 }
