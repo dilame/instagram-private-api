@@ -151,6 +151,7 @@ export interface ReelsMediaFeedResponseQuizSticker {
   text_color: string;
   start_background_color: string;
   end_background_color: string;
+  viewer_answer?: number;
 }
 export interface ReelsMediaFeedResponseStorySlidersItem {
   x: number;
