@@ -174,6 +174,7 @@ export interface ReelsMediaFeedResponseSliderSticker {
   viewer_can_vote: boolean;
   slider_vote_average: null;
   slider_vote_count: number;
+  viewer_vote?: number;
 }
 export interface ReelsMediaFeedResponseImageVersions2 {
   candidates: ReelsMediaFeedResponseCandidatesItem[];
