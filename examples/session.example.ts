@@ -32,6 +32,6 @@ function fakeLoad() {
     // the string should be a JSON object
     await ig.state.deserialize(fakeLoad());
   }
-  // This call will provoke request.$end stream
+  // This call will provoke request.end$ stream
   await ig.account.login(process.env.IG_USERNAME, process.env.IG_PASSWORD);
 })();
