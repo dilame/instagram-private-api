@@ -26,7 +26,7 @@ import {
   UserFeed,
   UsertagsFeed,
   IgtvBrowseFeed,
-  IgtvChannelFeed,
+  IgtvChannelFeed, LikedFeed,
 } from '../feeds';
 import { DirectInboxFeedResponseThreadsItem } from '../responses';
 import { plainToClassFromExist } from 'class-transformer';
@@ -292,5 +292,9 @@ export class FeedFactory {
    */
   public igtvChaining(id: string | number) {
     return this.igtvChannel(`chaining_${id}`);
+  }
+
+  public liked(): LikedFeed {
+    return new LikedFeed(this.client);
   }
 }
