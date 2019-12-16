@@ -77,6 +77,7 @@ export interface ReelsMediaFeedResponseItem {
   story_questions?: ReelsMediaFeedResponseStoryQuestionsItem[];
   story_quizs?: ReelsMediaFeedResponseStoryQuizsItem[];
   story_sliders?: ReelsMediaFeedResponseStorySlidersItem[];
+  story_countdowns?: ReelsMediaFeedResponseStoryCountdownsItem[];
 }
 export interface ReelsMediaFeedResponseStoryPollsItem {
   x: number;
@@ -175,6 +176,33 @@ export interface ReelsMediaFeedResponseSliderSticker {
   slider_vote_average: null;
   slider_vote_count: number;
   viewer_vote?: number;
+}
+
+export interface ReelsMediaFeedResponseStoryCountdownsItem {
+  x: number;
+  y: number;
+  z: number;
+  width: number;
+  height: number;
+  rotation: number;
+  is_pinned: number;
+  is_hidden: number;
+  is_sticker: number;
+  countdown_sticker: ReelsMediaFeedResponseCountdown_sticker;
+}
+export interface ReelsMediaFeedResponseCountdown_sticker {
+  countdown_id: number;
+  end_ts: number;
+  text: string;
+  text_color: string;
+  start_background_color: string;
+  end_background_color: string;
+  digit_color: string;
+  digit_card_color: string;
+  following_enabled: boolean;
+  is_owner: boolean;
+  attribution: null;
+  viewer_is_following: boolean;
 }
 export interface ReelsMediaFeedResponseImageVersions2 {
   candidates: ReelsMediaFeedResponseCandidatesItem[];
