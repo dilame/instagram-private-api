@@ -23,6 +23,10 @@ import JSONbigInt = require('json-bigint');
 
 const JSONbigString = JSONbigInt({ storeAsString: true });
 
+import debug from 'debug';
+
+const _requestDebug = debug('ig:request');
+
 type Payload = { [key: string]: any } | string;
 
 interface SignedPost {
@@ -38,7 +42,8 @@ export class Request {
   };
   defaults: Partial<Options> = {};
 
-  constructor(private client: IgApiClient) {}
+  constructor(private client: IgApiClient) {
+  }
 
   private static requestTransform(body, response: Response, resolveWithFullResponse) {
     try {
@@ -69,6 +74,7 @@ export class Request {
       },
       this.defaults,
     );
+    _requestDebug(`Requesting ${options.method} ${options.url || options.uri || '[could not find url]'}`);
     const response = await this.faultTolerantRequest(options);
     this.updateState(response);
     process.nextTick(() => this.end$.next());
@@ -130,6 +136,9 @@ export class Request {
   }
 
   private handleResponseError(response: Response): IgClientError {
+    _requestDebug(`Request ${response.request.method} ${response.request.uri} failed: ${
+      typeof response.body === 'object' ? JSON.stringify(response.body) : response.body}`);
+
     const json = response.body;
     if (json.spam) {
       return new IgActionSpamError(response);

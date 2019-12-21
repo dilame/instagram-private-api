@@ -10,6 +10,9 @@ import * as Constants from './constants';
 import { ChallengeStateResponse, CheckpointResponse } from '../responses';
 import { IgCookieNotFoundError, IgNoCheckpointError, IgUserIdNotFoundError } from '../errors';
 import { Enumerable } from '../decorators';
+import debug from 'debug';
+
+const _stateDebug = debug('ig:state');
 
 export class State {
   get signatureKey(): string {
@@ -158,6 +161,7 @@ export class State {
     try {
       return this.extractCookieValue('csrftoken');
     } catch {
+      _stateDebug('csrftoken lookup failed, returning "missing".');
       return 'missing';
     }
   }
@@ -182,6 +186,7 @@ export class State {
   public extractCookieValue(key: string): string {
     const cookie = this.extractCookie(key);
     if (cookie === null) {
+      _stateDebug(`Could not find ${key}`);
       throw new IgCookieNotFoundError(key);
     }
     return cookie.value;
@@ -218,7 +223,13 @@ export class State {
   }
 
   public async deserialize(state: string | any): Promise<void> {
+    _stateDebug(`Deserializing state of type ${typeof state}`);
     const obj = typeof state === 'string' ? JSON.parse(state) : state;
+    if (typeof obj !== 'object') {
+      _stateDebug(`State deserialization failed, obj is of type ${typeof obj} (object expected)`);
+      throw new TypeError('State isn\'t an object or serialized JSON');
+    }
+    _stateDebug(`Deserializing ${Object.keys(obj).join(', ')}`);
     if (obj.constants) {
       this.constants = obj.constants;
       delete obj.constants;

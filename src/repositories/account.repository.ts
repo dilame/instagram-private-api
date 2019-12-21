@@ -17,6 +17,8 @@ import { IgResponse, AccountEditProfileOptions, AccountTwoFactorLoginOptions } f
 import { defaultsDeep } from 'lodash';
 import { IgSignupBlockError } from '../errors/ig-signup-block.error';
 import Bluebird = require('bluebird');
+import debug from 'debug';
+const _accountRepositoryDebug = debug('ig:account');
 
 export class AccountRepository extends Repository {
   public async login(username: string, password: string): Promise<AccountRepositoryLoginResponseLogged_in_user> {
@@ -40,6 +42,7 @@ export class AccountRepository extends Repository {
       }),
     ).catch(IgResponseError, error => {
       if (error.response.body.two_factor_required) {
+        _accountRepositoryDebug(`Login failed, two factor auth required: ${JSON.stringify(error.response.body.two_factor_info)}`);
         throw new IgLoginTwoFactorRequiredError(error.response as IgResponse<AccountRepositoryLoginErrorResponse>);
       }
       switch (error.response.body.error_type) {
@@ -128,6 +131,7 @@ export class AccountRepository extends Repository {
     ).catch(IgResponseError, error => {
       switch (error.response.body.error_type) {
         case 'signup_block': {
+          _accountRepositoryDebug('Signup failed');
           throw new IgSignupBlockError(error.response as IgResponse<SpamResponse>);
         }
         default: {

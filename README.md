@@ -140,6 +140,17 @@ Services will help you to maintain some actions without calling a couple reposit
 | `simulate` | [SimulateService](https://github.com/dilame/instagram-private-api/blob/master/docs/classes/_services_simulate_service_.simulateservice.md) |
 | `story` | [StoryService](https://github.com/dilame/instagram-private-api/blob/master/docs/classes/_services_story_service_.storyservice.md) |
 
+# Debugging
+In order to get debug infos provided by the library, you can enable debugging.
+The prefix for this library is `ig`.
+To get all debug logs (*recommended*) set the channel to `ig:*`.
+#### Node
+In node you only have to set the environment variable `DEBUG` to the desired "channel".
+[Further information](https://github.com/visionmedia/debug#environment-variables)
+#### Browser
+In the browser you have to set `localStorage.debug` to the desired "channel".
+[Further information](https://github.com/visionmedia/debug#browser-support)
+
 # Contribution
 
 If you need features that is not implemented - feel free to implement and create PRs!
