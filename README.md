@@ -143,12 +143,12 @@ Services will help you to maintain some actions without calling a couple reposit
 # Debugging
 In order to get debug infos provided by the library, you can enable debugging.
 The prefix for this library is `ig`.
-To get all debug logs (*recommended*) set the channel to `ig:*`.
+To get all debug logs (*recommended*) set the namespace to `ig:*`.
 #### Node
-In node you only have to set the environment variable `DEBUG` to the desired "channel".
+In node you only have to set the environment variable `DEBUG` to the desired namespace.
 [Further information](https://github.com/visionmedia/debug#environment-variables)
 #### Browser
-In the browser you have to set `localStorage.debug` to the desired "channel".
+In the browser you have to set `localStorage.debug` to the desired namespace.
 [Further information](https://github.com/visionmedia/debug#browser-support)
 
 # Contribution
