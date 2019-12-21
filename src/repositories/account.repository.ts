@@ -42,7 +42,9 @@ export class AccountRepository extends Repository {
       }),
     ).catch(IgResponseError, error => {
       if (error.response.body.two_factor_required) {
-        _accountRepositoryDebug(`Login failed, two factor auth required: ${JSON.stringify(error.response.body.two_factor_info)}`);
+        _accountRepositoryDebug(
+          `Login failed, two factor auth required: ${JSON.stringify(error.response.body.two_factor_info)}`,
+        );
         throw new IgLoginTwoFactorRequiredError(error.response as IgResponse<AccountRepositoryLoginErrorResponse>);
       }
       switch (error.response.body.error_type) {

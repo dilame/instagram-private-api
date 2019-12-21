@@ -41,7 +41,9 @@ export class PublishService extends Repository {
   public static catchTranscodeError(videoInfo, transcodeDelayInMs: number) {
     return error => {
       if (error.response.statusCode === 202) {
-        _publishDebug(`Received trancode error: ${JSON.stringify(error.response.body)}, waiting ${transcodeDelayInMs}ms`);
+        _publishDebug(
+          `Received trancode error: ${JSON.stringify(error.response.body)}, waiting ${transcodeDelayInMs}ms`,
+        );
         return Bluebird.delay(transcodeDelayInMs);
       } else {
         throw new IgUploadVideoError(error.response as IgResponse<UploadRepositoryVideoResponseRootObject>, videoInfo);

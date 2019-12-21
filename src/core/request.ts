@@ -42,8 +42,7 @@ export class Request {
   };
   defaults: Partial<Options> = {};
 
-  constructor(private client: IgApiClient) {
-  }
+  constructor(private client: IgApiClient) {}
 
   private static requestTransform(body, response: Response, resolveWithFullResponse) {
     try {
@@ -136,8 +135,11 @@ export class Request {
   }
 
   private handleResponseError(response: Response): IgClientError {
-    _requestDebug(`Request ${response.request.method} ${response.request.uri} failed: ${
-      typeof response.body === 'object' ? JSON.stringify(response.body) : response.body}`);
+    _requestDebug(
+      `Request ${response.request.method} ${response.request.uri} failed: ${
+        typeof response.body === 'object' ? JSON.stringify(response.body) : response.body
+      }`,
+    );
 
     const json = response.body;
     if (json.spam) {

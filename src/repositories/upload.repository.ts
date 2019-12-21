@@ -50,7 +50,11 @@ export class UploadRepository extends Repository {
     const waterfallId = options.waterfallId || this.chance.guid({ version: 4 });
     const ruploadParams = UploadRepository.createVideoRuploadParams(options, uploadId);
 
-    _uploadDebug(`Uploading ${options.video.byteLength}b as ${uploadId} (video, mp4, not segmented). Info: ${JSON.stringify(ruploadParams)}`);
+    _uploadDebug(
+      `Uploading ${options.video.byteLength}b as ${uploadId} (video, mp4, not segmented). Info: ${JSON.stringify(
+        ruploadParams,
+      )}`,
+    );
     const { body } = await this.client.request.send({
       url: `/rupload_igvideo/${name}`,
       method: 'POST',
@@ -135,7 +139,9 @@ export class UploadRepository extends Repository {
   }
 
   public async videoSegmentTransfer(options: UploadVideoSegmentTransferOptions) {
-    _uploadDebug(`Transfering segmented video: ${options.segment.byteLength}b, stream position: ${options.startOffset}`);
+    _uploadDebug(
+      `Transfering segmented video: ${options.segment.byteLength}b, stream position: ${options.startOffset}`,
+    );
     const { body } = await this.client.request.send({
       url: `/rupload_igvideo/${options.transferId}`,
       qs: {
