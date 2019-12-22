@@ -55,6 +55,7 @@ async function login() {
       }))
       .add(StickerBuilder.countdown({
         text: 'My Countdown',
+        // @ts-ignore
         endTs: DateTime.local().plus(Duration.fromObject({ hours: 1 })), // countdown finishes in 1h
       }))
       .add(StickerBuilder.chat({
