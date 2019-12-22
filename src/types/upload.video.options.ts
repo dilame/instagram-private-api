@@ -13,6 +13,25 @@ export interface UploadVideoOptions {
   forDirectStory?: boolean;
   isIgtvVideo?: boolean;
   waterfallId?: string;
+  uploadName?: string;
+  offset?: number;
+}
+
+export interface UploadVideoSegmentInitOptions {
+  waterfallId: string;
+  ruploadParams;
+  transferId: string;
+  streamId: string;
+  startOffset: number;
+}
+
+export interface UploadVideoSegmentTransferOptions {
+  waterfallId: string;
+  ruploadParams;
+  transferId: string;
+  streamId: string;
+  startOffset: number;
+  segment: Buffer;
 }
 
 export type SegmentDivider = (options: { buffer: Buffer; client: IgApiClient }) => Buffer[];
@@ -21,6 +40,8 @@ export interface UploadSegmentedVideoOptions extends UploadVideoOptions {
   segmentDivider?: SegmentDivider;
   // only supported by segmented upload for now
   retryContext?: UploadRetryContext;
+  // all segments are currently video-segments
+  segments?: Buffer[];
 }
 
 export interface UploadRetryContext {

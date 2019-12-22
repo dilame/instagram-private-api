@@ -1,9 +1,11 @@
 import { Feed } from '../core/feed';
 import { Expose } from 'class-transformer';
-import { IgtvChannelFeedResponseItemsItem, IgtvChannelFeedResponseRootObject } from '../responses/igtv.channel.feed.response';
+import {
+  IgtvChannelFeedResponseItemsItem,
+  IgtvChannelFeedResponseRootObject,
+} from '../responses/igtv.channel.feed.response';
 
 export class IgtvChannelFeed extends Feed<IgtvChannelFeedResponseRootObject, IgtvChannelFeedResponseItemsItem> {
-
   channelId: string;
 
   @Expose()
@@ -15,7 +17,7 @@ export class IgtvChannelFeed extends Feed<IgtvChannelFeedResponseRootObject, Igt
   }
 
   async request(): Promise<IgtvChannelFeedResponseRootObject> {
-    const {body} = await this.client.request.send({
+    const { body } = await this.client.request.send({
       url: '/api/v1/igtv/channel/',
       form: {
         id: this.channelId,

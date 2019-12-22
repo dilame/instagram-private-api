@@ -10,7 +10,6 @@ import {
   StoryQuiz,
   StorySlider,
 } from './media.configure-story.options';
-import { StickerConfig } from '../services/sticker.service';
 
 export interface PostingUsertags {
   in: Array<{ user_id: number | string; position: [number, number] }>;
@@ -46,7 +45,7 @@ export interface PostingStoryOptions {
   quiz?: StoryQuiz;
   link?: string;
 
-  stickerConfig?: StickerConfig;
+  stickerConfig?: any & { story_sticker_ids };
 }
 
 export interface PostingStoryLocationSticker {

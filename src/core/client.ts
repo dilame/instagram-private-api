@@ -36,7 +36,6 @@ import { AdsRepository } from '../repositories/ads.repository';
 import { InsightsService } from '../services/insights.service';
 import { RestrictActionRepository } from '../repositories/restrict-action.repository';
 import { AddressBookRepository } from '../repositories/address-book.repository';
-import { StickerService } from '../services/sticker.service';
 import { StatusRepository } from '../repositories/status.repository';
 import { IgtvRepository } from '../repositories/igtv.repository';
 
@@ -83,7 +82,6 @@ export class IgApiClient {
   public simulate = new SimulateService(this);
   public story = new StoryService(this);
   public insights = new InsightsService(this);
-  public sticker = new StickerService(this);
 
   public destroy() {
     this.request.error$.complete();

@@ -13,17 +13,108 @@ import {
   PostingStoryPhotoOptions,
   PostingStoryVideoOptions,
   PostingVideoOptions,
+  SEGMENT_DIVIDERS,
+  UploadRetryContext,
+  UploadSegmentedVideoOptions,
+  UploadVideoOptions,
 } from '../types';
 import { PostingLocation, PostingStoryOptions } from '../types/posting.options';
 import { IgConfigureVideoError, IgResponseError, IgUploadVideoError } from '../errors';
-import { UploadRepositoryVideoResponseRootObject } from '../responses';
+import { StatusResponse, UploadRepositoryVideoResponseRootObject } from '../responses';
 import { PostingIgtvOptions } from '../types/posting.igtv.options';
 import sizeOf = require('image-size');
 import Bluebird = require('bluebird');
 import Chance = require('chance');
-import { random } from 'lodash';
+import { random, defaults } from 'lodash';
+import { UploadRepository } from '../repositories/upload.repository';
 
 export class PublishService extends Repository {
+  private chance = new Chance();
+
+  /**
+   * The current way of handling the 202 - Accepted; Transcode pending -error
+   * @param videoInfo The video info for debugging reasons
+   * @param transcodeDelayInMs The delay for instagram to transcode the video
+   */
+  public static catchTranscodeError(videoInfo, transcodeDelayInMs: number) {
+    return error => {
+      if (error.response.statusCode === 202) {
+        return Bluebird.delay(transcodeDelayInMs);
+      } else {
+        throw new IgUploadVideoError(error.response as IgResponse<UploadRepositoryVideoResponseRootObject>, videoInfo);
+      }
+    };
+  }
+
+  /**
+   * Gets duration in ms, width and height info for a video in the mp4 container
+   * @param buffer Buffer, containing the video-file
+   * @returns duration in ms, width and height in px
+   */
+  public static getVideoInfo(buffer: Buffer): { duration: number; width: number; height: number } {
+    const timescale = PublishService.read32(buffer, ['moov', 'mvhd'], 12);
+    const length = PublishService.read32(buffer, ['moov', 'mvhd'], 12 + 4);
+    const width = PublishService.read16(buffer, ['moov', 'trak', 'stbl', 'avc1'], 24);
+    const height = PublishService.read16(buffer, ['moov', 'trak', 'stbl', 'avc1'], 26);
+    return {
+      duration: Math.floor((length / timescale) * 1000.0),
+      width,
+      height,
+    };
+  }
+
+  private static makeLocationOptions(location?: PostingLocation): any {
+    const options: any = {};
+    if (typeof location !== 'undefined') {
+      const { lat, lng, external_id_source, external_id, name, address } = location;
+      options.location = {
+        name,
+        lat,
+        lng,
+        address,
+        external_source: external_id_source,
+        external_id,
+      };
+      options.location[external_id_source + '_id'] = external_id;
+      options.geotag_enabled = '1';
+      options.media_latitude = lat.toString();
+      options.media_longitude = lng.toString();
+      options.posting_latitude = lat.toString();
+      options.posting_longitude = lng.toString();
+    }
+    return options;
+  }
+
+  /**
+   * Reads a 32bit unsigned integer from a given Buffer by walking along the keys and getting the value with the given offset
+   * ref: https://gist.github.com/OllieJones/5ffb011fa3a11964154975582360391c#file-streampeek-js-L9
+   * @param buffer  The buffer to read from
+   * @param keys  Keys the 'walker' should pass (stopping at the last key)
+   * @param offset  Offset from the ast key to read the uint32
+   */
+  private static read32(buffer: Buffer, keys: string[], offset: number) {
+    let start = 0;
+    for (const key of keys) {
+      start = buffer.indexOf(Buffer.from(key), start) + key.length;
+    }
+    return buffer.readUInt32BE(start + offset);
+  }
+
+  /**
+   * Reads a 16bit unsigned integer from a given Buffer by walking along the keys and getting the value with the given offset
+   * ref: https://gist.github.com/OllieJones/5ffb011fa3a11964154975582360391c#file-streampeek-js-L25
+   * @param buffer  The buffer to read from
+   * @param keys  Keys the 'walker' should pass (stopping at the last key)
+   * @param offset  Offset from the ast key to read the uint16
+   */
+  private static read16(buffer: Buffer, keys: string[], offset: number) {
+    let start = 0;
+    for (const key of keys) {
+      start = buffer.indexOf(Buffer.from(key), start) + key.length;
+    }
+    return buffer.readUInt16BE(start + offset);
+  }
+
   /**
    * Uploads a single photo to the timeline-feed
    * @param options - the options, containing caption and image-data
@@ -46,26 +137,11 @@ export class PublishService extends Repository {
     return await this.client.media.configure(configureOptions);
   }
 
-  /**
-   * The current way of handling the 202 - Accepted; Transcode pending -error
-   * @param videoInfo The video info for debugging reasons
-   * @param transcodeDelayInMs The delay for instagram to transcode the video
-   */
-  public static catchTranscodeError(videoInfo, transcodeDelayInMs: number) {
-    return error => {
-      if (error.response.statusCode === 202) {
-        return Bluebird.delay(transcodeDelayInMs);
-      } else {
-        throw new IgUploadVideoError(error.response as IgResponse<UploadRepositoryVideoResponseRootObject>, videoInfo);
-      }
-    };
-  }
-
   public async video(options: PostingVideoOptions) {
     const uploadId = Date.now().toString();
     const videoInfo = PublishService.getVideoInfo(options.video);
     await Bluebird.try(() =>
-      this.client.upload.video({
+      this.regularVideo({
         video: options.video,
         uploadId,
         ...videoInfo,
@@ -105,9 +181,16 @@ export class PublishService extends Repository {
       configureOptions.usertags = options.usertags;
     }
 
-    return Bluebird.try(() => this.client.media.configureVideo(configureOptions)).catch(IgResponseError, error => {
-      throw new IgConfigureVideoError(error.response as IgResponse<UploadRepositoryVideoResponseRootObject>, videoInfo);
-    });
+    for (let i = 0; i < 6; i++) {
+      try {
+        return await this.client.media.configureVideo(configureOptions);
+      } catch (e) {
+        if (i >= 5 || e.response.statusCode >= 400) {
+          throw new IgConfigureVideoError(e.response, configureOptions);
+        }
+        await Bluebird.delay((i + 1) * 2 * 1000);
+      }
+    }
   }
 
   public async album(options: PostingAlbumOptions) {
@@ -131,7 +214,7 @@ export class PublishService extends Repository {
         item.videoInfo = PublishService.getVideoInfo(item.video);
         item.uploadId = Date.now().toString();
         await Bluebird.try(() =>
-          this.client.upload.video({
+          this.regularVideo({
             video: item.video,
             uploadId: item.uploadId,
             isSidecar: true,
@@ -182,90 +265,6 @@ export class PublishService extends Repository {
     });
   }
 
-  private static makeLocationOptions(location?: PostingLocation): any {
-    const options: any = {};
-    if (typeof location !== 'undefined') {
-      const { lat, lng, external_id_source, external_id, name, address } = location;
-      options.location = {
-        name,
-        lat,
-        lng,
-        address,
-        external_source: external_id_source,
-        external_id,
-      };
-      options.location[external_id_source + '_id'] = external_id;
-      options.geotag_enabled = '1';
-      options.media_latitude = lat.toString();
-      options.media_longitude = lng.toString();
-      options.posting_latitude = lat.toString();
-      options.posting_longitude = lng.toString();
-    }
-    return options;
-  }
-
-  private async uploadAndConfigureStoryPhoto(
-    options: PostingStoryPhotoOptions,
-    configureOptions: MediaConfigureStoryBaseOptions,
-  ) {
-    const uploadId = Date.now().toString();
-    const imageSize = await sizeOf(options.file);
-    await this.client.upload.photo({
-      file: options.file,
-      uploadId,
-    });
-    return await this.client.media.configureToStory({
-      ...configureOptions,
-      upload_id: uploadId,
-      width: imageSize.width,
-      height: imageSize.height,
-    });
-  }
-
-  private async uploadAndConfigureStoryVideo(
-    options: PostingStoryVideoOptions,
-    configureOptions: MediaConfigureStoryBaseOptions,
-  ) {
-    const uploadId = random(100000000000, 999999999999).toString();
-    const videoInfo = PublishService.getVideoInfo(options.video);
-    const waterfallId = new Chance().guid({version: 4});
-    await Bluebird.try(() =>
-       this.client.upload.video({
-        video: options.video,
-        uploadId,
-        forDirectStory: configureOptions.configure_mode === '2',
-        waterfallId,
-        forAlbum: true,
-        ...videoInfo,
-      }),
-    ).catch(IgResponseError, error => {
-      throw new IgConfigureVideoError(error.response as IgResponse<UploadRepositoryVideoResponseRootObject>, videoInfo);
-    });
-    await this.client.upload.photo({
-      file: options.coverImage,
-      waterfallId,
-      uploadId,
-    });
-    await Bluebird.try(() =>
-      this.client.media.uploadFinish({
-        upload_id: uploadId,
-        source_type: '3',
-        video: { length: videoInfo.duration / 1000.0 },
-      }),
-    ).catch(IgResponseError, PublishService.catchTranscodeError(videoInfo, options.transcodeDelay));
-    return Bluebird.try(() =>
-      this.client.media.configureToStoryVideo({
-        upload_id: uploadId,
-        length: videoInfo.duration / 1000.0,
-        width: videoInfo.width,
-        height: videoInfo.height,
-        ...configureOptions,
-      }),
-    ).catch(IgResponseError, error => {
-      throw new IgConfigureVideoError(error.response as IgResponse<UploadRepositoryVideoResponseRootObject>, videoInfo);
-    });
-  }
-
   public async story(options: PostingStoryPhotoOptions | PostingStoryVideoOptions) {
     const isPhoto = (arg: PostingStoryOptions): arg is PostingStoryPhotoOptions =>
       (arg as PostingStoryPhotoOptions).file !== undefined;
@@ -288,7 +287,7 @@ export class PublishService extends Repository {
       configureOptions.configure_mode = '2';
       configureOptions.view_mode = options.viewMode;
       configureOptions.reply_type = options.replyType;
-      configureOptions.client_context = new Chance().guid();
+      configureOptions.client_context = this.chance.guid();
       if (recipients) {
         configureOptions.recipient_users = options.recipientUsers;
       }
@@ -382,7 +381,7 @@ export class PublishService extends Repository {
   public async igtvVideo(options: PostingIgtvOptions) {
     const videoInfo = PublishService.getVideoInfo(options.video);
     const uploadId = Date.now().toString();
-    const uploadResult = await this.client.upload.segmentedVideoUpload({
+    const uploadResult = await this.segmentedVideo({
       video: options.video,
       isIgtvVideo: true,
       ...videoInfo,
@@ -434,50 +433,127 @@ export class PublishService extends Repository {
     }
   }
 
-  /**
-   * Gets duration in ms, width and height info for a video in the mp4 container
-   * @param buffer Buffer, containing the video-file
-   * @returns duration in ms, width and height in px
-   */
-  public static getVideoInfo(buffer: Buffer): { duration: number; width: number; height: number } {
-    const timescale = PublishService.read32(buffer, ['moov', 'mvhd'], 12);
-    const length = PublishService.read32(buffer, ['moov', 'mvhd'], 12 + 4);
-    const width = PublishService.read16(buffer, ['moov', 'trak', 'stbl', 'avc1'], 24);
-    const height = PublishService.read16(buffer, ['moov', 'trak', 'stbl', 'avc1'], 26);
-    return {
-      duration: Math.floor((length / timescale) * 1000.0),
-      width,
-      height,
-    };
+  private async regularVideo(options: UploadVideoOptions) {
+    options = defaults(options, {
+      uploadId: Date.now(),
+      waterfallId: this.chance.guid({ version: 4 }),
+    });
+    options.uploadName = options.uploadName || `${options.uploadId}_0_${random(1000000000, 9999999999)}`;
+    const ruploadParams = UploadRepository.createVideoRuploadParams(options, options.uploadId);
+    const { offset } = await this.client.upload.initVideo({
+      name: options.uploadName,
+      ruploadParams,
+      waterfallId: options.waterfallId,
+    });
+    return this.client.upload.video({ offset, ...options });
   }
 
-  /**
-   * Reads a 32bit unsigned integer from a given Buffer by walking along the keys and getting the value with the given offset
-   * ref: https://gist.github.com/OllieJones/5ffb011fa3a11964154975582360391c#file-streampeek-js-L9
-   * @param buffer  The buffer to read from
-   * @param keys  Keys the 'walker' should pass (stopping at the last key)
-   * @param offset  Offset from the ast key to read the uint32
-   */
-  private static read32(buffer: Buffer, keys: string[], offset: number) {
-    let start = 0;
-    for (const key of keys) {
-      start = buffer.indexOf(Buffer.from(key), start) + key.length;
+  private async segmentedVideo(
+    options: UploadSegmentedVideoOptions,
+  ): Promise<StatusResponse & { retryContext: UploadRetryContext; uploadId: string; waterfallId: string }> {
+    const uploadId = options.uploadId || Date.now().toString();
+    const retryContext = options.retryContext || { num_step_auto_retry: 0, num_reupload: 0, num_step_manual_retry: 0 };
+    const ruploadParams = UploadRepository.createVideoRuploadParams(options, uploadId, retryContext);
+    const waterfallId = options.waterfallId || random(1000000000, 9999999999).toString();
+
+    const { stream_id: streamId } = await this.client.upload.startSegmentedVideo(ruploadParams);
+
+    const segments =
+      options.segments ||
+      (options.segmentDivider || SEGMENT_DIVIDERS.sectionSize(Math.pow(2, 24)))({
+        buffer: options.video,
+        client: this.client,
+      });
+    let startOffset = 0;
+    for (const segment of segments) {
+      // this is an identifier not a guid, but has the same 'length' as a guid without '-'
+      const transferId = `${this.chance.guid({ version: 4 }).replace('-', '')}-0-${segment.byteLength}`;
+      const { offset: streamOffset } = await this.client.upload.videoSegmentInit({
+        waterfallId,
+        streamId,
+        startOffset,
+        ruploadParams,
+        transferId,
+      });
+      if (streamOffset !== 0) {
+        // TODO: implement offset != 0
+        throw new Error(
+          `Offset != 0 isn't implemented. Open an issue including your network config and other setup information to reproduce.`,
+        );
+      }
+      await this.client.upload.videoSegmentTransfer({
+        waterfallId,
+        streamId,
+        startOffset,
+        ruploadParams,
+        transferId,
+        segment,
+      });
+      startOffset += segment.byteLength;
     }
-    return buffer.readUInt32BE(start + offset);
+    const end = await this.client.upload.endSegmentedVideo({ ruploadParams, streamId });
+    return { ...end, retryContext, uploadId, waterfallId };
   }
 
-  /**
-   * Reads a 16bit unsigned integer from a given Buffer by walking along the keys and getting the value with the given offset
-   * ref: https://gist.github.com/OllieJones/5ffb011fa3a11964154975582360391c#file-streampeek-js-L25
-   * @param buffer  The buffer to read from
-   * @param keys  Keys the 'walker' should pass (stopping at the last key)
-   * @param offset  Offset from the ast key to read the uint16
-   */
-  private static read16(buffer: Buffer, keys: string[], offset: number) {
-    let start = 0;
-    for (const key of keys) {
-      start = buffer.indexOf(Buffer.from(key), start) + key.length;
-    }
-    return buffer.readUInt16BE(start + offset);
+  private async uploadAndConfigureStoryPhoto(
+    options: PostingStoryPhotoOptions,
+    configureOptions: MediaConfigureStoryBaseOptions,
+  ) {
+    const uploadId = Date.now().toString();
+    const imageSize = await sizeOf(options.file);
+    await this.client.upload.photo({
+      file: options.file,
+      uploadId,
+    });
+    return await this.client.media.configureToStory({
+      ...configureOptions,
+      upload_id: uploadId,
+      width: imageSize.width,
+      height: imageSize.height,
+    });
+  }
+
+  private async uploadAndConfigureStoryVideo(
+    options: PostingStoryVideoOptions,
+    configureOptions: MediaConfigureStoryBaseOptions,
+  ) {
+    const uploadId = random(100000000000, 999999999999).toString();
+    const videoInfo = PublishService.getVideoInfo(options.video);
+    const waterfallId = this.chance.guid({ version: 4 });
+    await Bluebird.try(() =>
+      this.regularVideo({
+        video: options.video,
+        uploadId,
+        forDirectStory: configureOptions.configure_mode === '2',
+        waterfallId,
+        forAlbum: true,
+        ...videoInfo,
+      }),
+    ).catch(IgResponseError, error => {
+      throw new IgConfigureVideoError(error.response as IgResponse<UploadRepositoryVideoResponseRootObject>, videoInfo);
+    });
+    await this.client.upload.photo({
+      file: options.coverImage,
+      waterfallId,
+      uploadId,
+    });
+    await Bluebird.try(() =>
+      this.client.media.uploadFinish({
+        upload_id: uploadId,
+        source_type: '3',
+        video: { length: videoInfo.duration / 1000.0 },
+      }),
+    ).catch(IgResponseError, PublishService.catchTranscodeError(videoInfo, options.transcodeDelay));
+    return Bluebird.try(() =>
+      this.client.media.configureToStoryVideo({
+        upload_id: uploadId,
+        length: videoInfo.duration / 1000.0,
+        width: videoInfo.width,
+        height: videoInfo.height,
+        ...configureOptions,
+      }),
+    ).catch(IgResponseError, error => {
+      throw new IgConfigureVideoError(error.response as IgResponse<UploadRepositoryVideoResponseRootObject>, videoInfo);
+    });
   }
 }
