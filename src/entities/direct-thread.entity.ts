@@ -5,7 +5,8 @@ import {
   DirectThreadBroadcastPhotoStoryOptions,
   DirectThreadBroadcastReelOptions,
   DirectThreadBroadcastVideoOptions,
-  DirectThreadBroadcastVideoStoryOptions, DirectThreadBroadcastVoiceOptions,
+  DirectThreadBroadcastVideoStoryOptions,
+  DirectThreadBroadcastVoiceOptions,
 } from '../types';
 import { DirectThreadBroadcastOptions } from '../types';
 import { IgClientError, IgResponseError } from '../errors';
@@ -157,7 +158,9 @@ export class DirectThreadEntity extends Entity {
       item: 'share_voice',
       form: {
         // create a nice sine wave if the waveform is not provided
-        waveform: JSON.stringify(options.waveform || Array.from(Array(20), (_, i) => Math.sin(i * (Math.PI / 10)) * 0.5 + 0.5)),
+        waveform: JSON.stringify(
+          options.waveform || Array.from(Array(20), (_, i) => Math.sin(i * (Math.PI / 10)) * 0.5 + 0.5),
+        ),
         waveform_sampling_frequency_hz: options.waveformSamplingFrequencyHz || '10',
         upload_id: uploadId,
       },

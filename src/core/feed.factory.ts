@@ -26,7 +26,8 @@ import {
   UserFeed,
   UsertagsFeed,
   IgtvBrowseFeed,
-  IgtvChannelFeed, LikedFeed,
+  IgtvChannelFeed,
+  LikedFeed,
 } from '../feeds';
 import { DirectInboxFeedResponseThreadsItem } from '../responses';
 import { plainToClassFromExist } from 'class-transformer';
