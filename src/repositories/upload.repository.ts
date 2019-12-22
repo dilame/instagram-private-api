@@ -209,8 +209,8 @@ export class UploadRepository extends Repository {
       media_type: options.mediaType || '2',
       xsharing_user_ids: JSON.stringify([]),
       upload_id: uploadId.toString(),
-      upload_media_height: height.toString(),
-      upload_media_width: width.toString(),
+      upload_media_height: height?.toString(),
+      upload_media_width: width?.toString(),
       upload_media_duration_ms: duration.toString(),
     };
     if (options.isSidecar) {
@@ -228,6 +228,9 @@ export class UploadRepository extends Repository {
     }
     if (options.isIgtvVideo) {
       ruploadParams.is_igtv_video = '1';
+    }
+    if (options.isDirectVoice) {
+      ruploadParams.is_direct_voice = '1';
     }
     return ruploadParams;
   }
