@@ -53,6 +53,7 @@ async function login() {
       }))
       .add(ig.sticker.countdown({
         text: 'My Countdown',
+        // @ts-ignore
         endTs: DateTime.local().plus(Duration.fromObject({ hours: 1 })), // countdown finishes in 1h
       }))
       .add(ig.sticker.chat({
