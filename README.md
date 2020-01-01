@@ -36,7 +36,6 @@ From github
 ```
 npm install github:dilame/instagram-private-api
 ```
-
 # Support us
 
 If you find this library useful for you, you can support it by donating any amount
@@ -46,6 +45,13 @@ BTC: 1Dqnz9QuswAvD3t7Jsw7LhwprR6HAWprW6
 # Examples
 
 You can find usage examples [here](examples)
+
+*Note for JavaScript users:* 
+As of Node v.13.5.0, there isn't support for ESModules and the 'import'-syntax.
+So you have to read the imports in the examples like this:
+
+`import { A } from 'b'` ➡ `const { A } = require('b')`
+
 
 ```typescript
 import { IgApiClient } from './src';
