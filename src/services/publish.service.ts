@@ -52,15 +52,23 @@ export class PublishService extends Repository {
    * @returns duration in ms, width and height in px
    */
   public static getVideoInfo(buffer: Buffer): { duration: number; width: number; height: number } {
-    const timescale = PublishService.read32(buffer, ['moov', 'mvhd'], 12);
-    const length = PublishService.read32(buffer, ['moov', 'mvhd'], 12 + 4);
     const width = PublishService.read16(buffer, ['moov', 'trak', 'stbl', 'avc1'], 24);
     const height = PublishService.read16(buffer, ['moov', 'trak', 'stbl', 'avc1'], 26);
     return {
-      duration: Math.floor((length / timescale) * 1000.0),
+      duration: PublishService.getMP4Duration(buffer),
       width,
       height,
     };
+  }
+
+  /**
+   * Reads the duration in ms from any MP4 file with at least one stream (a/v)
+   * @param buffer
+   */
+  public static getMP4Duration(buffer: Buffer): number {
+    const timescale = PublishService.read32(buffer, ['moov', 'mvhd'], 12);
+    const length = PublishService.read32(buffer, ['moov', 'mvhd'], 12 + 4);
+    return Math.floor((length / timescale) * 1000);
   }
 
   private static makeLocationOptions(location?: PostingLocation): any {

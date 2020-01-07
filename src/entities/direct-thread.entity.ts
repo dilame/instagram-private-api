@@ -6,6 +6,7 @@ import {
   DirectThreadBroadcastReelOptions,
   DirectThreadBroadcastVideoOptions,
   DirectThreadBroadcastVideoStoryOptions,
+  DirectThreadBroadcastVoiceOptions,
 } from '../types';
 import { DirectThreadBroadcastOptions } from '../types';
 import { IgClientError, IgResponseError } from '../errors';
@@ -135,6 +136,37 @@ export class DirectThreadEntity extends Entity {
     });
   }
 
+  public async broadcastVoice(options: DirectThreadBroadcastVoiceOptions) {
+    const duration = PublishService.getMP4Duration(options.file);
+    const uploadId = options.uploadId || Date.now().toString();
+    await this.client.upload.video({
+      duration,
+      video: options.file,
+      uploadId,
+      isDirectVoice: true,
+      mediaType: '11',
+    });
+
+    await Bluebird.try(() =>
+      this.client.media.uploadFinish({
+        upload_id: uploadId,
+        source_type: '4',
+      }),
+    ).catch(IgResponseError, PublishService.catchTranscodeError({ duration }, options.transcodeDelay || 4 * 1000));
+
+    return await this.broadcast({
+      item: 'share_voice',
+      form: {
+        // create a nice sine wave if the waveform is not provided
+        waveform: JSON.stringify(
+          options.waveform || Array.from(Array(20), (_, i) => Math.sin(i * (Math.PI / 10)) * 0.5 + 0.5),
+        ),
+        waveform_sampling_frequency_hz: options.waveformSamplingFrequencyHz || '10',
+        upload_id: uploadId,
+      },
+    });
+  }
+
   /**
    * Uploads a story to the thread
    * The story is either destroyable (view 'once') or 'replayable'
@@ -209,8 +241,15 @@ export class DirectThreadEntity extends Entity {
       params = Object.assign(baseParams, { userIds: this.userIds });
     }
     const response = await this.client.directThread.broadcast(params);
-    this.threadId = response.payload.thread_id;
-    this.userIds = null;
-    return response.payload;
+    if (response.payload) {
+      this.threadId = response.payload.thread_id;
+      this.userIds = null;
+      return response.payload;
+    } else if (response.message_metadata) {
+      const [first] = response.message_metadata;
+      this.threadId = first.thread_id;
+      this.userIds = null;
+      return response;
+    }
   }
 }
