@@ -25,8 +25,6 @@ const JSONbigString = JSONbigInt({ storeAsString: true });
 
 import debug from 'debug';
 
-const _requestDebug = debug('ig:request');
-
 type Payload = { [key: string]: any } | string;
 
 interface SignedPost {
@@ -35,6 +33,7 @@ interface SignedPost {
 }
 
 export class Request {
+  private static requestDebug = debug('ig:request');
   end$ = new Subject();
   error$ = new Subject<IgClientError>();
   attemptOptions: Partial<AttemptOptions<any>> = {
@@ -73,7 +72,7 @@ export class Request {
       },
       this.defaults,
     );
-    _requestDebug(`Requesting ${options.method} ${options.url || options.uri || '[could not find url]'}`);
+    Request.requestDebug(`Requesting ${options.method} ${options.url || options.uri || '[could not find url]'}`);
     const response = await this.faultTolerantRequest(options);
     this.updateState(response);
     process.nextTick(() => this.end$.next());
@@ -135,7 +134,7 @@ export class Request {
   }
 
   private handleResponseError(response: Response): IgClientError {
-    _requestDebug(
+    Request.requestDebug(
       `Request ${response.request.method} ${response.request.uri} failed: ${
         typeof response.body === 'object' ? JSON.stringify(response.body) : response.body
       }`,

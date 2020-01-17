@@ -10,16 +10,16 @@ import {
   UploadVideoSegmentTransferOptions,
 } from '../types';
 import debug from 'debug';
-const _uploadDebug = debug('ig:upload');
 
 export class UploadRepository extends Repository {
+  private static uploadDebug = debug('ig:upload');
   private chance = new Chance();
 
   public async photo(options: UploadPhotoOptions): Promise<UploadRepositoryPhotoResponseRootObject> {
     const uploadId = options.uploadId || Date.now();
     const name = `${uploadId}_0_${random(1000000000, 9999999999)}`;
     const contentLength = options.file.byteLength;
-    _uploadDebug(`Uploading ${options.file.byteLength}b as ${uploadId} (photo, jpeg)`);
+    UploadRepository.uploadDebug(`Uploading ${options.file.byteLength}b as ${uploadId} (photo, jpeg)`);
     const { body } = await this.client.request.send<UploadRepositoryPhotoResponseRootObject>({
       url: `/rupload_igphoto/${name}`,
       method: 'POST',
@@ -50,7 +50,7 @@ export class UploadRepository extends Repository {
     const waterfallId = options.waterfallId || this.chance.guid({ version: 4 });
     const ruploadParams = UploadRepository.createVideoRuploadParams(options, uploadId);
 
-    _uploadDebug(
+    UploadRepository.uploadDebug(
       `Uploading ${options.video.byteLength}b as ${uploadId} (video, mp4, not segmented). Info: ${JSON.stringify(
         ruploadParams,
       )}`,
@@ -78,7 +78,7 @@ export class UploadRepository extends Repository {
   }
 
   public async initVideo({ name, ruploadParams, waterfallId }): Promise<{ offset: number }> {
-    _uploadDebug(`Initializing video upload: ${JSON.stringify(ruploadParams)}`);
+    UploadRepository.uploadDebug(`Initializing video upload: ${JSON.stringify(ruploadParams)}`);
     const { body } = await this.client.request.send(
       {
         url: `/rupload_igvideo/${name}`,
@@ -96,7 +96,7 @@ export class UploadRepository extends Repository {
   }
 
   public async startSegmentedVideo(ruploadParams): Promise<{ stream_id: string }> {
-    _uploadDebug(`Starting segmented video upload: ${JSON.stringify(ruploadParams)}`);
+    UploadRepository.uploadDebug(`Starting segmented video upload: ${JSON.stringify(ruploadParams)}`);
     const { body } = await this.client.request.send({
       url: `/rupload_igvideo/${this.chance.guid({ version: 4 })}`,
       qs: {
@@ -115,7 +115,7 @@ export class UploadRepository extends Repository {
   }
 
   public async videoSegmentInit(options: UploadVideoSegmentInitOptions): Promise<{ offset: number }> {
-    _uploadDebug(`Initializing segmented video upload: ${JSON.stringify(options)}`);
+    UploadRepository.uploadDebug(`Initializing segmented video upload: ${JSON.stringify(options)}`);
     const { body } = await this.client.request.send(
       {
         url: `/rupload_igvideo/${options.transferId}`,
@@ -139,7 +139,7 @@ export class UploadRepository extends Repository {
   }
 
   public async videoSegmentTransfer(options: UploadVideoSegmentTransferOptions) {
-    _uploadDebug(
+    UploadRepository.uploadDebug(
       `Transfering segmented video: ${options.segment.byteLength}b, stream position: ${options.startOffset}`,
     );
     const { body } = await this.client.request.send({
@@ -168,7 +168,7 @@ export class UploadRepository extends Repository {
   }
 
   public async endSegmentedVideo({ ruploadParams, streamId }): Promise<any> {
-    _uploadDebug(`Ending segmented video upload of ${streamId}`);
+    UploadRepository.uploadDebug(`Ending segmented video upload of ${streamId}`);
     const { body } = await this.client.request.send({
       url: `/rupload_igvideo/${this.chance.guid({ version: 4 })}`,
       qs: {
