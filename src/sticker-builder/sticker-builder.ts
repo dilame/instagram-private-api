@@ -21,6 +21,7 @@ import {
 } from './stickers';
 import { plainToClass } from 'class-transformer';
 import { defaults } from 'lodash';
+import { AttachmentSticker, AttachmentStickerOptions } from './stickers/attachment.sticker';
 
 export type StickerConfig = any & { story_sticker_ids };
 
@@ -43,11 +44,14 @@ export class StickerBuilder {
     }
     const result = {};
     const ids = [];
+    const additionalProperties = [];
     for (const stickers of map.values()) {
       Object.defineProperty(result, stickers[0].key, { value: JSON.stringify(stickers), enumerable: true });
+      stickers.forEach(sticker => additionalProperties.push(sticker.additionalConfigureProperties));
       ids.push(stickers[0].id);
     }
     return {
+      ...defaults({}, ...additionalProperties),
       ...result,
       story_sticker_ids: ids.join(','),
     };
@@ -60,6 +64,25 @@ export class StickerBuilder {
 
   public static mention(options: MentionStickerOptions): MentionSticker {
     return plainToClass(MentionSticker, options);
+  }
+
+  /**
+   * Wrapper to create a story-mention
+   * @param mediaInfo - StoryItem Object with pk and a user
+   * @param additional any additional options
+   */
+  public static mentionReel(
+    mediaInfo: { pk: string; user: { pk: string | number } },
+    additional: Partial<MentionStickerOptions> = {},
+  ): MentionSticker {
+    return StickerBuilder.mention({
+      userId: mediaInfo.user.pk.toString(),
+      mediaId: mediaInfo.pk,
+      displayType: 'mention_reshare',
+      width: 0.7,
+      height: 0.9,
+      ...additional,
+    });
   }
 
   public static location(options: LocationStickerOptions): LocationSticker {
@@ -98,5 +121,25 @@ export class StickerBuilder {
 
   public static slider(options: SliderStickerOptions): SliderSticker {
     return plainToClass(SliderSticker, options);
+  }
+
+  /**
+   * The mediaId only contains the media pk.
+   * The user id is stored in mediaOwnerId.
+   * @param options
+   */
+  public static attachment(options: AttachmentStickerOptions): AttachmentSticker {
+    return plainToClass(AttachmentSticker, options);
+  }
+
+  public static attachmentFromMedia(
+    mediaInfo: { pk: string; user: { pk: string | number } },
+    additional: Partial<AttachmentStickerOptions> = {},
+  ): AttachmentSticker {
+    return StickerBuilder.attachment({
+      mediaId: mediaInfo.pk,
+      mediaOwnerId: mediaInfo.user.pk.toString(),
+      ...additional,
+    });
   }
 }

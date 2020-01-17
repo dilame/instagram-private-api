@@ -1,14 +1,19 @@
 import { InstaSticker } from './insta-sticker';
+import { Enumerable } from '../../decorators';
 
 export interface MentionStickerOptions {
   userId: string;
   width?: number;
   height?: number;
+  displayType?: 'mention_username' | 'mention_reshare';
+  mediaId?: string;
 }
 
 export class MentionSticker extends InstaSticker implements MentionStickerOptions {
   public userId: string;
-  public displayType: string = 'mention_username';
+  public displayType: 'mention_username' | 'mention_reshare' = 'mention_username';
+  @Enumerable(false)
+  public mediaId: string;
   width = 0.64;
   height = 0.125;
 
@@ -18,5 +23,9 @@ export class MentionSticker extends InstaSticker implements MentionStickerOption
 
   get key(): string {
     return 'reel_mentions';
+  }
+
+  get additionalConfigureProperties(): any {
+    return this.displayType === 'mention_reshare' ? { reshared_media_id: this.mediaId } : null;
   }
 }
