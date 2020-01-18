@@ -8,6 +8,7 @@ export interface PollStickerTallie {
 type Tallies = [PollStickerTallie, PollStickerTallie];
 
 export class PollSticker extends InstaSticker {
+  // tslint:disable-next-line:variable-name
   private _tallies: Tallies;
 
   get tallies(): Tallies {
@@ -20,10 +21,10 @@ export class PollSticker extends InstaSticker {
 
   question: string;
 
-  finished: boolean = false;
-  viewerVote: number = 0;
-  viewerCanVote: boolean = true;
-  isSharedResult: boolean = false;
+  finished?: boolean = false;
+  viewerVote?: number = 0;
+  viewerCanVote?: boolean = true;
+  isSharedResult?: boolean = false;
   width = 0.49934897;
   height = 0.1266892;
 

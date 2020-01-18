@@ -2,6 +2,7 @@ import { InstaSticker } from './insta-sticker';
 import { DateTime } from 'luxon';
 
 export class CountdownSticker extends InstaSticker {
+  // tslint:disable-next-line:variable-name
   private _endTs: number;
 
   get endTs() {
@@ -17,12 +18,12 @@ export class CountdownSticker extends InstaSticker {
   }
 
   text: string;
-  textColor: string = '#ffffff';
-  startBackgroundColor: string = '#ca2ee1';
-  endBackgroundColor: string = '#5eb1ff';
-  digitColor: string = '#7e0091';
-  digitCardColor: string = '#ffffffcc';
-  followingEnabled: boolean = true;
+  textColor?: string = '#ffffff';
+  startBackgroundColor?: string = '#ca2ee1';
+  endBackgroundColor?: string = '#5eb1ff';
+  digitColor?: string = '#7e0091';
+  digitCardColor?: string = '#ffffffcc';
+  followingEnabled?: boolean = true;
   width = 0.703125;
   height = 0.26013514;
 

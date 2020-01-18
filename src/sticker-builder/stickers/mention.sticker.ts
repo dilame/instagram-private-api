@@ -3,9 +3,9 @@ import { Enumerable } from '../../decorators';
 
 export class MentionSticker extends InstaSticker {
   public userId: string;
-  public displayType: 'mention_username' | 'mention_reshare' = 'mention_username';
+  public displayType?: 'mention_username' | 'mention_reshare' = 'mention_username';
   @Enumerable(false)
-  public mediaId: string;
+  public mediaId?: string;
   width = 0.64;
   height = 0.125;
 
