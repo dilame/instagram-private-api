@@ -27,3 +27,11 @@ export interface DirectThreadBroadcastVideoStoryOptions extends DirectThreadBroa
   video: Buffer;
   coverImage: Buffer;
 }
+
+export interface DirectThreadBroadcastVoiceOptions {
+  waveformSamplingFrequencyHz?: number;
+  waveform?: number[];
+  file: Buffer;
+  uploadId?: string;
+  transcodeDelay?: number;
+}

@@ -1,3 +1,4 @@
+/* tslint:disable:no-console */
 import 'dotenv/config';
 import { IgApiClient } from '../src';
 

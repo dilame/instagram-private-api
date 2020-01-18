@@ -1,7 +1,8 @@
 /* tslint:disable:no-console */
 import { IgApiClient } from '../src';
-import * as Bluebird from 'bluebird';
 import { readFile } from 'fs';
+import { promisify } from 'util';
+const readFileAsync = promisify(readFile);
 
 const ig = new IgApiClient();
 
@@ -20,8 +21,8 @@ async function login() {
 
   const publishResult = await ig.publish.video({
     // read the file into a Buffer
-    video: await Bluebird.fromCallback(cb => readFile(videoPath, cb)),
-    coverImage: await Bluebird.fromCallback(cb => readFile(coverPath, cb)),
+    video: await readFileAsync(videoPath),
+    coverImage: await readFileAsync(coverPath),
     /*
       this does also support:
       caption (string),  ----+

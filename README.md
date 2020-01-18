@@ -36,7 +36,6 @@ From github
 ```
 npm install github:dilame/instagram-private-api
 ```
-
 # Support us
 
 If you find this library useful for you, you can support it by donating any amount
@@ -46,6 +45,13 @@ BTC: 1Dqnz9QuswAvD3t7Jsw7LhwprR6HAWprW6
 # Examples
 
 You can find usage examples [here](examples)
+
+*Note for JavaScript users:* 
+As of Node v.13.5.0, there isn't support for ESModules and the 'import'-syntax.
+So you have to read the imports in the examples like this:
+
+`import { A } from 'b'` ➡ `const { A } = require('b')`
+
 
 ```typescript
 import { IgApiClient } from './src';
@@ -139,6 +145,17 @@ Services will help you to maintain some actions without calling a couple reposit
 | `search` | [SearchService](https://github.com/dilame/instagram-private-api/blob/master/docs/classes/_services_search_service_.searchservice.md) |
 | `simulate` | [SimulateService](https://github.com/dilame/instagram-private-api/blob/master/docs/classes/_services_simulate_service_.simulateservice.md) |
 | `story` | [StoryService](https://github.com/dilame/instagram-private-api/blob/master/docs/classes/_services_story_service_.storyservice.md) |
+
+# Debugging
+In order to get debug infos provided by the library, you can enable debugging.
+The prefix for this library is `ig`.
+To get all debug logs (*recommended*) set the namespace to `ig:*`.
+#### Node
+In node you only have to set the environment variable `DEBUG` to the desired namespace.
+[Further information](https://github.com/visionmedia/debug#environment-variables)
+#### Browser
+In the browser you have to set `localStorage.debug` to the desired namespace.
+[Further information](https://github.com/visionmedia/debug#browser-support)
 
 # Contribution
 

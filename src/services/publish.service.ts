@@ -27,9 +27,10 @@ import Bluebird = require('bluebird');
 import Chance = require('chance');
 import { random, defaults } from 'lodash';
 import { UploadRepository } from '../repositories/upload.repository';
-import { StickerBuilder } from '../sticker-builder';
+import debug from 'debug';
 
 export class PublishService extends Repository {
+  private static publishDebug = debug('ig:publish');
   private chance = new Chance();
 
   /**
@@ -40,6 +41,9 @@ export class PublishService extends Repository {
   public static catchTranscodeError(videoInfo, transcodeDelayInMs: number) {
     return error => {
       if (error.response.statusCode === 202) {
+        PublishService.publishDebug(
+          `Received trancode error: ${JSON.stringify(error.response.body)}, waiting ${transcodeDelayInMs}ms`,
+        );
         return Bluebird.delay(transcodeDelayInMs);
       } else {
         throw new IgUploadVideoError(error.response as IgResponse<UploadRepositoryVideoResponseRootObject>, videoInfo);
@@ -53,15 +57,23 @@ export class PublishService extends Repository {
    * @returns duration in ms, width and height in px
    */
   public static getVideoInfo(buffer: Buffer): { duration: number; width: number; height: number } {
-    const timescale = PublishService.read32(buffer, ['moov', 'mvhd'], 12);
-    const length = PublishService.read32(buffer, ['moov', 'mvhd'], 12 + 4);
     const width = PublishService.read16(buffer, ['moov', 'trak', 'stbl', 'avc1'], 24);
     const height = PublishService.read16(buffer, ['moov', 'trak', 'stbl', 'avc1'], 26);
     return {
-      duration: Math.floor((length / timescale) * 1000.0),
+      duration: PublishService.getMP4Duration(buffer),
       width,
       height,
     };
+  }
+
+  /**
+   * Reads the duration in ms from any MP4 file with at least one stream (a/v)
+   * @param buffer
+   */
+  public static getMP4Duration(buffer: Buffer): number {
+    const timescale = PublishService.read32(buffer, ['moov', 'mvhd'], 12);
+    const length = PublishService.read32(buffer, ['moov', 'mvhd'], 12 + 4);
+    return Math.floor((length / timescale) * 1000);
   }
 
   private static makeLocationOptions(location?: PostingLocation): any {
@@ -141,6 +153,7 @@ export class PublishService extends Repository {
   public async video(options: PostingVideoOptions) {
     const uploadId = Date.now().toString();
     const videoInfo = PublishService.getVideoInfo(options.video);
+    PublishService.publishDebug(`Publishing video to timeline: ${JSON.stringify(videoInfo)}`);
     await Bluebird.try(() =>
       this.regularVideo({
         video: options.video,
@@ -214,6 +227,7 @@ export class PublishService extends Repository {
       } else if (isVideo(item)) {
         item.videoInfo = PublishService.getVideoInfo(item.video);
         item.uploadId = Date.now().toString();
+        PublishService.publishDebug(`Adding video to album: ${JSON.stringify(item.videoInfo)}`);
         await Bluebird.try(() =>
           this.regularVideo({
             video: item.video,
@@ -384,6 +398,7 @@ export class PublishService extends Repository {
 
   public async igtvVideo(options: PostingIgtvOptions) {
     const videoInfo = PublishService.getVideoInfo(options.video);
+    PublishService.publishDebug(`Publishing video to igtv: ${JSON.stringify(videoInfo)}`);
     const uploadId = Date.now().toString();
     const uploadResult = await this.segmentedVideo({
       video: options.video,
@@ -468,6 +483,7 @@ export class PublishService extends Repository {
         buffer: options.video,
         client: this.client,
       });
+    PublishService.publishDebug(`Uploading ${segments.length} segments.`);
     let startOffset = 0;
     for (const segment of segments) {
       // this is an identifier not a guid, but has the same 'length' as a guid without '-'
@@ -523,6 +539,7 @@ export class PublishService extends Repository {
   ) {
     const uploadId = random(100000000000, 999999999999).toString();
     const videoInfo = PublishService.getVideoInfo(options.video);
+    PublishService.publishDebug(`Publishing video to story: ${JSON.stringify(videoInfo)}`);
     const waterfallId = this.chance.guid({ version: 4 });
     await Bluebird.try(() =>
       this.regularVideo({
