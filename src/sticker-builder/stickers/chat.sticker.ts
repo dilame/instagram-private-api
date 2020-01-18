@@ -1,12 +1,6 @@
 import { InstaSticker } from './insta-sticker';
 
-export interface ChatStickerOptions {
-  text: string;
-  startBackgroundColor?: string;
-  endBackgroundColor?: string;
-}
-
-export class ChatSticker extends InstaSticker implements ChatStickerOptions {
+export class ChatSticker extends InstaSticker {
   text: string;
   startBackgroundColor: string = '#3897f0';
   endBackgroundColor: string = '#27c4f5';

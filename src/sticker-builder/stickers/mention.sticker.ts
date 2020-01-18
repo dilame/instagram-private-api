@@ -1,15 +1,7 @@
 import { InstaSticker } from './insta-sticker';
 import { Enumerable } from '../../decorators';
 
-export interface MentionStickerOptions {
-  userId: string;
-  width?: number;
-  height?: number;
-  displayType?: 'mention_username' | 'mention_reshare';
-  mediaId?: string;
-}
-
-export class MentionSticker extends InstaSticker implements MentionStickerOptions {
+export class MentionSticker extends InstaSticker {
   public userId: string;
   public displayType: 'mention_username' | 'mention_reshare' = 'mention_username';
   @Enumerable(false)

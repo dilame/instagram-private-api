@@ -1,12 +1,6 @@
 import { InstaSticker } from './insta-sticker';
 
-export interface HashtagStickerOptions {
-  tagName: string;
-  width?: number;
-  height?: number;
-}
-
-export class HashtagSticker extends InstaSticker implements HashtagStickerOptions {
+export class HashtagSticker extends InstaSticker {
   public tagName: string;
   width = 0.47;
   height = 0.11;

@@ -5,14 +5,21 @@ export interface PollStickerTallie {
   fontSize?: number;
 }
 
-export interface PollStickerOptions {
-  question: string;
-  tallies: [PollStickerTallie, PollStickerTallie];
-}
+type Tallies = [PollStickerTallie, PollStickerTallie];
 
-export class PollSticker extends InstaSticker implements PollStickerOptions {
+export class PollSticker extends InstaSticker {
+  private _tallies: Tallies;
+
+  get tallies(): Tallies {
+    return this._tallies;
+  }
+
+  set tallies(value: Tallies) {
+    this._tallies = value.map(t => ({ fontSize: 28.0, ...t })) as Tallies;
+  }
+
   question: string;
-  tallies: [PollStickerTallie, PollStickerTallie];
+
   finished: boolean = false;
   viewerVote: number = 0;
   viewerCanVote: boolean = true;

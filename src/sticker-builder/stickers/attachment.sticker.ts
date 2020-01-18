@@ -1,11 +1,6 @@
 import { InstaSticker } from './insta-sticker';
 
-export interface AttachmentStickerOptions {
-  mediaId: string;
-  mediaOwnerId: string;
-}
-
-export class AttachmentSticker extends InstaSticker implements AttachmentStickerOptions {
+export class AttachmentSticker extends InstaSticker {
   mediaId: string;
   mediaOwnerId: string;
   width = 0.8;

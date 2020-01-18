@@ -1,13 +1,6 @@
 import { InstaSticker } from './insta-sticker';
 
-export interface SliderStickerOptions {
-  question: string;
-  emoji: string;
-  backgroundColor?: string;
-  textColor?: string;
-}
-
-export class SliderSticker extends InstaSticker implements SliderStickerOptions {
+export class SliderSticker extends InstaSticker {
   question: string;
   emoji: string;
   backgroundColor: string = '#ffffff';

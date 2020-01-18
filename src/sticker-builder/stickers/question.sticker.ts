@@ -1,14 +1,6 @@
 import { InstaSticker } from './insta-sticker';
 
-export interface QuestionStickerOptions {
-  question: string;
-  questionType?: 'text' | 'music';
-  backgroundColor?: string;
-  textColor?: string;
-  profilePicUrl?: string;
-}
-
-export class QuestionSticker extends InstaSticker implements QuestionStickerOptions {
+export class QuestionSticker extends InstaSticker {
   question: string;
   backgroundColor: string = '#ffffff';
   textColor: string = '#000000';

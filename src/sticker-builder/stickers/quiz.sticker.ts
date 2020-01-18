@@ -1,20 +1,23 @@
 import { InstaSticker } from './insta-sticker';
 
-export interface QuizStickerOptions {
-  question: string;
-  /**
-   * Array<{ text: string; count: number }> is only used internally, use string[]
-   */
-  options: string[] | Array<{ text: string; count: number }>;
-  correctAnswer: number;
-  textColor?: string;
-  startBackgroundColor?: string;
-  endBackgroundColor?: string;
-}
+type Options = Array<{ text: string; count: number }>;
 
-export class QuizSticker extends InstaSticker implements QuizStickerOptions {
+export class QuizSticker extends InstaSticker {
+  private _options: Options;
   question: string;
-  options: Array<{ text: string; count: number }>;
+  set options(value: string[] | Options) {
+    let options: Options;
+    function isArrayOfString(x: any): x is string[] {
+      return typeof x[0] === 'string';
+    }
+    if (isArrayOfString(value)) {
+      options = value.map(o => ({ text: o, count: 0 }));
+    } else options = value;
+    this._options = options;
+  }
+  get options() {
+    return this._options;
+  }
   correctAnswer: number;
   textColor: string = '#ffffff';
   startBackgroundColor: string = '#262626';
