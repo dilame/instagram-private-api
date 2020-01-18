@@ -28,6 +28,7 @@ import Chance = require('chance');
 import { random, defaults } from 'lodash';
 import { UploadRepository } from '../repositories/upload.repository';
 import debug from 'debug';
+import { StickerBuilder } from '../sticker-builder';
 
 export class PublishService extends Repository {
   private static publishDebug = debug('ig:publish');
