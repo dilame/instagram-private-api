@@ -1,9 +1,10 @@
 import { IgApiClient } from '../src';
-import Bluebird = require('bluebird');
 import { readFile } from 'fs';
 import { DateTime, Duration } from 'luxon';
 
 import { StickerBuilder} from '../src/sticker-builder';
+import { promisify } from 'util';
+const readFileAsync = promisify(readFile);
 
 const ig = new IgApiClient();
 
@@ -16,7 +17,7 @@ async function login() {
 (async () => {
   await login();
   const path = './myStory.jpg';
-  const file = await Bluebird.fromCallback<Buffer>(cb => readFile(path, cb));
+  const file = await readFileAsync(path);
 
   /**
    *  You can move and rotate stickers by using one of these methods:
@@ -32,6 +33,14 @@ async function login() {
    *
    *  All of these are chainable e.g.:
    *  StickerBuilder.hashtag({ tagName: 'tag' }).scale(0.5).rotateDeg(90).center().left()
+   *  You can also set the position and size like this:
+   *  StickerBuilder.hashtag({
+   *     tagName: 'insta',
+   *     width: 0.5,
+   *     height: 0.5,
+   *     x: 0.5,
+   *     y: 0.5,
+   *   })
    */
 
   // these stickers are 'invisible' and not 're-rendered' in the app

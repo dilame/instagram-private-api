@@ -34,4 +34,5 @@ function fakeLoad() {
   }
   // This call will provoke request.end$ stream
   await ig.account.login(process.env.IG_USERNAME, process.env.IG_PASSWORD);
+  // Most of the time you don't have to login after loading the state
 })();

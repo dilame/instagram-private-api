@@ -1,7 +1,13 @@
+/* tslint:disable:no-console */
 import 'dotenv/config';
 import { IgApiClient, IgCheckpointError } from '../src';
 import Bluebird = require('bluebird');
 import inquirer = require('inquirer');
+
+/**
+ * This method won't catch all checkpoint errors
+ * There's currently a new checkpoint used by instagram which requires 'web-support'
+ */
 
 (async () => {
   const ig = new IgApiClient();
@@ -22,5 +28,5 @@ import inquirer = require('inquirer');
       },
     ]);
     console.log(await ig.challenge.sendSecurityCode(code));
-  });
+  }).catch(e => console.log('Could not resolve checkpoint:', e, e.stack));
 })();

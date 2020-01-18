@@ -1,7 +1,8 @@
 /* tslint:disable:no-console */
 import { IgApiClient } from '../src';
-import * as Bluebird from 'bluebird';
 import { readFile } from 'fs';
+import { promisify } from 'util';
+const readFileAsync = promisify(readFile);
 
 const ig = new IgApiClient();
 
@@ -38,9 +39,12 @@ async function login() {
 
   const publishResult = await ig.publish.photo({
     // read the file into a Buffer
-    file: await Bluebird.fromCallback(cb => readFile(path, cb)),
-    location: mediaLocation,
+    file: await readFileAsync(path),
+    // optional, default ''
     caption: 'my caption',
+    // optional
+    location: mediaLocation,
+    // optional
     usertags: {
       in: [
         // tag the user 'instagram' @ (0.5 | 0.5)

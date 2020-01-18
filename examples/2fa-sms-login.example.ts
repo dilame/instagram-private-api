@@ -1,5 +1,5 @@
+/* tslint:disable:no-console */
 import { IgApiClient, IgLoginTwoFactorRequiredError } from '../src';
-import { get } from 'lodash';
 import * as Bluebird from 'bluebird';
 import inquirer = require('inquirer');
 
@@ -15,27 +15,26 @@ import inquirer = require('inquirer');
   return Bluebird.try(() => ig.account.login(process.env.IG_USERNAME, process.env.IG_PASSWORD)).catch(
     IgLoginTwoFactorRequiredError,
     async err => {
-      const twoFactorIdentifier = get(err, 'response.body.two_factor_info.two_factor_identifier');
-      if (!twoFactorIdentifier) {
-        throw new Error('Unable to login, no 2fa identifier found');
-      }
-      // At this point a code should have been received via SMS
-      // Get SMS code from stdin
+      const {username, totp_two_factor_on, two_factor_identifier} = err.response.body.two_factor_info;
+      // decide which method to use
+      const verificationMethod = totp_two_factor_on ? '0' : '1'; // default to 1 for SMS
+      // At this point a code should have been sent
+      // Get the code
       const { code } = await inquirer.prompt([
         {
           type: 'input',
           name: 'code',
-          message: 'Enter code',
+          message: `Enter code received via ${verificationMethod === '1' ? 'SMS' : 'TOTP'}`,
         },
       ]);
       // Use the code to finish the login process
       return ig.account.twoFactorLogin({
-        username: process.env.IG_USERNAME,
+        username,
         verificationCode: code,
-        twoFactorIdentifier,
-        verificationMethod: '1', // '1' = SMS (default), '0' = OTP
+        twoFactorIdentifier: two_factor_identifier,
+        verificationMethod, // '1' = SMS (default), '0' = TOTP (google auth for example)
         trustThisDevice: '1', // Can be omitted as '1' is used by default
       });
     },
-  );
+  ).catch(e => console.error('An error occurred while processing two factor auth', e, e.stack));
 })();
