@@ -28,6 +28,7 @@ import Chance = require('chance');
 import { random, defaults } from 'lodash';
 import { UploadRepository } from '../repositories/upload.repository';
 import debug from 'debug';
+import { StickerBuilder } from '../sticker-builder';
 
 export class PublishService extends Repository {
   private static publishDebug = debug('ig:publish');
@@ -283,6 +284,9 @@ export class PublishService extends Repository {
   public async story(options: PostingStoryPhotoOptions | PostingStoryVideoOptions) {
     const isPhoto = (arg: PostingStoryOptions): arg is PostingStoryPhotoOptions =>
       (arg as PostingStoryPhotoOptions).file !== undefined;
+    if (options.stickerConfig instanceof StickerBuilder) {
+      options.stickerConfig = options.stickerConfig.build();
+    }
 
     const storyStickerIds = [];
     const configureOptions: MediaConfigureStoryBaseOptions = {

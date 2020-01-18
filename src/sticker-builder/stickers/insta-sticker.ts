@@ -15,6 +15,13 @@ export abstract class InstaSticker {
 
   public abstract get key(): string;
 
+  /**
+   * Only used to set the media id when attaching media
+   */
+  public get additionalConfigureProperties(): any {
+    return null;
+  }
+
   public center(): this {
     this.x = 0.5;
     this.y = 0.5;
