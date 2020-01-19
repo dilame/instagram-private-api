@@ -1,24 +1,29 @@
 import { InstaSticker } from './insta-sticker';
+import { DateTime } from 'luxon';
 
-export interface CountdownStickerOptions {
-  endTs: number;
-  text: string;
-  textColor?: string;
-  startBackgroundColor?: string;
-  endBackgroundColor?: string;
-  digitColor?: string;
-  digitCardColor?: string; // with alpha
-}
+export class CountdownSticker extends InstaSticker {
+  // tslint:disable-next-line:variable-name
+  private _endTs: number;
 
-export class CountdownSticker extends InstaSticker implements CountdownStickerOptions {
-  endTs: number;
+  get endTs() {
+    return this._endTs;
+  }
+
+  set endTs(value: DateTime | number) {
+    if (typeof value === 'number') {
+      this._endTs = value;
+    } else {
+      this._endTs = Math.floor(value.toUTC().toSeconds());
+    }
+  }
+
   text: string;
-  textColor: string = '#ffffff';
-  startBackgroundColor: string = '#ca2ee1';
-  endBackgroundColor: string = '#5eb1ff';
-  digitColor: string = '#7e0091';
-  digitCardColor: string = '#ffffffcc';
-  followingEnabled: boolean = true;
+  textColor?: string = '#ffffff';
+  startBackgroundColor?: string = '#ca2ee1';
+  endBackgroundColor?: string = '#5eb1ff';
+  digitColor?: string = '#7e0091';
+  digitCardColor?: string = '#ffffffcc';
+  followingEnabled?: boolean = true;
   width = 0.703125;
   height = 0.26013514;
 

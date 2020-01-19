@@ -1,3 +1,4 @@
+export * from './attachment.sticker';
 export * from './insta-sticker';
 export * from './chat.sticker';
 export * from './countdown.sticker';

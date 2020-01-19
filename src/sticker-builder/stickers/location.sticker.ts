@@ -1,12 +1,6 @@
 import { InstaSticker } from './insta-sticker';
 
-export interface LocationStickerOptions {
-  locationId: string;
-  width?: number;
-  height?: number;
-}
-
-export class LocationSticker extends InstaSticker implements LocationStickerOptions {
+export class LocationSticker extends InstaSticker {
   public locationId: string;
   width = 0.47;
   height = 0.111;

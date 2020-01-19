@@ -1,22 +1,15 @@
 import { InstaSticker } from './insta-sticker';
 
-export interface SliderStickerOptions {
+export class SliderSticker extends InstaSticker {
   question: string;
   emoji: string;
-  backgroundColor?: string;
-  textColor?: string;
-}
+  backgroundColor?: string = '#ffffff';
+  textColor?: string = '#000000';
 
-export class SliderSticker extends InstaSticker implements SliderStickerOptions {
-  question: string;
-  emoji: string;
-  backgroundColor: string = '#ffffff';
-  textColor: string = '#000000';
-
-  viewerCanVote: boolean = false;
-  sliderVoteCount: number = 0;
-  viewerVote: number = -1.0;
-  sliderVoteAverage: number = 0.0;
+  viewerCanVote?: boolean = false;
+  sliderVoteCount?: number = 0;
+  viewerVote?: number = -1.0;
+  sliderVoteAverage?: number = 0.0;
   width = 0.7291667;
   height = 0.22212838;
 
