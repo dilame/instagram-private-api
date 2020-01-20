@@ -1,6 +1,6 @@
 {
   "name": "@igpapi/core",
-  "version": "1.0.0-alpha.0",
+  "version": "1.0.1-alpha.0",
   "description": "> TODO: description",
   "author": "bowzee <dilame.nickolson@gmail.com>",
   "homepage": "https://github.com/dilame/instagram-private-api/tree/master/packages/core#readme",
@@ -24,5 +24,6 @@
   },
   "bugs": {
     "url": "https://github.com/dilame/instagram-private-api/issues"
-  }
+  },
+  "gitHead": "8d5faed4cf944b60c7b4ec5c27b0774192f757f3"
 }

@@ -1,6 +1,6 @@
 {
   "name": "@igpapi/sticker",
-  "version": "1.0.0-alpha.0",
+  "version": "1.0.1-alpha.0",
   "description": "> TODO: description",
   "author": "bowzee <dilame.nickolson@gmail.com>",
   "homepage": "https://github.com/dilame/instagram-private-api/tree/master/packages/sticker#readme",
@@ -26,7 +26,7 @@
     "url": "https://github.com/dilame/instagram-private-api/issues"
   },
   "dependencies": {
-    "@igpapi/core": "^1.0.0-alpha.0",
+    "@igpapi/core": "^1.0.1-alpha.0",
     "class-transformer": "^0.2.0",
     "lodash": "^4.17.5",
     "snakecase-keys": "^3.1.0",
@@ -34,5 +34,6 @@
   },
   "devDependencies": {
     "typescript": "^3.7.5"
-  }
+  },
+  "gitHead": "8d5faed4cf944b60c7b4ec5c27b0774192f757f3"
 }
