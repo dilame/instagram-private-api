@@ -1,6 +1,6 @@
 import { Expose } from 'class-transformer';
 import { Feed } from '../core/feed';
-import { MediaCommentsFeedResponse, MediaCommentsFeedResponseCommentsItem } from '../responses/';
+import { MediaCommentsFeedResponse, MediaCommentsFeedResponseCommentsItem } from '../responses';
 
 export class MediaCommentsFeed extends Feed<MediaCommentsFeedResponse, MediaCommentsFeedResponseCommentsItem> {
   id: string;

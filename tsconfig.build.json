@@ -1,8 +1,22 @@
 {
-  "extends": "./tsconfig.json",
-  "include": ["src/**/*.ts"],
-  "exclude": [
-    "node_modules",
-    "tests"
-  ]
+  "compilerOptions": {
+    "lib": ["es7"],
+    "declaration": true,
+    "esModuleInterop": false,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "noImplicitAny": false,
+    "removeComments": true,
+    "noLib": false,
+    "allowSyntheticDefaultImports": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "ES2017",
+    "sourceMap": true,
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "allowJs": false,
+    "resolveJsonModule": true,
+    "noUnusedLocals": true
+  }
 }

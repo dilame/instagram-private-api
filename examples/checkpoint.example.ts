@@ -1,6 +1,6 @@
 /* tslint:disable:no-console */
 import 'dotenv/config';
-import { IgApiClient, IgCheckpointError } from '../src';
+import { IgApiClient, IgCheckpointError } from '@igpapi/core';
 import Bluebird = require('bluebird');
 import inquirer = require('inquirer');
 
@@ -16,17 +16,19 @@ import inquirer = require('inquirer');
   Bluebird.try(async () => {
     const auth = await ig.account.login(process.env.IG_USERNAME, process.env.IG_PASSWORD);
     console.log(auth);
-  }).catch(IgCheckpointError, async () => {
-    console.log(ig.state.checkpoint); // Checkpoint info here
-    await ig.challenge.auto(true); // Requesting sms-code or click "It was me" button
-    console.log(ig.state.checkpoint); // Challenge info here
-    const { code } = await inquirer.prompt([
-      {
-        type: 'input',
-        name: 'code',
-        message: 'Enter code',
-      },
-    ]);
-    console.log(await ig.challenge.sendSecurityCode(code));
-  }).catch(e => console.log('Could not resolve checkpoint:', e, e.stack));
+  })
+    .catch(IgCheckpointError, async () => {
+      console.log(ig.state.checkpoint); // Checkpoint info here
+      await ig.challenge.auto(true); // Requesting sms-code or click "It was me" button
+      console.log(ig.state.checkpoint); // Challenge info here
+      const { code } = await inquirer.prompt([
+        {
+          type: 'input',
+          name: 'code',
+          message: 'Enter code',
+        },
+      ]);
+      console.log(await ig.challenge.sendSecurityCode(code));
+    })
+    .catch(e => console.log('Could not resolve checkpoint:', e, e.stack));
 })();

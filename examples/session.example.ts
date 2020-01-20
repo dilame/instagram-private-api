@@ -1,5 +1,5 @@
 import 'dotenv/config';
-import { IgApiClient } from '../src';
+import { IgApiClient } from '@igpapi/core';
 
 function fakeSave(data: object) {
   // here you would save it to a file/database etc.

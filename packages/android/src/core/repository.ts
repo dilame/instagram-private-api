@@ -1,5 +1,5 @@
 import { IgApiClient } from './client';
-import { Enumerable } from '../decorators';
+import { Enumerable } from '@igpapi/core';
 
 export abstract class Repository {
   @Enumerable(false)

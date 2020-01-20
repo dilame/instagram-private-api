@@ -1,5 +1,5 @@
 import { InstaSticker } from './insta-sticker';
-import { Enumerable } from '../../decorators';
+import { Enumerable } from '@igpapi/core';
 
 export class MentionSticker extends InstaSticker {
   public userId: string;

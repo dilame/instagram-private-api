@@ -1,5 +1,5 @@
 /* tslint:disable:no-console */
-import { DirectThreadEntity, IgApiClient } from '../src';
+import { DirectThreadEntity, IgApiClient } from '@igpapi/core';
 import { promisify } from 'util';
 import { readFile } from 'fs';
 
@@ -33,9 +33,11 @@ async function login() {
  */
 async function sendPhoto(thread: DirectThreadEntity) {
   const photo: Buffer = await readFileAsync('PATH_TO_PHOTO.jpg');
-  console.log(await thread.broadcastPhoto({
-    file: photo,
-  }));
+  console.log(
+    await thread.broadcastPhoto({
+      file: photo,
+    }),
+  );
 }
 
 /**
@@ -44,12 +46,14 @@ async function sendPhoto(thread: DirectThreadEntity) {
  */
 async function sendVideo(thread: DirectThreadEntity) {
   const video: Buffer = await readFileAsync('PATH_TO_VIDEO.mp4');
-  console.log(await thread.broadcastVideo({
-    video,
-    // optional if you get a 202 transcode error
-    // delay in ms
-    transcodeDelay: 5 * 1000, // 5ms * 1000ms = 5s
-  }));
+  console.log(
+    await thread.broadcastVideo({
+      video,
+      // optional if you get a 202 transcode error
+      // delay in ms
+      transcodeDelay: 5 * 1000, // 5ms * 1000ms = 5s
+    }),
+  );
 }
 
 /**
@@ -60,11 +64,13 @@ async function sendVideo(thread: DirectThreadEntity) {
 async function sendVideoStory(thread: DirectThreadEntity) {
   const video = await readFileAsync('PATH_TO_VIDEO.mp4');
   const cover = await readFileAsync('PATH_TO_COVER.jpg');
-  console.log(await thread.broadcastStory({
-    video,
-    coverImage: cover,
-    viewMode: 'replayable',
-  }));
+  console.log(
+    await thread.broadcastStory({
+      video,
+      coverImage: cover,
+      viewMode: 'replayable',
+    }),
+  );
 }
 
 /**
@@ -74,8 +80,10 @@ async function sendVideoStory(thread: DirectThreadEntity) {
  */
 async function sendPhotoStory(thread: DirectThreadEntity) {
   const photo = await readFileAsync('PATH_TO_PHOTO.jpg');
-  console.log(await thread.broadcastStory({
-    file: photo,
-    viewMode: 'once',
-  }));
+  console.log(
+    await thread.broadcastStory({
+      file: photo,
+      viewMode: 'once',
+    }),
+  );
 }

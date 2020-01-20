@@ -1,0 +1,54 @@
+{
+  "name": "@igpapi/android",
+  "version": "2.0.0",
+  "description": "> TODO: description",
+  "author": "bowzee <dilame.nickolson@gmail.com>",
+  "homepage": "https://github.com/dilame/instagram-private-api/tree/master/packages/android#readme",
+  "license": "ISC",
+  "main": "dist/index",
+  "types": "dist/index",
+  "directories": {
+    "src": "src"
+  },
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dilame/instagram-private-api.git"
+  },
+  "scripts": {
+    "build": "npm run clean && npm run compile",
+    "clean": "rm -rf ./dist",
+    "compile": "tsc -p tsconfig.build.json"
+  },
+  "bugs": {
+    "url": "https://github.com/dilame/instagram-private-api/issues"
+  },
+  "dependencies": {
+    "@igpapi/core": "^2.0.0",
+    "@igpapi/sticker": "^2.0.0",
+    "@lifeomic/attempt": "^3.0.0",
+    "@types/chance": "^1.0.2",
+    "@types/request-promise": "^4.1.43",
+    "bluebird": "^3.7.1",
+    "chance": "^1.0.18",
+    "class-transformer": "^0.2.0",
+    "debug": "^4.1.1",
+    "image-size": "^0.7.3",
+    "json-bigint": "^0.3.0",
+    "lodash": "^4.17.5",
+    "luxon": "^1.12.1",
+    "reflect-metadata": "^0.1.13",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4",
+    "rxjs": "^6.5.2",
+    "tough-cookie": "^2.5.0",
+    "ts-custom-error": "^2.2.2",
+    "ts-xor": "^1.0.6",
+    "url-regex": "^5.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^3.7.5"
+  }
+}

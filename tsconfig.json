@@ -1,22 +1,11 @@
 {
+  "extends": "./tsconfig.build",
   "compilerOptions": {
-    "lib": ["es7"],
-    "declaration": true,
-    "esModuleInterop": false,
-    "module": "commonjs",
-    "moduleResolution": "node",
-    "noImplicitAny": false,
-    "removeComments": true,
-    "noLib": false,
-    "allowSyntheticDefaultImports": true,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "target": "ES2017",
-    "sourceMap": true,
-    "outDir": "./dist",
-    "baseUrl": "./",
-    "allowJs": false,
-    "resolveJsonModule": true,
-    "noUnusedLocals": true
+    "baseUrl": "./packages",
+    "paths": {
+      "@igpapi/android": ["android/src"],
+      "@igpapi/core": ["core/src"],
+      "@igpapi/sticker": ["sticker/src"]
+    }
   }
 }

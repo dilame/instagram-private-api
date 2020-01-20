@@ -1,6 +1,6 @@
 /* tslint:disable:no-console */
 import 'dotenv/config';
-import { IgApiClient } from '../src';
+import { IgApiClient } from '@igpapi/core';
 import { get } from 'request-promise'; // request is already declared as a dependency of the library
 
 (async () => {

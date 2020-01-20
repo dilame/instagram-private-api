@@ -1,5 +1,5 @@
 /* tslint:disable:no-console */
-import { IgApiClient, IgLoginTwoFactorRequiredError } from '../src';
+import { IgApiClient, IgLoginTwoFactorRequiredError } from '@igpapi/core';
 import * as Bluebird from 'bluebird';
 import inquirer = require('inquirer');
 
@@ -12,10 +12,9 @@ import inquirer = require('inquirer');
 
   // Perform usual login
   // If 2FA is enabled, IgLoginTwoFactorRequiredError will be thrown
-  return Bluebird.try(() => ig.account.login(process.env.IG_USERNAME, process.env.IG_PASSWORD)).catch(
-    IgLoginTwoFactorRequiredError,
-    async err => {
-      const {username, totp_two_factor_on, two_factor_identifier} = err.response.body.two_factor_info;
+  return Bluebird.try(() => ig.account.login(process.env.IG_USERNAME, process.env.IG_PASSWORD))
+    .catch(IgLoginTwoFactorRequiredError, async err => {
+      const { username, totp_two_factor_on, two_factor_identifier } = err.response.body.two_factor_info;
       // decide which method to use
       const verificationMethod = totp_two_factor_on ? '0' : '1'; // default to 1 for SMS
       // At this point a code should have been sent
@@ -35,6 +34,6 @@ import inquirer = require('inquirer');
         verificationMethod, // '1' = SMS (default), '0' = TOTP (google auth for example)
         trustThisDevice: '1', // Can be omitted as '1' is used by default
       });
-    },
-  ).catch(e => console.error('An error occurred while processing two factor auth', e, e.stack));
+    })
+    .catch(e => console.error('An error occurred while processing two factor auth', e, e.stack));
 })();

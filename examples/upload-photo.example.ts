@@ -1,5 +1,5 @@
 /* tslint:disable:no-console */
-import { IgApiClient } from '../src';
+import { IgApiClient } from '@igpapi/core';
 import { readFile } from 'fs';
 import { promisify } from 'util';
 const readFileAsync = promisify(readFile);
@@ -62,7 +62,11 @@ async function login() {
  * @param x - x coordinate (0..1)
  * @param y - y coordinate (0..1)
  */
-async function generateUsertagFromName(name: string, x: number, y: number): Promise<{ user_id: number, position: [number, number] }> {
+async function generateUsertagFromName(
+  name: string,
+  x: number,
+  y: number,
+): Promise<{ user_id: number; position: [number, number] }> {
   // constrain x and y to 0..1 (0 and 1 are not supported)
   x = clamp(x, 0.0001, 0.9999);
   y = clamp(y, 0.0001, 0.9999);

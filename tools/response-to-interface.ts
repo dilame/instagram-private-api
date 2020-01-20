@@ -1,6 +1,6 @@
 /* tslint:disable:no-console */
 import 'dotenv/config';
-import { IgApiClient } from '../src';
+import { IgApiClient } from '@igpapi/core';
 import { json2ts } from 'json-ts/dist';
 import { camelCase } from 'lodash';
 import * as fs from 'fs';

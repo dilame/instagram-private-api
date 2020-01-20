@@ -10,7 +10,7 @@ import {
   StoryQuiz,
   StorySlider,
 } from './media.configure-story.options';
-import { StickerBuilder } from '../sticker-builder';
+import { StickerBuilder } from '@igpapi/sticker';
 
 export interface PostingUsertags {
   in: Array<{ user_id: number | string; position: [number, number] }>;

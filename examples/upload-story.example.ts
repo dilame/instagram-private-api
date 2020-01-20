@@ -1,8 +1,8 @@
-import { IgApiClient } from '../src';
+import { IgApiClient } from '@igpapi/core';
 import { readFile } from 'fs';
 import { DateTime, Duration } from 'luxon';
 
-import { StickerBuilder} from '../src/sticker-builder';
+import { StickerBuilder } from '@igpapi/sticker';
 import { promisify } from 'util';
 const readFileAsync = promisify(readFile);
 
@@ -48,44 +48,64 @@ async function login() {
     file,
     // this creates a new config
     stickerConfig: new StickerBuilder()
-    // these are all supported stickers
-      .add(StickerBuilder.hashtag({
-        tagName: 'insta',
-      }).center())
-      .add(StickerBuilder.mention({
-        userId: ig.state.cookieUserId,
-      }).center())
-      .add(StickerBuilder.question({
-        question: 'My Question',
-      }).scale(0.5))
-      .add(StickerBuilder.question({
-        question: 'Music?',
-        questionType: 'music',
-      }))
-      .add(StickerBuilder.countdown({
-        text: 'My Countdown',
-        // @ts-ignore
-        endTs: DateTime.local().plus(Duration.fromObject({ hours: 1 })), // countdown finishes in 1h
-      }))
-      .add(StickerBuilder.chat({
-        text: 'Chat name',
-      }))
-      .add(StickerBuilder.location({
-        locationId: (await ig.locationSearch.index(13, 37)).venues[0].external_id,
-      }))
-      .add(StickerBuilder.poll({
-        question: 'Question',
-        tallies: [{ text: 'Left' }, { text: 'Right' }],
-      }))
-      .add(StickerBuilder.quiz({
-        question: 'Question',
-        options: ['0', '1', '2', '3'],
-        correctAnswer: 1,
-      }))
-      .add(StickerBuilder.slider({
-        question: 'Question',
-        emoji: '❤',
-      }))
+      // these are all supported stickers
+      .add(
+        StickerBuilder.hashtag({
+          tagName: 'insta',
+        }).center(),
+      )
+      .add(
+        StickerBuilder.mention({
+          userId: ig.state.cookieUserId,
+        }).center(),
+      )
+      .add(
+        StickerBuilder.question({
+          question: 'My Question',
+        }).scale(0.5),
+      )
+      .add(
+        StickerBuilder.question({
+          question: 'Music?',
+          questionType: 'music',
+        }),
+      )
+      .add(
+        StickerBuilder.countdown({
+          text: 'My Countdown',
+          // @ts-ignore
+          endTs: DateTime.local().plus(Duration.fromObject({ hours: 1 })), // countdown finishes in 1h
+        }),
+      )
+      .add(
+        StickerBuilder.chat({
+          text: 'Chat name',
+        }),
+      )
+      .add(
+        StickerBuilder.location({
+          locationId: (await ig.locationSearch.index(13, 37)).venues[0].external_id,
+        }),
+      )
+      .add(
+        StickerBuilder.poll({
+          question: 'Question',
+          tallies: [{ text: 'Left' }, { text: 'Right' }],
+        }),
+      )
+      .add(
+        StickerBuilder.quiz({
+          question: 'Question',
+          options: ['0', '1', '2', '3'],
+          correctAnswer: 1,
+        }),
+      )
+      .add(
+        StickerBuilder.slider({
+          question: 'Question',
+          emoji: '❤',
+        }),
+      )
       // mention the first story item
       .add(StickerBuilder.mentionReel((await ig.feed.userStory('username').items())[0]).center())
       // mention the first media on your timeline

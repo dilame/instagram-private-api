@@ -1,4 +1,4 @@
-import { IgApiClient } from '..';
+import { IgApiClient } from '../index';
 
 export interface UploadVideoOptions {
   video: Buffer;
