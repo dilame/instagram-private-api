@@ -1,12 +1,17 @@
-import { Repository } from '../core/repository';
+import { injectable } from 'tsyringe';
+import { AndroidHttp } from '../core/android.http';
+import { AndroidState } from '../core/android.state';
+
 import {
   FbsearchRepositoryPlacesResponseRootObject,
   FbsearchRepositoryTopsearchFlatResponseRootObject,
 } from '../responses';
 
-export class FbsearchRepository extends Repository {
+@injectable()
+export class FbsearchRepository {
+  constructor(private http: AndroidHttp, private state: AndroidState) {}
   async suggestedSearches(type: 'blended' | 'users' | 'hashtags' | 'places') {
-    const { body } = await this.client.request.send({
+    const { body } = await this.http.send({
       url: '/api/v1/fbsearch/suggested_searches/',
       qs: {
         type,
@@ -15,17 +20,17 @@ export class FbsearchRepository extends Repository {
     return body;
   }
   async recentSearches() {
-    const { body } = await this.client.request.send({
+    const { body } = await this.http.send({
       url: '/api/v1/fbsearch/recent_searches/',
     });
     return body;
   }
 
   async topsearchFlat(query: string): Promise<FbsearchRepositoryTopsearchFlatResponseRootObject> {
-    const { body } = await this.client.request.send<FbsearchRepositoryTopsearchFlatResponseRootObject>({
+    const { body } = await this.http.send<FbsearchRepositoryTopsearchFlatResponseRootObject>({
       url: '/api/v1/fbsearch/topsearch_flat/',
       qs: {
-        timezone_offset: this.client.state.timezoneOffset,
+        timezone_offset: this.state.timezoneOffset,
         count: 30,
         query,
         context: 'blended',
@@ -34,10 +39,10 @@ export class FbsearchRepository extends Repository {
     return body;
   }
   async places(query: string) {
-    const { body } = await this.client.request.send<FbsearchRepositoryPlacesResponseRootObject>({
+    const { body } = await this.http.send<FbsearchRepositoryPlacesResponseRootObject>({
       url: '/api/v1/fbsearch/places/',
       qs: {
-        timezone_offset: this.client.state.timezoneOffset,
+        timezone_offset: this.state.timezoneOffset,
         count: 30,
         query,
       },

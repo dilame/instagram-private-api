@@ -1,9 +1,14 @@
-import { Repository } from '../core/repository';
+import { injectable } from 'tsyringe';
+import { AndroidHttp } from '../core/android.http';
+import { AndroidState } from '../core/android.state';
+
 import { IgAppModule } from '../types';
 import { AddressBookRepositoryLinkResponseRootObject } from '../responses/address-book.repository.link.response';
 import { StatusResponse } from '../responses';
 
-export class AddressBookRepository extends Repository {
+@injectable()
+export class AddressBookRepository {
+  constructor(private http: AndroidHttp, private state: AndroidState) {}
   public async link(
     contacts: Array<{
       phone_numbers: string[];
@@ -13,16 +18,16 @@ export class AddressBookRepository extends Repository {
     }>,
     module?: IgAppModule,
   ): Promise<AddressBookRepositoryLinkResponseRootObject> {
-    const { body } = await this.client.request.send<AddressBookRepositoryLinkResponseRootObject>({
+    const { body } = await this.http.send<AddressBookRepositoryLinkResponseRootObject>({
       url: '/api/v1/address_book/link/',
       method: 'POST',
       form: {
-        phone_id: this.client.state.phoneId,
+        phone_id: this.state.phoneId,
         module: module || 'find_friends_contacts',
         contacts: JSON.stringify(contacts),
-        _csrftoken: this.client.state.cookieCsrfToken,
-        device_id: this.client.state.deviceId,
-        _uuid: this.client.state.uuid,
+        _csrftoken: this.state.cookieCsrfToken,
+        device_id: this.state.deviceId,
+        _uuid: this.state.uuid,
       },
     });
     return body;
@@ -34,14 +39,14 @@ export class AddressBookRepository extends Repository {
     first_name?: string;
     last_name?: string;
   }): Promise<StatusResponse> {
-    const { body } = await this.client.request.send({
+    const { body } = await this.http.send({
       url: '/api/v1/address_book/acquire_owner_contacts/',
       method: 'POST',
       form: {
-        phone_id: this.client.state.phoneId,
-        _csrftoken: this.client.state.cookieCsrfToken,
+        phone_id: this.state.phoneId,
+        _csrftoken: this.state.cookieCsrfToken,
         me: JSON.stringify(me),
-        _uuid: this.client.state.uuid,
+        _uuid: this.state.uuid,
       },
     });
     return body;

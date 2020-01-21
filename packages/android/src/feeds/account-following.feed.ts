@@ -1,31 +1,37 @@
-import { Expose, plainToClassFromExist } from 'class-transformer';
-import { Feed } from '../core/feed';
+import { Expose } from 'class-transformer';
+import { injectable } from 'tsyringe';
+import { AndroidHttp } from '../core/android.http';
+import { Feed } from '@igpapi/core';
 import { AccountFollowingFeedResponse, AccountFollowingFeedResponseUsersItem } from '../responses';
 
+@injectable()
 export class AccountFollowingFeed extends Feed<AccountFollowingFeedResponse, AccountFollowingFeedResponseUsersItem> {
   id: number | string;
   @Expose()
   private nextMaxId: string;
 
+  constructor(private http: AndroidHttp) {
+    super();
+  }
+
   set state(body: AccountFollowingFeedResponse) {
-    this.moreAvailable = !!body.next_max_id;
+    this.done = !!body.next_max_id;
     this.nextMaxId = body.next_max_id;
   }
 
   async request() {
-    const { body } = await this.client.request.send<AccountFollowingFeedResponse>({
+    const { body } = await this.http.send<AccountFollowingFeedResponse>({
       url: `/api/v1/friendships/${this.id}/following/`,
       qs: {
         rank_token: this.rankToken,
         max_id: this.nextMaxId,
       },
     });
-    this.state = body;
+
     return body;
   }
 
-  async items() {
-    const body = await this.request();
-    return body.users.map(user => plainToClassFromExist(new AccountFollowingFeedResponseUsersItem(this.client), user));
+  items({ users }: AccountFollowingFeedResponse) {
+    return users;
   }
 }

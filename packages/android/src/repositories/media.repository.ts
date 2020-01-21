@@ -1,6 +1,9 @@
 import { defaultsDeep, omit } from 'lodash';
 import { DateTime } from 'luxon';
-import { Repository } from '../core/repository';
+import { injectable } from 'tsyringe';
+import { AndroidHttp } from '../core/android.http';
+import { AndroidState } from '../core/android.state';
+
 import {
   MediaEditResponseRootObject,
   MediaInfoResponseRootObject,
@@ -31,17 +34,19 @@ import Chance = require('chance');
 import { MediaRepositoryCheckOffensiveCommentResponseRootObject } from '../responses';
 import { StoryMusicQuestionResponse, StoryTextQuestionResponse } from '../types/story-response.options';
 
-export class MediaRepository extends Repository {
+@injectable()
+export class MediaRepository {
+  constructor(private http: AndroidHttp, private state: AndroidState) {}
   public async info(mediaId: string): Promise<MediaInfoResponseRootObject> {
-    const { body } = await this.client.request.send<MediaInfoResponseRootObject>({
+    const { body } = await this.http.send<MediaInfoResponseRootObject>({
       url: `/api/v1/media/${mediaId}/info/`,
       method: 'GET',
-      form: this.client.request.sign({
+      form: this.http.sign({
         igtv_feed_preview: false,
         media_id: mediaId,
-        _csrftoken: this.client.state.cookieCsrfToken,
-        _uid: this.client.state.cookieUserId,
-        _uuid: this.client.state.uuid,
+        _csrftoken: this.state.cookieCsrfToken,
+        _uid: this.state.cookieUserId,
+        _uuid: this.state.uuid,
       }),
     });
     return body;
@@ -54,15 +59,15 @@ export class MediaRepository extends Repository {
     mediaId: string;
     captionText: string;
   }): Promise<MediaEditResponseRootObject> {
-    const { body } = await this.client.request.send({
+    const { body } = await this.http.send({
       url: `/api/v1/media/${mediaId}/edit_media/`,
       method: 'POST',
-      form: this.client.request.sign({
+      form: this.http.sign({
         igtv_feed_preview: false,
         media_id: mediaId,
-        _csrftoken: this.client.state.cookieCsrfToken,
-        _uid: this.client.state.cookieUserId,
-        _uuid: this.client.state.uuid,
+        _csrftoken: this.state.cookieCsrfToken,
+        _uid: this.state.cookieUserId,
+        _uuid: this.state.uuid,
         caption_text: captionText,
       }),
     });
@@ -76,36 +81,36 @@ export class MediaRepository extends Repository {
     mediaId: string;
     mediaType?: 'PHOTO' | 'VIDEO' | 'CAROUSEL';
   }) {
-    const { body } = await this.client.request.send({
+    const { body } = await this.http.send({
       url: `/api/v1/media/${mediaId}/delete/`,
       method: 'POST',
       qs: {
         media_type: mediaType,
       },
-      form: this.client.request.sign({
+      form: this.http.sign({
         igtv_feed_preview: false,
         media_id: mediaId,
-        _csrftoken: this.client.state.cookieCsrfToken,
-        _uid: this.client.state.cookieUserId,
-        _uuid: this.client.state.uuid,
+        _csrftoken: this.state.cookieCsrfToken,
+        _uid: this.state.cookieUserId,
+        _uuid: this.state.uuid,
       }),
     });
     return body;
   }
 
   private async likeAction(options: MediaLikeOrUnlikeOptions) {
-    const signedFormData = this.client.request.sign({
+    const signedFormData = this.http.sign({
       module_name: options.moduleInfo.module_name,
       media_id: options.mediaId,
-      _csrftoken: this.client.state.cookieCsrfToken,
+      _csrftoken: this.state.cookieCsrfToken,
       ...omit(options.moduleInfo, 'module_name'),
-      radio_type: this.client.state.radioType,
-      _uid: this.client.state.cookieUserId,
-      device_id: this.client.state.deviceId,
-      _uuid: this.client.state.uuid,
+      radio_type: this.state.radioType,
+      _uid: this.state.cookieUserId,
+      device_id: this.state.deviceId,
+      _uuid: this.state.uuid,
     });
 
-    const { body } = await this.client.request.send({
+    const { body } = await this.http.send({
       url: `/api/v1/media/${options.mediaId}/${options.action}/`,
       method: 'POST',
       form: {
@@ -139,14 +144,14 @@ export class MediaRepository extends Repository {
     commentText: string,
     mediaId?: string,
   ): Promise<MediaRepositoryCheckOffensiveCommentResponseRootObject> {
-    const { body } = await this.client.request.send<MediaRepositoryCheckOffensiveCommentResponseRootObject>({
+    const { body } = await this.http.send<MediaRepositoryCheckOffensiveCommentResponseRootObject>({
       url: '/api/v1/media/comment/check_offensive_comment/',
       method: 'POST',
-      form: this.client.request.sign({
+      form: this.http.sign({
         media_id: mediaId,
-        _csrftoken: this.client.state.cookieCsrfToken,
-        _uid: this.client.state.cookieUserId,
-        _uuid: this.client.state.uuid,
+        _csrftoken: this.state.cookieCsrfToken,
+        _uid: this.state.cookieUserId,
+        _uuid: this.state.uuid,
         comment_text: commentText,
       }),
     });
@@ -154,14 +159,14 @@ export class MediaRepository extends Repository {
   }
 
   public async commentsBulkDelete(mediaId: string, commentIds: string[]): Promise<StatusResponse> {
-    const { body } = await this.client.request.send({
+    const { body } = await this.http.send({
       url: `/api/v1/media/${mediaId}/comment/bulk_delete/`,
       method: 'POST',
-      form: this.client.request.sign({
+      form: this.http.sign({
         comment_ids_to_delete: commentIds.join(','),
-        _csrftoken: this.client.state.cookieCsrfToken,
-        _uid: this.client.state.cookieUserId,
-        _uuid: this.client.state.uuid,
+        _csrftoken: this.state.cookieCsrfToken,
+        _uid: this.state.cookieUserId,
+        _uuid: this.state.uuid,
       }),
     });
     return body;
@@ -178,17 +183,17 @@ export class MediaRepository extends Repository {
     replyToCommentId?: string;
     module?: string;
   }) {
-    const { body } = await this.client.request.send<MediaRepositoryCommentResponse>({
+    const { body } = await this.http.send<MediaRepositoryCommentResponse>({
       url: `/api/v1/media/${mediaId}/comment/`,
       method: 'POST',
-      form: this.client.request.sign({
-        user_breadcrumb: this.client.request.userBreadcrumb(text.length),
+      form: this.http.sign({
+        user_breadcrumb: this.http.userBreadcrumb(text.length),
         idempotence_token: new Chance().guid(),
-        _csrftoken: this.client.state.cookieCsrfToken,
-        radio_type: this.client.state.radioType,
-        _uid: this.client.state.cookieUserId,
-        device_id: this.client.state.deviceId,
-        _uuid: this.client.state.uuid,
+        _csrftoken: this.state.cookieCsrfToken,
+        radio_type: this.state.radioType,
+        _uid: this.state.cookieUserId,
+        device_id: this.state.deviceId,
+        _uuid: this.state.uuid,
         comment_text: text,
         containermodule: module,
         replied_to_comment_id: replyToCommentId,
@@ -198,40 +203,40 @@ export class MediaRepository extends Repository {
   }
 
   async commentsDisable(mediaId) {
-    const { body } = await this.client.request.send({
+    const { body } = await this.http.send({
       url: `/api/v1/media/${mediaId}/disable_comments/`,
       method: 'POST',
-      form: this.client.request.sign({
-        _csrftoken: this.client.state.cookieCsrfToken,
-        _uid: this.client.state.cookieUserId,
-        _uuid: this.client.state.uuid,
+      form: this.http.sign({
+        _csrftoken: this.state.cookieCsrfToken,
+        _uid: this.state.cookieUserId,
+        _uuid: this.state.uuid,
       }),
     });
     return body;
   }
 
   async commentsEnable(mediaId) {
-    const { body } = await this.client.request.send({
+    const { body } = await this.http.send({
       url: `/api/v1/media/${mediaId}/enable_comments/`,
       method: 'POST',
-      form: this.client.request.sign({
-        _csrftoken: this.client.state.cookieCsrfToken,
-        _uid: this.client.state.cookieUserId,
-        _uuid: this.client.state.uuid,
+      form: this.http.sign({
+        _csrftoken: this.state.cookieCsrfToken,
+        _uid: this.state.cookieUserId,
+        _uuid: this.state.uuid,
       }),
     });
     return body;
   }
 
   public async likers(id: string): Promise<MediaRepositoryLikersResponseRootObject> {
-    const { body } = await this.client.request.send<MediaRepositoryLikersResponseRootObject>({
+    const { body } = await this.http.send<MediaRepositoryLikersResponseRootObject>({
       url: `/api/v1/media/${id}/likers/`,
     });
     return body;
   }
 
   public async blocked() {
-    const { body } = await this.client.request.send<MediaRepositoryBlockedResponse>({
+    const { body } = await this.http.send<MediaRepositoryBlockedResponse>({
       url: `/api/v1/media/blocked/`,
     });
     return body.media_ids;
@@ -254,21 +259,21 @@ export class MediaRepository extends Repository {
         audio_muted: false,
       });
     }
-    const { body } = await this.client.request.send({
+    const { body } = await this.http.send({
       url: '/api/v1/media/upload_finish/',
       method: 'POST',
       headers: {
         retry_context: JSON.stringify({ num_step_auto_retry: 0, num_reupload: 0, num_step_manual_retry: 0 }),
       },
-      form: this.client.request.sign({
-        timezone_offset: this.client.state.timezoneOffset,
-        _csrftoken: this.client.state.cookieCsrfToken,
+      form: this.http.sign({
+        timezone_offset: this.state.timezoneOffset,
+        _csrftoken: this.state.cookieCsrfToken,
         source_type: options.source_type,
-        _uid: this.client.state.cookieUserId,
-        device_id: this.client.state.deviceId,
-        _uuid: this.client.state.uuid,
+        _uid: this.state.cookieUserId,
+        device_id: this.state.deviceId,
+        _uuid: this.state.uuid,
         upload_id: options.upload_id,
-        device: this.client.state.devicePayload,
+        device: this.state.devicePayload,
         ...options.video,
       }),
       qs: options.video ? { video: '1' } : {},
@@ -284,11 +289,11 @@ export class MediaRepository extends Repository {
   private applyConfigureDefaults<T extends MediaConfigureOptions>(options: T, defaults: Partial<T>): T {
     const width = options.width || 1520;
     const height = options.height || 2048;
-    const devicePayload = this.client.state.devicePayload;
+    const devicePayload = this.state.devicePayload;
     return defaultsDeep(options, {
-      _csrftoken: this.client.state.cookieCsrfToken,
-      _uid: this.client.state.cookieUserId,
-      _uuid: this.client.state.uuid,
+      _csrftoken: this.state.cookieCsrfToken,
+      _uid: this.state.cookieUserId,
+      _uuid: this.state.uuid,
       device: devicePayload,
       extra: { source_width: width, source_height: height },
 
@@ -301,7 +306,7 @@ export class MediaRepository extends Repository {
    * @param options - configuration-options
    */
   public async configure(options: MediaConfigureTimelineOptions): Promise<MediaRepositoryConfigureResponseRootObject> {
-    const devicePayload = this.client.state.devicePayload;
+    const devicePayload = this.state.devicePayload;
     const now = DateTime.local().toFormat('yyyy:mm:dd HH:mm:ss');
     const width = options.width || 1520;
     const height = options.height || 2048;
@@ -311,7 +316,7 @@ export class MediaRepository extends Repository {
       height,
 
       upload_id: Date.now().toString(),
-      timezone_offset: this.client.state.timezoneOffset,
+      timezone_offset: this.state.timezoneOffset,
       date_time_original: now,
       date_time_digitalized: now,
       caption: '',
@@ -326,8 +331,8 @@ export class MediaRepository extends Repository {
       // needed?!
       camera_model: devicePayload.model,
       scene_capture_type: 'standard',
-      device_id: this.client.state.deviceId,
-      creation_logger_session_id: this.client.state.clientSessionId,
+      device_id: this.state.deviceId,
+      creation_logger_session_id: this.state.clientSessionId,
       software: '1',
       camera_make: devicePayload.manufacturer,
     });
@@ -338,10 +343,10 @@ export class MediaRepository extends Repository {
       form.location = JSON.stringify(form.location);
     }
 
-    const { body } = await this.client.request.send<MediaRepositoryConfigureResponseRootObject>({
+    const { body } = await this.http.send<MediaRepositoryConfigureResponseRootObject>({
       url: '/api/v1/media/configure/',
       method: 'POST',
-      form: this.client.request.sign(form),
+      form: this.http.sign(form),
     });
     return body;
   }
@@ -354,11 +359,11 @@ export class MediaRepository extends Repository {
       height: options.height,
 
       upload_id: Date.now().toString(),
-      timezone_offset: this.client.state.timezoneOffset,
+      timezone_offset: this.state.timezoneOffset,
       date_time_original: now,
       caption: '',
       source_type: '4',
-      device_id: this.client.state.deviceId,
+      device_id: this.state.deviceId,
       filter_type: '0',
       audio_muted: false,
       poster_frame_index: 0,
@@ -371,13 +376,13 @@ export class MediaRepository extends Repository {
       form.location = JSON.stringify(form.location);
     }
 
-    const { body } = await this.client.request.send<MediaRepositoryConfigureResponseRootObject>({
+    const { body } = await this.http.send<MediaRepositoryConfigureResponseRootObject>({
       url: '/api/v1/media/configure/',
       method: 'POST',
       qs: {
         video: '1',
       },
-      form: this.client.request.sign(form),
+      form: this.http.sign(form),
     });
     return body;
   }
@@ -431,29 +436,29 @@ export class MediaRepository extends Repository {
       form.thread_ids = JSON.stringify(form.thread_ids || []);
     }
 
-    const { body } = await this.client.request.send({
+    const { body } = await this.http.send({
       url: '/api/v1/media/configure_to_story/',
       method: 'POST',
-      form: this.client.request.sign(form),
+      form: this.http.sign(form),
     });
     return body;
   }
 
   public async configureToStoryVideo(options: MediaConfigureStoryVideoOptions) {
     const now = Date.now();
-    const devicePayload = this.client.state.devicePayload;
+    const devicePayload = this.state.devicePayload;
     const form = defaultsDeep(options, {
-      supported_capabilities_new: JSON.stringify(this.client.state.supportedCapabilities),
+      supported_capabilities_new: JSON.stringify(this.state.supportedCapabilities),
       timezone_offset: '0',
-      _csrftoken: this.client.state.cookieCsrfToken,
+      _csrftoken: this.state.cookieCsrfToken,
       client_shared_at: now.toString(),
       configure_mode: '1',
       source_type: '3',
       video_result: '',
-      _uid: this.client.state.cookieUserId,
+      _uid: this.state.cookieUserId,
       date_time_original: new Date().toISOString().replace(/[-:]/g, ''),
-      device_id: this.client.state.deviceId,
-      _uuid: this.client.state.uuid,
+      device_id: this.state.deviceId,
+      _uuid: this.state.uuid,
       device: devicePayload,
       clips: [
         {
@@ -479,13 +484,13 @@ export class MediaRepository extends Repository {
       }
       form.thread_ids = JSON.stringify(form.thread_ids || []);
     }
-    const { body } = await this.client.request.send({
+    const { body } = await this.http.send({
       url: '/api/v1/media/configure_to_story/',
       method: 'POST',
       qs: {
         video: '1',
       },
-      form: this.client.request.sign(form),
+      form: this.http.sign(form),
     });
     return body;
   }
@@ -494,16 +499,16 @@ export class MediaRepository extends Repository {
     const isVideo = (arg: MediaConfigureSidecarItem): arg is MediaConfigureSidecarVideoItem =>
       (arg as MediaConfigureSidecarVideoItem).length !== undefined;
 
-    const devicePayload = this.client.state.devicePayload;
+    const devicePayload = this.state.devicePayload;
     const sidecarId = options.upload_id || Date.now().toString();
     const now = DateTime.local().toFormat('yyyy:mm:dd HH:mm:ss');
     options = defaultsDeep(options, {
-      _csrftoken: this.client.state.cookieCsrfToken,
-      _uid: this.client.state.cookieUserId,
-      _uuid: this.client.state.uuid,
+      _csrftoken: this.state.cookieCsrfToken,
+      _uid: this.state.cookieUserId,
+      _uuid: this.state.uuid,
       timezone_offset: '0',
       source_type: '4',
-      device_id: this.client.state.deviceId,
+      device_id: this.state.deviceId,
       caption: '',
       client_sidecar_id: sidecarId,
       upload_id: sidecarId,
@@ -552,10 +557,10 @@ export class MediaRepository extends Repository {
       options.location = JSON.stringify(options.location);
     }
 
-    const { body } = await this.client.request.send({
+    const { body } = await this.http.send({
       url: '/api/v1/media/configure_sidecar/',
       method: 'POST',
-      form: this.client.request.sign(options),
+      form: this.http.sign(options),
     });
     return body;
   }
@@ -574,15 +579,15 @@ export class MediaRepository extends Repository {
       audio_muted: false,
       poster_frame_index: 0,
       filter_type: '0',
-      timezone_offset: this.client.state.timezoneOffset,
+      timezone_offset: this.state.timezoneOffset,
       media_folder: options.source_type !== '4' ? 'Camera' : undefined,
       source_type: '4',
-      device: this.client.state.devicePayload,
+      device: this.state.devicePayload,
       retryContext: { num_step_auto_retry: 0, num_reupload: 0, num_step_manual_retry: 0 },
     });
     const retryContext = options.retryContext;
     delete form.retryContext;
-    const { body } = await this.client.request.send({
+    const { body } = await this.http.send({
       url: '/api/v1/media/configure_to_igtv/',
       method: 'POST',
       qs: {
@@ -592,39 +597,39 @@ export class MediaRepository extends Repository {
         is_igtv_video: '1',
         retry_context: JSON.stringify(retryContext),
       },
-      form: this.client.request.sign({
+      form: this.http.sign({
         ...form,
-        _csrftoken: this.client.state.cookieCsrfToken,
-        _uid: this.client.state.cookieUserId,
-        _uuid: this.client.state.uuid,
+        _csrftoken: this.state.cookieCsrfToken,
+        _uid: this.state.cookieUserId,
+        _uuid: this.state.uuid,
       }),
     });
     return body;
   }
 
   public async onlyMe(mediaId: string): Promise<StatusResponse> {
-    const { body } = await this.client.request.send({
+    const { body } = await this.http.send({
       url: `/api/v1/media/${mediaId}/only_me/`,
       method: 'POST',
-      form: this.client.request.sign({
+      form: this.http.sign({
         media_id: mediaId,
-        _csrftoken: this.client.state.cookieCsrfToken,
-        _uid: this.client.state.cookieUserId,
-        _uuid: this.client.state.uuid,
+        _csrftoken: this.state.cookieCsrfToken,
+        _uid: this.state.cookieUserId,
+        _uuid: this.state.uuid,
       }),
     });
     return body;
   }
 
   public async undoOnlyMe(mediaId: string): Promise<StatusResponse> {
-    const { body } = await this.client.request.send({
+    const { body } = await this.http.send({
       url: `/api/v1/media/${mediaId}/undo_only_me/`,
       method: 'POST',
-      form: this.client.request.sign({
+      form: this.http.sign({
         media_id: mediaId,
-        _csrftoken: this.client.state.cookieCsrfToken,
-        _uid: this.client.state.cookieUserId,
-        _uuid: this.client.state.uuid,
+        _csrftoken: this.state.cookieCsrfToken,
+        _uid: this.state.cookieUserId,
+        _uuid: this.state.uuid,
       }),
     });
     return body;
@@ -636,7 +641,7 @@ export class MediaRepository extends Repository {
     },
     module: IgAppModule = 'feed_timeline',
   ): Promise<StatusResponse> {
-    const { body } = await this.client.request.send<StatusResponse>({
+    const { body } = await this.http.send<StatusResponse>({
       url: `/api/v2/media/seen/`,
       method: 'POST',
       qs: {
@@ -644,7 +649,7 @@ export class MediaRepository extends Repository {
         live_vod: 0,
       },
       // TODO: gzip
-      form: this.client.request.sign({
+      form: this.http.sign({
         reels,
         container_module: module,
         reel_media_skipped: [],
@@ -652,10 +657,10 @@ export class MediaRepository extends Repository {
         live_vods_skipped: [],
         nuxes: [],
         nuxes_skipped: [],
-        _uuid: this.client.state.uuid,
-        _uid: this.client.state.cookieUserId,
-        _csrftoken: this.client.state.cookieCsrfToken,
-        device_id: this.client.state.deviceId,
+        _uuid: this.state.uuid,
+        _uid: this.state.cookieUserId,
+        _csrftoken: this.state.cookieCsrfToken,
+        device_id: this.state.deviceId,
       }),
     });
     return body;
@@ -663,7 +668,7 @@ export class MediaRepository extends Repository {
 
   // tip: id = savedFeed.items()[0].media.id
   public async save(mediaId: string) {
-    const { body } = await this.client.request.send({
+    const { body } = await this.http.send({
       url: `/api/v1/media/${mediaId}/save/`,
       method: 'POST',
     });
@@ -671,7 +676,7 @@ export class MediaRepository extends Repository {
   }
 
   async unsave(mediaId: string) {
-    const { body } = await this.client.request.send({
+    const { body } = await this.http.send({
       url: `/api/v1/media/${mediaId}/unsave/`,
       method: 'POST',
     });
@@ -683,15 +688,15 @@ export class MediaRepository extends Repository {
     pollId: string | number,
     vote: '0' | '1',
   ): Promise<MediaUpdatedMediaResponseRootObject> {
-    const { body } = await this.client.request.send({
+    const { body } = await this.http.send({
       url: `/api/v1/media/${mediaId}/${pollId}/story_poll_vote/`,
       method: 'POST',
-      form: this.client.request.sign({
-        _csrftoken: this.client.state.cookieCsrfToken,
-        radio_type: this.client.state.radioType,
-        _uid: this.client.state.cookieUserId,
+      form: this.http.sign({
+        _csrftoken: this.state.cookieCsrfToken,
+        radio_type: this.state.radioType,
+        _uid: this.state.cookieUserId,
         vote,
-        _uuid: this.client.state.uuid,
+        _uuid: this.state.uuid,
       }),
     });
     return body;
@@ -708,15 +713,15 @@ export class MediaRepository extends Repository {
       options = defaultsDeep(options, { music_browse_session_id: chance.guid({ version: 4 }) });
     }
 
-    const { body } = await this.client.request.send({
+    const { body } = await this.http.send({
       url: `/api/v1/media/${mediaId}/${questionId}/story_question_response/`,
       method: 'POST',
-      form: this.client.request.sign({
+      form: this.http.sign({
         client_context: chance.guid({ version: 4 }),
         mutation_token: chance.guid({ version: 4 }),
-        _csrftoken: this.client.state.cookieCsrfToken,
-        _uid: this.client.state.cookieUserId,
-        _uuid: this.client.state.uuid,
+        _csrftoken: this.state.cookieCsrfToken,
+        _uid: this.state.cookieUserId,
+        _uuid: this.state.uuid,
         ...options,
       }),
     });
@@ -728,13 +733,13 @@ export class MediaRepository extends Repository {
     sliderId: string | number,
     vote: number,
   ): Promise<MediaUpdatedMediaResponseRootObject> {
-    const { body } = await this.client.request.send({
+    const { body } = await this.http.send({
       url: `/api/v1/media/${mediaId}/${sliderId}/story_slider_vote/`,
       method: 'POST',
-      form: this.client.request.sign({
-        _csrftoken: this.client.state.cookieCsrfToken,
-        _uid: this.client.state.cookieUserId,
-        _uuid: this.client.state.uuid,
+      form: this.http.sign({
+        _csrftoken: this.state.cookieCsrfToken,
+        _uid: this.state.cookieUserId,
+        _uuid: this.state.uuid,
         vote: vote.toFixed(8),
       }),
     });
@@ -752,12 +757,12 @@ export class MediaRepository extends Repository {
     quizId: string | number,
     answer: '0' | '1' | '2' | '3' | string,
   ): Promise<MediaUpdatedMediaResponseRootObject> {
-    const { body } = await this.client.request.send({
+    const { body } = await this.http.send({
       url: `/api/v1/media/${mediaId}/${quizId}/story_quiz_answer/`,
       method: 'POST',
-      form: this.client.request.sign({
-        _csrftoken: this.client.state.cookieCsrfToken,
-        _uuid: this.client.state.uuid,
+      form: this.http.sign({
+        _csrftoken: this.state.cookieCsrfToken,
+        _uuid: this.state.uuid,
         answer,
       }),
     });

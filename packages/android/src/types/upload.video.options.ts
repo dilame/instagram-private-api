@@ -1,5 +1,3 @@
-import { IgApiClient } from '../index';
-
 export interface UploadVideoOptions {
   video: Buffer;
   uploadId?: string;
@@ -35,7 +33,7 @@ export interface UploadVideoSegmentTransferOptions {
   segment: Buffer;
 }
 
-export type SegmentDivider = (options: { buffer: Buffer; client: IgApiClient }) => Buffer[];
+export type SegmentDivider = (options: { buffer: Buffer }) => Buffer[];
 
 export interface UploadSegmentedVideoOptions extends UploadVideoOptions {
   segmentDivider?: SegmentDivider;

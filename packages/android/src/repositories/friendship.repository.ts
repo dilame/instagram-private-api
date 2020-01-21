@@ -1,22 +1,27 @@
-import { Repository } from '../core/repository';
+import { injectable } from 'tsyringe';
+import { AndroidHttp } from '../core/android.http';
+import { AndroidState } from '../core/android.state';
+
 import { FriendshipRepositoryShowResponseRootObject, FriendshipRepositoryChangeResponseRootObject } from '../responses';
 
-export class FriendshipRepository extends Repository {
+@injectable()
+export class FriendshipRepository {
+  constructor(private http: AndroidHttp, private state: AndroidState) {}
   async show(id: string | number) {
-    const { body } = await this.client.request.send<FriendshipRepositoryShowResponseRootObject>({
+    const { body } = await this.http.send<FriendshipRepositoryShowResponseRootObject>({
       url: `/api/v1/friendships/show/${id}/`,
     });
     return body;
   }
 
   async showMany(userIds: string[] | number[]) {
-    const { body } = await this.client.request.send({
+    const { body } = await this.http.send({
       url: `/api/v1/friendships/show_many/`,
       method: 'POST',
       form: {
-        _csrftoken: this.client.state.cookieCsrfToken,
+        _csrftoken: this.state.cookieCsrfToken,
         user_ids: userIds.join(),
-        _uuid: this.client.state.uuid,
+        _uuid: this.state.uuid,
       },
     });
     return body.friendship_statuses;
@@ -51,16 +56,16 @@ export class FriendshipRepository extends Repository {
   }
 
   private async change(action: string, id: string | number, mediaIdAttribution?: string) {
-    const { body } = await this.client.request.send<FriendshipRepositoryChangeResponseRootObject>({
+    const { body } = await this.http.send<FriendshipRepositoryChangeResponseRootObject>({
       url: `/api/v1/friendships/${action}/${id}/`,
       method: 'POST',
-      form: this.client.request.sign({
-        _csrftoken: this.client.state.cookieCsrfToken,
+      form: this.http.sign({
+        _csrftoken: this.state.cookieCsrfToken,
         user_id: id,
-        radio_type: this.client.state.radioType,
-        _uid: this.client.state.cookieUserId,
-        device_id: this.client.state.deviceId,
-        _uuid: this.client.state.uuid,
+        radio_type: this.state.radioType,
+        _uid: this.state.cookieUserId,
+        device_id: this.state.deviceId,
+        _uuid: this.state.uuid,
         media_id_attribution: mediaIdAttribution,
       }),
     });

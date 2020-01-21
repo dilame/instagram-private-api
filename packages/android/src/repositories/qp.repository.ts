@@ -1,23 +1,27 @@
-import { Repository } from '../core/repository';
+import { injectable } from 'tsyringe';
+import { AndroidHttp } from '../core/android.http';
+import { AndroidState } from '../core/android.state';
 
-export class QpRepository extends Repository {
+@injectable()
+export class QpRepository {
+  constructor(private http: AndroidHttp, private state: AndroidState) {}
   public async getCooldowns() {
-    return this.client.request.send({
+    return this.http.send({
       url: '/api/v1/qp/get_cooldowns/',
-      qs: this.client.request.sign({}),
+      qs: this.http.sign({}),
     });
   }
   public async batchFetch() {
-    return this.client.request.send({
+    return this.http.send({
       url: '/api/v1/qp/batch_fetch/',
       method: 'POST',
-      form: this.client.request.sign({
+      form: this.http.sign({
         surfaces_to_triggers: this.surfacesToTriggers,
         surfaces_to_queries: this.surfacesToQueries,
         vc_policy: 'default',
-        _csrftoken: this.client.state.cookieCsrfToken,
-        _uid: this.client.state.cookieUserId,
-        _uuid: this.client.state.uuid,
+        _csrftoken: this.state.cookieCsrfToken,
+        _uid: this.state.cookieUserId,
+        _uuid: this.state.uuid,
         scale: '3',
         version: '1',
       }),

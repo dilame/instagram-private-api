@@ -1,48 +1,85 @@
 import { shuffle } from 'lodash';
-import { Repository } from '../core/repository';
+import { injectable } from 'tsyringe';
 import Bluebird = require('bluebird');
+import { AccountRepository } from '../repositories/account.repository';
+import { ZrRepository } from '../repositories/zr.repository';
+import { LauncherRepository } from '../repositories/launcher.repository';
+import { QeRepository } from '../repositories/qe.repository';
+import { AttributionRepository } from '../repositories/attribution.repository';
+import { LoomRepository } from '../repositories/loom.repository';
+import { LinkedAccountRepository } from '../repositories/linked-account.repository';
+import { FbsearchRepository } from '../repositories/fbsearch.repository';
+import { DirectRepository } from '../repositories/direct.repository';
+import { MediaRepository } from '../repositories/media.repository';
+import { QpRepository } from '../repositories/qp.repository';
+import { UserRepository } from '../repositories/user.repository';
+import { DiscoverRepository } from '../repositories/discover.repository';
+import { StatusRepository } from '../repositories/status.repository';
+import { AndroidHttp } from '../core/android.http';
+import { AndroidState } from '../core/android.state';
+import { FeedFactory } from '../core/feed.factory';
 
-export class SimulateService extends Repository {
+@injectable()
+export class SimulateService {
+  constructor(
+    private http: AndroidHttp,
+    private state: AndroidState,
+    private account: AccountRepository,
+    private zr: ZrRepository,
+    private launcher: LauncherRepository,
+    private qe: QeRepository,
+    private attribution: AttributionRepository,
+    private loom: LoomRepository,
+    private linkedAccount: LinkedAccountRepository,
+    private fbsearch: FbsearchRepository,
+    private direct: DirectRepository,
+    private media: MediaRepository,
+    private qp: QpRepository,
+    private user: UserRepository,
+    private discover: DiscoverRepository,
+    private status: StatusRepository,
+    private feed: FeedFactory,
+  ) {}
   private get preLoginFlowRequests(): Array<() => any> {
     return [
-      () => this.client.account.readMsisdnHeader(),
-      () => this.client.account.msisdnHeaderBootstrap('ig_select_app'),
-      () => this.client.zr.tokenResult(),
-      () => this.client.account.contactPointPrefill('prefill'),
-      () => this.client.launcher.preLoginSync(),
-      () => this.client.qe.syncLoginExperiments(),
-      () => this.client.attribution.logAttribution(),
-      () => this.client.account.getPrefillCandidates(),
+      () => this.account.readMsisdnHeader(),
+      () => this.account.msisdnHeaderBootstrap('ig_select_app'),
+      () => this.zr.tokenResult(),
+      () => this.account.contactPointPrefill('prefill'),
+      () => this.launcher.preLoginSync(),
+      () => this.qe.syncLoginExperiments(),
+      () => this.attribution.logAttribution(),
+      () => this.account.getPrefillCandidates(),
     ];
   }
 
   private get postLoginFlowRequests(): Array<() => any> {
     return [
-      () => this.client.zr.tokenResult(),
-      () => this.client.launcher.postLoginSync(),
-      () => this.client.qe.syncExperiments(),
-      () => this.client.attribution.logAttribution(),
-      () => this.client.attribution.logResurrectAttribution(),
-      () => this.client.loom.fetchConfig(),
-      () => this.client.linkedAccount.getLinkageStatus(),
-      // () => this.client.creatives.writeSupportedCapabilities(),
-      // () => this.client.account.processContactPointSignals(),
-      () => this.client.feed.timeline().request({ recoveredFromCrash: '1', reason: 'cold_start_fetch' }),
-      () => this.client.fbsearch.suggestedSearches('users'),
-      () => this.client.fbsearch.suggestedSearches('blended'),
-      () => this.client.fbsearch.recentSearches(),
-      () => this.client.direct.rankedRecipients('reshare'),
-      () => this.client.direct.rankedRecipients('raven'),
-      () => this.client.direct.getPresence(),
-      () => this.client.feed.directInbox().request(),
-      () => this.client.media.blocked(),
-      () => this.client.qp.batchFetch(),
-      () => this.client.qp.getCooldowns(),
-      () => this.client.user.arlinkDownloadInfo(),
-      () => this.client.discover.topicalExplore(),
-      () => this.client.discover.markSuSeen(),
+      () => this.zr.tokenResult(),
+      () => this.launcher.postLoginSync(),
+      () => this.qe.syncExperiments(),
+      () => this.attribution.logAttribution(),
+      () => this.attribution.logResurrectAttribution(),
+      () => this.loom.fetchConfig(),
+      () => this.linkedAccount.getLinkageStatus(),
+      // () => this.creatives.writeSupportedCapabilities(),
+      // () => this.account.processContactPointSignals(),
+      () => this.feed.timeline().request({ recoveredFromCrash: '1', reason: 'cold_start_fetch' }),
+      () => this.fbsearch.suggestedSearches('users'),
+      () => this.fbsearch.suggestedSearches('blended'),
+      () => this.fbsearch.recentSearches(),
+      () => this.direct.rankedRecipients('reshare'),
+      () => this.direct.rankedRecipients('raven'),
+      () => this.direct.getPresence(),
+      () => this.feed.directInbox().request(),
+      () => this.media.blocked(),
+      () => this.qp.batchFetch(),
+      () => this.qp.getCooldowns(),
+      () => this.user.arlinkDownloadInfo(),
+      () => this.discover.topicalExplore(),
+      () => this.discover.markSuSeen(),
       () => this.facebookOta(),
-      () => this.client.status.getViewableStatuses(),
+      () => this.status.getViewableStatuses(),
     ];
   }
 
@@ -78,18 +115,18 @@ export class SimulateService extends Repository {
   }
 
   private async facebookOta() {
-    const uid = this.client.state.cookieUserId;
-    const { body } = await this.client.request.send({
+    const uid = this.state.cookieUserId;
+    const { body } = await this.http.send({
       url: '/api/v1/facebook_ota/',
       qs: {
-        fields: this.client.state.fbOtaFields,
+        fields: this.state.fbOtaFields,
         custom_user_id: uid,
-        signed_body: this.client.request.signature('') + '.',
-        ig_sig_key_version: this.client.state.signatureVersion,
-        version_code: this.client.state.appVersionCode,
-        version_name: this.client.state.appVersion,
-        custom_app_id: this.client.state.fbOrcaApplicationId,
-        custom_device_id: this.client.state.uuid,
+        signed_body: this.http.signature('') + '.',
+        ig_sig_key_version: this.state.signatureVersion,
+        version_code: this.state.appVersionCode,
+        version_name: this.state.appVersion,
+        custom_app_id: this.state.fbOrcaApplicationId,
+        custom_device_id: this.state.uuid,
       },
     });
     return body;

@@ -12,7 +12,7 @@ import { IgCookieNotFoundError, IgNoCheckpointError, IgUserIdNotFoundError } fro
 import { Enumerable } from '@igpapi/core';
 import debug from 'debug';
 
-export class State {
+export class AndroidState {
   private static stateDebug = debug('ig:state');
   get signatureKey(): string {
     return this.constants.SIGNATURE_KEY;
@@ -160,7 +160,7 @@ export class State {
     try {
       return this.extractCookieValue('csrftoken');
     } catch {
-      State.stateDebug('csrftoken lookup failed, returning "missing".');
+      AndroidState.stateDebug('csrftoken lookup failed, returning "missing".');
       return 'missing';
     }
   }
@@ -185,7 +185,7 @@ export class State {
   public extractCookieValue(key: string): string {
     const cookie = this.extractCookie(key);
     if (cookie === null) {
-      State.stateDebug(`Could not find ${key}`);
+      AndroidState.stateDebug(`Could not find ${key}`);
       throw new IgCookieNotFoundError(key);
     }
     return cookie.value;
@@ -222,13 +222,13 @@ export class State {
   }
 
   public async deserialize(state: string | any): Promise<void> {
-    State.stateDebug(`Deserializing state of type ${typeof state}`);
+    AndroidState.stateDebug(`Deserializing state of type ${typeof state}`);
     const obj = typeof state === 'string' ? JSON.parse(state) : state;
     if (typeof obj !== 'object') {
-      State.stateDebug(`State deserialization failed, obj is of type ${typeof obj} (object expected)`);
-      throw new TypeError("State isn't an object or serialized JSON");
+      AndroidState.stateDebug(`State deserialization failed, obj is of type ${typeof obj} (object expected)`);
+      throw new TypeError("AndroidState isn't an object or serialized JSON");
     }
-    State.stateDebug(`Deserializing ${Object.keys(obj).join(', ')}`);
+    AndroidState.stateDebug(`Deserializing ${Object.keys(obj).join(', ')}`);
     if (obj.constants) {
       this.constants = obj.constants;
       delete obj.constants;

@@ -1,7 +1,11 @@
-import { Feed } from '../core/feed';
+import { injectable } from 'tsyringe';
+import { AndroidHttp } from '../core/android.http';
+
+import { Feed } from '@igpapi/core';
 import { Expose } from 'class-transformer';
 
-export class MediaStickerResponsesFeed<T, I> extends Feed<T, I> {
+@injectable()
+export class MediaStickerResponsesFeed<T = any, I = any> extends Feed<T, I> {
   name: string;
   rootName: string;
   itemName: string;
@@ -11,25 +15,28 @@ export class MediaStickerResponsesFeed<T, I> extends Feed<T, I> {
   @Expose()
   private maxId: string = undefined;
 
-  async items(): Promise<I[]> {
-    const response = await this.request();
-    return response[this.rootName][this.itemName];
+  constructor(private http: AndroidHttp) {
+    super();
+  }
+
+  set state(response: T) {
+    this.maxId = response[this.rootName].max_id;
+    this.done = response[this.rootName].more_available;
+  }
+
+  items(raw): I[] {
+    return raw[this.rootName][this.itemName];
   }
 
   async request(): Promise<T> {
-    const { body } = await this.client.request.send({
+    const { body } = await this.http.send({
       url: `/api/v1/media/${this.mediaId}/${this.stickerId}/${this.name}/`,
       method: 'GET',
       qs: {
         max_id: this.maxId || void 0,
       },
     });
-    this.state = body;
-    return body;
-  }
 
-  protected set state(response: T) {
-    this.maxId = response[this.rootName].max_id;
-    this.moreAvailable = response[this.rootName].more_available;
+    return body;
   }
 }

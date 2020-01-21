@@ -1,8 +1,13 @@
-import { Feed } from '../core/feed';
-import { IgAppModule } from '../types/common.types';
+import { injectable } from 'tsyringe';
+import { AndroidHttp } from '../core/android.http';
+
+import { Feed } from '@igpapi/core';
+import { IgAppModule } from '../types';
 import { MusicSearchFeedResponseItemsItem, MusicSearchFeedResponseRootObject } from '../responses';
 import { Expose } from 'class-transformer';
+import { AndroidState } from '../core/android.state';
 
+@injectable()
 export class MusicSearchFeed extends Feed<MusicSearchFeedResponseRootObject, MusicSearchFeedResponseItemsItem> {
   @Expose()
   protected nextCursor?: string;
@@ -14,35 +19,38 @@ export class MusicSearchFeed extends Feed<MusicSearchFeedResponseRootObject, Mus
   @Expose()
   public searchSessionId: string;
 
-  async items(): Promise<MusicSearchFeedResponseItemsItem[]> {
-    const response = await this.request();
-    return response.items;
+  constructor(private http: AndroidHttp, private clientState: AndroidState) {
+    super();
+  }
+
+  set state(response: any) {
+    this.nextCursor = response.page_info.next_max_id;
+    this.done = response.page_info.more_available;
+  }
+
+  items(raw: MusicSearchFeedResponseRootObject) {
+    return raw.items;
   }
 
   async request(): Promise<MusicSearchFeedResponseRootObject> {
-    const { body } = await this.client.request.send<MusicSearchFeedResponseRootObject>({
+    const { body } = await this.http.send<MusicSearchFeedResponseRootObject>({
       url: '/api/v1/music/search/',
       method: 'POST',
       form: {
         cursor: this.nextCursor || '0',
-        _csrftoken: this.client.state.cookieCsrfToken,
+        _csrftoken: this.clientState.cookieCsrfToken,
         product: this.product,
-        _uuid: this.client.state.uuid,
-        browse_session_id: this.client.state.clientSessionId,
+        _uuid: this.clientState.uuid,
+        browse_session_id: this.clientState.clientSessionId,
         search_session_id: this.searchSessionId,
         q: this.query,
       },
     });
-    this.state = body;
+
     return body;
   }
 
-  protected set state(response: any) {
-    this.nextCursor = response.page_info.next_max_id;
-    this.moreAvailable = response.page_info.more_available;
-  }
-
   isMoreAvailable(): boolean {
-    return this.moreAvailable;
+    return this.done;
   }
 }

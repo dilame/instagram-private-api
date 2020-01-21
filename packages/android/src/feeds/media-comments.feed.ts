@@ -1,7 +1,11 @@
 import { Expose } from 'class-transformer';
-import { Feed } from '../core/feed';
+import { injectable } from 'tsyringe';
+import { AndroidHttp } from '../core/android.http';
+
+import { Feed } from '@igpapi/core';
 import { MediaCommentsFeedResponse, MediaCommentsFeedResponseCommentsItem } from '../responses';
 
+@injectable()
 export class MediaCommentsFeed extends Feed<MediaCommentsFeedResponse, MediaCommentsFeedResponseCommentsItem> {
   id: string;
   @Expose()
@@ -9,14 +13,18 @@ export class MediaCommentsFeed extends Feed<MediaCommentsFeedResponse, MediaComm
   @Expose()
   private nextMinId: string;
 
+  constructor(private http: AndroidHttp) {
+    super();
+  }
+
   set state(body: MediaCommentsFeedResponse) {
-    this.moreAvailable = !!body.next_max_id || !!body.next_min_id;
+    this.done = !!body.next_max_id || !!body.next_min_id;
     this.nextMaxId = body.next_max_id;
     this.nextMinId = body.next_min_id;
   }
 
   async request() {
-    const { body } = await this.client.request.send<MediaCommentsFeedResponse>({
+    const { body } = await this.http.send<MediaCommentsFeedResponse>({
       url: `/api/v1/media/${this.id}/comments/`,
       qs: {
         can_support_threading: true,
@@ -24,12 +32,11 @@ export class MediaCommentsFeed extends Feed<MediaCommentsFeedResponse, MediaComm
         min_id: this.nextMinId,
       },
     });
-    this.state = body;
+
     return body;
   }
 
-  async items() {
-    const response = await this.request();
-    return response.comments;
+  items(raw: MediaCommentsFeedResponse) {
+    return raw.comments;
   }
 }

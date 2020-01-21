@@ -1,11 +1,18 @@
-import { Repository } from '../core/repository';
+import { injectable } from 'tsyringe';
 import { AccountInsightsOptions } from '../types';
-import { InsightsServiceAccountResponseRootObject } from '../responses/insights.service.account.response';
-import { InsightsServicePostResponseRootObject, StoriesInsightsFeedResponseRootObject } from '../responses';
+import {
+  InsightsServiceAccountResponseRootObject,
+  InsightsServicePostResponseRootObject,
+  StoriesInsightsFeedResponseRootObject,
+} from '../responses';
+import { AdsRepository } from '../repositories/ads.repository';
+import { AndroidState } from '../core/android.state';
 
-export class InsightsService extends Repository {
+@injectable()
+export class InsightsService {
+  constructor(private ads: AdsRepository, private state: AndroidState) {}
   public account(options: AccountInsightsOptions): Promise<InsightsServiceAccountResponseRootObject> {
-    return this.client.ads.graphQL<InsightsServiceAccountResponseRootObject>({
+    return this.ads.graphQL<InsightsServiceAccountResponseRootObject>({
       surface: {
         name: 'account',
         friendlyName: 'IgInsightsAccountInsightsWithTabsQuery',
@@ -18,14 +25,14 @@ export class InsightsService extends Repository {
         contentTab: options.contentTab || true,
         query_params: {
           access_token: options.accessToken || '',
-          id: options.userId || this.client.state.cookieUserId,
+          id: options.userId || this.state.cookieUserId,
         },
         timezone: 'Environment/Local',
       },
     });
   }
   public post(mediaId: string): Promise<InsightsServicePostResponseRootObject> {
-    return this.client.ads.graphQL<InsightsServicePostResponseRootObject>({
+    return this.ads.graphQL<InsightsServicePostResponseRootObject>({
       surface: {
         name: 'post',
         friendlyName: 'IgInsightsPostInsightsQuery',
@@ -41,7 +48,7 @@ export class InsightsService extends Repository {
   }
 
   public igtv(mediaId: string) {
-    return this.client.ads.graphQL({
+    return this.ads.graphQL({
       surface: {
         name: 'igtv',
         friendlyName: 'IgInsightsIGTVInsightsAppQuery',
@@ -57,7 +64,7 @@ export class InsightsService extends Repository {
   }
 
   public story(storyId: string): Promise<StoriesInsightsFeedResponseRootObject> {
-    return this.client.ads.graphQL<StoriesInsightsFeedResponseRootObject>({
+    return this.ads.graphQL<StoriesInsightsFeedResponseRootObject>({
       surface: {
         name: 'story',
         friendlyName: 'IgInsightsStoryInsightsAppQuery',

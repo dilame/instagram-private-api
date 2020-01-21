@@ -46,6 +46,7 @@
     "tough-cookie": "^2.5.0",
     "ts-custom-error": "^2.2.2",
     "ts-xor": "^1.0.6",
+    "tsyringe": "^4.0.1",
     "url-regex": "^5.0.0"
   },
   "devDependencies": {

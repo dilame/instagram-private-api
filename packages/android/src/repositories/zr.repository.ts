@@ -1,13 +1,17 @@
-import { Repository } from '../core/repository';
+import { injectable } from 'tsyringe';
+import { AndroidHttp } from '../core/android.http';
+import { AndroidState } from '../core/android.state';
 
-export class ZrRepository extends Repository {
+@injectable()
+export class ZrRepository {
+  constructor(private http: AndroidHttp, private state: AndroidState) {}
   public tokenResult() {
-    return this.client.request.send({
+    return this.http.send({
       url: '/api/v1/zr/token/result/',
       qs: {
-        device_id: this.client.state.deviceId,
+        device_id: this.state.deviceId,
         token_hash: '',
-        custom_device_id: this.client.state.uuid,
+        custom_device_id: this.state.uuid,
         fetch_reason: 'token_expired',
       },
     });

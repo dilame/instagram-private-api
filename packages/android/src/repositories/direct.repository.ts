@@ -1,22 +1,27 @@
-import { Repository } from '../core/repository';
+import { injectable } from 'tsyringe';
+import { AndroidHttp } from '../core/android.http';
+import { AndroidState } from '../core/android.state';
+
 import {
   DirectRepositoryCreateGroupThreadResponseRootObject,
   DirectRepositoryGetPresenceResponseRootObject,
   DirectRepositoryRankedRecipientsResponseRootObject,
 } from '../responses';
 
-export class DirectRepository extends Repository {
+@injectable()
+export class DirectRepository {
+  constructor(private http: AndroidHttp, private state: AndroidState) {}
   public async createGroupThread(
     recipientUsers: string[],
     threadTitle: string,
   ): Promise<DirectRepositoryCreateGroupThreadResponseRootObject> {
-    const { body } = await this.client.request.send({
+    const { body } = await this.http.send({
       url: '/api/v1/direct_v2/create_group_thread/',
       method: 'POST',
-      form: this.client.request.sign({
-        _csrftoken: this.client.state.cookieCsrfToken,
-        _uuid: this.client.state.uuid,
-        _uid: this.client.state.cookieUserId,
+      form: this.http.sign({
+        _csrftoken: this.state.cookieCsrfToken,
+        _uuid: this.state.uuid,
+        _uid: this.state.cookieUserId,
         recipient_users: JSON.stringify(recipientUsers),
         thread_title: threadTitle,
       }),
@@ -28,7 +33,7 @@ export class DirectRepository extends Repository {
     mode: 'raven' | 'reshare' = 'raven',
     query = '',
   ): Promise<DirectRepositoryRankedRecipientsResponseRootObject> {
-    const { body } = await this.client.request.send<DirectRepositoryRankedRecipientsResponseRootObject>({
+    const { body } = await this.http.send<DirectRepositoryRankedRecipientsResponseRootObject>({
       url: '/api/v1/direct_v2/ranked_recipients/',
       method: 'GET',
       qs: {
@@ -41,7 +46,7 @@ export class DirectRepository extends Repository {
   }
 
   public async getPresence(): Promise<DirectRepositoryGetPresenceResponseRootObject> {
-    const { body } = await this.client.request.send<DirectRepositoryGetPresenceResponseRootObject>({
+    const { body } = await this.http.send<DirectRepositoryGetPresenceResponseRootObject>({
       url: '/api/v1/direct_v2/get_presence/',
       method: 'GET',
     });

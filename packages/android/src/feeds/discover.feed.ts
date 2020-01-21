@@ -1,37 +1,42 @@
-import { Expose, plainToClassFromExist } from 'class-transformer';
-import { Feed } from '../core/feed';
-import { DiscoverFeedResponseRootObject, DiscoverFeedResponseUser } from '../responses';
+import { Expose } from 'class-transformer';
+import { injectable } from 'tsyringe';
+import { Feed } from '@igpapi/core';
+import { AndroidHttp } from '../core/android.http';
+import { DiscoverFeedResponseRootObject, DiscoverFeedResponseSuggestionsItem } from '../responses';
+import { AndroidState } from '../core/android.state';
 
-export class DiscoverFeed extends Feed<DiscoverFeedResponseRootObject, DiscoverFeedResponseUser> {
+@injectable()
+export class DiscoverFeed extends Feed<DiscoverFeedResponseRootObject, DiscoverFeedResponseSuggestionsItem> {
   @Expose()
   private nextMaxId: string;
 
+  constructor(private http: AndroidHttp, private clientState: AndroidState) {
+    super();
+  }
+
   set state(body: DiscoverFeedResponseRootObject) {
-    this.moreAvailable = body.more_available;
+    this.done = body.more_available;
     this.nextMaxId = body.max_id;
   }
 
   async request() {
-    const { body } = await this.client.request.send<DiscoverFeedResponseRootObject>({
+    const { body } = await this.http.send<DiscoverFeedResponseRootObject>({
       url: `/api/v1/discover/ayml/`,
       method: 'POST',
       form: {
         max_id: this.nextMaxId,
-        phone_id: this.client.state.phoneId,
+        phone_id: this.clientState.phoneId,
         module: 'discover_people',
-        _uuid: this.client.state.uuid,
-        _csrftoken: this.client.state.cookieCsrfToken,
+        _uuid: this.clientState.uuid,
+        _csrftoken: this.clientState.cookieCsrfToken,
         paginate: true,
       },
     });
-    this.state = body;
+
     return body;
   }
 
-  async items() {
-    const body = await this.request();
-    return body.suggested_users.suggestions.map(user =>
-      plainToClassFromExist(new DiscoverFeedResponseUser(this.client), user),
-    );
+  items({ suggested_users }: DiscoverFeedResponseRootObject) {
+    return suggested_users.suggestions;
   }
 }

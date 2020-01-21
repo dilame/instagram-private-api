@@ -1,7 +1,10 @@
-import { Expose, plainToClassFromExist } from 'class-transformer';
-import { Feed } from '../core/feed';
-import { BlockedUsersFeedResponseRootObject, BlockedUsersFeedResponseBlockedListItem } from '../responses';
+import { Expose } from 'class-transformer';
+import { injectable } from 'tsyringe';
+import { AndroidHttp } from '../core/android.http';
+import { Feed } from '@igpapi/core';
+import { BlockedUsersFeedResponseBlockedListItem, BlockedUsersFeedResponseRootObject } from '../responses';
 
+@injectable()
 export class BlockedUsersFeed extends Feed<
   BlockedUsersFeedResponseRootObject,
   BlockedUsersFeedResponseBlockedListItem
@@ -9,26 +12,27 @@ export class BlockedUsersFeed extends Feed<
   @Expose()
   private nextMaxId: string;
 
+  constructor(private http: AndroidHttp) {
+    super();
+  }
+
   set state(body: BlockedUsersFeedResponseRootObject) {
-    this.moreAvailable = !!body.next_max_id;
+    this.done = !!body.next_max_id;
     this.nextMaxId = body.next_max_id;
   }
 
   async request() {
-    const { body } = await this.client.request.send<BlockedUsersFeedResponseRootObject>({
+    const { body } = await this.http.send<BlockedUsersFeedResponseRootObject>({
       url: `/api/v1/users/blocked_list/`,
       qs: {
         max_id: this.nextMaxId,
       },
     });
-    this.state = body;
+
     return body;
   }
 
-  async items() {
-    const body = await this.request();
-    return body.blocked_list.map(user =>
-      plainToClassFromExist(new BlockedUsersFeedResponseBlockedListItem(this.client), user),
-    );
+  items({ blocked_list }: BlockedUsersFeedResponseRootObject) {
+    return blocked_list;
   }
 }

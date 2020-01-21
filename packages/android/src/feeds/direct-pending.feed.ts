@@ -1,22 +1,28 @@
 import { Expose } from 'class-transformer';
-import { Feed } from '../core/feed';
+import { injectable } from 'tsyringe';
+import { Feed } from '@igpapi/core';
+import { AndroidHttp } from '../core/android.http';
 import { DirectInboxFeedResponse, DirectInboxFeedResponseThreadsItem } from '../responses';
-import { DirectThreadEntity } from '../entities';
 
+@injectable()
 export class DirectPendingInboxFeed extends Feed<DirectInboxFeedResponse, DirectInboxFeedResponseThreadsItem> {
   @Expose()
   private cursor: string;
   @Expose()
   private seqId: number;
 
+  constructor(private http: AndroidHttp) {
+    super();
+  }
+
   set state(body: DirectInboxFeedResponse) {
-    this.moreAvailable = body.inbox.has_older;
+    this.done = body.inbox.has_older;
     this.seqId = body.seq_id;
     this.cursor = body.inbox.oldest_cursor;
   }
 
   async request() {
-    const { body } = await this.client.request.send<DirectInboxFeedResponse>({
+    const { body } = await this.http.send<DirectInboxFeedResponse>({
       url: `/api/v1/direct_v2/pending_inbox/`,
       qs: {
         visual_message_return_type: 'unseen',
@@ -28,17 +34,11 @@ export class DirectPendingInboxFeed extends Feed<DirectInboxFeedResponse, Direct
         limit: 20,
       },
     });
-    this.state = body;
+
     return body;
   }
 
-  async items() {
-    const response = await this.request();
-    return response.inbox.threads;
-  }
-
-  async records(): Promise<DirectThreadEntity[]> {
-    const threads = await this.items();
-    return threads.map(thread => this.client.entity.directThread(thread.thread_id));
+  items({ inbox }: DirectInboxFeedResponse) {
+    return inbox.threads;
   }
 }

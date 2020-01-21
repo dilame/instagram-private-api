@@ -1,4 +1,7 @@
-import { Repository } from '../core/repository';
+import { injectable } from 'tsyringe';
+import { AndroidHttp } from '../core/android.http';
+import { AndroidState } from '../core/android.state';
+
 import {
   UserRepositoryInfoResponseRootObject,
   UserRepositoryInfoResponseUser,
@@ -10,16 +13,18 @@ import { UserLookupOptions } from '../types/user.lookup.options';
 import { defaults } from 'lodash';
 import * as Chance from 'chance';
 
-export class UserRepository extends Repository {
+@injectable()
+export class UserRepository {
+  constructor(private http: AndroidHttp, private state: AndroidState) {}
   async info(id: string | number): Promise<UserRepositoryInfoResponseUser> {
-    const { body } = await this.client.request.send<UserRepositoryInfoResponseRootObject>({
+    const { body } = await this.http.send<UserRepositoryInfoResponseRootObject>({
       url: `/api/v1/users/${id}/info/`,
     });
     return body.user;
   }
 
   async arlinkDownloadInfo() {
-    const { body } = await this.client.request.send({
+    const { body } = await this.http.send({
       url: `/api/v1/users/arlink_download_info/`,
       qs: {
         version_override: '2.0.2',
@@ -29,10 +34,10 @@ export class UserRepository extends Repository {
   }
 
   async search(username: string): Promise<UserRepositorySearchResponseRootObject> {
-    const { body } = await this.client.request.send<UserRepositorySearchResponseRootObject>({
+    const { body } = await this.http.send<UserRepositorySearchResponseRootObject>({
       url: `/api/v1/users/search/`,
       qs: {
-        timezone_offset: this.client.state.timezoneOffset,
+        timezone_offset: this.state.timezoneOffset,
         q: username,
         count: 30,
       },
@@ -52,36 +57,36 @@ export class UserRepository extends Repository {
   }
 
   async accountDetails(id?: string | number) {
-    id = id || this.client.state.cookieUserId;
-    const { body } = await this.client.request.send({
+    id = id || this.state.cookieUserId;
+    const { body } = await this.http.send({
       url: `/api/v1/users/${id}/account_details/`,
     });
     return body;
   }
 
   async formerUsernames(id?: string | number) {
-    id = id || this.client.state.cookieUserId;
-    const { body } = await this.client.request.send({
+    id = id || this.state.cookieUserId;
+    const { body } = await this.http.send({
       url: `/api/v1/users/${id}/former_usernames/`,
     });
     return body;
   }
 
   async sharedFollowerAccounts(id: string | number) {
-    const { body } = await this.client.request.send({
+    const { body } = await this.http.send({
       url: `/api/v1/users/${id}/shared_follower_accounts/`,
     });
     return body;
   }
 
   async flagUser(id: string | number) {
-    const { body } = await this.client.request.send({
+    const { body } = await this.http.send({
       url: `/api/v1/users/${id}/flag_user/`,
       method: 'POST',
       form: {
-        _csrftoken: this.client.state.cookieCsrfToken,
-        _uid: this.client.state.cookieUserId,
-        _uuid: this.client.state.uuid,
+        _csrftoken: this.state.cookieCsrfToken,
+        _uid: this.state.cookieUserId,
+        _uuid: this.state.uuid,
         reason_id: 1,
         user_id: id,
         source_name: 'profile',
@@ -102,15 +107,15 @@ export class UserRepository extends Repository {
       directlySignIn: true,
       countryCodes: [{ country_code: '1', source: ['default'] }],
     });
-    const { body } = await this.client.request.send({
+    const { body } = await this.http.send({
       url: '/api/v1/users/lookup/',
       method: 'POST',
-      form: this.client.request.sign({
+      form: this.http.sign({
         country_codes: JSON.stringify(options.countryCodes),
-        _csrftoken: this.client.state.cookieCsrfToken,
+        _csrftoken: this.state.cookieCsrfToken,
         q: options.query,
-        guid: this.client.state.uuid,
-        device_id: this.client.state.deviceId,
+        guid: this.state.uuid,
+        device_id: this.state.deviceId,
         waterfall_id: options.waterfallId,
         directly_sign_in: options.directlySignIn.toString(),
       }),

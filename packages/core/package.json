@@ -25,5 +25,9 @@
   "bugs": {
     "url": "https://github.com/dilame/instagram-private-api/issues"
   },
-  "gitHead": "6d5dd61166c98c3c7cc8698dadbd2291fca2ac27"
+  "gitHead": "6d5dd61166c98c3c7cc8698dadbd2291fca2ac27",
+  "dependencies": {
+    "class-transformer": "^0.2.3",
+    "tsyringe": "^4.0.1"
+  }
 }

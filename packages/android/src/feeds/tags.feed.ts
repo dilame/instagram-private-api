@@ -1,8 +1,13 @@
 import { flatten } from 'lodash';
 import { Expose } from 'class-transformer';
-import { Feed } from '../core/feed';
-import { TagsFeedResponse, TagsFeedResponseMedia } from '../responses';
+import { injectable } from 'tsyringe';
+import { AndroidHttp } from '../core/android.http';
 
+import { Feed } from '@igpapi/core';
+import { TagsFeedResponse, TagsFeedResponseMedia } from '../responses';
+import { AndroidState } from '../core/android.state';
+
+@injectable()
 export class TagsFeed extends Feed<TagsFeedResponse, TagsFeedResponseMedia> {
   tag: string;
   tab: 'top' | 'recent' | 'places';
@@ -13,36 +18,41 @@ export class TagsFeed extends Feed<TagsFeedResponse, TagsFeedResponseMedia> {
   @Expose()
   private nextMediaIds: Array<string> = [];
 
-  protected set state(body: TagsFeedResponse) {
-    this.moreAvailable = body.more_available;
+  constructor(private http: AndroidHttp, private clientState: AndroidState) {
+    super();
+  }
+
+  set state(body: TagsFeedResponse) {
+    this.done = body.more_available;
     this.nextMaxId = body.next_max_id;
     this.nextPage = body.next_page;
     this.nextMediaIds = body.next_media_ids;
   }
 
   public async request() {
-    const { body } = await this.client.request.send<TagsFeedResponse>({
+    const { body } = await this.http.send<TagsFeedResponse>({
       url: `/api/v1/tags/${encodeURI(this.tag)}/sections/`,
       method: 'POST',
       form: {
-        _csrftoken: this.client.state.cookieCsrfToken,
+        _csrftoken: this.clientState.cookieCsrfToken,
         tab: this.tab,
-        _uuid: this.client.state.uuid,
-        session_id: this.client.state.clientSessionId,
+        _uuid: this.clientState.uuid,
+        session_id: this.clientState.clientSessionId,
         page: this.nextPage,
         next_media_ids: this.nextPage ? JSON.stringify(this.nextMediaIds) : void 0,
         max_id: this.nextMaxId,
       },
     });
-    this.state = body;
+
     return body;
   }
 
-  public async items() {
-    const response = await this.request();
+  items(raw: TagsFeedResponse) {
     return flatten(
-      response.sections.map(section => {
-        if (section.layout_type !== 'media_grid') return;
+      raw.sections.map(section => {
+        if (section.layout_type !== 'media_grid') {
+          return;
+        }
 
         return section.layout_content.medias.map(medias => medias.media);
       }),

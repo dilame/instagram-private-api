@@ -1,12 +1,16 @@
-import { Repository } from '../core/repository';
+import { injectable } from 'tsyringe';
+import { AndroidHttp } from '../core/android.http';
+import { AndroidState } from '../core/android.state';
 
-export class AttributionRepository extends Repository {
+@injectable()
+export class AttributionRepository {
+  constructor(private http: AndroidHttp, private state: AndroidState) {}
   public async logAttribution() {
-    const { body } = await this.client.request.send({
+    const { body } = await this.http.send({
       method: 'POST',
       url: '/api/v1/attribution/log_attribution/',
-      form: this.client.request.sign({
-        adid: this.client.state.adid,
+      form: this.http.sign({
+        adid: this.state.adid,
       }),
     });
     return body;
@@ -15,14 +19,14 @@ export class AttributionRepository extends Repository {
   // And it crashes in official IG app, so we just catch it and return error
   public async logResurrectAttribution() {
     try {
-      const { body } = await this.client.request.send({
+      const { body } = await this.http.send({
         method: 'POST',
         url: '/api/v1/attribution/log_resurrect_attribution/',
-        form: this.client.request.sign({
-          _csrftoken: this.client.state.cookieCsrfToken,
-          _uid: this.client.state.cookieUserId,
-          adid: this.client.state.adid,
-          _uuid: this.client.state.uuid,
+        form: this.http.sign({
+          _csrftoken: this.state.cookieCsrfToken,
+          _uid: this.state.cookieUserId,
+          adid: this.state.adid,
+          _uuid: this.state.uuid,
         }),
       });
       return body;

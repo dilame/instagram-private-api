@@ -1,14 +1,19 @@
-import { Repository } from '../core/repository';
+import { injectable } from 'tsyringe';
+import { AndroidHttp } from '../core/android.http';
+import { AndroidState } from '../core/android.state';
+
 import { GraphQLRequestOptions } from '../types';
 
-export class AdsRepository extends Repository {
+@injectable()
+export class AdsRepository {
+  constructor(private http: AndroidHttp, private state: AndroidState) {}
   public async graphQL<T extends { data: any }>(options: GraphQLRequestOptions): Promise<T> {
-    const { body } = await this.client.request.send<T>(
+    const { body } = await this.http.send<T>(
       {
         url: '/api/v1/ads/graphql/',
         method: 'POST',
         qs: {
-          locale: this.client.state.language,
+          locale: this.state.language,
           vc_policy: 'insights_policy',
           ...(options.surface.name ? { surface: options.surface.name } : {}),
         },

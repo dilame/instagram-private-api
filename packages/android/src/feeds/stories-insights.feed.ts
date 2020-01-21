@@ -1,7 +1,11 @@
-import { Feed } from '../core/feed';
+import { injectable } from 'tsyringe';
 import { Expose } from 'class-transformer';
+import { Feed } from '@igpapi/core';
 import { StoriesInsightsFeedResponseEdgesItem, StoriesInsightsFeedResponseRootObject } from '../responses';
+import { AndroidState } from '../core/android.state';
+import { AdsRepository } from '../repositories/ads.repository';
 
+@injectable()
 export class StoriesInsightsFeed extends Feed<
   StoriesInsightsFeedResponseRootObject,
   StoriesInsightsFeedResponseEdgesItem
@@ -12,13 +16,22 @@ export class StoriesInsightsFeed extends Feed<
   @Expose()
   private nextCursor: string = null;
 
-  async items(): Promise<StoriesInsightsFeedResponseEdgesItem[]> {
-    const body = await this.request();
-    return body.data.user.business_manager.stories_unit.stories.edges;
+  constructor(private ads: AdsRepository, private clientState: AndroidState) {
+    super();
+  }
+
+  set state(response: StoriesInsightsFeedResponseRootObject) {
+    const { end_cursor, has_next_page } = response.data.user.business_manager.stories_unit.stories.page_info;
+    this.nextCursor = end_cursor;
+    this.done = has_next_page;
+  }
+
+  items(raw: StoriesInsightsFeedResponseRootObject) {
+    return raw.data.user.business_manager.stories_unit.stories.edges;
   }
 
   async request(): Promise<StoriesInsightsFeedResponseRootObject> {
-    const body = await this.client.ads.graphQL<StoriesInsightsFeedResponseRootObject>({
+    return await this.ads.graphQL<StoriesInsightsFeedResponseRootObject>({
       surface: { friendlyName: 'IgInsightsStoryGridSurfaceQuery' },
       documentId: '1995528257207653',
       variables: {
@@ -27,18 +40,10 @@ export class StoriesInsightsFeed extends Feed<
         IgInsightsGridMediaImage_SIZE: 256,
         queryParams: {
           access_token: '',
-          id: this.client.state.cookieUserId,
+          id: this.clientState.cookieUserId,
         },
         timeframe: this.timeframe,
       },
     });
-    this.state = body;
-    return body;
-  }
-
-  protected set state(response: StoriesInsightsFeedResponseRootObject) {
-    const { end_cursor, has_next_page } = response.data.user.business_manager.stories_unit.stories.page_info;
-    this.nextCursor = end_cursor;
-    this.moreAvailable = has_next_page;
   }
 }

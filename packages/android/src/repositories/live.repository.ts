@@ -1,4 +1,7 @@
-import { Repository } from '../core/repository';
+import { injectable } from 'tsyringe';
+import { AndroidHttp } from '../core/android.http';
+import { AndroidState } from '../core/android.state';
+
 import Chance = require('chance');
 import {
   LiveSwitchCommentsResponseRootObject,
@@ -16,15 +19,17 @@ import {
   LiveAddToPostResponse,
 } from '../responses';
 
-export class LiveRepository extends Repository {
+@injectable()
+export class LiveRepository {
+  constructor(private http: AndroidHttp, private state: AndroidState) {}
   public async muteComment(broadcastId: string): Promise<LiveSwitchCommentsResponseRootObject> {
-    const { body } = await this.client.request.send<LiveSwitchCommentsResponseRootObject>({
+    const { body } = await this.http.send<LiveSwitchCommentsResponseRootObject>({
       url: `/api/v1/live/${broadcastId}/mute_comment/`,
       method: 'POST',
-      form: this.client.request.sign({
-        _csrftoken: this.client.state.cookieCsrfToken,
-        _uid: this.client.state.cookieUserId,
-        _uuid: this.client.state.uuid,
+      form: this.http.sign({
+        _csrftoken: this.state.cookieCsrfToken,
+        _uid: this.state.cookieUserId,
+        _uuid: this.state.uuid,
       }),
     });
     return body;
@@ -39,7 +44,7 @@ export class LiveRepository extends Repository {
     commentsRequested?: number;
     lastCommentTs?: string | number;
   }): Promise<LiveCommentsResponseRootObject> {
-    const { body } = await this.client.request.send<LiveCommentsResponseRootObject>({
+    const { body } = await this.http.send<LiveCommentsResponseRootObject>({
       url: `/api/v1/live/${broadcastId}/get_comment/`,
       method: 'GET',
       qs: {
@@ -51,12 +56,12 @@ export class LiveRepository extends Repository {
   }
 
   public async heartbeatAndGetViewerCount(broadcastId: string): Promise<LiveHeartbeatViewerCountResponseRootObject> {
-    const { body } = await this.client.request.send<LiveHeartbeatViewerCountResponseRootObject>({
+    const { body } = await this.http.send<LiveHeartbeatViewerCountResponseRootObject>({
       url: `/api/v1/live/${broadcastId}/heartbeat_and_get_viewer_count/`,
       form: {
-        _csrftoken: this.client.state.cookieCsrfToken,
+        _csrftoken: this.state.cookieCsrfToken,
         offset_to_video_start: 0,
-        _uuid: this.client.state.uuid,
+        _uuid: this.state.uuid,
       },
       method: 'POST',
     });
@@ -64,7 +69,7 @@ export class LiveRepository extends Repository {
   }
 
   public async info(broadcastId: string): Promise<LiveInfoResponseRootObject> {
-    const { body } = await this.client.request.send<LiveInfoResponseRootObject>({
+    const { body } = await this.http.send<LiveInfoResponseRootObject>({
       url: `/api/v1/live/${broadcastId}/info/`,
       method: 'GET',
     });
@@ -72,7 +77,7 @@ export class LiveRepository extends Repository {
   }
 
   public async getFinalViewerList(broadcastId: string): Promise<LiveFinalViewersResponseRootObject> {
-    const { body } = await this.client.request.send<LiveFinalViewersResponseRootObject>({
+    const { body } = await this.http.send<LiveFinalViewersResponseRootObject>({
       url: `api/v1/live/${broadcastId}/get_final_viewer_list/`,
       method: 'GET',
     });
@@ -80,13 +85,13 @@ export class LiveRepository extends Repository {
   }
 
   public async unmuteComment(broadcastId: string): Promise<LiveSwitchCommentsResponseRootObject> {
-    const { body } = await this.client.request.send<LiveSwitchCommentsResponseRootObject>({
+    const { body } = await this.http.send<LiveSwitchCommentsResponseRootObject>({
       url: `/api/v1/live/${broadcastId}/unmute_comment/`,
       method: 'POST',
-      form: this.client.request.sign({
-        _csrftoken: this.client.state.cookieCsrfToken,
-        _uid: this.client.state.cookieUserId,
-        _uuid: this.client.state.uuid,
+      form: this.http.sign({
+        _csrftoken: this.state.cookieCsrfToken,
+        _uid: this.state.cookieUserId,
+        _uuid: this.state.uuid,
       }),
     });
     return body;
@@ -101,12 +106,12 @@ export class LiveRepository extends Repository {
     previewWidth?: number | string;
     message?: string;
   }): Promise<LiveCreateBroadcastResponseRootObject> {
-    const { body } = await this.client.request.send<LiveCreateBroadcastResponseRootObject>({
+    const { body } = await this.http.send<LiveCreateBroadcastResponseRootObject>({
       url: '/api/v1/live/create/',
       method: 'POST',
-      form: this.client.request.sign({
-        _csrftoken: this.client.state.cookieCsrfToken,
-        _uuid: this.client.state.uuid,
+      form: this.http.sign({
+        _csrftoken: this.state.cookieCsrfToken,
+        _uuid: this.state.uuid,
         preview_width: previewWidth,
         preview_height: previewHeight,
         broadcast_message: message,
@@ -119,7 +124,7 @@ export class LiveRepository extends Repository {
   }
 
   public async getViewerList(broadcastId: string): Promise<LiveViewerListResponseRootObject> {
-    const { body } = await this.client.request.send<LiveViewerListResponseRootObject>({
+    const { body } = await this.http.send<LiveViewerListResponseRootObject>({
       url: `/api/v1/live/${broadcastId}/get_viewer_list/`,
       method: 'GET',
     });
@@ -128,12 +133,12 @@ export class LiveRepository extends Repository {
 
   public async createQuestion(broadcastId: string, question: string): Promise<any> {
     // TODO: not enabled?
-    const { body } = await this.client.request.send({
+    const { body } = await this.http.send({
       url: `/api/v1/live/${broadcastId}/questions/`,
       method: 'POST',
       form: {
-        _csrftoken: this.client.state.cookieCsrfToken,
-        _uuid: this.client.state.uuid,
+        _csrftoken: this.state.cookieCsrfToken,
+        _uuid: this.state.uuid,
         text: question,
       },
     });
@@ -142,31 +147,31 @@ export class LiveRepository extends Repository {
 
   public async activateQuestion(broadcastId: string, questionId: string) {
     // TODO: not working on client / while using obs -> useless?
-    const { body } = await this.client.request.send({
+    const { body } = await this.http.send({
       url: `/api/v1/live/${broadcastId}/question/${questionId}/activate/`,
       method: 'POST',
       form: {
-        _csrftoken: this.client.state.cookieCsrfToken,
-        _uuid: this.client.state.uuid,
+        _csrftoken: this.state.cookieCsrfToken,
+        _uuid: this.state.uuid,
       },
     });
     return body;
   }
 
   public async deactivateQuestion(broadcastId: string, questionId: string) {
-    const { body } = await this.client.request.send({
+    const { body } = await this.http.send({
       url: `/api/v1/live/${broadcastId}/question/${questionId}/deactivate/`,
       method: 'POST',
       form: {
-        _csrftoken: this.client.state.cookieCsrfToken,
-        _uuid: this.client.state.uuid,
+        _csrftoken: this.state.cookieCsrfToken,
+        _uuid: this.state.uuid,
       },
     });
     return body;
   }
 
   public async getQuestions(): Promise<LiveGetQuestionsResponseRootObject> {
-    const { body } = await this.client.request.send<LiveGetQuestionsResponseRootObject>({
+    const { body } = await this.http.send<LiveGetQuestionsResponseRootObject>({
       url: '/api/v1/live/get_questions/',
       method: 'GET',
     });
@@ -174,27 +179,27 @@ export class LiveRepository extends Repository {
   }
 
   public async wave(broadcastId: string, viewerId: string) {
-    const { body } = await this.client.request.send({
+    const { body } = await this.http.send({
       url: `/api/v1/live/${broadcastId}/wave/`,
       method: 'POST',
-      form: this.client.request.sign({
+      form: this.http.sign({
         viewer_id: viewerId,
-        _csrftoken: this.client.state.cookieCsrfToken,
-        _uid: this.client.state.cookieUserId,
-        _uuid: this.client.state.uuid,
+        _csrftoken: this.state.cookieCsrfToken,
+        _uid: this.state.cookieUserId,
+        _uuid: this.state.uuid,
       }),
     });
     return body;
   }
 
   public async like(broadcastId: string, likeCount: number = 1): Promise<LiveLikeResponseRootObject> {
-    const { body } = await this.client.request.send<LiveLikeResponseRootObject>({
+    const { body } = await this.http.send<LiveLikeResponseRootObject>({
       url: `/api/v1/live/${broadcastId}/like/`,
       method: 'POST',
-      form: this.client.request.sign({
-        _csrftoken: this.client.state.cookieCsrfToken,
-        _uid: this.client.state.cookieUserId,
-        _uuid: this.client.state.uuid,
+      form: this.http.sign({
+        _csrftoken: this.state.cookieCsrfToken,
+        _uid: this.state.cookieUserId,
+        _uuid: this.state.uuid,
         user_like_count: likeCount,
       }),
     });
@@ -205,7 +210,7 @@ export class LiveRepository extends Repository {
     broadcastId: string,
     likeTs: string | number = 0,
   ): Promise<LiveLikeCountResponseRootObject> {
-    const { body } = await this.client.request.send<LiveLikeCountResponseRootObject>({
+    const { body } = await this.http.send<LiveLikeCountResponseRootObject>({
       url: `/api/v1/live/${broadcastId}/get_like_count/`,
       method: 'GET',
       qs: {
@@ -217,13 +222,13 @@ export class LiveRepository extends Repository {
 
   public async resumeBroadcastAfterContentMatch(broadcastId: string): Promise<any> {
     // TODO: test
-    const { body } = await this.client.request.send({
+    const { body } = await this.http.send({
       url: `/api/v1/live/${broadcastId}/resume_broadcast_after_content_match/`,
       method: 'POST',
-      form: this.client.request.sign({
-        _csrftoken: this.client.state.cookieCsrfToken,
-        _uid: this.client.state.cookieUserId,
-        _uuid: this.client.state.uuid,
+      form: this.http.sign({
+        _csrftoken: this.state.cookieCsrfToken,
+        _uid: this.state.cookieUserId,
+        _uuid: this.state.uuid,
       }),
     });
     return body;
@@ -240,7 +245,7 @@ export class LiveRepository extends Repository {
     lastSeenTs: number | string;
     lastFetchTs: number | string;
   }): Promise<LiveJoinRequestCountsResponseRootObject> {
-    const { body } = await this.client.request.send<LiveJoinRequestCountsResponseRootObject>({
+    const { body } = await this.http.send<LiveJoinRequestCountsResponseRootObject>({
       url: `/api/v1/live/${broadcastId}/get_join_request_counts/`,
       method: 'GET',
       qs: {
@@ -256,12 +261,12 @@ export class LiveRepository extends Repository {
     broadcastId: string,
     sendNotifications: boolean = true,
   ): Promise<LiveStartBroadcastResponseRootObject> {
-    const { body } = await this.client.request.send<LiveStartBroadcastResponseRootObject>({
+    const { body } = await this.http.send<LiveStartBroadcastResponseRootObject>({
       url: `/api/v1/live/${broadcastId}/start/`,
       method: 'POST',
-      form: this.client.request.sign({
-        _csrftoken: this.client.state.cookieCsrfToken,
-        _uuid: this.client.state.uuid,
+      form: this.http.sign({
+        _csrftoken: this.state.cookieCsrfToken,
+        _uuid: this.state.uuid,
         should_send_notifications: sendNotifications,
       }),
     });
@@ -269,13 +274,13 @@ export class LiveRepository extends Repository {
   }
 
   public async endBroadcast(broadcastId: string, endAfterCopyrightWarning: boolean = false) {
-    const { body } = await this.client.request.send({
+    const { body } = await this.http.send({
       url: `/api/v1/live/${broadcastId}/end_broadcast/`,
       method: 'POST',
-      form: this.client.request.sign({
-        _csrftoken: this.client.state.cookieCsrfToken,
-        _uid: this.client.state.cookieUserId,
-        _uuid: this.client.state.uuid,
+      form: this.http.sign({
+        _csrftoken: this.state.cookieCsrfToken,
+        _uid: this.state.cookieUserId,
+        _uuid: this.state.uuid,
         end_after_copyright_warning: endAfterCopyrightWarning,
       }),
     });
@@ -283,58 +288,58 @@ export class LiveRepository extends Repository {
   }
 
   public async comment(broadcastId: string, message: string): Promise<any> {
-    const { body } = await this.client.request.send({
+    const { body } = await this.http.send({
       url: `/api/v1/live/${broadcastId}/comment/`,
       method: 'POST',
-      form: this.client.request.sign({
-        user_breadcrumb: this.client.request.userBreadcrumb(message.length),
+      form: this.http.sign({
+        user_breadcrumb: this.http.userBreadcrumb(message.length),
         idempotence_token: new Chance().guid(),
         comment_text: message,
         live_or_vod: '1',
         offset_to_video_start: '0',
-        _csrftoken: this.client.state.cookieCsrfToken,
-        _uid: this.client.state.cookieUserId,
-        _uuid: this.client.state.uuid,
+        _csrftoken: this.state.cookieCsrfToken,
+        _uid: this.state.cookieUserId,
+        _uuid: this.state.uuid,
       }),
     });
     return body;
   }
 
   public async pinComment(broadcastId: string, commentId: string): Promise<any> {
-    const { body } = await this.client.request.send({
+    const { body } = await this.http.send({
       url: `/api/v1/live/${broadcastId}/pin_comment/`,
       method: 'POST',
-      form: this.client.request.sign({
+      form: this.http.sign({
         offset_to_video_start: 0,
         comment_id: commentId,
-        _csrftoken: this.client.state.cookieCsrfToken,
-        _uid: this.client.state.cookieUserId,
-        _uuid: this.client.state.uuid,
+        _csrftoken: this.state.cookieCsrfToken,
+        _uid: this.state.cookieUserId,
+        _uuid: this.state.uuid,
       }),
     });
     return body;
   }
 
   public async unpinComment(broadcastId: string, commentId: string): Promise<any> {
-    const { body } = await this.client.request.send({
+    const { body } = await this.http.send({
       url: `/api/v1/live/${broadcastId}/unpin_comment/`,
       method: 'POST',
-      form: this.client.request.sign({
+      form: this.http.sign({
         offset_to_video_start: 0,
         comment_id: commentId,
-        _csrftoken: this.client.state.cookieCsrfToken,
-        _uid: this.client.state.cookieUserId,
-        _uuid: this.client.state.uuid,
+        _csrftoken: this.state.cookieCsrfToken,
+        _uid: this.state.cookieUserId,
+        _uuid: this.state.uuid,
       }),
     });
     return body;
   }
 
   public async getLiveQuestions(broadcastId: string): Promise<any> {
-    const { body } = await this.client.request.send({
+    const { body } = await this.http.send({
       url: `/api/v1/live/${broadcastId}/questions/`,
       method: 'POST',
-      form: this.client.request.sign({
+      form: this.http.sign({
         sources: 'story_and_live',
       }),
     });
@@ -342,13 +347,13 @@ export class LiveRepository extends Repository {
   }
 
   public async addToPostLive(broadcastId: string): Promise<LiveAddToPostResponse> {
-    const { body } = await this.client.request.send({
+    const { body } = await this.http.send({
       url: `/api/v1/live/${broadcastId}/add_to_post_live/`,
       method: 'POST',
-      form: this.client.request.sign({
-        _csrftoken: this.client.state.cookieCsrfToken,
-        _uid: this.client.state.cookieUserId,
-        _uuid: this.client.state.uuid,
+      form: this.http.sign({
+        _csrftoken: this.state.cookieCsrfToken,
+        _uid: this.state.cookieUserId,
+        _uuid: this.state.uuid,
       }),
     });
     return body;
@@ -358,7 +363,7 @@ export class LiveRepository extends Repository {
    * Shows all online users, ready to watch your stream
    */
   public async getLivePresence(): Promise<any> {
-    const { body } = await this.client.request.send({
+    const { body } = await this.http.send({
       url: '/api/v1/live/get_live_presence/',
       method: 'GET',
     });

@@ -1,8 +1,13 @@
-import { Repository } from '../core/repository';
+import { injectable } from 'tsyringe';
+import { AndroidHttp } from '../core/android.http';
+import { AndroidState } from '../core/android.state';
+
 import Chance = require('chance');
 import Bluebird = require('bluebird');
 
-export class ConsentRepository extends Repository {
+@injectable()
+export class ConsentRepository {
+  constructor(private http: AndroidHttp, private state: AndroidState) {}
   public async auto() {
     const response = await this.existingUserFlow();
     if (response.screen_key === 'already_finished') {
@@ -39,13 +44,13 @@ export class ConsentRepository extends Repository {
   }
 
   public async existingUserFlow(data?: { [x: string]: any }) {
-    const { body } = await this.client.request.send({
+    const { body } = await this.http.send({
       url: '/api/v1/consent/existing_user_flow/',
       method: 'POST',
-      form: this.client.request.sign({
-        _csrftoken: this.client.state.cookieCsrfToken,
-        _uid: this.client.state.cookieUserId,
-        _uuid: this.client.state.uuid,
+      form: this.http.sign({
+        _csrftoken: this.state.cookieCsrfToken,
+        _uid: this.state.cookieUserId,
+        _uuid: this.state.uuid,
         ...data,
       }),
     });

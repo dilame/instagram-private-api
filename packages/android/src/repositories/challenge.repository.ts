@@ -1,21 +1,23 @@
-import { Repository } from '../core/repository';
 import { ChallengeStateResponse } from '../responses';
 import { IgChallengeWrongCodeError, IgNoCheckpointError, IgResponseError } from '../errors';
+import { AndroidHttp } from '../core/android.http';
+import { AndroidState } from '../core/android.state';
 
 /**
- * All methods expects [[State.checkpoint]] to be filled with [[CheckpointResponse]].
+ * All methods expects [[AndroidState.checkpoint]] to be filled with [[CheckpointResponse]].
  * It is filled in automatically when [[IgCheckpointError]] occurs.
  */
-export class ChallengeRepository extends Repository {
+export class ChallengeRepository {
+  constructor(private http: AndroidHttp, private localState: AndroidState) {}
   /**
    * Get challenge state.
    */
   public async state() {
-    const { body } = await this.client.request.send<ChallengeStateResponse>({
-      url: this.client.state.challengeUrl,
+    const { body } = await this.http.send<ChallengeStateResponse>({
+      url: this.localState.challengeUrl,
       qs: {
-        guid: this.client.state.uuid,
-        device_id: this.client.state.deviceId,
+        guid: this.localState.uuid,
+        device_id: this.localState.deviceId,
       },
     });
     this.middleware(body);
@@ -28,18 +30,18 @@ export class ChallengeRepository extends Repository {
    * @param isReplay resend code
    */
   public async selectVerifyMethod(choice: string, isReplay = false) {
-    let url = this.client.state.challengeUrl;
+    let url = this.localState.challengeUrl;
     if (isReplay) {
       url = url.replace('/challenge/', '/challenge/replay/');
     }
-    const { body } = await this.client.request.send<ChallengeStateResponse>({
+    const { body } = await this.http.send<ChallengeStateResponse>({
       url,
       method: 'POST',
-      form: this.client.request.sign({
+      form: this.http.sign({
         choice,
-        _csrftoken: this.client.state.cookieCsrfToken,
-        guid: this.client.state.uuid,
-        device_id: this.client.state.deviceId,
+        _csrftoken: this.localState.cookieCsrfToken,
+        guid: this.localState.uuid,
+        device_id: this.localState.deviceId,
       }),
     });
     this.middleware(body);
@@ -63,14 +65,14 @@ export class ChallengeRepository extends Repository {
   }
 
   public async sendPhoneNumber(phoneNumber: string) {
-    const { body } = await this.client.request.send<ChallengeStateResponse>({
-      url: this.client.state.challengeUrl,
+    const { body } = await this.http.send<ChallengeStateResponse>({
+      url: this.localState.challengeUrl,
       method: 'POST',
-      form: this.client.request.sign({
+      form: this.http.sign({
         phone_number: String(phoneNumber),
-        _csrftoken: this.client.state.cookieCsrfToken,
-        guid: this.client.state.uuid,
-        device_id: this.client.state.deviceId,
+        _csrftoken: this.localState.cookieCsrfToken,
+        guid: this.localState.uuid,
+        device_id: this.localState.deviceId,
       }),
     });
     this.middleware(body);
@@ -78,16 +80,16 @@ export class ChallengeRepository extends Repository {
   }
 
   public async auto(reset = false): Promise<ChallengeStateResponse> {
-    if (!this.client.state.checkpoint) {
+    if (!this.localState.checkpoint) {
       throw new IgNoCheckpointError();
     }
     if (reset) {
       await this.reset();
     }
-    if (!this.client.state.challenge) {
+    if (!this.localState.challenge) {
       await this.state();
     }
-    const challenge = this.client.state.challenge;
+    const challenge = this.localState.challenge;
     switch (challenge.step_name) {
       case 'select_verify_method': {
         return await this.selectVerifyMethod(challenge.step_data.choice);
@@ -105,13 +107,13 @@ export class ChallengeRepository extends Repository {
    * Go back to "select_verify_method"
    */
   public async reset() {
-    const { body } = await this.client.request.send<ChallengeStateResponse>({
-      url: this.client.state.challengeUrl.replace('/challenge/', '/challenge/reset/'),
+    const { body } = await this.http.send<ChallengeStateResponse>({
+      url: this.localState.challengeUrl.replace('/challenge/', '/challenge/reset/'),
       method: 'POST',
-      form: this.client.request.sign({
-        _csrftoken: this.client.state.cookieCsrfToken,
-        guid: this.client.state.uuid,
-        device_id: this.client.state.deviceId,
+      form: this.http.sign({
+        _csrftoken: this.localState.cookieCsrfToken,
+        guid: this.localState.uuid,
+        device_id: this.localState.deviceId,
       }),
     });
     this.middleware(body);
@@ -122,15 +124,15 @@ export class ChallengeRepository extends Repository {
    * Send the code received in the message
    */
   public async sendSecurityCode(code: string | number) {
-    const { body } = await this.client.request
+    const { body } = await this.http
       .send<ChallengeStateResponse>({
-        url: this.client.state.challengeUrl,
+        url: this.localState.challengeUrl,
         method: 'POST',
-        form: this.client.request.sign({
+        form: this.http.sign({
           security_code: code,
-          _csrftoken: this.client.state.cookieCsrfToken,
-          guid: this.client.state.uuid,
-          device_id: this.client.state.deviceId,
+          _csrftoken: this.localState.cookieCsrfToken,
+          guid: this.localState.uuid,
+          device_id: this.localState.deviceId,
         }),
       })
       .catch((error: IgResponseError) => {
@@ -145,10 +147,10 @@ export class ChallengeRepository extends Repository {
 
   private middleware(body: ChallengeStateResponse) {
     if (body.action === 'close') {
-      this.client.state.checkpoint = null;
-      this.client.state.challenge = null;
+      this.localState.checkpoint = null;
+      this.localState.challenge = null;
     } else {
-      this.client.state.challenge = body;
+      this.localState.challenge = body;
     }
   }
 }

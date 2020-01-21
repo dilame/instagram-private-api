@@ -1,4 +1,4 @@
-import { Repository } from '../core/repository';
+import { injectable } from 'tsyringe';
 import {
   IgResponse,
   MediaConfigureStoryBaseOptions,
@@ -29,10 +29,13 @@ import { random, defaults } from 'lodash';
 import { UploadRepository } from '../repositories/upload.repository';
 import debug from 'debug';
 import { StickerBuilder } from '@igpapi/sticker';
+import { MediaRepository } from '../repositories/media.repository';
 
-export class PublishService extends Repository {
+@injectable()
+export class PublishService {
   private static publishDebug = debug('ig:publish');
   private chance = new Chance();
+  constructor(private upload: UploadRepository, private media: MediaRepository) {}
 
   /**
    * The current way of handling the 202 - Accepted; Transcode pending -error
@@ -134,7 +137,7 @@ export class PublishService extends Repository {
    * @param options - the options, containing caption and image-data
    */
   public async photo(options: PostingPhotoOptions) {
-    const uploadedPhoto = await this.client.upload.photo({
+    const uploadedPhoto = await this.upload.photo({
       file: options.file,
     });
     const imageSize = await sizeOf(options.file);
@@ -148,7 +151,7 @@ export class PublishService extends Repository {
     if (typeof options.usertags !== 'undefined') {
       configureOptions.usertags = options.usertags;
     }
-    return await this.client.media.configure(configureOptions);
+    return await this.media.configure(configureOptions);
   }
 
   public async video(options: PostingVideoOptions) {
@@ -164,13 +167,13 @@ export class PublishService extends Repository {
     ).catch(IgResponseError, error => {
       throw new IgUploadVideoError(error.response as IgResponse<UploadRepositoryVideoResponseRootObject>, videoInfo);
     });
-    await this.client.upload.photo({
+    await this.upload.photo({
       file: options.coverImage,
       uploadId: uploadId.toString(),
     });
 
     await Bluebird.try(() =>
-      this.client.media.uploadFinish({
+      this.media.uploadFinish({
         upload_id: uploadId,
         source_type: '4',
         video: { length: videoInfo.duration / 1000.0 },
@@ -198,7 +201,7 @@ export class PublishService extends Repository {
 
     for (let i = 0; i < 6; i++) {
       try {
-        return await this.client.media.configureVideo(configureOptions);
+        return await this.media.configureVideo(configureOptions);
       } catch (e) {
         if (i >= 5 || e.response.statusCode >= 400) {
           throw new IgConfigureVideoError(e.response, configureOptions);
@@ -216,7 +219,7 @@ export class PublishService extends Repository {
 
     for (const item of options.items) {
       if (isPhoto(item)) {
-        const uploadedPhoto = await this.client.upload.photo({
+        const uploadedPhoto = await this.upload.photo({
           file: item.file,
           uploadId: item.uploadId,
           isSidecar: true,
@@ -242,13 +245,13 @@ export class PublishService extends Repository {
             item.videoInfo,
           );
         });
-        await this.client.upload.photo({
+        await this.upload.photo({
           file: item.coverImage,
           uploadId: item.uploadId,
           isSidecar: true,
         });
         await Bluebird.try(() =>
-          this.client.media.uploadFinish({
+          this.media.uploadFinish({
             upload_id: item.uploadId,
             source_type: '4',
             video: { length: item.videoInfo.duration / 1000.0 },
@@ -257,7 +260,7 @@ export class PublishService extends Repository {
       }
     }
 
-    return await this.client.media.configureSidecar({
+    return await this.media.configureSidecar({
       caption: options.caption,
       children_metadata: options.items.map(item => {
         if (isVideo(item)) {
@@ -408,7 +411,7 @@ export class PublishService extends Repository {
       uploadId,
       ...options.uploadOptions,
     });
-    await this.client.upload.photo({ uploadId, file: options.coverFrame });
+    await this.upload.photo({ uploadId, file: options.coverFrame });
     // await this.resolveTranscode(videoInfo, uploadId, options.transcodeDelay, options.maxTranscodeTries);
     const form: MediaConfigureToIgtvOptions = {
       upload_id: uploadId,
@@ -443,7 +446,7 @@ export class PublishService extends Repository {
     const finalInput = { ...form, ...options.configureOptions };
     for (let i = 0; i < 6; i++) {
       try {
-        return await this.client.media.configureToIgtv(finalInput);
+        return await this.media.configureToIgtv(finalInput);
       } catch (e) {
         if (i >= 6) {
           throw new IgConfigureVideoError(e.response, finalInput);
@@ -460,12 +463,12 @@ export class PublishService extends Repository {
     });
     options.uploadName = options.uploadName || `${options.uploadId}_0_${random(1000000000, 9999999999)}`;
     const ruploadParams = UploadRepository.createVideoRuploadParams(options, options.uploadId);
-    const { offset } = await this.client.upload.initVideo({
+    const { offset } = await this.upload.initVideo({
       name: options.uploadName,
       ruploadParams,
       waterfallId: options.waterfallId,
     });
-    return this.client.upload.video({ offset, ...options });
+    return this.upload.video({ offset, ...options });
   }
 
   private async segmentedVideo(
@@ -476,20 +479,19 @@ export class PublishService extends Repository {
     const ruploadParams = UploadRepository.createVideoRuploadParams(options, uploadId, retryContext);
     const waterfallId = options.waterfallId || random(1000000000, 9999999999).toString();
 
-    const { stream_id: streamId } = await this.client.upload.startSegmentedVideo(ruploadParams);
+    const { stream_id: streamId } = await this.upload.startSegmentedVideo(ruploadParams);
 
     const segments =
       options.segments ||
       (options.segmentDivider || SEGMENT_DIVIDERS.sectionSize(Math.pow(2, 24)))({
         buffer: options.video,
-        client: this.client,
       });
     PublishService.publishDebug(`Uploading ${segments.length} segments.`);
     let startOffset = 0;
     for (const segment of segments) {
       // this is an identifier not a guid, but has the same 'length' as a guid without '-'
       const transferId = `${this.chance.guid({ version: 4 }).replace('-', '')}-0-${segment.byteLength}`;
-      const { offset: streamOffset } = await this.client.upload.videoSegmentInit({
+      const { offset: streamOffset } = await this.upload.videoSegmentInit({
         waterfallId,
         streamId,
         startOffset,
@@ -502,7 +504,7 @@ export class PublishService extends Repository {
           `Offset != 0 isn't implemented. Open an issue including your network config and other setup information to reproduce.`,
         );
       }
-      await this.client.upload.videoSegmentTransfer({
+      await this.upload.videoSegmentTransfer({
         waterfallId,
         streamId,
         startOffset,
@@ -512,7 +514,7 @@ export class PublishService extends Repository {
       });
       startOffset += segment.byteLength;
     }
-    const end = await this.client.upload.endSegmentedVideo({ ruploadParams, streamId });
+    const end = await this.upload.endSegmentedVideo({ ruploadParams, streamId });
     return { ...end, retryContext, uploadId, waterfallId };
   }
 
@@ -522,11 +524,11 @@ export class PublishService extends Repository {
   ) {
     const uploadId = Date.now().toString();
     const imageSize = await sizeOf(options.file);
-    await this.client.upload.photo({
+    await this.upload.photo({
       file: options.file,
       uploadId,
     });
-    return await this.client.media.configureToStory({
+    return await this.media.configureToStory({
       ...configureOptions,
       upload_id: uploadId,
       width: imageSize.width,
@@ -554,20 +556,20 @@ export class PublishService extends Repository {
     ).catch(IgResponseError, error => {
       throw new IgConfigureVideoError(error.response as IgResponse<UploadRepositoryVideoResponseRootObject>, videoInfo);
     });
-    await this.client.upload.photo({
+    await this.upload.photo({
       file: options.coverImage,
       waterfallId,
       uploadId,
     });
     await Bluebird.try(() =>
-      this.client.media.uploadFinish({
+      this.media.uploadFinish({
         upload_id: uploadId,
         source_type: '3',
         video: { length: videoInfo.duration / 1000.0 },
       }),
     ).catch(IgResponseError, PublishService.catchTranscodeError(videoInfo, options.transcodeDelay));
     return Bluebird.try(() =>
-      this.client.media.configureToStoryVideo({
+      this.media.configureToStoryVideo({
         upload_id: uploadId,
         length: videoInfo.duration / 1000.0,
         width: videoInfo.width,

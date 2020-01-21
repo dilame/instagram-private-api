@@ -1,9 +1,12 @@
-import { Repository } from './repository';
 import { DirectThreadEntity, ProfileEntity } from '../entities';
+import { inject } from 'tsyringe';
+import DependencyContainer from 'tsyringe/dist/typings/types/dependency-container';
 
-export class EntityFactory extends Repository {
+export class EntityFactory {
+  constructor(@inject('IoC') private container: DependencyContainer) {}
+
   public directThread(id: string | string[]): DirectThreadEntity {
-    const thread = new DirectThreadEntity(this.client);
+    const thread = this.container.resolve(DirectThreadEntity);
     if (id instanceof Array) {
       thread.userIds = id;
     } else {
@@ -13,7 +16,7 @@ export class EntityFactory extends Repository {
   }
 
   public profile(pk: string): ProfileEntity {
-    const thread = new ProfileEntity(this.client);
+    const thread = this.container.resolve(ProfileEntity);
     thread.pk = pk;
     return thread;
   }

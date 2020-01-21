@@ -1,12 +1,10 @@
-import { Entity } from '../core/entity';
-
 export interface NewsFeedResponseRootObject {
   auto_load_more_enabled: boolean;
   next_max_id: number;
   stories: NewsFeedResponseStoriesItem[];
   status: string;
 }
-export class NewsFeedResponseStoriesItem extends Entity {
+export class NewsFeedResponseStoriesItem {
   type: number;
   story_type: number;
   args: NewsFeedResponseArgs;

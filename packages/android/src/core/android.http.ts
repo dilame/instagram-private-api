@@ -4,7 +4,6 @@ import { Subject } from 'rxjs';
 import { AttemptOptions, retry } from '@lifeomic/attempt';
 import * as request from 'request-promise';
 import { Options, Response } from 'request';
-import { IgApiClient } from './client';
 import {
   IgActionSpamError,
   IgCheckpointError,
@@ -24,6 +23,7 @@ import JSONbigInt = require('json-bigint');
 const JSONbigString = JSONbigInt({ storeAsString: true });
 
 import debug from 'debug';
+import { AndroidState } from './android.state';
 
 type Payload = { [key: string]: any } | string;
 
@@ -32,7 +32,7 @@ interface SignedPost {
   ig_sig_key_version: string;
 }
 
-export class Request {
+export class AndroidHttp {
   private static requestDebug = debug('ig:request');
   end$ = new Subject();
   error$ = new Subject<IgClientError>();
@@ -41,7 +41,7 @@ export class Request {
   };
   defaults: Partial<Options> = {};
 
-  constructor(private client: IgApiClient) {}
+  constructor(private state: AndroidState) {}
 
   private static requestTransform(body, response: Response, resolveWithFullResponse) {
     try {
@@ -62,17 +62,17 @@ export class Request {
       {
         baseUrl: 'https://i.instagram.com/',
         resolveWithFullResponse: true,
-        proxy: this.client.state.proxyUrl,
+        proxy: this.state.proxyUrl,
         simple: false,
-        transform: Request.requestTransform,
-        jar: this.client.state.cookieJar,
+        transform: AndroidHttp.requestTransform,
+        jar: this.state.cookieJar,
         strictSSL: false,
         gzip: true,
         headers: this.getDefaultHeaders(),
       },
       this.defaults,
     );
-    Request.requestDebug(`Requesting ${options.method} ${options.url || options.uri || '[could not find url]'}`);
+    AndroidHttp.requestDebug(`Requesting ${options.method} ${options.url || options.uri || '[could not find url]'}`);
     const response = await this.faultTolerantRequest(options);
     this.updateState(response);
     process.nextTick(() => this.end$.next());
@@ -92,21 +92,21 @@ export class Request {
       'ig-set-password-encryption-pub-key': pwPubKey,
     } = response.headers;
     if (typeof wwwClaim === 'string') {
-      this.client.state.igWWWClaim = wwwClaim;
+      this.state.igWWWClaim = wwwClaim;
     }
     if (typeof auth === 'string' && !auth.endsWith(':')) {
-      this.client.state.authorization = auth;
+      this.state.authorization = auth;
     }
     if (typeof pwKeyId === 'string') {
-      this.client.state.passwordEncryptionKeyId = pwKeyId;
+      this.state.passwordEncryptionKeyId = pwKeyId;
     }
     if (typeof pwPubKey === 'string') {
-      this.client.state.passwordEncryptionPubKey = pwPubKey;
+      this.state.passwordEncryptionPubKey = pwPubKey;
     }
   }
 
   public signature(data: string) {
-    return createHmac('sha256', this.client.state.signatureKey)
+    return createHmac('sha256', this.state.signatureKey)
       .update(data)
       .digest('hex');
   }
@@ -115,7 +115,7 @@ export class Request {
     const json = typeof payload === 'object' ? JSON.stringify(payload) : payload;
     const signature = this.signature(json);
     return {
-      ig_sig_key_version: this.client.state.signatureVersion,
+      ig_sig_key_version: this.state.signatureVersion,
       signed_body: `${signature}.${json}`,
     };
   }
@@ -125,7 +125,7 @@ export class Request {
     const textChangeEventCount = Math.round(size / random(2, 3)) || 1;
     const data = `${size} ${term} ${textChangeEventCount} ${Date.now()}`;
     const signature = Buffer.from(
-      createHmac('sha256', this.client.state.userBreadcrumbKey)
+      createHmac('sha256', this.state.userBreadcrumbKey)
         .update(data)
         .digest('hex'),
     ).toString('base64');
@@ -134,7 +134,7 @@ export class Request {
   }
 
   private handleResponseError(response: Response): IgClientError {
-    Request.requestDebug(
+    AndroidHttp.requestDebug(
       `Request ${response.request.method} ${response.request.uri} failed: ${
         typeof response.body === 'object' ? JSON.stringify(response.body) : response.body
       }`,
@@ -149,7 +149,7 @@ export class Request {
     }
     if (typeof json.message === 'string') {
       if (json.message === 'challenge_required') {
-        this.client.state.checkpoint = json;
+        this.state.checkpoint = json;
         return new IgCheckpointError(response);
       }
       if (json.message === 'user_has_logged_out') {
@@ -181,34 +181,33 @@ export class Request {
 
   public getDefaultHeaders() {
     return {
-      'User-Agent': this.client.state.appUserAgent,
-      'X-Ads-Opt-Out': this.client.state.adsOptOut ? '1' : '0',
-      // needed? 'X-DEVICE-ID': this.client.state.uuid,
+      'User-Agent': this.state.appUserAgent,
+      'X-Ads-Opt-Out': this.state.adsOptOut ? '1' : '0',
+      // needed? 'X-DEVICE-ID': this.state.uuid,
       'X-CM-Bandwidth-KBPS': '-1.000',
       'X-CM-Latency': '-1.000',
-      'X-IG-App-Locale': this.client.state.language,
-      'X-IG-Device-Locale': this.client.state.language,
-      'X-Pigeon-Session-Id': this.client.state.pigeonSessionId,
+      'X-IG-App-Locale': this.state.language,
+      'X-IG-Device-Locale': this.state.language,
+      'X-Pigeon-Session-Id': this.state.pigeonSessionId,
       'X-Pigeon-Rawclienttime': (Date.now() / 1000).toFixed(3),
       'X-IG-Connection-Speed': `${random(1000, 3700)}kbps`,
       'X-IG-Bandwidth-Speed-KBPS': '-1.000',
       'X-IG-Bandwidth-TotalBytes-B': '0',
       'X-IG-Bandwidth-TotalTime-MS': '0',
-      'X-IG-EU-DC-ENABLED':
-        typeof this.client.state.euDCEnabled === 'undefined' ? void 0 : this.client.state.euDCEnabled.toString(),
-      'X-IG-Extended-CDN-Thumbnail-Cache-Busting-Value': this.client.state.thumbnailCacheBustingValue.toString(),
-      'X-Bloks-Version-Id': this.client.state.bloksVersionId,
-      'X-MID': this.client.state.extractCookie('mid')?.value,
-      'X-IG-WWW-Claim': this.client.state.igWWWClaim || '0',
-      'X-Bloks-Is-Layout-RTL': this.client.state.isLayoutRTL.toString(),
-      'X-IG-Connection-Type': this.client.state.connectionTypeHeader,
-      'X-IG-Capabilities': this.client.state.capabilitiesHeader,
-      'X-IG-App-ID': this.client.state.fbAnalyticsApplicationId,
-      'X-IG-Device-ID': this.client.state.uuid,
-      'X-IG-Android-ID': this.client.state.deviceId,
-      'Accept-Language': this.client.state.language.replace('_', '-'),
+      'X-IG-EU-DC-ENABLED': typeof this.state.euDCEnabled === 'undefined' ? void 0 : this.state.euDCEnabled.toString(),
+      'X-IG-Extended-CDN-Thumbnail-Cache-Busting-Value': this.state.thumbnailCacheBustingValue.toString(),
+      'X-Bloks-Version-Id': this.state.bloksVersionId,
+      'X-MID': this.state.extractCookie('mid')?.value,
+      'X-IG-WWW-Claim': this.state.igWWWClaim || '0',
+      'X-Bloks-Is-Layout-RTL': this.state.isLayoutRTL.toString(),
+      'X-IG-Connection-Type': this.state.connectionTypeHeader,
+      'X-IG-Capabilities': this.state.capabilitiesHeader,
+      'X-IG-App-ID': this.state.fbAnalyticsApplicationId,
+      'X-IG-Device-ID': this.state.uuid,
+      'X-IG-Android-ID': this.state.deviceId,
+      'Accept-Language': this.state.language.replace('_', '-'),
       'X-FB-HTTP-Engine': 'Liger',
-      Authorization: this.client.state.authorization,
+      Authorization: this.state.authorization,
       Host: 'i.instagram.com',
       'Accept-Encoding': 'gzip',
       Connection: 'close',

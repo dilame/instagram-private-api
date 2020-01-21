@@ -1,9 +1,13 @@
-import { Repository } from '../core/repository';
+import { injectable } from 'tsyringe';
+import { AndroidHttp } from '../core/android.http';
+
 import { NewsRepositoryInboxResponseRootObject } from '../responses';
 
-export class NewsRepository extends Repository {
+@injectable()
+export class NewsRepository {
+  constructor(private http: AndroidHttp) {}
   public async inbox(): Promise<NewsRepositoryInboxResponseRootObject> {
-    const { body } = await this.client.request.send<NewsRepositoryInboxResponseRootObject>({
+    const { body } = await this.http.send<NewsRepositoryInboxResponseRootObject>({
       url: '/api/v1/news/inbox',
       method: 'GET',
     });

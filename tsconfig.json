@@ -1,5 +1,6 @@
 {
   "extends": "./tsconfig.build",
+  "include": ["./packages"],
   "compilerOptions": {
     "baseUrl": "./packages",
     "paths": {

@@ -1,8 +1,13 @@
-import { Feed } from '../core/feed';
-import { IgAppModule } from '../types/common.types';
+import { injectable } from 'tsyringe';
+import { AndroidHttp } from '../core/android.http';
+
+import { Feed } from '@igpapi/core';
+import { IgAppModule } from '../types';
 import { MusicMoodFeedResponseItemsItem, MusicMoodFeedResponseRootObject } from '../responses';
 import { Expose } from 'class-transformer';
+import { AndroidState } from '../core/android.state';
 
+@injectable()
 export class MusicMoodFeed extends Feed<MusicMoodFeedResponseRootObject, MusicMoodFeedResponseItemsItem> {
   @Expose()
   protected nextCursor?: string;
@@ -12,33 +17,36 @@ export class MusicMoodFeed extends Feed<MusicMoodFeedResponseRootObject, MusicMo
   @Expose()
   public id: number | string;
 
-  async items(): Promise<MusicMoodFeedResponseItemsItem[]> {
-    const response = await this.request();
-    return response.items;
+  constructor(private http: AndroidHttp, private clientState: AndroidState) {
+    super();
+  }
+
+  set state(response: MusicMoodFeedResponseRootObject) {
+    this.nextCursor = response.page_info.next_max_id;
+    this.done = response.page_info.more_available;
+  }
+
+  items(raw: MusicMoodFeedResponseRootObject) {
+    return raw.items;
   }
 
   async request(): Promise<MusicMoodFeedResponseRootObject> {
-    const { body } = await this.client.request.send<MusicMoodFeedResponseRootObject>({
+    const { body } = await this.http.send<MusicMoodFeedResponseRootObject>({
       url: `/api/v1/music/moods/${this.id}/`,
       method: 'POST',
       form: {
         cursor: this.nextCursor || '0',
-        _csrftoken: this.client.state.cookieCsrfToken,
+        _csrftoken: this.clientState.cookieCsrfToken,
         product: this.product,
-        _uuid: this.client.state.uuid,
-        browse_session_id: this.client.state.clientSessionId,
+        _uuid: this.clientState.uuid,
+        browse_session_id: this.clientState.clientSessionId,
       },
     });
-    this.state = body;
+
     return body;
   }
 
-  protected set state(response: MusicMoodFeedResponseRootObject) {
-    this.nextCursor = response.page_info.next_max_id;
-    this.moreAvailable = response.page_info.more_available;
-  }
-
   isMoreAvailable(): boolean {
-    return this.moreAvailable;
+    return this.done;
   }
 }

@@ -1,5 +1,4 @@
 import * as urlRegex from 'url-regex';
-import { Entity } from '../core/entity';
 import {
   DirectThreadBroadcastPhotoOptions,
   DirectThreadBroadcastPhotoStoryOptions,
@@ -12,16 +11,24 @@ import { DirectThreadBroadcastOptions } from '../types';
 import { IgClientError, IgResponseError } from '../errors';
 import { PublishService } from '../services/publish.service';
 import * as Bluebird from 'bluebird';
+import { DirectThreadRepository } from '../repositories/direct-thread.repository';
+import { UploadRepository } from '../repositories/upload.repository';
+import { MediaRepository } from '../repositories/media.repository';
 
-export class DirectThreadEntity extends Entity {
+export class DirectThreadEntity {
   threadId: string = null;
   userIds: string[] = null;
-
+  constructor(
+    private directThread: DirectThreadRepository,
+    private upload: UploadRepository,
+    private media: MediaRepository,
+    private publish: PublishService,
+  ) {}
   public async deleteItem(itemId: string | number) {
     if (!this.threadId) {
       throw new IgClientError('threadId was null.');
     }
-    return this.client.directThread.deleteItem(this.threadId, itemId);
+    return this.directThread.deleteItem(this.threadId, itemId);
   }
 
   public async broadcastText(text: string) {
@@ -95,7 +102,7 @@ export class DirectThreadEntity extends Entity {
   }
 
   public async broadcastPhoto(options: DirectThreadBroadcastPhotoOptions) {
-    const { upload_id } = await this.client.upload.photo({
+    const { upload_id } = await this.upload.photo({
       uploadId: options.uploadId,
       file: options.file,
     });
@@ -111,7 +118,7 @@ export class DirectThreadEntity extends Entity {
   public async broadcastVideo(options: DirectThreadBroadcastVideoOptions) {
     const uploadId = options.uploadId || Date.now().toString();
     const videoInfo = PublishService.getVideoInfo(options.video);
-    await this.client.upload.video({
+    await this.upload.video({
       video: options.video,
       uploadId,
       isDirect: true,
@@ -119,7 +126,7 @@ export class DirectThreadEntity extends Entity {
     });
 
     await Bluebird.try(() =>
-      this.client.media.uploadFinish({
+      this.media.uploadFinish({
         upload_id: uploadId,
         source_type: '2',
         video: { length: videoInfo.duration / 1000.0 },
@@ -139,7 +146,7 @@ export class DirectThreadEntity extends Entity {
   public async broadcastVoice(options: DirectThreadBroadcastVoiceOptions) {
     const duration = PublishService.getMP4Duration(options.file);
     const uploadId = options.uploadId || Date.now().toString();
-    await this.client.upload.video({
+    await this.upload.video({
       duration,
       video: options.file,
       uploadId,
@@ -148,7 +155,7 @@ export class DirectThreadEntity extends Entity {
     });
 
     await Bluebird.try(() =>
-      this.client.media.uploadFinish({
+      this.media.uploadFinish({
         upload_id: uploadId,
         source_type: '4',
       }),
@@ -182,13 +189,13 @@ export class DirectThreadEntity extends Entity {
       replyType: options.replyType,
     };
     if (this.threadId !== null) {
-      return await this.client.publish.story({
+      return await this.publish.story({
         ...baseOptions,
         threadIds: [this.threadId],
       });
     }
     if (this.userIds !== null) {
-      return await this.client.publish.story({
+      return await this.publish.story({
         ...baseOptions,
         recipientUsers: this.userIds,
       });
@@ -197,31 +204,31 @@ export class DirectThreadEntity extends Entity {
   }
 
   public async updateTitle(title: string) {
-    return await this.client.directThread.updateTitle(this.threadId, title);
+    return await this.directThread.updateTitle(this.threadId, title);
   }
 
   public async mute() {
-    return await this.client.directThread.mute(this.threadId);
+    return await this.directThread.mute(this.threadId);
   }
 
   public async unmute() {
-    return await this.client.directThread.unmute(this.threadId);
+    return await this.directThread.unmute(this.threadId);
   }
 
   public async hide() {
-    return await this.client.directThread.hide(this.threadId);
+    return await this.directThread.hide(this.threadId);
   }
 
   public async leave() {
-    return await this.client.directThread.leave(this.threadId);
+    return await this.directThread.leave(this.threadId);
   }
 
   public async addUser(userIds: string[] | number[]) {
-    return await this.client.directThread.addUser(this.threadId, userIds);
+    return await this.directThread.addUser(this.threadId, userIds);
   }
 
   public async markItemSeen(threadItemId: string) {
-    return await this.client.directThread.markItemSeen(this.threadId, threadItemId);
+    return await this.directThread.markItemSeen(this.threadId, threadItemId);
   }
 
   private async broadcast(options: Partial<DirectThreadBroadcastOptions>) {
@@ -240,7 +247,7 @@ export class DirectThreadEntity extends Entity {
     } else {
       params = Object.assign(baseParams, { userIds: this.userIds });
     }
-    const response = await this.client.directThread.broadcast(params);
+    const response = await this.directThread.broadcast(params);
     if (response.payload) {
       this.threadId = response.payload.thread_id;
       this.userIds = null;

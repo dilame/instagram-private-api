@@ -1,7 +1,10 @@
-import { Repository } from '../core/repository';
+import { injectable } from 'tsyringe';
 import { StoryServiceInput, StoryServiceSeenInputItems, StoryServiceSeenInputReels } from '../types';
+import { MediaRepository } from '../repositories/media.repository';
 
-export class StoryService extends Repository {
+@injectable()
+export class StoryService {
+  constructor(private media: MediaRepository) {}
   seen(input: StoryServiceInput, sourceId: string = null) {
     let items: StoryServiceSeenInputItems[];
     if (input instanceof Array) {
@@ -42,6 +45,6 @@ export class StoryService extends Repository {
       seenAt += 1;
     }
 
-    return this.client.media.seen(reels);
+    return this.media.seen(reels);
   }
 }

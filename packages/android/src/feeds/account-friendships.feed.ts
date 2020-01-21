@@ -1,7 +1,10 @@
-import { Expose, plainToClassFromExist } from 'class-transformer';
-import { Feed } from '../core/feed';
+import { Expose } from 'class-transformer';
+import { injectable } from 'tsyringe';
+import { AndroidHttp } from '../core/android.http';
+import { Feed } from '@igpapi/core';
 import { PendingFriendshipsFeedResponse, PendingFriendshipsFeedResponseUsersItem } from '../responses';
 
+@injectable()
 export class PendingFriendshipsFeed extends Feed<
   PendingFriendshipsFeedResponse,
   PendingFriendshipsFeedResponseUsersItem
@@ -9,27 +12,28 @@ export class PendingFriendshipsFeed extends Feed<
   @Expose()
   private nextMaxId: string;
 
+  constructor(private http: AndroidHttp) {
+    super();
+  }
+
   set state(body: PendingFriendshipsFeedResponse) {
-    this.moreAvailable = !!body.next_max_id;
+    this.done = !!body.next_max_id;
     this.nextMaxId = body.next_max_id;
   }
 
   async request() {
-    const { body } = await this.client.request.send<PendingFriendshipsFeedResponse>({
+    const { body } = await this.http.send<PendingFriendshipsFeedResponse>({
       url: `/api/v1/friendships/pending`,
       qs: {
         rank_token: this.rankToken,
         max_id: this.nextMaxId,
       },
     });
-    this.state = body;
+
     return body;
   }
 
-  async items() {
-    const body = await this.request();
-    return body.users.map(user =>
-      plainToClassFromExist(new PendingFriendshipsFeedResponseUsersItem(this.client), user),
-    );
+  items({ users }: PendingFriendshipsFeedResponse) {
+    return users;
   }
 }

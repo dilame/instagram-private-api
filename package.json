@@ -23,9 +23,9 @@
   "homepage": "https://github.com/dilame/instagram-private-api",
   "scripts": {
     "format": "prettier --write \"src/**/*.ts\"",
+    "clean": "lerna run clean",
     "lint": "tslint -p tsconfig.build.json -c tslint.json",
-    "typecheck": "tsc -p tsconfig.build.json --noEmit",
-    "test": "mocha --inline-diffs --timeout 1000000 tests/run.js",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
     "generate-interface": "ts-node ./tools/response-to-interface.ts",
     "generate-docs": "ts-node ./tools/docs-generator.ts"
   },

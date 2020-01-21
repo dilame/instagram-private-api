@@ -1,31 +1,39 @@
-import { Feed } from '../core/feed';
-import { ReelsTrayFeedResponseRootObject, ReelsTrayFeedResponseTrayItem } from '../responses';
+import { injectable } from 'tsyringe';
+import { AndroidHttp } from '../core/android.http';
 
+import { Feed } from '@igpapi/core';
+import { ReelsTrayFeedResponseRootObject, ReelsTrayFeedResponseTrayItem } from '../responses';
+import { AndroidState } from '../core/android.state';
+
+@injectable()
 export class ReelsTrayFeed extends Feed<ReelsTrayFeedResponseRootObject, ReelsTrayFeedResponseTrayItem> {
   reason: 'cold_start' | 'pull_to_refresh';
 
-  protected set state(response: ReelsTrayFeedResponseRootObject) {}
+  constructor(private http: AndroidHttp, private clientState: AndroidState) {
+    super();
+  }
+
+  set state(response: ReelsTrayFeedResponseRootObject) {}
 
   /**
    * Returns only the stories (without the broadcasts)
    */
-  async items(): Promise<ReelsTrayFeedResponseTrayItem[]> {
-    const response = await this.request();
-    return response.tray;
+  items(raw: ReelsTrayFeedResponseRootObject) {
+    return raw.tray;
   }
 
   async request(): Promise<ReelsTrayFeedResponseRootObject> {
-    const { body } = await this.client.request.send<ReelsTrayFeedResponseRootObject>({
+    const { body } = await this.http.send<ReelsTrayFeedResponseRootObject>({
       url: '/api/v1/feed/reels_tray/',
       method: 'POST',
       form: {
-        supported_capabilities_new: this.client.state.supportedCapabilities,
+        supported_capabilities_new: this.clientState.supportedCapabilities,
         reason: this.reason,
-        _csrftoken: this.client.state.cookieCsrfToken,
-        _uuid: this.client.state.uuid,
+        _csrftoken: this.clientState.cookieCsrfToken,
+        _uuid: this.clientState.uuid,
       },
     });
-    this.state = body;
+
     return body;
   }
 }
