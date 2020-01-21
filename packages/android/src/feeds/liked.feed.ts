@@ -15,7 +15,7 @@ export class LikedFeed extends Feed<LikedFeedResponseRootObject, LikedFeedRespon
   }
 
   set state(response: LikedFeedResponseRootObject) {
-    this.done = response.more_available;
+    this.hasMore = response.more_available;
     this.maxId = response.next_max_id?.toString();
   }
 

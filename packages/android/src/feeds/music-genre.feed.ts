@@ -23,7 +23,7 @@ export class MusicGenreFeed extends Feed<MusicGenreFeedResponseRootObject, Music
 
   set state(response: MusicGenreFeedResponseRootObject) {
     this.nextCursor = response.page_info.next_max_id;
-    this.done = response.page_info.more_available;
+    this.hasMore = response.page_info.more_available;
   }
 
   items(raw: MusicGenreFeedResponseRootObject) {
@@ -44,9 +44,5 @@ export class MusicGenreFeed extends Feed<MusicGenreFeedResponseRootObject, Music
     });
 
     return body;
-  }
-
-  isMoreAvailable(): boolean {
-    return this.done;
   }
 }

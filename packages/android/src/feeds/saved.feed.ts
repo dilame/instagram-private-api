@@ -15,7 +15,7 @@ export class SavedFeed extends Feed<SavedFeedResponseRootObject, SavedFeedRespon
   }
 
   set state(body: SavedFeedResponseRootObject) {
-    this.done = body.more_available;
+    this.hasMore = body.more_available;
     this.nextMaxId = body.next_max_id;
   }
 

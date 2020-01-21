@@ -3,19 +3,24 @@ import { injectable } from 'tsyringe';
 import { AndroidHttp } from '../core/android.http';
 import { Feed } from '@igpapi/core';
 import { AccountFollowingFeedResponse, AccountFollowingFeedResponseUsersItem } from '../responses';
+import * as Chance from 'chance';
+
+const chance = new Chance();
 
 @injectable()
 export class AccountFollowingFeed extends Feed<AccountFollowingFeedResponse, AccountFollowingFeedResponseUsersItem> {
   id: number | string;
   @Expose()
   private nextMaxId: string;
+  @Expose()
+  protected rankToken = chance.guid();
 
   constructor(private http: AndroidHttp) {
     super();
   }
 
   set state(body: AccountFollowingFeedResponse) {
-    this.done = !!body.next_max_id;
+    this.hasMore = !!body.next_max_id;
     this.nextMaxId = body.next_max_id;
   }
 

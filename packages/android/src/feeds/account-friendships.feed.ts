@@ -1,8 +1,11 @@
 import { Expose } from 'class-transformer';
 import { injectable } from 'tsyringe';
-import { AndroidHttp } from '../core/android.http';
+import * as Chance from 'chance';
 import { Feed } from '@igpapi/core';
+import { AndroidHttp } from '../core/android.http';
 import { PendingFriendshipsFeedResponse, PendingFriendshipsFeedResponseUsersItem } from '../responses';
+
+const chance = new Chance();
 
 @injectable()
 export class PendingFriendshipsFeed extends Feed<
@@ -11,13 +14,15 @@ export class PendingFriendshipsFeed extends Feed<
 > {
   @Expose()
   private nextMaxId: string;
+  @Expose()
+  protected rankToken = chance.guid();
 
   constructor(private http: AndroidHttp) {
     super();
   }
 
   set state(body: PendingFriendshipsFeedResponse) {
-    this.done = !!body.next_max_id;
+    this.hasMore = !!body.next_max_id;
     this.nextMaxId = body.next_max_id;
   }
 

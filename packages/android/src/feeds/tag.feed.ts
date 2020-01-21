@@ -1,22 +1,26 @@
 import { Expose } from 'class-transformer';
 import { injectable } from 'tsyringe';
-import { AndroidHttp } from '../core/android.http';
-
+import * as Chance from 'chance';
 import { Feed } from '@igpapi/core';
+import { AndroidHttp } from '../core/android.http';
 import { TagFeedResponse, TagFeedResponseItemsItem } from '../responses';
+
+const chance = new Chance();
 
 @injectable()
 export class TagFeed extends Feed<TagFeedResponse, TagFeedResponseItemsItem> {
   tag: string;
   @Expose()
   private nextMaxId: string;
+  @Expose()
+  protected rankToken = chance.guid();
 
   constructor(private http: AndroidHttp) {
     super();
   }
 
   set state(body: TagFeedResponse) {
-    this.done = body.more_available;
+    this.hasMore = body.more_available;
     this.nextMaxId = body.next_max_id;
   }
 

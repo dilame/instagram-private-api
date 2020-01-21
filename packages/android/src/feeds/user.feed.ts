@@ -16,7 +16,7 @@ export class UserFeed extends Feed<UserFeedResponse, UserFeedResponseItemsItem> 
   }
 
   set state(body: UserFeedResponse) {
-    this.done = body.more_available;
+    this.hasMore = body.more_available;
     this.nextMaxId = body.next_max_id;
   }
 

@@ -21,7 +21,7 @@ export class MediaStickerResponsesFeed<T = any, I = any> extends Feed<T, I> {
 
   set state(response: T) {
     this.maxId = response[this.rootName].max_id;
-    this.done = response[this.rootName].more_available;
+    this.hasMore = response[this.rootName].more_available;
   }
 
   items(raw): I[] {

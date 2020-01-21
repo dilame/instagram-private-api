@@ -21,7 +21,7 @@ export class IgtvChannelFeed extends Feed<IgtvChannelFeedResponseRootObject, Igt
   }
 
   set state(response: IgtvChannelFeedResponseRootObject) {
-    this.done = response.more_available;
+    this.hasMore = response.more_available;
     this.maxId = response.max_id;
   }
 

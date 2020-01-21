@@ -15,7 +15,7 @@ export class NewsFeed extends Feed<NewsFeedResponseRootObject, NewsFeedResponseS
   }
 
   set state(body: NewsFeedResponseRootObject) {
-    this.done = !!body.next_max_id;
+    this.hasMore = !!body.next_max_id;
     this.nextMaxId = body.next_max_id;
   }
 

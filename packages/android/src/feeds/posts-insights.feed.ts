@@ -20,7 +20,7 @@ export class PostsInsightsFeed extends Feed<PostsInsightsFeedResponseRootObject,
   set state(response: PostsInsightsFeedResponseRootObject) {
     const { end_cursor, has_next_page } = response.data.user.business_manager.top_posts_unit.top_posts.page_info;
     this.nextCursor = end_cursor;
-    this.done = has_next_page;
+    this.hasMore = has_next_page;
   }
 
   items(raw: PostsInsightsFeedResponseRootObject) {

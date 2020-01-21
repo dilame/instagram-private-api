@@ -16,7 +16,7 @@ export class UsertagsFeed extends Feed<UsertagsFeedResponseRootObject, UsertagsF
   }
 
   set state(body: UsertagsFeedResponseRootObject) {
-    this.done = body.more_available;
+    this.hasMore = body.more_available;
     this.nextMaxId = body.next_max_id;
   }
 

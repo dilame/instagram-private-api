@@ -1,31 +1,26 @@
 import { classToPlain, Expose, plainToClassFromExist, serialize } from 'class-transformer';
-import * as Chance from 'chance';
-import { Enumerable } from '../decorators';
 
 export abstract class Feed<Response, Item> {
   /**
    * @description indicates whether feed reached the end or not.
    */
   @Expose()
-  public done: boolean;
-  @Enumerable(false)
-  protected chance = new Chance();
-  @Expose()
-  protected rankToken = this.chance.guid();
+  public hasMore: boolean = true;
 
   protected abstract set state(response: Response);
 
-  abstract async request(...args: any[]): Promise<Response>;
+  protected abstract async request(...args: any[]): Promise<Response>;
 
-  abstract items(raw: Response): Item[];
+  public abstract items(raw: Response): Item[];
 
   public async next() {
     const raw = await this.request();
     this.state = raw;
+    const feed = this;
     return {
       raw,
       get items() {
-        return this.items(raw);
+        return feed.items(raw);
       },
     };
   }
@@ -42,7 +37,17 @@ export abstract class Feed<Response, Item> {
     return classToPlain(this, { strategy: 'excludeAll' });
   }
 
-  public isMoreAvailable() {
-    return !!this.done;
+  [Symbol.asyncIterator]() {
+    const feed = this;
+    return {
+      async next() {
+        if (feed.hasMore) {
+          const value = await feed.next();
+          return { value, done: false };
+        } else {
+          return { done: true };
+        }
+      },
+    };
   }
 }

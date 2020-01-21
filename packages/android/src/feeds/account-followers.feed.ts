@@ -15,7 +15,7 @@ export class AccountFollowersFeed extends Feed<AccountFollowersFeedResponse, Acc
   }
 
   set state(body: AccountFollowersFeedResponse) {
-    this.done = !!body.next_max_id;
+    this.hasMore = !!body.next_max_id;
     this.nextMaxId = body.next_max_id;
   }
 

@@ -23,7 +23,7 @@ export class LocationFeed extends Feed<LocationFeedResponse, LocationFeedRespons
   }
 
   set state(body: LocationFeedResponse) {
-    this.done = body.more_available;
+    this.hasMore = body.more_available;
     this.nextMaxId = body.next_max_id;
     this.nextPage = body.next_page;
     this.nextMediaIds = body.next_media_ids;

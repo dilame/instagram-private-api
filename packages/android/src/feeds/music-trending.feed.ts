@@ -21,7 +21,7 @@ export class MusicTrendingFeed extends Feed<MusicTrendingFeedResponseRootObject,
 
   set state(response: MusicTrendingFeedResponseRootObject) {
     this.nextCursor = response.page_info.next_max_id;
-    this.done = response.page_info.more_available;
+    this.hasMore = response.page_info.more_available;
   }
 
   items(raw: MusicTrendingFeedResponseRootObject) {
@@ -42,9 +42,5 @@ export class MusicTrendingFeed extends Feed<MusicTrendingFeedResponseRootObject,
     });
 
     return body;
-  }
-
-  isMoreAvailable(): boolean {
-    return this.done;
   }
 }

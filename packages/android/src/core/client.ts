@@ -38,17 +38,19 @@ import { RestrictActionRepository } from '../repositories/restrict-action.reposi
 import { AddressBookRepository } from '../repositories/address-book.repository';
 import { StatusRepository } from '../repositories/status.repository';
 import { IgtvRepository } from '../repositories/igtv.repository';
-import { container } from 'tsyringe';
+import { container, Lifecycle } from 'tsyringe';
 import constructor from 'tsyringe/dist/typings/types/constructor';
-import Lifecycle from 'tsyringe/dist/typings/types/lifecycle';
 
 export class IgApiClient {
   // Every instance got it's own IoC container
-  private container = container.createChildContainer();
+  public container = container.createChildContainer();
   constructor() {
     this.container.registerInstance('IoC', this.container);
     this.container.registerInstance(AndroidState, new AndroidState());
     this.container.register(AndroidHttp, { useClass: AndroidHttp }, { lifecycle: Lifecycle.ContainerScoped });
+  }
+  public get state() {
+    return this.container.resolve(AndroidState);
   }
   public get feed() {
     return this.resolve(FeedFactory);

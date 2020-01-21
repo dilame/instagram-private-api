@@ -18,7 +18,7 @@ export class DirectThreadFeed extends Feed<DirectThreadFeedResponse, DirectThrea
 
   set state(body: DirectThreadFeedResponse) {
     this.cursor = body.thread.oldest_cursor;
-    this.done = body.thread.has_older;
+    this.hasMore = body.thread.has_older;
   }
 
   async request() {

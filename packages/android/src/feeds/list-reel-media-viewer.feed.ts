@@ -22,6 +22,7 @@ export class ListReelMediaViewerFeed extends Feed<
 
   set state(response: ListReelMediaViewerFeedResponseRootObject) {
     this.nextMaxId = response.next_max_id;
+    this.hasMore = this.nextMaxId !== null;
   }
 
   items({ users }: ListReelMediaViewerFeedResponseRootObject) {
@@ -39,9 +40,5 @@ export class ListReelMediaViewerFeed extends Feed<
     });
 
     return body;
-  }
-
-  isMoreAvailable(): boolean {
-    return this.nextMaxId !== null;
   }
 }

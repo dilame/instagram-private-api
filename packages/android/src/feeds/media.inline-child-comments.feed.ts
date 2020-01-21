@@ -25,7 +25,7 @@ export class MediaInlineChildCommentsFeed extends Feed<
   }
 
   set state(state: MediaInlineChildCommentsFeedResponseRootObject) {
-    this.done = !!state.next_max_child_cursor;
+    this.hasMore = !!state.next_max_child_cursor;
     this.nextMaxId = state.next_max_child_cursor;
     this.nextMinId = undefined;
   }

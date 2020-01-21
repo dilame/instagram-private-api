@@ -1,9 +1,8 @@
 import { injectable } from 'tsyringe';
-import { AndroidHttp } from '../core/android.http';
-
 import { Feed } from '@igpapi/core';
-import { UserStoryFeedResponseItemsItem, UserStoryFeedResponseRootObject } from '@igpapi/android';
+import { AndroidHttp } from '../core/android.http';
 import { AndroidState } from '../core/android.state';
+import { UserStoryFeedResponseItemsItem, UserStoryFeedResponseRootObject } from '../responses';
 
 @injectable()
 export class UserStoryFeed extends Feed<UserStoryFeedResponseRootObject, UserStoryFeedResponseItemsItem> {

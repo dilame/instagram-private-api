@@ -15,7 +15,7 @@ export class DiscoverFeed extends Feed<DiscoverFeedResponseRootObject, DiscoverF
   }
 
   set state(body: DiscoverFeedResponseRootObject) {
-    this.done = body.more_available;
+    this.hasMore = body.more_available;
     this.nextMaxId = body.max_id;
   }
 

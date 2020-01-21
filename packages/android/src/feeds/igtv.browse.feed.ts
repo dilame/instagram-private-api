@@ -18,7 +18,7 @@ export class IgtvBrowseFeed extends Feed<IgtvBrowseFeedResponseRootObject, IgtvB
 
   set state(response: any) {
     this.maxId = response.max_id;
-    this.done = !!response.more_available;
+    this.hasMore = !!response.more_available;
   }
 
   items({ browse_items }: IgtvBrowseFeedResponseRootObject) {

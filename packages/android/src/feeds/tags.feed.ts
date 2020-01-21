@@ -23,7 +23,7 @@ export class TagsFeed extends Feed<TagsFeedResponse, TagsFeedResponseMedia> {
   }
 
   set state(body: TagsFeedResponse) {
-    this.done = body.more_available;
+    this.hasMore = body.more_available;
     this.nextMaxId = body.next_max_id;
     this.nextPage = body.next_page;
     this.nextMediaIds = body.next_media_ids;

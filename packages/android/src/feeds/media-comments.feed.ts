@@ -18,7 +18,7 @@ export class MediaCommentsFeed extends Feed<MediaCommentsFeedResponse, MediaComm
   }
 
   set state(body: MediaCommentsFeedResponse) {
-    this.done = !!body.next_max_id || !!body.next_min_id;
+    this.hasMore = !!body.next_max_id || !!body.next_min_id;
     this.nextMaxId = body.next_max_id;
     this.nextMinId = body.next_min_id;
   }

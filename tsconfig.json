@@ -5,6 +5,7 @@
     "baseUrl": "./packages",
     "paths": {
       "@igpapi/android": ["android/src"],
+      "@igpapi/android/*": ["android/src/*"],
       "@igpapi/core": ["core/src"],
       "@igpapi/sticker": ["sticker/src"]
     }

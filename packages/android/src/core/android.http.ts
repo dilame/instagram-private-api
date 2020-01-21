@@ -24,6 +24,7 @@ const JSONbigString = JSONbigInt({ storeAsString: true });
 
 import debug from 'debug';
 import { AndroidState } from './android.state';
+import { injectable } from 'tsyringe';
 
 type Payload = { [key: string]: any } | string;
 
@@ -32,6 +33,7 @@ interface SignedPost {
   ig_sig_key_version: string;
 }
 
+@injectable()
 export class AndroidHttp {
   private static requestDebug = debug('ig:request');
   end$ = new Subject();

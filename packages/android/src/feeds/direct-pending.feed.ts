@@ -16,7 +16,7 @@ export class DirectPendingInboxFeed extends Feed<DirectInboxFeedResponse, Direct
   }
 
   set state(body: DirectInboxFeedResponse) {
-    this.done = body.inbox.has_older;
+    this.hasMore = body.inbox.has_older;
     this.seqId = body.seq_id;
     this.cursor = body.inbox.oldest_cursor;
   }

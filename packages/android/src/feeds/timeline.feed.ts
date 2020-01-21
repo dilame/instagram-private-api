@@ -20,7 +20,7 @@ export class TimelineFeed extends Feed<TimelineFeedResponse, TimelineFeedRespons
   }
 
   set state(body: TimelineFeedResponse) {
-    this.done = body.more_available;
+    this.hasMore = body.more_available;
     this.nextMaxId = body.next_max_id;
   }
 

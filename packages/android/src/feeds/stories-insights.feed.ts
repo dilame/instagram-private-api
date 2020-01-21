@@ -23,7 +23,7 @@ export class StoriesInsightsFeed extends Feed<
   set state(response: StoriesInsightsFeedResponseRootObject) {
     const { end_cursor, has_next_page } = response.data.user.business_manager.stories_unit.stories.page_info;
     this.nextCursor = end_cursor;
-    this.done = has_next_page;
+    this.hasMore = has_next_page;
   }
 
   items(raw: StoriesInsightsFeedResponseRootObject) {
