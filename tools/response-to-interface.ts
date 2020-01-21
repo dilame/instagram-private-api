@@ -30,6 +30,7 @@ async function createInterface(request: Promise<any>, outputName: string) {
   return json;
 }
 
+// @ts-ignore
 async function login() {
   ig.state.generateDevice(process.env.IG_USERNAME);
   ig.request.end$.subscribe(async () => {
@@ -37,6 +38,7 @@ async function login() {
     delete state.constants;
     await writeFileAsync(statePath, JSON.stringify(state), { encoding: 'utf8' });
   });
+  await ig.qe.syncLoginExperiments();
   if (await existsAsync(statePath)) {
     await ig.state.deserialize(await readFileAsync(statePath, { encoding: 'utf8' }));
   } else {
@@ -45,6 +47,7 @@ async function login() {
 }
 
 (async function mainAsync() {
+  ig.state.generateDevice(process.env.IG_USERNAME);
   await login();
   try {
     console.log();

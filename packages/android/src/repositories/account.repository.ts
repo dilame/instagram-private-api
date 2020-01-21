@@ -18,10 +18,12 @@ import { defaultsDeep } from 'lodash';
 import { IgSignupBlockError } from '../errors/ig-signup-block.error';
 import Bluebird = require('bluebird');
 import debug from 'debug';
+import * as crypto from 'crypto';
 
 export class AccountRepository extends Repository {
   private static accountDebug = debug('ig:account');
   public async login(username: string, password: string): Promise<AccountRepositoryLoginResponseLogged_in_user> {
+    const {encrypted, time} = this.encryptPassword(password);
     const response = await Bluebird.try(() =>
       this.client.request.send<AccountRepositoryLoginResponseRootObject>({
         method: 'POST',
@@ -29,6 +31,7 @@ export class AccountRepository extends Repository {
         form: this.client.request.sign({
           username,
           password,
+          enc_password: `#PWD_INSTAGRAM:4:${time}:${encrypted}`,
           guid: this.client.state.uuid,
           phone_id: this.client.state.phoneId,
           _csrftoken: this.client.state.cookieCsrfToken,
@@ -62,13 +65,39 @@ export class AccountRepository extends Repository {
     return response.body.logged_in_user;
   }
 
-  private static createJazoest(input: string): string {
+  public static createJazoest(input: string): string {
     const buf = Buffer.from(input, 'ascii');
     let sum = 0;
     for (let i = 0; i < buf.byteLength; i++) {
       sum += buf.readUInt8(i);
     }
     return `2${sum}`;
+  }
+
+  public encryptPassword(password: string): { time: string, encrypted: string } {
+    const randKey = crypto.randomBytes(32);
+    const iv = crypto.randomBytes(12);
+    const rsaEncrypted = crypto.publicEncrypt({
+      key: Buffer.from(this.client.state.passwordEncryptionPubKey, 'base64').toString(),
+      // @ts-ignore
+      padding: crypto.constants.RSA_PKCS1_PADDING,
+    }, randKey);
+    const cipher = crypto.createCipheriv('aes-256-gcm', randKey, iv);
+    const time = Math.floor(Date.now() / 1000).toString();
+    cipher.setAAD(Buffer.from(time));
+    const aesEncrypted = Buffer.concat([cipher.update(password, 'utf8'), cipher.final()]);
+    const sizeBuffer = Buffer.alloc(2, 0);
+    sizeBuffer.writeInt16LE(rsaEncrypted.byteLength, 0);
+    const authTag = cipher.getAuthTag();
+    return {
+      time,
+      encrypted: Buffer.concat([
+        Buffer.from([1, this.client.state.passwordEncryptionKeyId]),
+        iv,
+        sizeBuffer,
+        rsaEncrypted, authTag, aesEncrypted])
+        .toString('base64'),
+    };
   }
 
   public async twoFactorLogin(
