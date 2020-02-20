@@ -8,7 +8,33 @@
 [![Join the chat at https://gitter.im/instagram-private-api/Lobby](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/instagram-private-api/Lobby)
 
 ---
+
+# Next major version
+
+Me and [Nerix](https://github.com/Nerixyz) are ready to announce the next 2.x.x version of this library.
+It has extended feature list.
+It's a big release.
+We have significantly expanded the functionality and capabilities.
+The library turned into a monorepository and now it's a set of libraries, connected in an ecosystem.
+It consists of
+
+- Android API
+- Web API
+- FBNS, Realtime
+
+We've done some work on design decisions.
+We simplified the state management process.
+Now you can easily make a snapshot of account state, save it in a persistent storage and then restore a 1-to-1 copy with just 1 function call.
+With new realtime features you can listen for new direct messages, notifications and any other events.
+
+The new version is hosted in private repository. Access is paid.
+Members get **basic** support for installation, configuration, and usage.
+We also will try to react on your feature requests.
+
+You can write me in [telegram](https://tele.click/bowzee) or [email](mailto:dilame.bowzee@gmail.com) for details.
+
 # Table of Contents
+
 - [Install](#install)
 - [Support us](#support-us)
 - [Examples](#examples)
@@ -21,7 +47,6 @@
   - [Special Thanks](#special-thanks)
   - [Thanks to Contributors](#thanks-to-contributors)
   - [End User License Agreement (EULA)](#end-user-license-agreement-eula)
-
 
 # Install
 
@@ -36,6 +61,7 @@ From github
 ```
 npm install github:dilame/instagram-private-api
 ```
+
 # Support us
 
 If you find this library useful for you, you can support it by donating any amount
@@ -46,21 +72,20 @@ BTC: 1Dqnz9QuswAvD3t7Jsw7LhwprR6HAWprW6
 
 You can find usage examples [here](examples)
 
-*Note for JavaScript users:* 
+_Note for JavaScript users:_
 As of Node v.13.5.0, there isn't support for ESModules and the 'import'-syntax.
 So you have to read the imports in the examples like this:
 
 `import { A } from 'b'` ➡ `const { A } = require('b')`
 
-
 ```typescript
-import { IgApiClient } from './src';
+import { IgApiClient } from './index';
 import { sample } from 'lodash';
 const ig = new IgApiClient();
 // You must generate device id's before login.
 // Id's generated based on seed
 // So if you pass the same value as first argument - the same id's are generated every time
-ig.state.generateDevice(process.env.IG_USERNAME);
+ig.state.device.generate(process.env.IG_USERNAME);
 // Optionally you can setup proxy url
 ig.state.proxyUrl = process.env.IG_PROXY;
 (async () => {
@@ -107,53 +132,58 @@ Repositories implements low-level atomic operations. Any repository method must 
 
 Keys is a little hints, with it you will be able to get access to repository via `ig.key`.
 
-| Key | Repository class documentation |
-| --- | --- |
-| `account` | [AccountRepository](https://github.com/dilame/instagram-private-api/blob/master/docs/classes/_repositories_account_repository_.accountrepository.md) |
-| `attribution` | [AttributionRepository](https://github.com/dilame/instagram-private-api/blob/master/docs/classes/_repositories_attribution_repository_.attributionrepository.md) |
-| `challenge` | [ChallengeRepository](https://github.com/dilame/instagram-private-api/blob/master/docs/classes/_repositories_challenge_repository_.challengerepository.md) |
-| `consent` | [ConsentRepository](https://github.com/dilame/instagram-private-api/blob/master/docs/classes/_repositories_consent_repository_.consentrepository.md) |
-| `creatives` | [CreativesRepository](https://github.com/dilame/instagram-private-api/blob/master/docs/classes/_repositories_creatives_repository_.creativesrepository.md) |
-| `direct` | [DirectRepository](https://github.com/dilame/instagram-private-api/blob/master/docs/classes/_repositories_direct_repository_.directrepository.md) |
-| `directThread` | [DirectThreadRepository](https://github.com/dilame/instagram-private-api/blob/master/docs/classes/_repositories_direct_thread_repository_.directthreadrepository.md) |
-| `discover` | [DiscoverRepository](https://github.com/dilame/instagram-private-api/blob/master/docs/classes/_repositories_discover_repository_.discoverrepository.md) |
-| `fbsearch` | [FbsearchRepository](https://github.com/dilame/instagram-private-api/blob/master/docs/classes/_repositories_fbsearch_repository_.fbsearchrepository.md) |
-| `friendship` | [FriendshipRepository](https://github.com/dilame/instagram-private-api/blob/master/docs/classes/_repositories_friendship_repository_.friendshiprepository.md) |
-| `launcher` | [LauncherRepository](https://github.com/dilame/instagram-private-api/blob/master/docs/classes/_repositories_launcher_repository_.launcherrepository.md) |
-| `linkedAccount` | [LinkedAccountRepository](https://github.com/dilame/instagram-private-api/blob/master/docs/classes/_repositories_linked_account_repository_.linkedaccountrepository.md) |
-| `live` | [LiveRepository](https://github.com/dilame/instagram-private-api/blob/master/docs/classes/_repositories_live_repository_.liverepository.md) |
-| `location` | [LocationRepository](https://github.com/dilame/instagram-private-api/blob/master/docs/classes/_repositories_location_repository_.locationrepository.md) |
-| `locationSearch` | [LocationSearch](https://github.com/dilame/instagram-private-api/blob/master/docs/classes/_repositories_location_search_repository_.locationsearch.md) |
-| `loom` | [LoomRepository](https://github.com/dilame/instagram-private-api/blob/master/docs/classes/_repositories_loom_repository_.loomrepository.md) |
-| `media` | [MediaRepository](https://github.com/dilame/instagram-private-api/blob/master/docs/classes/_repositories_media_repository_.mediarepository.md) |
-| `music` | [MusicRepository](https://github.com/dilame/instagram-private-api/blob/master/docs/classes/_repositories_music_repository_.musicrepository.md) |
-| `news` | [NewsRepository](https://github.com/dilame/instagram-private-api/blob/master/docs/classes/_repositories_news_repository_.newsrepository.md) |
-| `qe` | [QeRepository](https://github.com/dilame/instagram-private-api/blob/master/docs/classes/_repositories_qe_repository_.qerepository.md) |
-| `qp` | [QpRepository](https://github.com/dilame/instagram-private-api/blob/master/docs/classes/_repositories_qp_repository_.qprepository.md) |
-| `tag` | [TagRepository](https://github.com/dilame/instagram-private-api/blob/master/docs/classes/_repositories_tag_repository_.tagrepository.md) |
-| `upload` | [UploadRepository](https://github.com/dilame/instagram-private-api/blob/master/docs/classes/_repositories_upload_repository_.uploadrepository.md) |
-| `user` | [UserRepository](https://github.com/dilame/instagram-private-api/blob/master/docs/classes/_repositories_user_repository_.userrepository.md) |
-| `zr` | [ZrRepository](https://github.com/dilame/instagram-private-api/blob/master/docs/classes/_repositories_zr_repository_.zrrepository.md) |
+| Key              | Repository class documentation                                                                                                                                          |
+| ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `account`        | [AccountRepository](https://github.com/dilame/instagram-private-api/blob/master/docs/classes/_repositories_account_repository_.accountrepository.md)                    |
+| `attribution`    | [AttributionRepository](https://github.com/dilame/instagram-private-api/blob/master/docs/classes/_repositories_attribution_repository_.attributionrepository.md)        |
+| `challenge`      | [ChallengeRepository](https://github.com/dilame/instagram-private-api/blob/master/docs/classes/_repositories_challenge_repository_.challengerepository.md)              |
+| `consent`        | [ConsentRepository](https://github.com/dilame/instagram-private-api/blob/master/docs/classes/_repositories_consent_repository_.consentrepository.md)                    |
+| `creatives`      | [CreativesRepository](https://github.com/dilame/instagram-private-api/blob/master/docs/classes/_repositories_creatives_repository_.creativesrepository.md)              |
+| `direct`         | [DirectRepository](https://github.com/dilame/instagram-private-api/blob/master/docs/classes/_repositories_direct_repository_.directrepository.md)                       |
+| `directThread`   | [DirectThreadRepository](https://github.com/dilame/instagram-private-api/blob/master/docs/classes/_repositories_direct_thread_repository_.directthreadrepository.md)    |
+| `discover`       | [DiscoverRepository](https://github.com/dilame/instagram-private-api/blob/master/docs/classes/_repositories_discover_repository_.discoverrepository.md)                 |
+| `fbsearch`       | [FbsearchRepository](https://github.com/dilame/instagram-private-api/blob/master/docs/classes/_repositories_fbsearch_repository_.fbsearchrepository.md)                 |
+| `friendship`     | [FriendshipRepository](https://github.com/dilame/instagram-private-api/blob/master/docs/classes/_repositories_friendship_repository_.friendshiprepository.md)           |
+| `launcher`       | [LauncherRepository](https://github.com/dilame/instagram-private-api/blob/master/docs/classes/_repositories_launcher_repository_.launcherrepository.md)                 |
+| `linkedAccount`  | [LinkedAccountRepository](https://github.com/dilame/instagram-private-api/blob/master/docs/classes/_repositories_linked_account_repository_.linkedaccountrepository.md) |
+| `live`           | [LiveRepository](https://github.com/dilame/instagram-private-api/blob/master/docs/classes/_repositories_live_repository_.liverepository.md)                             |
+| `location`       | [LocationRepository](https://github.com/dilame/instagram-private-api/blob/master/docs/classes/_repositories_location_repository_.locationrepository.md)                 |
+| `locationSearch` | [LocationSearch](https://github.com/dilame/instagram-private-api/blob/master/docs/classes/_repositories_location_search_repository_.locationsearch.md)                  |
+| `loom`           | [LoomRepository](https://github.com/dilame/instagram-private-api/blob/master/docs/classes/_repositories_loom_repository_.loomrepository.md)                             |
+| `media`          | [MediaRepository](https://github.com/dilame/instagram-private-api/blob/master/docs/classes/_repositories_media_repository_.mediarepository.md)                          |
+| `music`          | [MusicRepository](https://github.com/dilame/instagram-private-api/blob/master/docs/classes/_repositories_music_repository_.musicrepository.md)                          |
+| `news`           | [NewsRepository](https://github.com/dilame/instagram-private-api/blob/master/docs/classes/_repositories_news_repository_.newsrepository.md)                             |
+| `qe`             | [QeRepository](https://github.com/dilame/instagram-private-api/blob/master/docs/classes/_repositories_qe_repository_.qerepository.md)                                   |
+| `qp`             | [QpRepository](https://github.com/dilame/instagram-private-api/blob/master/docs/classes/_repositories_qp_repository_.qprepository.md)                                   |
+| `tag`            | [TagRepository](https://github.com/dilame/instagram-private-api/blob/master/docs/classes/_repositories_tag_repository_.tagrepository.md)                                |
+| `upload`         | [UploadRepository](https://github.com/dilame/instagram-private-api/blob/master/docs/classes/_repositories_upload_repository_.uploadrepository.md)                       |
+| `user`           | [UserRepository](https://github.com/dilame/instagram-private-api/blob/master/docs/classes/_repositories_user_repository_.userrepository.md)                             |
+| `zr`             | [ZrRepository](https://github.com/dilame/instagram-private-api/blob/master/docs/classes/_repositories_zr_repository_.zrrepository.md)                                   |
 
 ## Services
 
 Services will help you to maintain some actions without calling a couple repositority methods or perform complex things like pre and postlogin flow simulations or photo/video publishing.
 
-| Key | Service class documentation |
-| --- | --- |
-| `publish` | [PublishService](https://github.com/dilame/instagram-private-api/blob/master/docs/classes/_services_publish_service_.publishservice.md) |
-| `search` | [SearchService](https://github.com/dilame/instagram-private-api/blob/master/docs/classes/_services_search_service_.searchservice.md) |
+| Key        | Service class documentation                                                                                                                |
+| ---------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| `publish`  | [PublishService](https://github.com/dilame/instagram-private-api/blob/master/docs/classes/_services_publish_service_.publishservice.md)    |
+| `search`   | [SearchService](https://github.com/dilame/instagram-private-api/blob/master/docs/classes/_services_search_service_.searchservice.md)       |
 | `simulate` | [SimulateService](https://github.com/dilame/instagram-private-api/blob/master/docs/classes/_services_simulate_service_.simulateservice.md) |
-| `story` | [StoryService](https://github.com/dilame/instagram-private-api/blob/master/docs/classes/_services_story_service_.storyservice.md) |
+| `story`    | [StoryService](https://github.com/dilame/instagram-private-api/blob/master/docs/classes/_services_story_service_.storyservice.md)          |
 
 # Debugging
+
 In order to get debug infos provided by the library, you can enable debugging.
 The prefix for this library is `ig`.
-To get all debug logs (*recommended*) set the namespace to `ig:*`.
+To get all debug logs (_recommended_) set the namespace to `ig:*`.
+
 #### Node
+
 In node you only have to set the environment variable `DEBUG` to the desired namespace.
 [Further information](https://github.com/visionmedia/debug#environment-variables)
+
 #### Browser
+
 In the browser you have to set `localStorage.debug` to the desired namespace.
 [Further information](https://github.com/visionmedia/debug#browser-support)
 
