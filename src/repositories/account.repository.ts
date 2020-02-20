@@ -23,6 +23,9 @@ import * as crypto from 'crypto';
 export class AccountRepository extends Repository {
   private static accountDebug = debug('ig:account');
   public async login(username: string, password: string): Promise<AccountRepositoryLoginResponseLogged_in_user> {
+    if (!this.client.state.passwordEncryptionPubKey) {
+      await this.client.qe.syncLoginExperiments();
+    }
     const {encrypted, time} = this.encryptPassword(password);
     const response = await Bluebird.try(() =>
       this.client.request.send<AccountRepositoryLoginResponseRootObject>({
