@@ -19,6 +19,7 @@ function fakeLoad() {
 
 (async () => {
   const ig = new IgApiClient();
+  let userInfo;
   ig.state.generateDevice(process.env.IG_USERNAME);
   ig.state.proxyUrl = process.env.IG_PROXY;
   // This function executes after every request
@@ -31,8 +32,12 @@ function fakeLoad() {
     // import state accepts both a string as well as an object
     // the string should be a JSON object
     await ig.state.deserialize(fakeLoad());
+    //Get user data based on loaded cookie
+    userInfo = await ig.user.info(ig.state.cookieUserId);
   }
-  // This call will provoke request.end$ stream
-  await ig.account.login(process.env.IG_USERNAME, process.env.IG_PASSWORD);
-  // Most of the time you don't have to login after loading the state
+  if(!userInfo){
+    // This call will provoke request.end$ stream
+    userInfo = await ig.account.login(process.env.IG_USERNAME, process.env.IG_PASSWORD);
+    // Most of the time you don't have to login after loading the state
+  }
 })();
