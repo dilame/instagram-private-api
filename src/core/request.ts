@@ -69,6 +69,7 @@ export class Request {
         strictSSL: false,
         gzip: true,
         headers: this.getDefaultHeaders(),
+        method: 'GET',
       },
       this.defaults,
     );
@@ -135,7 +136,7 @@ export class Request {
 
   private handleResponseError(response: Response): IgClientError {
     Request.requestDebug(
-      `Request ${response.request.method} ${response.request.uri} failed: ${
+      `Request ${response.request.method} ${response.request.uri.path} failed: ${
         typeof response.body === 'object' ? JSON.stringify(response.body) : response.body
       }`,
     );

@@ -15,7 +15,9 @@ import {
   SliderSticker,
 } from './stickers';
 
-export type StickerConfig = any & { story_sticker_ids };
+export type StickerOptions<T extends InstaSticker> = Diff<T, InstaSticker> & Partial<InstaSticker>;
+
+export type StickerConfig = any & { story_sticker_ids: string };
 
 export class StickerBuilder {
   private stickers: InstaSticker[] = [];
@@ -29,14 +31,14 @@ export class StickerBuilder {
     const map = new Map<string, InstaSticker[]>();
     for (const sticker of this.stickers) {
       if (map.has(sticker.key)) {
-        map.get(sticker.key).push(sticker);
+        map.get(sticker.key)?.push(sticker);
       } else {
         map.set(sticker.key, [sticker]);
       }
     }
     const result = {};
     const ids = [];
-    const additionalProperties = [];
+    const additionalProperties: any[] = [];
     for (const stickers of map.values()) {
       Object.defineProperty(result, stickers[0].key, { value: JSON.stringify(stickers), enumerable: true });
       stickers.forEach(sticker => additionalProperties.push(sticker.additionalConfigureProperties));
@@ -50,11 +52,11 @@ export class StickerBuilder {
   }
 
   // wrappers, so you only have to import StickerBuilder
-  public static hashtag(options: Diff<HashtagSticker, InstaSticker>): HashtagSticker {
+  public static hashtag(options: StickerOptions<HashtagSticker>): HashtagSticker {
     return plainToClass(HashtagSticker, options);
   }
 
-  public static mention(options: Diff<MentionSticker, InstaSticker>): MentionSticker {
+  public static mention(options: StickerOptions<MentionSticker>): MentionSticker {
     return plainToClass(MentionSticker, options);
   }
 
@@ -65,7 +67,7 @@ export class StickerBuilder {
    */
   public static mentionReel(
     mediaInfo: { pk: string; user: { pk: string | number } },
-    additional: Partial<MentionSticker> = {},
+    additional: Partial<StickerOptions<MentionSticker>> = {},
   ): MentionSticker {
     return StickerBuilder.mention({
       userId: mediaInfo.user.pk.toString(),
@@ -77,27 +79,27 @@ export class StickerBuilder {
     });
   }
 
-  public static location(options: Diff<LocationSticker, InstaSticker>): LocationSticker {
+  public static location(options: StickerOptions<LocationSticker>): LocationSticker {
     return plainToClass(LocationSticker, options);
   }
 
-  public static countdown(options: Diff<CountdownSticker, InstaSticker>): CountdownSticker {
+  public static countdown(options: StickerOptions<CountdownSticker>): CountdownSticker {
     return plainToClass(CountdownSticker, options);
   }
 
-  public static chat(options: Diff<ChatSticker, InstaSticker>): ChatSticker {
+  public static chat(options: StickerOptions<ChatSticker>): ChatSticker {
     return plainToClass(ChatSticker, options);
   }
 
-  public static poll(options: Diff<PollSticker, InstaSticker>): PollSticker {
+  public static poll(options: StickerOptions<PollSticker>): PollSticker {
     return plainToClass(PollSticker, options);
   }
 
-  public static question(options: Diff<QuestionSticker, InstaSticker>): QuestionSticker {
+  public static question(options: StickerOptions<QuestionSticker>): QuestionSticker {
     return plainToClass(QuestionSticker, options);
   }
 
-  public static quiz(options: Diff<QuizSticker, InstaSticker>): QuizSticker {
+  public static quiz(options: StickerOptions<QuizSticker>): QuizSticker {
     return plainToClass(QuizSticker, {
       width: 0.7291667,
       height: 0.11824318 + options.options.length * 0.10304056,
@@ -105,7 +107,7 @@ export class StickerBuilder {
     });
   }
 
-  public static slider(options: Diff<SliderSticker, InstaSticker>): SliderSticker {
+  public static slider(options: StickerOptions<SliderSticker>): SliderSticker {
     return plainToClass(SliderSticker, options);
   }
 
@@ -114,13 +116,13 @@ export class StickerBuilder {
    * The user id is stored in mediaOwnerId.
    * @param options
    */
-  public static attachment(options: Diff<AttachmentSticker, InstaSticker>): AttachmentSticker {
+  public static attachment(options: StickerOptions<AttachmentSticker>): AttachmentSticker {
     return plainToClass(AttachmentSticker, options);
   }
 
   public static attachmentFromMedia(
     mediaInfo: { pk: string; user: { pk: string | number } },
-    additional: Partial<AttachmentSticker> = {},
+    additional: Partial<StickerOptions<AttachmentSticker>> = {},
   ): AttachmentSticker {
     return StickerBuilder.attachment({
       mediaId: mediaInfo.pk,
