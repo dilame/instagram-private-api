@@ -38,11 +38,10 @@ async function login() {
     delete state.constants;
     await writeFileAsync(statePath, JSON.stringify(state), { encoding: 'utf8' });
   });
+  await ig.qe.syncLoginExperiments();
   if (await existsAsync(statePath)) {
     await ig.state.deserialize(await readFileAsync(statePath, { encoding: 'utf8' }));
-    await ig.qe.syncLoginExperiments();
   } else {
-    await ig.qe.syncLoginExperiments();
     return await ig.account.login(process.env.IG_USERNAME, process.env.IG_PASSWORD);
   }
 }
@@ -51,9 +50,7 @@ async function login() {
   ig.state.generateDevice(process.env.IG_USERNAME);
   await login();
   try {
-    console.log(await ig.publish.photo({
-      file: await readFileAsync('D:\\ShareX\\Screenshots\\2020-01-10_19-47-29.jpg'),
-    }));
+    console.log();
   } catch (e) {
     console.error(e);
     console.error(e.response.body);
