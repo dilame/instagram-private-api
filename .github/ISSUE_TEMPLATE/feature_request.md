@@ -1,7 +1,10 @@
 ---
 name: Feature Request
 about: Suggest a missing feature
-labels: enhancement
+title: ''
+labels: enhancement, unconfirmed
+assignees: ''
+
 ---
 
 # Feature Request

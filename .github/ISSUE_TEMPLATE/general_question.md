@@ -1,7 +1,10 @@
 ---
 name: General Question
 about: Ask a question concerning the library or api
-labels: question
+title: ''
+labels: question, unconfirmed
+assignees: ''
+
 ---
 
 # General Question
@@ -28,3 +31,23 @@ A **specific** question, so it's understandable to anyone.
 You may add pictures.
 
 **YOUR QUESTION HERE**
+
+## Code
+A meaningful section of your code (else delete this). If you are using **TypeScript** replace `js` with `typescript`.
+
+```js
+YOUR CODE HERE
+```
+
+## Error and Output
+If you've got an error put it here.
+You can get the stacktrace in the most environments using 
+`Error.stack` ([MDN Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error/stack)).
+
+```
+YOUR WELL FORMATTED ERROR
+```
+
+```
+YOUR OUTPUT GOES HERE
+```
