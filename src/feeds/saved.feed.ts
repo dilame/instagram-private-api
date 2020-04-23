@@ -14,9 +14,9 @@ export class SavedFeed extends Feed<SavedFeedResponseRootObject, SavedFeedRespon
   async request(): Promise<SavedFeedResponseRootObject> {
     const { body } = await this.client.request.send({
       url: '/api/v1/feed/saved/',
-      method: 'POST',
       qs: {
         max_id: this.nextMaxId,
+        include_igtv_preview: false,
       },
     });
     this.state = body;
