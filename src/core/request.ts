@@ -176,6 +176,7 @@ export class Request {
     try {
       return await retry(async () => request(options), this.attemptOptions);
     } catch (err) {
+      this.error$.next(err);
       throw new IgNetworkError(err);
     }
   }
