@@ -24,6 +24,7 @@ export * from './fbsearch.repository.places.response';
 export * from './fbsearch.repository.topsearch-flat.response';
 export * from './friendship.repository.change.response';
 export * from './friendship.repository.show.response';
+export * from './friendship.repository.find-follower.response';
 export * from './live.comments.response';
 export * from './live.create-broadcast.response';
 export * from './live.final-viewers.response';

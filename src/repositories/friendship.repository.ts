@@ -1,5 +1,9 @@
 import { Repository } from '../core/repository';
-import { FriendshipRepositoryShowResponseRootObject, FriendshipRepositoryChangeResponseRootObject } from '../responses';
+import {
+  FriendshipRepositoryShowResponseRootObject,
+  FriendshipRepositoryChangeResponseRootObject,
+  FriendshipRepositoryFindFollowerResponseRootObject,
+} from '../responses';
 
 export class FriendshipRepository extends Repository {
   async show(id: string | number) {
@@ -20,6 +24,17 @@ export class FriendshipRepository extends Repository {
       },
     });
     return body.friendship_statuses;
+  }
+
+  async findFollowers(userId: string | number, userNameToLookFor: string) {
+    if (!userNameToLookFor) {
+      return [];
+    }
+
+    const { body } = await this.client.request.send<FriendshipRepositoryFindFollowerResponseRootObject>({
+      url: `/api/v1/friendships/${userId}/followers?query=${userNameToLookFor}`,
+    });
+    return body.users;
   }
 
   async block(id: string | number, mediaIdAttribution?: string) {
