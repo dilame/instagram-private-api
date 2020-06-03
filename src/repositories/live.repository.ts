@@ -12,6 +12,7 @@ import {
   LiveGetQuestionsResponseRootObject,
   LiveLikeResponseRootObject,
   LiveLikeCountResponseRootObject,
+  LivePostLiveThumbnailsResponseRootObject,
   LiveJoinRequestCountsResponseRootObject,
   LiveAddToPostResponse,
 } from '../responses';
@@ -210,6 +211,17 @@ export class LiveRepository extends Repository {
       method: 'GET',
       qs: {
         like_ts: likeTs,
+      },
+    });
+    return body;
+  }
+
+  public async getPostLiveThumbnails(broadcastId: string): Promise<LivePostLiveThumbnailsResponseRootObject> {
+    const { body } = await this.client.request.send<LivePostLiveThumbnailsResponseRootObject>({
+      url: `/api/v1/live/${broadcastId}/get_post_live_thumbnails/`,
+      method: 'GET',
+      qs: {
+        signed_body: this.client.request.sign({}),
       },
     });
     return body;

@@ -32,6 +32,7 @@ export * from './live.heartbeat-viewer-count.response';
 export * from './live.info.response';
 export * from './live.join-request-counts.response';
 export * from './live.like-count.response';
+export * from './live.post-live-thumbnails.response';
 export * from './live.like.response';
 export * from './live.start-broadcast.response';
 export * from './live.switch-comments.response';
