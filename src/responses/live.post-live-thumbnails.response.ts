@@ -1,4 +1,4 @@
 export interface LivePostLiveThumbnailsResponseRootObject {
-  thumbnails: any[];
+  thumbnails: string[];
   status: string;
 }
