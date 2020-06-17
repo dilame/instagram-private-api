@@ -13,7 +13,7 @@ import { DirectThreadRepositoryApproveParticipantRequestResponseRootObject } fro
 export class DirectThreadRepository extends Repository {
   public async approve(threadId: string | number): Promise<StatusResponse> {
     const { body } = await this.client.request.send<StatusResponse>({
-      url: `/api/v1/direct_v2/threads/${threadId}/approve/`,
+      url: `/direct_v2/threads/${threadId}/approve/`,
       method: 'POST',
       form: {
         _csrftoken: this.client.state.cookieCsrfToken,
@@ -25,7 +25,7 @@ export class DirectThreadRepository extends Repository {
 
   public async approveMultiple(threadIds: string[] | number[]): Promise<StatusResponse> {
     const { body } = await this.client.request.send<StatusResponse>({
-      url: '/api/v1/direct_v2/threads/approve_multiple/',
+      url: '/direct_v2/threads/approve_multiple/',
       method: 'POST',
       form: {
         _csrftoken: this.client.state.cookieCsrfToken,
@@ -38,7 +38,7 @@ export class DirectThreadRepository extends Repository {
 
   public async decline(threadId: string | number): Promise<StatusResponse> {
     const { body } = await this.client.request.send<StatusResponse>({
-      url: `/api/v1/direct_v2/threads/${threadId}/decline/`,
+      url: `/direct_v2/threads/${threadId}/decline/`,
       method: 'POST',
       form: {
         _csrftoken: this.client.state.cookieCsrfToken,
@@ -50,7 +50,7 @@ export class DirectThreadRepository extends Repository {
 
   public async declineMultiple(threadIds: string[] | number[]): Promise<StatusResponse> {
     const { body } = await this.client.request.send<StatusResponse>({
-      url: '/api/v1/direct_v2/threads/decline_multiple/',
+      url: '/direct_v2/threads/decline_multiple/',
       method: 'POST',
       form: {
         _csrftoken: this.client.state.cookieCsrfToken,
@@ -63,7 +63,7 @@ export class DirectThreadRepository extends Repository {
 
   public async declineAll(): Promise<StatusResponse> {
     const { body } = await this.client.request.send<StatusResponse>({
-      url: `/api/v1/direct_v2/threads/decline_all/`,
+      url: `/direct_v2/threads/decline_all/`,
       method: 'POST',
       form: {
         _csrftoken: this.client.state.cookieCsrfToken,
@@ -78,7 +78,7 @@ export class DirectThreadRepository extends Repository {
     userIds: string[],
   ): Promise<DirectThreadRepositoryApproveParticipantRequestResponseRootObject> {
     const { body } = await this.client.request.send<DirectThreadRepositoryApproveParticipantRequestResponseRootObject>({
-      url: `/api/v1/direct_v2/threads/${threadId}/approve_participant_requests/`,
+      url: `/direct_v2/threads/${threadId}/approve_participant_requests/`,
       method: 'POST',
       form: {
         _csrftoken: this.client.state.cookieCsrfToken,
@@ -95,7 +95,7 @@ export class DirectThreadRepository extends Repository {
     recipientUsers: string[] | number[],
   ): Promise<DirectThreadRepositoryGetByParticipantsResponseRootObject> {
     const { body } = await this.client.request.send<DirectThreadRepositoryGetByParticipantsResponseRootObject>({
-      url: '/api/v1/direct_v2/threads/get_by_participants/',
+      url: '/direct_v2/threads/get_by_participants/',
       method: 'GET',
       qs: {
         recipient_users: JSON.stringify(recipientUsers),
@@ -109,7 +109,7 @@ export class DirectThreadRepository extends Repository {
     title: string,
   ): Promise<DirectThreadRepositoryUpdateTitleResponseRootObject> {
     const { body } = await this.client.request.send<DirectThreadRepositoryUpdateTitleResponseRootObject>({
-      url: `/api/v1/direct_v2/threads/${threadId}/update_title/`,
+      url: `/direct_v2/threads/${threadId}/update_title/`,
       method: 'POST',
       form: {
         _csrftoken: this.client.state.cookieCsrfToken,
@@ -122,7 +122,7 @@ export class DirectThreadRepository extends Repository {
 
   public async mute(threadId: string | number): Promise<StatusResponse> {
     const { body } = await this.client.request.send<StatusResponse>({
-      url: `/api/v1/direct_v2/threads/${threadId}/mute/`,
+      url: `/direct_v2/threads/${threadId}/mute/`,
       method: 'POST',
       form: {
         _csrftoken: this.client.state.cookieCsrfToken,
@@ -134,7 +134,7 @@ export class DirectThreadRepository extends Repository {
 
   public async unmute(threadId: string | number): Promise<StatusResponse> {
     const { body } = await this.client.request.send<StatusResponse>({
-      url: `/api/v1/direct_v2/threads/${threadId}/unmute/`,
+      url: `/direct_v2/threads/${threadId}/unmute/`,
       method: 'POST',
       form: {
         _csrftoken: this.client.state.cookieCsrfToken,
@@ -149,7 +149,7 @@ export class DirectThreadRepository extends Repository {
     userIds: string[] | number[],
   ): Promise<DirectThreadRepositoryAddUserResponseRootObject> {
     const { body } = await this.client.request.send<DirectThreadRepositoryAddUserResponseRootObject>({
-      url: `/api/v1/direct_v2/threads/${threadId}/add_user/`,
+      url: `/direct_v2/threads/${threadId}/add_user/`,
       method: 'POST',
       form: {
         _csrftoken: this.client.state.cookieCsrfToken,
@@ -162,7 +162,7 @@ export class DirectThreadRepository extends Repository {
 
   public async leave(threadId: string): Promise<StatusResponse> {
     const { body } = await this.client.request.send<StatusResponse>({
-      url: `/api/v1/direct_v2/threads/${threadId}/leave/`,
+      url: `/direct_v2/threads/${threadId}/leave/`,
       method: 'POST',
       form: {
         _csrftoken: this.client.state.cookieCsrfToken,
@@ -174,7 +174,7 @@ export class DirectThreadRepository extends Repository {
 
   public async hide(threadId: string): Promise<StatusResponse> {
     const { body } = await this.client.request.send<StatusResponse>({
-      url: `/api/v1/direct_v2/threads/${threadId}/hide/`,
+      url: `/direct_v2/threads/${threadId}/hide/`,
       method: 'POST',
       form: {
         _csrftoken: this.client.state.cookieCsrfToken,
@@ -187,7 +187,7 @@ export class DirectThreadRepository extends Repository {
 
   public async markItemSeen(threadId: string, threadItemId: string) {
     const { body } = await this.client.request.send<StatusResponse>({
-      url: `/api/v1/direct_v2/threads/${threadId}/items/${threadItemId}/seen/`,
+      url: `/direct_v2/threads/${threadId}/items/${threadItemId}/seen/`,
       method: 'POST',
       form: {
         _csrftoken: this.client.state.cookieCsrfToken,
@@ -221,7 +221,7 @@ export class DirectThreadRepository extends Repository {
     };
 
     const { body } = await this.client.request.send<DirectThreadRepositoryBroadcastResponseRootObject>({
-      url: `/api/v1/direct_v2/threads/broadcast/${options.item}/`,
+      url: `/direct_v2/threads/broadcast/${options.item}/`,
       method: 'POST',
       form: options.signed ? this.client.request.sign(form) : form,
       qs: options.qs,
@@ -231,7 +231,7 @@ export class DirectThreadRepository extends Repository {
 
   public async deleteItem(threadId: string | number, itemId: string | number): Promise<StatusResponse> {
     const { body } = await this.client.request.send({
-      url: `/api/v1/direct_v2/threads/${threadId}/items/${itemId}/delete/`,
+      url: `/direct_v2/threads/${threadId}/items/${itemId}/delete/`,
       method: 'POST',
       form: {
         _csrftoken: this.client.state.cookieCsrfToken,
