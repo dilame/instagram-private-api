@@ -2,6 +2,7 @@ import { IgApiClient } from './client';
 import {
   AccountFollowersFeed,
   AccountFollowingFeed,
+  BestFriendshipsFeed,
   BlockedUsersFeed,
   DirectInboxFeed,
   DirectPendingInboxFeed,
@@ -73,6 +74,10 @@ export class FeedFactory {
 
   public pendingFriendships(): PendingFriendshipsFeed {
     return new PendingFriendshipsFeed(this.client);
+  }
+
+  public bestFriendships(): BestFriendshipsFeed {
+    return new BestFriendshipsFeed(this.client);
   }
 
   public blockedUsers(): BlockedUsersFeed {
