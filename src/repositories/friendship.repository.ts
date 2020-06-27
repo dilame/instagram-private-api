@@ -66,4 +66,23 @@ export class FriendshipRepository extends Repository {
     });
     return body.friendship_status;
   }
+
+  async addAndRemoveBesties(addList?: string[] | number[], removeList?: string[] | number[]) {
+    const { body } = await this.client.request.send({
+      url: `/api/v1/friendships/set_besties/`,
+      method: 'POST',
+      form: this.client.request.sign({
+        _csrftoken: this.client.state.cookieCsrfToken,
+        _uid: this.client.state.cookieUserId,
+        device_id: this.client.state.deviceId,
+        _uuid: this.client.state.uuid,
+        module: 'favorites_home_list',
+        source: 'audience_manager',
+        add: addList,
+        remove: removeList,
+      }),
+    });
+
+    return body;
+  }
 }
