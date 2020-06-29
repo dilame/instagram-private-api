@@ -1,8 +1,12 @@
 export interface FriendshipRepositoryChangeResponseRootObject {
-  friendship_status: FriendshipRepositoryChangeResponseFriendship_status;
+  friendship_status: FriendshipRepositoryResponseFriendship_status;
   status: string;
 }
-export interface FriendshipRepositoryChangeResponseFriendship_status {
+export interface FriendshipBestiesRepositoryResponseRootObject {
+  friendship_statuses: Record<string, FriendshipRepositoryResponseFriendship_status>;
+  status: string;
+}
+export interface FriendshipRepositoryResponseFriendship_status {
   following: boolean;
   followed_by: boolean;
   blocking: boolean;
