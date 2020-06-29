@@ -2,7 +2,7 @@ import { Repository } from '../core/repository';
 import {
   FriendshipRepositoryShowResponseRootObject,
   FriendshipRepositoryChangeResponseRootObject,
-  FriendshipBestiesRepositoryResponseRootObject,
+  FriendshipRepositorySetBestiesResponseRootObject,
 } from '../responses';
 
 export class FriendshipRepository extends Repository {
@@ -72,7 +72,7 @@ export class FriendshipRepository extends Repository {
   }
 
   async addAndRemoveBesties(addList?: string[] | number[], removeList?: string[] | number[]) {
-    const { body } = await this.client.request.send<FriendshipBestiesRepositoryResponseRootObject>({
+    const { body } = await this.client.request.send<FriendshipRepositorySetBestiesResponseRootObject>({
       url: `/api/v1/friendships/set_besties/`,
       method: 'POST',
       form: this.client.request.sign({
