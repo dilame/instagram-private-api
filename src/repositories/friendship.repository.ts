@@ -4,6 +4,7 @@ import {
   FriendshipRepositoryChangeResponseRootObject,
   FriendshipRepositorySetBestiesResponseRootObject,
 } from '../responses';
+import { SetBestiesInput } from '../types';
 
 export class FriendshipRepository extends Repository {
   async show(id: string | number) {
@@ -71,7 +72,7 @@ export class FriendshipRepository extends Repository {
     return body.friendship_status;
   }
 
-  async addAndRemoveBesties(addList?: string[] | number[], removeList?: string[] | number[]) {
+  async setBesties(input: SetBestiesInput = {}) {
     const { body } = await this.client.request.send<FriendshipRepositorySetBestiesResponseRootObject>({
       url: `/api/v1/friendships/set_besties/`,
       method: 'POST',
@@ -82,8 +83,8 @@ export class FriendshipRepository extends Repository {
         _uuid: this.client.state.uuid,
         module: 'favorites_home_list',
         source: 'audience_manager',
-        add: addList,
-        remove: removeList,
+        add: input.add || [],
+        remove: input.remove || [],
       }),
     });
 
