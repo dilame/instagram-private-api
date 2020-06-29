@@ -5,6 +5,7 @@ import {
   FriendshipRepositorySetBestiesResponseRootObject,
 } from '../responses';
 import { SetBestiesInput } from '../types';
+import { IgSetBestiesInputError } from '../errors';
 
 export class FriendshipRepository extends Repository {
   async show(id: string | number) {
@@ -83,11 +84,21 @@ export class FriendshipRepository extends Repository {
         _uuid: this.client.state.uuid,
         module: 'favorites_home_list',
         source: 'audience_manager',
-        add: input.add || [],
-        remove: input.remove || [],
+        add: this.validateSetBestiesArray(input.add),
+        remove: this.validateSetBestiesArray(input.remove),
       }),
     });
 
     return body.friendship_statuses;
+  }
+
+  private validateSetBestiesArray(list: Array<string | number>) {
+    if (!list) {
+      return [];
+    } else if (Array.isArray(list)) {
+      return list;
+    } else {
+      throw new IgSetBestiesInputError();
+    }
   }
 }
