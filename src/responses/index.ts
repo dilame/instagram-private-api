@@ -6,6 +6,7 @@ export * from './blocked-users.feed.response';
 export * from './news.feed.response';
 export * from './discover.feed.response';
 export * from './account-friendships.feed.response';
+export * from './account-friendships-besties.feed.response';
 export * from './account-following.feed.response';
 export * from './challenge.state.response';
 export * from './checkpoint.response';

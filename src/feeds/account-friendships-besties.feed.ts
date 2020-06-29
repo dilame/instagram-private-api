@@ -1,18 +1,18 @@
 import { Expose, plainToClassFromExist } from 'class-transformer';
 import { Feed } from '../core/feed';
-import { BestFriendshipsFeedResponse, BestFriendshipsFeedResponseUsersItem } from '../responses';
+import { BestiesFeedResponse, BestiesFeedResponseUsersItem } from '../responses';
 
-export class BestFriendshipsFeed extends Feed<BestFriendshipsFeedResponse, BestFriendshipsFeedResponseUsersItem> {
+export class BestiesFeed extends Feed<BestiesFeedResponse, BestiesFeedResponseUsersItem> {
   @Expose()
   private nextMaxId: string;
 
-  set state(body: BestFriendshipsFeedResponse) {
+  set state(body: BestiesFeedResponse) {
     this.moreAvailable = !!body.next_max_id;
     this.nextMaxId = body.next_max_id;
   }
 
   async request() {
-    const { body } = await this.client.request.send<BestFriendshipsFeedResponse>({
+    const { body } = await this.client.request.send<BestiesFeedResponse>({
       url: `/api/v1/friendships/besties`,
       qs: {
         rank_token: this.rankToken,
@@ -25,6 +25,6 @@ export class BestFriendshipsFeed extends Feed<BestFriendshipsFeedResponse, BestF
 
   async items() {
     const body = await this.request();
-    return body.users.map(user => plainToClassFromExist(new BestFriendshipsFeedResponseUsersItem(this.client), user));
+    return body.users.map(user => plainToClassFromExist(new BestiesFeedResponseUsersItem(this.client), user));
   }
 }
