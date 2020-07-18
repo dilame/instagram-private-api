@@ -108,6 +108,18 @@ export class DirectThreadEntity extends Entity {
     });
   }
 
+  public async broadcastPost(mediaId: string) {
+    return await this.broadcast({
+      item: 'media_share',
+      form: {
+        media_id: mediaId,
+        carousel_share_child_media_id: mediaId,
+        send_attribution: 'feed_contextual_profile',
+        unified_broadcast_format: 1,
+      },
+    });
+  }
+
   public async broadcastVideo(options: DirectThreadBroadcastVideoOptions) {
     const uploadId = options.uploadId || Date.now().toString();
     const videoInfo = PublishService.getVideoInfo(options.video);
