@@ -12,6 +12,8 @@ export class DirectThreadFeed extends Feed<DirectThreadFeedResponse, DirectThrea
   public seqId: number;
   @Expose()
   public cursor: string;
+  public limit?: number;
+  public defaultLimit = 10;
   set state(body: DirectThreadFeedResponse) {
     this.cursor = body.thread.oldest_cursor;
     this.moreAvailable = body.thread.has_older;
@@ -21,10 +23,10 @@ export class DirectThreadFeed extends Feed<DirectThreadFeedResponse, DirectThrea
       url: `/api/v1/direct_v2/threads/${this.id}/`,
       qs: {
         visual_message_return_type: 'unseen',
-        cursor: opts.cursor ?? this.cursor,
+        cursor: this.cursor ?? this.cursor,
         direction: 'older',
         seq_id: this.seqId,
-        limit: opts.limit ?? 10,
+        limit: this.limit ?? this.defaultLimit,
       },
     });
     this.state = body;
