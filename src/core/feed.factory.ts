@@ -84,16 +84,16 @@ export class FeedFactory {
     return new BlockedUsersFeed(this.client);
   }
 
-  public directInbox(options: { limit: number; thread_message_limit: number }): DirectInboxFeed {
+  public directInbox(options?: { limit: number; thread_message_limit: number }): DirectInboxFeed {
     const feed = new DirectInboxFeed(this.client);
-    feed.limit = options.limit;
+    feed.limit = options?.limit;
     feed.thread_message_limit = options?.thread_message_limit;
     return feed;
   }
 
-  public directPending(options: { limit: number; thread_message_limit: number }): DirectPendingInboxFeed {
+  public directPending(options?: { limit: number; thread_message_limit: number }): DirectPendingInboxFeed {
     const feed = new DirectPendingInboxFeed(this.client);
-    feed.limit = options.limit;
+    feed.limit = options?.limit;
     feed.thread_message_limit = options?.thread_message_limit;
     return feed;
   }
