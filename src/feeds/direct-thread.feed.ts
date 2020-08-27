@@ -17,7 +17,7 @@ export class DirectThreadFeed extends Feed<DirectThreadFeedResponse, DirectThrea
       url: `/api/v1/direct_v2/threads/${this.id}/`,
       qs: {
         visual_message_return_type: 'unseen',
-        cursor: this.cursor ?? this.cursor,
+        cursor: this.cursor,
         direction: 'older',
         seq_id: this.seqId,
         limit: this.limit ?? 10,

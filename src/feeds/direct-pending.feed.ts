@@ -22,7 +22,7 @@ export class DirectPendingInboxFeed extends Feed<DirectInboxFeedResponse, Direct
       url: `/api/v1/direct_v2/pending_inbox/`,
       qs: {
         visual_message_return_type: 'unseen',
-        cursor: this.cursor ?? this.cursor,
+        cursor: this.cursor,
         direction: this.cursor ? 'older' : void 0,
         seq_id: this.seqId,
         thread_message_limit: this.thread_message_limit ?? 10,

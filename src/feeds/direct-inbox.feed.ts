@@ -22,7 +22,7 @@ export class DirectInboxFeed extends Feed<DirectInboxFeedResponse, DirectInboxFe
       url: `/api/v1/direct_v2/inbox/`,
       qs: {
         visual_message_return_type: 'unseen',
-        cursor: this.cursor ?? this.cursor,
+        cursor: this.cursor,
         direction: this.cursor ? 'older' : void 0,
         seq_id: this.seqId,
         thread_message_limit: this.thread_message_limit ?? 10,
