@@ -29,7 +29,7 @@ export class DirectInboxFeed extends Feed<DirectInboxFeedResponse, DirectInboxFe
         seq_id: this.seqId,
         thread_message_limit: this.thread_message_limit ?? this.defaultThreadMessageLimit,
         persistentBadging: true,
-        limit: this.limit ?? this.limit,
+        limit: this.limit ?? this.defaultLimit,
       },
     });
     this.state = body;
