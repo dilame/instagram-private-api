@@ -9,10 +9,8 @@ export class DirectPendingInboxFeed extends Feed<DirectInboxFeedResponse, Direct
   @Expose()
   private seqId: number;
 
-  public limit: number;
-  public defaultLimit = 20;
-  public thread_message_limit: number;
-  public defaultThreadMessageLimit: number;
+  public limit?: number;
+  public thread_message_limit?: number;
   set state(body: DirectInboxFeedResponse) {
     this.moreAvailable = body.inbox.has_older;
     this.seqId = body.seq_id;
@@ -27,9 +25,9 @@ export class DirectPendingInboxFeed extends Feed<DirectInboxFeedResponse, Direct
         cursor: this.cursor ?? this.cursor,
         direction: this.cursor ? 'older' : void 0,
         seq_id: this.seqId,
-        thread_message_limit: this.thread_message_limit ?? this.defaultThreadMessageLimit,
+        thread_message_limit: this.thread_message_limit ?? 10,
         persistentBadging: true,
-        limit: this.limit ?? this.defaultLimit,
+        limit: this.limit ?? 20,
       },
     });
     this.state = body;
