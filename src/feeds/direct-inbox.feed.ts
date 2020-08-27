@@ -3,12 +3,6 @@ import { Feed } from '../core/feed';
 import { DirectInboxFeedResponse, DirectInboxFeedResponseThreadsItem } from '../responses';
 import { DirectThreadEntity } from '../entities';
 
-interface DirectInboxFeedItemsOptions {
-  cursor?: string;
-  thread_message_limit?: number;
-  limit?: number;
-}
-
 export class DirectInboxFeed extends Feed<DirectInboxFeedResponse, DirectInboxFeedResponseThreadsItem> {
   @Expose()
   private cursor: string;
@@ -25,25 +19,25 @@ export class DirectInboxFeed extends Feed<DirectInboxFeedResponse, DirectInboxFe
     this.cursor = body.inbox.oldest_cursor;
   }
 
-  async request(opts?: DirectInboxFeedItemsOptions) {
+  async request() {
     const { body } = await this.client.request.send<DirectInboxFeedResponse>({
       url: `/api/v1/direct_v2/inbox/`,
       qs: {
         visual_message_return_type: 'unseen',
-        cursor: opts.cursor ?? this.cursor,
+        cursor: this.cursor ?? this.cursor,
         direction: this.cursor ? 'older' : void 0,
         seq_id: this.seqId,
         thread_message_limit: this.thread_message_limit ?? this.defaultThreadMessageLimit,
         persistentBadging: true,
-        limit: opts.limit ?? this.limit,
+        limit: this.limit ?? this.limit,
       },
     });
     this.state = body;
     return body;
   }
 
-  async items(opts?: DirectInboxFeedItemsOptions) {
-    const response = await this.request(opts);
+  async items() {
+    const response = await this.request();
     return response.inbox.threads;
   }
 

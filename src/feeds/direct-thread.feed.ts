@@ -2,11 +2,6 @@ import { Expose } from 'class-transformer';
 import { Feed } from '../core/feed';
 import { DirectThreadFeedResponse, DirectThreadFeedResponseItemsItem } from '../responses';
 
-interface DirectThreadFeedItemsOptions {
-  cursor?: string;
-  limit?: number;
-}
-
 export class DirectThreadFeed extends Feed<DirectThreadFeedResponse, DirectThreadFeedResponseItemsItem> {
   public id: string;
   public seqId: number;
@@ -18,7 +13,7 @@ export class DirectThreadFeed extends Feed<DirectThreadFeedResponse, DirectThrea
     this.cursor = body.thread.oldest_cursor;
     this.moreAvailable = body.thread.has_older;
   }
-  async request(opts?: DirectThreadFeedItemsOptions) {
+  async request() {
     const { body } = await this.client.request.send<DirectThreadFeedResponse>({
       url: `/api/v1/direct_v2/threads/${this.id}/`,
       qs: {
@@ -33,8 +28,8 @@ export class DirectThreadFeed extends Feed<DirectThreadFeedResponse, DirectThrea
     return body;
   }
 
-  async items(opts?: DirectThreadFeedItemsOptions) {
-    const response = await this.request(opts);
+  async items() {
+    const response = await this.request();
     return response.thread.items;
   }
 }
