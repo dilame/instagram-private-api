@@ -6,6 +6,9 @@ export class UserStoryFeed extends Feed<UserStoryFeedResponseRootObject, UserSto
 
   async items(): Promise<UserStoryFeedResponseItemsItem[]> {
     const response = await this.request();
+    if (!response.reel) {
+      return [];
+    }
     return response.reel.items;
   }
 
