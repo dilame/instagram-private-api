@@ -130,6 +130,22 @@ export class MediaRepository extends Repository {
     });
   }
 
+  public async likeComment(commentId: string) {
+    const { body } = await this.client.request.send({
+      url: `/api/v1/media/${commentId}/comment_like/`,
+      method: 'POST',
+    });
+    return body;
+  }
+
+  public async unlikeComment(commentId: string) {
+    const { body } = await this.client.request.send({
+      url: `/api/v1/media/${commentId}/comment_unlike/`,
+      method: 'POST',
+    });
+    return body;
+  }
+
   /**
    * Normally, this is requested before each comment is sent to ensure it isn't spam or hateful
    * @param commentText
