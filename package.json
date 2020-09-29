@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
-    "dist"
+    "*"
   ],
   "license": "MIT",
   "engines": {
@@ -17,7 +17,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Antoxa1081/instagram-private-api.git"
+    "url": "https://github.com/dilame/instagram-private-api.git"
   },
   "homepage": "https://github.com/Antoxa1081/instagram-private-api",
   "scripts": {
@@ -26,6 +26,7 @@
     "lint": "tslint -p tsconfig.json -c tslint.json",
     "typecheck": "tsc -p tsconfig.build.json --noEmit",
     "prepare": "npm run build",
+    "postinstall": "npm run build",
     "test": "mocha --inline-diffs --timeout 1000000 tests/run.js",
     "ts-node-test": "ts-node test.ts",
     "generate-interface": "ts-node ./tools/response-to-interface.ts",
