@@ -3,12 +3,16 @@ import {
   AccountFollowersFeed,
   AccountFollowingFeed,
   BestiesFeed,
+  ArchivedStoriesFeed,
+  ArchivedPostsFeed,
   BlockedUsersFeed,
   DirectInboxFeed,
   DirectPendingInboxFeed,
   DirectThreadFeed,
   DiscoverFeed,
-  PostsInsightsFeed,
+  IgtvBrowseFeed,
+  IgtvChannelFeed,
+  LikedFeed,
   LocationFeed,
   MediaCommentsFeed,
   MusicGenreFeed,
@@ -17,6 +21,7 @@ import {
   MusicTrendingFeed,
   NewsFeed,
   PendingFriendshipsFeed,
+  PostsInsightsFeed,
   ReelsMediaFeed,
   ReelsTrayFeed,
   SavedFeed,
@@ -26,28 +31,25 @@ import {
   TimelineFeed,
   UserFeed,
   UsertagsFeed,
-  IgtvBrowseFeed,
-  IgtvChannelFeed,
-  LikedFeed,
 } from '../feeds';
-import { DirectInboxFeedResponseThreadsItem } from '../responses';
-import { plainToClassFromExist } from 'class-transformer';
-import * as Chance from 'chance';
-import { PostsInsightsFeedOptions, TimelineFeedReason, IgAppModule } from '../types';
-import { UserStoryFeed } from '../feeds/user-story.feed';
-import { ListReelMediaViewerFeed } from '../feeds/list-reel-media-viewer.feed';
-import { MediaInlineChildCommentsFeed } from '../feeds/media.inline-child-comments.feed';
-import { MediaStickerResponsesFeed } from '../feeds/media.sticker-responses.feed';
 import {
-  StorySliderVotersFeedResponseResponseRootObject,
-  StorySliderVotersFeedResponseResponseVotersItem,
+  DirectInboxFeedResponseThreadsItem,
+  StoryPollVotersFeedResponseRootObject,
+  StoryPollVotersFeedResponseVotersItem,
   StoryQuestionResponsesFeedResponseRespondersItem,
   StoryQuestionResponsesFeedResponseRootObject,
   StoryQuizParticipantsFeedResponseParticipantsItem,
   StoryQuizParticipantsFeedResponseRootObject,
-  StoryPollVotersFeedResponseRootObject,
-  StoryPollVotersFeedResponseVotersItem,
+  StorySliderVotersFeedResponseResponseRootObject,
+  StorySliderVotersFeedResponseResponseVotersItem,
 } from '../responses';
+import { plainToClassFromExist } from 'class-transformer';
+import * as Chance from 'chance';
+import { IgAppModule, PostsInsightsFeedOptions, TimelineFeedReason } from '../types';
+import { UserStoryFeed } from '../feeds/user-story.feed';
+import { ListReelMediaViewerFeed } from '../feeds/list-reel-media-viewer.feed';
+import { MediaInlineChildCommentsFeed } from '../feeds/media.inline-child-comments.feed';
+import { MediaStickerResponsesFeed } from '../feeds/media.sticker-responses.feed';
 
 export class FeedFactory {
   constructor(private client: IgApiClient) {}
@@ -107,6 +109,14 @@ export class FeedFactory {
     const feed = new UserFeed(this.client);
     feed.id = id;
     return feed;
+  }
+
+  public archivedStories(): any {
+    return new ArchivedStoriesFeed(this.client);
+  }
+
+  public archivedPosts(): any {
+    return new ArchivedPostsFeed(this.client);
   }
 
   public tag(tag: string): TagFeed {
