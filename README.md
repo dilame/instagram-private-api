@@ -31,7 +31,21 @@ The new version is hosted in private repository. Access is paid.
 Members get **basic** support for installation, configuration, and usage.
 We also will try to react on your feature requests.
 
-You can write me in [telegram](https://tele.click/bowzee) or [email](mailto:dilame.bowzee@gmail.com) for details.
+You can contact me in [telegram](https://t.me/bowzee) or [email](mailto:dilame.bowzee@gmail.com) for details.
+
+# AD: SaaS Instagram API
+
+Excited to announce SaaS Instagram API
+http://open.igpapi.com/
+
+It uses OpenAPI specification, so you can generate SDK for any programming language in several minutes.
+
+You can use it right in the browser without need to have a server.
+
+You can even use it in React Native. Yes, without bridges.
+
+It's free for a while, until it's stable. The function set is poor now, because, to be honest i'm not sure if there's a demand for it.
+So if you would like to use it, have feature-requests or bug reports - please [contact me](https://t.me/bowzee) - i'll implement things you need very fast.
 
 # Table of Contents
 
