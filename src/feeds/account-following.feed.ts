@@ -3,6 +3,12 @@ import { Feed } from '../core/feed';
 import { AccountFollowingFeedResponse, AccountFollowingFeedResponseUsersItem } from '../responses';
 
 export class AccountFollowingFeed extends Feed<AccountFollowingFeedResponse, AccountFollowingFeedResponseUsersItem> {
+  searchSurface?: string;
+  order?: 'default' | 'date_followed_latest' | 'date_followed_earliest' = 'default';
+  query = '';
+  enableGroups = true;
+  includesHashtags = true;
+
   id: number | string;
   @Expose()
   private nextMaxId: string;
@@ -18,6 +24,11 @@ export class AccountFollowingFeed extends Feed<AccountFollowingFeedResponse, Acc
       qs: {
         rank_token: this.rankToken,
         max_id: this.nextMaxId,
+        search_surface: this.searchSurface,
+        order: this.order,
+        query: this.query,
+        enable_groups: this.enableGroups,
+        includes_hashtags: this.includesHashtags,
       },
     });
     this.state = body;

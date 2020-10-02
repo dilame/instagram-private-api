@@ -62,10 +62,16 @@ export class FeedFactory {
     });
   }
 
-  public accountFollowing(id?: string | number): AccountFollowingFeed {
-    const feed = new AccountFollowingFeed(this.client);
-    feed.id = id || this.client.state.cookieUserId;
-    return feed;
+  public accountFollowing(
+    id?: string | number,
+    options?: Partial<
+      Pick<AccountFollowingFeed, 'searchSurface' | 'order' | 'query' | 'enableGroups' | 'includesHashtags'>
+    >,
+  ): AccountFollowingFeed {
+    return plainToClassFromExist(new AccountFollowingFeed(this.client), {
+      ...options,
+      id: id || this.client.state.cookieUserId,
+    });
   }
 
   public news(): NewsFeed {
