@@ -52,16 +52,30 @@ import {
 export class FeedFactory {
   constructor(private client: IgApiClient) {}
 
-  public accountFollowers(id?: string | number): AccountFollowersFeed {
-    const feed = new AccountFollowersFeed(this.client);
-    feed.id = id || this.client.state.cookieUserId;
-    return feed;
+  public accountFollowers(
+    options?:
+      | string
+      | number
+      | Partial<Pick<AccountFollowersFeed, 'searchSurface' | 'order' | 'query' | 'enableGroups' | 'id'>>,
+  ): AccountFollowersFeed {
+    return plainToClassFromExist(new AccountFollowersFeed(this.client), {
+      id: options && typeof options !== 'object' ? options : this.client.state.cookieUserId,
+      ...(typeof options === 'object' ? options : undefined),
+    });
   }
 
-  public accountFollowing(id?: string | number): AccountFollowingFeed {
-    const feed = new AccountFollowingFeed(this.client);
-    feed.id = id || this.client.state.cookieUserId;
-    return feed;
+  public accountFollowing(
+    options?:
+      | string
+      | number
+      | Partial<
+          Pick<AccountFollowingFeed, 'searchSurface' | 'order' | 'query' | 'enableGroups' | 'includesHashtags' | 'id'>
+        >,
+  ): AccountFollowingFeed {
+    return plainToClassFromExist(new AccountFollowingFeed(this.client), {
+      id: options && typeof options !== 'object' ? options : this.client.state.cookieUserId,
+      ...(typeof options === 'object' ? options : undefined),
+    });
   }
 
   public news(): NewsFeed {

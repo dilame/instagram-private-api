@@ -3,6 +3,14 @@ import { Feed } from '../core/feed';
 import { AccountFollowersFeedResponse, AccountFollowersFeedResponseUsersItem } from '../responses';
 
 export class AccountFollowersFeed extends Feed<AccountFollowersFeedResponse, AccountFollowersFeedResponseUsersItem> {
+  searchSurface?: string;
+  /**
+   * only 'default' seems to work
+   */
+  order?: 'default' = 'default';
+  query = '';
+  enableGroups = true;
+
   id: number | string;
   @Expose()
   private nextMaxId: string;
@@ -17,6 +25,10 @@ export class AccountFollowersFeed extends Feed<AccountFollowersFeedResponse, Acc
       url: `/api/v1/friendships/${this.id}/followers/`,
       qs: {
         max_id: this.nextMaxId,
+        search_surface: this.searchSurface,
+        order: this.order,
+        query: this.query,
+        enable_groups: this.enableGroups,
       },
     });
     this.state = body;
