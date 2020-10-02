@@ -90,4 +90,24 @@ export class FriendshipRepository extends Repository {
 
     return body.friendship_statuses;
   }
+
+  async mutePostsOrStoryFromFollow(options: {
+    mediaId?: string;
+    targetReelAuthorId?: string;
+    targetPostsAuthorId?: string;
+  }): Promise<FriendshipRepositoryChangeResponseRootObject> {
+    const { body } = await this.client.request.send({
+      url: `/api/v1/friendships/mute_posts_or_story_from_follow/`,
+      method: 'POST',
+      form: {
+        _csrftoken: this.client.state.cookieCsrfToken,
+        _uid: this.client.state.cookieUserId,
+        _uuid: this.client.state.uuid,
+        media_id: options.mediaId,
+        target_reel_author_id: options.targetReelAuthorId,
+        target_posts_author_id: options.targetPostsAuthorId,
+      },
+    });
+    return body;
+  }
 }
