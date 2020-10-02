@@ -53,24 +53,28 @@ export class FeedFactory {
   constructor(private client: IgApiClient) {}
 
   public accountFollowers(
-    id?: string | number,
-    options?: Partial<Pick<AccountFollowersFeed, 'searchSurface' | 'order' | 'query' | 'enableGroups'>>,
+    options?:
+      | string
+      | number
+      | Partial<Pick<AccountFollowersFeed, 'searchSurface' | 'order' | 'query' | 'enableGroups' | 'id'>>,
   ): AccountFollowersFeed {
     return plainToClassFromExist(new AccountFollowersFeed(this.client), {
-      ...options,
-      id: id || this.client.state.cookieUserId,
+      id: options && typeof options !== 'object' ? options : this.client.state.cookieUserId,
+      ...(typeof options === 'object' ? options : undefined),
     });
   }
 
   public accountFollowing(
-    id?: string | number,
-    options?: Partial<
-      Pick<AccountFollowingFeed, 'searchSurface' | 'order' | 'query' | 'enableGroups' | 'includesHashtags'>
-    >,
+    options?:
+      | string
+      | number
+      | Partial<
+          Pick<AccountFollowingFeed, 'searchSurface' | 'order' | 'query' | 'enableGroups' | 'includesHashtags' | 'id'>
+        >,
   ): AccountFollowingFeed {
     return plainToClassFromExist(new AccountFollowingFeed(this.client), {
-      ...options,
-      id: id || this.client.state.cookieUserId,
+      id: options && typeof options !== 'object' ? options : this.client.state.cookieUserId,
+      ...(typeof options === 'object' ? options : undefined),
     });
   }
 
