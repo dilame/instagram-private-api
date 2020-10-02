@@ -11,7 +11,9 @@ const shttps = require('socks-proxy-agent'); // you should install SOCKS5 client
     // @ts-ignore
     hostname: '127.0.0.1', // proxy hostname
     port: 8000, // proxy port
-    protocol: 'socks:' // supported: 'socks:' , 'socks4:' , 'socks4a:' , 'socks5:' , 'socks5h:'
+    protocol: 'socks:', // supported: 'socks:' , 'socks4:' , 'socks4a:' , 'socks5:' , 'socks5h:'
+    //username: 'myProxyUser', // proxy username, optional
+    //password: 'myProxyPassword123', // proxy password, optional
   };
   // Now we can perform authorization using our SOCKS5 proxy.
   const auth = await ig.account.login(process.env.IG_USERNAME, process.env.IG_PASSWORD);

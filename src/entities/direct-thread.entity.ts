@@ -1,4 +1,4 @@
-import * as urlRegex from 'url-regex';
+import * as urlRegex from 'url-regex-safe';
 import { Entity } from '../core/entity';
 import {
   DirectThreadBroadcastPhotoOptions,

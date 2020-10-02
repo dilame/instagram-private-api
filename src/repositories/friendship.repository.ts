@@ -90,4 +90,40 @@ export class FriendshipRepository extends Repository {
 
     return body.friendship_statuses;
   }
+
+  mutePostsOrStoryFromFollow(options: {
+    mediaId?: string;
+    targetReelAuthorId?: string;
+    targetPostsAuthorId?: string;
+  }): Promise<FriendshipRepositoryChangeResponseRootObject> {
+    return this.changeMuteFromFollow('mute', {
+      media_id: options.mediaId,
+      target_reel_author_id: options.targetReelAuthorId,
+      target_posts_author_id: options.targetPostsAuthorId,
+    });
+  }
+
+  unmutePostsOrStoryFromFollow(options: {
+    targetReelAuthorId?: string;
+    targetPostsAuthorId?: string;
+  }): Promise<FriendshipRepositoryChangeResponseRootObject> {
+    return this.changeMuteFromFollow('unmute', {
+      target_reel_author_id: options.targetReelAuthorId,
+      target_posts_author_id: options.targetPostsAuthorId,
+    });
+  }
+
+  private async changeMuteFromFollow(mode: 'mute' | 'unmute', options: Record<string, any>) {
+    const { body } = await this.client.request.send({
+      url: `/api/v1/friendships/${mode}_posts_or_story_from_follow/`,
+      method: 'POST',
+      form: {
+        _csrftoken: this.client.state.cookieCsrfToken,
+        _uid: this.client.state.cookieUserId,
+        _uuid: this.client.state.uuid,
+        ...options,
+      },
+    });
+    return body;
+  }
 }
