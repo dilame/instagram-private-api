@@ -52,10 +52,14 @@ import {
 export class FeedFactory {
   constructor(private client: IgApiClient) {}
 
-  public accountFollowers(id?: string | number): AccountFollowersFeed {
-    const feed = new AccountFollowersFeed(this.client);
-    feed.id = id || this.client.state.cookieUserId;
-    return feed;
+  public accountFollowers(
+    id?: string | number,
+    options?: Partial<Pick<AccountFollowersFeed, 'searchSurface' | 'order' | 'query' | 'enableGroups'>>,
+  ): AccountFollowersFeed {
+    return plainToClassFromExist(new AccountFollowersFeed(this.client), {
+      ...options,
+      id: id || this.client.state.cookieUserId,
+    });
   }
 
   public accountFollowing(id?: string | number): AccountFollowingFeed {
