@@ -29,6 +29,7 @@ import {
   IgtvBrowseFeed,
   IgtvChannelFeed,
   LikedFeed,
+  TopicalExploreFeed,
 } from '../feeds';
 import { DirectInboxFeedResponseThreadsItem } from '../responses';
 import { plainToClassFromExist } from 'class-transformer';
@@ -316,5 +317,11 @@ export class FeedFactory {
 
   public liked(): LikedFeed {
     return new LikedFeed(this.client);
+  }
+
+  public topicalExplore(
+    options: Partial<Pick<TopicalExploreFeed, 'sessionId' | 'clusterId' | 'lat' | 'lng' | 'module'>> = {},
+  ): TopicalExploreFeed {
+    return plainToClassFromExist(new TopicalExploreFeed(this.client), options);
   }
 }

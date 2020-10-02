@@ -100,3 +100,4 @@ export * from './story-slider-voters.feed.response.response';
 export * from './igtv.channel.feed.response';
 export * from './igtv.search.response';
 export * from './liked.feed.response';
+export * from './topical-explore.feed.response';
