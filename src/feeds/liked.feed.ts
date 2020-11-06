@@ -16,7 +16,7 @@ export class LikedFeed extends Feed<LikedFeedResponseRootObject, LikedFeedRespon
       url: `/api/v1/feed/liked/`,
       method: 'GET',
       qs: {
-        maxId: this.maxId,
+        max_id: this.maxId,
       },
     });
     this.state = body;
