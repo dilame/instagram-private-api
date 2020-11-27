@@ -13,7 +13,7 @@ export class AccountFollowersFeed extends Feed<AccountFollowersFeedResponse, Acc
 
   id: number | string;
   @Expose()
-  private nextMaxId: string;
+  public nextMaxId: string;
 
   set state(body: AccountFollowersFeedResponse) {
     this.moreAvailable = !!body.next_max_id;
