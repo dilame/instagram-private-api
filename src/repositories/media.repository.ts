@@ -779,4 +779,28 @@ export class MediaRepository extends Repository {
     });
     return body;
   }
+  
+  private async storyCountdownAction(
+    countdownId: string | number,
+    action: string,
+  ): Promise<StatusResponse> {
+    const { body } = await this.client.request.send({
+      url: `/api/v1/media/${countdownId}/${action}/`,
+      method: 'POST',
+      form: this.client.request.sign({
+        _csrftoken: this.client.state.cookieCsrfToken,
+        _uid: this.client.state.cookieUserId,
+        _uuid: this.client.state.uuid
+      }),
+    });
+    return body;
+  }
+  
+  public async storyCountdownFollow(countdownId: string | number) {
+    return this.storyCountdownAction(countdownId, 'follow_story_countdown');
+  }
+  
+  public async storyCountdownUnfollow(countdownId: string | number) {
+    return this.storyCountdownAction(countdownId, 'unfollow_story_countdown');
+  }
 }
