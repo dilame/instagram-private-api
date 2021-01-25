@@ -56,6 +56,7 @@ export interface SavedFeedResponseMedia {
   view_count?: number;
   carousel_media_count?: number;
   carousel_media?: SavedFeedResponseCarouselMediaItem[];
+  location?: SavedFeedResponseLocation;
 }
 export interface SavedFeedResponseImage_versions2 {
   candidates: SavedFeedResponseCandidatesItem[];
@@ -199,4 +200,15 @@ export interface SavedFeedResponseCarouselMediaItem {
   video_dash_manifest?: string;
   video_codec?: string;
   number_of_qualities?: number;
+}
+export interface SavedFeedResponseLocation {
+  pk: number;
+  name: string;
+  address: string;
+  city: string;
+  short_name: string;
+  lng: number;
+  lat: number;
+  external_source: string;
+  facebook_places_id: number;
 }
