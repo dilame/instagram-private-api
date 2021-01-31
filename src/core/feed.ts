@@ -68,9 +68,9 @@ export abstract class Feed<Response = any, Item = any> extends Repository {
 
   protected abstract set state(response: Response);
 
-  abstract async request(...args: any[]): Promise<Response>;
+  abstract request(...args: any[]): Promise<Response>;
 
-  abstract async items(): Promise<Item[]>;
+  abstract items(): Promise<Item[]>;
 
   public serialize() {
     return serialize(this, { strategy: 'excludeAll' });
