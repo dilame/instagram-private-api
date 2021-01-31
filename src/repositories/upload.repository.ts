@@ -208,6 +208,10 @@ export class UploadRepository extends Repository {
     if (options.isSidecar) {
       ruploadParams.is_sidecar = '1';
     }
+    if (options.broadcastId) {
+      ruploadParams.broadcast_id = options.broadcastId;
+      ruploadParams.is_post_live_igtv = '1';
+    }
     return ruploadParams;
   }
 
