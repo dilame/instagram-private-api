@@ -3,7 +3,7 @@ import {IgApiClient, LiveEntity} from '../src';
 import Bluebird = require('bluebird');
 const pngToJpeg = require('png-to-jpeg')
 const sharp = require('sharp');
-const https = require('https');
+const axios = require('axios');
 
 const ig = new IgApiClient();
 
@@ -67,54 +67,30 @@ async function login() {
     await ig.live.endBroadcast(broadcast_id);
 
     // Get live thumbnails, required to post on IGTV
-    let data = await ig.live.getPostLiveThumbnails(broadcast_id)
+    let data = await ig.live.getPostLiveThumbnails(broadcast_id);
 
-    // Download any thumb
-    let file = await new Promise((resolve) => https.get(data.thumbnails[0], (download) => {
-        let ds = [];
-        download.on("data", (d) => ds.push(d));
-        download.on("end", () => resolve(Buffer.concat(ds)))
-    }))
+    // Use an HTTP client to download any thumb
+    let {data: file} = await axios.get(data.thumbnails[0], {responseType: 'arraybuffer'});
 
-    // (optional) Resize thumb to a vertical one
+    // (optional) Resize thumb to a vertical one and convert to jpg
     file = await sharp(file)
-        .resize(720, 1280)
-        .png()
-        .toBuffer()
-
-    // It will be a png, it must be converted to jpg
-    file = await pngToJpeg({quality: 100})(file)
+        .resize({width: 720, height: 1280})
+        .jpeg({
+            quality: 100,
+        })
+        .toBuffer();
 
     // Upload the thumbnail with a broadcast id for a replay and get uploadId
-    let upload = await ig.upload.photo({file, broadcastId: broadcast_id})
+    let upload = await ig.upload.photo({file, broadcastId: broadcast_id});
 
-    let igtv = null
-    let currentRetry = 0
-    let maxRetry = 3
-    let retryDelay = 4
-    while (!igtv) {
-        // This endpoint can return an error "202 Accepted; Transcode not finished yet" if Instagram has not finished to process the previous upload, so retry later in this case
-        try {
-            igtv = await ig.media.configureToIgtv({
-                upload_id: upload.upload_id,
-                title: 'A title',
-                caption: 'A description',
-                igtv_share_preview_to_feed: '1',
-            })
+    let igtv = await ig.media.configureToIgtv({
+        upload_id: upload.upload_id,
+        title: 'A title',
+        caption: 'A description',
+        igtv_share_preview_to_feed: '1',
+    }, 2000)
 
-            console.log(`Live posted to IGTV : ${igtv.upload_id}`))
-        } catch (e) {
-            currentRetry++
-            if (currentRetry > maxRetry) {
-                throw e
-            } else {
-                await (new Promise(resolve => {
-                  setTimeout(resolve, currentRetry * retryDelay)
-                }))
-            }
-        }
-    }
-
+    console.log(`Live posted to IGTV : ${igtv.upload_id}`));
     // now you're basically done
 })();
 
