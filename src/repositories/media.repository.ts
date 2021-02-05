@@ -30,7 +30,6 @@ import { MediaRepositoryConfigureResponseRootObject } from '../responses';
 import Chance = require('chance');
 import { MediaRepositoryCheckOffensiveCommentResponseRootObject } from '../responses';
 import { StoryMusicQuestionResponse, StoryTextQuestionResponse } from '../types/story-response.options';
-import { IgResponseError } from "../errors";
 
 export class MediaRepository extends Repository {
   public async info(mediaId: string): Promise<MediaInfoResponseRootObject> {
@@ -577,7 +576,7 @@ export class MediaRepository extends Repository {
     return body;
   }
 
-  public async configureToIgtv(options: MediaConfigureToIgtvOptions, retryDelay: number = 1000) {
+  public async configureToIgtv(options: MediaConfigureToIgtvOptions) {
     const form: MediaConfigureToIgtvOptions = defaultsDeep(options, {
       caption: '',
       date_time_original: new Date().toISOString().replace(/[-:]/g, ''),
@@ -600,38 +599,24 @@ export class MediaRepository extends Repository {
     const retryContext = options.retryContext;
     delete form.retryContext;
 
-    let body = null;
-    let response = null;
-    while (!body) {
-      try {
-        response = await this.client.request.send({
-          url: '/api/v1/media/configure_to_igtv/',
-          method: 'POST',
-          qs: {
-            video: '1',
-          },
-          headers: {
-            is_igtv_video: '1',
-            retry_context: JSON.stringify(retryContext),
-          },
-          form: this.client.request.sign({
-            ...form,
-            _csrftoken: this.client.state.cookieCsrfToken,
-            _uid: this.client.state.cookieUserId,
-            _uuid: this.client.state.uuid,
-          }),
-        });
+    const { body } = await this.client.request.send({
+      url: '/api/v1/media/configure_to_igtv/',
+      method: 'POST',
+      qs: {
+        video: '1',
+      },
+      headers: {
+        is_igtv_video: '1',
+        retry_context: JSON.stringify(retryContext),
+      },
+      form: this.client.request.sign({
+        ...form,
+        _csrftoken: this.client.state.cookieCsrfToken,
+        _uid: this.client.state.cookieUserId,
+        _uuid: this.client.state.uuid,
+      }),
+    });
 
-        body = response.body;
-      } catch (e) {
-        // Endpoint can return an error "202 Accepted; Transcode not finished yet" if Instagram has not finished to process the upload, retry after a delay
-        if (!(e instanceof IgResponseError && e.response.statusCode === 202)) {
-          throw e;
-        } else {
-          await new Promise(resolve => setTimeout(resolve, retryDelay));
-        }
-      }
-    }
     return body;
   }
 

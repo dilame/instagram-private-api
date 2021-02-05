@@ -2,7 +2,7 @@ export interface MediaConfigureToIgtvOptions {
   upload_id: string;
   title: string;
   length: number;
-  extra: { source_width: number; source_height: number };
+  extra?: { source_width: number; source_height: number };
   caption?: string;
   // will be converted to a json-string
   feed_preview_crop?:

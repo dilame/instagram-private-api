@@ -81,16 +81,15 @@ async function login() {
         .toBuffer();
 
     // Upload the thumbnail with a broadcast id for a replay and get uploadId
-    let upload = await ig.upload.photo({file, broadcastId: broadcast_id});
-
-    let igtv = await ig.media.configureToIgtv({
-        upload_id: upload.upload_id,
+    let igtv = await ig.publish.liveIgtv({
+        file,
+        broadcastId: broadcast_id,
         title: 'A title',
         caption: 'A description',
-        igtv_share_preview_to_feed: '1',
-    }, 2000)
+        igtv_share_preview_to_feed: '1'
+    });
 
-    console.log(`Live posted to IGTV : ${igtv.upload_id}`));
+    console.log(`Live posted to IGTV : ${igtv.upload_id}`);
     // now you're basically done
 })();
 
