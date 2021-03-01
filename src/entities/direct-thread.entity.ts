@@ -1,4 +1,3 @@
-import * as urlRegex from 'url-regex-safe';
 import { Entity } from '../core/entity';
 import {
   DirectThreadBroadcastPhotoOptions,
@@ -24,10 +23,19 @@ export class DirectThreadEntity extends Entity {
     return this.client.directThread.deleteItem(this.threadId, itemId);
   }
 
-  public async broadcastText(text: string) {
-    const urls = text.match(urlRegex({ strict: false }));
-    if (urls instanceof Array) {
-      return this.broadcastLink(text, urls);
+  /**
+   * Sends a text message to the thread. If the message contains links, these links will be properly displayed (turn off with {@param skipLinkCheck})
+   *
+   * @param text - The text to send
+   * @param skipLinkCheck - May be omitted; skips checking for links.
+   * This was added to only require `url-regex-safe` if it's necessary as it may cause problems (See #1328).
+   */
+  public async broadcastText(text: string, skipLinkCheck?: boolean) {
+    if (!skipLinkCheck) {
+      const urls = text.match(require('url-regex-safe')({ strict: false }));
+      if (urls instanceof Array) {
+        return this.broadcastLink(text, urls);
+      }
     }
     return await this.broadcast({
       item: 'text',
