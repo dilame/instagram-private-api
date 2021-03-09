@@ -678,10 +678,17 @@ export class MediaRepository extends Repository {
   }
 
   // tip: id = savedFeed.items()[0].media.id
-  public async save(mediaId: string) {
+  public async save(mediaId: string, collections_ids: string[] = []) {
     const { body } = await this.client.request.send({
       url: `/api/v1/media/${mediaId}/save/`,
       method: 'POST',
+      form: this.client.request.sign({
+        added_collection_ids: collections_ids.length !== 0 ? JSON.stringify(collections_ids) : undefined,
+        _uuid: this.client.state.uuid,
+        _uid: this.client.state.cookieUserId,
+        _csrftoken: this.client.state.cookieCsrfToken,
+        device_id: this.client.state.deviceId,
+      }),
     });
     return body;
   }
