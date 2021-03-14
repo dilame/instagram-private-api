@@ -702,10 +702,26 @@ export class MediaRepository extends Repository {
     return body;
   }
 
-  async unsave(mediaId: string) {
+  /**
+   * unsave a media, or remove saved media form collection if you pass the collection ids in array
+   * @param {string} mediaId - The mediaId of the post
+   * @param {string[]} [collection_ids] - Optional, The array of collection ids if you want to remove the saved media from these specific collection
+   * Example:
+   * unsave("2524149952724070925_1829855275") unsave media
+   * unsave("2524149952724070925_1829855275", ["17865977635619975"]) remove the saved media in 1 collection if it exists in it
+   * unsave("2524149952724070925_1829855275", ["17865977635619975", "17845997638619928"]) remove the saved media in 2 collections if it exists in it
+   */
+  async unsave(mediaId: string, collection_ids?: string[]) {
     const { body } = await this.client.request.send({
-      url: `/api/v1/media/${mediaId}/unsave/`,
+      url: `/api/v1/media/${mediaId}/${collection_ids ? 'save' : 'unsave'}/`,
       method: 'POST',
+      form: this.client.request.sign({
+        removed_collection_ids: collection_ids ? JSON.stringify(collection_ids) : undefined,
+        _uuid: this.client.state.uuid,
+        _uid: this.client.state.cookieUserId,
+        _csrftoken: this.client.state.cookieCsrfToken,
+        device_id: this.client.state.deviceId,
+      }),
     });
     return body;
   }
