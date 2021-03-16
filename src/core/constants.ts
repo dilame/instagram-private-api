@@ -1,5 +1,5 @@
-export const APP_VERSION = '121.0.0.29.119';
-export const APP_VERSION_CODE = '185203708';
+export const APP_VERSION = '177.0.0.30.119';
+export const APP_VERSION_CODE = '276028017';
 export const SIGNATURE_KEY = '9193488027538fd3450b83b7d05286d4ca9599a0f7eeed90d8c85925698a05dc';
 export const BREADCRUMB_KEY = 'iN4$aGr0m';
 export const SIGNATURE_VERSION = '4';
