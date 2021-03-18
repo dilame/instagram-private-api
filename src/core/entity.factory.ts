@@ -1,14 +1,12 @@
 import { Repository } from './repository';
 import { DirectThreadEntity, ProfileEntity } from '../entities';
+import { DirectThreadFeedResponseThread } from 'src/responses';
 
 export class EntityFactory extends Repository {
-  public directThread(id: string | string[]): DirectThreadEntity {
+  public directThread(threadResp: DirectThreadFeedResponseThread): DirectThreadEntity {
     const thread = new DirectThreadEntity(this.client);
-    if (id instanceof Array) {
-      thread.userIds = id;
-    } else {
-      thread.threadId = id;
-    }
+    thread.userIds = threadResp.users.map(user => user.username);
+    thread.threadId = threadResp.thread_id;
     return thread;
   }
 
