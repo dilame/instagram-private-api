@@ -8,11 +8,11 @@ export class SimulateService extends Repository {
       () => this.client.account.readMsisdnHeader(),
       () => this.client.account.msisdnHeaderBootstrap('ig_select_app'),
       () => this.client.zr.tokenResult(),
-      () => this.client.account.contactPointPrefill('prefill'),
+      () => this.client.account.contactPointPrefill('prefill').catch(() => undefined),
       () => this.client.launcher.preLoginSync(),
       () => this.client.qe.syncLoginExperiments(),
       () => this.client.attribution.logAttribution(),
-      () => this.client.account.getPrefillCandidates(),
+      () => this.client.account.getPrefillCandidates().catch(() => undefined),
     ];
   }
 
