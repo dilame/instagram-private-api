@@ -33,13 +33,12 @@ export class AccountRepository extends Repository {
         url: '/api/v1/accounts/login/',
         form: this.client.request.sign({
           username,
-          password,
           enc_password: `#PWD_INSTAGRAM:4:${time}:${encrypted}`,
           guid: this.client.state.uuid,
           phone_id: this.client.state.phoneId,
           _csrftoken: this.client.state.cookieCsrfToken,
           device_id: this.client.state.deviceId,
-          adid: '' /*this.client.state.adid ? not set on pre-login*/,
+          adid: this.client.state.adid,
           google_tokens: '[]',
           login_attempt_count: 0,
           country_codes: JSON.stringify([{ country_code: '1', source: 'default' }]),
@@ -308,8 +307,9 @@ export class AccountRepository extends Repository {
       method: 'POST',
       url: '/api/v1/accounts/contact_point_prefill/',
       form: this.client.request.sign({
-        mobile_subno_usage: usage,
-        device_id: this.client.state.uuid,
+        phone_id: this.client.state.phoneId,
+        _csrftoken: this.client.state.cookieCsrfToken,
+        usage,
       }),
     });
     return body;
