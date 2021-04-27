@@ -11,7 +11,7 @@ import { defaults } from 'lodash';
 import * as Chance from 'chance';
 
 export class UserRepository extends Repository {
-  async infoByUserId(id: number): Promise<UserRepositoryInfoResponseUser> {
+  async info(id: string | number): Promise<UserRepositoryInfoResponseUser> {
     const { body } = await this.client.request.send<UserRepositoryInfoResponseRootObject>({
       url: `/api/v1/users/${id}/info/`,
     });
