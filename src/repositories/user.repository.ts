@@ -13,7 +13,7 @@ import * as Chance from 'chance';
 export class UserRepository extends Repository {
   async info(id: string | number): Promise<UserRepositoryInfoResponseUser> {
     const { body } = await this.client.request.send<UserRepositoryInfoResponseRootObject>({
-      url: `/api/v1/users/${id}/info/`,
+      url: `/api/v1/users/${id}/${typeof(id)==='number'?'/info/':'/usernameinfo/'}`,
     });
     return body.user;
   }
