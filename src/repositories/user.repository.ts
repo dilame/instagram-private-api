@@ -17,6 +17,7 @@ export class UserRepository extends Repository {
     });
     return body.user;
   }
+
   async usernameinfo(username: string): Promise<UserRepositoryInfoResponseUser> {
     const { body } = await this.client.request.send<UserRepositoryInfoResponseRootObject>({
       url: `/api/v1/users/${username}/usernameinfo/`,
