@@ -11,13 +11,18 @@ import { defaults } from 'lodash';
 import * as Chance from 'chance';
 
 export class UserRepository extends Repository {
-  async info(id: string | number): Promise<UserRepositoryInfoResponseUser> {
+  async infoByUserId(id: number): Promise<UserRepositoryInfoResponseUser> {
     const { body } = await this.client.request.send<UserRepositoryInfoResponseRootObject>({
-      url: `/api/v1/users/${id}/${typeof(id)==='number'?'/info/':'/usernameinfo/'}`,
+      url: `/api/v1/users/${id}/info/`,
     });
     return body.user;
   }
-
+  async infoByUsername(username: string): Promise<UserRepositoryInfoResponseUser> {
+    const { body } = await this.client.request.send<UserRepositoryInfoResponseRootObject>({
+      url: `/api/v1/users/${username}/usernameinfo/`,
+    });
+    return body.user;
+  }
   async arlinkDownloadInfo() {
     const { body } = await this.client.request.send({
       url: `/api/v1/users/arlink_download_info/`,
