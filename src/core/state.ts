@@ -30,8 +30,16 @@ export class State {
     return this.constants.APP_VERSION;
   }
 
+  set appVersion(version: string) {
+    this.constants.APP_VERSION = version;
+  }
+
   get appVersionCode(): string {
     return this.constants.APP_VERSION_CODE;
+  }
+
+  set appVersionCode(code: string) {
+    this.constants.APP_VERSION_CODE = code;
   }
 
   get fbAnalyticsApplicationId(): string {
@@ -59,7 +67,7 @@ export class State {
   }
 
   @Enumerable(false)
-  constants = Constants;
+  constants = { ...Constants };
   supportedCapabilities = supportedCapabilities;
   language: string = 'en_US';
   timezoneOffset: string = String(new Date().getTimezoneOffset() * -60);
@@ -226,7 +234,7 @@ export class State {
     const obj = typeof state === 'string' ? JSON.parse(state) : state;
     if (typeof obj !== 'object') {
       State.stateDebug(`State deserialization failed, obj is of type ${typeof obj} (object expected)`);
-      throw new TypeError('State isn\'t an object or serialized JSON');
+      throw new TypeError("State isn't an object or serialized JSON");
     }
     State.stateDebug(`Deserializing ${Object.keys(obj).join(', ')}`);
     if (obj.constants) {
