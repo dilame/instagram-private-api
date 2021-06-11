@@ -38,10 +38,10 @@ ig.state.generateDevice(process.env.IG_USERNAME);
 /**
  * Source: https://github.com/dilame/instagram-private-api/issues/969#issuecomment-551436680
  * @param feed
- * @returns {Promise<*[Array]>}
+ * @returns All items from the feed
  */
 
-async function getAllItemsFromFeed(feed) {
+async function getAllItemsFromFeed<T>(feed: Feed<any, T>): Promise<T[]> {
   let items = [];
   do {
     items = items.concat(await feed.items());
