@@ -3,7 +3,7 @@ export interface AccountEditProfileOptions {
   gender: string;
   phone_number: string;
   username: string;
-  first_name: string;
+  full_name: string;
   biography: string;
   email: string;
 }

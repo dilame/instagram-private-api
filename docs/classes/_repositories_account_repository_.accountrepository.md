@@ -24,6 +24,7 @@
 * [create](_repositories_account_repository_.accountrepository.md#create)
 * [currentUser](_repositories_account_repository_.accountrepository.md#currentuser)
 * [editProfile](_repositories_account_repository_.accountrepository.md#editprofile)
+* [setProfileField](_repositories_account_repository_.accountrepository.md#setProfileField)
 * [getPrefillCandidates](_repositories_account_repository_.accountrepository.md#getprefillcandidates)
 * [login](_repositories_account_repository_.accountrepository.md#login)
 * [logout](_repositories_account_repository_.accountrepository.md#logout)
@@ -136,6 +137,22 @@ ___
 ▸ **editProfile**(`options`: [AccountEditProfileOptions](../interfaces/_types_account_edit_profile_options_.accounteditprofileoptions.md)): *`Promise<AccountRepositoryCurrentUserResponseUser>`*
 
 *Defined in [repositories/account.repository.ts:181](https://github.com/dilame/instagram-private-api/blob/3e16058/src/repositories/account.repository.ts#L181)*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`options` | [AccountEditProfileOptions](../interfaces/_types_account_edit_profile_options_.accounteditprofileoptions.md) |
+
+**Returns:** *`Promise<AccountRepositoryCurrentUserResponseUser>`*
+
+___
+
+###  setProfileField
+
+▸ **setProfileField**(`options`: [AccountEditProfileOptions](../interfaces/_types_account_edit_profile_options_.accounteditprofileoptions.md)): *`Promise<AccountRepositoryCurrentUserResponseUser>`*
+
+*Defined in [repositories/account.repository.ts:243](https://github.com/dilame/instagram-private-api/blob/3e16058/src/repositories/account.repository.ts#L243)*
 
 **Parameters:**
 
