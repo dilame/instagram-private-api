@@ -24,7 +24,7 @@ export class UserRepository extends Repository {
     });
     return body.user;
   }
-  
+
   async arlinkDownloadInfo() {
     const { body } = await this.client.request.send({
       url: `/api/v1/users/arlink_download_info/`,
