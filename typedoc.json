@@ -1,0 +1,9 @@
+{
+  "tsconfig": "tsconfig.docs.json",
+  "entryPoints": ["src/index.ts", "src/sticker-builder/index.ts"],
+  "readme": "none",
+  "indexTitle": "README.md",
+  "filenameSeparator": "/",
+  "excludePrivate": true,
+  "excludeProtected": true
+}

@@ -28,7 +28,7 @@
     "prepare": "npm run build",
     "test": "mocha --inline-diffs --timeout 1000000 tests/run.js",
     "generate-interface": "ts-node ./tools/response-to-interface.ts",
-    "generate-docs": "ts-node ./tools/docs-generator.ts"
+    "generate-docs": "typedoc"
   },
   "husky": {
     "hooks": {
