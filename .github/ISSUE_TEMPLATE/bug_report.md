@@ -30,8 +30,6 @@ Put an `[x]` if you meet the condition, else leave `[ ]`.
 #### Platform
  - [ ] I'm using Node.js version `YOUR_VERSION (node -v)`
  - [ ] I'm using electron
- - [ ] I'm using the browser `YOUR_BROWSER_AND_VERSION`
- - [ ] I'm using some other environment `YOUR_ENV`
 
 ## Description
 A **specific** description of your bug, so it's understandable to anyone.
