@@ -40,7 +40,7 @@ async function login() {
   });
   if (await existsAsync(statePath)) {
     await ig.state.deserialize(await readFileAsync(statePath, { encoding: 'utf8' }));
-    await ig.qe.syncLoginExperiments();
+    //await ig.qe.syncLoginExperiments();
   } else {
     await ig.qe.syncLoginExperiments();
     return await ig.account.login(process.env.IG_USERNAME, process.env.IG_PASSWORD);
@@ -49,11 +49,16 @@ async function login() {
 
 (async function mainAsync() {
   ig.state.generateDevice(process.env.IG_USERNAME);
+  await ig.simulate.preLoginFlow();
   await login();
   try {
-    console.log(await ig.publish.photo({
-      file: await readFileAsync('D:\\ShareX\\Screenshots\\2020-01-10_19-47-29.jpg'),
-    }));
+    const entity = ig.entity.directThread(['12144123108']);
+    const res = entity.broadcastReel({
+      mediaId: '2625568772020616493_12144123108',
+      text: 'xdddddd',
+    });
+    console.log(res);
+    // await createInterface(Promise.resolve(items), 'topical-explore.feed');
   } catch (e) {
     console.error(e);
     console.error(e.response.body);
