@@ -155,58 +155,6 @@ Every feed is accessible via `ig.feed.feedName()` (_camelCase_ name). `ig.feed` 
 
 Most of the feeds require initialization parameter(s), like a user-pk (id).
 
-### Consuming Feeds
-
-#### To Array
-
-<details>
-<summary>JavaScript Function Signature</summary>
-
-```js
-async function consumeFeedToArray(feed) {
-  // ...
-}
-```
-
-</details>
-
-**Brute-Force Approach**
-
-It's called "Brute-Force" because this will make all requests without a delay.
-
-```typescript
-import { Feed } from 'instagram-private-api';
-
-async function consumeFeedToArray<T>(feed: Feed<any, T>): Promise<T[]> {
-  let array = [];
-  do {
-    array = array.concat(await feed.items());
-  } while (feed.isMoreAvailable());
-
-  return array;
-}
-```
-
-**Through RxJS**
-
-This doesn't use the observable in RxJS style but only utilizes the retry functionality.
-
-```typescript
-import { Feed } from 'instagram-private-api';
-import { toArray } from 'rxjs/operators';
-
-/**
- * This function will retry requests.
- * @param feed
- */
-async function consumeFeedToArray<T>(feed: Feed<any, T>): Promise<T[]> {
-  return feed
-    .item$()
-    .pipe(toArray())
-    .toPromise();
-}
-```
-
 ## Services
 
 Services will help you to maintain some actions without calling a couple repository methods or perform complex things like pre and postlogin flow simulations or photo/video publishing.
