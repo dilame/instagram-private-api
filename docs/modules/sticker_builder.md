@@ -36,7 +36,7 @@
 
 #### Defined in
 
-[src/sticker-builder/sticker-builder.ts:20](https://github.com/Nerixyz/instagram-private-api/blob/0e0721c/src/sticker-builder/sticker-builder.ts#L20)
+[src/sticker-builder/sticker-builder.ts:20](https://github.com/Nerixyz/instagram-private-api/blob/b3351b9/src/sticker-builder/sticker-builder.ts#L20)
 
 ___
 
@@ -52,4 +52,4 @@ ___
 
 #### Defined in
 
-[src/sticker-builder/sticker-builder.ts:18](https://github.com/Nerixyz/instagram-private-api/blob/0e0721c/src/sticker-builder/sticker-builder.ts#L18)
+[src/sticker-builder/sticker-builder.ts:18](https://github.com/Nerixyz/instagram-private-api/blob/b3351b9/src/sticker-builder/sticker-builder.ts#L18)
