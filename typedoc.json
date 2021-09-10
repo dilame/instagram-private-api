@@ -1,6 +1,20 @@
 {
   "tsconfig": "tsconfig.docs.json",
-  "entryPoints": ["src/index.ts", "src/sticker-builder/index.ts"],
+  "entryPoints": [
+    "tools/doc-entries/index.ts",
+
+    "tools/doc-entries/repositories.ts",
+    "tools/doc-entries/services.ts",
+
+    "tools/doc-entries/feeds.ts",
+    "tools/doc-entries/entities.ts",
+
+    "tools/doc-entries/errors.ts",
+    "tools/doc-entries/responses.ts",
+    "tools/doc-entries/types.ts",
+
+    "tools/doc-entries/sticker-builder.ts"
+  ],
   "readme": "none",
   "indexTitle": "README.md",
   "filenameSeparator": "/",
