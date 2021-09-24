@@ -199,6 +199,8 @@ Setting up your environment is described [here](CONTRIBUTING.md).
 
 [instagram-id-to-url-segment](https://www.npmjs.com/package/instagram-id-to-url-segment) - convert the image url fragment to the media ID
 
+[instagram_mqtt](https://www.npmjs.com/package/instagram_mqtt) - use to handle realtime events
+
 ## Special thanks
 
 - [Richard Hutta](https://github.com/huttarichard), original author of this library. Thanks to him for starting it.
