@@ -55,8 +55,16 @@
     "tough-cookie": "^2.5.0",
     "ts-custom-error": "^2.2.2",
     "ts-xor": "^1.0.6",
-    "url-regex-safe": "^1.0.2",
+    "url-regex-safe": "^3.0.0",
     "utility-types": "^3.10.0"
+  },
+  "peerDependencies": {
+    "re2": "^1.17.2"
+  },
+  "peerDependenciesMeta": {
+    "re2": {
+      "optional": true
+    }
   },
   "devDependencies": {
     "@types/bluebird": "^3.5.26",
@@ -73,8 +81,8 @@
     "rimraf": "^2.6.3",
     "ts-node": "^8.1.0",
     "tslint": "^5.16.0",
-    "typedoc": "^0.21.4",
-    "typedoc-plugin-markdown": "^3.10.4",
+    "typedoc": "^0.22.11",
+    "typedoc-plugin-markdown": "^3.11.14",
     "typescript": "^4.3.5"
   }
 }
