@@ -19,7 +19,7 @@
 
 #### Defined in
 
-[src/sticker-builder/stickers/poll.sticker.ts:5](https://github.com/Nerixyz/instagram-private-api/blob/0e0721c/src/sticker-builder/stickers/poll.sticker.ts#L5)
+[src/sticker-builder/stickers/poll.sticker.ts:5](https://github.com/Nerixyz/instagram-private-api/blob/b3351b9/src/sticker-builder/stickers/poll.sticker.ts#L5)
 
 ___
 
@@ -29,4 +29,4 @@ ___
 
 #### Defined in
 
-[src/sticker-builder/stickers/poll.sticker.ts:4](https://github.com/Nerixyz/instagram-private-api/blob/0e0721c/src/sticker-builder/stickers/poll.sticker.ts#L4)
+[src/sticker-builder/stickers/poll.sticker.ts:4](https://github.com/Nerixyz/instagram-private-api/blob/b3351b9/src/sticker-builder/stickers/poll.sticker.ts#L4)

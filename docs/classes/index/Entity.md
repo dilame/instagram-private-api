@@ -10,17 +10,17 @@
 
   ↳ **`Entity`**
 
-  ↳↳ [`DirectThreadEntity`](DirectThreadEntity.md)
+  ↳↳ [`DirectThreadEntity`](../entities/DirectThreadEntity.md)
 
-  ↳↳ [`MediaEntity`](MediaEntity.md)
+  ↳↳ [`MediaEntity`](../entities/MediaEntity.md)
 
-  ↳↳ [`ProfileEntity`](ProfileEntity.md)
+  ↳↳ [`ProfileEntity`](../entities/ProfileEntity.md)
 
-  ↳↳ [`LiveEntity`](LiveEntity.md)
+  ↳↳ [`LiveEntity`](../entities/LiveEntity.md)
 
-  ↳↳ [`BlockedUsersFeedResponseBlockedListItem`](BlockedUsersFeedResponseBlockedListItem.md)
+  ↳↳ [`BlockedUsersFeedResponseBlockedListItem`](../responses/BlockedUsersFeedResponseBlockedListItem.md)
 
-  ↳↳ [`NewsFeedResponseStoriesItem`](NewsFeedResponseStoriesItem.md)
+  ↳↳ [`NewsFeedResponseStoriesItem`](../responses/NewsFeedResponseStoriesItem.md)
 
 ## Table of contents
 
@@ -46,4 +46,4 @@ Repository.constructor
 
 #### Defined in
 
-[src/core/repository.ts:7](https://github.com/Nerixyz/instagram-private-api/blob/0e0721c/src/core/repository.ts#L7)
+[src/core/repository.ts:7](https://github.com/Nerixyz/instagram-private-api/blob/b3351b9/src/core/repository.ts#L7)

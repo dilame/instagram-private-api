@@ -66,7 +66,7 @@
 
 #### Defined in
 
-[src/sticker-builder/stickers/mention.sticker.ts:6](https://github.com/Nerixyz/instagram-private-api/blob/0e0721c/src/sticker-builder/stickers/mention.sticker.ts#L6)
+[src/sticker-builder/stickers/mention.sticker.ts:6](https://github.com/Nerixyz/instagram-private-api/blob/b3351b9/src/sticker-builder/stickers/mention.sticker.ts#L6)
 
 ___
 
@@ -80,7 +80,7 @@ ___
 
 #### Defined in
 
-[src/sticker-builder/stickers/mention.sticker.ts:10](https://github.com/Nerixyz/instagram-private-api/blob/0e0721c/src/sticker-builder/stickers/mention.sticker.ts#L10)
+[src/sticker-builder/stickers/mention.sticker.ts:10](https://github.com/Nerixyz/instagram-private-api/blob/b3351b9/src/sticker-builder/stickers/mention.sticker.ts#L10)
 
 ___
 
@@ -94,7 +94,7 @@ ___
 
 #### Defined in
 
-[src/sticker-builder/stickers/insta-sticker.ts:12](https://github.com/Nerixyz/instagram-private-api/blob/0e0721c/src/sticker-builder/stickers/insta-sticker.ts#L12)
+[src/sticker-builder/stickers/insta-sticker.ts:12](https://github.com/Nerixyz/instagram-private-api/blob/b3351b9/src/sticker-builder/stickers/insta-sticker.ts#L12)
 
 ___
 
@@ -104,7 +104,7 @@ ___
 
 #### Defined in
 
-[src/sticker-builder/stickers/mention.sticker.ts:8](https://github.com/Nerixyz/instagram-private-api/blob/0e0721c/src/sticker-builder/stickers/mention.sticker.ts#L8)
+[src/sticker-builder/stickers/mention.sticker.ts:8](https://github.com/Nerixyz/instagram-private-api/blob/b3351b9/src/sticker-builder/stickers/mention.sticker.ts#L8)
 
 ___
 
@@ -118,7 +118,7 @@ ___
 
 #### Defined in
 
-[src/sticker-builder/stickers/insta-sticker.ts:7](https://github.com/Nerixyz/instagram-private-api/blob/0e0721c/src/sticker-builder/stickers/insta-sticker.ts#L7)
+[src/sticker-builder/stickers/insta-sticker.ts:7](https://github.com/Nerixyz/instagram-private-api/blob/b3351b9/src/sticker-builder/stickers/insta-sticker.ts#L7)
 
 ___
 
@@ -128,7 +128,7 @@ ___
 
 #### Defined in
 
-[src/sticker-builder/stickers/mention.sticker.ts:5](https://github.com/Nerixyz/instagram-private-api/blob/0e0721c/src/sticker-builder/stickers/mention.sticker.ts#L5)
+[src/sticker-builder/stickers/mention.sticker.ts:5](https://github.com/Nerixyz/instagram-private-api/blob/b3351b9/src/sticker-builder/stickers/mention.sticker.ts#L5)
 
 ___
 
@@ -142,7 +142,7 @@ ___
 
 #### Defined in
 
-[src/sticker-builder/stickers/mention.sticker.ts:9](https://github.com/Nerixyz/instagram-private-api/blob/0e0721c/src/sticker-builder/stickers/mention.sticker.ts#L9)
+[src/sticker-builder/stickers/mention.sticker.ts:9](https://github.com/Nerixyz/instagram-private-api/blob/b3351b9/src/sticker-builder/stickers/mention.sticker.ts#L9)
 
 ___
 
@@ -156,7 +156,7 @@ ___
 
 #### Defined in
 
-[src/sticker-builder/stickers/insta-sticker.ts:8](https://github.com/Nerixyz/instagram-private-api/blob/0e0721c/src/sticker-builder/stickers/insta-sticker.ts#L8)
+[src/sticker-builder/stickers/insta-sticker.ts:8](https://github.com/Nerixyz/instagram-private-api/blob/b3351b9/src/sticker-builder/stickers/insta-sticker.ts#L8)
 
 ___
 
@@ -170,7 +170,7 @@ ___
 
 #### Defined in
 
-[src/sticker-builder/stickers/insta-sticker.ts:9](https://github.com/Nerixyz/instagram-private-api/blob/0e0721c/src/sticker-builder/stickers/insta-sticker.ts#L9)
+[src/sticker-builder/stickers/insta-sticker.ts:9](https://github.com/Nerixyz/instagram-private-api/blob/b3351b9/src/sticker-builder/stickers/insta-sticker.ts#L9)
 
 ___
 
@@ -184,7 +184,7 @@ ___
 
 #### Defined in
 
-[src/sticker-builder/stickers/insta-sticker.ts:10](https://github.com/Nerixyz/instagram-private-api/blob/0e0721c/src/sticker-builder/stickers/insta-sticker.ts#L10)
+[src/sticker-builder/stickers/insta-sticker.ts:10](https://github.com/Nerixyz/instagram-private-api/blob/b3351b9/src/sticker-builder/stickers/insta-sticker.ts#L10)
 
 ## Accessors
 
@@ -200,7 +200,7 @@ Only used to set the media id when attaching media
 
 #### Defined in
 
-[src/sticker-builder/stickers/mention.sticker.ts:20](https://github.com/Nerixyz/instagram-private-api/blob/0e0721c/src/sticker-builder/stickers/mention.sticker.ts#L20)
+[src/sticker-builder/stickers/mention.sticker.ts:20](https://github.com/Nerixyz/instagram-private-api/blob/b3351b9/src/sticker-builder/stickers/mention.sticker.ts#L20)
 
 ___
 
@@ -214,7 +214,7 @@ ___
 
 #### Defined in
 
-[src/sticker-builder/stickers/mention.sticker.ts:12](https://github.com/Nerixyz/instagram-private-api/blob/0e0721c/src/sticker-builder/stickers/mention.sticker.ts#L12)
+[src/sticker-builder/stickers/mention.sticker.ts:12](https://github.com/Nerixyz/instagram-private-api/blob/b3351b9/src/sticker-builder/stickers/mention.sticker.ts#L12)
 
 ___
 
@@ -228,7 +228,7 @@ ___
 
 #### Defined in
 
-[src/sticker-builder/stickers/mention.sticker.ts:16](https://github.com/Nerixyz/instagram-private-api/blob/0e0721c/src/sticker-builder/stickers/mention.sticker.ts#L16)
+[src/sticker-builder/stickers/mention.sticker.ts:16](https://github.com/Nerixyz/instagram-private-api/blob/b3351b9/src/sticker-builder/stickers/mention.sticker.ts#L16)
 
 ## Methods
 
@@ -246,7 +246,7 @@ ___
 
 #### Defined in
 
-[src/sticker-builder/stickers/insta-sticker.ts:66](https://github.com/Nerixyz/instagram-private-api/blob/0e0721c/src/sticker-builder/stickers/insta-sticker.ts#L66)
+[src/sticker-builder/stickers/insta-sticker.ts:66](https://github.com/Nerixyz/instagram-private-api/blob/b3351b9/src/sticker-builder/stickers/insta-sticker.ts#L66)
 
 ___
 
@@ -264,7 +264,7 @@ ___
 
 #### Defined in
 
-[src/sticker-builder/stickers/insta-sticker.ts:25](https://github.com/Nerixyz/instagram-private-api/blob/0e0721c/src/sticker-builder/stickers/insta-sticker.ts#L25)
+[src/sticker-builder/stickers/insta-sticker.ts:25](https://github.com/Nerixyz/instagram-private-api/blob/b3351b9/src/sticker-builder/stickers/insta-sticker.ts#L25)
 
 ___
 
@@ -282,7 +282,7 @@ ___
 
 #### Defined in
 
-[src/sticker-builder/stickers/insta-sticker.ts:56](https://github.com/Nerixyz/instagram-private-api/blob/0e0721c/src/sticker-builder/stickers/insta-sticker.ts#L56)
+[src/sticker-builder/stickers/insta-sticker.ts:56](https://github.com/Nerixyz/instagram-private-api/blob/b3351b9/src/sticker-builder/stickers/insta-sticker.ts#L56)
 
 ___
 
@@ -306,7 +306,7 @@ ___
 
 #### Defined in
 
-[src/sticker-builder/stickers/insta-sticker.ts:47](https://github.com/Nerixyz/instagram-private-api/blob/0e0721c/src/sticker-builder/stickers/insta-sticker.ts#L47)
+[src/sticker-builder/stickers/insta-sticker.ts:47](https://github.com/Nerixyz/instagram-private-api/blob/b3351b9/src/sticker-builder/stickers/insta-sticker.ts#L47)
 
 ___
 
@@ -330,7 +330,7 @@ ___
 
 #### Defined in
 
-[src/sticker-builder/stickers/insta-sticker.ts:42](https://github.com/Nerixyz/instagram-private-api/blob/0e0721c/src/sticker-builder/stickers/insta-sticker.ts#L42)
+[src/sticker-builder/stickers/insta-sticker.ts:42](https://github.com/Nerixyz/instagram-private-api/blob/b3351b9/src/sticker-builder/stickers/insta-sticker.ts#L42)
 
 ___
 
@@ -348,7 +348,7 @@ ___
 
 #### Defined in
 
-[src/sticker-builder/stickers/insta-sticker.ts:51](https://github.com/Nerixyz/instagram-private-api/blob/0e0721c/src/sticker-builder/stickers/insta-sticker.ts#L51)
+[src/sticker-builder/stickers/insta-sticker.ts:51](https://github.com/Nerixyz/instagram-private-api/blob/b3351b9/src/sticker-builder/stickers/insta-sticker.ts#L51)
 
 ___
 
@@ -372,7 +372,7 @@ ___
 
 #### Defined in
 
-[src/sticker-builder/stickers/insta-sticker.ts:31](https://github.com/Nerixyz/instagram-private-api/blob/0e0721c/src/sticker-builder/stickers/insta-sticker.ts#L31)
+[src/sticker-builder/stickers/insta-sticker.ts:31](https://github.com/Nerixyz/instagram-private-api/blob/b3351b9/src/sticker-builder/stickers/insta-sticker.ts#L31)
 
 ___
 
@@ -396,7 +396,7 @@ ___
 
 #### Defined in
 
-[src/sticker-builder/stickers/insta-sticker.ts:36](https://github.com/Nerixyz/instagram-private-api/blob/0e0721c/src/sticker-builder/stickers/insta-sticker.ts#L36)
+[src/sticker-builder/stickers/insta-sticker.ts:36](https://github.com/Nerixyz/instagram-private-api/blob/b3351b9/src/sticker-builder/stickers/insta-sticker.ts#L36)
 
 ___
 
@@ -414,7 +414,7 @@ ___
 
 #### Defined in
 
-[src/sticker-builder/stickers/insta-sticker.ts:71](https://github.com/Nerixyz/instagram-private-api/blob/0e0721c/src/sticker-builder/stickers/insta-sticker.ts#L71)
+[src/sticker-builder/stickers/insta-sticker.ts:71](https://github.com/Nerixyz/instagram-private-api/blob/b3351b9/src/sticker-builder/stickers/insta-sticker.ts#L71)
 
 ___
 
@@ -432,4 +432,4 @@ ___
 
 #### Defined in
 
-[src/sticker-builder/stickers/insta-sticker.ts:61](https://github.com/Nerixyz/instagram-private-api/blob/0e0721c/src/sticker-builder/stickers/insta-sticker.ts#L61)
+[src/sticker-builder/stickers/insta-sticker.ts:61](https://github.com/Nerixyz/instagram-private-api/blob/b3351b9/src/sticker-builder/stickers/insta-sticker.ts#L61)

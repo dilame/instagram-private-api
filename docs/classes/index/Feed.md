@@ -17,65 +17,65 @@
 
   ↳ **`Feed`**
 
-  ↳↳ [`AccountFollowersFeed`](AccountFollowersFeed.md)
+  ↳↳ [`AccountFollowersFeed`](../feeds/AccountFollowersFeed.md)
 
-  ↳↳ [`AccountFollowingFeed`](AccountFollowingFeed.md)
+  ↳↳ [`AccountFollowingFeed`](../feeds/AccountFollowingFeed.md)
 
-  ↳↳ [`PendingFriendshipsFeed`](PendingFriendshipsFeed.md)
+  ↳↳ [`PendingFriendshipsFeed`](../feeds/PendingFriendshipsFeed.md)
 
-  ↳↳ [`BestiesFeed`](BestiesFeed.md)
+  ↳↳ [`BestiesFeed`](../feeds/BestiesFeed.md)
 
-  ↳↳ [`BlockedUsersFeed`](BlockedUsersFeed.md)
+  ↳↳ [`BlockedUsersFeed`](../feeds/BlockedUsersFeed.md)
 
-  ↳↳ [`DirectInboxFeed`](DirectInboxFeed.md)
+  ↳↳ [`DirectInboxFeed`](../feeds/DirectInboxFeed.md)
 
-  ↳↳ [`DirectThreadFeed`](DirectThreadFeed.md)
+  ↳↳ [`DirectThreadFeed`](../feeds/DirectThreadFeed.md)
 
-  ↳↳ [`DiscoverFeed`](DiscoverFeed.md)
+  ↳↳ [`DiscoverFeed`](../feeds/DiscoverFeed.md)
 
-  ↳↳ [`LocationFeed`](LocationFeed.md)
+  ↳↳ [`LocationFeed`](../feeds/LocationFeed.md)
 
-  ↳↳ [`MediaCommentsFeed`](MediaCommentsFeed.md)
+  ↳↳ [`MediaCommentsFeed`](../feeds/MediaCommentsFeed.md)
 
-  ↳↳ [`NewsFeed`](NewsFeed.md)
+  ↳↳ [`NewsFeed`](../feeds/NewsFeed.md)
 
-  ↳↳ [`ReelsMediaFeed`](ReelsMediaFeed.md)
+  ↳↳ [`ReelsMediaFeed`](../feeds/ReelsMediaFeed.md)
 
-  ↳↳ [`SavedFeed`](SavedFeed.md)
+  ↳↳ [`SavedFeed`](../feeds/SavedFeed.md)
 
-  ↳↳ [`TagFeed`](TagFeed.md)
+  ↳↳ [`TagFeed`](../feeds/TagFeed.md)
 
-  ↳↳ [`TagsFeed`](TagsFeed.md)
+  ↳↳ [`TagsFeed`](../feeds/TagsFeed.md)
 
-  ↳↳ [`TimelineFeed`](TimelineFeed.md)
+  ↳↳ [`TimelineFeed`](../feeds/TimelineFeed.md)
 
-  ↳↳ [`UserFeed`](UserFeed.md)
+  ↳↳ [`UserFeed`](../feeds/UserFeed.md)
 
-  ↳↳ [`DirectPendingInboxFeed`](DirectPendingInboxFeed.md)
+  ↳↳ [`DirectPendingInboxFeed`](../feeds/DirectPendingInboxFeed.md)
 
-  ↳↳ [`ReelsTrayFeed`](ReelsTrayFeed.md)
+  ↳↳ [`ReelsTrayFeed`](../feeds/ReelsTrayFeed.md)
 
-  ↳↳ [`MusicSearchFeed`](MusicSearchFeed.md)
+  ↳↳ [`MusicSearchFeed`](../feeds/MusicSearchFeed.md)
 
-  ↳↳ [`MusicTrendingFeed`](MusicTrendingFeed.md)
+  ↳↳ [`MusicTrendingFeed`](../feeds/MusicTrendingFeed.md)
 
-  ↳↳ [`MusicMoodFeed`](MusicMoodFeed.md)
+  ↳↳ [`MusicMoodFeed`](../feeds/MusicMoodFeed.md)
 
-  ↳↳ [`MusicGenreFeed`](MusicGenreFeed.md)
+  ↳↳ [`MusicGenreFeed`](../feeds/MusicGenreFeed.md)
 
-  ↳↳ [`UsertagsFeed`](UsertagsFeed.md)
+  ↳↳ [`UsertagsFeed`](../feeds/UsertagsFeed.md)
 
-  ↳↳ [`PostsInsightsFeed`](PostsInsightsFeed.md)
+  ↳↳ [`PostsInsightsFeed`](../feeds/PostsInsightsFeed.md)
 
-  ↳↳ [`StoriesInsightsFeed`](StoriesInsightsFeed.md)
+  ↳↳ [`StoriesInsightsFeed`](../feeds/StoriesInsightsFeed.md)
 
-  ↳↳ [`IgtvBrowseFeed`](IgtvBrowseFeed.md)
+  ↳↳ [`IgtvBrowseFeed`](../feeds/IgtvBrowseFeed.md)
 
-  ↳↳ [`IgtvChannelFeed`](IgtvChannelFeed.md)
+  ↳↳ [`IgtvChannelFeed`](../feeds/IgtvChannelFeed.md)
 
-  ↳↳ [`LikedFeed`](LikedFeed.md)
+  ↳↳ [`LikedFeed`](../feeds/LikedFeed.md)
 
-  ↳↳ [`TopicalExploreFeed`](TopicalExploreFeed.md)
+  ↳↳ [`TopicalExploreFeed`](../feeds/TopicalExploreFeed.md)
 
 ## Table of contents
 
@@ -126,7 +126,7 @@ Repository.constructor
 
 #### Defined in
 
-[src/core/repository.ts:7](https://github.com/Nerixyz/instagram-private-api/blob/0e0721c/src/core/repository.ts#L7)
+[src/core/repository.ts:7](https://github.com/Nerixyz/instagram-private-api/blob/b3351b9/src/core/repository.ts#L7)
 
 ## Properties
 
@@ -136,7 +136,7 @@ Repository.constructor
 
 #### Defined in
 
-[src/core/feed.ts:10](https://github.com/Nerixyz/instagram-private-api/blob/0e0721c/src/core/feed.ts#L10)
+[src/core/feed.ts:10](https://github.com/Nerixyz/instagram-private-api/blob/b3351b9/src/core/feed.ts#L10)
 
 ## Accessors
 
@@ -150,7 +150,7 @@ Repository.constructor
 
 #### Defined in
 
-[src/core/feed.ts:18](https://github.com/Nerixyz/instagram-private-api/blob/0e0721c/src/core/feed.ts#L18)
+[src/core/feed.ts:18](https://github.com/Nerixyz/instagram-private-api/blob/b3351b9/src/core/feed.ts#L18)
 
 ## Methods
 
@@ -170,7 +170,7 @@ Repository.constructor
 
 #### Defined in
 
-[src/core/feed.ts:79](https://github.com/Nerixyz/instagram-private-api/blob/0e0721c/src/core/feed.ts#L79)
+[src/core/feed.ts:79](https://github.com/Nerixyz/instagram-private-api/blob/b3351b9/src/core/feed.ts#L79)
 
 ___
 
@@ -184,7 +184,7 @@ ___
 
 #### Defined in
 
-[src/core/feed.ts:87](https://github.com/Nerixyz/instagram-private-api/blob/0e0721c/src/core/feed.ts#L87)
+[src/core/feed.ts:87](https://github.com/Nerixyz/instagram-private-api/blob/b3351b9/src/core/feed.ts#L87)
 
 ___
 
@@ -198,7 +198,7 @@ ___
 
 #### Defined in
 
-[src/core/feed.ts:73](https://github.com/Nerixyz/instagram-private-api/blob/0e0721c/src/core/feed.ts#L73)
+[src/core/feed.ts:73](https://github.com/Nerixyz/instagram-private-api/blob/b3351b9/src/core/feed.ts#L73)
 
 ___
 
@@ -219,7 +219,7 @@ ___
 
 #### Defined in
 
-[src/core/feed.ts:21](https://github.com/Nerixyz/instagram-private-api/blob/0e0721c/src/core/feed.ts#L21)
+[src/core/feed.ts:21](https://github.com/Nerixyz/instagram-private-api/blob/b3351b9/src/core/feed.ts#L21)
 
 ___
 
@@ -239,7 +239,7 @@ ___
 
 #### Defined in
 
-[src/core/feed.ts:71](https://github.com/Nerixyz/instagram-private-api/blob/0e0721c/src/core/feed.ts#L71)
+[src/core/feed.ts:71](https://github.com/Nerixyz/instagram-private-api/blob/b3351b9/src/core/feed.ts#L71)
 
 ___
 
@@ -253,7 +253,7 @@ ___
 
 #### Defined in
 
-[src/core/feed.ts:75](https://github.com/Nerixyz/instagram-private-api/blob/0e0721c/src/core/feed.ts#L75)
+[src/core/feed.ts:75](https://github.com/Nerixyz/instagram-private-api/blob/b3351b9/src/core/feed.ts#L75)
 
 ___
 
@@ -267,4 +267,4 @@ ___
 
 #### Defined in
 
-[src/core/feed.ts:83](https://github.com/Nerixyz/instagram-private-api/blob/0e0721c/src/core/feed.ts#L83)
+[src/core/feed.ts:83](https://github.com/Nerixyz/instagram-private-api/blob/b3351b9/src/core/feed.ts#L83)
