@@ -29,7 +29,6 @@ type Payload = { [key: string]: any } | string;
 
 interface SignedPost {
   signed_body: string;
-  ig_sig_key_version: string;
 }
 
 export class Request {
@@ -114,9 +113,8 @@ export class Request {
 
   public sign(payload: Payload): SignedPost {
     const json = typeof payload === 'object' ? JSON.stringify(payload) : payload;
-    const signature = this.signature(json);
+    const signature = "SIGNATURE"
     return {
-      ig_sig_key_version: this.client.state.signatureVersion,
       signed_body: `${signature}.${json}`,
     };
   }
