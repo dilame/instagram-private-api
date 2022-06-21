@@ -300,7 +300,7 @@ export class FeedFactory {
 
   public igtvChannel(id: string | number) {
     if (/[0-9]/.test(id.toString())) {
-      id = `user_${id}`;
+      id = `uservideo_${id}`;
     }
     return plainToClassFromExist(new IgtvChannelFeed(this.client), {
       channelId: id,
