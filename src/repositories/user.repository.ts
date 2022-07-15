@@ -2,6 +2,8 @@ import { Repository } from '../core/repository';
 import {
   UserRepositoryInfoResponseRootObject,
   UserRepositoryInfoResponseUser,
+  UserRepositoryWebProfileInfoResponseRootObject,
+  UserRepositoryWebProfileInfoResponseUser,
   UserRepositorySearchResponseRootObject,
   UserRepositorySearchResponseUsersItem,
 } from '../responses';
@@ -23,6 +25,16 @@ export class UserRepository extends Repository {
       url: `/api/v1/users/${username}/usernameinfo/`,
     });
     return body.user;
+  }
+
+  async webProfileInfo(username: string): Promise<UserRepositoryWebProfileInfoResponseUser> {
+    const { body } = await this.client.request.send<UserRepositoryWebProfileInfoResponseRootObject>({
+      url: `/api/v1/users/web_profile_info/`,
+      qs: {
+        username: username,
+      },
+    });
+    return body.data.user;
   }
 
   async arlinkDownloadInfo() {
