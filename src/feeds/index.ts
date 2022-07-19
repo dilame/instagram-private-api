@@ -28,3 +28,4 @@ export * from './igtv.browse.feed';
 export * from './igtv.channel.feed';
 export * from './liked.feed';
 export * from './topical-explore.feed';
+export * from './clips.feed';
