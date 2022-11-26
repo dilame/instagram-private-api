@@ -7,13 +7,13 @@ export class LocationFeed extends Feed<LocationFeedResponse, LocationFeedRespons
   id: string | number;
   tab: 'recent' | 'ranked';
   @Expose()
-  private nextMaxId: string;
+  public nextMaxId: string;
   @Expose()
-  private nextPage: number;
+  public nextPage: number;
   @Expose()
-  private nextMediaIds: Array<string> = [];
+  public nextMediaIds: Array<string> = [];
 
-  protected set state(body: LocationFeedResponse) {
+  set state(body: LocationFeedResponse) {
     this.moreAvailable = body.more_available;
     this.nextMaxId = body.next_max_id;
     this.nextPage = body.next_page;
