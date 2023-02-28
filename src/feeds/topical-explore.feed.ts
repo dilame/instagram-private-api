@@ -5,7 +5,10 @@ import * as Chance from 'chance';
 import { TopicalExploreFeedResponseRootObject, TopicalExploreFeedResponseSectionalItemsItem } from '../responses';
 const chance = new Chance();
 
-export class TopicalExploreFeed extends Feed<TopicalExploreFeedResponseRootObject, TopicalExploreFeedResponseSectionalItemsItem> {
+export class TopicalExploreFeed extends Feed<
+  TopicalExploreFeedResponseRootObject,
+  TopicalExploreFeedResponseSectionalItemsItem
+> {
   module: IgAppModule = 'explore_popular';
   lat?: string | number;
   lng?: string | number;
