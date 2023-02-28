@@ -3,7 +3,7 @@ import { Feed } from '../core/feed';
 import { SavedCollectionFeedResponseRootObject, SavedFeedResponseMedia } from '../responses';
 
 export class SavedCollectionFeed extends Feed<SavedCollectionFeedResponseRootObject, SavedFeedResponseMedia> {
-  id: number | string;
+  collectionId: number | string;
   @Expose()
   private nextMaxId: string;
 
@@ -14,7 +14,7 @@ export class SavedCollectionFeed extends Feed<SavedCollectionFeedResponseRootObj
 
   async request(): Promise<SavedCollectionFeedResponseRootObject> {
     const { body } = await this.client.request.send({
-      url: `api/v1/feed/collection/${this.id}/all`,
+      url: `api/v1/feed/collection/${this.collectionId}/all`,
       qs: {
         max_id: this.nextMaxId,
         include_igtv_preview: false,
