@@ -37,6 +37,7 @@ import { plainToClassFromExist } from 'class-transformer';
 import * as Chance from 'chance';
 import { PostsInsightsFeedOptions, TimelineFeedReason, IgAppModule } from '../types';
 import { UserStoryFeed } from '../feeds/user-story.feed';
+import { SavedCollectionFeed } from '../feeds';
 import { ListReelMediaViewerFeed } from '../feeds/list-reel-media-viewer.feed';
 import { MediaInlineChildCommentsFeed } from '../feeds/media.inline-child-comments.feed';
 import { MediaStickerResponsesFeed } from '../feeds/media.sticker-responses.feed';
@@ -222,6 +223,10 @@ export class FeedFactory {
 
   public savedCollections(): SavedCollectionsFeed {
     return new SavedCollectionsFeed(this.client);
+  }
+
+  public savedCollection(collectionId: string | number) {
+    return plainToClassFromExist(new SavedCollectionFeed(this.client), { collectionId });
   }
 
   public listReelMediaViewers(mediaId: string): ListReelMediaViewerFeed {
