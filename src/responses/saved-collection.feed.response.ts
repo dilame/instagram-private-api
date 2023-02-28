@@ -1,7 +1,5 @@
 export interface SavedCollectionFeedResponseRootObject {
-  save_media_response: {
-    items: SavedFeedResponseItemsItem[];
-  };
+  items: SavedFeedResponseItemsItem[];
   num_results: number;
   more_available: boolean;
   auto_load_more_enabled: boolean;

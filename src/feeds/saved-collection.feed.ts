@@ -14,7 +14,7 @@ export class SavedCollectionFeed extends Feed<SavedCollectionFeedResponseRootObj
 
   async request(): Promise<SavedCollectionFeedResponseRootObject> {
     const { body } = await this.client.request.send({
-      url: `api/v1/feed/collection/${this.collectionId}/all`,
+      url: `api/v1/feed/collection/${this.collectionId}/posts`,
       qs: {
         max_id: this.nextMaxId,
         include_igtv_preview: false,
@@ -25,7 +25,7 @@ export class SavedCollectionFeed extends Feed<SavedCollectionFeedResponseRootObj
   }
 
   async items(): Promise<SavedFeedResponseMedia[]> {
-    const { save_media_response } = await this.request();
-    return save_media_response.items.map(item => item.media);
+    const { items } = await this.request();
+    return items.map(item => item.media);
   }
 }
