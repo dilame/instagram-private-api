@@ -11,6 +11,7 @@ export * from './media-comments.feed';
 export * from './news.feed';
 export * from './reels-media.feed';
 export * from './saved.feed';
+export * from './saved-collections.feed';
 export * from './tag.feed';
 export * from './tags.feed';
 export * from './timeline.feed';

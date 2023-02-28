@@ -20,6 +20,7 @@ import {
   ReelsMediaFeed,
   ReelsTrayFeed,
   SavedFeed,
+  SavedCollectionsFeed,
   StoriesInsightsFeed,
   TagFeed,
   TagsFeed,
@@ -217,6 +218,10 @@ export class FeedFactory {
 
   public saved(): SavedFeed {
     return new SavedFeed(this.client);
+  }
+
+  public savedCollections(): SavedCollectionsFeed {
+    return new SavedCollectionsFeed(this.client);
   }
 
   public listReelMediaViewers(mediaId: string): ListReelMediaViewerFeed {
