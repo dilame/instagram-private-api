@@ -22,11 +22,11 @@ export class SavedCollectionsFeed extends Feed<SavedCollectionsFeedResponseRootO
         max_id: this.nextMaxId,
         include_igtv_preview: false,
         include_public_only: 0,
-        collection_types: [
-          SavedCollectionCollectionType.Media,
-          SavedCollectionCollectionType.AudioAutoCollection,
+        collection_types: JSON.stringify([
           SavedCollectionCollectionType.AllMediaAutoCollection,
-        ].join(','),
+          SavedCollectionCollectionType.AudioAutoCollection,
+          SavedCollectionCollectionType.Media,
+        ]),
         get_cover_media_lists: true,
       },
     });
