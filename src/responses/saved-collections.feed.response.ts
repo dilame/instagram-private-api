@@ -17,6 +17,12 @@ export interface SavedCollectionsFeedResponse {
   viewer_access_level: string;
 }
 
+export enum SavedCollectionCollectionType {
+  AllMediaAutoCollection = 'ALL_MEDIA_AUTO_COLLECTION',
+  AudioAutoCollection = 'AUDIO_AUTO_COLLECTION',
+  Media = 'MEDIA',
+}
+
 export interface CoverMedia {
   id: string;
   media_type: number;

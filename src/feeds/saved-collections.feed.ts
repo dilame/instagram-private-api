@@ -1,6 +1,10 @@
 import { Expose } from 'class-transformer';
 import { Feed } from '../core/feed';
-import { SavedCollectionsFeedResponseRootObject, SavedCollectionsFeedResponse } from '../responses';
+import {
+  SavedCollectionsFeedResponseRootObject,
+  SavedCollectionsFeedResponse,
+  SavedCollectionCollectionType,
+} from '../responses';
 
 export class SavedCollectionsFeed extends Feed<SavedCollectionsFeedResponseRootObject, SavedCollectionsFeedResponse> {
   @Expose()
@@ -13,11 +17,17 @@ export class SavedCollectionsFeed extends Feed<SavedCollectionsFeedResponseRootO
 
   async request(): Promise<SavedCollectionsFeedResponseRootObject> {
     const { body } = await this.client.request.send({
-      url:
-        'api/v1/collections/list/?collection_types=%5B%22ALL_MEDIA_AUTO_COLLECTION%22%2C%22MEDIA%22%2C%22AUDIO_AUTO_COLLECTION%22%5D&include_public_only=0&get_cover_media_lists=true&max_id=QVFDV004M2FjcVQ0blNVVnp1dmZmM1JCMmZIb3REUnVyd0xsdGd0WVY5R25ILVBQMmRvWXV1Qk5DcF84cENNWGx1UThyb1NrVzZqeENVY2w1VXkwZlFhbg%3D%3D',
+      url: 'api/v1/collections/list',
       qs: {
         max_id: this.nextMaxId,
         include_igtv_preview: false,
+        include_public_only: 0,
+        collection_types: [
+          SavedCollectionCollectionType.Media,
+          SavedCollectionCollectionType.AudioAutoCollection,
+          SavedCollectionCollectionType.AllMediaAutoCollection,
+        ].join(','),
+        get_cover_media_lists: true,
       },
     });
     this.state = body;
