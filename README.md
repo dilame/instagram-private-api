@@ -9,29 +9,28 @@
 
 ---
 
-# Next major version
+# Next Major Version
 
-Me and [Nerix](https://github.com/Nerixyz) are ready to announce the next 2.x.x version of this library.
-It has extended feature list.
-It's a big release.
-We have significantly expanded the functionality and capabilities.
-The library turned into a monorepository and now it's a set of libraries, connected in an ecosystem.
-It consists of
+[Nerix](https://github.com/Nerixyz) and I are excited to announce the next 3.x.x version of this library.
+It features an extended list of capabilities and is a significant release.
+We have substantially expanded the functionality and possibilities.
+The library has transformed into a monorepository and is now a set of libraries connected in an ecosystem.
+It consists of:
 
 - Android API
 - Web API
 - FBNS, Realtime
 
-We've done some work on design decisions.
-We simplified the state management process.
-Now you can easily make a snapshot of account state, save it in a persistent storage and then restore a 1-to-1 copy with just 1 function call.
-With new realtime features you can listen for new direct messages, notifications and any other events.
+We've made some design decisions and simplified the state management process.
+Now, you can easily create a snapshot of the account state, save it in persistent storage, and restore a 1-to-1 copy with just one function call.
+With new realtime features, you can listen for new direct messages, notifications, and other events.
 
-The new version is hosted in private repository. Access is paid.
-Members get **basic** support for installation, configuration, and usage.
-We also will try to react on your feature requests.
+You can take a look at the type documentation for the next version by following this link – [https://docs.igpapi.com](https://docs.igpapi.com/)
 
-You can contact me in [telegram](https://t.me/bowzee) or [email](mailto:dilame.bowzee@gmail.com) for details.
+The new version is hosted in a private repository and access is paid.
+Members receive exhaustive support for the entire integration process.
+
+Contact me in [telegram](https://t.me/bowzee) or [email](mailto:dilame.bowzee@gmail.com) for details.
 
 # Table of Contents
 
