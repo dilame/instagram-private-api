@@ -28,8 +28,6 @@ export class SimulateService extends Repository {
       // () => this.client.creatives.writeSupportedCapabilities(),
       // () => this.client.account.processContactPointSignals(),
       () => this.client.feed.timeline().request({ recoveredFromCrash: '1', reason: 'cold_start_fetch' }),
-      () => this.client.fbsearch.suggestedSearches('users'),
-      () => this.client.fbsearch.suggestedSearches('blended'),
       () => this.client.fbsearch.recentSearches(),
       () => this.client.direct.rankedRecipients('reshare'),
       () => this.client.direct.rankedRecipients('raven'),

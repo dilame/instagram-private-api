@@ -64,6 +64,8 @@ export class AccountRepository extends Repository {
         }
       }
     });
+
+    console.log(`Logged in as ${username}, waiting for mqtt connection ...`)
     return response.body.logged_in_user;
   }
 
