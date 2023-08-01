@@ -7,6 +7,8 @@ export interface PostingVideoOptions {
   usertags?: PostingUsertags;
   location?: PostingLocation;
   transcodeDelay?: number;
+  isClip?: boolean;
+  clipsPreviewToFeed?: boolean;
 }
 
 export interface PostingStoryVideoOptions extends PostingStoryOptions {

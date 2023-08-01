@@ -158,6 +158,7 @@ export class PublishService extends Repository {
     await Bluebird.try(() =>
       this.regularVideo({
         video: options.video,
+        isClipVideo: options.isClip,
         uploadId,
         ...videoInfo,
       }),
@@ -196,9 +197,13 @@ export class PublishService extends Repository {
       configureOptions.usertags = options.usertags;
     }
 
+    if (typeof options.clipsPreviewToFeed) {
+      configureOptions.clips_share_preview_to_feed = options.clipsPreviewToFeed ? '1' : '0';
+    }
+
     for (let i = 0; i < 6; i++) {
       try {
-        return await this.client.media.configureVideo(configureOptions);
+        return await this.client.media.configureVideo(configureOptions, options.isClip);
       } catch (e) {
         if (i >= 5 || e.response.statusCode >= 400) {
           throw new IgConfigureVideoError(e.response, configureOptions);
