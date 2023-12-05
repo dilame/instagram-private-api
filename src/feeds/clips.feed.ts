@@ -15,7 +15,7 @@ export class ClipsFeed extends Feed<ClipsFeedResponseRootObject, ClipsFeedRespon
 
   async request(): Promise<ClipsFeedResponseRootObject> {
     const { body } = await this.client.request.send({
-      url: '/api/v1/clips/user',
+      url: '/api/v1/clips/user/',
       form: {
         target_user_id: this.targetUserId,
         max_id: this.maxId,
