@@ -87,7 +87,7 @@ export class AccountRepository extends Repository {
         headers: {},
       },
       true,
-      null, // disable transform to json because we are getting html
+      false, // disable transform to json because we are getting html
     );
 
     const dom = new JSDOM(body);

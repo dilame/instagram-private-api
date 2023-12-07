@@ -68,7 +68,7 @@ export class Request {
         resolveWithFullResponse: true,
         proxy: this.client.state.proxyUrl,
         simple: false,
-        transform: transform || Request.requestTransform,
+        transform: transform == false ? undefined : Request.requestTransform,
         jar: this.client.state.cookieJar,
         strictSSL: false,
         gzip: true,
