@@ -1,36 +1,45 @@
-import { Feed } from '../core/feed';
 import { Expose } from 'class-transformer';
-import { ClipsFeedResponseItemsItem, ClipsFeedResponseRootObject } from '../responses/clips.feed.response';
+import { Feed } from '../core/feed';
+import { ClipsFeedResponse, TimelineFeedResponseMedia_or_ad } from '../responses';
 
-export class ClipsFeed extends Feed<ClipsFeedResponseRootObject, ClipsFeedResponseItemsItem> {
-  targetUserId: string;
-
+export class ClipsFeed extends Feed<ClipsFeedResponse, TimelineFeedResponseMedia_or_ad> {
+  tag: string;
   @Expose()
-  private maxId: string;
-
-  protected set state(response: ClipsFeedResponseRootObject) {
-    this.moreAvailable = response.paging_info.more_available;
-    this.maxId = response.paging_info.max_id;
+  set state(body) {
+    this.moreAvailable = body.data.xdt_api__v1__clips__home__connection_v2.page_info.has_next_page;
   }
 
-  async request(): Promise<ClipsFeedResponseRootObject> {
-    const { body } = await this.client.request.send({
-      url: '/api/v1/clips/user/',
-      form: {
-        target_user_id: this.targetUserId,
-        max_id: this.maxId,
-        _csrftoken: this.client.state.cookieCsrfToken,
-        _uuid: this.client.state.uuid,
+  async request() {
+    const form = {
+      fb_dtsg: this.client.state.fb_dtsg,
+      fb_api_caller_class: 'RelayModern',
+      fb_api_req_friendly_name: 'PolarisClipsTabDesktopContainerQuery',
+      variables: JSON.stringify({ data: { container_module: 'clips_tab_desktop_page' } }),
+      server_timestamps: true,
+      doc_id: '6846808792076706',
+    };
+
+    const { body } = await this.client.request.send<ClipsFeedResponse>(
+      {
+        url: '/api/graphql/',
+        method: 'POST',
+        headers: {
+          Host: 'www.instagram.com',
+          'Content-Type': 'application/x-www-form-urlencoded',
+          'X-FB-Friendly-Name': 'PolarisClipsTabDesktopContainerQuery',
+          'User-Agent': null,
+        },
+        form,
       },
-      method: 'POST',
-    });
+      true,
+    );
 
     this.state = body;
     return body;
   }
 
-  async items(): Promise<ClipsFeedResponseItemsItem[]> {
-    const res = await this.request();
-    return res.items;
+  async items() {
+    const response = await this.request();
+    return response.data.xdt_api__v1__clips__home__connection_v2.edges.filter(i => i.node.media).map(i => i.node.media);
   }
 }
