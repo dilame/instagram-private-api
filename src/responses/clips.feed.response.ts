@@ -24,3 +24,16 @@ export interface ClipsFeedResponseFeedItemsItem {
   };
   cursor: string;
 }
+
+export interface ClipsFeedVariables {
+  after: string;
+  before: null;
+  data: {
+    container_module: 'clips_tab_desktop_page';
+    seen_reels: {
+      id: string;
+    }[];
+  };
+  first: number;
+  last: null;
+}
