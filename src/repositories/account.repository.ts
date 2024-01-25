@@ -114,17 +114,15 @@ export class AccountRepository extends Repository {
       trustThisDevice: '1',
       verificationMethod: '1',
     });
-    const { body } = await this.client.request.send<AccountRepositoryLoginResponseLogged_in_user>({
-      url: '/api/v1/accounts/two_factor_login/',
+    const { body } = await this.client.request.send({
+      url: '/api/v1/web/accounts/login/ajax/two_factor/',
       method: 'POST',
       form: this.client.request.sign({
-        verification_code: options.verificationCode,
         _csrftoken: this.client.state.cookieCsrfToken,
-        two_factor_identifier: options.twoFactorIdentifier,
+        identifier: options.twoFactorIdentifier,
+        verificationCode: options.verificationCode,
         username: options.username,
-        trust_this_device: options.trustThisDevice,
-        guid: this.client.state.uuid,
-        device_id: this.client.state.deviceId,
+        trust_signal: options.trustThisDevice === '1' ? 'true' : 'false',
         verification_method: options.verificationMethod,
       }),
     });
