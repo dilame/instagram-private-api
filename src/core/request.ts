@@ -34,7 +34,7 @@ interface SignedPost {
 
 export class Request {
   private static requestDebug = debug('ig:request');
-  end$ = new Subject();
+  end$ = new Subject<IgResponse<any>>();
   error$ = new Subject<IgClientError>();
   attemptOptions: Partial<AttemptOptions<any>> = {
     maxAttempts: 1,
@@ -76,7 +76,7 @@ export class Request {
     Request.requestDebug(`Requesting ${options.method} ${options.url || options.uri || '[could not find url]'}`);
     const response = await this.faultTolerantRequest(options);
     this.updateState(response);
-    process.nextTick(() => this.end$.next());
+    process.nextTick(() => this.end$.next(response));
     if (response.body.status === 'ok' || (onlyCheckHttpStatus && response.statusCode === 200)) {
       return response;
     }
