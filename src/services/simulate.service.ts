@@ -5,12 +5,13 @@ import Bluebird = require('bluebird');
 export class SimulateService extends Repository {
   private get preLoginFlowRequests(): Array<() => any> {
     return [
-      () => this.client.account.readMsisdnHeader(),
-      () => this.client.account.msisdnHeaderBootstrap('ig_select_app'),
+      () => this.client.account.readMsisdnHeader().catch(() => undefined),
+      () => this.client.account.msisdnHeaderBootstrap('ig_select_app').catch(() => undefined),
       () => this.client.zr.tokenResult(),
       () => this.client.account.contactPointPrefill('prefill').catch(() => undefined),
       () => this.client.launcher.preLoginSync(),
-      () => this.client.qe.syncLoginExperiments(),
+      // qe doesn't seem to get used
+      // () => this.client.qe.syncLoginExperiments(),
       () => this.client.attribution.logAttribution(),
       () => this.client.account.getPrefillCandidates().catch(() => undefined),
     ];
@@ -20,7 +21,8 @@ export class SimulateService extends Repository {
     return [
       () => this.client.zr.tokenResult(),
       () => this.client.launcher.postLoginSync(),
-      () => this.client.qe.syncExperiments(),
+      // qe doesn't seem to get used
+      // () => this.client.qe.syncExperiments(),
       () => this.client.attribution.logAttribution(),
       () => this.client.attribution.logResurrectAttribution(),
       () => this.client.loom.fetchConfig(),
