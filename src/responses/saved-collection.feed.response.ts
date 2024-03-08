@@ -1,4 +1,4 @@
-export interface SavedFeedResponseRootObject {
+export interface SavedCollectionFeedResponseRootObject {
   items: SavedFeedResponseItemsItem[];
   num_results: number;
   more_available: boolean;

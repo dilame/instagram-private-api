@@ -682,10 +682,10 @@ export class MediaRepository extends Repository {
    * save a media, or save it to collection if you pass the collection ids in array
    * @param {string} mediaId - The mediaId of the post
    * @param {string[]} [collection_ids] - Optional, The array of collection ids if you want to save the media to a specific collection
-   * Example: 
+   * Example:
    * save("2524149952724070925_1829855275") save media
    * save("2524149952724070925_1829855275", ["17865977635619975"]) save media to 1 collection
-   * save("2524149952724070925_1829855275", ["17865977635619975", "17845997638619928"]) save media to 2 collection 
+   * save("2524149952724070925_1829855275", ["17865977635619975", "17845997638619928"]) save media to 2 collection
    */
   public async save(mediaId: string, collection_ids?: string[]) {
     const { body } = await this.client.request.send({
@@ -795,27 +795,24 @@ export class MediaRepository extends Repository {
     });
     return body;
   }
-  
-  private async storyCountdownAction(
-    countdownId: string | number,
-    action: string,
-  ): Promise<StatusResponse> {
+
+  private async storyCountdownAction(countdownId: string | number, action: string): Promise<StatusResponse> {
     const { body } = await this.client.request.send({
       url: `/api/v1/media/${countdownId}/${action}/`,
       method: 'POST',
       form: this.client.request.sign({
         _csrftoken: this.client.state.cookieCsrfToken,
         _uid: this.client.state.cookieUserId,
-        _uuid: this.client.state.uuid
+        _uuid: this.client.state.uuid,
       }),
     });
     return body;
   }
-  
+
   public async storyCountdownFollow(countdownId: string | number) {
     return this.storyCountdownAction(countdownId, 'follow_story_countdown');
   }
-  
+
   public async storyCountdownUnfollow(countdownId: string | number) {
     return this.storyCountdownAction(countdownId, 'unfollow_story_countdown');
   }
