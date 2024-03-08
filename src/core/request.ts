@@ -56,7 +56,11 @@ export class Request {
     return resolveWithFullResponse ? response : response.body;
   }
 
-  public async send<T = any>(userOptions: Options, onlyCheckHttpStatus?: boolean): Promise<IgResponse<T>> {
+  public async send<T = any>(
+    userOptions: Options,
+    onlyCheckHttpStatus?: boolean,
+    transform?: boolean,
+  ): Promise<IgResponse<T>> {
     const options = defaultsDeep(
       userOptions,
       {
@@ -64,7 +68,7 @@ export class Request {
         resolveWithFullResponse: true,
         proxy: this.client.state.proxyUrl,
         simple: false,
-        transform: Request.requestTransform,
+        transform: transform == false ? undefined : Request.requestTransform,
         jar: this.client.state.cookieJar,
         strictSSL: false,
         gzip: true,

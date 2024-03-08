@@ -7,6 +7,7 @@ export interface PostingVideoOptions {
   usertags?: PostingUsertags;
   location?: PostingLocation;
   transcodeDelay?: number;
+  isClipVideo?: boolean;
 }
 
 export interface PostingStoryVideoOptions extends PostingStoryOptions {

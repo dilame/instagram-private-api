@@ -158,6 +158,7 @@ export class PublishService extends Repository {
     await Bluebird.try(() =>
       this.regularVideo({
         video: options.video,
+        isClipVideo: options.isClipVideo,
         uploadId,
         ...videoInfo,
       }),
@@ -198,7 +199,7 @@ export class PublishService extends Repository {
 
     for (let i = 0; i < 6; i++) {
       try {
-        return await this.client.media.configureVideo(configureOptions);
+        return await this.client.media.configureVideo(configureOptions, options.isClipVideo);
       } catch (e) {
         if (i >= 5 || e.response.statusCode >= 400) {
           throw new IgConfigureVideoError(e.response, configureOptions);

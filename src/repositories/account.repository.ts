@@ -19,6 +19,7 @@ import { IgSignupBlockError } from '../errors/ig-signup-block.error';
 import Bluebird = require('bluebird');
 import debug from 'debug';
 import * as crypto from 'crypto';
+import { JSDOM } from 'jsdom';
 
 export class AccountRepository extends Repository {
   private static accountDebug = debug('ig:account');
@@ -26,7 +27,7 @@ export class AccountRepository extends Repository {
     if (!this.client.state.passwordEncryptionPubKey) {
       await this.client.qe.syncLoginExperiments();
     }
-    const {encrypted, time} = this.encryptPassword(password);
+    const { encrypted, time } = this.encryptPassword(password);
     const response = await Bluebird.try(() =>
       this.client.request.send<AccountRepositoryLoginResponseRootObject>({
         method: 'POST',
@@ -64,6 +65,8 @@ export class AccountRepository extends Repository {
         }
       }
     });
+
+    this.client.state.fb_dtsg = await this.getDtsg();
     return response.body.logged_in_user;
   }
 
@@ -76,14 +79,37 @@ export class AccountRepository extends Repository {
     return `2${sum}`;
   }
 
-  public encryptPassword(password: string): { time: string, encrypted: string } {
+  private async getDtsg() {
+    const { body } = await this.client.request.send(
+      {
+        url: 'null',
+        method: 'GET',
+        headers: {},
+      },
+      true,
+      false, // disable transform to json because we are getting html
+    );
+
+    const dom = new JSDOM(body);
+    const unparsedParams = dom.window.document.querySelector('#__eqmc').innerHTML;
+
+    const params = JSON.parse(unparsedParams);
+    const fb_dtsg = params.f;
+
+    return fb_dtsg;
+  }
+
+  public encryptPassword(password: string): { time: string; encrypted: string } {
     const randKey = crypto.randomBytes(32);
     const iv = crypto.randomBytes(12);
-    const rsaEncrypted = crypto.publicEncrypt({
-      key: Buffer.from(this.client.state.passwordEncryptionPubKey, 'base64').toString(),
-      // @ts-ignore
-      padding: crypto.constants.RSA_PKCS1_PADDING,
-    }, randKey);
+    const rsaEncrypted = crypto.publicEncrypt(
+      {
+        key: Buffer.from(this.client.state.passwordEncryptionPubKey, 'base64').toString(),
+        // @ts-ignore
+        padding: crypto.constants.RSA_PKCS1_PADDING,
+      },
+      randKey,
+    );
     const cipher = crypto.createCipheriv('aes-256-gcm', randKey, iv);
     const time = Math.floor(Date.now() / 1000).toString();
     cipher.setAAD(Buffer.from(time));
@@ -97,8 +123,10 @@ export class AccountRepository extends Repository {
         Buffer.from([1, this.client.state.passwordEncryptionKeyId]),
         iv,
         sizeBuffer,
-        rsaEncrypted, authTag, aesEncrypted])
-        .toString('base64'),
+        rsaEncrypted,
+        authTag,
+        aesEncrypted,
+      ]).toString('base64'),
     };
   }
 

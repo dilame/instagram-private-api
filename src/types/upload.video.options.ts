@@ -16,6 +16,7 @@ export interface UploadVideoOptions {
   waterfallId?: string;
   uploadName?: string;
   offset?: number;
+  isClipVideo?: boolean;
 }
 
 export interface UploadVideoSegmentInitOptions {
