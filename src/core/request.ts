@@ -196,7 +196,7 @@ export class Request {
       'X-IG-Bandwidth-TotalBytes-B': '0',
       'X-IG-Bandwidth-TotalTime-MS': '0',
       'X-IG-EU-DC-ENABLED':
-        typeof this.client.state.euDCEnabled === 'undefined' ? void 0 : this.client.state.euDCEnabled.toString(),
+        typeof this.client.state.euDCEnabled === 'undefined' ?  void 0 : '' + this.client.state.euDCEnabled,
       'X-IG-Extended-CDN-Thumbnail-Cache-Busting-Value': this.client.state.thumbnailCacheBustingValue.toString(),
       'X-Bloks-Version-Id': this.client.state.bloksVersionId,
       'X-MID': this.client.state.extractCookie('mid')?.value,
