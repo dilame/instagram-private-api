@@ -16,6 +16,9 @@ export interface MediaConfigureVideoOptions {
   posting_longitude?: string;
   media_latitude?: string;
   media_longitude?: string;
+
+  isClipsVideo?: boolean;
+  clips_share_preview_to_feed?: string;
 }
 
 export interface MediaConfigureTimelineVideoOptions extends MediaConfigureVideoOptions {

@@ -247,6 +247,9 @@ export class UploadRepository extends Repository {
     if (options.isDirectVoice) {
       ruploadParams.is_direct_voice = '1';
     }
+    if (options.isClipVideo) {
+      ruploadParams.is_clips_video = '1';
+    }
     return ruploadParams;
   }
 }
