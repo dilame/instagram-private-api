@@ -116,12 +116,12 @@ export class DirectThreadEntity extends Entity {
     });
   }
 
-  public async broadcastPost(mediaId: string) {
+  public async broadcastPost(mediaId: string, carouselMediaId?: string) {
     return await this.broadcast({
       item: 'media_share',
       form: {
         media_id: mediaId,
-        carousel_share_child_media_id: mediaId,
+        carousel_share_child_media_id: carouselMediaId ?? mediaId,
         send_attribution: 'feed_contextual_profile',
         unified_broadcast_format: 1,
       },
