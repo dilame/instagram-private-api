@@ -14,10 +14,12 @@ export class AccountFollowersFeed extends Feed<AccountFollowersFeedResponse, Acc
   id: number | string;
   @Expose()
   public nextMaxId: string;
+  public count: number | string;
 
   set state(body: AccountFollowersFeedResponse) {
     this.moreAvailable = !!body.next_max_id;
     this.nextMaxId = body.next_max_id;
+    this.count = body.count;
   }
 
   async request() {
@@ -29,6 +31,7 @@ export class AccountFollowersFeed extends Feed<AccountFollowersFeedResponse, Acc
         order: this.order,
         query: this.query,
         enable_groups: this.enableGroups,
+        count:this.count
       },
     });
     this.state = body;
