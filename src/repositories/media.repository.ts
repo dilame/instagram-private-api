@@ -598,6 +598,7 @@ export class MediaRepository extends Repository {
     });
     const retryContext = options.retryContext;
     delete form.retryContext;
+
     const { body } = await this.client.request.send({
       url: '/api/v1/media/configure_to_igtv/',
       method: 'POST',
@@ -615,6 +616,7 @@ export class MediaRepository extends Repository {
         _uuid: this.client.state.uuid,
       }),
     });
+
     return body;
   }
 

@@ -3,4 +3,5 @@ export interface UploadPhotoOptions {
   file: Buffer;
   isSidecar?: boolean;
   waterfallId?: string;
+  broadcastId?: string;
 }

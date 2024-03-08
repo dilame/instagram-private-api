@@ -19,9 +19,10 @@ import {
   UploadVideoOptions,
 } from '../types';
 import { PostingLocation, PostingStoryOptions } from '../types/posting.options';
-import { IgConfigureVideoError, IgResponseError, IgUploadVideoError } from '../errors';
+import { IgConfigureVideoError, IgResponseError, IgUploadLiveIgtvError, IgUploadVideoError } from '../errors';
 import { StatusResponse, UploadRepositoryVideoResponseRootObject } from '../responses';
 import { PostingIgtvOptions } from '../types/posting.igtv.options';
+import { PostingLiveIgtvOptions } from "../types/posting.live-igtv.options";
 import sizeOf = require('image-size');
 import Bluebird = require('bluebird');
 import Chance = require('chance');
@@ -48,6 +49,22 @@ export class PublishService extends Repository {
         return Bluebird.delay(transcodeDelayInMs);
       } else {
         throw new IgUploadVideoError(error.response as IgResponse<UploadRepositoryVideoResponseRootObject>, videoInfo);
+      }
+    };
+  }
+
+  /**
+   * @param transcodeDelayInMs The delay for instagram to transcode the video
+   */
+  public static catchLiveIgtvTranscodeError(transcodeDelayInMs: number) {
+    return error => {
+      if (error.response.statusCode === 202) {
+        PublishService.publishDebug(
+            `Received trancode error: ${JSON.stringify(error.response.body)}, waiting ${transcodeDelayInMs}ms`,
+        );
+        return Bluebird.delay(transcodeDelayInMs);
+      } else {
+        throw new IgUploadLiveIgtvError(error.response as IgResponse<UploadRepositoryVideoResponseRootObject>);
       }
     };
   }
@@ -447,6 +464,39 @@ export class PublishService extends Repository {
       } catch (e) {
         if (i >= 6) {
           throw new IgConfigureVideoError(e.response, finalInput);
+        }
+        await Bluebird.delay((i + 1) * 2 * 1000);
+      }
+    }
+  }
+
+  public async liveIgtv(options: PostingLiveIgtvOptions) {
+    const uploadedPhoto = await this.client.upload.photo({
+      file: options.file,
+      broadcastId: options.broadcastId,
+    });
+
+    await Bluebird.try(() =>
+        this.client.media.uploadFinish({
+          upload_id: uploadedPhoto.upload_id,
+          source_type: '4',
+        }),
+    ).catch(IgResponseError, PublishService.catchLiveIgtvTranscodeError(options.transcodeDelay || 5000));
+
+    const configureOptions: MediaConfigureToIgtvOptions = {
+      upload_id: uploadedPhoto.upload_id,
+      title: options.title,
+      caption: options.caption,
+      igtv_share_preview_to_feed: options.igtv_share_preview_to_feed,
+      length: 0
+    };
+
+    for (let i = 0; i < 6; i++) {
+      try {
+        return await this.client.media.configureToIgtv(configureOptions);
+      } catch (e) {
+        if (i >= 5 || e.response.statusCode >= 400) {
+          throw new IgConfigureVideoError(e.response, configureOptions);
         }
         await Bluebird.delay((i + 1) * 2 * 1000);
       }
