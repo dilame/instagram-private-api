@@ -7,6 +7,7 @@ export class DirectThreadFeed extends Feed<DirectThreadFeedResponse, DirectThrea
   public seqId: number;
   @Expose()
   public cursor: string;
+  public limit?: number;
   set state(body: DirectThreadFeedResponse) {
     this.cursor = body.thread.oldest_cursor;
     this.moreAvailable = body.thread.has_older;
@@ -19,7 +20,7 @@ export class DirectThreadFeed extends Feed<DirectThreadFeedResponse, DirectThrea
         cursor: this.cursor,
         direction: 'older',
         seq_id: this.seqId,
-        limit: 10,
+        limit: this.limit ?? 10,
       },
     });
     this.state = body;

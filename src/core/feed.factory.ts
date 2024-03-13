@@ -99,22 +99,23 @@ export class FeedFactory {
     return new BlockedUsersFeed(this.client);
   }
 
-  public directInbox(): DirectInboxFeed {
-    return new DirectInboxFeed(this.client);
+  public directInbox(options: { limit?: number; thread_message_limit?: number } = {}): DirectInboxFeed {
+    return plainToClassFromExist(new DirectInboxFeed(this.client), options);
   }
 
-  public directPending(): DirectPendingInboxFeed {
-    return new DirectPendingInboxFeed(this.client);
+  public directPending(options: { limit?: number; thread_message_limit?: number } = {}): DirectPendingInboxFeed {
+    return plainToClassFromExist(new DirectPendingInboxFeed(this.client), options);
   }
 
   public directThread(
-    options: Pick<DirectInboxFeedResponseThreadsItem, 'thread_id' | 'oldest_cursor'>,
+    options: Pick<DirectInboxFeedResponseThreadsItem, 'thread_id' | 'oldest_cursor'> & { limit: number },
     seqId?: number,
   ): DirectThreadFeed {
     const feed = new DirectThreadFeed(this.client);
     feed.id = options.thread_id;
     feed.cursor = options.oldest_cursor;
     feed.seqId = seqId;
+    feed.limit = options.limit;
     return feed;
   }
 
