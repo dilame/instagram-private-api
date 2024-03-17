@@ -12,3 +12,4 @@ Untitled*
 .env
 dist
 tools/state.json
+.history
