@@ -11,6 +11,7 @@ import { DirectThreadBroadcastOptions } from '../types';
 import { IgClientError, IgResponseError } from '../errors';
 import { PublishService } from '../services/publish.service';
 import * as Bluebird from 'bluebird';
+import { DirectThreadFeedResponseItemsItem } from 'src/responses';
 
 export class DirectThreadEntity extends Entity {
   threadId: string = null;
@@ -30,18 +31,34 @@ export class DirectThreadEntity extends Entity {
    * @param skipLinkCheck - May be omitted; skips checking for links.
    * This was added to only require `url-regex-safe` if it's necessary as it may cause problems (See #1328).
    */
-  public async broadcastText(text: string, skipLinkCheck?: boolean) {
+  public async broadcastText(
+    text: string,
+    reply_to_message?: DirectThreadFeedResponseItemsItem,
+    skipLinkCheck?: boolean,
+  ) {
     if (!skipLinkCheck) {
       const urls = text.match(require('url-regex-safe')({ strict: false }));
       if (urls instanceof Array) {
         return this.broadcastLink(text, urls);
       }
     }
+
+    let form: {
+      text: string;
+      replied_to_action_source?: string;
+      replied_to_item_id?: string;
+      replied_to_client_context?: string;
+    } = { text };
+
+    if (reply_to_message) {
+      form.replied_to_action_source = 'swipe';
+      form.replied_to_item_id = reply_to_message.item_id;
+      form.replied_to_client_context = reply_to_message.client_context;
+    }
+
     return await this.broadcast({
       item: 'text',
-      form: {
-        text,
-      },
+      form: form,
     });
   }
 
