@@ -44,6 +44,7 @@
     "class-transformer": "^0.3.1",
     "debug": "^4.1.1",
     "image-size": "^0.7.3",
+    "instagram-private-api": "github:dilame/instagram-private-api",
     "json-bigint": "^1.0.0",
     "lodash": "^4.17.20",
     "luxon": "^1.12.1",
